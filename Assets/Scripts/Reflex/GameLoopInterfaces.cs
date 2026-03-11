@@ -1,4 +1,4 @@
-namespace SlotAdventure.Scripts.Reflex
+namespace IncrementalRPG.Scripts.Reflex
 {
     public interface IAwakeable
     {

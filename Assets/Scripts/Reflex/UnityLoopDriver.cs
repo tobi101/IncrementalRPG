@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Reflex.Attributes;
 using UnityEngine;
 
-namespace SlotAdventure.Scripts.Reflex
+namespace IncrementalRPG.Scripts.Reflex
 {
     public class UnityLoopDriver : MonoBehaviour
     {
