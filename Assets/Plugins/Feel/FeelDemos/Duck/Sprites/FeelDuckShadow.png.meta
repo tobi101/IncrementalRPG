@@ -1,61 +1,71 @@
 fileFormatVersion: 2
-guid: fe8a51f1e6fed46799cf30f0a57029d2
+guid: 9ce434ac86a021e418c3060399e7abdd
+AssetOrigin:
+  serializedVersion: 1
+  productId: 183370
+  packageName: Feel
+  packageVersion: 5.9.1
+  assetPath: Assets/Feel/FeelDemos/Duck/Sprites/FeelDuckShadow.png
+  uploadId: 830868
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2157411801321056961
-    second: circle0_0
+      213: -1488195887490226262
+    second: FeelDuckShadow_0
   - first:
-      213: 5424140457927951248
-    second: circle0_1
+      213: -4435484407326516809
+    second: FeelDuckShadow_1
   - first:
-      213: -6440586129299002298
-    second: circle0_2
+      213: 716272977604518773
+    second: FeelDuckShadow_2
   - first:
-      213: -4698831132731585255
-    second: circle0_3
+      213: -4947257590945785970
+    second: FeelDuckShadow_3
   - first:
-      213: 1904406780769939616
-    second: circle0_4
+      213: 466204985308708396
+    second: FeelDuckShadow_4
   - first:
-      213: 8743504407660102178
-    second: circle0_5
+      213: -1800869760373755936
+    second: FeelDuckShadow_5
   - first:
-      213: 7840941358305424205
-    second: circle0_6
+      213: -2857420933867021769
+    second: FeelDuckShadow_6
   - first:
-      213: 6662641646951221311
-    second: circle0_7
+      213: 5970199749122678860
+    second: FeelDuckShadow_7
   - first:
-      213: 7928117644566496496
-    second: circle0_8
+      213: 9119986006023652670
+    second: FeelDuckShadow_8
   - first:
-      213: -4570567734697843239
-    second: circle0_9
+      213: -5418687466495508228
+    second: FeelDuckShadow_9
   - first:
-      213: -3257035507298850048
-    second: circle0_10
+      213: 2801126888289971305
+    second: FeelDuckShadow_10
   - first:
-      213: -7737955517481884290
-    second: circle0_11
+      213: -4930013394555498610
+    second: FeelDuckShadow_11
   - first:
-      213: -4102818196391215309
-    second: circle0_12
+      213: 4336739000701341329
+    second: FeelDuckShadow_12
   - first:
-      213: 6712327545943181341
-    second: circle0_13
+      213: 7711199070588570761
+    second: FeelDuckShadow_13
   - first:
-      213: -7720903178786129118
-    second: circle0_14
+      213: 3666431415229514628
+    second: FeelDuckShadow_14
   - first:
-      213: -7616750883974665032
-    second: circle0_15
+      213: 2315293671311913038
+    second: FeelDuckShadow_15
+  - first:
+      213: -9211355452573300150
+    second: FeelDuckShadow_16
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
-    sRGBTexture: 0
+    sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -82,16 +92,16 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,10 +123,49 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -133,46 +182,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -185,7 +195,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -198,7 +208,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -210,353 +220,375 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: circle0_0
+      name: FeelDuckShadow_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4968
-        width: 198
-        height: 27
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1ca2af35a9aa0fd10800000000000000
-      internalID: 2157411801321056961
+      spriteID: aa7a2f1a9bdd85be0800000000000000
+      internalID: -1488195887490226262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_1
+      name: FeelDuckShadow_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4369
-        width: 200
-        height: 599
+        x: 66
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 093ce96120b664b40800000000000000
-      internalID: 5424140457927951248
+      spriteID: 7b9d4868e6ef172c0800000000000000
+      internalID: -4435484407326516809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_2
+      name: FeelDuckShadow_2
       rect:
         serializedVersion: 2
-        x: 201
-        y: 4771
-        width: 182
-        height: 200
+        x: 132
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 64c23d10a017e96a0800000000000000
-      internalID: -6440586129299002298
+      spriteID: 57324586a76b0f900800000000000000
+      internalID: 716272977604518773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_3
+      name: FeelDuckShadow_3
       rect:
         serializedVersion: 2
-        x: 201
-        y: 4369
-        width: 432
-        height: 200
+        x: 198
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 91dccf1faf56aceb0800000000000000
-      internalID: -4698831132731585255
+      spriteID: e875257ce6fc75bb0800000000000000
+      internalID: -4947257590945785970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_4
+      name: FeelDuckShadow_4
       rect:
         serializedVersion: 2
-        x: 633
-        y: 4422
-        width: 200
-        height: 349
+        x: 264
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0a033ab80efcd6a10800000000000000
-      internalID: 1904406780769939616
+      spriteID: c2e77ddc6fa487600800000000000000
+      internalID: 466204985308708396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_5
+      name: FeelDuckShadow_5
       rect:
         serializedVersion: 2
-        x: 664
-        y: 3906
-        width: 200
-        height: 516
+        x: 330
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 22284a60fea275970800000000000000
-      internalID: 8743504407660102178
+      spriteID: 0efed2e8e760207e0800000000000000
+      internalID: -1800869760373755936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_6
+      name: FeelDuckShadow_6
       rect:
         serializedVersion: 2
-        x: 864
-        y: 4306
-        width: 68
-        height: 200
+        x: 396
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d43b67e4f9e90dc60800000000000000
-      internalID: 7840941358305424205
+      spriteID: 73a5717ccc66858d0800000000000000
+      internalID: -2857420933867021769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_7
+      name: FeelDuckShadow_7
       rect:
         serializedVersion: 2
-        x: 1
-        y: 3706
-        width: 663
-        height: 663
+        x: 462
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f3840481745767c50800000000000000
-      internalID: 6662641646951221311
+      spriteID: c4065945a096ad250800000000000000
+      internalID: 5970199749122678860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_8
+      name: FeelDuckShadow_8
       rect:
         serializedVersion: 2
-        x: 864
-        y: 4106
-        width: 83
-        height: 200
+        x: 528
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0f484e52ef4560e60800000000000000
-      internalID: 7928117644566496496
+      spriteID: e35c295e3f2b09e70800000000000000
+      internalID: 9119986006023652670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_9
+      name: FeelDuckShadow_9
       rect:
         serializedVersion: 2
-        x: 864
-        y: 3906
-        width: 98
-        height: 200
+        x: 594
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9d529777cd41290c0800000000000000
-      internalID: -4570567734697843239
+      spriteID: cf08caa6574fcc4b0800000000000000
+      internalID: -5418687466495508228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_10
+      name: FeelDuckShadow_10
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2814
-        width: 969
-        height: 892
+        x: 660
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 00b2e9e667facc2d0800000000000000
-      internalID: -3257035507298850048
+      spriteID: 96ca15b501a9fd620800000000000000
+      internalID: 2801126888289971305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_11
+      name: FeelDuckShadow_11
       rect:
         serializedVersion: 2
-        x: 664
-        y: 3706
-        width: 265
-        height: 200
+        x: 726
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e75e7bc44724d9490800000000000000
-      internalID: -7737955517481884290
+      spriteID: e8f0a9f10f2159bb0800000000000000
+      internalID: -4930013394555498610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_12
+      name: FeelDuckShadow_12
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2033
-        width: 970
-        height: 781
+        x: 792
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 33fb71a869cdf07c0800000000000000
-      internalID: -4102818196391215309
+      spriteID: 19ec264e4213f2c30800000000000000
+      internalID: 4336739000701341329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_13
+      name: FeelDuckShadow_13
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1560
-        width: 971
-        height: 473
+        x: 858
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d184300f65af62d50800000000000000
-      internalID: 6712327545943181341
+      spriteID: 98c01c2f2bea30b60800000000000000
+      internalID: 7711199070588570761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_14
+      name: FeelDuckShadow_14
       rect:
         serializedVersion: 2
-        x: 1
-        y: 704
-        width: 971
-        height: 856
+        x: 924
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 22bb44b4777d9d490800000000000000
-      internalID: -7720903178786129118
+      spriteID: 483861252f7c1e230800000000000000
+      internalID: 3666431415229514628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_15
+      name: FeelDuckShadow_15
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 975
-        height: 703
+        x: 990
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8bc2c022d6ddb4690800000000000000
-      internalID: -7616750883974665032
+      spriteID: e40b14db353912020800000000000000
+      internalID: 2315293671311913038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeelDuckShadow_16
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ac28d0501ba2080800000000000000
+      internalID: -9211355452573300150
       vertices: []
       indices: 
       edges: []
@@ -565,7 +597,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -575,22 +607,23 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      circle0_0: 2157411801321056961
-      circle0_1: 5424140457927951248
-      circle0_10: -3257035507298850048
-      circle0_11: -7737955517481884290
-      circle0_12: -4102818196391215309
-      circle0_13: 6712327545943181341
-      circle0_14: -7720903178786129118
-      circle0_15: -7616750883974665032
-      circle0_2: -6440586129299002298
-      circle0_3: -4698831132731585255
-      circle0_4: 1904406780769939616
-      circle0_5: 8743504407660102178
-      circle0_6: 7840941358305424205
-      circle0_7: 6662641646951221311
-      circle0_8: 7928117644566496496
-      circle0_9: -4570567734697843239
+      FeelDuckShadow_0: -1488195887490226262
+      FeelDuckShadow_1: -4435484407326516809
+      FeelDuckShadow_10: 2801126888289971305
+      FeelDuckShadow_11: -4930013394555498610
+      FeelDuckShadow_12: 4336739000701341329
+      FeelDuckShadow_13: 7711199070588570761
+      FeelDuckShadow_14: 3666431415229514628
+      FeelDuckShadow_15: 2315293671311913038
+      FeelDuckShadow_16: -9211355452573300150
+      FeelDuckShadow_2: 716272977604518773
+      FeelDuckShadow_3: -4947257590945785970
+      FeelDuckShadow_4: 466204985308708396
+      FeelDuckShadow_5: -1800869760373755936
+      FeelDuckShadow_6: -2857420933867021769
+      FeelDuckShadow_7: 5970199749122678860
+      FeelDuckShadow_8: 9119986006023652670
+      FeelDuckShadow_9: -5418687466495508228
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,61 +1,53 @@
 fileFormatVersion: 2
-guid: fe8a51f1e6fed46799cf30f0a57029d2
+guid: 109174f54ddf71a4fbe62bf30e9cf0e0
+AssetOrigin:
+  serializedVersion: 1
+  productId: 183370
+  packageName: Feel
+  packageVersion: 5.9.1
+  assetPath: Assets/Feel/MMTools/Core/MMSceneLoading/Sprites/LoadingCompleteAnimation.png
+  uploadId: 830868
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2157411801321056961
-    second: circle0_0
+      213: 21300000
+    second: LoadingCompleteAnimation_0
   - first:
-      213: 5424140457927951248
-    second: circle0_1
+      213: 21300002
+    second: LoadingCompleteAnimation_1
   - first:
-      213: -6440586129299002298
-    second: circle0_2
+      213: 21300004
+    second: LoadingCompleteAnimation_2
   - first:
-      213: -4698831132731585255
-    second: circle0_3
+      213: 21300006
+    second: LoadingCompleteAnimation_3
   - first:
-      213: 1904406780769939616
-    second: circle0_4
+      213: 21300008
+    second: LoadingCompleteAnimation_4
   - first:
-      213: 8743504407660102178
-    second: circle0_5
+      213: 21300010
+    second: LoadingCompleteAnimation_5
   - first:
-      213: 7840941358305424205
-    second: circle0_6
+      213: 21300012
+    second: LoadingCompleteAnimation_6
   - first:
-      213: 6662641646951221311
-    second: circle0_7
+      213: 21300014
+    second: LoadingCompleteAnimation_7
   - first:
-      213: 7928117644566496496
-    second: circle0_8
+      213: 21300016
+    second: LoadingCompleteAnimation_8
   - first:
-      213: -4570567734697843239
-    second: circle0_9
+      213: 21300018
+    second: LoadingCompleteAnimation_9
   - first:
-      213: -3257035507298850048
-    second: circle0_10
-  - first:
-      213: -7737955517481884290
-    second: circle0_11
-  - first:
-      213: -4102818196391215309
-    second: circle0_12
-  - first:
-      213: 6712327545943181341
-    second: circle0_13
-  - first:
-      213: -7720903178786129118
-    second: circle0_14
-  - first:
-      213: -7616750883974665032
-    second: circle0_15
+      213: 21300020
+    second: LoadingCompleteAnimation_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
-    sRGBTexture: 0
+    enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -78,12 +70,12 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: 1
-  maxTextureSize: 2048
+  textureFormat: -1
+  maxTextureSize: 1024
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: 1
+    aniso: 16
     mipBias: 0
     wrapU: 1
     wrapV: 1
@@ -91,7 +83,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -111,39 +103,13 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -156,7 +122,20 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -169,7 +148,20 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -182,7 +174,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: VisionOS
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -195,7 +187,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: tvOS
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -210,13 +202,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: circle0_0
+      name: LoadingCompleteAnimation_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4968
-        width: 198
-        height: 27
+        x: 0
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ca2af35a9aa0fd10800000000000000
-      internalID: 2157411801321056961
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_1
+      name: LoadingCompleteAnimation_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4369
-        width: 200
-        height: 599
+        x: 256
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 093ce96120b664b40800000000000000
-      internalID: 5424140457927951248
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_2
+      name: LoadingCompleteAnimation_2
       rect:
         serializedVersion: 2
-        x: 201
-        y: 4771
-        width: 182
-        height: 200
+        x: 512
+        y: 768
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 64c23d10a017e96a0800000000000000
-      internalID: -6440586129299002298
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_3
+      name: LoadingCompleteAnimation_3
       rect:
         serializedVersion: 2
-        x: 201
-        y: 4369
-        width: 432
-        height: 200
+        x: 0
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,20 +283,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 91dccf1faf56aceb0800000000000000
-      internalID: -4698831132731585255
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_4
+      name: LoadingCompleteAnimation_4
       rect:
         serializedVersion: 2
-        x: 633
-        y: 4422
-        width: 200
-        height: 349
+        x: 256
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a033ab80efcd6a10800000000000000
-      internalID: 1904406780769939616
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_5
+      name: LoadingCompleteAnimation_5
       rect:
         serializedVersion: 2
-        x: 664
-        y: 3906
-        width: 200
-        height: 516
+        x: 512
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,20 +327,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22284a60fea275970800000000000000
-      internalID: 8743504407660102178
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_6
+      name: LoadingCompleteAnimation_6
       rect:
         serializedVersion: 2
-        x: 864
-        y: 4306
-        width: 68
-        height: 200
+        x: 0
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,20 +349,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d43b67e4f9e90dc60800000000000000
-      internalID: 7840941358305424205
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_7
+      name: LoadingCompleteAnimation_7
       rect:
         serializedVersion: 2
-        x: 1
-        y: 3706
-        width: 663
-        height: 663
+        x: 256
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,20 +371,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f3840481745767c50800000000000000
-      internalID: 6662641646951221311
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_8
+      name: LoadingCompleteAnimation_8
       rect:
         serializedVersion: 2
-        x: 864
-        y: 4106
-        width: 83
-        height: 200
+        x: 512
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -401,20 +393,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f484e52ef4560e60800000000000000
-      internalID: 7928117644566496496
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_9
+      name: LoadingCompleteAnimation_9
       rect:
         serializedVersion: 2
-        x: 864
-        y: 3906
-        width: 98
-        height: 200
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,20 +415,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d529777cd41290c0800000000000000
-      internalID: -4570567734697843239
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circle0_10
+      name: LoadingCompleteAnimation_10
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2814
-        width: 969
-        height: 892
+        x: 256
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,118 +437,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00b2e9e667facc2d0800000000000000
-      internalID: -3257035507298850048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: circle0_11
-      rect:
-        serializedVersion: 2
-        x: 664
-        y: 3706
-        width: 265
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e75e7bc44724d9490800000000000000
-      internalID: -7737955517481884290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: circle0_12
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 2033
-        width: 970
-        height: 781
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 33fb71a869cdf07c0800000000000000
-      internalID: -4102818196391215309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: circle0_13
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1560
-        width: 971
-        height: 473
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d184300f65af62d50800000000000000
-      internalID: 6712327545943181341
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: circle0_14
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 704
-        width: 971
-        height: 856
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 22bb44b4777d9d490800000000000000
-      internalID: -7720903178786129118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: circle0_15
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1
-        width: 975
-        height: 703
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8bc2c022d6ddb4690800000000000000
-      internalID: -7616750883974665032
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
@@ -575,22 +457,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      circle0_0: 2157411801321056961
-      circle0_1: 5424140457927951248
-      circle0_10: -3257035507298850048
-      circle0_11: -7737955517481884290
-      circle0_12: -4102818196391215309
-      circle0_13: 6712327545943181341
-      circle0_14: -7720903178786129118
-      circle0_15: -7616750883974665032
-      circle0_2: -6440586129299002298
-      circle0_3: -4698831132731585255
-      circle0_4: 1904406780769939616
-      circle0_5: 8743504407660102178
-      circle0_6: 7840941358305424205
-      circle0_7: 6662641646951221311
-      circle0_8: 7928117644566496496
-      circle0_9: -4570567734697843239
+      LoadingCompleteAnimation_0: 21300000
+      LoadingCompleteAnimation_1: 21300002
+      LoadingCompleteAnimation_10: 21300020
+      LoadingCompleteAnimation_2: 21300004
+      LoadingCompleteAnimation_3: 21300006
+      LoadingCompleteAnimation_4: 21300008
+      LoadingCompleteAnimation_5: 21300010
+      LoadingCompleteAnimation_6: 21300012
+      LoadingCompleteAnimation_7: 21300014
+      LoadingCompleteAnimation_8: 21300016
+      LoadingCompleteAnimation_9: 21300018
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
