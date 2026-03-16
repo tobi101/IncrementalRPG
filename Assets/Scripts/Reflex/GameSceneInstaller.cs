@@ -1,10 +1,12 @@
+using Core;
+using Core.Gameplay;
+using IncrementalRPG.Scripts.Reflex;
 using Reflex.Core;
 using Reflex.Enums;
-using IncrementalRPG.Scripts.Core;
-using UnityEngine;
 using Resolution = Reflex.Enums.Resolution;
+using UnityEngine;
 
-namespace IncrementalRPG.Scripts.Reflex
+namespace Reflex
 {
     public class GameSceneInstaller : MonoBehaviour, IInstaller
     {
@@ -12,6 +14,13 @@ namespace IncrementalRPG.Scripts.Reflex
         {
             builder.RegisterType(
                 typeof(GameLoop),
+                new[] { typeof(IStartable), typeof(ITickable) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(SpawnService),
                 new[] { typeof(IStartable), typeof(ITickable) },
                 Lifetime.Singleton,
                 Resolution.Lazy

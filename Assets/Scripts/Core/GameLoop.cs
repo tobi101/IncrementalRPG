@@ -1,30 +1,31 @@
-using IncrementalRPG.Scripts.Reflex;
 using System.Collections.Generic;
 using System.Linq;
+using IncrementalRPG.Scripts.Core;
+using IncrementalRPG.Scripts.Reflex;
 using UnityEngine;
 
-namespace IncrementalRPG.Scripts.Core
+namespace Core
 {
     public class GameLoop : IStartable, ITickable
     {
-        private readonly List<IGameSystem> _systems;
+        private readonly List<IService> _services;
 
-        public GameLoop(IEnumerable<IGameSystem> systems)
+        public GameLoop(IEnumerable<IService> systems)
         {
-            _systems = systems.ToList();
+            _services = systems.ToList();
         }
 
         public void OnStart()
         {
-            foreach (var t in _systems)
+            foreach (var t in _services)
                 t.Initialize();
 
-            Debug.Log($"[GameLoop] Started. Systems: {_systems.Count}");
+            Debug.Log($"[GameLoop] Started. Systems: {_services.Count}");
         }
 
         public void Tick(float deltaTime)
         {
-            foreach (var t in _systems)
+            foreach (var t in _services)
                 t.Update(deltaTime);
         }
     }
