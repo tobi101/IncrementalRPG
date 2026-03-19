@@ -19,12 +19,12 @@ namespace Reflex
                 Resolution.Lazy
             );
 
-            builder.RegisterType(
-                typeof(SpawnService),
-                new[] { typeof(IStartable), typeof(ITickable) },
-                Lifetime.Singleton,
-                Resolution.Lazy
-            );
+            // builder.RegisterType(
+            //     typeof(SpawnService),
+            //     new[] { typeof(IStartable), typeof(ITickable) },
+            //     Lifetime.Singleton,
+            //     Resolution.Lazy
+            // );
         }
     }
 }

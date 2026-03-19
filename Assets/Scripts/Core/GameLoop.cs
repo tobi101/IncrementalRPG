@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using IncrementalRPG.Scripts.Core;
 using IncrementalRPG.Scripts.Reflex;
+using Reflex.Attributes;
 using UnityEngine;
 
 namespace Core
