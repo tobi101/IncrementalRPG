@@ -26,6 +26,7 @@ namespace Core.Gameplay
 
         [Header("References")]
         [SerializeField] private Tilemap targetTilemap;
+        [SerializeField] private TilemapCameraAutoFitter cameraAutoFitter;
 
         [Header("Grid")]
         [Min(1)]
@@ -55,6 +56,9 @@ namespace Core.Gameplay
 
         [Header("Tile rules")]
         [SerializeField] private List<TileRule> tileRules = new();
+        
+        [Header("Post Generate")]
+        [SerializeField] private bool autoFitCameraAfterGenerate = true;
 
         [ContextMenu("Generate")]
         public void Generate()
@@ -105,6 +109,11 @@ namespace Core.Gameplay
             }
 
             Debug.Log($"[IsometricGradientTilemapGenerator] Generated {size}x{size} Bottom->Top gradient (seed: {seed}).");
+            
+            if (autoFitCameraAfterGenerate && cameraAutoFitter != null)
+            {
+                cameraAutoFitter.FitToTilemap();
+            }
         }
 
         [ContextMenu("Clear")]
