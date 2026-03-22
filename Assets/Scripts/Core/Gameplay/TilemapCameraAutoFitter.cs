@@ -19,6 +19,9 @@ namespace Core.Gameplay
         [Min(0.01f)]
         [SerializeField] private float maxOrthographicSize = 100f;
         [SerializeField] private bool keepCurrentCameraZ = true;
+        [Tooltip("Vertical offset as a fraction of the tilemap height. Negative = shift camera down (map appears lower in viewport).")]
+        [Range(-0.5f, 0.5f)]
+        [SerializeField] private float normalizedVerticalOffset = 0f;
 
         [ContextMenu("Fit Camera To Tilemap")]
         public void FitToTilemap()
@@ -56,6 +59,7 @@ namespace Core.Gameplay
             orthographicSize = Mathf.Clamp(orthographicSize, minOrthographicSize, maxOrthographicSize);
 
             var nextPosition = worldBounds.center;
+            nextPosition.y += orthographicSize * normalizedVerticalOffset;
             if (keepCurrentCameraZ)
             {
                 nextPosition.z = cameraToFit.transform.position.z;

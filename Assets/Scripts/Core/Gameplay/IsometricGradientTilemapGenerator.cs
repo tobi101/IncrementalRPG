@@ -26,6 +26,8 @@ namespace Core.Gameplay
 
         [Header("References")]
         [SerializeField] private Tilemap targetTilemap;
+        [SerializeField] private Tilemap leftPillarTilemap;
+        [SerializeField] private Tilemap rightPillarTilemap;
         [SerializeField] private TilemapCameraAutoFitter cameraAutoFitter;
 
         [Header("Grid")]
@@ -58,13 +60,10 @@ namespace Core.Gameplay
         [SerializeField] private List<TileRule> tileRules = new();
         
         [Header("Pillar")]
-        [SerializeField] private TileBase pillarTile;
+        [SerializeField] private TileBase leftWallTile;
+        [SerializeField] private TileBase rightWallTile;
         [Min(0)]
         [SerializeField] private int pillarHeight = 3;
-        [Tooltip("Смещение каждого слоя столба вниз по local Y. Подбирается под высоту боковой грани тайла.")]
-        [SerializeField] private float pillarLayerOffset = 0.29f;
-
-        [SerializeField, HideInInspector] private List<GameObject> _pillarLayers = new();
 
         [Header("Post Generate")]
         [SerializeField] private bool autoFitCameraAfterGenerate = true;
@@ -117,7 +116,8 @@ namespace Core.Gameplay
                 }
             }
 
-            GeneratePillar();
+            if (pillarHeight > 0)
+                GeneratePillar();
 
             Debug.Log($"[IsometricGradientTilemapGenerator] Generated {size}x{size} Bottom->Top gradient (seed: {seed}).");
             
@@ -137,52 +137,26 @@ namespace Core.Gameplay
             }
 
             targetTilemap.ClearAllTiles();
-            DestroyPillarLayers();
+            leftPillarTilemap?.ClearAllTiles();
+            rightPillarTilemap?.ClearAllTiles();
             Debug.Log("[IsometricGradientTilemapGenerator] Tilemap cleared.");
         }
 
         private void GeneratePillar()
         {
-            DestroyPillarLayers();
+            leftPillarTilemap?.ClearAllTiles();
+            rightPillarTilemap?.ClearAllTiles();
 
-            if (pillarTile == null || pillarHeight <= 0)
-                return;
-
-            var surfaceRenderer = targetTilemap.GetComponent<TilemapRenderer>();
-            var baseSortOrder = surfaceRenderer != null ? surfaceRenderer.sortingOrder : 0;
-            var sortingLayerID = surfaceRenderer != null ? surfaceRenderer.sortingLayerID : 0;
-
-            for (var level = 1; level <= pillarHeight; level++)
+            for (var z = 1; z <= pillarHeight; z++)
             {
-                var go = new GameObject($"PillarLayer_{level}");
-                go.transform.SetParent(targetTilemap.transform.parent, false);
-                go.transform.localPosition = new Vector3(0f, -level * pillarLayerOffset, 0f);
-
-                var tilemap = go.AddComponent<Tilemap>();
-                tilemap.tileAnchor = targetTilemap.tileAnchor;
-
-                var renderer = go.AddComponent<TilemapRenderer>();
-                renderer.sortingLayerID = sortingLayerID;
-                renderer.sortingOrder = baseSortOrder - level;
-                if (surfaceRenderer != null)
-                {
-                    renderer.sortOrder = surfaceRenderer.sortOrder;
-                    renderer.mode = surfaceRenderer.mode;
-                }
-
-                for (var x = 0; x < size; x++)
+                if (leftWallTile != null && leftPillarTilemap != null)
                     for (var y = 0; y < size; y++)
-                        tilemap.SetTile(origin + new Vector3Int(x, y, 0), pillarTile);
+                        leftPillarTilemap.SetTile(origin + new Vector3Int(0, y, -z), leftWallTile);
 
-                _pillarLayers.Add(go);
+                if (rightWallTile != null && rightPillarTilemap != null)
+                    for (var x = 0; x < size; x++)
+                        rightPillarTilemap.SetTile(origin + new Vector3Int(x, 0, -z), rightWallTile);
             }
-        }
-
-        private void DestroyPillarLayers()
-        {
-            foreach (var go in _pillarLayers)
-                if (go != null) DestroyImmediate(go);
-            _pillarLayers.Clear();
         }
 
         private TileRule PickRule(float gradient)
