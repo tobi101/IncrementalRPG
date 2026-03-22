@@ -57,6 +57,15 @@ namespace Core.Gameplay
         [Header("Tile rules")]
         [SerializeField] private List<TileRule> tileRules = new();
         
+        [Header("Pillar")]
+        [SerializeField] private TileBase pillarTile;
+        [Min(0)]
+        [SerializeField] private int pillarHeight = 3;
+        [Tooltip("Смещение каждого слоя столба вниз по local Y. Подбирается под высоту боковой грани тайла.")]
+        [SerializeField] private float pillarLayerOffset = 0.29f;
+
+        [SerializeField, HideInInspector] private List<GameObject> _pillarLayers = new();
+
         [Header("Post Generate")]
         [SerializeField] private bool autoFitCameraAfterGenerate = true;
 
@@ -108,6 +117,8 @@ namespace Core.Gameplay
                 }
             }
 
+            GeneratePillar();
+
             Debug.Log($"[IsometricGradientTilemapGenerator] Generated {size}x{size} Bottom->Top gradient (seed: {seed}).");
             
             if (autoFitCameraAfterGenerate && cameraAutoFitter != null)
@@ -126,7 +137,52 @@ namespace Core.Gameplay
             }
 
             targetTilemap.ClearAllTiles();
+            DestroyPillarLayers();
             Debug.Log("[IsometricGradientTilemapGenerator] Tilemap cleared.");
+        }
+
+        private void GeneratePillar()
+        {
+            DestroyPillarLayers();
+
+            if (pillarTile == null || pillarHeight <= 0)
+                return;
+
+            var surfaceRenderer = targetTilemap.GetComponent<TilemapRenderer>();
+            var baseSortOrder = surfaceRenderer != null ? surfaceRenderer.sortingOrder : 0;
+            var sortingLayerID = surfaceRenderer != null ? surfaceRenderer.sortingLayerID : 0;
+
+            for (var level = 1; level <= pillarHeight; level++)
+            {
+                var go = new GameObject($"PillarLayer_{level}");
+                go.transform.SetParent(targetTilemap.transform.parent, false);
+                go.transform.localPosition = new Vector3(0f, -level * pillarLayerOffset, 0f);
+
+                var tilemap = go.AddComponent<Tilemap>();
+                tilemap.tileAnchor = targetTilemap.tileAnchor;
+
+                var renderer = go.AddComponent<TilemapRenderer>();
+                renderer.sortingLayerID = sortingLayerID;
+                renderer.sortingOrder = baseSortOrder - level;
+                if (surfaceRenderer != null)
+                {
+                    renderer.sortOrder = surfaceRenderer.sortOrder;
+                    renderer.mode = surfaceRenderer.mode;
+                }
+
+                for (var x = 0; x < size; x++)
+                    for (var y = 0; y < size; y++)
+                        tilemap.SetTile(origin + new Vector3Int(x, y, 0), pillarTile);
+
+                _pillarLayers.Add(go);
+            }
+        }
+
+        private void DestroyPillarLayers()
+        {
+            foreach (var go in _pillarLayers)
+                if (go != null) DestroyImmediate(go);
+            _pillarLayers.Clear();
         }
 
         private TileRule PickRule(float gradient)
