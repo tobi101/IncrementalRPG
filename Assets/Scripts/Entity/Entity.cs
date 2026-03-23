@@ -1,11 +1,16 @@
+using UnityEngine;
+
 namespace Entity
 {
     public abstract class Entity
     {
-        private string _stringId;
-        private int _maxHP;
+        public EntityConfig Config { get; }
+        public Vector2Int TileCoord { get; protected set; }
 
-        private string _entityName;
-        private string _entityDescription;
+        protected Entity(EntityConfig config, Vector2Int tileCoord)
+        {
+            Config = config;
+            TileCoord = tileCoord;
+        }
     }
 }
