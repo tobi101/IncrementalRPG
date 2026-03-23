@@ -15,6 +15,8 @@ namespace Reflex
     {
         [SerializeField] private Tilemap _groundTilemap;
         [SerializeField] private EntityConfig[] _spawnableConfigs;
+        [SerializeField] private DamageZoneConfig _damageZoneConfig;
+        [SerializeField] private DamageZoneView _damageZoneView;
 
         public void InstallBindings(ContainerBuilder builder)
         {
@@ -25,8 +27,11 @@ namespace Reflex
                 Resolution.Lazy
             );
 
-            builder.RegisterValue(_groundTilemap, new[] { typeof(Tilemap) });
+            var tileGrid = new TileGrid(_groundTilemap);
+            builder.RegisterValue(tileGrid, new[] { typeof(TileGrid) });
             builder.RegisterValue(_spawnableConfigs, new[] { typeof(EntityConfig[]) });
+            builder.RegisterValue(_damageZoneConfig, new[] { typeof(DamageZoneConfig) });
+            builder.RegisterValue(_damageZoneView, new[] { typeof(DamageZoneView) });
 
             builder.RegisterType(
                 typeof(PoolManager),
@@ -37,6 +42,13 @@ namespace Reflex
 
             builder.RegisterType(
                 typeof(SpawnService),
+                new[] { typeof(IService) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(DamageZone),
                 new[] { typeof(IService) },
                 Lifetime.Singleton,
                 Resolution.Lazy

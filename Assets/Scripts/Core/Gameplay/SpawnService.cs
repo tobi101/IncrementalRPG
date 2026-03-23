@@ -2,7 +2,6 @@ using System;
 using Entity;
 using IncrementalRPG.Scripts.Core;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
 namespace Core.Gameplay
@@ -11,23 +10,19 @@ namespace Core.Gameplay
     {
         private readonly PoolManager _poolManager;
         private readonly EntityConfig[] _configs;
-        private readonly Tilemap _tilemap;
+        private readonly TileGrid _tileGrid;
 
-        private TileGrid _tileGrid;
         private float _spawnInterval = 2f;
         private float _timer;
 
-        public SpawnService(PoolManager poolManager, EntityConfig[] configs, Tilemap tilemap)
+        public SpawnService(PoolManager poolManager, EntityConfig[] configs, TileGrid tileGrid)
         {
             _poolManager = poolManager;
             _configs = configs;
-            _tilemap = tilemap;
+            _tileGrid = tileGrid;
         }
 
-        public void Initialize()
-        {
-            _tileGrid = new TileGrid(_tilemap);
-        }
+        public void Initialize() { }
 
         public void Update(float deltaTime)
         {

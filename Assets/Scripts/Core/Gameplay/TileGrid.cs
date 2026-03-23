@@ -42,6 +42,31 @@ namespace Core.Gameplay
             return pos;
         }
 
+        public Vector2Int WorldToTile(Vector3 worldPos)
+        {
+            var cell = _tilemap.WorldToCell(worldPos);
+            return new Vector2Int(cell.x, cell.y);
+        }
+
+        public IEnumerable<Creature> GetAllPrimaries()
+        {
+            foreach (var slot in _slots)
+                if (slot?.Primary != null)
+                    yield return slot.Primary;
+        }
+
+        public bool TryGetPrimary(Vector2Int tileCoord, out Creature creature)
+        {
+            var local = tileCoord - _origin;
+            if (local.x < 0 || local.y < 0 || local.x >= _slots.GetLength(0) || local.y >= _slots.GetLength(1))
+            {
+                creature = null;
+                return false;
+            }
+            creature = _slots[local.x, local.y].Primary;
+            return creature != null;
+        }
+
         public bool TryGetRandomFreeTile(out Vector2Int tileCoord)
         {
             if (_freePrimaryTiles.Count == 0)

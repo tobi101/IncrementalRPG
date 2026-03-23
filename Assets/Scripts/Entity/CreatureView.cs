@@ -4,7 +4,10 @@ namespace Entity
 {
     public class CreatureView : MonoBehaviour
     {
+        private static readonly int GetHitTrigger = Animator.StringToHash("Get Hit");
+
         [SerializeField] private Transform _footAnchor;
+        [SerializeField] private Animator _animator;
 
         public Vector3 FootOffset => _footAnchor != null
             ? transform.position - _footAnchor.position
@@ -27,7 +30,8 @@ namespace Entity
 
         private void HandleHealthChanged(int current, int max)
         {
-            // TODO: update health bar visual
+            if (_animator == null) return;
+            _animator.SetTrigger(GetHitTrigger);
         }
     }
 }

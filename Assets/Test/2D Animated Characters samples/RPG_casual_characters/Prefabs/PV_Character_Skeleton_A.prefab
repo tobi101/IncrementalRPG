@@ -714,6 +714,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8787810238927947036}
   m_SourcePrefab: {fileID: 100100000, guid: a08d5d72934b1274b9265acd9b73a14e, type: 3}
+--- !u!95 &4670707040364986866 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 970267508377920508, guid: a08d5d72934b1274b9265acd9b73a14e, type: 3}
+  m_PrefabInstance: {fileID: 5595364538517496334}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5191318743522470371 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 409262977814678509, guid: a08d5d72934b1274b9265acd9b73a14e, type: 3}
@@ -732,6 +737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity.CreatureView
   _footAnchor: {fileID: 6231076204252242793}
+  _animator: {fileID: 4670707040364986866}
 --- !u!4 &6231076204252242793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2008465442334507367, guid: a08d5d72934b1274b9265acd9b73a14e, type: 3}
