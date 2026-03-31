@@ -10,5 +10,6 @@ namespace Entity
         public int goldDrop;
         public bool canCoexistWithOthers;
         public GameObject viewPrefab;
+        public AudioClip damageSound;
     }
 }

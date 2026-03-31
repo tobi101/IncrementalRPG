@@ -1,5 +1,6 @@
 using Core;
 using Core.Gameplay;
+using Core.Gameplay.Dungeon;
 using Core.Save;
 using Entity;
 using IncrementalRPG.Scripts.Core;
@@ -16,6 +17,8 @@ namespace Reflex
 {
     public class GameSceneInstaller : MonoBehaviour, IInstaller
     {
+        [SerializeField] private DungeonConfig _dungeonConfig;
+        
         [SerializeField] private Tilemap _groundTilemap;
         [SerializeField] private SpawnTable _spawnTable;
         [SerializeField] private DamageZoneConfig _damageZoneConfig;
@@ -33,7 +36,7 @@ namespace Reflex
 
         public void InstallBindings(ContainerBuilder builder)
         {
-            InitializeConfigs(builder);
+            // InitializeConfigs(builder);
             
             builder.RegisterType(
                 typeof(GameLoop),
@@ -115,7 +118,7 @@ namespace Reflex
 
         private void InitializeConfigs(ContainerBuilder builder)
         {
-            builder.RegisterValue(_spawnTable, new[] { typeof(SpawnTable) });
+            builder.RegisterValue(_dungeonConfig, new[] { typeof(DungeonConfig) });
             builder.RegisterValue(_damageZoneConfig, new[] { typeof(DamageZoneConfig) });
         }
     }

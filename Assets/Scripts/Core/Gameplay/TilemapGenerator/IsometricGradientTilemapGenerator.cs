@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,62 +6,19 @@ namespace Core.Gameplay
     [DisallowMultipleComponent]
     public class IsometricGradientTilemapGenerator : MonoBehaviour
     {
-        [Serializable]
-        public class TileVariant
-        {
-            public TileBase tile;
-            [Range(0f, 1f)] public float probability = 0.1f;
-        }
-
-        [Serializable]
-        public class TileRule
-        {
-            public TileBase tile;
-            public List<TileVariant> variants = new();
-            [Range(0f, 1f)] public float gradientMin = 0f;
-            [Range(0f, 1f)] public float gradientMax = 1f;
-        }
-
         [Header("References")]
         [SerializeField] private Tilemap targetTilemap;
         [SerializeField] private Tilemap leftPillarTilemap;
         [SerializeField] private Tilemap rightPillarTilemap;
         [SerializeField] private TilemapCameraAutoFitter cameraAutoFitter;
 
+        [Header("Config")]
+        [SerializeField] private TilemapGenerationConfig config;
+
         [Header("Grid")]
         [Min(1)]
         [SerializeField] private int size = 24;
         [SerializeField] private Vector3Int origin = Vector3Int.zero;
-
-        public enum GradientDirection
-        {
-            BottomToTop,        // снизу вверх (по Y)
-            TopToBottom,        // сверху вниз
-            LeftToRight,        // слева направо (по X)
-            RightToLeft,        // справа налево
-            BottomLeftToTopRight,  // угол → угол (X+Y)
-            BottomRightToTopLeft,  // угол → угол (-X+Y)
-        }
-
-        [Header("Gradient")]
-        [SerializeField] private GradientDirection gradientDirection = GradientDirection.BottomToTop;
-        [SerializeField] private AnimationCurve gradientRemap = AnimationCurve.Linear(0f, 0f, 1f, 1f);
-
-        [Header("Random")]
-        [SerializeField] private int seed = 12345;
-        [Tooltip("Масштаб волнистости границы: меньше = плавнее, больше = мельче")]
-        [Min(0.001f)] [SerializeField] private float noiseScale = 0.15f;
-        [Tooltip("Сила смещения границы шумом: 0 = ровная линия, 1 = сильные волны")]
-        [Range(0f, 1f)] [SerializeField] private float noiseBorderStrength = 0.25f;
-
-        [Header("Tile rules")]
-        [SerializeField] private List<TileRule> tileRules = new();
-        
-        [Header("Pillar")]
-        [SerializeField] private TileBase leftWallTile;
-        [SerializeField] private TileBase rightWallTile;
-        [Min(0)]
-        [SerializeField] private int pillarHeight = 3;
 
         [Header("Post Generate")]
         [SerializeField] private bool autoFitCameraAfterGenerate = true;
@@ -77,9 +32,21 @@ namespace Core.Gameplay
                 return;
             }
 
-            if (tileRules.Count == 0)
+            if (config == null)
             {
-                Debug.LogError("[IsometricGradientTilemapGenerator] Add at least one TileRule.");
+                Debug.LogError("[IsometricGradientTilemapGenerator] Generation Config is not assigned.");
+                return;
+            }
+
+            if (config.tileSet == null)
+            {
+                Debug.LogError("[IsometricGradientTilemapGenerator] Tile Set is not assigned in config.");
+                return;
+            }
+
+            if (config.tileSet.tileRules.Count == 0)
+            {
+                Debug.LogError("[IsometricGradientTilemapGenerator] Add at least one TileRule to the Tile Set.");
                 return;
             }
 
@@ -91,22 +58,22 @@ namespace Core.Gameplay
             {
                 for (var y = 0; y < size; y++)
                 {
-                    var gradient = gradientDirection switch
+                    var gradient = config.gradientDirection switch
                     {
-                        GradientDirection.BottomToTop         => (float)y / denominator,
-                        GradientDirection.TopToBottom         => 1f - (float)y / denominator,
-                        GradientDirection.LeftToRight         => (float)x / denominator,
-                        GradientDirection.RightToLeft         => 1f - (float)x / denominator,
-                        GradientDirection.BottomLeftToTopRight => (x + y) / (2f * denominator),
-                        GradientDirection.BottomRightToTopLeft => (size - 1 - x + y) / (2f * denominator),
-                        _                                     => (float)y / denominator,
+                        TilemapGradientDirection.BottomToTop          => (float)y / denominator,
+                        TilemapGradientDirection.TopToBottom          => 1f - (float)y / denominator,
+                        TilemapGradientDirection.LeftToRight          => (float)x / denominator,
+                        TilemapGradientDirection.RightToLeft          => 1f - (float)x / denominator,
+                        TilemapGradientDirection.BottomLeftToTopRight => (x + y) / (2f * denominator),
+                        TilemapGradientDirection.BottomRightToTopLeft => (size - 1 - x + y) / (2f * denominator),
+                        _                                             => (float)y / denominator,
                     };
                     gradient = Mathf.Clamp01(gradient);
-                    gradient = gradientRemap.Evaluate(gradient);
+                    gradient = config.gradientRemap.Evaluate(gradient);
 
-                    var noiseOffset = (seed % 9973) * 0.1f;
-                    var noise = Mathf.PerlinNoise(noiseOffset + x * noiseScale, noiseOffset + y * noiseScale);
-                    gradient = Mathf.Clamp01(gradient + (noise - 0.5f) * noiseBorderStrength);
+                    var noiseOffset = (config.seed % 9973) * 0.1f;
+                    var noise = Mathf.PerlinNoise(noiseOffset + x * config.noiseScale, noiseOffset + y * config.noiseScale);
+                    gradient = Mathf.Clamp01(gradient + (noise - 0.5f) * config.noiseBorderStrength);
 
                     var rule = PickRule(gradient);
                     var tile = PickTile(rule, x, y);
@@ -116,15 +83,13 @@ namespace Core.Gameplay
                 }
             }
 
-            if (pillarHeight > 0)
+            if (config.pillarHeight > 0)
                 GeneratePillar();
 
-            Debug.Log($"[IsometricGradientTilemapGenerator] Generated {size}x{size} Bottom->Top gradient (seed: {seed}).");
-            
+            Debug.Log($"[IsometricGradientTilemapGenerator] Generated {size}x{size} (seed: {config.seed}).");
+
             if (autoFitCameraAfterGenerate && cameraAutoFitter != null)
-            {
                 cameraAutoFitter.FitToTilemap();
-            }
         }
 
         [ContextMenu("Clear")]
@@ -147,26 +112,27 @@ namespace Core.Gameplay
             leftPillarTilemap?.ClearAllTiles();
             rightPillarTilemap?.ClearAllTiles();
 
-            for (var z = 1; z <= pillarHeight; z++)
+            for (var z = 1; z <= config.pillarHeight; z++)
             {
-                if (leftWallTile != null && leftPillarTilemap != null)
+                if (config.tileSet.leftWallTile != null && leftPillarTilemap != null)
                     for (var y = 0; y < size; y++)
-                        leftPillarTilemap.SetTile(origin + new Vector3Int(0, y, -z), leftWallTile);
+                        leftPillarTilemap.SetTile(origin + new Vector3Int(0, y, -z), config.tileSet.leftWallTile);
 
-                if (rightWallTile != null && rightPillarTilemap != null)
+                if (config.tileSet.rightWallTile != null && rightPillarTilemap != null)
                     for (var x = 0; x < size; x++)
-                        rightPillarTilemap.SetTile(origin + new Vector3Int(x, 0, -z), rightWallTile);
+                        rightPillarTilemap.SetTile(origin + new Vector3Int(x, 0, -z), config.tileSet.rightWallTile);
             }
         }
 
-        private TileRule PickRule(float gradient)
+        private TilemapTileSet.TileRule PickRule(float gradient)
         {
             var bestWeight = -1f;
             var bestIndex = 0;
+            var rules = config.tileSet.tileRules;
 
-            for (var i = 0; i < tileRules.Count; i++)
+            for (var i = 0; i < rules.Count; i++)
             {
-                var rule = tileRules[i];
+                var rule = rules[i];
                 if (rule.tile == null)
                     continue;
 
@@ -185,15 +151,15 @@ namespace Core.Gameplay
                 }
             }
 
-            return tileRules[bestIndex];
+            return rules[bestIndex];
         }
 
-        private TileBase PickTile(TileRule rule, int x, int y)
+        private TileBase PickTile(TilemapTileSet.TileRule rule, int x, int y)
         {
             if (rule.variants == null || rule.variants.Count == 0)
                 return rule.tile;
 
-            var random01 = HashTo01(seed, x, y, 83);
+            var random01 = HashTo01(config.seed, x, y, 83);
             var cumulative = 0f;
 
             foreach (var variant in rule.variants)
