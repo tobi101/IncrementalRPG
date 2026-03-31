@@ -9,5 +9,6 @@ namespace Core.Gameplay
         public float tickInterval = 1f;
         public float detectionRadiusX = 1f;
         public float detectionRadiusY = 0.5f;
+        public float collectTime = 2f;
     }
 }

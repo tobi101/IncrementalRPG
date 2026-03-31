@@ -8,6 +8,7 @@ namespace Core.Gameplay
 {
     public class SpawnService : IService
     {
+        public event Action<Vector2Int, int> OnCreatureKilled;
         private readonly PoolManager _poolManager;
         private readonly EntityConfig[] _configs;
         private readonly TileGrid _tileGrid;
@@ -56,6 +57,9 @@ namespace Core.Gameplay
                 _tileGrid.Free(creature);
                 view.Unbind();
                 _poolManager.Return(view, config);
+
+                if (config.goldDrop > 0)
+                    OnCreatureKilled?.Invoke(creature.TileCoord, config.goldDrop);
             };
             creature.OnDied += onDied;
         }

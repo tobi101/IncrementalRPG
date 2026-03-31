@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Entity;
+using IncrementalRPG.Scripts.AudioManager;
 using IncrementalRPG.Scripts.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,6 +15,7 @@ namespace Core.Gameplay
         private readonly TileGrid _tileGrid;
         private readonly DamageZoneConfig _config;
         private readonly DamageZoneView _view;
+        private readonly AudioManager _audioManager;
 
         private readonly List<Creature> _creaturesInZone = new List<Creature>();
 
@@ -26,11 +28,12 @@ namespace Core.Gameplay
         public event Action<State> OnStateChanged;
         public event Action OnDamageTick;
 
-        public DamageZone(TileGrid tileGrid, DamageZoneConfig config, DamageZoneView view)
+        public DamageZone(TileGrid tileGrid, DamageZoneConfig config, DamageZoneView view, AudioManager audioManager)
         {
             _tileGrid = tileGrid;
             _config = config;
             _view = view;
+            _audioManager = audioManager;
         }
 
         public void Initialize()
@@ -89,9 +92,13 @@ namespace Core.Gameplay
             if (_tickTimer < _config.tickInterval) return;
 
             _tickTimer = 0f;
-            foreach (var creature in _creaturesInZone)
-                creature.TakeDamage(_config.damagePerTick);
+            for (var i = 0; i < _creaturesInZone.Count; i++)
+            {
+                _creaturesInZone[i].TakeDamage(_config.damagePerTick);
+                _audioManager.PlayHitAudio(i * 0.1f);
+            }
 
+            _audioManager.PlayWaveAudio();
             OnDamageTick?.Invoke();
         }
     }

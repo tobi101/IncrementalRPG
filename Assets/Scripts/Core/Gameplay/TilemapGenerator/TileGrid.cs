@@ -112,10 +112,37 @@ namespace Core.Gameplay
             return _slots[local.x, local.y];
         }
 
+        public CoinPile PlaceCoin(Vector2Int tileCoord, int amount)
+        {
+            var slot = GetSlot(tileCoord);
+            if (slot.Coin != null)
+            {
+                slot.Coin.Add(amount);
+                return slot.Coin;
+            }
+            var pile = new CoinPile(tileCoord, amount);
+            slot.Coin = pile;
+            return pile;
+        }
+
+        public void RemoveCoin(Vector2Int tileCoord)
+        {
+            var slot = GetSlot(tileCoord);
+            slot.Coin = null;
+        }
+
+        public IEnumerable<CoinPile> GetAllCoinPiles()
+        {
+            foreach (var slot in _slots)
+                if (slot?.Coin != null)
+                    yield return slot.Coin;
+        }
+
         private class TileSlot
         {
             public Creature Primary;
             public readonly List<Creature> Coexisting = new();
+            public CoinPile Coin;
         }
     }
 }

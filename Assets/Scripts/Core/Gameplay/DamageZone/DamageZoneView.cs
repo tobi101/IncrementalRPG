@@ -41,7 +41,12 @@ namespace Core.Gameplay
         private void PlayAttack(SkeletonAnimation wave)
         {
             var entry = wave.AnimationState.SetAnimation(0, AnimAttack, false);
-            entry.Complete += _ => wave.AnimationState.SetAnimation(0, AnimIdle, true);
+            entry.MixDuration = 0f;
+            entry.Complete += _ =>
+            {
+                var idle = wave.AnimationState.SetAnimation(0, AnimIdle, true);
+                idle.MixDuration = 0f;
+            };
         }
 
         private void OnDrawGizmos()
