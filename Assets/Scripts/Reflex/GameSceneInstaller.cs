@@ -17,7 +17,7 @@ namespace Reflex
     public class GameSceneInstaller : MonoBehaviour, IInstaller
     {
         [SerializeField] private Tilemap _groundTilemap;
-        [SerializeField] private EntityConfig[] _spawnableConfigs;
+        [SerializeField] private SpawnTable _spawnTable;
         [SerializeField] private DamageZoneConfig _damageZoneConfig;
         [SerializeField] private DamageZoneView _damageZoneView;
         [SerializeField] private CoinPileView _coinPileViewPrefab;
@@ -115,7 +115,7 @@ namespace Reflex
 
         private void InitializeConfigs(ContainerBuilder builder)
         {
-            builder.RegisterValue(_spawnableConfigs, new[] { typeof(EntityConfig[]) });
+            builder.RegisterValue(_spawnTable, new[] { typeof(SpawnTable) });
             builder.RegisterValue(_damageZoneConfig, new[] { typeof(DamageZoneConfig) });
         }
     }

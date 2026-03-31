@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b87b685d0ec4048c59bc004273f99925, type: 3}
-  m_Name: TestEntity
+  m_Name: Slime
   m_EditorClassIdentifier: Assembly-CSharp::Entity.EntityConfig
-  entityName: SkeletonTest
-  maxHP: 10
-  goldDrop: 12
+  entityName: Slime
+  maxHP: 5
+  goldDrop: 10
   canCoexistWithOthers: 0
-  viewPrefab: {fileID: 5191318743522470371, guid: 64cd5fc4c3a14154a86eb0d638989502, type: 3}
+  viewPrefab: {fileID: 0}

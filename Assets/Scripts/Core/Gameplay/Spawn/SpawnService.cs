@@ -2,7 +2,6 @@ using System;
 using Entity;
 using IncrementalRPG.Scripts.Core;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Core.Gameplay
 {
@@ -10,16 +9,16 @@ namespace Core.Gameplay
     {
         public event Action<Vector2Int, int> OnCreatureKilled;
         private readonly PoolManager _poolManager;
-        private readonly EntityConfig[] _configs;
+        private readonly SpawnTable _spawnTable;
         private readonly TileGrid _tileGrid;
 
         private float _spawnInterval = 2f;
         private float _timer;
 
-        public SpawnService(PoolManager poolManager, EntityConfig[] configs, TileGrid tileGrid)
+        public SpawnService(PoolManager poolManager, SpawnTable spawnTable, TileGrid tileGrid)
         {
             _poolManager = poolManager;
-            _configs = configs;
+            _spawnTable = spawnTable;
             _tileGrid = tileGrid;
         }
 
@@ -35,10 +34,11 @@ namespace Core.Gameplay
 
         private void TrySpawn()
         {
-            if (_configs.Length == 0) return;
             if (!_tileGrid.TryGetRandomFreeTile(out var coord)) return;
 
-            var config = _configs[Random.Range(0, _configs.Length)];
+            var config = _spawnTable.Pick();
+            if (config == null) return;
+
             Spawn(config, coord);
         }
 
