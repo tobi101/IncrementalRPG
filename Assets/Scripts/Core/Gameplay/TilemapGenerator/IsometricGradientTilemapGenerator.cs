@@ -22,6 +22,8 @@ namespace Core.Gameplay
 
         [Header("Post Generate")]
         [SerializeField] private bool autoFitCameraAfterGenerate = true;
+        
+        public TilemapGenerationConfig Config => config;
 
         [ContextMenu("Generate")]
         public void Generate()

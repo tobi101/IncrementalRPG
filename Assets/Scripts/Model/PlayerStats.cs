@@ -5,7 +5,7 @@ namespace Model
     public struct PlayerInfo
     {
         // Map
-        public int MapSize;
+        public int AdditionalMapSize;
 
         // Damage Zone
         public int ZoneDamage;
@@ -27,7 +27,7 @@ namespace Model
 
         public static PlayerInfo Default => new PlayerInfo
         {
-            MapSize = 6,
+            AdditionalMapSize = 0,
             //-----
             ZoneDamage = 2,
             ZoneDamageSpeed = 1,

@@ -7,32 +7,12 @@ namespace Core.Gameplay
 {
     public class TileGrid
     {
-        private readonly Tilemap _tilemap;
-        private readonly float _spawnYOffset;
-        private readonly Vector2Int _origin;
-        private readonly TileSlot[,] _slots;
-        private readonly List<Vector2Int> _freePrimaryTiles = new();
-
-        public TileGrid(Tilemap tilemap, float spawnYOffset = 0f)
-        {
-            _tilemap = tilemap;
-            _spawnYOffset = spawnYOffset;
-
-            tilemap.CompressBounds();
-            var bounds = tilemap.cellBounds;
-            _origin = new Vector2Int(bounds.xMin, bounds.yMin);
-            var sizeX = bounds.size.x;
-            var sizeY = bounds.size.y;
-
-            _slots = new TileSlot[sizeX, sizeY];
-            for (var x = 0; x < sizeX; x++)
-            for (var y = 0; y < sizeY; y++)
-            {
-                _slots[x, y] = new TileSlot();
-                _freePrimaryTiles.Add(new Vector2Int(x + _origin.x, y + _origin.y));
-            }
-        }
-
+        private Tilemap _tilemap;
+        private float _spawnYOffset;
+        private Vector2Int _origin;
+        private TileSlot[,] _slots;
+        private List<Vector2Int> _freePrimaryTiles = new();
+        
         public Vector3 GetWorldPosition(Vector2Int tileCoord)
         {
             var p0 = _tilemap.GetCellCenterWorld(new Vector3Int(tileCoord.x, tileCoord.y, 0));
@@ -106,43 +86,36 @@ namespace Core.Gameplay
             }
         }
 
+        public void Initialize(Tilemap tilemap, float spawnYOffset = 0f)
+        {
+            _tilemap = tilemap;
+            _spawnYOffset = spawnYOffset;
+
+            tilemap.CompressBounds();
+            var bounds = tilemap.cellBounds;
+            _origin = new Vector2Int(bounds.xMin, bounds.yMin);
+            var sizeX = bounds.size.x;
+            var sizeY = bounds.size.y;
+
+            _slots = new TileSlot[sizeX, sizeY];
+            for (var x = 0; x < sizeX; x++)
+            for (var y = 0; y < sizeY; y++)
+            {
+                _slots[x, y] = new TileSlot();
+                _freePrimaryTiles.Add(new Vector2Int(x + _origin.x, y + _origin.y));
+            }
+        }
+
         private TileSlot GetSlot(Vector2Int tileCoord)
         {
             var local = tileCoord - _origin;
             return _slots[local.x, local.y];
         }
 
-        public CoinPile PlaceCoin(Vector2Int tileCoord, int amount)
-        {
-            var slot = GetSlot(tileCoord);
-            if (slot.Coin != null)
-            {
-                slot.Coin.Add(amount);
-                return slot.Coin;
-            }
-            var pile = new CoinPile(tileCoord, amount);
-            slot.Coin = pile;
-            return pile;
-        }
-
-        public void RemoveCoin(Vector2Int tileCoord)
-        {
-            var slot = GetSlot(tileCoord);
-            slot.Coin = null;
-        }
-
-        public IEnumerable<CoinPile> GetAllCoinPiles()
-        {
-            foreach (var slot in _slots)
-                if (slot?.Coin != null)
-                    yield return slot.Coin;
-        }
-
         private class TileSlot
         {
             public Creature Primary;
             public readonly List<Creature> Coexisting = new();
-            public CoinPile Coin;
         }
     }
 }

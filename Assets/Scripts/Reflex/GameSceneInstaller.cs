@@ -17,16 +17,17 @@ namespace Reflex
 {
     public class GameSceneInstaller : MonoBehaviour, IInstaller
     {
-        [SerializeField] private DungeonConfig _dungeonConfig;
-        
-        [SerializeField] private Tilemap _groundTilemap;
-        [SerializeField] private SpawnTable _spawnTable;
+        [SerializeField] private DungeonList _dungeonList;
         [SerializeField] private DamageZoneConfig _damageZoneConfig;
+        
+        [SerializeField] private AudioManager _audioManager;
+        [SerializeField] private IsometricGradientTilemapGenerator _isometricGradientTilemapGenerator;
+        [SerializeField] private Tilemap _groundTilemap;
+
         [SerializeField] private DamageZoneView _damageZoneView;
         [SerializeField] private CoinPileView _coinPileViewPrefab;
-        [SerializeField] private GoldWalletView _goldWalletView;
+        // [SerializeField] private GoldWalletView _goldWalletView;
 
-        [SerializeField] private AudioManager _audioManager;
 
         private void Awake()
         {
@@ -36,11 +37,11 @@ namespace Reflex
 
         public void InstallBindings(ContainerBuilder builder)
         {
-            // InitializeConfigs(builder);
+            InitializeConfigs(builder);
             
             builder.RegisterType(
                 typeof(GameLoop),
-                new[] { typeof(IStartable), typeof(ITickable) },
+                new[] { typeof(IAwakeable), typeof(IStartable), typeof(ITickable) },
                 Lifetime.Singleton,
                 Resolution.Lazy
             );
@@ -60,9 +61,10 @@ namespace Reflex
             );
             
             builder.RegisterValue(_audioManager);
-
-            // var tileGrid = new TileGrid(_groundTilemap);
-            // builder.RegisterValue(tileGrid, new[] { typeof(TileGrid) });
+            builder.RegisterValue(_isometricGradientTilemapGenerator);
+            
+            var tileGrid = new TileGrid();
+            builder.RegisterValue(tileGrid, new[] { typeof(TileGrid) });
             
             // builder.RegisterType(
             //     typeof(PoolManager),
@@ -118,7 +120,7 @@ namespace Reflex
 
         private void InitializeConfigs(ContainerBuilder builder)
         {
-            builder.RegisterValue(_dungeonConfig, new[] { typeof(DungeonConfig) });
+            builder.RegisterValue(_dungeonList, new[] { typeof(DungeonList) });
             builder.RegisterValue(_damageZoneConfig, new[] { typeof(DamageZoneConfig) });
         }
     }
