@@ -41,4 +41,4 @@ MonoBehaviour:
   seed: 12345
   noiseScale: 0.15
   noiseBorderStrength: 0.25
-  pillarHeight: 3
+  pillarHeight: 20

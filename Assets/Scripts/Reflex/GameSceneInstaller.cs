@@ -63,8 +63,8 @@ namespace Reflex
             builder.RegisterValue(_audioManager);
             builder.RegisterValue(_isometricGradientTilemapGenerator);
             
-            var tileGrid = new TileGrid();
-            builder.RegisterValue(tileGrid, new[] { typeof(TileGrid) });
+            // var tileGrid = new TileGrid();
+            // builder.RegisterValue(tileGrid, new[] { typeof(TileGrid) });
             
             // builder.RegisterType(
             //     typeof(PoolManager),

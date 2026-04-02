@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Core.Gameplay;
 using Core.Gameplay.Dungeon;
 using IncrementalRPG.Scripts.Core;
 using IncrementalRPG.Scripts.Reflex;
@@ -11,7 +12,9 @@ namespace Core
     public class GameLoop : IAwakeable, IStartable, ITickable
     {
         private readonly List<IService> _services;
+        
         [Inject] private DungeonList _dungeonList;
+        [Inject] private IsometricGradientTilemapGenerator _isometricTilemapGenerator;
 
         private DungeonConfig _currentDungeon;
         
@@ -46,7 +49,8 @@ namespace Core
         private void InitGameZone()
         {
             _currentDungeon = _dungeonList.Get(0);
-            
+            _isometricTilemapGenerator.config = _currentDungeon.tilemapGenerationConfig;
+            _isometricTilemapGenerator.Generate();
         }
     }
 }

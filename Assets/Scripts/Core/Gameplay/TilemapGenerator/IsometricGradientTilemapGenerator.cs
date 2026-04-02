@@ -13,7 +13,7 @@ namespace Core.Gameplay
         [SerializeField] private TilemapCameraAutoFitter cameraAutoFitter;
 
         [Header("Config")]
-        [SerializeField] private TilemapGenerationConfig config;
+        [SerializeField] public TilemapGenerationConfig config;
 
         [Header("Grid")]
         [Min(1)]
