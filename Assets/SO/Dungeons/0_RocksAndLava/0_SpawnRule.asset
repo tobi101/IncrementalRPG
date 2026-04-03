@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entity.SpawnTable
   entries:
   - config: {fileID: 11400000, guid: ea27611c1934e48299db5b237a35e436, type: 2}
-    weight: 100
+    weight: 33
+  - config: {fileID: 11400000, guid: c92105f795d624f9799ec804a854414b, type: 2}
+    weight: 33
+  - config: {fileID: 11400000, guid: f625a2aa271d14fe7834195662c85276, type: 2}
+    weight: 33

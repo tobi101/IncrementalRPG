@@ -1,3 +1,4 @@
+using Spine.Unity;
 using UnityEngine;
 
 namespace Entity
@@ -7,17 +8,19 @@ namespace Entity
         private static readonly int GetHitTrigger = Animator.StringToHash("Get Hit");
 
         [SerializeField] private Transform _footAnchor;
-        [SerializeField] private Animator _animator;
+        [SerializeField] private SkeletonAnimation _animationBody;
 
         public Vector3 FootOffset => _footAnchor != null
             ? transform.position - _footAnchor.position
             : Vector3.zero;
 
         private Creature _bound;
+        private int _previousHealth;
 
         public void Bind(Creature creature)
         {
             _bound = creature;
+            _previousHealth = creature.CurrentHP;
             _bound.OnHealthChanged += HandleHealthChanged;
         }
 
@@ -30,8 +33,10 @@ namespace Entity
 
         private void HandleHealthChanged(int current, int max)
         {
-            if (_animator == null) return;
-            _animator.SetTrigger(GetHitTrigger);
+            if (_animationBody != null && current < _previousHealth)
+                _animationBody.AnimationState.SetAnimation(0, "damage", false);
+
+            _previousHealth = current;
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Core.Gameplay
     {
         public int damagePerTick = 1;
         public float tickInterval = 1f;
-        public float detectionRadiusX = 0.6f;
-        public float detectionRadiusY = 0.33f;
+        public float baseRadius = 0.6f;
+        public float aspectRatio = 0.55f;
     }
 }

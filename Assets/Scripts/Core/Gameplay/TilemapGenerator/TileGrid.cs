@@ -10,8 +10,9 @@ namespace Core.Gameplay
         private Tilemap _tilemap;
         private float _spawnYOffset;
         private Vector2Int _origin;
+        
         private TileSlot[,] _slots;
-        private List<Vector2Int> _freePrimaryTiles = new();
+        private List<Vector2Int> _freeTiles = new();
         
         public Vector3 GetWorldPosition(Vector2Int tileCoord)
         {
@@ -28,14 +29,14 @@ namespace Core.Gameplay
             return new Vector2Int(cell.x, cell.y);
         }
 
-        public IEnumerable<Creature> GetAllPrimaries()
+        public IEnumerable<Creature> GetAll()
         {
             foreach (var slot in _slots)
-                if (slot?.Primary != null)
-                    yield return slot.Primary;
+                if (slot?.Creature != null)
+                    yield return slot.Creature;
         }
 
-        public bool TryGetPrimary(Vector2Int tileCoord, out Creature creature)
+        public bool TryGet(Vector2Int tileCoord, out Creature creature)
         {
             var local = tileCoord - _origin;
             if (local.x < 0 || local.y < 0 || local.x >= _slots.GetLength(0) || local.y >= _slots.GetLength(1))
@@ -43,47 +44,33 @@ namespace Core.Gameplay
                 creature = null;
                 return false;
             }
-            creature = _slots[local.x, local.y].Primary;
+            creature = _slots[local.x, local.y].Creature;
             return creature != null;
         }
 
         public bool TryGetRandomFreeTile(out Vector2Int tileCoord)
         {
-            if (_freePrimaryTiles.Count == 0)
+            if (_freeTiles.Count == 0)
             {
                 tileCoord = default;
                 return false;
             }
-            tileCoord = _freePrimaryTiles[Random.Range(0, _freePrimaryTiles.Count)];
+            tileCoord = _freeTiles[Random.Range(0, _freeTiles.Count)];
             return true;
         }
 
         public void Place(Creature creature)
         {
             var slot = GetSlot(creature.TileCoord);
-            if (creature.Config.canCoexistWithOthers)
-            {
-                slot.Coexisting.Add(creature);
-            }
-            else
-            {
-                slot.Primary = creature;
-                _freePrimaryTiles.Remove(creature.TileCoord);
-            }
+            slot.Creature = creature;
+            _freeTiles.Remove(creature.TileCoord);
         }
 
         public void Free(Creature creature)
         {
             var slot = GetSlot(creature.TileCoord);
-            if (creature.Config.canCoexistWithOthers)
-            {
-                slot.Coexisting.Remove(creature);
-            }
-            else
-            {
-                slot.Primary = null;
-                _freePrimaryTiles.Add(creature.TileCoord);
-            }
+            slot.Creature = null;
+            _freeTiles.Add(creature.TileCoord);
         }
 
         public void Initialize(Tilemap tilemap, float spawnYOffset = 0f)
@@ -102,7 +89,7 @@ namespace Core.Gameplay
             for (var y = 0; y < sizeY; y++)
             {
                 _slots[x, y] = new TileSlot();
-                _freePrimaryTiles.Add(new Vector2Int(x + _origin.x, y + _origin.y));
+                _freeTiles.Add(new Vector2Int(x + _origin.x, y + _origin.y));
             }
         }
 
@@ -114,8 +101,7 @@ namespace Core.Gameplay
 
         private class TileSlot
         {
-            public Creature Primary;
-            public readonly List<Creature> Coexisting = new();
+            public Creature Creature;
         }
     }
 }

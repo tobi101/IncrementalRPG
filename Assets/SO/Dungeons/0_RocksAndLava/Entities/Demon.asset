@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b87b685d0ec4048c59bc004273f99925, type: 3}
-  m_Name: Slime
+  m_Name: Demon
   m_EditorClassIdentifier: Assembly-CSharp::Entity.EntityConfig
-  entityName: Slime
+  entityName: Demon
   maxHP: 5
   goldDrop: 10
-  viewPrefab: {fileID: 5006508172201667331, guid: 8c0d80cf5d7254da592a2c44c6a575a1, type: 3}
+  viewPrefab: {fileID: 4410620522826001164, guid: fc78efcae8da34268b1702183abf3ac3, type: 3}
   damageSound: {fileID: 8300000, guid: 9f3043831551b45498322abca9b68e89, type: 3}

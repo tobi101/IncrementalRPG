@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.TilemapTileSet
   tileRules:
   - tile: {fileID: 11400000, guid: 78f3e100842fa4fa8ad876a118edb76b, type: 2}
-    variants: []
+    variants:
+    - tile: {fileID: 11400000, guid: 30860781fd7ee402fb01676decffcf59, type: 2}
+      probability: 0.07
     gradientMin: 0
-    gradientMax: 0.65
+    gradientMax: 0.8
   - tile: {fileID: 11400000, guid: cb77159465b494a1f9ed8ec0e1721a3c, type: 2}
     variants: []
-    gradientMin: 0.35
+    gradientMin: 0.6
     gradientMax: 1
   leftWallTile: {fileID: 11400000, guid: a457808cda73846f7aa94624309c61eb, type: 2}
   rightWallTile: {fileID: 11400000, guid: bffd33e0c4d3c4bd693572f3f217d2b3, type: 2}

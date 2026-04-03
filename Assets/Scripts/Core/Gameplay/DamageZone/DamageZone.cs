@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Entity;
 using IncrementalRPG.Scripts.AudioManager;
 using IncrementalRPG.Scripts.Core;
+using Model;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,7 @@ namespace Core.Gameplay
         private readonly DamageZoneConfig _config;
         private readonly DamageZoneView _view;
         private readonly AudioManager _audioManager;
+        private readonly Player _player;
 
         private readonly List<Creature> _creaturesInZone = new List<Creature>();
 
@@ -23,17 +25,20 @@ namespace Core.Gameplay
         private float _tickTimer;
 
         public Vector3 WorldPosition => _worldPosition;
+        public float RadiusX => _player.ZoneSize.Radius;
+        public float RadiusY => _player.ZoneSize.Radius * _config.aspectRatio;
         public State CurrentState { get; private set; } = State.Idle;
 
         public event Action<State> OnStateChanged;
         public event Action OnDamageTick;
 
-        public DamageZone(TileGrid tileGrid, DamageZoneConfig config, DamageZoneView view, AudioManager audioManager)
+        public DamageZone(TileGrid tileGrid, DamageZoneConfig config, DamageZoneView view, AudioManager audioManager, Player player)
         {
             _tileGrid = tileGrid;
             _config = config;
             _view = view;
             _audioManager = audioManager;
+            _player = player;
         }
 
         public void Initialize()
@@ -59,10 +64,10 @@ namespace Core.Gameplay
         private void RefreshCreaturesInZone()
         {
             _creaturesInZone.Clear();
-            var a = _config.detectionRadiusX;
-            var b = _config.detectionRadiusY;
+            var a = RadiusX;
+            var b = RadiusY;
 
-            foreach (var creature in _tileGrid.GetAllPrimaries())
+            foreach (var creature in _tileGrid.GetAll())
             {
                 var creatureWorldPos = _tileGrid.GetWorldPosition(creature.TileCoord);
                 var dx = (creatureWorldPos.x - _worldPosition.x) / a;

@@ -1,4 +1,5 @@
 using System;
+using Core.Gameplay.Dungeon;
 using Entity;
 using IncrementalRPG.Scripts.Core;
 using UnityEngine;
@@ -9,20 +10,30 @@ namespace Core.Gameplay
     {
         public event Action<Vector2Int, int> OnCreatureKilled;
         private readonly PoolManager _poolManager;
-        private readonly SpawnTable _spawnTable;
         private readonly TileGrid _tileGrid;
+        private SpawnTable _spawnTable;
 
         private float _spawnInterval = 2f;
         private float _timer;
 
-        public SpawnService(PoolManager poolManager, SpawnTable spawnTable, TileGrid tileGrid)
+        public SpawnService(PoolManager poolManager, TileGrid tileGrid)
         {
             _poolManager = poolManager;
-            _spawnTable = spawnTable;
             _tileGrid = tileGrid;
         }
 
+        public void SetDungeon(DungeonConfig dungeon)
+        {
+            _spawnTable = dungeon.spawnTable;
+        }
+
         public void Initialize() { }
+
+        public void SpawnInitial(int count)
+        {
+            for (var i = 0; i < count; i++)
+                TrySpawn();
+        }
 
         public void Update(float deltaTime)
         {

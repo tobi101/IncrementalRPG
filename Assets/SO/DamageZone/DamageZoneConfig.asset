@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.DamageZoneConfig
   damagePerTick: 4
   tickInterval: 1
-  detectionRadiusX: 0.6
-  detectionRadiusY: 0.33
-  collectTime: 2
+  baseRadius: 0.6
+  aspectRatio: 0.55

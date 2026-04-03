@@ -8,7 +8,6 @@ namespace Entity
         public string entityName;
         public int maxHP;
         public int goldDrop;
-        public bool canCoexistWithOthers;
         public GameObject viewPrefab;
         public AudioClip damageSound;
     }

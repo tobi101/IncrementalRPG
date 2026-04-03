@@ -17,13 +17,20 @@ namespace Core.Gameplay
 
         [Header("Grid")]
         [Min(1)]
-        [SerializeField] private int size = 24;
+        [SerializeField] private int size = 16;
         [SerializeField] private Vector3Int origin = Vector3Int.zero;
 
         [Header("Post Generate")]
         [SerializeField] private bool autoFitCameraAfterGenerate = true;
         
         public TilemapGenerationConfig Config => config;
+        public Tilemap TargetTilemap => targetTilemap;
+
+        public int Size
+        {
+            get => size; 
+            set => size = value;
+        }
 
         [ContextMenu("Generate")]
         public void Generate()

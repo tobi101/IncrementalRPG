@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 0_TilemapGenerationConfig
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.TilemapGenerationConfig
   tileSet: {fileID: 11400000, guid: d10c6ec608003481e8f0d31396fc88ba, type: 2}
-  gradientDirection: 0
+  gradientDirection: 4
   gradientRemap:
     serializedVersion: 2
     m_Curve:
@@ -38,7 +38,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  seed: 12345
-  noiseScale: 0.15
-  noiseBorderStrength: 0.25
-  pillarHeight: 20
+  seed: 4321
+  noiseScale: 0.87
+  noiseBorderStrength: 0.2
+  pillarHeight: 15

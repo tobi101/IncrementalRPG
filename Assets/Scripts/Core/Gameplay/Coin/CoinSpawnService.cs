@@ -32,17 +32,6 @@ namespace Core.Gameplay
 
         private void HandleCreatureKilled(Vector2Int coord, int amount)
         {
-            // var pile = _tileGrid.PlaceCoin(coord, amount);
-            //
-            // if (_pileViews.ContainsKey(pile))
-            //     return; // уже существует, вьюшка обновится через OnChanged
-            //
-            // var worldPos = _tileGrid.GetWorldPosition(coord);
-            // var view = _pool.Get();
-            // view.Bind(pile, worldPos);
-            // _pileViews[pile] = view;
-            //
-            // pile.OnCollected += () => ReturnPile(pile);
         }
 
         private void ReturnPile(CoinPile pile)
@@ -52,7 +41,6 @@ namespace Core.Gameplay
             view.Unbind();
             _pool.Return(view);
             _pileViews.Remove(pile);
-            // _tileGrid.RemoveCoin(pile.TileCoord);
         }
     }
 }

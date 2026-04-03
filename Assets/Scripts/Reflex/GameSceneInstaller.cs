@@ -22,11 +22,8 @@ namespace Reflex
         
         [SerializeField] private AudioManager _audioManager;
         [SerializeField] private IsometricGradientTilemapGenerator _isometricGradientTilemapGenerator;
-        [SerializeField] private Tilemap _groundTilemap;
 
         [SerializeField] private DamageZoneView _damageZoneView;
-        [SerializeField] private CoinPileView _coinPileViewPrefab;
-        // [SerializeField] private GoldWalletView _goldWalletView;
 
 
         private void Awake()
@@ -62,41 +59,35 @@ namespace Reflex
             
             builder.RegisterValue(_audioManager);
             builder.RegisterValue(_isometricGradientTilemapGenerator);
+            builder.RegisterValue(_damageZoneView, new[] { typeof(DamageZoneView) });
             
-            // var tileGrid = new TileGrid();
-            // builder.RegisterValue(tileGrid, new[] { typeof(TileGrid) });
+            var tileGrid = new TileGrid();
+            builder.RegisterValue(tileGrid, new[] { typeof(TileGrid) });
             
-            // builder.RegisterType(
-            //     typeof(PoolManager),
-            //     new[] { typeof(IService), typeof(PoolManager) },
-            //     Lifetime.Singleton,
-            //     Resolution.Lazy
-            // );
-            //
-            // builder.RegisterType(
-            //     typeof(SpawnService),
-            //     new[] { typeof(IService), typeof(SpawnService) },
-            //     Lifetime.Singleton,
-            //     Resolution.Lazy
-            // );
-            //
-            // builder.RegisterType(
-            //     typeof(DamageZone),
-            //     new[] { typeof(IService), typeof(DamageZone) },
-            //     Lifetime.Singleton,
-            //     Resolution.Lazy
-            // );
-            //
+            builder.RegisterType(
+                typeof(PoolManager),
+                new[] { typeof(IService), typeof(PoolManager) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+            
+            builder.RegisterType(
+                typeof(SpawnService),
+                new[] { typeof(IService), typeof(SpawnService) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+            
+            builder.RegisterType(
+                typeof(DamageZone),
+                new[] { typeof(IService), typeof(DamageZone) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+            
             // builder.RegisterType(
             //     typeof(GoldWallet),
             //     new[] { typeof(IService), typeof(ISaveable), typeof(GoldWallet) },
-            //     Lifetime.Singleton,
-            //     Resolution.Lazy
-            // );
-            //
-            // builder.RegisterType(
-            //     typeof(CoinSpawnService),
-            //     new[] { typeof(IService) },
             //     Lifetime.Singleton,
             //     Resolution.Lazy
             // );
@@ -108,8 +99,6 @@ namespace Reflex
             //     Resolution.Lazy
             // );
             
-            // builder.RegisterValue(_damageZoneView, new[] { typeof(DamageZoneView) });
-            // builder.RegisterValue(_coinPileViewPrefab, new[] { typeof(CoinPileView) });
             // builder.RegisterValue(_goldWalletView, new[] { typeof(GoldWalletView) });
         }
 

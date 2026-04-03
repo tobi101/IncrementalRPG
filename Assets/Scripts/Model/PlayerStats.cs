@@ -29,18 +29,18 @@ namespace Model
         {
             AdditionalMapSize = 0,
             //-----
-            ZoneDamage = 2,
-            ZoneDamageSpeed = 1,
-            ZoneSize = ZoneSize.Default,
+            ZoneDamage = 0,
+            ZoneDamageSpeed = 0,
+            ZoneSize = new ZoneSize { Radius = 0f },
             //-----
             GoldTotal = 100,
             ShardTotal = 0,
             //-----
-            SessionDuration = 10f,
+            SessionDuration = 0f,
             //-----
-            SpawnSpeed = 1f,
-            StartSpawnObjectCount = 1,
-            SpawnObjectCountMax = 5
+            SpawnSpeed = 0f,
+            StartSpawnObjectCount = 0,
+            SpawnObjectCountMax = 0
             //-----
         };
     }

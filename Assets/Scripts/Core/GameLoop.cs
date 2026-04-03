@@ -4,6 +4,7 @@ using Core.Gameplay;
 using Core.Gameplay.Dungeon;
 using IncrementalRPG.Scripts.Core;
 using IncrementalRPG.Scripts.Reflex;
+using Model;
 using Reflex.Attributes;
 
 
@@ -15,6 +16,9 @@ namespace Core
         
         [Inject] private DungeonList _dungeonList;
         [Inject] private IsometricGradientTilemapGenerator _isometricTilemapGenerator;
+        [Inject] private SpawnService _spawnService;
+        [Inject] private TileGrid _tileGrid;
+        [Inject] private Player _player;
 
         private DungeonConfig _currentDungeon;
         
@@ -31,7 +35,8 @@ namespace Core
 
         public void OnStart()
         {
-            
+            var zoneSize = _currentDungeon.initialSpawnCount + _player.StartSpawnObjectCount;
+            _spawnService.SpawnInitial(zoneSize);
         }
 
         public void Tick(float deltaTime)
@@ -49,8 +54,19 @@ namespace Core
         private void InitGameZone()
         {
             _currentDungeon = _dungeonList.Get(0);
+            
+            _spawnService.SetDungeon(_currentDungeon);
+            
             _isometricTilemapGenerator.config = _currentDungeon.tilemapGenerationConfig;
+            _isometricTilemapGenerator.Size = _currentDungeon.minPlayZoneSize;
             _isometricTilemapGenerator.Generate();
+            
+            _tileGrid.Initialize(_isometricTilemapGenerator.TargetTilemap);
+        }
+
+        private void InitDamageZone()
+        {
+            
         }
     }
 }
