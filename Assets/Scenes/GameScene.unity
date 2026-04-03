@@ -7167,18 +7167,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 161227275589570854, guid: e892c826bacdf4549bb831809e0de618, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 161227275589570854, guid: e892c826bacdf4549bb831809e0de618, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 161227275589570854, guid: e892c826bacdf4549bb831809e0de618, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 3db64c3b07de34507bcb01c82847cf0a, type: 2}
     - target: {fileID: 458908393056621213, guid: e892c826bacdf4549bb831809e0de618, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7235,14 +7223,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DamageZone
       objectReference: {fileID: 0}
-    - target: {fileID: 6950989287714056399, guid: e892c826bacdf4549bb831809e0de618, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6950989287714056399, guid: e892c826bacdf4549bb831809e0de618, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: be891f662329747788670a5b5a94a05b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

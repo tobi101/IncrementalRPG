@@ -1,3 +1,4 @@
+using Reflex.Attributes;
 using Spine.Unity;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace Core.Gameplay
         [SerializeField] private SkeletonAnimation _circle;
         [SerializeField] private SkeletonAnimation _wave1;
         [SerializeField] private SkeletonAnimation _wave2;
-        [SerializeField] private DamageZoneConfig _config;
+        [Inject] private DamageZoneConfig _config;
 
         [Tooltip("World-space X radius of _circle at its prefab scale (0.2, 0.2, 1). Calibrate once using Gizmos.")]
         [SerializeField] private float _baseRadiusX = 0.6f;
