@@ -17,4 +17,24 @@ namespace Core.TestSkillTree
         [Tooltip("Which feature to unlock. Ignored for Additive/Multiplicative.")]
         public GameFeature feature;
     }
+    
+    public enum StatType
+    {
+        ZoneRadius,
+        ZoneDamage,
+        SpawnSpeed,
+        SpawnCountMax,
+    }
+
+    public enum GameFeature
+    {
+        Bombs,
+    }
+
+    public enum NodeEffectType
+    {
+        Additive,
+        Multiplicative,
+        FeatureUnlock,
+    }
 }

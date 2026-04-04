@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Core.Save;
 
 namespace Core.TestSkillTree
@@ -38,17 +39,17 @@ namespace Core.TestSkillTree
             data.SkillTreeState = _state;
         }
 
-        // ── State ─────────────────────────────────────────────────────────────
-
         public NodeState GetState(string nodeId)
         {
             var def = GetDefinition(nodeId);
-            if (!ArePrerequisitesMet(def)) return NodeState.Hidden;
+            if (!ArePrerequisitesMet(def)) 
+                return NodeState.Hidden;
 
-            int level = _state.GetLevel(nodeId);
-            if (level == 0)           return NodeState.Available;
-            if (level < def.maxLevel) return NodeState.Partial;
-            return NodeState.Complete;
+            var level = _state.GetLevel(nodeId);
+            if (level == 0)           
+                return NodeState.Available;
+            
+            return level < def.maxLevel ? NodeState.Partial : NodeState.Complete;
         }
 
         public bool CanUpgrade(string nodeId)
@@ -66,24 +67,16 @@ namespace Core.TestSkillTree
             RebuildCache();
             OnUpgraded?.Invoke();
         }
-
-        // ── Stat queries — O(1) via cache ─────────────────────────────────────
-
-        // Sum of all additive bonuses for a stat across the whole tree.
+        
         public float GetBonus(StatType stat) =>
             _bonusCache.TryGetValue(stat, out var v) ? v : 0f;
-
-        // Returns a multiplier: 1.0 = no bonus, 1.25 = +25%, etc.
+        
         public float GetMultiplier(StatType stat) =>
             _multiplierCache.TryGetValue(stat, out var v) ? v : 1f;
 
         public bool IsUnlocked(GameFeature feature) =>
             _unlockedFeatures.Contains(feature);
-
-        // ── Helpers ───────────────────────────────────────────────────────────
-
-        // Rebuilds stat caches from scratch. Called once on init and after each Upgrade().
-        // Upgrades are rare, so a full rebuild is cheaper than partial invalidation.
+        
         private void RebuildCache()
         {
             _bonusCache.Clear();
@@ -92,8 +85,9 @@ namespace Core.TestSkillTree
 
             foreach (var def in _config.nodes)
             {
-                int level = _state.GetLevel(def.id);
-                if (level == 0) continue;
+                var level = _state.GetLevel(def.id);
+                if (level == 0) 
+                    continue;
 
                 foreach (var effect in def.effects)
                 {
@@ -101,16 +95,20 @@ namespace Core.TestSkillTree
                     {
                         case NodeEffectType.Additive:
                             _bonusCache.TryGetValue(effect.statType, out var bonus);
-                            for (int i = 0; i < level && i < effect.valuesPerLevel.Length; i++)
+                            
+                            for (var i = 0; i < level && i < effect.valuesPerLevel.Length; i++)
                                 bonus += effect.valuesPerLevel[i];
+                            
                             _bonusCache[effect.statType] = bonus;
                             break;
 
                         case NodeEffectType.Multiplicative:
                             _multiplierCache.TryGetValue(effect.statType, out var multSum);
-                            for (int i = 0; i < level && i < effect.valuesPerLevel.Length; i++)
+                            
+                            for (var i = 0; i < level && i < effect.valuesPerLevel.Length; i++)
                                 multSum += effect.valuesPerLevel[i];
-                            _multiplierCache[effect.statType] = multSum; // raw sum; +1 applied below
+                            
+                            _multiplierCache[effect.statType] = multSum;
                             break;
 
                         case NodeEffectType.FeatureUnlock:
@@ -119,24 +117,23 @@ namespace Core.TestSkillTree
                     }
                 }
             }
-
-            // Finalise multipliers: stored as raw sum during accumulation, convert to 1+sum
+            
             foreach (var key in new List<StatType>(_multiplierCache.Keys))
                 _multiplierCache[key] = 1f + _multiplierCache[key];
         }
 
         private bool ArePrerequisitesMet(NodeDefinition def)
         {
-            foreach (var prereq in def.prerequisites)
-                if (prereq.node == null || _state.GetLevel(prereq.node.id) < prereq.requiredLevel)
-                    return false;
-            return true;
+            return def.prerequisites.All(prereq =>
+                prereq.node != null &&
+                _state.GetLevel(prereq.node.id) >= prereq.requiredLevel);
         }
 
         private NodeDefinition GetDefinition(string nodeId)
         {
-            if (_nodeMap.TryGetValue(nodeId, out var def)) return def;
-            throw new ArgumentException($"Node '{nodeId}' not found in SkillTreeConfig.");
+            return _nodeMap.TryGetValue(nodeId, out var def) 
+                ? def 
+                : throw new ArgumentException($"Node '{nodeId}' not found in SkillTreeConfig.");
         }
 
         private static Dictionary<string, NodeDefinition> BuildNodeMap(SkillTreeConfig config)
@@ -146,5 +143,13 @@ namespace Core.TestSkillTree
                 map[node.id] = node;
             return map;
         }
+    }
+    
+    public enum NodeState
+    {
+        Hidden,    // Prerequisites not met — node is not visible
+        Available, // Prerequisites met, level = 0
+        Partial,   // 0 < level < maxLevel
+        Complete,  // level == maxLevel
     }
 }
