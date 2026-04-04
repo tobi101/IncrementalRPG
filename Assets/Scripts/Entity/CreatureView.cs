@@ -22,6 +22,9 @@ namespace Entity
             _bound = creature;
             _previousHealth = creature.CurrentHP;
             _bound.OnHealthChanged += HandleHealthChanged;
+
+            if (_animationBody != null)
+                _animationBody.AnimationState.SetAnimation(0, "idle", true);
         }
 
         public void Unbind()

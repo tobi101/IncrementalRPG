@@ -15,4 +15,4 @@ MonoBehaviour:
   spawnTable: {fileID: 11400000, guid: 42306b02f8e45465cb748d0b7f495a59, type: 2}
   tilemapGenerationConfig: {fileID: 11400000, guid: b82edfeef95c1421b9b0f559dd96f756, type: 2}
   minPlayZoneSize: 6
-  initialSpawnCount: 1
+  initialSpawnCount: 3
