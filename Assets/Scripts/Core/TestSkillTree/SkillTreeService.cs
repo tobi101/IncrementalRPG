@@ -128,7 +128,7 @@ namespace Core.TestSkillTree
         private bool ArePrerequisitesMet(NodeDefinition def)
         {
             foreach (var prereq in def.prerequisites)
-                if (_state.GetLevel(prereq.nodeId) < prereq.requiredLevel)
+                if (prereq.node == null || _state.GetLevel(prereq.node.id) < prereq.requiredLevel)
                     return false;
             return true;
         }

@@ -7,7 +7,7 @@ namespace Core.TestSkillTree
     [Serializable]
     public class NodePrerequisite
     {
-        public string nodeId;
+        public NodeDefinition node;
         public int requiredLevel;
     }
 

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22bd0984f8a34b7abe014ca66a9a937, type: 3}
   m_Name: SkillTreeConfig
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.SkillTreeConfig
-  nodes: []
+  nodes:
+  - {fileID: 11400000, guid: 92c8bc70910f94f7d90659fed53b318d, type: 2}
