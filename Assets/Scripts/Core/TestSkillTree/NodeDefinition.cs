@@ -1,8 +1,16 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core.TestSkillTree
 {
+    [Serializable]
+    public class NodePrerequisite
+    {
+        public string nodeId;
+        public int requiredLevel;
+    }
+
     [CreateAssetMenu(fileName = "NodeDefinition", menuName = "RPG/Skill Tree/Node")]
     public class NodeDefinition : ScriptableObject
     {

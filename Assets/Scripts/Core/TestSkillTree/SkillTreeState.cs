@@ -29,14 +29,10 @@ namespace Core.TestSkillTree
         {
             if (_dict == null) Init();
             _dict[nodeId] = level;
-            SyncToList();
-        }
 
-        private void SyncToList()
-        {
-            nodeLevels.Clear();
-            foreach (var kvp in _dict)
-                nodeLevels.Add(new NodeLevelEntry { nodeId = kvp.Key, level = kvp.Value });
+            var existing = nodeLevels.Find(e => e.nodeId == nodeId);
+            if (existing != null) existing.level = level;
+            else nodeLevels.Add(new NodeLevelEntry { nodeId = nodeId, level = level });
         }
     }
 

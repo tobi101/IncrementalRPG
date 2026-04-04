@@ -2,6 +2,7 @@ using Core;
 using Core.Gameplay;
 using Core.Gameplay.Dungeon;
 using Core.Save;
+using Core.TestSkillTree;
 using Entity;
 using IncrementalRPG.Scripts.Core;
 using IncrementalRPG.Scripts.Reflex;
@@ -19,6 +20,7 @@ namespace Reflex
     {
         [SerializeField] private DungeonList _dungeonList;
         [SerializeField] private DamageZoneConfig _damageZoneConfig;
+        [SerializeField] private SkillTreeConfig _skillTreeConfig;
         
         [SerializeField] private AudioManager _audioManager;
         [SerializeField] private IsometricGradientTilemapGenerator _isometricGradientTilemapGenerator;
@@ -53,6 +55,13 @@ namespace Reflex
             builder.RegisterType(
                 typeof(Player),
                 new[] { typeof(Player) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(SkillTreeService),
+                new[] { typeof(ISaveable), typeof(SkillTreeService) },
                 Lifetime.Singleton,
                 Resolution.Lazy
             );
@@ -111,6 +120,7 @@ namespace Reflex
         {
             builder.RegisterValue(_dungeonList, new[] { typeof(DungeonList) });
             builder.RegisterValue(_damageZoneConfig, new[] { typeof(DamageZoneConfig) });
+            builder.RegisterValue(_skillTreeConfig, new[] { typeof(SkillTreeConfig) });
         }
     }
 }
