@@ -19,7 +19,10 @@ namespace Core.Save
         {
             _saveables = new List<ISaveable>(saveables);
             _data = ReadFromDisk() ?? new SaveData();
-            
+
+            foreach (var saveable in _saveables)
+                saveable.Load(_data);
+
             Debug.Log($"[SaveService] Loaded. Version: {_data.Version}, Path: {SavePath}");
         }
 

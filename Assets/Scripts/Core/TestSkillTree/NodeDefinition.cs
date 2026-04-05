@@ -16,9 +16,13 @@ namespace Core.TestSkillTree
     {
         [Tooltip("Unique identifier used in code and save data.")]
         public string id;
-        
-        [Tooltip("Description of the node definition.")]
+
+        public string displayName;
+
+        [TextArea, Tooltip("Description shown in the skill tree popup.")]
         public string description;
+
+        public Sprite icon;
 
         [Min(1)]
         public int maxLevel;

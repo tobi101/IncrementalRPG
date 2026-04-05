@@ -18,11 +18,11 @@ namespace Core.TestSkillTree
         // Fired after any node is successfully upgraded.
         public event Action OnUpgraded;
 
-        public SkillTreeService(SkillTreeConfig config, SaveService saveService)
+        public SkillTreeService(SkillTreeConfig config)
         {
             _config  = config;
             _nodeMap = BuildNodeMap(config);
-            _state   = saveService.GetData().SkillTreeState ?? new SkillTreeState();
+            _state   = new SkillTreeState();
             _state.Init();
             RebuildCache();
         }
@@ -68,6 +68,8 @@ namespace Core.TestSkillTree
             OnUpgraded?.Invoke();
         }
         
+        public int GetLevel(string nodeId) => _state.GetLevel(nodeId);
+
         public float GetBonus(StatType stat) =>
             _bonusCache.TryGetValue(stat, out var v) ? v : 0f;
         

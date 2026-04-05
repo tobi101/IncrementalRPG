@@ -1,8 +1,11 @@
-using Core;
 using Core.Gameplay;
 using Core.Gameplay.Dungeon;
 using Core.Save;
+using Core.StateMachine;
+using Core.StateMachine.Features;
+using Core.StateMachine.States;
 using Core.TestSkillTree;
+using Core.TestSkillTree.View;
 using Entity;
 using IncrementalRPG.Scripts.Core;
 using IncrementalRPG.Scripts.Reflex;
@@ -10,8 +13,8 @@ using IncrementalRPG.Scripts.AudioManager;
 using Model;
 using Reflex.Core;
 using Reflex.Enums;
+using UI;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using Resolution = Reflex.Enums.Resolution;
 
 namespace Reflex
@@ -26,6 +29,8 @@ namespace Reflex
         [SerializeField] private IsometricGradientTilemapGenerator _isometricGradientTilemapGenerator;
 
         [SerializeField] private DamageZoneView _damageZoneView;
+        [SerializeField] private SkillTreeView _skillTreeView;
+        [SerializeField] private HubView _hubView;
 
 
         private void Awake()
@@ -39,8 +44,71 @@ namespace Reflex
             InitializeConfigs(builder);
             
             builder.RegisterType(
-                typeof(GameLoop),
-                new[] { typeof(IAwakeable), typeof(IStartable), typeof(ITickable) },
+                typeof(GameStateMachine),
+                new[] { typeof(IAwakeable), typeof(IStartable), typeof(ITickable), typeof(GameStateMachine) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(GameplayFeature),
+                new[] { typeof(IGameFeature), typeof(GameplayFeature) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(SkillTreeFeature),
+                new[] { typeof(IGameFeature), typeof(SkillTreeFeature) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(GameplayState),
+                new[] { typeof(IGameState), typeof(GameplayState) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(SkillTreeMenuState),
+                new[] { typeof(IGameState), typeof(SkillTreeMenuState) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(HubState),
+                new[] { typeof(IGameState), typeof(HubState) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(BarracksState),
+                new[] { typeof(IGameState), typeof(BarracksState) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(MineState),
+                new[] { typeof(IGameState), typeof(MineState) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(CraftState),
+                new[] { typeof(IGameState), typeof(CraftState) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(HubFeature),
+                new[] { typeof(IGameFeature), typeof(HubFeature) },
                 Lifetime.Singleton,
                 Resolution.Lazy
             );
@@ -68,7 +136,6 @@ namespace Reflex
             
             builder.RegisterValue(_audioManager);
             builder.RegisterValue(_isometricGradientTilemapGenerator);
-            builder.RegisterValue(_damageZoneView, new[] { typeof(DamageZoneView) });
             
             var tileGrid = new TileGrid();
             builder.RegisterValue(tileGrid, new[] { typeof(TileGrid) });
@@ -109,6 +176,9 @@ namespace Reflex
             // );
             
             // builder.RegisterValue(_goldWalletView, new[] { typeof(GoldWalletView) });
+            builder.RegisterValue(_damageZoneView, new[] { typeof(DamageZoneView) });
+            builder.RegisterValue(_skillTreeView, new[] { typeof(SkillTreeView) });
+            builder.RegisterValue(_hubView, new[] { typeof(HubView) });
         }
 
         public void Exit()

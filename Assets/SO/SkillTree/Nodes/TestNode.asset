@@ -12,8 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
   m_Name: TestNode
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
-  id: TestId
+  id: TestNode1
+  displayName: TestNode1
+  description: TestNode1 blyat
+  icon: {fileID: -918889415, guid: 6582f34ddd5f686408c019550cd94c9d, type: 3}
   maxLevel: 1
   prerequisites: []
-  effects: []
+  effects:
+  - effectType: 1
+    statType: 0
+    valuesPerLevel:
+    - 1.4
+    feature: 0
   positionInGraph: {x: 0, y: 0}
