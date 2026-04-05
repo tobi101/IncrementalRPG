@@ -31,6 +31,7 @@ namespace Reflex
         [SerializeField] private DamageZoneView _damageZoneView;
         [SerializeField] private SkillTreeView _skillTreeView;
         [SerializeField] private HubView _hubView;
+        [SerializeField] private MenuCanvasView _menuCanvasView;
 
 
         private void Awake()
@@ -49,6 +50,20 @@ namespace Reflex
                 Lifetime.Singleton,
                 Resolution.Lazy
             );
+            
+            builder.RegisterType(
+                typeof(GameplayState),
+                new[] { typeof(IGameState), typeof(GameplayState) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(SkillTreeMenuState),
+                new[] { typeof(IGameState), typeof(SkillTreeMenuState) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
 
             builder.RegisterType(
                 typeof(GameplayFeature),
@@ -60,20 +75,6 @@ namespace Reflex
             builder.RegisterType(
                 typeof(SkillTreeFeature),
                 new[] { typeof(IGameFeature), typeof(SkillTreeFeature) },
-                Lifetime.Singleton,
-                Resolution.Lazy
-            );
-
-            builder.RegisterType(
-                typeof(GameplayState),
-                new[] { typeof(IGameState), typeof(GameplayState) },
-                Lifetime.Singleton,
-                Resolution.Lazy
-            );
-
-            builder.RegisterType(
-                typeof(SkillTreeMenuState),
-                new[] { typeof(IGameState), typeof(SkillTreeMenuState) },
                 Lifetime.Singleton,
                 Resolution.Lazy
             );
@@ -179,6 +180,7 @@ namespace Reflex
             builder.RegisterValue(_damageZoneView, new[] { typeof(DamageZoneView) });
             builder.RegisterValue(_skillTreeView, new[] { typeof(SkillTreeView) });
             builder.RegisterValue(_hubView, new[] { typeof(HubView) });
+            builder.RegisterValue(_menuCanvasView, new[] { typeof(MenuCanvasView) });
         }
 
         public void Exit()

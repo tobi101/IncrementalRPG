@@ -1466,7 +1466,7 @@ RectTransform:
   - {fileID: 1824595829}
   - {fileID: 2064595345}
   - {fileID: 1040306184}
-  m_Father: {fileID: 796824279}
+  m_Father: {fileID: 1087773142}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3596,10 +3596,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1057226973}
-  - {fileID: 1087773142}
-  - {fileID: 440616317}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3876,18 +3873,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057226972}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2060328454}
-  m_Father: {fileID: 796824279}
+  m_Father: {fileID: 1087773142}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1820, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1057226974
 MonoBehaviour:
@@ -3902,7 +3899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4088,12 +4085,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087773141}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 796824279}
+  m_Children:
+  - {fileID: 1057226973}
+  - {fileID: 440616317}
+  m_Father: {fileID: 1523771927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5108,7 +5107,7 @@ GameObject:
   - component: {fileID: 1523771924}
   - component: {fileID: 1523771928}
   m_Layer: 5
-  m_Name: HubCanvas
+  m_Name: MenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5190,6 +5189,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2075618857}
+  - {fileID: 1087773142}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5206,14 +5206,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1523771923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 866b7ebc5e991411893731bf9b7f024c, type: 3}
+  m_Script: {fileID: 11500000, guid: b5058aa7e01a44197b9378bc18c25764, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI.HubView
-  _dungeonButton: {fileID: 1117371041}
-  _skillTreeButton: {fileID: 1079692394}
-  _barracksButton: {fileID: 1983337084}
-  _mineButton: {fileID: 136496709}
-  _craftButton: {fileID: 413410361}
+  m_EditorClassIdentifier: Assembly-CSharp::UI.MenuCanvasView
 --- !u!1 &1746021762
 GameObject:
   m_ObjectHideFlags: 0
@@ -5632,7 +5627,8 @@ MonoBehaviour:
   _isometricGradientTilemapGenerator: {fileID: 1884689665}
   _damageZoneView: {fileID: 2024573965}
   _skillTreeView: {fileID: 1087773143}
-  _hubView: {fileID: 1523771928}
+  _hubView: {fileID: 2075618860}
+  _menuCanvasView: {fileID: 1523771928}
 --- !u!1 &1884689664
 GameObject:
   m_ObjectHideFlags: 0
@@ -8186,6 +8182,7 @@ GameObject:
   - component: {fileID: 2075618857}
   - component: {fileID: 2075618859}
   - component: {fileID: 2075618858}
+  - component: {fileID: 2075618860}
   m_Layer: 5
   m_Name: HubPanel
   m_TagString: Untagged
@@ -8255,6 +8252,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075618856}
   m_CullTransparentMesh: 1
+--- !u!114 &2075618860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075618856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866b7ebc5e991411893731bf9b7f024c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.HubView
+  _dungeonButton: {fileID: 1117371041}
+  _skillTreeButton: {fileID: 1079692394}
+  _barracksButton: {fileID: 1983337084}
+  _mineButton: {fileID: 136496709}
+  _craftButton: {fileID: 413410361}
 --- !u!1 &2141900382
 GameObject:
   m_ObjectHideFlags: 0
