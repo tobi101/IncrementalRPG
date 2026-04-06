@@ -1,15 +1,13 @@
 using Core.Gameplay;
 using Core.Save;
-using Reflex.Attributes;
+using Utils;
 
 namespace Model
 {
-    public class Player
+    public class Player : ISaveable
     {
         private PlayerInfo _playerInfo;
         private readonly DamageZoneConfig _damageZoneConfig;
-
-        [Inject] private SaveService _saveService;
 
         public int StartSpawnObjectCount => _playerInfo.StartSpawnObjectCount;
 
@@ -17,11 +15,25 @@ namespace Model
             ? _playerInfo.ZoneSize
             : new ZoneSize { Radius = _damageZoneConfig.baseRadius };
 
+        public BigDouble GoldTotal
+        {
+            get => _playerInfo.GoldTotal;
+            set => _playerInfo.GoldTotal = value;
+        }
+
         public Player(DamageZoneConfig damageZoneConfig)
         {
             _damageZoneConfig = damageZoneConfig;
-            if (_saveService != null)
-                _playerInfo = _saveService.GetData().SavedPlayerInfo;
+        }
+
+        public void Load(SaveData data)
+        {
+            _playerInfo = data.SavedPlayerInfo;
+        }
+
+        public void Contribute(SaveData data)
+        {
+            data.SavedPlayerInfo = _playerInfo;
         }
     }
 }

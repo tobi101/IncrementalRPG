@@ -2,13 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Save;
+using Model;
+using Reflex.Attributes;
 
 namespace Core.TestSkillTree
 {
     public class SkillTreeService : ISaveable
     {
-        private readonly SkillTreeConfig _config;
-        private readonly Dictionary<string, NodeDefinition> _nodeMap;
+        [Inject] private SkillTreeConfig _config;
+        [Inject] private Player _player;
+
+        private Dictionary<string, NodeDefinition> _nodeMap;
         private SkillTreeState _state;
 
         private readonly Dictionary<StatType, float> _bonusCache      = new Dictionary<StatType, float>();
@@ -18,18 +22,10 @@ namespace Core.TestSkillTree
         // Fired after any node is successfully upgraded.
         public event Action OnUpgraded;
 
-        public SkillTreeService(SkillTreeConfig config)
-        {
-            _config  = config;
-            _nodeMap = BuildNodeMap(config);
-            _state   = new SkillTreeState();
-            _state.Init();
-            RebuildCache();
-        }
-
         public void Load(SaveData data)
         {
-            _state = data.SkillTreeState ?? new SkillTreeState();
+            _nodeMap = BuildNodeMap(_config);
+            _state   = data.SkillTreeState ?? new SkillTreeState();
             _state.Init();
             RebuildCache();
         }
@@ -52,16 +48,33 @@ namespace Core.TestSkillTree
             return level < def.maxLevel ? NodeState.Partial : NodeState.Complete;
         }
 
+        public int GetUpgradeCost(string nodeId)
+        {
+            var def   = GetDefinition(nodeId);
+            var level = _state.GetLevel(nodeId);
+            if (level >= def.maxLevel) return 0;
+            if (def.goldCostPerLevel == null || level >= def.goldCostPerLevel.Length) return 0;
+            return def.goldCostPerLevel[level];
+        }
+
         public bool CanUpgrade(string nodeId)
         {
             var def = GetDefinition(nodeId);
-            return ArePrerequisitesMet(def) && _state.GetLevel(nodeId) < def.maxLevel;
+            if (!ArePrerequisitesMet(def) || _state.GetLevel(nodeId) >= def.maxLevel)
+                return false;
+
+            var cost = GetUpgradeCost(nodeId);
+            return cost == 0 || _player.GoldTotal >= cost;
         }
 
         public void Upgrade(string nodeId)
         {
             if (!CanUpgrade(nodeId))
                 throw new InvalidOperationException($"Cannot upgrade node '{nodeId}'.");
+
+            var cost = GetUpgradeCost(nodeId);
+            if (cost > 0)
+                _player.GoldTotal -= cost;
 
             _state.SetLevel(nodeId, _state.GetLevel(nodeId) + 1);
             RebuildCache();

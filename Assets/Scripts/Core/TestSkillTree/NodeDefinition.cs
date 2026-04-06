@@ -27,6 +27,9 @@ namespace Core.TestSkillTree
         [Min(1)]
         public int maxLevel;
 
+        [Tooltip("Gold cost to upgrade to each level. Index 0 = cost for level 0→1, index 1 = cost for 1→2, etc.")]
+        public int[] goldCostPerLevel;
+
         [Tooltip("All prerequisites must be satisfied for this node to become visible.")]
         public List<NodePrerequisite> prerequisites;
 

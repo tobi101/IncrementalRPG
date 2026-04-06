@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ea233609e54a14f0198c0e04e07ddb82, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -88,4 +88,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b9c7661399d416793b841520b830af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.View.NodeConnectionView
-  _thickness: 4
+  _thickness: 10

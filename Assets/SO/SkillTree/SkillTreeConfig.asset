@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.SkillTreeConfig
   nodes:
   - {fileID: 11400000, guid: 92c8bc70910f94f7d90659fed53b318d, type: 2}
+  - {fileID: 11400000, guid: 52ec292eab03749e5ae85e8931e24366, type: 2}

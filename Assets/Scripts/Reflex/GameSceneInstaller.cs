@@ -118,12 +118,12 @@ namespace Reflex
                 typeof(SaveService),
                 new[] { typeof(SaveService) },
                 Lifetime.Singleton,
-                Resolution.Lazy
+                Resolution.Eager
             );
 
             builder.RegisterType(
                 typeof(Player),
-                new[] { typeof(Player) },
+                new[] { typeof(ISaveable), typeof(Player) },
                 Lifetime.Singleton,
                 Resolution.Lazy
             );

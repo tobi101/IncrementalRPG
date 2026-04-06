@@ -59,6 +59,6 @@ namespace Core.TestSkillTree.View
             _popup.Show(_definition, (RectTransform)transform);
 
         public void OnPointerExit(PointerEventData eventData) =>
-            _popup.Hide();
+            _popup.OnNodeExit();
     }
 }
