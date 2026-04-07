@@ -8,8 +8,9 @@ namespace Core.TestSkillTree.View
     // Prefab requirements: Image (_icon) + TextMeshProUGUI (_levelText) as children.
     public class NodeView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        [SerializeField] private Image             _icon;
-        [SerializeField] private TextMeshProUGUI   _levelText;
+        [SerializeField] private Image _icon;
+        [SerializeField] private Image _borderIcon;
+        [SerializeField] private TextMeshProUGUI _levelText;
 
         [Header("State Colors")]
         [SerializeField] private Color _colorAvailable = new Color(0.55f, 0.55f, 0.55f);
@@ -44,7 +45,7 @@ namespace Core.TestSkillTree.View
 
             gameObject.SetActive(true);
 
-            _icon.color = state switch
+            _borderIcon.color = state switch
             {
                 NodeState.Available => _colorAvailable,
                 NodeState.Partial   => _colorPartial,

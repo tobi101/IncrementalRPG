@@ -11,7 +11,8 @@ namespace Core.TestSkillTree.View
         [SerializeField] private TextMeshProUGUI _nameText;
         [SerializeField] private TextMeshProUGUI _descriptionText;
         [SerializeField] private TextMeshProUGUI _costText;
-        [SerializeField] private Vector2         _offset = new Vector2(16f, 0f);
+
+        private const float PopupGap = 15f;
 
         private SkillTreeService _service;
         private NodeDefinition   _current;
@@ -89,22 +90,64 @@ namespace Core.TestSkillTree.View
             if (_costText != null)
             {
                 var cost = _service.GetUpgradeCost(_current.id);
-                _costText.text = cost > 0 ? $"{cost} Gold" : "";
+                _costText.text = cost > 0 ? $"{cost}" : "";
             }
         }
 
         private void PositionNear(RectTransform nodeTransform)
         {
-            var screenPoint = RectTransformUtility.WorldToScreenPoint(
-                _canvas.worldCamera, nodeTransform.position);
+            var canvasRT   = (RectTransform)_canvas.transform;
+            var canvasRect = canvasRT.rect;
 
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                (RectTransform)_canvas.transform,
-                screenPoint,
-                _canvas.worldCamera,
-                out var localPoint);
+            // Node center in canvas local space
+            var screenCenter = RectTransformUtility.WorldToScreenPoint(_canvas.worldCamera, nodeTransform.position);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRT, screenCenter, _canvas.worldCamera, out var nodeCenter);
 
-            _rt.anchoredPosition = localPoint + _offset + Vector2.right * (_rt.rect.width * 0.5f);
+            // Node size in canvas local space (accounts for Content zoom)
+            var corners = new Vector3[4];
+            nodeTransform.GetWorldCorners(corners);
+            var screenBL = RectTransformUtility.WorldToScreenPoint(_canvas.worldCamera, corners[0]);
+            var screenTR = RectTransformUtility.WorldToScreenPoint(_canvas.worldCamera, corners[2]);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRT, screenBL, _canvas.worldCamera, out var localBL);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRT, screenTR, _canvas.worldCamera, out var localTR);
+
+            float nodeHalfW  = (localTR.x - localBL.x) * 0.5f;
+            float nodeHalfH  = (localTR.y - localBL.y) * 0.5f;
+            float popupHalfW = _rt.rect.width  * 0.5f;
+            float popupHalfH = _rt.rect.height * 0.5f;
+
+            float nodeRightEdge  = nodeCenter.x + nodeHalfW;
+            float nodeLeftEdge   = nodeCenter.x - nodeHalfW;
+            float nodeTopEdge    = nodeCenter.y + nodeHalfH;
+            float nodeBottomEdge = nodeCenter.y - nodeHalfH;
+
+            float spaceRight  = canvasRect.xMax - nodeRightEdge;
+            float spaceLeft   = nodeLeftEdge    - canvasRect.xMin;
+            float spaceTop    = canvasRect.yMax - nodeTopEdge;
+            float spaceBottom = nodeBottomEdge  - canvasRect.yMin;
+
+            float bestHorizontal = Mathf.Max(spaceRight, spaceLeft);
+            float bestVertical   = Mathf.Max(spaceTop,   spaceBottom);
+
+            float x, y;
+            if (bestHorizontal >= bestVertical)
+            {
+                // Place left or right; center vertically on node
+                x = (spaceRight >= spaceLeft)
+                    ? nodeRightEdge + PopupGap + popupHalfW
+                    : nodeLeftEdge  - PopupGap - popupHalfW;
+                y = Mathf.Clamp(nodeCenter.y, canvasRect.yMin + popupHalfH, canvasRect.yMax - popupHalfH);
+            }
+            else
+            {
+                // Place above or below; center horizontally on node
+                y = (spaceTop >= spaceBottom)
+                    ? nodeTopEdge    + PopupGap + popupHalfH
+                    : nodeBottomEdge - PopupGap - popupHalfH;
+                x = Mathf.Clamp(nodeCenter.x, canvasRect.xMin + popupHalfW, canvasRect.xMax - popupHalfW);
+            }
+
+            _rt.anchoredPosition = new Vector2(x, y);
         }
 
         private void OnUpgradeClicked()

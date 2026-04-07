@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.View.NodeView
   _icon: {fileID: 7067717992799436699}
+  _borderIcon: {fileID: 3340970767590097924}
   _levelText: {fileID: 1364153667135044050}
   _colorAvailable: {r: 0.55, g: 0.55, b: 0.55, a: 1}
   _colorPartial: {r: 1, g: 0.85, b: 0, a: 1}
