@@ -17,6 +17,7 @@ namespace Core.TestSkillTree.View
         private SkillTreeService         _service;
         private SkillTreeConfig          _config;
         private readonly List<NodeView>  _nodeViews = new List<NodeView>();
+        private readonly List<(NodeConnectionView view, NodeDefinition def)> _connectionViews = new();
 
         [Inject]
         public void Construct(SkillTreeConfig config, SkillTreeService service)
@@ -40,6 +41,8 @@ namespace Core.TestSkillTree.View
                     if (prereq.node == null) continue;
                     var connection = Instantiate(_connectionViewPrefab, _connectionsLayer);
                     connection.Setup(prereq.node.positionInGraph, def.positionInGraph);
+                    connection.Refresh(_service.GetState(def.id));
+                    _connectionViews.Add((connection, def));
                 }
             }
 
@@ -56,6 +59,9 @@ namespace Core.TestSkillTree.View
         {
             foreach (var nodeView in _nodeViews)
                 nodeView.Refresh();
+
+            foreach (var (view, def) in _connectionViews)
+                view.Refresh(_service.GetState(def.id));
         }
 
         private void OnDestroy()

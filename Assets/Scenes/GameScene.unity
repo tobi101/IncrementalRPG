@@ -3859,6 +3859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.View.SkillTreePanZoomController
   _content: {fileID: 2141900383}
+  _popupView: {fileID: 440616318}
   _minZoom: 0.3
   _maxZoom: 2
   _zoomFactor: 1.12

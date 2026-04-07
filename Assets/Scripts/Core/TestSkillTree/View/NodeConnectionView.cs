@@ -22,5 +22,10 @@ namespace Core.TestSkillTree.View
             rt.anchoredPosition = from;
             rt.localEulerAngles = new Vector3(0f, 0f, angle);
         }
+
+        public void Refresh(NodeState state)
+        {
+            gameObject.SetActive(state != NodeState.Hidden);
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace Core.TestSkillTree.View
 
         private bool _nodeHovered;
         private bool _popupHovered;
+        private bool _blocked;
         private Coroutine _hideCoroutine;
 
         public void Bind(SkillTreeService service)
@@ -32,8 +33,18 @@ namespace Core.TestSkillTree.View
             gameObject.SetActive(false);
         }
 
+        public void Block()
+        {
+            _blocked = true;
+            Hide();
+        }
+
+        public void Unblock() => _blocked = false;
+
         public void Show(NodeDefinition definition, RectTransform nodeTransform)
         {
+            if (_blocked) return;
+
             _current      = definition;
             _nodeHovered  = true;
             gameObject.SetActive(true);
@@ -58,6 +69,7 @@ namespace Core.TestSkillTree.View
         private void TryHide()
         {
             if (_nodeHovered || _popupHovered) return;
+            if (!gameObject.activeInHierarchy) return;
             if (_hideCoroutine != null) StopCoroutine(_hideCoroutine);
             _hideCoroutine = StartCoroutine(HideDelayed());
         }
