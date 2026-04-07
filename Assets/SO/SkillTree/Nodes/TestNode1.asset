@@ -16,13 +16,16 @@ MonoBehaviour:
   displayName: TestNode1
   description: TestNode1 suka blyat
   icon: {fileID: -918889415, guid: 6582f34ddd5f686408c019550cd94c9d, type: 3}
-  maxLevel: 1
-  goldCostPerLevel: 05000000
+  maxLevel: 4
+  goldCostPerLevel: 0100000001000000
   prerequisites: []
   effects:
-  - effectType: 1
+  - effectType: 2
     statType: 0
     valuesPerLevel:
+    - 2
+    - 2
+    - 2
     - 2
     feature: 0
   positionInGraph: {x: 0, y: 0}

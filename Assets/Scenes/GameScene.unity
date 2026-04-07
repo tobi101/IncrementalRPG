@@ -1010,7 +1010,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: -0.32, y: -0.32}
   m_AnchorMax: {x: 1.32, y: 1.32}
-  m_AnchoredPosition: {x: 0, y: 65.4}
+  m_AnchoredPosition: {x: 0, y: 65.3999}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &241801269
@@ -1486,9 +1486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.View.NodePopupView
   _nameText: {fileID: 1257155880}
   _descriptionText: {fileID: 2064595346}
-  _levelText: {fileID: 0}
   _costText: {fileID: 0}
-  _upgradeButton: {fileID: 0}
   _offset: {x: -110, y: 0}
 --- !u!114 &440616319
 MonoBehaviour:
@@ -4455,7 +4453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2868539044483428322, guid: b442e8949ac53401b8bd092602133b0b, type: 3}
+  m_Sprite: {fileID: -4144357790498614568, guid: 96ab3a7e6b59647519a2ef022faeb807, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
