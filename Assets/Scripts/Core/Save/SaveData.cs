@@ -9,7 +9,7 @@ namespace Core.Save
     {
         public int Version = 1;
 
-        public PlayerInfo SavedPlayerInfo;
+        public PlayerInfo SavedPlayerInfo = PlayerInfo.Default;
         public SkillTreeState SkillTreeState = new SkillTreeState();
     }
 }

@@ -4,9 +4,6 @@ namespace Model
 {
     public struct PlayerInfo
     {
-        // Map
-        public int MapSize;
-
         // Damage Zone
         public int ZoneDamage;
         public float ZoneDamageSpeed;
@@ -27,13 +24,11 @@ namespace Model
 
         public static PlayerInfo Default => new PlayerInfo
         {
-            MapSize = 0,
-            //-----
             ZoneDamage = 0,
             ZoneDamageSpeed = 0,
             ZoneSize = new ZoneSize { Radius = 0f },
             //-----
-            GoldTotal = 100,
+            GoldTotal = 1000,
             ShardTotal = 0,
             //-----
             SessionDuration = 0f,

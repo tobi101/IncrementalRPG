@@ -10,5 +10,6 @@ namespace Core.Gameplay.Dungeon
         public TilemapGenerationConfig tilemapGenerationConfig;
         [Min(0)] public int minPlayZoneSize;
         [Min(0)] public int initialSpawnCount;
+        [Min(0.1f)] public float spawnInterval = 2f;
     }
 }

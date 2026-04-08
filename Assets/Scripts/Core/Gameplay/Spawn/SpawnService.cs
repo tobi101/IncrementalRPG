@@ -25,6 +25,12 @@ namespace Core.Gameplay
         public void SetDungeon(DungeonConfig dungeon)
         {
             _spawnTable = dungeon.spawnTable;
+            _spawnInterval = dungeon.spawnInterval;
+        }
+
+        public void SetSpawnInterval(float interval)
+        {
+            _spawnInterval = interval;
         }
 
         public void Initialize() { }

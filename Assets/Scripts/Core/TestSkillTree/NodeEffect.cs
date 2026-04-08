@@ -22,8 +22,10 @@ namespace Core.TestSkillTree
     {
         ZoneRadius,
         ZoneDamage,
+        AttackSpeed,
         SpawnSpeed,
         SpawnCountMax,
+        MapSize,
     }
 
     public enum GameFeature

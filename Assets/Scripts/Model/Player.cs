@@ -1,3 +1,4 @@
+using System;
 using Core.Gameplay;
 using Core.Save;
 using Utils;
@@ -6,6 +7,7 @@ namespace Model
 {
     public class Player : ISaveable
     {
+        public event Action OnGoldChanged;
         private PlayerInfo _playerInfo;
         private readonly DamageZoneConfig _damageZoneConfig;
 
@@ -18,7 +20,7 @@ namespace Model
         public BigDouble GoldTotal
         {
             get => _playerInfo.GoldTotal;
-            set => _playerInfo.GoldTotal = value;
+            set { _playerInfo.GoldTotal = value; OnGoldChanged?.Invoke(); }
         }
 
         public Player(DamageZoneConfig damageZoneConfig)

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Core.TestSkillTree;
 using Entity;
 using IncrementalRPG.Scripts.AudioManager;
 using IncrementalRPG.Scripts.Core;
@@ -18,6 +19,7 @@ namespace Core.Gameplay
         private readonly DamageZoneView _view;
         private readonly AudioManager _audioManager;
         private readonly Player _player;
+        private readonly SkillTreeService _skillTree;
 
         private readonly List<Creature> _creaturesInZone = new List<Creature>();
 
@@ -25,20 +27,21 @@ namespace Core.Gameplay
         private float _tickTimer;
 
         public Vector3 WorldPosition => _worldPosition;
-        public float RadiusX => _player.ZoneSize.Radius;
-        public float RadiusY => _player.ZoneSize.Radius * _config.aspectRatio;
+        public float RadiusX => _config.baseRadius * _skillTree.GetMultiplier(StatType.ZoneRadius);
+        public float RadiusY => RadiusX * _config.aspectRatio;
         public State CurrentState { get; private set; } = State.Idle;
 
         public event Action<State> OnStateChanged;
         public event Action OnDamageTick;
 
-        public DamageZone(TileGrid tileGrid, DamageZoneConfig config, DamageZoneView view, AudioManager audioManager, Player player)
+        public DamageZone(TileGrid tileGrid, DamageZoneConfig config, DamageZoneView view, AudioManager audioManager, Player player, SkillTreeService skillTree)
         {
             _tileGrid = tileGrid;
             _config = config;
             _view = view;
             _audioManager = audioManager;
             _player = player;
+            _skillTree = skillTree;
         }
 
         public void Initialize()
@@ -94,12 +97,14 @@ namespace Core.Gameplay
             if (CurrentState != State.Attacking) return;
 
             _tickTimer += deltaTime;
-            if (_tickTimer < _config.tickInterval) return;
+            var tickInterval = _config.tickInterval / _skillTree.GetMultiplier(StatType.AttackSpeed);
+            if (_tickTimer < tickInterval) return;
 
             _tickTimer = 0f;
+            var damage = (int)((_config.damagePerTick + _skillTree.GetBonus(StatType.ZoneDamage)) * _skillTree.GetMultiplier(StatType.ZoneDamage));
             for (var i = 0; i < _creaturesInZone.Count; i++)
             {
-                _creaturesInZone[i].TakeDamage(_config.damagePerTick);
+                _creaturesInZone[i].TakeDamage(damage);
                 _audioManager.PlayHitAudio(i * 0.1f);
             }
 

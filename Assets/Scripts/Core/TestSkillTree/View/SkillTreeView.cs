@@ -1,6 +1,11 @@
 using System.Collections.Generic;
+using Core.StateMachine;
+using Core.StateMachine.States;
+using Model;
 using Reflex.Attributes;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Core.TestSkillTree.View
 {
@@ -13,22 +18,37 @@ namespace Core.TestSkillTree.View
         [SerializeField] private NodeView           _nodeViewPrefab;
         [SerializeField] private NodeConnectionView _connectionViewPrefab;
         [SerializeField] private NodePopupView      _popupView;
+        [SerializeField] private TextMeshProUGUI    _goldText;
+        [SerializeField] private Button             _closeButton;
+
+        [Inject] private GameStateMachine _stateMachine;
 
         private SkillTreeService         _service;
         private SkillTreeConfig          _config;
+        private Player                   _player;
         private readonly List<NodeView>  _nodeViews = new List<NodeView>();
         private readonly List<(NodeConnectionView view, NodeDefinition def)> _connectionViews = new();
 
         [Inject]
-        public void Construct(SkillTreeConfig config, SkillTreeService service)
+        public void Construct(SkillTreeConfig config, SkillTreeService service, Player player)
         {
             _config  = config;
             _service = service;
+            _player  = player;
 
             _popupView.Bind(service);
+            _closeButton.onClick.AddListener(() => _stateMachine.Enter<HubState>());
             Build();
 
             _service.OnUpgraded += RefreshAll;
+            _player.OnGoldChanged += RefreshGold;
+            RefreshGold();
+        }
+
+        private void RefreshGold()
+        {
+            if (_goldText == null) return;
+            _goldText.text = _player.GoldTotal.ToString();
         }
 
         private void Build()
@@ -66,8 +86,11 @@ namespace Core.TestSkillTree.View
 
         private void OnDestroy()
         {
+            _closeButton.onClick.RemoveAllListeners();
             if (_service != null)
                 _service.OnUpgraded -= RefreshAll;
+            if (_player != null)
+                _player.OnGoldChanged -= RefreshGold;
         }
     }
 }

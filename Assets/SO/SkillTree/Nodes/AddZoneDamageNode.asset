@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
-  m_Name: TestNode1
+  m_Name: AddZoneDamageNode
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
-  id: TestNode1
-  displayName: TestNode1
-  description: TestNode1 suka blyat
-  icon: {fileID: -918889415, guid: 6582f34ddd5f686408c019550cd94c9d, type: 3}
-  maxLevel: 4
-  goldCostPerLevel: 0100000001000000
-  prerequisites: []
+  id: add_zone_damage
+  displayName: Add Zone Damage
+  description: Add zone damage
+  icon: {fileID: 4153240674832713612, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  maxLevel: 2
+  goldCostPerLevel: 0a00000014000000
+  prerequisites:
+  - node: {fileID: 11400000, guid: 9ae3dedb00f784a268592bfaeced1753, type: 2}
+    requiredLevel: 1
   effects:
-  - effectType: 2
-    statType: 0
+  - effectType: 0
+    statType: 1
     valuesPerLevel:
-    - 2
-    - 2
-    - 2
-    - 2
+    - 5
+    - 10
     feature: 0
-  positionInGraph: {x: 0, y: 0}
+  positionInGraph: {x: -100, y: 100}

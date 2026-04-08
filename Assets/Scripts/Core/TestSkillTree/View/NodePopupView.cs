@@ -1,7 +1,7 @@
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 namespace Core.TestSkillTree.View
 {
@@ -94,10 +94,22 @@ namespace Core.TestSkillTree.View
             _current = null;
         }
 
+        public void Refresh(NodeDefinition definition)
+        {
+            _current = definition;
+            Refresh();
+        }
+
         private void Refresh()
         {
-            _nameText.text        = _current.displayName;
-            _descriptionText.text = _current.description;
+            _nameText.text = _current.displayName;
+
+            var level      = _service.GetLevel(_current.id);
+            var statsBlock = BuildEffectsText(_current, level);
+
+            _descriptionText.text = string.IsNullOrEmpty(_current.description)
+                ? statsBlock
+                : $"{_current.description}\n\n{statsBlock}";
 
             if (_costText != null)
             {
@@ -105,6 +117,87 @@ namespace Core.TestSkillTree.View
                 _costText.text = cost > 0 ? $"{cost}" : "";
             }
         }
+
+        private static string BuildEffectsText(NodeDefinition def, int level)
+        {
+            var sb = new System.Text.StringBuilder();
+
+            foreach (var effect in def.effects)
+            {
+                switch (effect.effectType)
+                {
+                    case NodeEffectType.Additive:
+                    {
+                        var current = SumValues(effect.valuesPerLevel, level);
+                        var statName = GetStatName(effect.statType);
+
+                        if (level >= def.maxLevel)
+                        {
+                            sb.AppendLine($"{statName}: +{current} (макс.)");
+                        }
+                        else
+                        {
+                            var next = current + GetValueAt(effect.valuesPerLevel, level);
+                            sb.AppendLine(level == 0
+                                ? $"{statName}: +{next}"
+                                : $"{statName}: +{current} → +{next}");
+                        }
+                        break;
+                    }
+                    case NodeEffectType.Multiplicative:
+                    {
+                        var currentPct = Mathf.RoundToInt(SumValues(effect.valuesPerLevel, level) * 100f);
+                        var statName   = GetStatName(effect.statType);
+
+                        if (level >= def.maxLevel)
+                        {
+                            sb.AppendLine($"{statName}: +{currentPct}% (макс.)");
+                        }
+                        else
+                        {
+                            var nextPct = Mathf.RoundToInt((SumValues(effect.valuesPerLevel, level) + GetValueAt(effect.valuesPerLevel, level)) * 100f);
+                            sb.AppendLine(level == 0
+                                ? $"{statName}: +{nextPct}%"
+                                : $"{statName}: +{currentPct}% → +{nextPct}%");
+                        }
+                        break;
+                    }
+                    case NodeEffectType.FeatureUnlock:
+                        sb.AppendLine($"Разблокирует: {GetFeatureName(effect.feature)}");
+                        break;
+                }
+            }
+
+            return sb.ToString().TrimEnd();
+        }
+
+        private static float SumValues(float[] values, int level)
+        {
+            var sum = 0f;
+            for (var i = 0; i < level && i < values.Length; i++)
+                sum += values[i];
+            return sum;
+        }
+
+        private static float GetValueAt(float[] values, int index)
+            => index < values.Length ? values[index] : 0f;
+
+        private static string GetStatName(StatType stat) => stat switch
+        {
+            StatType.ZoneRadius    => "Радиус зоны",
+            StatType.ZoneDamage    => "Урон зоны",
+            StatType.AttackSpeed   => "Скорость атаки",
+            StatType.SpawnSpeed    => "Скорость спауна",
+            StatType.SpawnCountMax => "Существ на старте",
+            StatType.MapSize       => "Размер арены",
+            _                      => stat.ToString(),
+        };
+
+        private static string GetFeatureName(GameFeature feature) => feature switch
+        {
+            GameFeature.Bombs => "Бомбы",
+            _                 => feature.ToString(),
+        };
 
         private void PositionNear(RectTransform nodeTransform)
         {

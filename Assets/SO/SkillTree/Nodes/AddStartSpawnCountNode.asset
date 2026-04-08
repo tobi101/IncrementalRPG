@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
+  m_Name: AddStartSpawnCountNode
+  m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
+  id: add_start_spawn
+  displayName: Add start spawn count
+  description: Add start spawn count
+  icon: {fileID: 4153240674832713612, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  maxLevel: 3
+  goldCostPerLevel: 0a000000140000001e000000
+  prerequisites:
+  - node: {fileID: 11400000, guid: 238fc219b23d547a1b6e6c3907e17af4, type: 2}
+    requiredLevel: 1
+  effects:
+  - effectType: 1
+    statType: 4
+    valuesPerLevel:
+    - 1
+    - 2
+    - 3
+    feature: 0
+  positionInGraph: {x: -100, y: -100}

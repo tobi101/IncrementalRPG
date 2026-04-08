@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace Core.TestSkillTree.View
 {
     // Prefab requirements: Image (_icon) + TextMeshProUGUI (_levelText) as children.
-    public class NodeView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class NodeView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         [SerializeField] private Image _icon;
         [SerializeField] private Image _borderIcon;
@@ -61,5 +61,12 @@ namespace Core.TestSkillTree.View
 
         public void OnPointerExit(PointerEventData eventData) =>
             _popup.OnNodeExit();
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (!_service.CanUpgrade(_definition.id)) return;
+            _service.Upgrade(_definition.id);
+            _popup.Refresh(_definition);
+        }
     }
 }
