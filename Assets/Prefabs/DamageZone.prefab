@@ -50,7 +50,6 @@ MonoBehaviour:
   _circle: {fileID: 8976878302267159265}
   _wave1: {fileID: 3998207053462870600}
   _wave2: {fileID: 8216491539616123065}
-  _config: {fileID: 11400000, guid: b8cd0d72559cb4d80839102b7953891a, type: 2}
   _baseRadiusX: 0.6
 --- !u!1 &7981138379044930966
 GameObject:
@@ -273,7 +272,7 @@ MeshRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -32765
+  m_SortingOrder: -32761
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &8976878302267159265
@@ -406,7 +405,7 @@ MeshRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -32764
+  m_SortingOrder: -32760
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &3998207053462870600

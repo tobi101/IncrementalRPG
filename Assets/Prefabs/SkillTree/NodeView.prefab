@@ -54,9 +54,6 @@ MonoBehaviour:
   _icon: {fileID: 7067717992799436699}
   _borderIcon: {fileID: 3340970767590097924}
   _levelText: {fileID: 1364153667135044050}
-  _colorAvailable: {r: 0.55, g: 0.55, b: 0.55, a: 1}
-  _colorPartial: {r: 1, g: 0.85, b: 0, a: 1}
-  _colorComplete: {r: 0.2, g: 0.8, b: 0.2, a: 1}
 --- !u!222 &4180259189935674086
 CanvasRenderer:
   m_ObjectHideFlags: 0

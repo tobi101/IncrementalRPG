@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662ed0b91e30c48b1a2bce20c3a48471, type: 3}
+  m_Name: Back Glow Sprite Config
+  m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeBackGlowSpriteConfig
+  locked: {fileID: 21300000, guid: 1c63026db1b08465ead090aabe1f3935, type: 3}
+  unaffordable: {fileID: 21300000, guid: ba176237f466543ceac504991962bd5c, type: 3}
+  affordable: {fileID: 21300000, guid: 1bd9df2c98d1346c6969f394de210a44, type: 3}
+  complete: {fileID: 21300000, guid: 017b63491e8db4d21b60fa547b404923, type: 3}

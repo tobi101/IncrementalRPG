@@ -26,6 +26,7 @@ namespace Core.TestSkillTree
         SpawnSpeed,
         SpawnCountMax,
         MapSize,
+        SessionTime
     }
 
     public enum GameFeature

@@ -1,16 +1,25 @@
 using System.Text;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Core.TestSkillTree.View
 {
     // Single instance on the Canvas (outside Content so it is unaffected by zoom).
-    public class NodePopupView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class NodePopupView : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _nameText;
         [SerializeField] private TextMeshProUGUI _descriptionText;
         [SerializeField] private TextMeshProUGUI _costText;
+
+        [SerializeField] private Image _borderImage;
+        [SerializeField] private Image _framePriceImage;
+        [SerializeField] private Image _backGlowImage;
+
+        [SerializeField] private NodeFramePriceSpriteConfig _framePriceSpriteConfig;
+        [SerializeField] private NodeBackGlowSpriteConfig  _backGlowSpriteConfig;
+
+        private NodeBorderColorConfig _borderColorConfig;
 
         private const float PopupGap = 15f;
 
@@ -19,16 +28,14 @@ namespace Core.TestSkillTree.View
         private RectTransform    _rt;
         private Canvas           _canvas;
 
-        private bool _nodeHovered;
-        private bool _popupHovered;
         private bool _blocked;
-        private Coroutine _hideCoroutine;
 
-        public void Bind(SkillTreeService service)
+        public void Bind(SkillTreeService service, NodeBorderColorConfig borderColorConfig)
         {
-            _service = service;
-            _rt      = (RectTransform)transform;
-            _canvas  = GetComponentInParent<Canvas>();
+            _service           = service;
+            _borderColorConfig = borderColorConfig;
+            _rt                = (RectTransform)transform;
+            _canvas            = GetComponentInParent<Canvas>();
 
             gameObject.SetActive(false);
         }
@@ -45,51 +52,16 @@ namespace Core.TestSkillTree.View
         {
             if (_blocked) return;
 
-            _current      = definition;
-            _nodeHovered  = true;
+            _current = definition;
             gameObject.SetActive(true);
             Refresh();
             PositionNear(nodeTransform);
         }
 
-        public void OnNodeExit()
-        {
-            _nodeHovered = false;
-            TryHide();
-        }
-
-        public void OnPointerEnter(PointerEventData eventData) => _popupHovered = true;
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            _popupHovered = false;
-            TryHide();
-        }
-
-        private void TryHide()
-        {
-            if (_nodeHovered || _popupHovered) return;
-            if (!gameObject.activeInHierarchy) return;
-            if (_hideCoroutine != null) StopCoroutine(_hideCoroutine);
-            _hideCoroutine = StartCoroutine(HideDelayed());
-        }
-
-        private System.Collections.IEnumerator HideDelayed()
-        {
-            yield return null;
-            if (!_nodeHovered && !_popupHovered)
-            {
-                gameObject.SetActive(false);
-                _current = null;
-            }
-            _hideCoroutine = null;
-        }
+        public void OnNodeExit() => Hide();
 
         public void Hide()
         {
-            if (_hideCoroutine != null) { StopCoroutine(_hideCoroutine); _hideCoroutine = null; }
-            _nodeHovered  = false;
-            _popupHovered = false;
             gameObject.SetActive(false);
             _current = null;
         }
@@ -100,9 +72,22 @@ namespace Core.TestSkillTree.View
             Refresh();
         }
 
+        private void ApplyVisualState(NodeState state)
+        {
+            if (_borderColorConfig != null)
+                _borderImage.color = _borderColorConfig.GetColor(state);
+
+            if (_framePriceSpriteConfig != null && _framePriceImage != null)
+                _framePriceImage.sprite = _framePriceSpriteConfig.GetSprite(state);
+
+            if (_backGlowSpriteConfig != null && _backGlowImage != null)
+                _backGlowImage.sprite = _backGlowSpriteConfig.GetSprite(state);
+        }
+
         private void Refresh()
         {
             _nameText.text = _current.displayName;
+            ApplyVisualState(_service.GetState(_current.id));
 
             var level      = _service.GetLevel(_current.id);
             var statsBlock = BuildEffectsText(_current, level);

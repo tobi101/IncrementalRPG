@@ -37,15 +37,36 @@ namespace Core.TestSkillTree
 
         public NodeState GetState(string nodeId)
         {
-            var def = GetDefinition(nodeId);
-            if (!ArePrerequisitesMet(def)) 
-                return NodeState.Hidden;
-
+            var def   = GetDefinition(nodeId);
             var level = _state.GetLevel(nodeId);
-            if (level == 0)           
-                return NodeState.Available;
-            
-            return level < def.maxLevel ? NodeState.Partial : NodeState.Complete;
+
+            if (level >= def.maxLevel)     return NodeState.Complete;
+            if (!IsVisible(def))           return NodeState.Hidden;
+            if (!ArePrerequisitesMet(def)) return NodeState.Locked;
+
+            var cost = GetUpgradeCost(nodeId);
+            return (cost == 0 || _player.GoldTotal >= cost)
+                ? NodeState.Affordable
+                : NodeState.Unaffordable;
+        }
+
+        private bool IsVisible(NodeDefinition def)
+        {
+            if (def.prerequisites == null || def.prerequisites.Count == 0)
+                return true;
+
+            var parent = def.prerequisites[0].node;
+            if (parent == null) return true;
+
+            if (_state.GetLevel(parent.id) >= 1) return true;
+
+            if (parent.prerequisites == null || parent.prerequisites.Count == 0)
+                return false;
+
+            var grandparent = parent.prerequisites[0].node;
+            if (grandparent == null) return false;
+
+            return _state.GetLevel(grandparent.id) >= 1;
         }
 
         public int GetUpgradeCost(string nodeId)
@@ -162,9 +183,10 @@ namespace Core.TestSkillTree
     
     public enum NodeState
     {
-        Hidden,    // Prerequisites not met — node is not visible
-        Available, // Prerequisites met, level = 0
-        Partial,   // 0 < level < maxLevel
-        Complete,  // level == maxLevel
+        Hidden,       // Not visible (grandparent not yet upgraded)
+        Locked,       // Visible but direct prerequisite not yet upgraded
+        Unaffordable, // Prerequisites met, not enough gold
+        Affordable,   // Prerequisites met, enough gold to upgrade
+        Complete,     // level == maxLevel
     }
 }

@@ -10,6 +10,15 @@ namespace Core.Gameplay
         [SerializeField] private Tilemap targetTilemap;
         [SerializeField] private Camera targetCamera;
 
+        [Header("Lava Decoration")]
+        [SerializeField] private Transform lavaRoot;
+        [Tooltip("Camera orthographic size at which lava looks correct (set this after running Generate at reference map size).")]
+        [SerializeField] private float lavaReferenceOrthoSize = 5f;
+        [Tooltip("Constant vertical offset in world units. Does not change with map size.")]
+        [SerializeField] private float lavaVerticalOffsetFixed = 0f;
+        [Tooltip("Vertical offset multiplied by the scale factor. Compensates for lava pivot not being at visual center.")]
+        [SerializeField] private float lavaVerticalOffsetScaled = 0f;
+
         [Header("Fit")]
         [Tooltip("How much of the viewport (0..1) the generated map should occupy. 1 = tight fit, 0.8 = more margins.")]
         [Range(0.1f, 1f)]
@@ -68,7 +77,23 @@ namespace Core.Gameplay
             cameraToFit.transform.position = nextPosition;
             cameraToFit.orthographicSize = orthographicSize;
 
+            FitLavaDecoration(worldBounds, orthographicSize);
+
             Debug.Log($"[TilemapCameraAutoFitter] Camera fitted. Size: {orthographicSize:F2}, Fill: {viewportFill:F2}, Center: {worldBounds.center}.");
+        }
+
+        private void FitLavaDecoration(Bounds worldBounds, float orthographicSize)
+        {
+            if (lavaRoot == null || lavaReferenceOrthoSize < 0.01f)
+                return;
+
+            var scale = orthographicSize / lavaReferenceOrthoSize;
+            lavaRoot.localScale = Vector3.one * scale;
+            var verticalOffset = lavaVerticalOffsetFixed + lavaVerticalOffsetScaled * scale;
+            lavaRoot.position = new Vector3(
+                worldBounds.center.x,
+                worldBounds.center.y + verticalOffset,
+                lavaRoot.position.z);
         }
 
         private bool TryGetWorldBounds(out Bounds bounds)

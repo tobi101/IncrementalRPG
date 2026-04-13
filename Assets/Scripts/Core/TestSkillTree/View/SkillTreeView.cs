@@ -21,7 +21,8 @@ namespace Core.TestSkillTree.View
         [SerializeField] private TextMeshProUGUI    _goldText;
         [SerializeField] private Button             _closeButton;
 
-        [Inject] private GameStateMachine _stateMachine;
+        [Inject] private GameStateMachine     _stateMachine;
+        [Inject] private NodeBorderColorConfig _borderColorConfig;
 
         private SkillTreeService         _service;
         private SkillTreeConfig          _config;
@@ -36,7 +37,7 @@ namespace Core.TestSkillTree.View
             _service = service;
             _player  = player;
 
-            _popupView.Bind(service);
+            _popupView.Bind(service, _borderColorConfig);
             _closeButton.onClick.AddListener(() => _stateMachine.Enter<HubState>());
             Build();
 
@@ -70,7 +71,7 @@ namespace Core.TestSkillTree.View
             {
                 var nodeView = Instantiate(_nodeViewPrefab, _nodesLayer);
                 ((RectTransform)nodeView.transform).anchoredPosition = def.positionInGraph;
-                nodeView.Bind(def, _service, _popupView);
+                nodeView.Bind(def, _service, _popupView, _borderColorConfig);
                 _nodeViews.Add(nodeView);
             }
         }

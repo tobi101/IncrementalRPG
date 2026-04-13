@@ -24,6 +24,7 @@ namespace Reflex
         [SerializeField] private DungeonList _dungeonList;
         [SerializeField] private DamageZoneConfig _damageZoneConfig;
         [SerializeField] private SkillTreeConfig _skillTreeConfig;
+        [SerializeField] private NodeBorderColorConfig _nodeBorderColorConfig;
         
         [SerializeField] private AudioManager _audioManager;
         [SerializeField] private IsometricGradientTilemapGenerator _isometricGradientTilemapGenerator;
@@ -47,6 +48,20 @@ namespace Reflex
             builder.RegisterType(
                 typeof(GameStateMachine),
                 new[] { typeof(IAwakeable), typeof(IStartable), typeof(ITickable), typeof(GameStateMachine) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+            
+            builder.RegisterType(
+                typeof(HubState),
+                new[] { typeof(IGameState), typeof(HubState) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+            
+            builder.RegisterType(
+                typeof(HubFeature),
+                new[] { typeof(IGameFeature), typeof(HubFeature) },
                 Lifetime.Singleton,
                 Resolution.Lazy
             );
@@ -80,13 +95,6 @@ namespace Reflex
             );
 
             builder.RegisterType(
-                typeof(HubState),
-                new[] { typeof(IGameState), typeof(HubState) },
-                Lifetime.Singleton,
-                Resolution.Lazy
-            );
-
-            builder.RegisterType(
                 typeof(BarracksState),
                 new[] { typeof(IGameState), typeof(BarracksState) },
                 Lifetime.Singleton,
@@ -103,13 +111,6 @@ namespace Reflex
             builder.RegisterType(
                 typeof(CraftState),
                 new[] { typeof(IGameState), typeof(CraftState) },
-                Lifetime.Singleton,
-                Resolution.Lazy
-            );
-
-            builder.RegisterType(
-                typeof(HubFeature),
-                new[] { typeof(IGameFeature), typeof(HubFeature) },
                 Lifetime.Singleton,
                 Resolution.Lazy
             );
@@ -193,6 +194,7 @@ namespace Reflex
             builder.RegisterValue(_dungeonList, new[] { typeof(DungeonList) });
             builder.RegisterValue(_damageZoneConfig, new[] { typeof(DamageZoneConfig) });
             builder.RegisterValue(_skillTreeConfig, new[] { typeof(SkillTreeConfig) });
+            builder.RegisterValue(_nodeBorderColorConfig, new[] { typeof(NodeBorderColorConfig) });
         }
     }
 }

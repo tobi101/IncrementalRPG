@@ -11,5 +11,6 @@ namespace Core.Gameplay.Dungeon
         [Min(0)] public int minPlayZoneSize;
         [Min(0)] public int initialSpawnCount;
         [Min(0.1f)] public float spawnInterval = 2f;
+        [Min(1f)] public float baseSessionTimerInSeconds = 1f;
     }
 }

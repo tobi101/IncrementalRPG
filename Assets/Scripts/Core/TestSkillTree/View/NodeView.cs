@@ -12,20 +12,17 @@ namespace Core.TestSkillTree.View
         [SerializeField] private Image _borderIcon;
         [SerializeField] private TextMeshProUGUI _levelText;
 
-        [Header("State Colors")]
-        [SerializeField] private Color _colorAvailable = new Color(0.55f, 0.55f, 0.55f);
-        [SerializeField] private Color _colorPartial   = new Color(1f,    0.85f, 0f   );
-        [SerializeField] private Color _colorComplete  = new Color(0.2f,  0.8f,  0.2f );
+        private SkillTreeService      _service;
+        private NodeDefinition        _definition;
+        private NodePopupView         _popup;
+        private NodeBorderColorConfig _borderColorConfig;
 
-        private SkillTreeService _service;
-        private NodeDefinition   _definition;
-        private NodePopupView    _popup;
-
-        public void Bind(NodeDefinition definition, SkillTreeService service, NodePopupView popup)
+        public void Bind(NodeDefinition definition, SkillTreeService service, NodePopupView popup, NodeBorderColorConfig borderColorConfig)
         {
-            _definition = definition;
-            _service    = service;
-            _popup      = popup;
+            _definition        = definition;
+            _service           = service;
+            _popup             = popup;
+            _borderColorConfig = borderColorConfig;
 
             if (_icon != null && definition.icon != null)
                 _icon.sprite = definition.icon;
@@ -45,13 +42,9 @@ namespace Core.TestSkillTree.View
 
             gameObject.SetActive(true);
 
-            _borderIcon.color = state switch
-            {
-                NodeState.Available => _colorAvailable,
-                NodeState.Partial   => _colorPartial,
-                NodeState.Complete  => _colorComplete,
-                _                   => Color.white
-            };
+            _borderIcon.color = _borderColorConfig != null
+                ? _borderColorConfig.GetColor(state)
+                : Color.white;
 
             _levelText.text = $"{_service.GetLevel(_definition.id)}/{_definition.maxLevel}";
         }
