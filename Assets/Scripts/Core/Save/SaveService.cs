@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using TMPro;
+using Core.StateMachine.Features;
+using Core.TestSkillTree;
 using UnityEngine;
 
 namespace Core.Save
@@ -12,16 +13,19 @@ namespace Core.Save
         private readonly List<ISaveable> _saveables;
 
         private static string SavePath => Path.Combine(Application.persistentDataPath, "save.json");
-        
+
         public SaveData GetData() => _data;
-        
-        public SaveService(IEnumerable<ISaveable> saveables)
+
+        public SaveService(IEnumerable<ISaveable> saveables, GameplayFeature gameplayFeature, SkillTreeService skillTreeService)
         {
             _saveables = new List<ISaveable>(saveables);
             _data = ReadFromDisk() ?? new SaveData();
 
             foreach (var saveable in _saveables)
                 saveable.Load(_data);
+
+            gameplayFeature.OnSessionExpired += Save;
+            skillTreeService.OnUpgraded += Save;
 
             Debug.Log($"[SaveService] Loaded. Version: {_data.Version}, Path: {SavePath}");
         }

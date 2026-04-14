@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Gameplay;
@@ -19,8 +20,11 @@ namespace Core.StateMachine.Features
         [Inject] private Player _player;
         [Inject] private SkillTreeService _skillTree;
 
+        public event Action OnSessionExpired;
+
         private List<IService> _services;
         private DungeonConfig _currentDungeon;
+        private float _sessionTimeLeft;
         private bool _isActive;
         private bool _isStarted;
 
@@ -36,10 +40,13 @@ namespace Core.StateMachine.Features
         {
             _isActive = true;
             InitGameZone();
+            _sessionTimeLeft = (100f / _currentDungeon.heatIndex)
+                             - (_player.ArmorIndex / 2.5f)
+                             + _skillTree.GetBonus(StatType.SessionTime);
 
             if (!_isStarted)
             {
-                var zoneSize = _currentDungeon.initialSpawnCount + _player.StartSpawnObjectCount + (int)_skillTree.GetBonus(StatType.SpawnCountMax);
+                var zoneSize = _currentDungeon.initialSpawnCount + (int)_skillTree.GetBonus(StatType.SpawnCountMax);
                 _spawnService.SpawnInitial(zoneSize);
                 _isStarted = true;
             }
@@ -54,6 +61,10 @@ namespace Core.StateMachine.Features
         public void Tick(float deltaTime)
         {
             if (!_isActive) return;
+
+            _sessionTimeLeft -= deltaTime;
+            if (_sessionTimeLeft <= 0)
+                OnSessionExpired?.Invoke();
 
             foreach (var service in _services)
                 service.Update(deltaTime);

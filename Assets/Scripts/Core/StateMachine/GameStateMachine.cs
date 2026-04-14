@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.StateMachine.Features;
 using Core.StateMachine.States;
 using IncrementalRPG.Scripts.Reflex;
 using Reflex.Attributes;
@@ -11,6 +12,7 @@ namespace Core.StateMachine
     {
         [Inject] private IEnumerable<IGameState> _statesEnumerable;
         [Inject] private IEnumerable<IGameFeature> _features;
+        [Inject] private GameplayFeature _gameplayFeature;
 
         private Dictionary<Type, IGameState> _states;
         private IGameState _current;
@@ -21,6 +23,8 @@ namespace Core.StateMachine
 
             foreach (var feature in _features)
                 feature.Initialize();
+
+            _gameplayFeature.OnSessionExpired += () => Enter<HubState>();
         }
 
         public void OnStart() => Enter<HubState>();
