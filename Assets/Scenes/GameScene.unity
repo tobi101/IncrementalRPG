@@ -735,7 +735,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -32762
+  m_SortingOrder: -32764
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -1345,7 +1345,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -32766
+  m_SortingOrder: -32765
   m_TargetDisplay: 0
 --- !u!224 &281812555
 RectTransform:
@@ -2125,7 +2125,7 @@ MeshRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -32767
+  m_SortingOrder: -32766
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &515451306
@@ -2300,7 +2300,7 @@ Transform:
   m_GameObject: {fileID: 538926575}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.002, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2353,7 +2353,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -32765
+  m_SortingOrder: -32763
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -5617,7 +5617,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -32767
+  m_SortingOrder: -32768
   m_TargetDisplay: 0
 --- !u!224 &1317136914
 RectTransform:
@@ -7306,7 +7306,7 @@ Transform:
   m_GameObject: {fileID: 1940017534}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.002, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7359,7 +7359,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -32765
+  m_SortingOrder: -32763
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -9914,6 +9914,10 @@ PrefabInstance:
     - target: {fileID: 5581378993765909467, guid: e892c826bacdf4549bb831809e0de618, type: 3}
       propertyPath: m_Name
       value: DamageZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 6523434273129532186, guid: e892c826bacdf4549bb831809e0de618, type: 3}
+      propertyPath: m_SortingOrder
+      value: -32759
       objectReference: {fileID: 0}
     - target: {fileID: 6950989287714056399, guid: e892c826bacdf4549bb831809e0de618, type: 3}
       propertyPath: m_Materials.Array.size

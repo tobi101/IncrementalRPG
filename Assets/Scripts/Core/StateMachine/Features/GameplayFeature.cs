@@ -36,6 +36,8 @@ namespace Core.StateMachine.Features
 
             foreach (var service in _services)
                 service.Initialize();
+
+            _spawnService.OnCreatureKilled += (_, amount) => _player.GoldTotal += amount;
         }
 
         public void Enable()
