@@ -10,6 +10,10 @@ namespace Core.Gameplay
         [SerializeField] private Tilemap targetTilemap;
         [SerializeField] private Camera targetCamera;
 
+        [Header("Lava Animation")]
+        [Tooltip("Extra distance below the camera bottom edge where lava starts.")]
+        [SerializeField] private float lavaOffScreenMargin = 1f;
+
         [Header("Lava Decoration")]
         [SerializeField] private Transform lavaRoot;
         [Tooltip("Camera orthographic size at which lava looks correct (set this after running Generate at reference map size).")]
@@ -31,6 +35,9 @@ namespace Core.Gameplay
         [Tooltip("Vertical offset as a fraction of the tilemap height. Negative = shift camera down (map appears lower in viewport).")]
         [Range(-0.5f, 0.5f)]
         [SerializeField] private float normalizedVerticalOffset = 0f;
+
+        private float _lavaStartY;
+        private float _lavaEndY;
 
         [ContextMenu("Fit Camera To Tilemap")]
         public void FitToTilemap()
@@ -94,6 +101,25 @@ namespace Core.Gameplay
                 worldBounds.center.x,
                 worldBounds.center.y + verticalOffset,
                 lavaRoot.position.z);
+        }
+
+        public void PrepareLavaAnimation()
+        {
+            if (lavaRoot == null) return;
+
+            var cam = targetCamera != null ? targetCamera : Camera.main;
+            _lavaEndY = lavaRoot.position.y;
+            _lavaStartY = cam.transform.position.y - cam.orthographicSize - lavaOffScreenMargin;
+
+            lavaRoot.position = new Vector3(lavaRoot.position.x, _lavaStartY, lavaRoot.position.z);
+        }
+
+        public void AnimateLava(float progress)
+        {
+            if (lavaRoot == null) return;
+
+            var y = Mathf.Lerp(_lavaStartY, _lavaEndY, progress);
+            lavaRoot.position = new Vector3(lavaRoot.position.x, y, lavaRoot.position.z);
         }
 
         private bool TryGetWorldBounds(out Bounds bounds)

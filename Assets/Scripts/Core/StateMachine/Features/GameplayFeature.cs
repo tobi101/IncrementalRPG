@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Gameplay;
+using UnityEngine;
 using Core.Gameplay.Dungeon;
 using Core.TestSkillTree;
 using IncrementalRPG.Scripts.Core;
@@ -25,6 +26,7 @@ namespace Core.StateMachine.Features
         private List<IService> _services;
         private DungeonConfig _currentDungeon;
         private float _sessionTimeLeft;
+        private float _sessionTotalTime;
         private bool _isActive;
         private bool _isStarted;
 
@@ -40,9 +42,11 @@ namespace Core.StateMachine.Features
         {
             _isActive = true;
             InitGameZone();
-            _sessionTimeLeft = (100f / _currentDungeon.heatIndex)
-                             - (_player.ArmorIndex / 2.5f)
-                             + _skillTree.GetBonus(StatType.SessionTime);
+            _sessionTotalTime = (100f / _currentDungeon.heatIndex)
+                              - (_player.ArmorIndex / 2.5f)
+                              + _skillTree.GetBonus(StatType.SessionTime);
+            _sessionTimeLeft = _sessionTotalTime;
+            _generator.CameraAutoFitter.PrepareLavaAnimation();
 
             if (!_isStarted)
             {
@@ -63,6 +67,9 @@ namespace Core.StateMachine.Features
             if (!_isActive) return;
 
             _sessionTimeLeft -= deltaTime;
+            var progress = 1f - Mathf.Clamp01(_sessionTimeLeft / _sessionTotalTime);
+            _generator.CameraAutoFitter.AnimateLava(progress);
+
             if (_sessionTimeLeft <= 0)
                 OnSessionExpired?.Invoke();
 

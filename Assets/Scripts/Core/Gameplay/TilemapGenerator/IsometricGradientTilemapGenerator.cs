@@ -25,6 +25,7 @@ namespace Core.Gameplay
         
         public TilemapGenerationConfig Config => config;
         public Tilemap TargetTilemap => targetTilemap;
+        public TilemapCameraAutoFitter CameraAutoFitter => cameraAutoFitter;
 
         public int Size
         {

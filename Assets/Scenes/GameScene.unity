@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.TilemapCameraAutoFitter
   targetTilemap: {fileID: 157335152}
   targetCamera: {fileID: 519420031}
+  lavaOffScreenMargin: 1
   lavaRoot: {fileID: 1807862576}
   lavaReferenceOrthoSize: 3.76
   lavaVerticalOffsetFixed: 0.43
@@ -5943,7 +5944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1473405140
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6752,7 +6753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1819140942
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9102,7 +9103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1977989507
 RectTransform:
   m_ObjectHideFlags: 0
