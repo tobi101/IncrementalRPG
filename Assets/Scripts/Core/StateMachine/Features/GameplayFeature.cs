@@ -8,6 +8,7 @@ using Core.TestSkillTree;
 using IncrementalRPG.Scripts.Core;
 using Model;
 using Reflex.Attributes;
+using Utils;
 
 namespace Core.StateMachine.Features
 {
@@ -22,6 +23,8 @@ namespace Core.StateMachine.Features
         [Inject] private SkillTreeService _skillTree;
 
         public event Action OnSessionExpired;
+        public event Action<BigDouble, int> OnSessionGoldEarned;
+        public event Action<int> OnSessionKillsChanged;
 
         private List<IService> _services;
         private DungeonConfig _currentDungeon;
@@ -29,6 +32,8 @@ namespace Core.StateMachine.Features
         private float _sessionTotalTime;
         private bool _isActive;
         private bool _isStarted;
+        private BigDouble _sessionGold;
+        private int _sessionKills;
 
         public void Initialize()
         {
@@ -37,12 +42,14 @@ namespace Core.StateMachine.Features
             foreach (var service in _services)
                 service.Initialize();
 
-            _spawnService.OnCreatureKilled += (_, amount) => _player.GoldTotal += amount;
+            _spawnService.OnCreatureKilled += HandleCreatureKilled;
         }
 
         public void Enable()
         {
             _isActive = true;
+            _sessionGold = BigDouble.Zero;
+            _sessionKills = 0;
             InitGameZone();
             _sessionTotalTime = (100f / _currentDungeon.heatIndex)
                               - (_player.ArmorIndex / 2.5f)
@@ -62,6 +69,7 @@ namespace Core.StateMachine.Features
         {
             _isActive = false;
             _isStarted = false;
+            _spawnService.DespawnAll();
         }
 
         public void Tick(float deltaTime)
@@ -77,6 +85,15 @@ namespace Core.StateMachine.Features
 
             foreach (var service in _services)
                 service.Update(deltaTime);
+        }
+
+        private void HandleCreatureKilled(Vector2Int coord, int amount)
+        {
+            _player.GoldTotal += amount;
+            _sessionGold += amount;
+            _sessionKills++;
+            OnSessionGoldEarned?.Invoke(_sessionGold, amount);
+            OnSessionKillsChanged?.Invoke(_sessionKills);
         }
 
         private void InitGameZone()

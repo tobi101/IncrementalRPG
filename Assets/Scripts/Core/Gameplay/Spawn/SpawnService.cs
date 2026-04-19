@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Core.Gameplay.Dungeon;
 using Entity;
 using IncrementalRPG.Scripts.Core;
@@ -15,6 +16,15 @@ namespace Core.Gameplay
 
         private float _spawnInterval = 2f;
         private float _timer;
+        private readonly List<ActiveEntry> _active = new();
+
+        private struct ActiveEntry
+        {
+            public Creature Creature;
+            public CreatureView View;
+            public EntityConfig Config;
+            public Action OnDied;
+        }
 
         public SpawnService(PoolManager poolManager, TileGrid tileGrid)
         {
@@ -59,6 +69,20 @@ namespace Core.Gameplay
             Spawn(config, coord);
         }
 
+        public void DespawnAll()
+        {
+            var snapshot = new List<ActiveEntry>(_active);
+            _active.Clear();
+            _timer = 0f;
+            foreach (var entry in snapshot)
+            {
+                entry.Creature.OnDied -= entry.OnDied;
+                _tileGrid.Free(entry.Creature);
+                entry.View.Unbind();
+                _poolManager.Return(entry.View, entry.Config);
+            }
+        }
+
         private void Spawn(EntityConfig config, Vector2Int coord)
         {
             var creature = new Creature(config, coord);
@@ -71,6 +95,7 @@ namespace Core.Gameplay
             onDied = () =>
             {
                 creature.OnDied -= onDied;
+                _active.RemoveAll(e => e.Creature == creature);
                 _tileGrid.Free(creature);
                 view.Unbind();
                 _poolManager.Return(view, config);
@@ -79,6 +104,7 @@ namespace Core.Gameplay
                     OnCreatureKilled?.Invoke(creature.TileCoord, config.goldDrop);
             };
             creature.OnDied += onDied;
+            _active.Add(new ActiveEntry { Creature = creature, View = view, Config = config, OnDied = onDied });
         }
     }
 }

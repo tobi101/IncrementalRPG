@@ -84,6 +84,7 @@ namespace Core.Gameplay
             var sizeX = bounds.size.x;
             var sizeY = bounds.size.y;
 
+            _freeTiles.Clear();
             _slots = new TileSlot[sizeX, sizeY];
             for (var x = 0; x < sizeX; x++)
             for (var y = 0; y < sizeY; y++)

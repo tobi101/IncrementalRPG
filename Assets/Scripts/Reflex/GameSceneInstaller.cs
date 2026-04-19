@@ -33,6 +33,7 @@ namespace Reflex
         [SerializeField] private SkillTreeView _skillTreeView;
         [SerializeField] private HubView _hubView;
         [SerializeField] private MenuCanvasView _menuCanvasView;
+        [SerializeField] private HudView _hudView;
 
 
         private void Awake()
@@ -182,6 +183,7 @@ namespace Reflex
             builder.RegisterValue(_skillTreeView, new[] { typeof(SkillTreeView) });
             builder.RegisterValue(_hubView, new[] { typeof(HubView) });
             builder.RegisterValue(_menuCanvasView, new[] { typeof(MenuCanvasView) });
+            builder.RegisterValue(_hudView, new[] { typeof(HudView) });
         }
 
         public void Exit()
