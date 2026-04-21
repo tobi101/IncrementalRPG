@@ -24,7 +24,7 @@ namespace Core.StateMachine
             foreach (var feature in _features)
                 feature.Initialize();
 
-            _gameplayFeature.OnSessionExpired += () => Enter<HubState>();
+            ((GameplayState)_states[typeof(GameplayState)]).OnGoToHubRequested += () => Enter<HubState>();
         }
 
         public void OnStart() => Enter<HubState>();

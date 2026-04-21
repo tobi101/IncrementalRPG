@@ -26,6 +26,9 @@ namespace Core.StateMachine.Features
         public event Action<BigDouble, int> OnSessionGoldEarned;
         public event Action<int> OnSessionKillsChanged;
 
+        public BigDouble SessionGold => _sessionGold;
+        public int SessionKills => _sessionKills;
+
         private List<IService> _services;
         private DungeonConfig _currentDungeon;
         private float _sessionTimeLeft;
@@ -81,7 +84,10 @@ namespace Core.StateMachine.Features
             _generator.CameraAutoFitter.AnimateLava(progress);
 
             if (_sessionTimeLeft <= 0)
+            {
+                _isActive = false;
                 OnSessionExpired?.Invoke();
+            }
 
             foreach (var service in _services)
                 service.Update(deltaTime);

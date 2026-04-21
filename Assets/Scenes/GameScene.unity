@@ -9118,6 +9118,7 @@ MonoBehaviour:
   _hubView: {fileID: 2075618860}
   _menuCanvasView: {fileID: 1523771928}
   _hudView: {fileID: 919826143}
+  _sessionEndPopupView: {fileID: 2090979425}
 --- !u!1 &1880238748
 GameObject:
   m_ObjectHideFlags: 0
@@ -12211,13 +12212,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2090979424}
+  - component: {fileID: 2090979425}
   m_Layer: 5
   m_Name: SessionEndPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2090979424
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12238,6 +12240,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2090979425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090979423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa722b955ae949d28b04a30e1665174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.SessionEndPopupView
+  _goldText: {fileID: 2107874156}
+  _killsText: {fileID: 878960401}
+  _hubButton: {fileID: 1510840968}
 --- !u!1 &2107874154
 GameObject:
   m_ObjectHideFlags: 0

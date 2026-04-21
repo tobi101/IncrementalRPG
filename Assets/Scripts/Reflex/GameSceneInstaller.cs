@@ -34,6 +34,7 @@ namespace Reflex
         [SerializeField] private HubView _hubView;
         [SerializeField] private MenuCanvasView _menuCanvasView;
         [SerializeField] private HudView _hudView;
+        [SerializeField] private SessionEndPopupView _sessionEndPopupView;
 
 
         private void Awake()
@@ -184,6 +185,7 @@ namespace Reflex
             builder.RegisterValue(_hubView, new[] { typeof(HubView) });
             builder.RegisterValue(_menuCanvasView, new[] { typeof(MenuCanvasView) });
             builder.RegisterValue(_hudView, new[] { typeof(HudView) });
+            builder.RegisterValue(_sessionEndPopupView, new[] { typeof(SessionEndPopupView) });
         }
 
         public void Exit()

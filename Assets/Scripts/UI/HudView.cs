@@ -137,5 +137,6 @@ namespace UI
             _gameplay.OnSessionGoldEarned -= HandleSessionGoldEarned;
             _gameplay.OnSessionKillsChanged -= HandleSessionKillsChanged;
         }
+
     }
 }
