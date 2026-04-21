@@ -1,0 +1,6 @@
+slime_puddle.png
+size:223,97
+filter:Linear,Linear
+scale:0.35
+puddle
+bounds:2,2,219,93

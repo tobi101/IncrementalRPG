@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6862788083507133983
+--- !u!1 &2091934641899359183
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 666243375641608907}
-  - component: {fileID: 5203626222525753445}
-  - component: {fileID: 5118543242193580229}
-  - component: {fileID: 6473448771246332163}
+  - component: {fileID: 2594542365625129559}
+  - component: {fileID: 2614082113107280416}
+  - component: {fileID: 6668392804938731784}
+  - component: {fileID: 8489725435959159701}
   m_Layer: 0
   m_Name: AnimationBody
   m_TagString: Untagged
@@ -19,13 +19,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &666243375641608907
+--- !u!4 &2594542365625129559
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862788083507133983}
+  m_GameObject: {fileID: 2091934641899359183}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -34,21 +34,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8859714777439768793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5203626222525753445
+--- !u!33 &2614082113107280416
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862788083507133983}
+  m_GameObject: {fileID: 2091934641899359183}
   m_Mesh: {fileID: 0}
---- !u!23 &5118543242193580229
+--- !u!23 &6668392804938731784
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862788083507133983}
+  m_GameObject: {fileID: 2091934641899359183}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cc1a65036b7b34079adf0f062762af9f, type: 2}
+  - {fileID: 2100000, guid: 87a919a8a826545b5bd7fc18e9219d30, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,19 +91,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6473448771246332163
+--- !u!114 &8489725435959159701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6862788083507133983}
+  m_GameObject: {fileID: 2091934641899359183}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: spine-unity::Spine.Unity.SkeletonAnimation
-  skeletonDataAsset: {fileID: 11400000, guid: b190b6f3ca0104208b1840e4962c444f, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 813e071d073014d3a9419a89d84e19fd, type: 2}
   initialSkinName: 
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   _animationName: idle
   loop: 1
   timeScale: 1
---- !u!1 &6910596595972412270
+--- !u!1 &6453151633367006412
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,10 +142,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8009689023470066551}
-  - component: {fileID: 2932657635906317327}
-  - component: {fileID: 5909751601218241041}
-  - component: {fileID: 1891815773191961407}
+  - component: {fileID: 3981763489262486925}
+  - component: {fileID: 4441573862703946881}
+  - component: {fileID: 7873243746337579377}
+  - component: {fileID: 4222218452578882121}
   m_Layer: 0
   m_Name: Spine GameObject (slime_puddle)
   m_TagString: Untagged
@@ -153,13 +153,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8009689023470066551
+--- !u!4 &3981763489262486925
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6910596595972412270}
+  m_GameObject: {fileID: 6453151633367006412}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -168,21 +168,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8859714777439768793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2932657635906317327
+--- !u!33 &4441573862703946881
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6910596595972412270}
+  m_GameObject: {fileID: 6453151633367006412}
   m_Mesh: {fileID: 0}
---- !u!23 &5909751601218241041
+--- !u!23 &7873243746337579377
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6910596595972412270}
+  m_GameObject: {fileID: 6453151633367006412}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -201,7 +201,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d8ee389add84d4b278f486fae18b892c, type: 2}
+  - {fileID: 2100000, guid: ab8d236b8e9e3415aa0e2fd5b6ea0afb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -225,19 +225,19 @@ MeshRenderer:
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1891815773191961407
+--- !u!114 &4222218452578882121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6910596595972412270}
+  m_GameObject: {fileID: 6453151633367006412}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: spine-unity::Spine.Unity.SkeletonAnimation
-  skeletonDataAsset: {fileID: 11400000, guid: a4bccd75a0b4148d1a50917b4b801a90, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 4b68a289ecb8f4520babe50c7046f75d, type: 2}
   initialSkinName: 
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
@@ -331,16 +331,16 @@ PrefabInstance:
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
       propertyPath: _animationBody
       value: 
-      objectReference: {fileID: 6473448771246332163}
+      objectReference: {fileID: 8489725435959159701}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1096810445336081968, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
       insertIndex: 0
-      addedObject: {fileID: 666243375641608907}
+      addedObject: {fileID: 2594542365625129559}
     - targetCorrespondingSourceObject: {fileID: 1096810445336081968, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
       insertIndex: 1
-      addedObject: {fileID: 8009689023470066551}
+      addedObject: {fileID: 3981763489262486925}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
 --- !u!4 &8859714777439768793 stripped
