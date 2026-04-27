@@ -26,11 +26,15 @@ namespace Core.TestSkillTree
         SpawnSpeed,
         SpawnCountMax,
         MapSize,
-        SessionTime
+        SessionTime,
+        BombExplosionRadius,
+        BombExplosionDamage,
+        BombSpawnSpeed,
     }
 
     public enum GameFeature
     {
+        None = 0,
         Bombs,
     }
 

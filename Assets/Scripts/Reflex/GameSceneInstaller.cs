@@ -1,4 +1,5 @@
 using Core.Gameplay;
+using Core.Gameplay.Bomb;
 using Core.Gameplay.Dungeon;
 using Core.Save;
 using Core.StateMachine;
@@ -23,6 +24,7 @@ namespace Reflex
     {
         [SerializeField] private DungeonList _dungeonList;
         [SerializeField] private DamageZoneConfig _damageZoneConfig;
+        [SerializeField] private BombExplosionConfig _bombExplosionConfig;
         [SerializeField] private SkillTreeConfig _skillTreeConfig;
         [SerializeField] private NodeBorderColorConfig _nodeBorderColorConfig;
         
@@ -164,6 +166,13 @@ namespace Reflex
                 Lifetime.Singleton,
                 Resolution.Lazy
             );
+
+            builder.RegisterType(
+                typeof(BombExplosionService),
+                new[] { typeof(IService), typeof(BombExplosionService) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
             
             // builder.RegisterType(
             //     typeof(GoldWallet),
@@ -197,6 +206,7 @@ namespace Reflex
         {
             builder.RegisterValue(_dungeonList, new[] { typeof(DungeonList) });
             builder.RegisterValue(_damageZoneConfig, new[] { typeof(DamageZoneConfig) });
+            builder.RegisterValue(_bombExplosionConfig, new[] { typeof(BombExplosionConfig) });
             builder.RegisterValue(_skillTreeConfig, new[] { typeof(SkillTreeConfig) });
             builder.RegisterValue(_nodeBorderColorConfig, new[] { typeof(NodeBorderColorConfig) });
         }

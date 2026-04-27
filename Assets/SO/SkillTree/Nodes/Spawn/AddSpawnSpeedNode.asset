@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
+  m_Name: AddSpawnSpeedNode
+  m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
+  id: add_spawn_speed
+  displayName: Add Spawn Speed
+  description: Add Spawn Speed
+  icon: {fileID: 4153240674832713612, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  maxLevel: 3
+  goldCostPerLevel: 64000000c80000002c010000
+  prerequisites:
+  - node: {fileID: 11400000, guid: fdd60171723494925a2b7d360cb6b3e6, type: 2}
+    requiredLevel: 1
+  effects:
+  - effectType: 0
+    statType: 3
+    valuesPerLevel:
+    - 0.15
+    - 0.2
+    - 0.25
+    feature: 0
+  positionInGraph: {x: 0, y: 200}

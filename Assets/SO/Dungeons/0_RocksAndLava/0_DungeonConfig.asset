@@ -17,4 +17,10 @@ MonoBehaviour:
   minPlayZoneSize: 6
   initialSpawnCount: 3
   spawnInterval: 1
+  minSpawnInterval: 0.001
   heatIndex: 5
+  featureSpawnConfigs:
+  - featureType: 1
+    spawnSpeedStat: 9
+    spawnInterval: 1
+    minSpawnInterval: 0.001

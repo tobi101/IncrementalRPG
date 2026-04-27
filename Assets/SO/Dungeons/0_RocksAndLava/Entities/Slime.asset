@@ -16,4 +16,4 @@ MonoBehaviour:
   maxHP: 5
   goldDrop: 10
   viewPrefab: {fileID: 5006508172201667331, guid: 8c0d80cf5d7254da592a2c44c6a575a1, type: 3}
-  damageSound: {fileID: 8300000, guid: 9f3043831551b45498322abca9b68e89, type: 3}
+  damageSound: {fileID: 8300000, guid: d9794b0d865f8446f9db681a3640d373, type: 3}

@@ -106,7 +106,14 @@ namespace Core.StateMachine.Features
         {
             _currentDungeon = _dungeonList.Get(0);
             _spawnService.SetDungeon(_currentDungeon);
-            _spawnService.SetSpawnInterval(_currentDungeon.spawnInterval / _skillTree.GetMultiplier(StatType.SpawnSpeed));
+            var spawnInterval = _currentDungeon.spawnInterval * (1f - _skillTree.GetBonus(StatType.SpawnSpeed));
+            _spawnService.SetSpawnInterval(Mathf.Max(spawnInterval, _currentDungeon.minSpawnInterval));
+
+            foreach (var fc in _currentDungeon.featureSpawnConfigs)
+            {
+                var featureInterval = fc.spawnInterval * (1f - _skillTree.GetBonus(fc.spawnSpeedStat));
+                _spawnService.SetFeatureSpawnInterval(fc.featureType, Mathf.Max(featureInterval, fc.minSpawnInterval));
+            }
             _generator.config = _currentDungeon.tilemapGenerationConfig;
             _generator.Size = _currentDungeon.minPlayZoneSize + (int)_skillTree.GetBonus(StatType.MapSize);
             _generator.Generate();

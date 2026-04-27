@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
+  m_Name: AddAttackSpeedNode
+  m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
+  id: add_attack_speed
+  displayName: Add attack speed
+  description: Add attack speed
+  icon: {fileID: 4153240674832713612, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  maxLevel: 1
+  goldCostPerLevel: 0a000000
+  prerequisites:
+  - node: {fileID: 11400000, guid: 52ec292eab03749e5ae85e8931e24366, type: 2}
+    requiredLevel: 1
+  effects:
+  - effectType: 1
+    statType: 2
+    valuesPerLevel:
+    - 2
+    - 2
+    feature: 0
+  positionInGraph: {x: 100, y: 200}

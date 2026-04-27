@@ -10,23 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
-  m_Name: AddSpawnSpeedNode
+  m_Name: BombSpawnSpeedNode
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
-  id: add_spawn_speed
-  displayName: Add Spawn Speed
-  description: Add Spawn Speed
-  icon: {fileID: 4153240674832713612, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
-  maxLevel: 3
-  goldCostPerLevel: 0a000000140000001e000000
+  id: bombs_spawn_speed
+  displayName: Bombs Spawn Speed
+  description: Spawn speed
+  icon: {fileID: 0}
+  maxLevel: 2
+  goldCostPerLevel: f4010000e8030000
   prerequisites:
-  - node: {fileID: 11400000, guid: fdd60171723494925a2b7d360cb6b3e6, type: 2}
-    requiredLevel: 1
+  - node: {fileID: 11400000, guid: 656bdb3708d0b4bfc8e2851bf995bd2b, type: 2}
+    requiredLevel: 0
   effects:
-  - effectType: 1
-    statType: 3
+  - effectType: 0
+    statType: 9
     valuesPerLevel:
-    - 2
-    - 3
-    - 4
+    - 0.1
+    - 0.2
     feature: 0
-  positionInGraph: {x: 0, y: 200}
+  positionInGraph: {x: 100, y: 800}

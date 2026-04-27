@@ -1,8 +1,19 @@
+using System;
+using Core.TestSkillTree;
 using Entity;
 using UnityEngine;
 
 namespace Core.Gameplay.Dungeon
 {
+    [Serializable]
+    public class FeatureSpawnConfig
+    {
+        public FeatureType featureType;
+        public StatType spawnSpeedStat;
+        [Min(0.1f)] public float spawnInterval = 5f;
+        [Min(0.0000001f)] public float minSpawnInterval = 1f;
+    }
+
     [CreateAssetMenu(fileName = "DungeonConfig", menuName = "RPG/Dungeon Config")]
     public class DungeonConfig : ScriptableObject
     {
@@ -11,6 +22,8 @@ namespace Core.Gameplay.Dungeon
         [Min(0)] public int minPlayZoneSize;
         [Min(0)] public int initialSpawnCount;
         [Min(0.1f)] public float spawnInterval = 2f;
+        [Min(0.0000001f)] public float minSpawnInterval = 0.5f;
         [Min(0.1f)] public float heatIndex = 1f;
+        public FeatureSpawnConfig[] featureSpawnConfigs;
     }
 }

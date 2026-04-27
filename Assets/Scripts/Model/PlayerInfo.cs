@@ -15,7 +15,7 @@ namespace Model
 
         public static PlayerInfo Default => new PlayerInfo
         {
-            GoldTotal = 1000,
+            GoldTotal = 10,
             ShardTotal = 0,
             ArmorIndex = 1f
         };
