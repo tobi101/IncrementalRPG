@@ -12,7 +12,7 @@ namespace Boot
             yield return  null;
             
             Debug.Log("All app services are initialized.");
-            SceneManager.LoadSceneAsync("GameScene");
+            SceneManager.LoadSceneAsync("MainMenuScene");
         }
     }
 }
