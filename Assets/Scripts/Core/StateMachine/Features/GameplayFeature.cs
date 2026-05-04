@@ -5,6 +5,7 @@ using Core.Gameplay;
 using UnityEngine;
 using Core.Gameplay.Dungeon;
 using Core.TestSkillTree;
+using Entity;
 using IncrementalRPG.Scripts.Core;
 using Model;
 using Reflex.Attributes;
@@ -62,8 +63,7 @@ namespace Core.StateMachine.Features
 
             if (!_isStarted)
             {
-                var zoneSize = _currentDungeon.initialSpawnCount + (int)_skillTree.GetBonus(StatType.SpawnCountMax);
-                _spawnService.SpawnInitial(zoneSize);
+                SpawnInitialEntities();
                 _isStarted = true;
             }
         }
@@ -95,11 +95,28 @@ namespace Core.StateMachine.Features
 
         private void HandleCreatureKilled(Vector2Int coord, int amount)
         {
-            _player.GoldTotal += amount;
-            _sessionGold += amount;
+            var finalAmount = Mathf.RoundToInt(amount * _skillTree.GetMultiplier(StatType.GoldDrop));
+
+            _player.GoldTotal += finalAmount;
+            _sessionGold += finalAmount;
             _sessionKills++;
-            OnSessionGoldEarned?.Invoke(_sessionGold, amount);
+            OnSessionGoldEarned?.Invoke(_sessionGold, finalAmount);
             OnSessionKillsChanged?.Invoke(_sessionKills);
+        }
+
+        private void SpawnInitialEntities()
+        {
+            var totalTiles = _tileGrid.TotalTileCount;
+            var enemyDensity = Mathf.Max(0f, _currentDungeon.initialEnemySpawnDensity
+                                             + _skillTree.GetBonus(StatType.InitialEnemySpawnDensity));
+            var bombDensity = Mathf.Max(0f, _currentDungeon.initialBombSpawnDensity
+                                            + _skillTree.GetBonus(StatType.InitialBombSpawnDensity));
+
+            var enemyCount = Mathf.RoundToInt(totalTiles * enemyDensity);
+            var bombCount = Mathf.RoundToInt(totalTiles * bombDensity);
+
+            _spawnService.SpawnInitial(enemyCount);
+            _spawnService.SpawnInitial(bombCount, FeatureType.Bomb);
         }
 
         private void InitGameZone()

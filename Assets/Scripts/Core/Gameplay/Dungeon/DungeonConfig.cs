@@ -20,7 +20,8 @@ namespace Core.Gameplay.Dungeon
         public SpawnTable spawnTable;
         public TilemapGenerationConfig tilemapGenerationConfig;
         [Min(0)] public int minPlayZoneSize;
-        [Min(0)] public int initialSpawnCount;
+        [Min(0f)] public float initialEnemySpawnDensity;
+        [Min(0f)] public float initialBombSpawnDensity;
         [Min(0.1f)] public float spawnInterval = 2f;
         [Min(0.0000001f)] public float minSpawnInterval = 0.5f;
         [Min(0.1f)] public float heatIndex = 1f;

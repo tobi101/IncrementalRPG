@@ -1,0 +1,12 @@
+explosion_meat.png
+size:38,77
+filter:Linear,Linear
+scale:0.5
+bone_1
+bounds:11,2,55,20
+rotate:90
+bone_2
+bounds:2,14,43,7
+rotate:90
+bone_3
+bounds:2,59,34,16

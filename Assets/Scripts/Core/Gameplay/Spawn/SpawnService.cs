@@ -71,10 +71,10 @@ namespace Core.Gameplay
 
         public void Initialize() { }
 
-        public void SpawnInitial(int count)
+        public void SpawnInitial(int count, FeatureType featureType = FeatureType.None)
         {
             for (var i = 0; i < count; i++)
-                TrySpawnOfType(FeatureType.None);
+                TrySpawnOfType(featureType);
         }
 
         public void Update(float deltaTime)
@@ -124,7 +124,6 @@ namespace Core.Gameplay
             {
                 entry.Creature.OnDied -= entry.OnDied;
                 _tileGrid.Free(entry.Creature);
-                entry.View.Unbind();
                 _poolManager.Return(entry.View, entry.Config);
             }
         }
@@ -141,13 +140,16 @@ namespace Core.Gameplay
             onDied = () =>
             {
                 creature.OnDied -= onDied;
-                _active.RemoveAll(e => e.Creature == creature);
-                _tileGrid.Free(creature);
-                view.Unbind();
-                _poolManager.Return(view, config);
 
                 if (config.goldDrop > 0)
                     OnCreatureKilled?.Invoke(creature.TileCoord, config.goldDrop);
+
+                view.PlayDeath(() =>
+                {
+                    _active.RemoveAll(e => e.Creature == creature);
+                    _tileGrid.Free(creature);
+                    _poolManager.Return(view, config);
+                });
             };
             creature.OnDied += onDied;
             _active.Add(new ActiveEntry { Creature = creature, View = view, Config = config, OnDied = onDied });

@@ -13,6 +13,8 @@ namespace Core.Gameplay
         
         private TileSlot[,] _slots;
         private List<Vector2Int> _freeTiles = new();
+
+        public int TotalTileCount => _slots == null ? 0 : _slots.GetLength(0) * _slots.GetLength(1);
         
         public Vector3 GetWorldPosition(Vector2Int tileCoord)
         {

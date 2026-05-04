@@ -1,0 +1,2470 @@
+fileFormatVersion: 2
+guid: 743c106ae7f9e40e5ac89c7e30609539
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3196171255717967140
+    second: craft_smoke_0
+  - first:
+      213: 5756282305687728528
+    second: craft_smoke_1
+  - first:
+      213: 4506357405663907948
+    second: craft_smoke_2
+  - first:
+      213: 6574770732750927916
+    second: craft_smoke_3
+  - first:
+      213: -557615423756888189
+    second: craft_smoke_4
+  - first:
+      213: 423766898506782809
+    second: craft_smoke_5
+  - first:
+      213: -8857439792562673366
+    second: craft_smoke_6
+  - first:
+      213: -2070872828551413572
+    second: craft_smoke_7
+  - first:
+      213: 4170578643416701267
+    second: craft_smoke_8
+  - first:
+      213: 1827184010348442408
+    second: craft_smoke_9
+  - first:
+      213: -5769310521715086563
+    second: craft_smoke_10
+  - first:
+      213: -6783328290598309011
+    second: craft_smoke_11
+  - first:
+      213: -871713153456721354
+    second: craft_smoke_12
+  - first:
+      213: -5959371675867450946
+    second: craft_smoke_13
+  - first:
+      213: -5466161503516520824
+    second: craft_smoke_14
+  - first:
+      213: -3031616708114481485
+    second: craft_smoke_15
+  - first:
+      213: -5155340692799419220
+    second: craft_smoke_16
+  - first:
+      213: 9074608842417115562
+    second: craft_smoke_17
+  - first:
+      213: -2559492911700495796
+    second: craft_smoke_18
+  - first:
+      213: 6705855298221815519
+    second: craft_smoke_19
+  - first:
+      213: 2865174284793834118
+    second: craft_smoke_20
+  - first:
+      213: -974207020767299684
+    second: craft_smoke_21
+  - first:
+      213: 4211619064766565543
+    second: craft_smoke_22
+  - first:
+      213: -6586777520334690951
+    second: craft_smoke_23
+  - first:
+      213: 6641475328336920237
+    second: craft_smoke_24
+  - first:
+      213: -7758041306620909273
+    second: craft_smoke_25
+  - first:
+      213: -8030530997735371012
+    second: craft_smoke_26
+  - first:
+      213: -3097007229942470328
+    second: craft_smoke_27
+  - first:
+      213: -8464938205132599108
+    second: craft_smoke_28
+  - first:
+      213: 8243002254624376759
+    second: craft_smoke_29
+  - first:
+      213: -827212483377138491
+    second: craft_smoke_30
+  - first:
+      213: 5844615673243605987
+    second: craft_smoke_31
+  - first:
+      213: 5433648028139018388
+    second: craft_smoke_32
+  - first:
+      213: -7600160093548828365
+    second: craft_smoke_33
+  - first:
+      213: -4228281936468906786
+    second: craft_smoke_34
+  - first:
+      213: -7852519271415602746
+    second: craft_smoke_35
+  - first:
+      213: 2340009652497259445
+    second: craft_smoke_36
+  - first:
+      213: -3974446148716478579
+    second: craft_smoke_37
+  - first:
+      213: 200069250404557265
+    second: craft_smoke_38
+  - first:
+      213: -4490504683763427981
+    second: craft_smoke_39
+  - first:
+      213: -1268612066826456903
+    second: craft_smoke_40
+  - first:
+      213: 5090288638536623576
+    second: craft_smoke_41
+  - first:
+      213: -8619727949572432955
+    second: craft_smoke_42
+  - first:
+      213: 4849597856811760161
+    second: craft_smoke_43
+  - first:
+      213: -8341659928885189904
+    second: craft_smoke_44
+  - first:
+      213: 4574381699466753579
+    second: craft_smoke_45
+  - first:
+      213: -4592718565886313870
+    second: craft_smoke_46
+  - first:
+      213: 836118672184460651
+    second: craft_smoke_47
+  - first:
+      213: -4334450940812338184
+    second: craft_smoke_48
+  - first:
+      213: 2235533501773167250
+    second: craft_smoke_49
+  - first:
+      213: 8396910199780396267
+    second: craft_smoke_50
+  - first:
+      213: 1864339626622117042
+    second: craft_smoke_51
+  - first:
+      213: -429746694499082604
+    second: craft_smoke_52
+  - first:
+      213: 1187598095362448415
+    second: craft_smoke_53
+  - first:
+      213: 5380179759591911807
+    second: craft_smoke_54
+  - first:
+      213: -6821850921077702661
+    second: craft_smoke_55
+  - first:
+      213: 712805194837561703
+    second: craft_smoke_56
+  - first:
+      213: 9178413024452994611
+    second: craft_smoke_57
+  - first:
+      213: -973206595820609884
+    second: craft_smoke_58
+  - first:
+      213: 5054833162993313557
+    second: craft_smoke_59
+  - first:
+      213: -3325286935940547533
+    second: craft_smoke_60
+  - first:
+      213: 8323584705978866619
+    second: craft_smoke_61
+  - first:
+      213: 3597399599869575236
+    second: craft_smoke_62
+  - first:
+      213: -4971534739440314278
+    second: craft_smoke_63
+  - first:
+      213: 5330883320927501912
+    second: craft_smoke_64
+  - first:
+      213: 4714702490328136587
+    second: craft_smoke_65
+  - first:
+      213: -5309942466021090923
+    second: craft_smoke_66
+  - first:
+      213: -5137648849244691452
+    second: craft_smoke_67
+  - first:
+      213: 7525041203198070149
+    second: craft_smoke_68
+  - first:
+      213: -7308124084193677791
+    second: craft_smoke_69
+  - first:
+      213: -8932231016771735151
+    second: craft_smoke_70
+  - first:
+      213: -494723354289806571
+    second: craft_smoke_71
+  - first:
+      213: -8230572284885847508
+    second: craft_smoke_72
+  - first:
+      213: 7344142111085890995
+    second: craft_smoke_73
+  - first:
+      213: 1246144194833239397
+    second: craft_smoke_74
+  - first:
+      213: 7124723661024016256
+    second: craft_smoke_75
+  - first:
+      213: 1411861220094038780
+    second: craft_smoke_76
+  - first:
+      213: 2284267785242346532
+    second: craft_smoke_77
+  - first:
+      213: -1569119178128979395
+    second: craft_smoke_78
+  - first:
+      213: 5066209357127429222
+    second: craft_smoke_79
+  - first:
+      213: -3050975069287974078
+    second: craft_smoke_80
+  - first:
+      213: 619577033174696146
+    second: craft_smoke_81
+  - first:
+      213: 6784731093955583876
+    second: craft_smoke_82
+  - first:
+      213: 3344412510389638484
+    second: craft_smoke_83
+  - first:
+      213: 5029374520181402466
+    second: craft_smoke_84
+  - first:
+      213: 2826368092278816917
+    second: craft_smoke_85
+  - first:
+      213: -6900124698000905686
+    second: craft_smoke_86
+  - first:
+      213: 5227607849436562051
+    second: craft_smoke_87
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: craft_smoke_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2504
+        width: 246
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdacd9d4d2be4a3d0800000000000000
+      internalID: -3196171255717967140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_1
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 2408
+        width: 245
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0913269424c62ef40800000000000000
+      internalID: 5756282305687728528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_2
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 2504
+        width: 246
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c605c8b4f2cc98e30800000000000000
+      internalID: 4506357405663907948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2406
+        width: 245
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c28f04595274e3b50800000000000000
+      internalID: 6574770732750927916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2311
+        width: 248
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38711b9f9b3f248f0800000000000000
+      internalID: -557615423756888189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_5
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 2312
+        width: 245
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 958d01dbfb581e500800000000000000
+      internalID: 423766898506782809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2216
+        width: 248
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2964e8ff6d041580800000000000000
+      internalID: -8857439792562673366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_7
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 2216
+        width: 245
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb04f276228c243e0800000000000000
+      internalID: -2070872828551413572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_8
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 2122
+        width: 242
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 359dea4fd2fd0e930800000000000000
+      internalID: 4170578643416701267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2114
+        width: 244
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 823b7143d267b5910800000000000000
+      internalID: 1827184010348442408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_10
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 2130
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1baf3ac5aa4fefa0800000000000000
+      internalID: -5769310521715086563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_11
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2019
+        width: 244
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d63b70cfbd6ccd1a0800000000000000
+      internalID: -6783328290598309011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_12
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 2037
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6323d26618d07e3f0800000000000000
+      internalID: -871713153456721354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_13
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 2029
+        width: 241
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb1756fe80f0c4da0800000000000000
+      internalID: -5959371675867450946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1924
+        width: 245
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88e8bf1d21b4424b0800000000000000
+      internalID: -5466161503516520824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_15
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 1944
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be72b98aa88de5d0800000000000000
+      internalID: -3031616708114481485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_16
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 1936
+        width: 240
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cac039d34fc8478b0800000000000000
+      internalID: -5155340692799419220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_17
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1839
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa114efa9ac7fed70800000000000000
+      internalID: 9074608842417115562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1831
+        width: 239
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4236f0f1cada7cd0800000000000000
+      internalID: -2559492911700495796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_19
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1841
+        width: 245
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd6bea55ddbff0d50800000000000000
+      internalID: 6705855298221815519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_20
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1747
+        width: 244
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a68b8e4d423c720800000000000000
+      internalID: 2865174284793834118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1747
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c97397d40ebea72f0800000000000000
+      internalID: -974207020767299684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_22
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1740
+        width: 238
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac8caca93da27a30800000000000000
+      internalID: 4211619064766565543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_23
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1653
+        width: 244
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9752ce55eb01794a0800000000000000
+      internalID: -6586777520334690951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1656
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daefa028f924b2c50800000000000000
+      internalID: 6641475328336920237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_25
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1649
+        width: 238
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 729ad061986e55490800000000000000
+      internalID: -7758041306620909273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_26
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1564
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe483aea92dd8090800000000000000
+      internalID: -8030530997735371012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_27
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1558
+        width: 237
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 849667045583505d0800000000000000
+      internalID: -3097007229942470328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_28
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1560
+        width: 244
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb050753d8f768a80800000000000000
+      internalID: -8464938205132599108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_29
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1474
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b741a590e6056270800000000000000
+      internalID: 8243002254624376759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_30
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1468
+        width: 236
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c4798e01a62584f0800000000000000
+      internalID: -827212483377138491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_31
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1469
+        width: 244
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb9d5c1dfe3c1150800000000000000
+      internalID: 5844615673243605987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_32
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1384
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4985ab7c712386b40800000000000000
+      internalID: 5433648028139018388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_33
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1378
+        width: 235
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3392ceb89aec68690800000000000000
+      internalID: -7600160093548828365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_34
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1378
+        width: 244
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edce19e2bff1255c0800000000000000
+      internalID: -4228281936468906786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_35
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1288
+        width: 244
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c12d5bb35f360390800000000000000
+      internalID: -7852519271415602746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_36
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 1294
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bb951c8162697020800000000000000
+      internalID: 2340009652497259445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_37
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1288
+        width: 233
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8fb5d6094ee7d8c0800000000000000
+      internalID: -3974446148716478579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_38
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1204
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d1a7d85ce9c6c200800000000000000
+      internalID: 200069250404557265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_39
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1199
+        width: 232
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3759d0628c58ea1c0800000000000000
+      internalID: -4490504683763427981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_40
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 1205
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b0f80feb0cf46ee0800000000000000
+      internalID: -1268612066826456903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_41
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1199
+        width: 233
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d5ae281c8654a640800000000000000
+      internalID: 5090288638536623576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_42
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1109
+        width: 244
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb9a316913906880800000000000000
+      internalID: -8619727949572432955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_43
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 1115
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ab2c67e8b3d4340800000000000000
+      internalID: 4849597856811760161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_44
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1110
+        width: 231
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f220bd9d787c3c80800000000000000
+      internalID: -8341659928885189904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_45
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1020
+        width: 244
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2673c76be77b7f30800000000000000
+      internalID: 4574381699466753579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_46
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 1026
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27a310f2cc26340c0800000000000000
+      internalID: -4592718565886313870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_47
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 1021
+        width: 230
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6540ad908d7a9b00800000000000000
+      internalID: 836118672184460651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_48
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 936
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fbd58095dfe8d3c0800000000000000
+      internalID: -4334450940812338184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_49
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 933
+        width: 229
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29abca020e5360f10800000000000000
+      internalID: 2235533501773167250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_50
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 938
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: becc3c48651d78470800000000000000
+      internalID: 8396910199780396267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_51
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 933
+        width: 230
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b4ee7143077fd910800000000000000
+      internalID: 1864339626622117042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_52
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 845
+        width: 244
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49edbf288ab390af0800000000000000
+      internalID: -429746694499082604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_53
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 849
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c5202fc223b7010800000000000000
+      internalID: 1187598095362448415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_54
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 846
+        width: 228
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f71f8366cfc3aaa40800000000000000
+      internalID: 5380179759591911807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_55
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 758
+        width: 244
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfffd722bbae351a0800000000000000
+      internalID: -6821850921077702661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_56
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 759
+        width: 244
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76198505c8464e900800000000000000
+      internalID: 712805194837561703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_57
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 673
+        width: 228
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 336e6543406406f70800000000000000
+      internalID: 9178413024452994611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_58
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 674
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ae9b03e1c97e72f0800000000000000
+      internalID: -973206595820609884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_59
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 672
+        width: 227
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 517a417eaff562640800000000000000
+      internalID: 5054833162993313557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_60
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 676
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c340f56253ad1d0800000000000000
+      internalID: -3325286935940547533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_61
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 588
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb9eb99030538370800000000000000
+      internalID: 8323584705978866619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_62
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 586
+        width: 226
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 440cb5150e78ce130800000000000000
+      internalID: 3597399599869575236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_63
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 589
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a58552bae7f810bb0800000000000000
+      internalID: -4971534739440314278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_64
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 587
+        width: 227
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e30fad22a1bf940800000000000000
+      internalID: 5330883320927501912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_65
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 502
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8b78a57fecfd6140800000000000000
+      internalID: 4714702490328136587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_66
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 501
+        width: 225
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5991d0fd57b4f46b0800000000000000
+      internalID: -5309942466021090923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_67
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 503
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4046310979763b8b0800000000000000
+      internalID: -5137648849244691452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_68
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 502
+        width: 226
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58d8cccda115e6860800000000000000
+      internalID: 7525041203198070149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_69
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 416
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ea8239dd3549a90800000000000000
+      internalID: -7308124084193677791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_70
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 416
+        width: 224
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 191389917375a0480800000000000000
+      internalID: -8932231016771735151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_71
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 418
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 513677dfab36229f0800000000000000
+      internalID: -494723354289806571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_72
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 417
+        width: 225
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2234354d1227cd80800000000000000
+      internalID: -8230572284885847508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_73
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 332
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bd034fc652abe560800000000000000
+      internalID: 7344142111085890995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_74
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 248
+        width: 245
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56d43f7fa813b4110800000000000000
+      internalID: 1246144194833239397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_75
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 332
+        width: 224
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 087382adb6a10e260800000000000000
+      internalID: 7124723661024016256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_76
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 332
+        width: 245
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf2dadf9c40f79310800000000000000
+      internalID: 1411861220094038780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_77
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 248
+        width: 245
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4240d37b27953bf10800000000000000
+      internalID: 2284267785242346532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_78
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 165
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a8e59cb6e593ae0800000000000000
+      internalID: -1569119178128979395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_79
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 167
+        width: 223
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c2751819ace4640800000000000000
+      internalID: 5066209357127429222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_80
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 165
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24b7488d652c8a5d0800000000000000
+      internalID: -3050975069287974078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_81
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 166
+        width: 223
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d04e5d670e299800800000000000000
+      internalID: 619577033174696146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_82
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 83
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f15cf9bf4382e50800000000000000
+      internalID: 6784731093955583876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_83
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 86
+        width: 222
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4559520757db96e20800000000000000
+      internalID: 3344412510389638484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_84
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 83
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26b20d5ba7debc540800000000000000
+      internalID: 5029374520181402466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_85
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 85
+        width: 222
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59007c02ec6493720800000000000000
+      internalID: 2826368092278816917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_86
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 245
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2aa1c54525dd30a0800000000000000
+      internalID: -6900124698000905686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_smoke_87
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 1
+        width: 245
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 382c5ba54a13c8840800000000000000
+      internalID: 5227607849436562051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      craft_smoke_0: -3196171255717967140
+      craft_smoke_1: 5756282305687728528
+      craft_smoke_10: -5769310521715086563
+      craft_smoke_11: -6783328290598309011
+      craft_smoke_12: -871713153456721354
+      craft_smoke_13: -5959371675867450946
+      craft_smoke_14: -5466161503516520824
+      craft_smoke_15: -3031616708114481485
+      craft_smoke_16: -5155340692799419220
+      craft_smoke_17: 9074608842417115562
+      craft_smoke_18: -2559492911700495796
+      craft_smoke_19: 6705855298221815519
+      craft_smoke_2: 4506357405663907948
+      craft_smoke_20: 2865174284793834118
+      craft_smoke_21: -974207020767299684
+      craft_smoke_22: 4211619064766565543
+      craft_smoke_23: -6586777520334690951
+      craft_smoke_24: 6641475328336920237
+      craft_smoke_25: -7758041306620909273
+      craft_smoke_26: -8030530997735371012
+      craft_smoke_27: -3097007229942470328
+      craft_smoke_28: -8464938205132599108
+      craft_smoke_29: 8243002254624376759
+      craft_smoke_3: 6574770732750927916
+      craft_smoke_30: -827212483377138491
+      craft_smoke_31: 5844615673243605987
+      craft_smoke_32: 5433648028139018388
+      craft_smoke_33: -7600160093548828365
+      craft_smoke_34: -4228281936468906786
+      craft_smoke_35: -7852519271415602746
+      craft_smoke_36: 2340009652497259445
+      craft_smoke_37: -3974446148716478579
+      craft_smoke_38: 200069250404557265
+      craft_smoke_39: -4490504683763427981
+      craft_smoke_4: -557615423756888189
+      craft_smoke_40: -1268612066826456903
+      craft_smoke_41: 5090288638536623576
+      craft_smoke_42: -8619727949572432955
+      craft_smoke_43: 4849597856811760161
+      craft_smoke_44: -8341659928885189904
+      craft_smoke_45: 4574381699466753579
+      craft_smoke_46: -4592718565886313870
+      craft_smoke_47: 836118672184460651
+      craft_smoke_48: -4334450940812338184
+      craft_smoke_49: 2235533501773167250
+      craft_smoke_5: 423766898506782809
+      craft_smoke_50: 8396910199780396267
+      craft_smoke_51: 1864339626622117042
+      craft_smoke_52: -429746694499082604
+      craft_smoke_53: 1187598095362448415
+      craft_smoke_54: 5380179759591911807
+      craft_smoke_55: -6821850921077702661
+      craft_smoke_56: 712805194837561703
+      craft_smoke_57: 9178413024452994611
+      craft_smoke_58: -973206595820609884
+      craft_smoke_59: 5054833162993313557
+      craft_smoke_6: -8857439792562673366
+      craft_smoke_60: -3325286935940547533
+      craft_smoke_61: 8323584705978866619
+      craft_smoke_62: 3597399599869575236
+      craft_smoke_63: -4971534739440314278
+      craft_smoke_64: 5330883320927501912
+      craft_smoke_65: 4714702490328136587
+      craft_smoke_66: -5309942466021090923
+      craft_smoke_67: -5137648849244691452
+      craft_smoke_68: 7525041203198070149
+      craft_smoke_69: -7308124084193677791
+      craft_smoke_7: -2070872828551413572
+      craft_smoke_70: -8932231016771735151
+      craft_smoke_71: -494723354289806571
+      craft_smoke_72: -8230572284885847508
+      craft_smoke_73: 7344142111085890995
+      craft_smoke_74: 1246144194833239397
+      craft_smoke_75: 7124723661024016256
+      craft_smoke_76: 1411861220094038780
+      craft_smoke_77: 2284267785242346532
+      craft_smoke_78: -1569119178128979395
+      craft_smoke_79: 5066209357127429222
+      craft_smoke_8: 4170578643416701267
+      craft_smoke_80: -3050975069287974078
+      craft_smoke_81: 619577033174696146
+      craft_smoke_82: 6784731093955583876
+      craft_smoke_83: 3344412510389638484
+      craft_smoke_84: 5029374520181402466
+      craft_smoke_85: 2826368092278816917
+      craft_smoke_86: -6900124698000905686
+      craft_smoke_87: 5227607849436562051
+      craft_smoke_9: 1827184010348442408
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

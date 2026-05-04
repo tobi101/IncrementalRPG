@@ -623,22 +623,6 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: FlameStaticDistortionSpeed
-    path: FlameStaticDistortionSpeed
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Vector2f
-    realType: Vector2
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.20000000298023225,"y":0.0}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
   - name: FlameStaticDistortionAmount
     path: FlameStaticDistortionAmount
     tooltip: 
@@ -667,6 +651,38 @@ MonoBehaviour:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
       m_SerializableObject: 20
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: FlameStaticSoftParticle
+    path: FlameStaticSoftParticle
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0.75
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: FlameStaticAlphaClip
+    path: FlameStaticAlphaClip
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -719,34 +735,18 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: FlameStaticSoftParticle
-    path: FlameStaticSoftParticle
+  - name: FlameStaticDistortionSpeed
+    path: FlameStaticDistortionSpeed
     tooltip: 
     space: -1
     spaceable: 0
-    sheetType: m_Float
-    realType: Single
+    sheetType: m_Vector2f
+    realType: Vector2
     defaultValue:
       m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.75
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: FlameStaticAlphaClip
-    path: FlameStaticAlphaClip
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0
+        m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"x":0.20000000298023225,"y":0.0}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -762,38 +762,6 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: 
       m_SerializableObject: 
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: FlamesColor
-    path: FlamesColor
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Vector4f
-    realType: Color
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":63.25,"g":9.270000457763672,"b":3.299999952316284,"a":1.0}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: FlamesTexture
-    path: FlamesTexture
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_NamedObject
-    realType: Texture2D
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"8ec85ec4d00d0da4ca0642af88dfa841","type":3}}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -814,22 +782,6 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: FlamesLifetime
-    path: FlamesLifetime
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1.6
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
   - name: FlamesVelocity
     path: FlamesVelocity
     tooltip: 
@@ -842,6 +794,22 @@ MonoBehaviour:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
       m_SerializableObject: '{"x":0.10000000149011612,"y":1.0,"z":0.10000000149011612}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: FlamesLifetime
+    path: FlamesLifetime
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 1.6
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -862,34 +830,34 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: FlamesSizeCurve
-    path: FlamesSizeCurve
+  - name: FlamesTexture
+    path: FlamesTexture
     tooltip: 
     space: -1
     spaceable: 0
-    sheetType: m_AnimationCurve
-    realType: AnimationCurve
+    sheetType: m_NamedObject
+    realType: Texture2D
     defaultValue:
       m_Type:
-        m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
+        m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-0.1998300403356552,"outTangent":-0.1998300403356552,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.0008504390716553,"value":0.800000011920929,"inTangent":-0.1998300403356552,"outTangent":-0.1998300403356552,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"8ec85ec4d00d0da4ca0642af88dfa841","type":3}}'
     min: -Infinity
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: FlameDisotrtionSpeed
-    path: FlameDisotrtionSpeed
+  - name: FlamesColor
+    path: FlamesColor
     tooltip: 
     space: -1
     spaceable: 0
-    sheetType: m_Vector2f
-    realType: Vector2
+    sheetType: m_Vector4f
+    realType: Color
     defaultValue:
       m_Type:
-        m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.20000000298023225,"y":0.0}'
+      m_SerializableObject: '{"r":63.25,"g":9.270000457763672,"b":3.299999952316284,"a":1.0}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -910,6 +878,22 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
+  - name: FlameDisotrtionSpeed
+    path: FlameDisotrtionSpeed
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Vector2f
+    realType: Vector2
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"x":0.20000000298023225,"y":0.0}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
   - name: FlamesDistortionScale
     path: FlamesDistortionScale
     tooltip: 
@@ -922,6 +906,38 @@ MonoBehaviour:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
       m_SerializableObject: 20
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: FlamesSoftParticle
+    path: FlamesSoftParticle
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0.5
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: FlamesAlphaClip
+    path: FlamesAlphaClip
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -974,34 +990,18 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: FlamesSoftParticle
-    path: FlamesSoftParticle
+  - name: FlamesSizeCurve
+    path: FlamesSizeCurve
     tooltip: 
     space: -1
     spaceable: 0
-    sheetType: m_Float
-    realType: Single
+    sheetType: m_AnimationCurve
+    realType: AnimationCurve
     defaultValue:
       m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.5
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: FlamesAlphaClip
-    path: FlamesAlphaClip
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0
+        m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-0.1998300403356552,"outTangent":-0.1998300403356552,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.0008504390716553,"value":0.800000011920929,"inTangent":-0.1998300403356552,"outTangent":-0.1998300403356552,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -1017,38 +1017,6 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: 
       m_SerializableObject: 
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: SmokeColor
-    path: SmokeColor
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Vector4f
-    realType: Color
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.0,"g":0.0,"b":0.0,"a":1.0}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: SmokeTexture
-    path: SmokeTexture
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_NamedObject
-    realType: Texture2D
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"8ec85ec4d00d0da4ca0642af88dfa841","type":3}}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -1085,22 +1053,6 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: SmokeVelocity
-    path: SmokeVelocity
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Vector3f
-    realType: Vector3
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.10000000149011612,"y":1.7999999523162842,"z":0.10000000149011612}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
   - name: SmokeSize
     path: SmokeSize
     tooltip: 
@@ -1117,18 +1069,50 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: SmokeSizeCurve
-    path: SmokeSizeCurve
+  - name: SmokeVelocity
+    path: SmokeVelocity
     tooltip: 
     space: -1
     spaceable: 0
-    sheetType: m_AnimationCurve
-    realType: AnimationCurve
+    sheetType: m_Vector3f
+    realType: Vector3
     defaultValue:
       m_Type:
-        m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
+        m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-0.20068201422691346,"outTangent":-0.20068201422691346,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.99896240234375,"value":0.7995262145996094,"inTangent":-0.20068201422691346,"outTangent":-0.20068201422691346,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"x":0.10000000149011612,"y":1.7999999523162842,"z":0.10000000149011612}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: SmokeTexture
+    path: SmokeTexture
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_NamedObject
+    realType: Texture2D
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"8ec85ec4d00d0da4ca0642af88dfa841","type":3}}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: SmokeColor
+    path: SmokeColor
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Vector4f
+    realType: Color
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"r":0.0,"g":0.0,"b":0.0,"a":1.0}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -1261,6 +1245,22 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
+  - name: SmokeSizeCurve
+    path: SmokeSizeCurve
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_AnimationCurve
+    realType: AnimationCurve
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-0.20068201422691346,"outTangent":-0.20068201422691346,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.99896240234375,"value":0.7995262145996094,"inTangent":-0.20068201422691346,"outTangent":-0.20068201422691346,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
   - name: AMBERS
     path: 
     tooltip: 
@@ -1272,38 +1272,6 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: 
       m_SerializableObject: 
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: AmbersColor
-    path: AmbersColor
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_Vector4f
-    realType: Color
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":63.25,"g":9.270000457763672,"b":3.299999952316284,"a":1.0}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: AmbersTexture
-    path: AmbersTexture
-    tooltip: 
-    space: -1
-    spaceable: 0
-    sheetType: m_NamedObject
-    realType: Texture2D
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":10300,"guid":"0000000000000000f000000000000000","type":0}}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -1340,6 +1308,22 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
+  - name: AmbersSize
+    path: AmbersSize
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0.2
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
   - name: AmbersVelocity
     path: AmbersVelocity
     tooltip: 
@@ -1356,18 +1340,34 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: AmbersSize
-    path: AmbersSize
+  - name: AmbersColor
+    path: AmbersColor
     tooltip: 
     space: -1
     spaceable: 0
-    sheetType: m_Float
-    realType: Single
+    sheetType: m_Vector4f
+    realType: Color
     defaultValue:
       m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.2
+        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"r":63.25,"g":9.270000457763672,"b":3.299999952316284,"a":1.0}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: AmbersTexture
+    path: AmbersTexture
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_NamedObject
+    realType: Texture2D
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"obj":{"fileID":10300,"guid":"0000000000000000f000000000000000","type":0}}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -11401,7 +11401,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615076}
   m_ExposedName: FlamesRate
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 0
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -11581,7 +11581,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615080}
   m_ExposedName: FlamesVelocity
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 2
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -12319,7 +12319,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615101}
   m_ExposedName: FlameStaticColor
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 4
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -12756,7 +12756,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615127}
   m_ExposedName: SmokeRate
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 6
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -12837,7 +12837,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615129}
   m_ExposedName: SmokeLifetime
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 7
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -12921,7 +12921,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615131}
   m_ExposedName: SmokeSize
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 8
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -13005,7 +13005,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615133}
   m_ExposedName: SmokeVelocity
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 9
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -13795,7 +13795,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615156}
   m_ExposedName: AmbersRate
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 10
   m_Category: AMBERS
   m_Min:
     m_Type:
@@ -13876,7 +13876,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615158}
   m_ExposedName: AmbersLifetime
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 11
   m_Category: AMBERS
   m_Min:
     m_Type:
@@ -13960,7 +13960,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615160}
   m_ExposedName: AmbersSize
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 12
   m_Category: AMBERS
   m_Min:
     m_Type:
@@ -14316,7 +14316,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615170}
   m_ExposedName: AmbersVelocity
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 13
   m_Category: AMBERS
   m_Min:
     m_Type:
@@ -14835,7 +14835,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615189}
   m_ExposedName: FlameStaticTexture
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 14
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -14916,7 +14916,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615199}
   m_ExposedName: SmokeTexture
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 15
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -14997,7 +14997,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615201}
   m_ExposedName: FlameStaticRate
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 16
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -15078,7 +15078,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615203}
   m_ExposedName: FlameStaticLifetime
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 17
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -15159,7 +15159,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615205}
   m_ExposedName: FlameStaticSize
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 18
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -15240,7 +15240,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615207}
   m_ExposedName: FlameStaticPivot
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 19
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -15423,7 +15423,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615212}
   m_ExposedName: FlameStaticDistortionAmount
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 20
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -15504,7 +15504,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615214}
   m_ExposedName: FlameStaticDistortionScale
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 21
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -15585,7 +15585,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615216}
   m_ExposedName: FlameStaticSoftParticle
   m_Exposed: 1
-  m_Order: 12
+  m_Order: 22
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -15666,7 +15666,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615218}
   m_ExposedName: FlameStaticAlphaClip
   m_Exposed: 1
-  m_Order: 13
+  m_Order: 23
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -15747,7 +15747,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615220}
   m_ExposedName: FlameStaticDissolvePower
   m_Exposed: 1
-  m_Order: 9
+  m_Order: 24
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -15967,7 +15967,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615230}
   m_ExposedName: FlameStaticDissolveSpeed
   m_Exposed: 1
-  m_Order: 10
+  m_Order: 25
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -16048,7 +16048,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615232}
   m_ExposedName: FlameStaticDissolveScale
   m_Exposed: 1
-  m_Order: 11
+  m_Order: 26
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -16129,7 +16129,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615234}
   m_ExposedName: FlamesTexture
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 27
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -16210,7 +16210,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615236}
   m_ExposedName: FlamesColor
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 28
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -16427,7 +16427,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615242}
   m_ExposedName: FlamesDistortionAmount
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 29
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -16508,7 +16508,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615244}
   m_ExposedName: FlameStaticDistortionSpeed
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 30
   m_Category: FLAME STATIC
   m_Min:
     m_Type:
@@ -16657,7 +16657,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615248}
   m_ExposedName: FlameDisotrtionSpeed
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 31
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -16806,7 +16806,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615252}
   m_ExposedName: FlamesDistortionScale
   m_Exposed: 1
-  m_Order: 9
+  m_Order: 32
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -16887,7 +16887,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615254}
   m_ExposedName: FlamesSoftParticle
   m_Exposed: 1
-  m_Order: 13
+  m_Order: 33
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -16968,7 +16968,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615256}
   m_ExposedName: FlamesAlphaClip
   m_Exposed: 1
-  m_Order: 14
+  m_Order: 34
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -17049,7 +17049,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615258}
   m_ExposedName: FlamesDissolvePower
   m_Exposed: 1
-  m_Order: 10
+  m_Order: 35
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -17133,7 +17133,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615260}
   m_ExposedName: FlamesDissolveSpeed
   m_Exposed: 1
-  m_Order: 11
+  m_Order: 36
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -17214,7 +17214,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615262}
   m_ExposedName: FlamesDissolveScale
   m_Exposed: 1
-  m_Order: 12
+  m_Order: 37
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -17431,7 +17431,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615268}
   m_ExposedName: SmokeColor
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 38
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -17648,7 +17648,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615276}
   m_ExposedName: SmokeSpeed
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 39
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -17797,7 +17797,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615280}
   m_ExposedName: SmokeDistortionAmount
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 40
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -17878,7 +17878,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615282}
   m_ExposedName: SmokeDistortionScale
   m_Exposed: 1
-  m_Order: 9
+  m_Order: 41
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -17959,7 +17959,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615284}
   m_ExposedName: SmokeDissolvePower
   m_Exposed: 1
-  m_Order: 10
+  m_Order: 42
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -18043,7 +18043,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615286}
   m_ExposedName: SmokeDissolveSpeed
   m_Exposed: 1
-  m_Order: 11
+  m_Order: 43
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -18124,7 +18124,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615288}
   m_ExposedName: SmokeDissolveScale
   m_Exposed: 1
-  m_Order: 12
+  m_Order: 44
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -18205,7 +18205,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615290}
   m_ExposedName: SmokeSoftParticle
   m_Exposed: 1
-  m_Order: 13
+  m_Order: 45
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -18286,7 +18286,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615292}
   m_ExposedName: SmokeAlphaClip
   m_Exposed: 1
-  m_Order: 14
+  m_Order: 46
   m_Category: SMOKE
   m_Min:
     m_Type:
@@ -18503,7 +18503,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615298}
   m_ExposedName: AmbersColor
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 47
   m_Category: AMBERS
   m_Min:
     m_Type:
@@ -18720,7 +18720,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615304}
   m_ExposedName: AmbersTexture
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 48
   m_Category: AMBERS
   m_Min:
     m_Type:
@@ -18801,7 +18801,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615306}
   m_ExposedName: AmbersDissolvePower
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 49
   m_Category: AMBERS
   m_Min:
     m_Type:
@@ -19021,7 +19021,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615312}
   m_ExposedName: AmbersDissolveScale
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 50
   m_Category: AMBERS
   m_Min:
     m_Type:
@@ -19102,7 +19102,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615314}
   m_ExposedName: AmbersTurbulenceIntensity
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 51
   m_Category: AMBERS
   m_Min:
     m_Type:
@@ -19183,7 +19183,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615316}
   m_ExposedName: AmbersTurbulenceFrequency
   m_Exposed: 1
-  m_Order: 9
+  m_Order: 52
   m_Category: AMBERS
   m_Min:
     m_Type:
@@ -19264,7 +19264,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615318}
   m_ExposedName: FlamesSizeCurve
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 53
   m_Category: FLAMES
   m_Min:
     m_Type:
@@ -19345,7 +19345,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615320}
   m_ExposedName: SmokeSizeCurve
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 54
   m_Category: SMOKE
   m_Min:
     m_Type:

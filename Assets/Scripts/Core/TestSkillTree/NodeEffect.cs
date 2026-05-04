@@ -24,12 +24,14 @@ namespace Core.TestSkillTree
         ZoneDamage,
         AttackSpeed,
         SpawnSpeed,
-        SpawnCountMax,
         MapSize,
         SessionTime,
         BombExplosionRadius,
         BombExplosionDamage,
         BombSpawnSpeed,
+        GoldDrop,
+        InitialEnemySpawnDensity,
+        InitialBombSpawnDensity,
     }
 
     public enum GameFeature

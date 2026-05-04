@@ -72,6 +72,8 @@ namespace Core.Gameplay
 
             foreach (var creature in _tileGrid.GetAll())
             {
+                if (!creature.IsAlive) continue;
+
                 var creatureWorldPos = _tileGrid.GetWorldPosition(creature.TileCoord);
                 var dx = (creatureWorldPos.x - _worldPosition.x) / a;
                 var dy = (creatureWorldPos.y - _worldPosition.y) / b;

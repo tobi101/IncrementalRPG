@@ -1,0 +1,15 @@
+ui_coins.png
+size:183,165
+filter:Linear,Linear
+scale:0.5
+coin
+bounds:116,54,62,36
+coin_amb
+bounds:2,2,112,88
+coin_light
+bounds:160,11,41,21
+rotate:90
+plate
+bounds:2,92,172,71
+ray
+bounds:116,9,42,43

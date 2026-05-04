@@ -36,6 +36,8 @@ namespace Core.Gameplay
 
         public void Return(CreatureView view, EntityConfig config)
         {
+            view.ResetForPool();
+
             if (_pools.TryGetValue(config, out var pool))
                 pool.Return(view);
         }

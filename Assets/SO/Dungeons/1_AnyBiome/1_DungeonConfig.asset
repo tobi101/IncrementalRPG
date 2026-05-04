@@ -15,4 +15,5 @@ MonoBehaviour:
   spawnTable: {fileID: 11400000, guid: 3d2896ab506cb4f1b9e9e748b3e19a6a, type: 2}
   dungeonPrefab: {fileID: 0}
   minPlayZoneSize: 10
-  initialSpawnCount: 3
+  initialEnemySpawnDensity: 0
+  initialBombSpawnDensity: 0

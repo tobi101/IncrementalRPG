@@ -23,7 +23,7 @@ MonoBehaviour:
     requiredLevel: 0
   effects:
   - effectType: 0
-    statType: 9
+    statType: 8
     valuesPerLevel:
     - 0.1
     - 0.2

@@ -6,6 +6,7 @@ namespace Entity
     public class Creature : Entity
     {
         public int CurrentHP { get; private set; }
+        public bool IsAlive => CurrentHP > 0;
 
         public event Action<int, int> OnHealthChanged; // current, max
         public event Action OnDied;
@@ -17,6 +18,8 @@ namespace Entity
 
         public void TakeDamage(int amount)
         {
+            if (!IsAlive) return;
+
             CurrentHP = Mathf.Max(0, CurrentHP - amount);
             OnHealthChanged?.Invoke(CurrentHP, Config.maxHP);
 

@@ -1,0 +1,10 @@
+fireflies.png
+size:246,208
+filter:Linear,Linear
+scale:0.5
+1
+bounds:2,2,204,204
+offsets:0,1,205,206
+2
+bounds:208,169,37,36
+rotate:90

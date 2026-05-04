@@ -173,8 +173,10 @@ namespace Core.TestSkillTree.View
             StatType.ZoneDamage    => "Урон зоны",
             StatType.AttackSpeed   => "Скорость атаки",
             StatType.SpawnSpeed    => "Скорость спауна",
-            StatType.SpawnCountMax => "Существ на старте",
             StatType.MapSize       => "Размер арены",
+            StatType.GoldDrop      => "Золото с врагов",
+            StatType.InitialEnemySpawnDensity => "Плотность врагов на старте",
+            StatType.InitialBombSpawnDensity  => "Плотность бочек на старте",
             _                      => stat.ToString(),
         };
 
