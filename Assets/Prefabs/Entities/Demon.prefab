@@ -135,7 +135,7 @@ MonoBehaviour:
   _animationName: idle
   loop: 1
   timeScale: 1
---- !u!1 &3909964858509811016
+--- !u!1 &7400658655058294197
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,10 +143,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5387717704060497192}
-  - component: {fileID: 9050610744873320163}
-  - component: {fileID: 5945803619716757814}
-  - component: {fileID: 9047942273410080824}
+  - component: {fileID: 6402151308449618326}
+  - component: {fileID: 3449253557492906822}
+  - component: {fileID: 8845527262965971785}
+  - component: {fileID: 5057635849746960713}
   m_Layer: 0
   m_Name: Spine GameObject (explosion_meat)
   m_TagString: Untagged
@@ -154,36 +154,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5387717704060497192
+--- !u!4 &6402151308449618326
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3909964858509811016}
+  m_GameObject: {fileID: 7400658655058294197}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 196782831067680982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &9050610744873320163
+--- !u!33 &3449253557492906822
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3909964858509811016}
+  m_GameObject: {fileID: 7400658655058294197}
   m_Mesh: {fileID: 0}
---- !u!23 &5945803619716757814
+--- !u!23 &8845527262965971785
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3909964858509811016}
+  m_GameObject: {fileID: 7400658655058294197}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -226,13 +226,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9047942273410080824
+--- !u!114 &5057635849746960713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3909964858509811016}
+  m_GameObject: {fileID: 7400658655058294197}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
@@ -266,7 +266,7 @@ MonoBehaviour:
   physicsMovementRelativeTo: {fileID: 0}
   updateTiming: 1
   unscaledTime: 0
-  _animationName: explosion_meat
+  _animationName: explosion
   loop: 0
   timeScale: 1
 --- !u!1001 &973828346672490214
@@ -328,7 +328,7 @@ PrefabInstance:
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
       propertyPath: _deathAnimationBody
       value: 
-      objectReference: {fileID: 9047942273410080824}
+      objectReference: {fileID: 5057635849746960713}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -337,7 +337,7 @@ PrefabInstance:
       addedObject: {fileID: 6933099490995964754}
     - targetCorrespondingSourceObject: {fileID: 1096810445336081968, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
       insertIndex: 1
-      addedObject: {fileID: 5387717704060497192}
+      addedObject: {fileID: 6402151308449618326}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
 --- !u!4 &196782831067680982 stripped

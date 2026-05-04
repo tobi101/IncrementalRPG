@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4172678022727876882
+--- !u!1 &894435848297887642
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1265976842920871867}
-  - component: {fileID: 5412254795692648367}
-  - component: {fileID: 3395404667807754825}
-  - component: {fileID: 8024499343097195192}
+  - component: {fileID: 7318755495441479243}
+  - component: {fileID: 9112983175704424153}
+  - component: {fileID: 652046472584036299}
+  - component: {fileID: 2833496773378701208}
   m_Layer: 0
-  m_Name: Spine GameObject (explosion_meat)
+  m_Name: Spine GameObject (explosion_bones)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1265976842920871867
+--- !u!4 &7318755495441479243
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4172678022727876882}
+  m_GameObject: {fileID: 894435848297887642}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -34,21 +34,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 709721067686357061}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5412254795692648367
+--- !u!33 &9112983175704424153
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4172678022727876882}
+  m_GameObject: {fileID: 894435848297887642}
   m_Mesh: {fileID: 0}
---- !u!23 &3395404667807754825
+--- !u!23 &652046472584036299
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4172678022727876882}
+  m_GameObject: {fileID: 894435848297887642}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc0b1f72aeada47239701ddd6428c942, type: 2}
+  - {fileID: 2100000, guid: bb59a61c196e94ee6940a21b23082cb5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,19 +91,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8024499343097195192
+--- !u!114 &2833496773378701208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4172678022727876882}
+  m_GameObject: {fileID: 894435848297887642}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: spine-unity::Spine.Unity.SkeletonAnimation
-  skeletonDataAsset: {fileID: 11400000, guid: f9b7b5b04c34e4c4280a8231638d4329, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 92984ad9a2b6c442b9fb04bced6cca32, type: 2}
   initialSkinName: 
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   physicsMovementRelativeTo: {fileID: 0}
   updateTiming: 1
   unscaledTime: 0
-  _animationName: explosion_bones
+  _animationName: explosion
   loop: 0
   timeScale: 1
 --- !u!1 &8772298150447517558
@@ -329,7 +329,7 @@ PrefabInstance:
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
       propertyPath: _deathAnimationBody
       value: 
-      objectReference: {fileID: 8024499343097195192}
+      objectReference: {fileID: 2833496773378701208}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -338,7 +338,7 @@ PrefabInstance:
       addedObject: {fileID: 510003631913440895}
     - targetCorrespondingSourceObject: {fileID: 1096810445336081968, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
       insertIndex: 1
-      addedObject: {fileID: 1265976842920871867}
+      addedObject: {fileID: 7318755495441479243}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
 --- !u!4 &709721067686357061 stripped

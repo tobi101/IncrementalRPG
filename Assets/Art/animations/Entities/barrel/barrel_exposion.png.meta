@@ -1,16 +1,31 @@
 fileFormatVersion: 2
-guid: 1f3143084b8094b9094b1a2c38350d5b
+guid: f57858158ad8f46fd8319fd88509ba10
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6171563446174288783
-    second: explosion_meat_0
+      213: -1624235353668064029
+    second: barrel_exposion_0
   - first:
-      213: 7612239987030647664
-    second: explosion_meat_1
+      213: -1060895668561981648
+    second: barrel_exposion_1
   - first:
-      213: 1188528916652695733
-    second: explosion_meat_2
+      213: 3080891131666421469
+    second: barrel_exposion_2
+  - first:
+      213: 6334736395436369372
+    second: barrel_exposion_3
+  - first:
+      213: -2230970446171815286
+    second: barrel_exposion_4
+  - first:
+      213: 1209822697023852622
+    second: barrel_exposion_5
+  - first:
+      213: -1122931992294159307
+    second: barrel_exposion_6
+  - first:
+      213: -5225951718361473634
+    second: barrel_exposion_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -171,13 +186,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: explosion_meat_0
+      name: barrel_exposion_0
       rect:
         serializedVersion: 2
         x: 1
-        y: 19
-        width: 9
-        height: 45
+        y: 1048
+        width: 285
+        height: 263
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +201,108 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 174fef97eb33a5aa0800000000000000
-      internalID: -6171563446174288783
+      spriteID: 3ecebf82d8e8579e0800000000000000
+      internalID: -1624235353668064029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_meat_1
+      name: barrel_exposion_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 762
+        width: 289
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03fcc93a201f641f0800000000000000
+      internalID: -1060895668561981648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrel_exposion_2
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1010
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd6d0a6392681ca20800000000000000
+      internalID: 3080891131666421469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrel_exposion_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 406
+        width: 379
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd529b3503189e750800000000000000
+      internalID: 6334736395436369372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrel_exposion_4
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 762
+        width: 198
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a82c88b03300a01e0800000000000000
+      internalID: -2230970446171815286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrel_exposion_5
       rect:
         serializedVersion: 2
         x: 1
         y: 1
-        width: 36
-        height: 18
+        width: 468
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0736cf3dfeb14a960800000000000000
-      internalID: 7612239987030647664
+      spriteID: e40df4145572ac010800000000000000
+      internalID: 1209822697023852622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_meat_2
+      name: barrel_exposion_6
       rect:
         serializedVersion: 2
-        x: 10
-        y: 19
-        width: 22
-        height: 57
+        x: 380
+        y: 406
+        width: 80
+        height: 262
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,8 +333,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5b02d5aa0c08e7010800000000000000
-      internalID: 1188528916652695733
+      spriteID: 53c82647d4b8a60f0800000000000000
+      internalID: -1122931992294159307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrel_exposion_7
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 406
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9dd8b5b990b977b0800000000000000
+      internalID: -5225951718361473634
       vertices: []
       indices: 
       edges: []
@@ -250,9 +375,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      explosion_meat_0: -6171563446174288783
-      explosion_meat_1: 7612239987030647664
-      explosion_meat_2: 1188528916652695733
+      barrel_exposion_0: -1624235353668064029
+      barrel_exposion_1: -1060895668561981648
+      barrel_exposion_2: 3080891131666421469
+      barrel_exposion_3: 6334736395436369372
+      barrel_exposion_4: -2230970446171815286
+      barrel_exposion_5: 1209822697023852622
+      barrel_exposion_6: -1122931992294159307
+      barrel_exposion_7: -5225951718361473634
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

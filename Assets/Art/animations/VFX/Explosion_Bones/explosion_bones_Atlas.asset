@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
-  m_Name: explosion_meat_Atlas
+  m_Name: explosion_bones_Atlas
   m_EditorClassIdentifier: spine-unity::Spine.Unity.SpineAtlasAsset
   textureLoadingMode: 0
   onDemandTextureLoader: {fileID: 0}
-  atlasFile: {fileID: 4900000, guid: ca76d45c926ad485bbfaac33073f08b3, type: 3}
+  atlasFile: {fileID: 4900000, guid: f7b2d4d9e994048d5a3b9f15850f9a4e, type: 3}
   materials:
-  - {fileID: 2100000, guid: bc0b1f72aeada47239701ddd6428c942, type: 2}
+  - {fileID: 2100000, guid: bb59a61c196e94ee6940a21b23082cb5, type: 2}

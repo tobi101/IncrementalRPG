@@ -1,4 +1,4 @@
-explosion_meat.png
+explosion_bones.png
 size:38,77
 filter:Linear,Linear
 scale:0.5
