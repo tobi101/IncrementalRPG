@@ -88,4 +88,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b9c7661399d416793b841520b830af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.View.NodeConnectionView
-  _thickness: 10
+  _thickness: 30
