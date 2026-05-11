@@ -35,7 +35,9 @@ namespace Core.StateMachine.States
 
         private void HandleSessionExpired()
         {
-            _sessionEndPopup.Show(_gameplay.SessionGold, _gameplay.SessionKills, () =>
+            var recordResult = _gameplay.SessionRecordResult;
+            _sessionEndPopup.Show(_gameplay.SessionGold, _gameplay.SessionKills,
+                recordResult.IsNewGoldRecord, recordResult.IsNewKillsRecord, () =>
             {
                 OnGoToHubRequested?.Invoke();
             });

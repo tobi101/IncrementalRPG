@@ -29,6 +29,7 @@ namespace Core.StateMachine.Features
 
         public BigDouble SessionGold => _sessionGold;
         public int SessionKills => _sessionKills;
+        public SessionRecordResult SessionRecordResult => _sessionRecordResult;
 
         private List<IService> _services;
         private DungeonConfig _currentDungeon;
@@ -38,6 +39,7 @@ namespace Core.StateMachine.Features
         private bool _isStarted;
         private BigDouble _sessionGold;
         private int _sessionKills;
+        private SessionRecordResult _sessionRecordResult;
 
         public void Initialize()
         {
@@ -54,6 +56,7 @@ namespace Core.StateMachine.Features
             _isActive = true;
             _sessionGold = BigDouble.Zero;
             _sessionKills = 0;
+            _sessionRecordResult = default;
             InitGameZone();
             _sessionTotalTime = (100f / _currentDungeon.heatIndex)
                               - (_player.ArmorIndex / 2.5f)
@@ -86,6 +89,7 @@ namespace Core.StateMachine.Features
             if (_sessionTimeLeft <= 0)
             {
                 _isActive = false;
+                _sessionRecordResult = _player.UpdateSessionRecords(_sessionGold, _sessionKills);
                 OnSessionExpired?.Invoke();
             }
 

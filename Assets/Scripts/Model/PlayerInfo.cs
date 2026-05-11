@@ -9,6 +9,8 @@ namespace Model
         // Player Resources
         public BigDouble GoldTotal;
         public BigDouble ShardTotal;
+        public BigDouble BestSessionGold;
+        public int BestSessionKills;
 
         // Armor
         public float ArmorIndex;
@@ -17,6 +19,8 @@ namespace Model
         {
             GoldTotal = 10,
             ShardTotal = 0,
+            BestSessionGold = BigDouble.Zero,
+            BestSessionKills = 0,
             ArmorIndex = 1f
         };
     }

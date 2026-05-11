@@ -1,0 +1,2366 @@
+fileFormatVersion: 2
+guid: fede5cf67449c41f7a45366ceee32120
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8643765470919790170
+    second: zabeg_itog_3_0
+  - first:
+      213: -763959398267144454
+    second: zabeg_itog_3_1
+  - first:
+      213: -6199692120210163709
+    second: zabeg_itog_3_2
+  - first:
+      213: -6586058068533891086
+    second: zabeg_itog_3_3
+  - first:
+      213: -6134656448307203293
+    second: zabeg_itog_3_4
+  - first:
+      213: 3979860792443879554
+    second: zabeg_itog_3_5
+  - first:
+      213: -2274892026429148374
+    second: zabeg_itog_3_6
+  - first:
+      213: -9205420425909669609
+    second: zabeg_itog_3_7
+  - first:
+      213: 7827556173529127917
+    second: zabeg_itog_3_8
+  - first:
+      213: 408580951725884591
+    second: zabeg_itog_3_9
+  - first:
+      213: -1507278380319955428
+    second: zabeg_itog_3_10
+  - first:
+      213: -6379863491408510622
+    second: zabeg_itog_3_11
+  - first:
+      213: 265106909186395844
+    second: zabeg_itog_3_12
+  - first:
+      213: -1565309936635964068
+    second: zabeg_itog_3_13
+  - first:
+      213: 1315755415387271572
+    second: zabeg_itog_3_14
+  - first:
+      213: 4197968590944412097
+    second: zabeg_itog_3_15
+  - first:
+      213: 4617761780185108939
+    second: zabeg_itog_3_16
+  - first:
+      213: -212581975678232768
+    second: zabeg_itog_3_17
+  - first:
+      213: 588816250800390331
+    second: zabeg_itog_3_18
+  - first:
+      213: -2873520122698312497
+    second: zabeg_itog_3_19
+  - first:
+      213: -6153231389334116175
+    second: zabeg_itog_3_20
+  - first:
+      213: -1426671890959768932
+    second: zabeg_itog_3_21
+  - first:
+      213: -2739750330943254883
+    second: zabeg_itog_3_22
+  - first:
+      213: 4296241145136478668
+    second: zabeg_itog_3_23
+  - first:
+      213: -7853389244370478376
+    second: zabeg_itog_3_24
+  - first:
+      213: -7394867669113488384
+    second: zabeg_itog_3_25
+  - first:
+      213: -7096910711289446999
+    second: zabeg_itog_3_26
+  - first:
+      213: 1413850235984287819
+    second: zabeg_itog_3_27
+  - first:
+      213: 8352043678793908066
+    second: zabeg_itog_3_28
+  - first:
+      213: 3846419768478526112
+    second: zabeg_itog_3_29
+  - first:
+      213: 3059637085556156480
+    second: zabeg_itog_3_30
+  - first:
+      213: 3880540392835509825
+    second: zabeg_itog_3_31
+  - first:
+      213: 2302299586893521916
+    second: zabeg_itog_3_32
+  - first:
+      213: -8633440114309028523
+    second: zabeg_itog_3_33
+  - first:
+      213: -858635115769059011
+    second: zabeg_itog_3_34
+  - first:
+      213: 4249347256526277888
+    second: zabeg_itog_3_35
+  - first:
+      213: 6090275935362540432
+    second: zabeg_itog_3_36
+  - first:
+      213: -737807064042641490
+    second: zabeg_itog_3_37
+  - first:
+      213: -5167328507148894092
+    second: zabeg_itog_3_38
+  - first:
+      213: 5641749177460511631
+    second: zabeg_itog_3_39
+  - first:
+      213: -8102966091868600129
+    second: zabeg_itog_3_40
+  - first:
+      213: -7621425597477102094
+    second: zabeg_itog_3_41
+  - first:
+      213: 5971691924769228386
+    second: zabeg_itog_3_42
+  - first:
+      213: -4641433298197660626
+    second: zabeg_itog_3_43
+  - first:
+      213: 3072334196825923476
+    second: zabeg_itog_3_44
+  - first:
+      213: 6834968182016712794
+    second: zabeg_itog_3_45
+  - first:
+      213: -5878055976603543517
+    second: zabeg_itog_3_46
+  - first:
+      213: 2410447123682586417
+    second: zabeg_itog_3_47
+  - first:
+      213: 3300237391617649938
+    second: zabeg_itog_3_48
+  - first:
+      213: -7822617280956871529
+    second: zabeg_itog_3_49
+  - first:
+      213: -989455430663043289
+    second: zabeg_itog_3_50
+  - first:
+      213: -784128537141253487
+    second: zabeg_itog_3_51
+  - first:
+      213: -8158963194587831792
+    second: zabeg_itog_3_52
+  - first:
+      213: 4224747648160814370
+    second: zabeg_itog_3_53
+  - first:
+      213: -3327491259620374555
+    second: zabeg_itog_3_54
+  - first:
+      213: 6401122483031130380
+    second: zabeg_itog_3_55
+  - first:
+      213: -1298426715792665087
+    second: zabeg_itog_3_56
+  - first:
+      213: -6508703045139054782
+    second: zabeg_itog_3_57
+  - first:
+      213: -8901783221816510246
+    second: zabeg_itog_3_58
+  - first:
+      213: 5818179475258237280
+    second: zabeg_itog_3_59
+  - first:
+      213: -2924041220969366239
+    second: zabeg_itog_3_60
+  - first:
+      213: 6626856421017855515
+    second: zabeg_itog_3_61
+  - first:
+      213: 3011615624806873289
+    second: zabeg_itog_3_62
+  - first:
+      213: -6053372781328470584
+    second: zabeg_itog_3_63
+  - first:
+      213: -3652947919611825158
+    second: zabeg_itog_3_64
+  - first:
+      213: 2632385294248104803
+    second: zabeg_itog_3_65
+  - first:
+      213: -6472571965617508470
+    second: zabeg_itog_3_66
+  - first:
+      213: 3899149949220227629
+    second: zabeg_itog_3_67
+  - first:
+      213: -673762473403084798
+    second: zabeg_itog_3_68
+  - first:
+      213: 6356200554017565918
+    second: zabeg_itog_3_69
+  - first:
+      213: 7228212596107351617
+    second: zabeg_itog_3_70
+  - first:
+      213: -6986809178844250349
+    second: zabeg_itog_3_71
+  - first:
+      213: -6136247216425575271
+    second: zabeg_itog_3_72
+  - first:
+      213: 1329140551072911443
+    second: zabeg_itog_3_73
+  - first:
+      213: 442792875813305600
+    second: zabeg_itog_3_74
+  - first:
+      213: -2683294482153368390
+    second: zabeg_itog_3_75
+  - first:
+      213: 3644683129271373889
+    second: zabeg_itog_3_76
+  - first:
+      213: -8064144335531852024
+    second: zabeg_itog_3_77
+  - first:
+      213: 3768693163027627977
+    second: zabeg_itog_3_78
+  - first:
+      213: 2472637445697738434
+    second: zabeg_itog_3_79
+  - first:
+      213: -6588633845547600511
+    second: zabeg_itog_3_80
+  - first:
+      213: -4863765244784375830
+    second: zabeg_itog_3_81
+  - first:
+      213: 5302126604521971962
+    second: zabeg_itog_3_82
+  - first:
+      213: 2662754989838014346
+    second: zabeg_itog_3_83
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zabeg_itog_3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 5013
+        height: 3407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a1f900d91d2b0880800000000000000
+      internalID: -8643765470919790170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_1
+      rect:
+        serializedVersion: 2
+        x: 4969
+        y: 2037
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6377399fed565f0800000000000000
+      internalID: -763959398267144454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_2
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 2013
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 308b5123dd446f9a0800000000000000
+      internalID: -6199692120210163709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_3
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1990
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff21f2c41f9994a0800000000000000
+      internalID: -6586058068533891086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_4
+      rect:
+        serializedVersion: 2
+        x: 4972
+        y: 1994
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 323f69b86725ddaa0800000000000000
+      internalID: -6134656448307203293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_5
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1982
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2804f15fd4e4b3730800000000000000
+      internalID: 3979860792443879554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_6
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1930
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a23725e31c5fd60e0800000000000000
+      internalID: -2274892026429148374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_7
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1898
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711778125e6cf3080800000000000000
+      internalID: -9205420425909669609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_8
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1900
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deb9e9e1ed011ac60800000000000000
+      internalID: 7827556173529127917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_9
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1893
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa4cc99f5329ba500800000000000000
+      internalID: 408580951725884591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_10
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1872
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16276b8c42151be0800000000000000
+      internalID: -1507278380319955428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_11
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1864
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261cc1fd4fb2677a0800000000000000
+      internalID: -6379863491408510622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_12
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1857
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ce8e8d4459dda300800000000000000
+      internalID: 265106909186395844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_13
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1858
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c559c6fe7e6e64ae0800000000000000
+      internalID: -1565309936635964068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_14
+      rect:
+        serializedVersion: 2
+        x: 4972
+        y: 1848
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49174714490824210800000000000000
+      internalID: 1315755415387271572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_15
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1819
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c12d71113e224a30800000000000000
+      internalID: 4197968590944412097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_16
+      rect:
+        serializedVersion: 2
+        x: 4967
+        y: 1822
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc11f458fd5951040800000000000000
+      internalID: 4617761780185108939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_17
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1798
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0475c06c1d1cc0df0800000000000000
+      internalID: -212581975678232768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_18
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1783
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb04feaa245eb2800800000000000000
+      internalID: 588816250800390331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_19
+      rect:
+        serializedVersion: 2
+        x: 4963
+        y: 1778
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc451a74ca43f18d0800000000000000
+      internalID: -2873520122698312497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_20
+      rect:
+        serializedVersion: 2
+        x: 4976
+        y: 1778
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b8e4f117a45b9aa0800000000000000
+      internalID: -6153231389334116175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_21
+      rect:
+        serializedVersion: 2
+        x: 5004
+        y: 1785
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c92ee485971733ce0800000000000000
+      internalID: -1426671890959768932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_22
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1769
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9e4edef6937af9d0800000000000000
+      internalID: -2739750330943254883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_23
+      rect:
+        serializedVersion: 2
+        x: 4991
+        y: 1767
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc9f64d1f805f9b30800000000000000
+      internalID: 4296241145136478668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_24
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1752
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8da9c6e5718230390800000000000000
+      internalID: -7853389244370478376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_25
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1759
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00c387dd807206990800000000000000
+      internalID: -7394867669113488384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_26
+      rect:
+        serializedVersion: 2
+        x: 4982
+        y: 1753
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ad7de22f45b28d90800000000000000
+      internalID: -7096910711289446999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_27
+      rect:
+        serializedVersion: 2
+        x: 4970
+        y: 1738
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4812797c410f9310800000000000000
+      internalID: 1413850235984287819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_28
+      rect:
+        serializedVersion: 2
+        x: 4972
+        y: 1747
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26fbe0f897b68e370800000000000000
+      internalID: 8352043678793908066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_29
+      rect:
+        serializedVersion: 2
+        x: 4982
+        y: 1746
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aae335766a316530800000000000000
+      internalID: 3846419768478526112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_30
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1731
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 048af2af7b3067a20800000000000000
+      internalID: 3059637085556156480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_31
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1726
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ee3836de27ad530800000000000000
+      internalID: 3880540392835509825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_32
+      rect:
+        serializedVersion: 2
+        x: 4965
+        y: 1724
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf32153b64963ff10800000000000000
+      internalID: 2302299586893521916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_33
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1717
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 555a00d35fbdf2880800000000000000
+      internalID: -8633440114309028523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_34
+      rect:
+        serializedVersion: 2
+        x: 4971
+        y: 1712
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d39a8e459e38514f0800000000000000
+      internalID: -858635115769059011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_35
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1702
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00d8788d0d6b8fa30800000000000000
+      internalID: 4249347256526277888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_36
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1689
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 093e46f02b1058450800000000000000
+      internalID: 6090275935362540432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_37
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1687
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea7e6f26268c2c5f0800000000000000
+      internalID: -737807064042641490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_38
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1693
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47004a5b916f948b0800000000000000
+      internalID: -5167328507148894092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_39
+      rect:
+        serializedVersion: 2
+        x: 4978
+        y: 1689
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f83d2625cf48b4e40800000000000000
+      internalID: 5641749177460511631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_40
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1678
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb80323554b7c8f80800000000000000
+      internalID: -8102966091868600129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_41
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1672
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fdde449cc14b3690800000000000000
+      internalID: -7621425597477102094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_42
+      rect:
+        serializedVersion: 2
+        x: 4971
+        y: 1681
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26640fb8a26bfd250800000000000000
+      internalID: 5971691924769228386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_43
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 1655
+        width: 7
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2c3244b101569fb0800000000000000
+      internalID: -4641433298197660626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_44
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1666
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f18119caf13aa20800000000000000
+      internalID: 3072334196825923476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_45
+      rect:
+        serializedVersion: 2
+        x: 4976
+        y: 1657
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50243c295faade50800000000000000
+      internalID: 6834968182016712794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_46
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1657
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3281fa88b33fc6ea0800000000000000
+      internalID: -5878055976603543517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_47
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1646
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f66fc43e0a37120800000000000000
+      internalID: 2410447123682586417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_48
+      rect:
+        serializedVersion: 2
+        x: 4958
+        y: 1640
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21de4d91c6ccccd20800000000000000
+      internalID: 3300237391617649938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_49
+      rect:
+        serializedVersion: 2
+        x: 4969
+        y: 1649
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79ccbba670b707390800000000000000
+      internalID: -7822617280956871529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_50
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1622
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7278f36378fb442f0800000000000000
+      internalID: -989455430663043289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_51
+      rect:
+        serializedVersion: 2
+        x: 4957
+        y: 1629
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19ae27dff373e15f0800000000000000
+      internalID: -784128537141253487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_52
+      rect:
+        serializedVersion: 2
+        x: 4958
+        y: 1625
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0122b1bd33a85ce80800000000000000
+      internalID: -8158963194587831792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_53
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1615
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 225da423a9151aa30800000000000000
+      internalID: 4224747648160814370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_54
+      rect:
+        serializedVersion: 2
+        x: 4967
+        y: 1621
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e74c15445062d1d0800000000000000
+      internalID: -3327491259620374555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_55
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1602
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0146d4dbfa55d850800000000000000
+      internalID: 6401122483031130380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_56
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1610
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1061d4608cf0bfde0800000000000000
+      internalID: -1298426715792665087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_57
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 1590
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24fbbf5a0117ca5a0800000000000000
+      internalID: -6508703045139054782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_58
+      rect:
+        serializedVersion: 2
+        x: 4972
+        y: 1596
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad8381cc253867480800000000000000
+      internalID: -8901783221816510246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_59
+      rect:
+        serializedVersion: 2
+        x: 4985
+        y: 1588
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0616c3e18635eb050800000000000000
+      internalID: 5818179475258237280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_60
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1572
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d75837008bb67d0800000000000000
+      internalID: -2924041220969366239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_61
+      rect:
+        serializedVersion: 2
+        x: 4969
+        y: 1559
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b162948edc257fb50800000000000000
+      internalID: 6626856421017855515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_62
+      rect:
+        serializedVersion: 2
+        x: 4978
+        y: 1561
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c831ac54786bc920800000000000000
+      internalID: 3011615624806873289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_63
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1541
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cde5eb07891efba0800000000000000
+      internalID: -6053372781328470584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_64
+      rect:
+        serializedVersion: 2
+        x: 4967
+        y: 1543
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af3f884a83f1e4dc0800000000000000
+      internalID: -3652947919611825158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_65
+      rect:
+        serializedVersion: 2
+        x: 4995
+        y: 1545
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 363de976a7c188420800000000000000
+      internalID: 2632385294248104803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_66
+      rect:
+        serializedVersion: 2
+        x: 4978
+        y: 1533
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8f6736271ecc26a0800000000000000
+      internalID: -6472571965617508470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_67
+      rect:
+        serializedVersion: 2
+        x: 4966
+        y: 1512
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2a014168309c1630800000000000000
+      internalID: 3899149949220227629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_68
+      rect:
+        serializedVersion: 2
+        x: 4972
+        y: 1523
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20012d5a99056a6f0800000000000000
+      internalID: -673762473403084798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_69
+      rect:
+        serializedVersion: 2
+        x: 4969
+        y: 1503
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edcab5f2ab2c53850800000000000000
+      internalID: 6356200554017565918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_70
+      rect:
+        serializedVersion: 2
+        x: 4971
+        y: 1498
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1469bf73f05cf4460800000000000000
+      internalID: 7228212596107351617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_71
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1488
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31fbc8dc11ed90f90800000000000000
+      internalID: -6986809178844250349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_72
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1488
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c59fafaaba7daa0800000000000000
+      internalID: -6136247216425575271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_73
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 1465
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35094430a4e027210800000000000000
+      internalID: 1329140551072911443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_74
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1457
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00dfce746cd152600800000000000000
+      internalID: 442792875813305600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_75
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1451
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab49b7b92e503cad0800000000000000
+      internalID: -2683294482153368390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_76
+      rect:
+        serializedVersion: 2
+        x: 4968
+        y: 1446
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1405417eef3849230800000000000000
+      internalID: 3644683129271373889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_77
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1416
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80f3527d377661090800000000000000
+      internalID: -8064144335531852024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_78
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1400
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cf74b1e6761d4430800000000000000
+      internalID: 3768693163027627977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_79
+      rect:
+        serializedVersion: 2
+        x: 4977
+        y: 1405
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c6942108a2905220800000000000000
+      internalID: 2472637445697738434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_80
+      rect:
+        serializedVersion: 2
+        x: 4970
+        y: 1394
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185f401fc687094a0800000000000000
+      internalID: -6588633845547600511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_81
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1381
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae78cb9774f608cb0800000000000000
+      internalID: -4863765244784375830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_82
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1376
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af02ea01e00f49940800000000000000
+      internalID: 5302126604521971962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zabeg_itog_3_83
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1361
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a87913d2e8104f420800000000000000
+      internalID: 2662754989838014346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zabeg_itog_3_0: -8643765470919790170
+      zabeg_itog_3_1: -763959398267144454
+      zabeg_itog_3_10: -1507278380319955428
+      zabeg_itog_3_11: -6379863491408510622
+      zabeg_itog_3_12: 265106909186395844
+      zabeg_itog_3_13: -1565309936635964068
+      zabeg_itog_3_14: 1315755415387271572
+      zabeg_itog_3_15: 4197968590944412097
+      zabeg_itog_3_16: 4617761780185108939
+      zabeg_itog_3_17: -212581975678232768
+      zabeg_itog_3_18: 588816250800390331
+      zabeg_itog_3_19: -2873520122698312497
+      zabeg_itog_3_2: -6199692120210163709
+      zabeg_itog_3_20: -6153231389334116175
+      zabeg_itog_3_21: -1426671890959768932
+      zabeg_itog_3_22: -2739750330943254883
+      zabeg_itog_3_23: 4296241145136478668
+      zabeg_itog_3_24: -7853389244370478376
+      zabeg_itog_3_25: -7394867669113488384
+      zabeg_itog_3_26: -7096910711289446999
+      zabeg_itog_3_27: 1413850235984287819
+      zabeg_itog_3_28: 8352043678793908066
+      zabeg_itog_3_29: 3846419768478526112
+      zabeg_itog_3_3: -6586058068533891086
+      zabeg_itog_3_30: 3059637085556156480
+      zabeg_itog_3_31: 3880540392835509825
+      zabeg_itog_3_32: 2302299586893521916
+      zabeg_itog_3_33: -8633440114309028523
+      zabeg_itog_3_34: -858635115769059011
+      zabeg_itog_3_35: 4249347256526277888
+      zabeg_itog_3_36: 6090275935362540432
+      zabeg_itog_3_37: -737807064042641490
+      zabeg_itog_3_38: -5167328507148894092
+      zabeg_itog_3_39: 5641749177460511631
+      zabeg_itog_3_4: -6134656448307203293
+      zabeg_itog_3_40: -8102966091868600129
+      zabeg_itog_3_41: -7621425597477102094
+      zabeg_itog_3_42: 5971691924769228386
+      zabeg_itog_3_43: -4641433298197660626
+      zabeg_itog_3_44: 3072334196825923476
+      zabeg_itog_3_45: 6834968182016712794
+      zabeg_itog_3_46: -5878055976603543517
+      zabeg_itog_3_47: 2410447123682586417
+      zabeg_itog_3_48: 3300237391617649938
+      zabeg_itog_3_49: -7822617280956871529
+      zabeg_itog_3_5: 3979860792443879554
+      zabeg_itog_3_50: -989455430663043289
+      zabeg_itog_3_51: -784128537141253487
+      zabeg_itog_3_52: -8158963194587831792
+      zabeg_itog_3_53: 4224747648160814370
+      zabeg_itog_3_54: -3327491259620374555
+      zabeg_itog_3_55: 6401122483031130380
+      zabeg_itog_3_56: -1298426715792665087
+      zabeg_itog_3_57: -6508703045139054782
+      zabeg_itog_3_58: -8901783221816510246
+      zabeg_itog_3_59: 5818179475258237280
+      zabeg_itog_3_6: -2274892026429148374
+      zabeg_itog_3_60: -2924041220969366239
+      zabeg_itog_3_61: 6626856421017855515
+      zabeg_itog_3_62: 3011615624806873289
+      zabeg_itog_3_63: -6053372781328470584
+      zabeg_itog_3_64: -3652947919611825158
+      zabeg_itog_3_65: 2632385294248104803
+      zabeg_itog_3_66: -6472571965617508470
+      zabeg_itog_3_67: 3899149949220227629
+      zabeg_itog_3_68: -673762473403084798
+      zabeg_itog_3_69: 6356200554017565918
+      zabeg_itog_3_7: -9205420425909669609
+      zabeg_itog_3_70: 7228212596107351617
+      zabeg_itog_3_71: -6986809178844250349
+      zabeg_itog_3_72: -6136247216425575271
+      zabeg_itog_3_73: 1329140551072911443
+      zabeg_itog_3_74: 442792875813305600
+      zabeg_itog_3_75: -2683294482153368390
+      zabeg_itog_3_76: 3644683129271373889
+      zabeg_itog_3_77: -8064144335531852024
+      zabeg_itog_3_78: 3768693163027627977
+      zabeg_itog_3_79: 2472637445697738434
+      zabeg_itog_3_8: 7827556173529127917
+      zabeg_itog_3_80: -6588633845547600511
+      zabeg_itog_3_81: -4863765244784375830
+      zabeg_itog_3_82: 5302126604521971962
+      zabeg_itog_3_83: 2662754989838014346
+      zabeg_itog_3_9: 408580951725884591
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
