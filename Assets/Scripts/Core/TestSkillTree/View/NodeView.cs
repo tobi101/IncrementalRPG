@@ -9,6 +9,8 @@ namespace Core.TestSkillTree.View
     public class NodeView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         [SerializeField] private Image _icon;
+        [SerializeField] private Image _additionalIcon;
+        [SerializeField] private GameObject _additionalIconRoot;
         [SerializeField] private Image _borderIcon;
         [SerializeField] private TextMeshProUGUI _levelText;
 
@@ -27,6 +29,7 @@ namespace Core.TestSkillTree.View
             if (_icon != null && definition.icon != null)
                 _icon.sprite = definition.icon;
 
+            SetupAdditionalIcon(definition);
             Refresh();
         }
 
@@ -42,11 +45,31 @@ namespace Core.TestSkillTree.View
 
             gameObject.SetActive(true);
 
-            _borderIcon.color = _borderColorConfig != null
+            var stateColor = _borderColorConfig != null
                 ? _borderColorConfig.GetColor(state)
                 : Color.white;
 
+            _borderIcon.color = stateColor;
+
+            if (_additionalIcon != null && _additionalIcon.gameObject.activeInHierarchy)
+                _additionalIcon.color = stateColor;
+
             _levelText.text = $"{_service.GetLevel(_definition.id)}/{_definition.maxLevel}";
+        }
+
+        private void SetupAdditionalIcon(NodeDefinition definition)
+        {
+            if (_additionalIcon == null)
+                return;
+
+            var hasIcon = definition.additionalIcon != null;
+            var iconRoot = _additionalIconRoot != null
+                ? _additionalIconRoot
+                : _additionalIcon.gameObject;
+
+            iconRoot.SetActive(hasIcon);
+            _additionalIcon.sprite = definition.additionalIcon;
+            _additionalIcon.raycastTarget = false;
         }
 
         public void OnPointerEnter(PointerEventData eventData) =>

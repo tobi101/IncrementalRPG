@@ -119,7 +119,7 @@ namespace Core.TestSkillTree
             _multiplierCache.Clear();
             _unlockedFeatures.Clear();
 
-            foreach (var def in _config.nodes)
+            foreach (var def in _config.NodeDefinitions)
             {
                 var level = _state.GetLevel(def.id);
                 if (level == 0) 
@@ -174,8 +174,8 @@ namespace Core.TestSkillTree
 
         private static Dictionary<string, NodeDefinition> BuildNodeMap(SkillTreeConfig config)
         {
-            var map = new Dictionary<string, NodeDefinition>(config.nodes.Count);
-            foreach (var node in config.nodes)
+            var map = new Dictionary<string, NodeDefinition>();
+            foreach (var node in config.NodeDefinitions)
                 map[node.id] = node;
             return map;
         }

@@ -12,13 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22bd0984f8a34b7abe014ca66a9a937, type: 3}
   m_Name: SkillTreeConfig
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.SkillTreeConfig
-  nodes:
-  - {fileID: 11400000, guid: 92c8bc70910f94f7d90659fed53b318d, type: 2}
-  - {fileID: 11400000, guid: 52ec292eab03749e5ae85e8931e24366, type: 2}
-  - {fileID: 11400000, guid: fdd60171723494925a2b7d360cb6b3e6, type: 2}
-  - {fileID: 11400000, guid: 9ae3dedb00f784a268592bfaeced1753, type: 2}
-  - {fileID: 11400000, guid: 238fc219b23d547a1b6e6c3907e17af4, type: 2}
-  - {fileID: 11400000, guid: d4a7bc70acca045b983d7a86ef37f217, type: 2}
-  - {fileID: 11400000, guid: 656bdb3708d0b4bfc8e2851bf995bd2b, type: 2}
-  - {fileID: 11400000, guid: 167514c2ba8a7400aad118fd1c1fc2ae, type: 2}
-  - {fileID: 11400000, guid: c09be4b96bee24196ae24347bd28a8ba, type: 2}
+  cellSpacing: {x: 150, y: 150}
+  origin: {x: 0, y: 0}
+  entries:
+  - node: {fileID: 11400000, guid: 92c8bc70910f94f7d90659fed53b318d, type: 2}
+    gridPosition: {x: 0, y: 0}
+  - node: {fileID: 11400000, guid: 52ec292eab03749e5ae85e8931e24366, type: 2}
+    gridPosition: {x: 3, y: 0}
+  - node: {fileID: 11400000, guid: fdd60171723494925a2b7d360cb6b3e6, type: 2}
+    gridPosition: {x: 1, y: 2}
+  - node: {fileID: 11400000, guid: 9ae3dedb00f784a268592bfaeced1753, type: 2}
+    gridPosition: {x: -1, y: 2}
+  - node: {fileID: 11400000, guid: 238fc219b23d547a1b6e6c3907e17af4, type: 2}
+    gridPosition: {x: -3, y: 3}
+  - node: {fileID: 11400000, guid: d4a7bc70acca045b983d7a86ef37f217, type: 2}
+    gridPosition: {x: 1, y: 4}
+  - node: {fileID: 11400000, guid: 656bdb3708d0b4bfc8e2851bf995bd2b, type: 2}
+    gridPosition: {x: 1, y: 6}
+  - node: {fileID: 11400000, guid: 167514c2ba8a7400aad118fd1c1fc2ae, type: 2}
+    gridPosition: {x: 5, y: 4}
+  - node: {fileID: 11400000, guid: c09be4b96bee24196ae24347bd28a8ba, type: 2}
+    gridPosition: {x: 1, y: 8}
+  nodes: []

@@ -24,6 +24,9 @@ namespace Core.TestSkillTree
 
         public Sprite icon;
 
+        [Tooltip("Optional icon rendered as a small badge in the node view.")]
+        public Sprite additionalIcon;
+
         [Min(1)]
         public int maxLevel;
 
@@ -35,7 +38,7 @@ namespace Core.TestSkillTree
 
         public NodeEffect[] effects;
 
-        [Tooltip("Position in the skill tree UI graph.")]
+        [HideInInspector]
         public Vector2 positionInGraph;
     }
 }

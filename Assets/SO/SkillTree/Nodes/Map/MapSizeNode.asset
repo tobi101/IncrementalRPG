@@ -15,13 +15,14 @@ MonoBehaviour:
   id: add_map_size
   displayName: Add Map Size
   description: Add game map size
-  icon: {fileID: -918889415, guid: 6582f34ddd5f686408c019550cd94c9d, type: 3}
+  icon: {fileID: 21300000, guid: 3917a92ba53ee4220b6789dc0bc2d4a2, type: 3}
+  additionalIcon: {fileID: 21300000, guid: a5839163429d1423bb90ec3946c1c316, type: 3}
   maxLevel: 3
   goldCostPerLevel: 010000000200000003000000
   prerequisites: []
   effects:
   - effectType: 0
-    statType: 5
+    statType: 4
     valuesPerLevel:
     - 1
     - 2

@@ -54,23 +54,45 @@ namespace Core.TestSkillTree.View
 
         private void Build()
         {
-            // Connections first so they render behind nodes.
-            foreach (var def in _config.nodes)
+            var nodePositions = new Dictionary<NodeDefinition, Vector2>();
+            var entries = new List<SkillTreeNodeEntry>();
+
+            foreach (var entry in _config.NodeEntries)
             {
+                if (entry.node == null)
+                    continue;
+
+                entries.Add(entry);
+                nodePositions[entry.node] = _config.GridToGraphPosition(entry.gridPosition);
+            }
+
+            // Connections first so they render behind nodes.
+            foreach (var entry in entries)
+            {
+                var def = entry.node;
+                if (!nodePositions.TryGetValue(def, out var to))
+                    continue;
+
+                if (def.prerequisites == null)
+                    continue;
+
                 foreach (var prereq in def.prerequisites)
                 {
                     if (prereq.node == null) continue;
+                    if (!nodePositions.TryGetValue(prereq.node, out var from)) continue;
+
                     var connection = Instantiate(_connectionViewPrefab, _connectionsLayer);
-                    connection.Setup(prereq.node.positionInGraph, def.positionInGraph);
+                    connection.Setup(from, to);
                     connection.Refresh(_service.GetState(def.id));
                     _connectionViews.Add((connection, def));
                 }
             }
 
-            foreach (var def in _config.nodes)
+            foreach (var entry in entries)
             {
+                var def = entry.node;
                 var nodeView = Instantiate(_nodeViewPrefab, _nodesLayer);
-                ((RectTransform)nodeView.transform).anchoredPosition = def.positionInGraph;
+                ((RectTransform)nodeView.transform).anchoredPosition = nodePositions[def];
                 nodeView.Bind(def, _service, _popupView, _borderColorConfig);
                 _nodeViews.Add(nodeView);
             }
