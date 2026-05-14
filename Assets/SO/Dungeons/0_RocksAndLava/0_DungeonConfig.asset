@@ -12,16 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5faa2fe118b6244d3a03b6ba3326f84c, type: 3}
   m_Name: 0_DungeonConfig
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.Dungeon.DungeonConfig
-  spawnTable: {fileID: 11400000, guid: 42306b02f8e45465cb748d0b7f495a59, type: 2}
-  tilemapGenerationConfig: {fileID: 11400000, guid: b82edfeef95c1421b9b0f559dd96f756, type: 2}
-  minPlayZoneSize: 6
-  initialEnemySpawnDensity: 0.05
-  initialBombSpawnDensity: 0.05
-  spawnInterval: 1
-  minSpawnInterval: 0.001
-  heatIndex: 5
-  featureSpawnConfigs:
-  - featureType: 1
-    spawnSpeedStat: 9
-    spawnInterval: 1
-    minSpawnInterval: 0.001
+  dungeonId: rocks_and_lava
+  displayName: Rocks And Lava
+  icon: {fileID: 0}
+  previewImage: {fileID: 0}
+  levels:
+  - {fileID: 11400000, guid: 0242e61f3b22462e99cb9b80adfa4c78, type: 2}

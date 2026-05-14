@@ -60,7 +60,7 @@ namespace Core.Gameplay
                 return;
             }
 
-            targetTilemap.ClearAllTiles();
+            ClearGeneratedTiles();
 
             var denominator = Mathf.Max(1, size - 1);
 
@@ -111,17 +111,19 @@ namespace Core.Gameplay
                 return;
             }
 
+            ClearGeneratedTiles();
+            Debug.Log("[IsometricGradientTilemapGenerator] Tilemap cleared.");
+        }
+
+        private void ClearGeneratedTiles()
+        {
             targetTilemap.ClearAllTiles();
             leftPillarTilemap?.ClearAllTiles();
             rightPillarTilemap?.ClearAllTiles();
-            Debug.Log("[IsometricGradientTilemapGenerator] Tilemap cleared.");
         }
 
         private void GeneratePillar()
         {
-            leftPillarTilemap?.ClearAllTiles();
-            rightPillarTilemap?.ClearAllTiles();
-
             for (var z = 1; z <= config.pillarHeight; z++)
             {
                 if (config.tileSet.leftWallTile != null && leftPillarTilemap != null)

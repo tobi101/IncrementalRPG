@@ -8,6 +8,17 @@ namespace Core.Gameplay.Dungeon
         public DungeonConfig[] dungeons;
 
         public DungeonConfig Get(int index) => dungeons[index];
-        public int Count => dungeons.Length;
+        public int Count => dungeons == null ? 0 : dungeons.Length;
+
+        public DungeonConfig GetFirstPlayable()
+        {
+            if (dungeons == null) return null;
+
+            foreach (var dungeon in dungeons)
+                if (dungeon != null && dungeon.HasPlayableLevels)
+                    return dungeon;
+
+            return null;
+        }
     }
 }

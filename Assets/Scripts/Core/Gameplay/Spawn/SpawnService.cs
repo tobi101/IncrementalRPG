@@ -44,10 +44,11 @@ namespace Core.Gameplay
             _skillTree = skillTree;
         }
 
-        public void SetDungeon(DungeonConfig dungeon)
+        public void SetLevel(DungeonLevelConfig level)
         {
-            _spawnTable = dungeon.spawnTable;
-            _spawnInterval = dungeon.spawnInterval;
+            _spawnTable = level.spawnTable;
+            _spawnInterval = level.spawnInterval;
+            _timer = 0f;
             _featureTimers.Clear();
         }
 
@@ -101,6 +102,7 @@ namespace Core.Gameplay
 
         private void TrySpawnOfType(FeatureType featureType)
         {
+            if (_spawnTable == null) return;
             if (!_tileGrid.TryGetRandomFreeTile(out var coord)) return;
 
             var config = _spawnTable.Pick(_skillTree, featureType);
@@ -141,7 +143,7 @@ namespace Core.Gameplay
             {
                 creature.OnDied -= onDied;
 
-                if (config.goldDrop > 0)
+                if (config.featureType == FeatureType.None)
                     OnCreatureKilled?.Invoke(creature.TileCoord, config.goldDrop);
 
                 view.PlayDeath(() =>

@@ -1,5 +1,6 @@
 using Core.StateMachine;
 using Core.StateMachine.States;
+using Core.Gameplay.Dungeon;
 using Reflex.Attributes;
 using UnityEngine;
 
@@ -12,16 +13,28 @@ namespace UI
         [SerializeField] private HubFeatureButtonView _barracksButton;
         [SerializeField] private HubFeatureButtonView _mineButton;
         [SerializeField] private HubFeatureButtonView _craftButton;
+        [SerializeField] private DungeonMenuView _dungeonMenuView;
 
         [Inject] private GameStateMachine _stateMachine;
+        [Inject] private DungeonList _dungeonList;
+        [Inject] private DungeonSelectionService _dungeonSelection;
 
         private void Start()
         {
-            _dungeonButton.Button.onClick.AddListener(OpenDungeon);
-            _skillTreeButton.Button.onClick.AddListener(OpenSkillTree);
-            _barracksButton.Button.onClick.AddListener(OpenBarracks);
-            _mineButton.Button.onClick.AddListener(OpenMine);
-            _craftButton.Button.onClick.AddListener(OpenCraft);
+            if (_dungeonButton != null && _dungeonButton.Button != null)
+                _dungeonButton.Button.onClick.AddListener(OpenDungeon);
+
+            if (_skillTreeButton != null && _skillTreeButton.Button != null)
+                _skillTreeButton.Button.onClick.AddListener(OpenSkillTree);
+
+            if (_barracksButton != null && _barracksButton.Button != null)
+                _barracksButton.Button.onClick.AddListener(OpenBarracks);
+
+            if (_mineButton != null && _mineButton.Button != null)
+                _mineButton.Button.onClick.AddListener(OpenMine);
+
+            if (_craftButton != null && _craftButton.Button != null)
+                _craftButton.Button.onClick.AddListener(OpenCraft);
         }
 
         private void OnDestroy()
@@ -42,7 +55,28 @@ namespace UI
                 _craftButton.Button.onClick.RemoveListener(OpenCraft);
         }
 
-        private void OpenDungeon() => _stateMachine.Enter<GameplayState>();
+        private void OpenDungeon()
+        {
+            if (_dungeonMenuView != null)
+            {
+                _dungeonMenuView.Show(_dungeonList, StartDungeon);
+                return;
+            }
+
+            StartDungeon(_dungeonList.GetFirstPlayable());
+        }
+
+        private void StartDungeon(DungeonConfig dungeon)
+        {
+            if (dungeon == null || !dungeon.HasPlayableLevels)
+            {
+                Debug.LogError("[HubView] Cannot start gameplay because selected dungeon is not playable.");
+                return;
+            }
+
+            _dungeonSelection.Select(dungeon);
+            _stateMachine.Enter<GameplayState>();
+        }
 
         private void OpenSkillTree() => _stateMachine.Enter<SkillTreeMenuState>();
 

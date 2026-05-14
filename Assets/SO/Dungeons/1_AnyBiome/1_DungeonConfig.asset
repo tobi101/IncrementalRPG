@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5faa2fe118b6244d3a03b6ba3326f84c, type: 3}
   m_Name: 1_DungeonConfig
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.Dungeon.DungeonConfig
-  spawnTable: {fileID: 11400000, guid: 3d2896ab506cb4f1b9e9e748b3e19a6a, type: 2}
-  dungeonPrefab: {fileID: 0}
-  minPlayZoneSize: 10
-  initialEnemySpawnDensity: 0
-  initialBombSpawnDensity: 0
+  dungeonId: any_biome
+  displayName: Any Biome
+  icon: {fileID: 0}
+  previewImage: {fileID: 0}
+  levels:
+  - {fileID: 11400000, guid: 8d72ee2789aa42fdb5cddaade0b616eb, type: 2}

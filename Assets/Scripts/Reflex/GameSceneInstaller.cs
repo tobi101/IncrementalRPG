@@ -92,6 +92,13 @@ namespace Reflex
             );
 
             builder.RegisterType(
+                typeof(DungeonSelectionService),
+                new[] { typeof(DungeonSelectionService) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
                 typeof(SkillTreeFeature),
                 new[] { typeof(IGameFeature), typeof(SkillTreeFeature) },
                 Lifetime.Singleton,
