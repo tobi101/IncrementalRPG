@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace Core.TestSkillTree
 {
@@ -17,10 +18,10 @@ namespace Core.TestSkillTree
         [Tooltip("Unique identifier used in code and save data.")]
         public string id;
 
-        public string displayName;
+        public LocalizedString displayName = new();
 
-        [TextArea, Tooltip("Description shown in the skill tree popup.")]
-        public string description;
+        [Tooltip("Description shown in the skill tree popup.")]
+        public LocalizedString description = new();
 
         public Sprite icon;
 

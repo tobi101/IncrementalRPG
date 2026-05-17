@@ -44,7 +44,7 @@ namespace Core.Gameplay.Dungeon
             if (dungeon.TryGetLevel(clampedLevelIndex, out var savedLevel) && savedLevel != null && savedLevel.IsPlayable)
                 return clampedLevelIndex;
 
-            Debug.LogWarning($"[DungeonSelectionService] Saved level index {savedLevelIndex} for dungeon '{dungeon.DisplayName}' is not playable. Falling back to first playable level.");
+            Debug.LogWarning($"[DungeonSelectionService] Saved level index {savedLevelIndex} for dungeon '{GetProgressKey(dungeon)}' is not playable. Falling back to first playable level.");
             return dungeon.FirstPlayableLevelIndex;
         }
 

@@ -1,4 +1,5 @@
 using Core.StateMachine;
+using Core.StateMachine.Features;
 using Core.StateMachine.States;
 using Core.Gameplay.Dungeon;
 using Reflex.Attributes;
@@ -14,16 +15,22 @@ namespace UI
         [SerializeField] private HubFeatureButtonView _mineButton;
         [SerializeField] private HubFeatureButtonView _craftButton;
         [SerializeField] private DungeonMenuView _dungeonMenuView;
+        [SerializeField] private MapMenuFadeTransition _mapMenuFadeTransition;
 
         [Inject] private GameStateMachine _stateMachine;
         [Inject] private DungeonList _dungeonList;
         [Inject] private DungeonSelectionService _dungeonSelection;
+        [Inject] private GameplayFeature _gameplay;
+
+        private bool _isStartingDungeon;
+
+        private void OnEnable()
+        {
+            _isStartingDungeon = false;
+        }
 
         private void Start()
         {
-            if (_dungeonMenuView == null)
-                _dungeonMenuView = FindObjectOfType<DungeonMenuView>(true);
-
             if (_dungeonButton != null && _dungeonButton.Button != null)
                 _dungeonButton.Button.onClick.AddListener(OpenDungeon);
 
@@ -71,14 +78,40 @@ namespace UI
 
         private void StartDungeon(DungeonConfig dungeon)
         {
+            if (_isStartingDungeon)
+                return;
+
             if (dungeon == null || !dungeon.HasPlayableLevels)
             {
                 Debug.LogError("[HubView] Cannot start gameplay because selected dungeon is not playable.");
                 return;
             }
 
+            _isStartingDungeon = true;
+
+            if (_mapMenuFadeTransition != null)
+            {
+                _mapMenuFadeTransition.Play(() => EnterDungeon(dungeon), HandleDungeonTransitionFinished);
+                return;
+            }
+
+            EnterDungeon(dungeon);
+            HandleDungeonTransitionFinished();
+        }
+
+        private void EnterDungeon(DungeonConfig dungeon)
+        {
+            if (_dungeonMenuView != null)
+                _dungeonMenuView.Hide();
+
             _dungeonSelection.Select(dungeon);
             _stateMachine.Enter<GameplayState>();
+        }
+
+        private void HandleDungeonTransitionFinished()
+        {
+            _gameplay.StartSession();
+            _isStartingDungeon = false;
         }
 
         private void OpenSkillTree() => _stateMachine.Enter<SkillTreeMenuState>();

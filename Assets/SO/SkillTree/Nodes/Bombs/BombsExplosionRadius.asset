@@ -13,8 +13,24 @@ MonoBehaviour:
   m_Name: BombsExplosionRadius
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
   id: bombs_explosion_radius
-  displayName: Explosion Radius
-  description: 
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000023
+      m_Key: skill.bombs_explosion_radius.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 0}
   maxLevel: 2
   goldCostPerLevel: 90010000f4010000

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace Entity
 {
@@ -11,7 +12,8 @@ namespace Entity
     [CreateAssetMenu(fileName = "EntityConfig", menuName = "RPG/Entity Config")]
     public class EntityConfig : ScriptableObject
     {
-        public string entityName;
+        public LocalizedString entityName = new();
+        public LocalizedString description = new();
         public Sprite icon;
         public int maxHP;
         public int goldDrop;

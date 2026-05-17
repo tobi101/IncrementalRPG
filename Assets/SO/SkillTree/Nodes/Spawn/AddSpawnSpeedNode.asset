@@ -13,8 +13,24 @@ MonoBehaviour:
   m_Name: AddSpawnSpeedNode
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
   id: add_spawn_speed
-  displayName: Add Spawn Speed
-  description: Add Spawn Speed
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000033
+      m_Key: skill.add_spawn_speed.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000034
+      m_Key: skill.add_spawn_speed.description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 4153240674832713612, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
   maxLevel: 3
   goldCostPerLevel: 64000000c80000002c010000

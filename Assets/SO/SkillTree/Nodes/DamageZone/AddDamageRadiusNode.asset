@@ -13,8 +13,24 @@ MonoBehaviour:
   m_Name: AddDamageRadiusNode
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
   id: add_damage_radius
-  displayName: Add Damage radius
-  description: Add damage zone radius
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000027
+      m_Key: skill.add_damage_radius.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000028
+      m_Key: skill.add_damage_radius.description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: eca9594fa30924bf2ac5bf6da399e009, type: 3}
   additionalIcon: {fileID: 21300000, guid: e407312f5f1e64037b4789fc4eb5e1f1, type: 3}
   maxLevel: 2

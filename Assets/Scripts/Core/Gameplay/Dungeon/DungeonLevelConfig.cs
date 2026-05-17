@@ -1,6 +1,7 @@
 using Core.TestSkillTree;
 using Entity;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace Core.Gameplay.Dungeon
 {
@@ -9,7 +10,9 @@ namespace Core.Gameplay.Dungeon
     {
         [Header("Identity")]
         public string levelId;
-        public string displayName;
+        public LocalizedString displayName = new();
+        public LocalizedString title = new();
+        public LocalizedString description = new();
 
         [Header("Progression")]
         [Min(0)] public int killGoal = 10;
@@ -31,7 +34,6 @@ namespace Core.Gameplay.Dungeon
         [Header("Rewards")]
         [Min(0f)] public float goldDropMultiplier = 1f;
 
-        public string DisplayName => string.IsNullOrEmpty(displayName) ? name : displayName;
         public bool IsPlayable => spawnTable != null && tilemapGenerationConfig != null;
     }
 }

@@ -17,7 +17,147 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 65c04d1b687a94fe6b2d028edf0ee3a1, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 1000000000001
+    m_Localized: 炸弹
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000002
+    m_Localized: 恶魔
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000003
+    m_Localized: 骷髅
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000004
+    m_Localized: 史莱姆
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000005
+    m_Localized: 岩石与熔岩
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000006
+    m_Localized: 岩石与熔岩
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000007
+    m_Localized: 由岩石、灰烬和熔岩组成的灼热洞窟。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000008
+    m_Localized: 任意生物群系
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000009
+    m_Localized: 任意生物群系
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000010
+    m_Localized: 用于混合生物群系规则的测试地下城。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000011
+    m_Localized: 第 1 级
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000012
+    m_Localized: 第 1 级
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000013
+    m_Localized: 地下城第一关。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000014
+    m_Localized: 第 1 级
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000015
+    m_Localized: 第 1 级
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000016
+    m_Localized: 地下城第一关。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000017
+    m_Localized: 解锁炸弹
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000018
+    m_Localized: 解锁炸弹生成。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000019
+    m_Localized: 炸弹生成速度
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000020
+    m_Localized: 提高炸弹生成速度。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000021
+    m_Localized: 炸弹伤害
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000023
+    m_Localized: 爆炸半径
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000025
+    m_Localized: 攻击速度
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000026
+    m_Localized: 提高攻击速度。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000027
+    m_Localized: 伤害半径
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000028
+    m_Localized: 增加伤害区域半径。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000029
+    m_Localized: 区域伤害
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000030
+    m_Localized: 提高区域伤害。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000031
+    m_Localized: 地图大小
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000032
+    m_Localized: 增加地图大小。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000033
+    m_Localized: 生成速度
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000034
+    m_Localized: 提高敌人生成速度。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000035
+    m_Localized: '{0}/{1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000036
+    m_Localized: '{0} - {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000037
+    m_Localized: 新等级！
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

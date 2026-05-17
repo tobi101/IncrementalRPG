@@ -13,8 +13,24 @@ MonoBehaviour:
   m_Name: BombSpawnSpeedNode
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
   id: bombs_spawn_speed
-  displayName: Bombs Spawn Speed
-  description: Spawn speed
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000019
+      m_Key: skill.bombs_spawn_speed.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000020
+      m_Key: skill.bombs_spawn_speed.description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 0}
   maxLevel: 2
   goldCostPerLevel: f4010000e8030000

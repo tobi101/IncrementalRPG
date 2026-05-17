@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Core.Gameplay.Dungeon;
 using Entity;
 using TMPro;
+using UI.Localization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,9 +23,12 @@ namespace UI
 
         private readonly List<Image> _spawnedEnemyIcons = new();
         private Action _onStartClicked;
+        private LocalizedStringBinding _dungeonNameBinding;
 
         private void Awake()
         {
+            _dungeonNameBinding = new LocalizedStringBinding(_dungeonNameText);
+
             if (_enemyIconPrefab != null)
                 _enemyIconPrefab.gameObject.SetActive(false);
 
@@ -54,7 +58,7 @@ namespace UI
             SetPlayableContentVisible(true);
 
             if (_dungeonNameText != null)
-                _dungeonNameText.text = dungeon.DisplayName;
+                _dungeonNameBinding.Bind(dungeon.displayName);
 
             if (_levelNumberText != null)
             {
@@ -81,6 +85,7 @@ namespace UI
         private void ShowUnavailable()
         {
             _onStartClicked = null;
+            _dungeonNameBinding?.Clear();
 
             SetPlayableContentVisible(false);
             SetUnavailableVisible(true);
@@ -177,6 +182,7 @@ namespace UI
             if (_startButton != null)
                 _startButton.onClick.RemoveListener(HandleStartClicked);
 
+            _dungeonNameBinding?.Dispose();
             ClearEnemyIcons();
         }
     }

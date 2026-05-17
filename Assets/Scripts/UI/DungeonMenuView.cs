@@ -16,8 +16,10 @@ namespace UI
         private Action<DungeonConfig> _onDungeonStart;
         private DungeonMapButtonView _selectedButton;
         private DungeonConfig _selectedDungeon;
+        private CanvasGroup _canvasGroup;
         private bool _initialized;
         private bool _isOpening;
+        private bool _isStarting;
 
         private void Awake()
         {
@@ -33,17 +35,21 @@ namespace UI
             _dungeonList = dungeonList;
             _dungeonSelection = dungeonSelection;
             _onDungeonStart = onDungeonStart;
+            _isStarting = false;
             _isOpening = true;
             SetVisible(true);
             _isOpening = false;
 
             Initialize();
+            SetInputInteractable(true);
             BindButtons();
             SelectInitialDungeon();
         }
 
         public void Hide()
         {
+            _isStarting = false;
+            SetInputInteractable(true);
             SetVisible(false);
             _onDungeonStart = null;
         }
@@ -55,6 +61,10 @@ namespace UI
 
             if (_closeButton != null)
                 _closeButton.onClick.AddListener(Hide);
+
+            _canvasGroup = GetComponent<CanvasGroup>();
+            if (_canvasGroup == null)
+                _canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
             _initialized = true;
         }
@@ -140,13 +150,26 @@ namespace UI
 
         private void HandleStartClicked()
         {
-            if (_selectedDungeon == null || !_selectedDungeon.HasPlayableLevels)
+            if (_isStarting || _selectedDungeon == null || !_selectedDungeon.HasPlayableLevels)
                 return;
 
-            var dungeon = _selectedDungeon;
             var callback = _onDungeonStart;
-            Hide();
-            callback?.Invoke(dungeon);
+            if (callback == null)
+                return;
+
+            _isStarting = true;
+            SetInputInteractable(false);
+
+            var dungeon = _selectedDungeon;
+            callback.Invoke(dungeon);
+        }
+
+        private void SetInputInteractable(bool interactable)
+        {
+            if (_canvasGroup == null)
+                return;
+
+            _canvasGroup.interactable = interactable;
         }
 
         private void SetVisible(bool visible)

@@ -30,8 +30,7 @@ namespace UI
             if (_tooltipView == null || _config == null)
                 return;
 
-            var displayName = string.IsNullOrEmpty(_config.entityName) ? _config.name : _config.entityName;
-            _tooltipView.Show(displayName, _rectTransform);
+            _tooltipView.Show(_config.entityName, _rectTransform);
         }
 
         public void OnPointerExit(PointerEventData eventData)

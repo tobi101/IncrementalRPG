@@ -51,10 +51,15 @@ namespace Core.Gameplay
 
         public void Update(float deltaTime)
         {
-            UpdateWorldPosition();
+            UpdateAim();
             RefreshCreaturesInZone();
             UpdateState();
             TickDamage(deltaTime);
+        }
+
+        public void UpdateAim()
+        {
+            UpdateWorldPosition();
         }
 
         private void UpdateWorldPosition()

@@ -13,7 +13,33 @@ MonoBehaviour:
   m_Name: 0_DungeonConfig
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.Dungeon.DungeonConfig
   dungeonId: rocks_and_lava
-  displayName: Rocks And Lava
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000005
+      m_Key: dungeon.rocks_and_lava.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  title:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000006
+      m_Key: dungeon.rocks_and_lava.title
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000007
+      m_Key: dungeon.rocks_and_lava.description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 0}
   previewImage: {fileID: 0}
   levels:

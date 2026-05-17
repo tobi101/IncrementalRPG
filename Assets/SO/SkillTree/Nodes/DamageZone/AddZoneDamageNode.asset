@@ -13,8 +13,24 @@ MonoBehaviour:
   m_Name: AddZoneDamageNode
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
   id: add_zone_damage
-  displayName: Add Zone Damage
-  description: Add zone damage
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000029
+      m_Key: skill.add_zone_damage.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000030
+      m_Key: skill.add_zone_damage.description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 4153240674832713612, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
   maxLevel: 2
   goldCostPerLevel: 0a00000014000000

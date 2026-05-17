@@ -13,8 +13,24 @@ MonoBehaviour:
   m_Name: MapSizeNode
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
   id: add_map_size
-  displayName: Add Map Size
-  description: Add game map size
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000031
+      m_Key: skill.add_map_size.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000032
+      m_Key: skill.add_map_size.description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: 3917a92ba53ee4220b6789dc0bc2d4a2, type: 3}
   additionalIcon: {fileID: 21300000, guid: a5839163429d1423bb90ec3946c1c316, type: 3}
   maxLevel: 3

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace Core.Gameplay.Dungeon
 {
@@ -7,14 +8,15 @@ namespace Core.Gameplay.Dungeon
     {
         [Header("Identity")]
         public string dungeonId;
-        public string displayName;
+        public LocalizedString displayName = new();
+        public LocalizedString title = new();
+        public LocalizedString description = new();
         public Sprite icon;
         public Sprite previewImage;
 
         [Header("Levels")]
         public DungeonLevelConfig[] levels;
 
-        public string DisplayName => string.IsNullOrEmpty(displayName) ? name : displayName;
         public int LevelCount => levels == null ? 0 : levels.Length;
         public int FirstPlayableLevelIndex
         {
