@@ -896,7 +896,7 @@ MonoBehaviour:
   referenceSize: {x: 688, y: 502.2706}
   pivotOffset: {x: 0, y: 0}
   referenceScale: 1
-  layoutScale: 0.3066764
+  layoutScale: 0.2645903
   rectTransformSize: {x: 688, y: 502.2706}
   editReferenceRect: 0
   updateWhenInvisible: 3
@@ -2250,7 +2250,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8.55
+  m_fontSize: 9.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6426,7 +6426,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.05
+  m_fontSize: 33.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7664,7 +7664,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8.55
+  m_fontSize: 9.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8319,7 +8319,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.05
+  m_fontSize: 33.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9792,7 +9792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.317, y: 0.193}
   m_AnchorMax: {x: 0.317, y: 0.193}
-  m_AnchoredPosition: {x: 97, y: -20}
+  m_AnchoredPosition: {x: 97, y: -19.999985}
   m_SizeDelta: {x: 1706.6666, y: 554.1667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1010701696
@@ -19039,7 +19039,7 @@ MonoBehaviour:
   referenceSize: {x: 590.89215, y: 571.0139}
   pivotOffset: {x: 0, y: 0}
   referenceScale: 1
-  layoutScale: 0.23495258
+  layoutScale: 0.27232447
   rectTransformSize: {x: 590.89215, y: 571.0139}
   editReferenceRect: 0
   updateWhenInvisible: 3
@@ -24972,7 +24972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 1969758491}
   _fadeInDuration: 0.5
-  _burnDuration: 1
+  _burnDuration: 1.5
   _fadeAmountStart: -0.1
   _fadeAmountEnd: 1
   _useUnscaledTime: 1
