@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Core.StateMachine;
 using Core.StateMachine.States;
+using IncrementalRPG.Scripts.AudioManager;
 using Model;
 using Reflex.Attributes;
 using TMPro;
@@ -27,17 +28,19 @@ namespace Core.TestSkillTree.View
         private SkillTreeService         _service;
         private SkillTreeConfig          _config;
         private Player                   _player;
+        private AudioManager             _audioManager;
         private readonly List<NodeView>  _nodeViews = new List<NodeView>();
         private readonly List<(NodeConnectionView view, NodeDefinition def)> _connectionViews = new();
 
         [Inject]
-        public void Construct(SkillTreeConfig config, SkillTreeService service, Player player)
+        public void Construct(SkillTreeConfig config, SkillTreeService service, Player player, AudioManager audioManager)
         {
-            _config  = config;
-            _service = service;
-            _player  = player;
+            _config       = config;
+            _service      = service;
+            _player       = player;
+            _audioManager = audioManager;
 
-            _popupView.Bind(service, _borderColorConfig);
+            _popupView.Bind(service, _borderColorConfig, audioManager);
             _closeButton.onClick.AddListener(() => _stateMachine.Enter<HubState>());
             Build();
 
@@ -93,7 +96,7 @@ namespace Core.TestSkillTree.View
                 var def = entry.node;
                 var nodeView = Instantiate(_nodeViewPrefab, _nodesLayer);
                 ((RectTransform)nodeView.transform).anchoredPosition = nodePositions[def];
-                nodeView.Bind(def, _service, _popupView, _borderColorConfig);
+                nodeView.Bind(def, _service, _popupView, _borderColorConfig, _audioManager);
                 _nodeViews.Add(nodeView);
             }
         }

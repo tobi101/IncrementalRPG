@@ -6,6 +6,7 @@ using UnityEngine;
 using Core.Gameplay.Dungeon;
 using Core.TestSkillTree;
 using Entity;
+using IncrementalRPG.Scripts.AudioManager;
 using IncrementalRPG.Scripts.Core;
 using Model;
 using Reflex.Attributes;
@@ -24,6 +25,7 @@ namespace Core.StateMachine.Features
         [Inject] private DamageZone _damageZone;
         [Inject] private Player _player;
         [Inject] private SkillTreeService _skillTree;
+        [Inject] private AudioManager _audioManager;
 
         public event Action OnSessionExpired;
         public event Action<BigDouble, int> OnSessionGoldEarned;
@@ -148,6 +150,7 @@ namespace Core.StateMachine.Features
                 ? 1f - Mathf.Clamp01(_sessionTimeLeft / _sessionTotalTime)
                 : 1f;
             _generator.CameraAutoFitter.AnimateLava(progress);
+            _audioManager?.SetLavaLoopProgress(progress);
 
             if (_sessionTimeLeft <= 0f)
             {

@@ -2,6 +2,7 @@ using Core.StateMachine;
 using Core.StateMachine.Features;
 using Core.StateMachine.States;
 using Core.Gameplay.Dungeon;
+using IncrementalRPG.Scripts.AudioManager;
 using Reflex.Attributes;
 using UnityEngine;
 
@@ -17,10 +18,18 @@ namespace UI
         [SerializeField] private DungeonMenuView _dungeonMenuView;
         [SerializeField] private MapMenuFadeTransition _mapMenuFadeTransition;
 
+        [Header("Open Sounds")]
+        [SerializeField] private AudioClip _mapOpenSound;
+        [SerializeField] private AudioClip _skillTreeOpenSound;
+        [SerializeField] private AudioClip _barracksOpenSound;
+        [SerializeField] private AudioClip _mineOpenSound;
+        [SerializeField] private AudioClip _craftOpenSound;
+
         [Inject] private GameStateMachine _stateMachine;
         [Inject] private DungeonList _dungeonList;
         [Inject] private DungeonSelectionService _dungeonSelection;
         [Inject] private GameplayFeature _gameplay;
+        [Inject] private AudioManager _audioManager;
 
         private bool _isStartingDungeon;
 
@@ -69,6 +78,9 @@ namespace UI
         {
             if (_dungeonMenuView != null)
             {
+                if (!_dungeonMenuView.gameObject.activeSelf)
+                    PlayOpenSound(_mapOpenSound);
+
                 _dungeonMenuView.Show(_dungeonList, _dungeonSelection, StartDungeon);
                 return;
             }
@@ -110,16 +122,42 @@ namespace UI
 
         private void HandleDungeonTransitionFinished()
         {
+            _audioManager?.PlayMusic(MusicTrack.Gameplay);
             _gameplay.StartSession();
+            _audioManager?.PlayLavaLoop();
             _isStartingDungeon = false;
         }
 
-        private void OpenSkillTree() => _stateMachine.Enter<SkillTreeMenuState>();
+        private void OpenSkillTree()
+        {
+            PlayOpenSound(_skillTreeOpenSound);
+            _stateMachine.Enter<SkillTreeMenuState>();
+        }
 
-        private void OpenBarracks() => _stateMachine.Enter<BarracksState>();
+        private void OpenBarracks()
+        {
+            PlayOpenSound(_barracksOpenSound);
+            _stateMachine.Enter<BarracksState>();
+        }
 
-        private void OpenMine() => _stateMachine.Enter<MineState>();
+        private void OpenMine()
+        {
+            PlayOpenSound(_mineOpenSound);
+            _stateMachine.Enter<MineState>();
+        }
 
-        private void OpenCraft() => _stateMachine.Enter<CraftState>();
+        private void OpenCraft()
+        {
+            PlayOpenSound(_craftOpenSound);
+            _stateMachine.Enter<CraftState>();
+        }
+
+        private void PlayOpenSound(AudioClip clip)
+        {
+            if (_audioManager == null)
+                _audioManager = AudioManager.Resolve();
+
+            _audioManager?.PlaySfx(clip);
+        }
     }
 }

@@ -16,19 +16,19 @@ MonoBehaviour:
   m_GUID: 94d7fd91c7f874c98a914b0eaf61c82b
   m_SerializeEntries:
   - m_GUID: 1783a69f1256c467497bc69ea52241b1
-    m_Address: English (United States) (en-US)
+    m_Address: English
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5e16a8991d72045cca2b18fdb76a85e4
-    m_Address: Chinese (Simplified) (zh)
+    m_Address: "\u4E2D\u6587"
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7418ddd7ec04642f7959bc239ab22726
-    m_Address: Russian (Russia) (ru-RU)
+    m_Address: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
