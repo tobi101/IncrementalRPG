@@ -370,7 +370,7 @@ MonoBehaviour:
   _loopingSfxSourceVolume: 0.1
   _lavaLoopMinVolume: 0
   _lavaLoopMaxVolume: 0.1
-  _loopingSfxFadeDuration: 0.5
+  _loopingSfxFadeDuration: 0.25
   _mainMenuMusicClip: {fileID: 8300000, guid: 86730e41fc5af4d08bf9cfb17d89af29, type: 3}
   _hubMusicClip: {fileID: 8300000, guid: e66fa81c18f474a0580428ef466beac8, type: 3}
   _gameplayMusicClip: {fileID: 8300000, guid: 77a70e9b9042b4499a20af34158beb20, type: 3}

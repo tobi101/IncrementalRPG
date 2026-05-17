@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
   m_Name: AddZoneDamageNode 1
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
-  id: add_zone_damage
+  id: add_zone_damage_1
   displayName:
     m_TableReference:
       m_TableCollectionName: LocalesTable
