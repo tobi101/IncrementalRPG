@@ -13,8 +13,24 @@ MonoBehaviour:
   m_Name: BombFeatureNode
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
   id: bombs_unlock
-  displayName: Bombs Unlock
-  description: Unlock bombs for spawn them
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000017
+      m_Key: skill.bombs_unlock.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000018
+      m_Key: skill.bombs_unlock.description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 0}
   maxLevel: 1
   goldCostPerLevel: 64000000

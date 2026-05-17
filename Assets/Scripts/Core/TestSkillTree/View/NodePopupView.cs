@@ -1,5 +1,5 @@
-using System.Text;
 using TMPro;
+using UI.Localization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +27,8 @@ namespace Core.TestSkillTree.View
         private NodeDefinition   _current;
         private RectTransform    _rt;
         private Canvas           _canvas;
+        private LocalizedStringBinding _nameBinding;
+        private LocalizedStringBinding _descriptionBinding;
 
         private bool _blocked;
 
@@ -36,6 +38,8 @@ namespace Core.TestSkillTree.View
             _borderColorConfig = borderColorConfig;
             _rt                = (RectTransform)transform;
             _canvas            = GetComponentInParent<Canvas>();
+            _nameBinding        = new LocalizedStringBinding(_nameText);
+            _descriptionBinding = new LocalizedStringBinding(_descriptionText);
 
             gameObject.SetActive(false);
         }
@@ -62,6 +66,8 @@ namespace Core.TestSkillTree.View
 
         public void Hide()
         {
+            _nameBinding?.Clear();
+            _descriptionBinding?.Clear();
             gameObject.SetActive(false);
             _current = null;
         }
@@ -86,15 +92,9 @@ namespace Core.TestSkillTree.View
 
         private void Refresh()
         {
-            _nameText.text = _current.displayName;
+            _nameBinding.Bind(_current.displayName);
+            _descriptionBinding.Bind(_current.description);
             ApplyVisualState(_service.GetState(_current.id));
-
-            var level      = _service.GetLevel(_current.id);
-            var statsBlock = BuildEffectsText(_current, level);
-
-            _descriptionText.text = string.IsNullOrEmpty(_current.description)
-                ? statsBlock
-                : $"{_current.description}\n\n{statsBlock}";
 
             if (_costText != null)
             {
@@ -102,89 +102,6 @@ namespace Core.TestSkillTree.View
                 _costText.text = cost > 0 ? $"{cost}" : "";
             }
         }
-
-        private static string BuildEffectsText(NodeDefinition def, int level)
-        {
-            var sb = new System.Text.StringBuilder();
-
-            foreach (var effect in def.effects)
-            {
-                switch (effect.effectType)
-                {
-                    case NodeEffectType.Additive:
-                    {
-                        var current = SumValues(effect.valuesPerLevel, level);
-                        var statName = GetStatName(effect.statType);
-
-                        if (level >= def.maxLevel)
-                        {
-                            sb.AppendLine($"{statName}: +{current} (макс.)");
-                        }
-                        else
-                        {
-                            var next = current + GetValueAt(effect.valuesPerLevel, level);
-                            sb.AppendLine(level == 0
-                                ? $"{statName}: +{next}"
-                                : $"{statName}: +{current} → +{next}");
-                        }
-                        break;
-                    }
-                    case NodeEffectType.Multiplicative:
-                    {
-                        var currentPct = Mathf.RoundToInt(SumValues(effect.valuesPerLevel, level) * 100f);
-                        var statName   = GetStatName(effect.statType);
-
-                        if (level >= def.maxLevel)
-                        {
-                            sb.AppendLine($"{statName}: +{currentPct}% (макс.)");
-                        }
-                        else
-                        {
-                            var nextPct = Mathf.RoundToInt((SumValues(effect.valuesPerLevel, level) + GetValueAt(effect.valuesPerLevel, level)) * 100f);
-                            sb.AppendLine(level == 0
-                                ? $"{statName}: +{nextPct}%"
-                                : $"{statName}: +{currentPct}% → +{nextPct}%");
-                        }
-                        break;
-                    }
-                    case NodeEffectType.FeatureUnlock:
-                        sb.AppendLine($"Разблокирует: {GetFeatureName(effect.feature)}");
-                        break;
-                }
-            }
-
-            return sb.ToString().TrimEnd();
-        }
-
-        private static float SumValues(float[] values, int level)
-        {
-            var sum = 0f;
-            for (var i = 0; i < level && i < values.Length; i++)
-                sum += values[i];
-            return sum;
-        }
-
-        private static float GetValueAt(float[] values, int index)
-            => index < values.Length ? values[index] : 0f;
-
-        private static string GetStatName(StatType stat) => stat switch
-        {
-            StatType.ZoneRadius    => "Радиус зоны",
-            StatType.ZoneDamage    => "Урон зоны",
-            StatType.AttackSpeed   => "Скорость атаки",
-            StatType.SpawnSpeed    => "Скорость спауна",
-            StatType.MapSize       => "Размер арены",
-            StatType.GoldDrop      => "Золото с врагов",
-            StatType.InitialEnemySpawnDensity => "Плотность врагов на старте",
-            StatType.InitialBombSpawnDensity  => "Плотность бочек на старте",
-            _                      => stat.ToString(),
-        };
-
-        private static string GetFeatureName(GameFeature feature) => feature switch
-        {
-            GameFeature.Bombs => "Бомбы",
-            _                 => feature.ToString(),
-        };
 
         private void PositionNear(RectTransform nodeTransform)
         {
@@ -247,6 +164,12 @@ namespace Core.TestSkillTree.View
             if (_current == null) return;
             _service.Upgrade(_current.id);
             Refresh();
+        }
+
+        private void OnDestroy()
+        {
+            _nameBinding?.Dispose();
+            _descriptionBinding?.Dispose();
         }
     }
 }

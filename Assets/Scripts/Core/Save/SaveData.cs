@@ -1,4 +1,5 @@
 using System;
+using Core.Gameplay.Dungeon;
 using Core.TestSkillTree;
 using Model;
 
@@ -11,5 +12,6 @@ namespace Core.Save
 
         public PlayerInfo SavedPlayerInfo = PlayerInfo.Default;
         public SkillTreeState SkillTreeState = new SkillTreeState();
+        public DungeonProgressState DungeonProgressState = new DungeonProgressState();
     }
 }

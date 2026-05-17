@@ -25,7 +25,7 @@ namespace Core.Gameplay
                 var prefab = config.viewPrefab.GetComponent<CreatureView>();
                 if (prefab == null)
                 {
-                    Debug.LogError($"[PoolManager] Prefab '{config.viewPrefab.name}' on config '{config.entityName}' is missing CreatureView component.");
+                    Debug.LogError($"[PoolManager] Prefab '{config.viewPrefab.name}' on config '{config.name}' is missing CreatureView component.");
                     return null;
                 }
                 pool = new ObjectPool<CreatureView>(prefab, _poolRoot);

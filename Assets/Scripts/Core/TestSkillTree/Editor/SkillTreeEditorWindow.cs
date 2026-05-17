@@ -735,8 +735,6 @@ namespace Core.TestSkillTree.Editor
             var node = CreateInstance<NodeDefinition>();
 
             node.id = CreateUniqueNodeId(displayName);
-            node.displayName = displayName;
-            node.description = string.Empty;
             node.maxLevel = 1;
             node.goldCostPerLevel = new[] { 0 };
             node.prerequisites = new List<NodePrerequisite>();
@@ -1397,8 +1395,8 @@ namespace Core.TestSkillTree.Editor
             if (node == null)
                 return "<missing node>";
 
-            if (!string.IsNullOrWhiteSpace(node.displayName))
-                return node.displayName;
+            if (!string.IsNullOrWhiteSpace(node.id))
+                return node.id;
 
             return !string.IsNullOrWhiteSpace(node.name) ? node.name : "<unnamed node>";
         }

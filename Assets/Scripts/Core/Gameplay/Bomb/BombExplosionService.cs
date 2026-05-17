@@ -44,8 +44,8 @@ namespace Core.Gameplay.Bomb
             var damage = (int)((_config.baseDamage + _skillTree.GetBonus(StatType.BombExplosionDamage))
                                * _skillTree.GetMultiplier(StatType.BombExplosionDamage));
 
-            var debugGo = new GameObject("BombExplosionDebug");
-            debugGo.AddComponent<BombExplosionDebugView>().Show(epicenter, a, b, 0.5f);
+            // var debugGo = new GameObject("BombExplosionDebug");
+            // debugGo.AddComponent<BombExplosionDebugView>().Show(epicenter, a, b, 0.5f);
 
             var targets = new List<Creature>(_tileGrid.GetAll());
             foreach (var creature in targets)

@@ -21,6 +21,7 @@ namespace Core.StateMachine.Features
         [Inject] private IsometricGradientTilemapGenerator _generator;
         [Inject] private SpawnService _spawnService;
         [Inject] private TileGrid _tileGrid;
+        [Inject] private DamageZone _damageZone;
         [Inject] private Player _player;
         [Inject] private SkillTreeService _skillTree;
 
@@ -44,6 +45,7 @@ namespace Core.StateMachine.Features
         private enum RunState
         {
             Inactive,
+            Ready,
             Playing,
             Transitioning,
             Expired
@@ -92,14 +94,21 @@ namespace Core.StateMachine.Features
                 return;
             }
 
-            if (!ApplyLevel(_currentDungeon.FirstPlayableLevelIndex))
+            var startLevelIndex = _dungeonSelection.GetStartLevelIndex(_currentDungeon);
+            if (!ApplyLevel(startLevelIndex))
             {
                 _runState = RunState.Inactive;
                 return;
             }
 
             SpawnInitialEntities();
-            _runState = RunState.Playing;
+            _runState = RunState.Ready;
+        }
+
+        public void StartSession()
+        {
+            if (_runState == RunState.Ready)
+                _runState = RunState.Playing;
         }
 
         public void Disable()
@@ -115,6 +124,9 @@ namespace Core.StateMachine.Features
         {
             switch (_runState)
             {
+                case RunState.Ready:
+                    TickReady();
+                    break;
                 case RunState.Playing:
                     TickPlaying(deltaTime);
                     break;
@@ -122,6 +134,11 @@ namespace Core.StateMachine.Features
                     TickTransition(deltaTime);
                     break;
             }
+        }
+
+        private void TickReady()
+        {
+            _damageZone.UpdateAim();
         }
 
         private void TickPlaying(float deltaTime)
@@ -195,6 +212,7 @@ namespace Core.StateMachine.Features
 
             SpawnInitialEntities();
             _runState = RunState.Playing;
+            _dungeonSelection.MarkLevelReached(_currentDungeon, _currentLevelIndex);
             OnLevelTransitionFinished?.Invoke(_currentLevel, _currentLevelIndex);
         }
 

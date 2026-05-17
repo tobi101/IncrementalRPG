@@ -13,7 +13,33 @@ MonoBehaviour:
   m_Name: 1_DungeonConfig
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.Dungeon.DungeonConfig
   dungeonId: any_biome
-  displayName: Any Biome
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000008
+      m_Key: dungeon.any_biome.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  title:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000009
+      m_Key: dungeon.any_biome.title
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 1000000000010
+      m_Key: dungeon.any_biome.description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 0}
   previewImage: {fileID: 0}
   levels:

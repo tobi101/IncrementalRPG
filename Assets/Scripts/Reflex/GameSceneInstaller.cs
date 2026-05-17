@@ -93,7 +93,7 @@ namespace Reflex
 
             builder.RegisterType(
                 typeof(DungeonSelectionService),
-                new[] { typeof(DungeonSelectionService) },
+                new[] { typeof(DungeonSelectionService), typeof(ISaveable) },
                 Lifetime.Singleton,
                 Resolution.Lazy
             );

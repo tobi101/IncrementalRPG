@@ -4,7 +4,9 @@ using Core.Gameplay.Dungeon;
 using Core.StateMachine.Features;
 using Reflex.Attributes;
 using TMPro;
+using UI.Localization;
 using UnityEngine;
+using UnityEngine.Localization;
 using Utils;
 
 namespace UI
@@ -19,8 +21,9 @@ namespace UI
         [SerializeField] private RectTransform _popupContainer;
         [SerializeField] private CanvasGroup _levelTransitionGroup;
         [SerializeField] private TMP_Text _levelTransitionText;
-        [SerializeField] private string _levelKillGoalFormat = "{0}/{1}";
-        [SerializeField] private string _levelTransitionMessage = "Новый уровень!";
+        [SerializeField] private LocalizedString _levelKillGoalFormat = new();
+        [SerializeField] private LocalizedString _dungeonLevelFormat = new();
+        [SerializeField] private LocalizedString _levelTransitionMessage = new();
         [SerializeField] private float _levelTransitionFadeDuration = 0.25f;
 
         private const int PoolSize = 10;
@@ -39,6 +42,24 @@ namespace UI
         private int _pendingPopupGold;
         private float _batchTimer;
         private Coroutine _transitionCoroutine;
+        private LocalizedStringBinding _levelKillGoalBinding;
+        private LocalizedStringBinding _dungeonLevelBinding;
+        private LocalizedStringBinding _levelTransitionBinding;
+        private LocalizedString _boundDungeonName;
+        private LocalizedString _boundLevelName;
+        private LocalizedString.ChangeHandler _dungeonNameChanged;
+        private LocalizedString.ChangeHandler _levelNameChanged;
+        private string _currentDungeonName = string.Empty;
+        private string _currentLevelName = string.Empty;
+
+        private void Awake()
+        {
+            _levelKillGoalBinding = new LocalizedStringBinding(_levelKillGoalText);
+            _dungeonLevelBinding = new LocalizedStringBinding(_dungeonLevelText);
+            _levelTransitionBinding = new LocalizedStringBinding(_levelTransitionText);
+            _dungeonNameChanged = HandleDungeonNameChanged;
+            _levelNameChanged = HandleLevelNameChanged;
+        }
 
         [Inject]
         public void Construct(GameplayFeature gameplay)
@@ -74,8 +95,10 @@ namespace UI
             _killsTarget = 0;
             if (_sessionGoldText != null) _sessionGoldText.text = "0";
             if (_killsText != null) _killsText.text = "0";
-            if (_levelKillGoalText != null) _levelKillGoalText.text = string.Format(_levelKillGoalFormat, 0, 0);
-            if (_dungeonLevelText != null) _dungeonLevelText.text = string.Empty;
+            UpdateLevelKillGoalText(0, 0);
+            ClearDungeonLevelNameBindings();
+            _dungeonLevelBinding.Clear();
+            _levelTransitionBinding.Clear();
             SetLevelTransitionVisible(false);
             _transitionCoroutine = null;
         }
@@ -138,21 +161,15 @@ namespace UI
 
         private void HandleLevelKillGoalChanged(int current, int required)
         {
-            if (_levelKillGoalText == null) return;
-            _levelKillGoalText.text = required > 0
-                ? string.Format(_levelKillGoalFormat, current, required)
-                : current.ToString();
+            UpdateLevelKillGoalText(current, required);
         }
 
         private void HandleDungeonLevelChanged(DungeonConfig dungeon, DungeonLevelConfig level, int levelIndex)
         {
             if (_dungeonLevelText == null) return;
 
-            var dungeonName = dungeon != null ? dungeon.DisplayName : string.Empty;
-            var levelName = level != null ? level.DisplayName : (levelIndex + 1).ToString();
-            _dungeonLevelText.text = string.IsNullOrEmpty(dungeonName)
-                ? levelName
-                : $"{dungeonName} - {levelName}";
+            BindDungeonName(dungeon != null ? dungeon.displayName : null);
+            BindLevelName(level != null ? level.displayName : null);
         }
 
         private void HandleLevelTransitionStarted(DungeonLevelConfig nextLevel, int nextLevelIndex, float duration)
@@ -168,7 +185,7 @@ namespace UI
         private IEnumerator PlayLevelTransition(float duration)
         {
             if (_levelTransitionText != null)
-                _levelTransitionText.text = _levelTransitionMessage;
+                _levelTransitionBinding.Bind(_levelTransitionMessage);
 
             if (_levelTransitionGroup != null)
             {
@@ -185,6 +202,117 @@ namespace UI
 
             SetLevelTransitionVisible(false);
             _transitionCoroutine = null;
+        }
+
+        private void UpdateLevelKillGoalText(int current, int required)
+        {
+            if (_levelKillGoalText == null)
+                return;
+
+            if (required <= 0)
+            {
+                _levelKillGoalBinding.Clear();
+                _levelKillGoalText.text = current.ToString();
+                return;
+            }
+
+            if (_levelKillGoalFormat == null || _levelKillGoalFormat.IsEmpty)
+            {
+                _levelKillGoalBinding.Clear();
+                return;
+            }
+
+            _levelKillGoalFormat.Arguments = new object[] { current, required };
+            _levelKillGoalBinding.Bind(_levelKillGoalFormat);
+        }
+
+        private void BindDungeonName(LocalizedString localizedName)
+        {
+            if (ReferenceEquals(_boundDungeonName, localizedName))
+            {
+                localizedName?.RefreshString();
+                return;
+            }
+
+            if (_boundDungeonName != null)
+                _boundDungeonName.StringChanged -= _dungeonNameChanged;
+
+            _boundDungeonName = localizedName;
+            _currentDungeonName = string.Empty;
+
+            if (_boundDungeonName == null || _boundDungeonName.IsEmpty)
+            {
+                RefreshDungeonLevelText();
+                return;
+            }
+
+            _boundDungeonName.StringChanged += _dungeonNameChanged;
+        }
+
+        private void BindLevelName(LocalizedString localizedName)
+        {
+            if (ReferenceEquals(_boundLevelName, localizedName))
+            {
+                localizedName?.RefreshString();
+                return;
+            }
+
+            if (_boundLevelName != null)
+                _boundLevelName.StringChanged -= _levelNameChanged;
+
+            _boundLevelName = localizedName;
+            _currentLevelName = string.Empty;
+
+            if (_boundLevelName == null || _boundLevelName.IsEmpty)
+            {
+                RefreshDungeonLevelText();
+                return;
+            }
+
+            _boundLevelName.StringChanged += _levelNameChanged;
+        }
+
+        private void HandleDungeonNameChanged(string value)
+        {
+            _currentDungeonName = value;
+            RefreshDungeonLevelText();
+        }
+
+        private void HandleLevelNameChanged(string value)
+        {
+            _currentLevelName = value;
+            RefreshDungeonLevelText();
+        }
+
+        private void RefreshDungeonLevelText()
+        {
+            if (_dungeonLevelText == null)
+                return;
+
+            if (_dungeonLevelFormat == null || _dungeonLevelFormat.IsEmpty
+                                           || string.IsNullOrEmpty(_currentDungeonName)
+                                           && string.IsNullOrEmpty(_currentLevelName))
+            {
+                _dungeonLevelBinding.Clear();
+                return;
+            }
+
+            _dungeonLevelFormat.Arguments = new object[] { _currentDungeonName, _currentLevelName };
+            _dungeonLevelBinding.Bind(_dungeonLevelFormat);
+        }
+
+        private void ClearDungeonLevelNameBindings()
+        {
+            if (_boundDungeonName != null)
+                _boundDungeonName.StringChanged -= _dungeonNameChanged;
+
+            if (_boundLevelName != null)
+                _boundLevelName.StringChanged -= _levelNameChanged;
+
+            _boundDungeonName = null;
+            _boundLevelName = null;
+            _currentDungeonName = string.Empty;
+            _currentLevelName = string.Empty;
         }
 
         private IEnumerator FadeTransitionGroup(float from, float to, float duration)
@@ -248,12 +376,19 @@ namespace UI
 
         private void OnDestroy()
         {
-            if (_gameplay == null) return;
-            _gameplay.OnSessionGoldEarned -= HandleSessionGoldEarned;
-            _gameplay.OnSessionKillsChanged -= HandleSessionKillsChanged;
-            _gameplay.OnLevelKillGoalChanged -= HandleLevelKillGoalChanged;
-            _gameplay.OnDungeonLevelChanged -= HandleDungeonLevelChanged;
-            _gameplay.OnLevelTransitionStarted -= HandleLevelTransitionStarted;
+            if (_gameplay != null)
+            {
+                _gameplay.OnSessionGoldEarned -= HandleSessionGoldEarned;
+                _gameplay.OnSessionKillsChanged -= HandleSessionKillsChanged;
+                _gameplay.OnLevelKillGoalChanged -= HandleLevelKillGoalChanged;
+                _gameplay.OnDungeonLevelChanged -= HandleDungeonLevelChanged;
+                _gameplay.OnLevelTransitionStarted -= HandleLevelTransitionStarted;
+            }
+
+            ClearDungeonLevelNameBindings();
+            _levelKillGoalBinding?.Dispose();
+            _dungeonLevelBinding?.Dispose();
+            _levelTransitionBinding?.Dispose();
         }
 
     }
