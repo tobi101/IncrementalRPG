@@ -92,7 +92,8 @@ namespace Core.StateMachine.Features
                 return;
             }
 
-            if (!ApplyLevel(_currentDungeon.FirstPlayableLevelIndex))
+            var startLevelIndex = _dungeonSelection.GetStartLevelIndex(_currentDungeon);
+            if (!ApplyLevel(startLevelIndex))
             {
                 _runState = RunState.Inactive;
                 return;
@@ -195,6 +196,7 @@ namespace Core.StateMachine.Features
 
             SpawnInitialEntities();
             _runState = RunState.Playing;
+            _dungeonSelection.MarkLevelReached(_currentDungeon, _currentLevelIndex);
             OnLevelTransitionFinished?.Invoke(_currentLevel, _currentLevelIndex);
         }
 

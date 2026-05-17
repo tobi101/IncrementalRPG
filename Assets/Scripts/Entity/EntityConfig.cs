@@ -12,6 +12,7 @@ namespace Entity
     public class EntityConfig : ScriptableObject
     {
         public string entityName;
+        public Sprite icon;
         public int maxHP;
         public int goldDrop;
         public FeatureType featureType;

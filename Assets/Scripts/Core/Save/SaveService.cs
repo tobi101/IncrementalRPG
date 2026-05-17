@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Core.Gameplay.Dungeon;
 using Core.StateMachine.Features;
 using Core.TestSkillTree;
 using UnityEngine;
@@ -13,7 +14,8 @@ namespace Core.Save
 
         public SaveData GetData() => _data;
 
-        public SaveService(IEnumerable<ISaveable> saveables, GameplayFeature gameplayFeature, SkillTreeService skillTreeService)
+        public SaveService(IEnumerable<ISaveable> saveables, GameplayFeature gameplayFeature,
+            SkillTreeService skillTreeService, DungeonSelectionService dungeonSelectionService)
         {
             _saveables = new List<ISaveable>(saveables);
             _data = _storage.LoadOrDefault();
@@ -23,6 +25,7 @@ namespace Core.Save
 
             gameplayFeature.OnSessionExpired += Save;
             skillTreeService.OnUpgraded += Save;
+            dungeonSelectionService.OnProgressChanged += Save;
 
             Debug.Log($"[SaveService] Loaded. Version: {_data.Version}, Path: {_storage.SavePath}");
         }

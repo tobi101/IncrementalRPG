@@ -21,6 +21,9 @@ namespace UI
 
         private void Start()
         {
+            if (_dungeonMenuView == null)
+                _dungeonMenuView = FindObjectOfType<DungeonMenuView>(true);
+
             if (_dungeonButton != null && _dungeonButton.Button != null)
                 _dungeonButton.Button.onClick.AddListener(OpenDungeon);
 
@@ -59,7 +62,7 @@ namespace UI
         {
             if (_dungeonMenuView != null)
             {
-                _dungeonMenuView.Show(_dungeonList, StartDungeon);
+                _dungeonMenuView.Show(_dungeonList, _dungeonSelection, StartDungeon);
                 return;
             }
 

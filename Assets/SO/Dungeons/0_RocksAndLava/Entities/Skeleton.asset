@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Skeleton
   m_EditorClassIdentifier: Assembly-CSharp::Entity.EntityConfig
   entityName: Skeleton
+  icon: {fileID: 21300000, guid: fd1d284b0e9934ea0a1f06edc8a22ed1, type: 3}
   maxHP: 5
   goldDrop: 10
+  featureType: 0
   viewPrefab: {fileID: 3915836458320417695, guid: 68002fd22a8a84e28850687a95818020, type: 3}
   damageSound: {fileID: 0}

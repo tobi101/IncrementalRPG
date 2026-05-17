@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using Core.Gameplay.Dungeon;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,93 +7,158 @@ namespace UI
 {
     public class DungeonMenuView : MonoBehaviour
     {
-        [SerializeField] private TMP_Text _titleText;
-        [SerializeField] private string _title = "Dungeons";
-        [SerializeField] private DungeonMenuItemView _itemPrefab;
-        [SerializeField] private Transform _itemsContainer;
+        [SerializeField] private DungeonMapButtonView[] _dungeonButtons;
+        [SerializeField] private DungeonInfoPanelView _infoPanel;
         [SerializeField] private Button _closeButton;
-        [SerializeField] private bool _hideOnAwake = true;
 
-        private readonly List<DungeonMenuItemView> _spawnedItems = new();
-        private Action<DungeonConfig> _onDungeonSelected;
+        private DungeonList _dungeonList;
+        private DungeonSelectionService _dungeonSelection;
+        private Action<DungeonConfig> _onDungeonStart;
+        private DungeonMapButtonView _selectedButton;
+        private DungeonConfig _selectedDungeon;
+        private bool _initialized;
         private bool _isOpening;
 
         private void Awake()
         {
-            if (_closeButton != null)
-                _closeButton.onClick.AddListener(Hide);
+            Initialize();
 
-            if (_hideOnAwake && !_isOpening)
-                gameObject.SetActive(false);
+            if (!_isOpening)
+                SetVisible(false);
         }
 
-        public void Show(DungeonList dungeonList, Action<DungeonConfig> onDungeonSelected)
+        public void Show(DungeonList dungeonList, DungeonSelectionService dungeonSelection,
+            Action<DungeonConfig> onDungeonStart)
         {
-            _onDungeonSelected = onDungeonSelected;
-
-            if (_titleText != null)
-                _titleText.text = _title;
-
+            _dungeonList = dungeonList;
+            _dungeonSelection = dungeonSelection;
+            _onDungeonStart = onDungeonStart;
             _isOpening = true;
-            gameObject.SetActive(true);
+            SetVisible(true);
             _isOpening = false;
-            Rebuild(dungeonList);
+
+            Initialize();
+            BindButtons();
+            SelectInitialDungeon();
         }
 
         public void Hide()
         {
-            gameObject.SetActive(false);
-            _onDungeonSelected = null;
+            SetVisible(false);
+            _onDungeonStart = null;
         }
 
-        private void Rebuild(DungeonList dungeonList)
+        private void Initialize()
         {
-            ClearItems();
+            if (_initialized)
+                return;
 
-            if (_itemPrefab == null || _itemsContainer == null)
+            if (_closeButton != null)
+                _closeButton.onClick.AddListener(Hide);
+
+            _initialized = true;
+        }
+
+        private void BindButtons()
+        {
+            if (_dungeonButtons == null || _dungeonButtons.Length == 0)
             {
-                Debug.LogWarning("[DungeonMenuView] Item prefab or items container is not assigned.");
+                Debug.LogWarning("[DungeonMenuView] Dungeon buttons are not assigned.");
                 return;
             }
 
-            if (dungeonList == null || dungeonList.dungeons == null)
-                return;
-
-            foreach (var dungeon in dungeonList.dungeons)
+            for (var i = 0; i < _dungeonButtons.Length; i++)
             {
-                if (dungeon == null) continue;
+                var button = _dungeonButtons[i];
+                if (button == null) continue;
 
-                var item = Instantiate(_itemPrefab, _itemsContainer);
-                item.gameObject.SetActive(true);
-                item.Bind(dungeon, HandleDungeonSelected);
-                _spawnedItems.Add(item);
+                var dungeon = button.Dungeon != null ? button.Dungeon : GetDungeonByIndex(i);
+                button.Bind(dungeon, HandleDungeonButtonClicked);
+                button.SetSelected(false);
             }
         }
 
-        private void HandleDungeonSelected(DungeonConfig dungeon)
+        private DungeonConfig GetDungeonByIndex(int index)
         {
-            var callback = _onDungeonSelected;
+            if (_dungeonList == null || _dungeonList.dungeons == null || index < 0 || index >= _dungeonList.dungeons.Length)
+                return null;
+
+            return _dungeonList.dungeons[index];
+        }
+
+        private void SelectInitialDungeon()
+        {
+            if (_dungeonButtons != null)
+            {
+                foreach (var button in _dungeonButtons)
+                {
+                    if (button == null) continue;
+
+                    SelectButton(button);
+                    return;
+                }
+            }
+
+            _selectedButton = null;
+            _selectedDungeon = null;
+            if (_infoPanel != null)
+                _infoPanel.Bind(null, -1, null);
+        }
+
+        private void HandleDungeonButtonClicked(DungeonMapButtonView button)
+        {
+            SelectButton(button);
+        }
+
+        private void SelectButton(DungeonMapButtonView button)
+        {
+            if (button == null)
+                return;
+
+            if (_selectedButton != null)
+                _selectedButton.SetSelected(false);
+
+            _selectedButton = button;
+            _selectedDungeon = button.Dungeon;
+            _selectedButton.SetSelected(true);
+
+            if (_selectedDungeon == null || !_selectedDungeon.HasPlayableLevels)
+            {
+                if (_infoPanel != null)
+                    _infoPanel.BindUnavailable();
+
+                return;
+            }
+
+            var startLevelIndex = _dungeonSelection != null
+                ? _dungeonSelection.GetStartLevelIndex(_selectedDungeon)
+                : _selectedDungeon.FirstPlayableLevelIndex;
+
+            if (_infoPanel != null)
+                _infoPanel.Bind(_selectedDungeon, startLevelIndex, HandleStartClicked);
+        }
+
+        private void HandleStartClicked()
+        {
+            if (_selectedDungeon == null || !_selectedDungeon.HasPlayableLevels)
+                return;
+
+            var dungeon = _selectedDungeon;
+            var callback = _onDungeonStart;
             Hide();
             callback?.Invoke(dungeon);
         }
 
-        private void ClearItems()
+        private void SetVisible(bool visible)
         {
-            foreach (var item in _spawnedItems)
-            {
-                if (item != null)
-                    Destroy(item.gameObject);
-            }
-
-            _spawnedItems.Clear();
+            if (gameObject.activeSelf != visible)
+                gameObject.SetActive(visible);
         }
 
         private void OnDestroy()
         {
             if (_closeButton != null)
                 _closeButton.onClick.RemoveListener(Hide);
-
-            ClearItems();
         }
     }
 }
