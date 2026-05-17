@@ -19,6 +19,9 @@ namespace Entity
         public int goldDrop;
         public FeatureType featureType;
         public GameObject viewPrefab;
+
+        [Header("Audio")]
         public AudioClip damageSound;
+        public AudioClip[] deathSounds;
     }
 }

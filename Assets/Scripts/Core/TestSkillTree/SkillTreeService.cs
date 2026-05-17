@@ -81,25 +81,33 @@ namespace Core.TestSkillTree
         public bool CanUpgrade(string nodeId)
         {
             var def = GetDefinition(nodeId);
-            if (!ArePrerequisitesMet(def) || _state.GetLevel(nodeId) >= def.maxLevel)
-                return false;
-
-            var cost = GetUpgradeCost(nodeId);
-            return cost == 0 || _player.GoldTotal >= cost;
+            return CanUpgrade(def, nodeId);
         }
 
         public void Upgrade(string nodeId)
         {
-            if (!CanUpgrade(nodeId))
+            if (TryUpgrade(nodeId) == NodeUpgradeResult.Failed)
                 throw new InvalidOperationException($"Cannot upgrade node '{nodeId}'.");
+        }
 
+        public NodeUpgradeResult TryUpgrade(string nodeId)
+        {
+            var def = GetDefinition(nodeId);
+            if (!CanUpgrade(def, nodeId))
+                return NodeUpgradeResult.Failed;
+            
             var cost = GetUpgradeCost(nodeId);
             if (cost > 0)
                 _player.GoldTotal -= cost;
 
-            _state.SetLevel(nodeId, _state.GetLevel(nodeId) + 1);
+            var newLevel = _state.GetLevel(nodeId) + 1;
+            _state.SetLevel(nodeId, newLevel);
             RebuildCache();
             OnUpgraded?.Invoke();
+
+            return newLevel >= def.maxLevel
+                ? NodeUpgradeResult.UpgradedToMax
+                : NodeUpgradeResult.Upgraded;
         }
         
         public int GetLevel(string nodeId) => _state.GetLevel(nodeId);
@@ -165,6 +173,15 @@ namespace Core.TestSkillTree
                 _state.GetLevel(prereq.node.id) >= prereq.requiredLevel);
         }
 
+        private bool CanUpgrade(NodeDefinition def, string nodeId)
+        {
+            if (!ArePrerequisitesMet(def) || _state.GetLevel(nodeId) >= def.maxLevel)
+                return false;
+
+            var cost = GetUpgradeCost(nodeId);
+            return cost == 0 || _player.GoldTotal >= cost;
+        }
+
         private NodeDefinition GetDefinition(string nodeId)
         {
             return _nodeMap.TryGetValue(nodeId, out var def) 
@@ -188,5 +205,12 @@ namespace Core.TestSkillTree
         Unaffordable, // Prerequisites met, not enough gold
         Affordable,   // Prerequisites met, enough gold to upgrade
         Complete,     // level == maxLevel
+    }
+
+    public enum NodeUpgradeResult
+    {
+        Failed,
+        Upgraded,
+        UpgradedToMax,
     }
 }

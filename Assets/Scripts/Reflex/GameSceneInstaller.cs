@@ -147,7 +147,7 @@ namespace Reflex
                 Resolution.Lazy
             );
             
-            builder.RegisterValue(_audioManager);
+            builder.RegisterValue(AudioManager.Resolve(_audioManager));
             builder.RegisterValue(_isometricGradientTilemapGenerator);
             
             var tileGrid = new TileGrid();

@@ -17,7 +17,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000002
-      m_Key: entity.demon.name
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -36,3 +36,11 @@ MonoBehaviour:
   featureType: 0
   viewPrefab: {fileID: 4410620522826001164, guid: fc78efcae8da34268b1702183abf3ac3, type: 3}
   damageSound: {fileID: 0}
+  deathSounds:
+  - {fileID: 8300000, guid: c5e00faf54e9443d79f9361cb8bdad9a, type: 3}
+  - {fileID: 8300000, guid: 3cd0e1ef0156e49b98b2c1fc62f2220d, type: 3}
+  - {fileID: 8300000, guid: 3f86c17fdcd0c42d6a3463ac479fafd1, type: 3}
+  - {fileID: 8300000, guid: 746f3bdf1cc3646d0b60dfd378c0c82c, type: 3}
+  references:
+    version: 2
+    RefIds: []
