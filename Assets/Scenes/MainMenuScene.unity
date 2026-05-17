@@ -9056,6 +9056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.MainMenuView
   _buttons: []
+  _settingsMenu: {fileID: 2128635589}
   _settingsPanel: {fileID: 0}
   _authorsPanel: {fileID: 0}
 --- !u!114 &1461496061

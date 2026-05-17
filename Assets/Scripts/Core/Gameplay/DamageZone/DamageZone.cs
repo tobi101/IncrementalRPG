@@ -20,6 +20,7 @@ namespace Core.Gameplay
         private readonly AudioManager _audioManager;
         private readonly Player _player;
         private readonly SkillTreeService _skillTree;
+        private readonly GameplayInputBlocker _inputBlocker;
 
         private readonly List<Creature> _creaturesInZone = new List<Creature>();
 
@@ -34,7 +35,8 @@ namespace Core.Gameplay
         public event Action<State> OnStateChanged;
         public event Action OnDamageTick;
 
-        public DamageZone(TileGrid tileGrid, DamageZoneConfig config, DamageZoneView view, AudioManager audioManager, Player player, SkillTreeService skillTree)
+        public DamageZone(TileGrid tileGrid, DamageZoneConfig config, DamageZoneView view, AudioManager audioManager, Player player,
+            SkillTreeService skillTree, GameplayInputBlocker inputBlocker)
         {
             _tileGrid = tileGrid;
             _config = config;
@@ -42,6 +44,7 @@ namespace Core.Gameplay
             _audioManager = audioManager;
             _player = player;
             _skillTree = skillTree;
+            _inputBlocker = inputBlocker;
         }
 
         public void Initialize()
@@ -51,6 +54,12 @@ namespace Core.Gameplay
 
         public void Update(float deltaTime)
         {
+            if (_inputBlocker != null && _inputBlocker.IsBlocked)
+            {
+                StopDamageRegistration();
+                return;
+            }
+
             UpdateAim();
             RefreshCreaturesInZone();
             UpdateState();
@@ -59,6 +68,9 @@ namespace Core.Gameplay
 
         public void UpdateAim()
         {
+            if (_inputBlocker != null && _inputBlocker.IsBlocked)
+                return;
+
             UpdateWorldPosition();
         }
 
@@ -117,6 +129,18 @@ namespace Core.Gameplay
 
             _audioManager.PlayWaveAudio();
             OnDamageTick?.Invoke();
+        }
+
+        private void StopDamageRegistration()
+        {
+            _creaturesInZone.Clear();
+            _tickTimer = 0f;
+
+            if (CurrentState == State.Idle)
+                return;
+
+            CurrentState = State.Idle;
+            OnStateChanged?.Invoke(CurrentState);
         }
     }
 }

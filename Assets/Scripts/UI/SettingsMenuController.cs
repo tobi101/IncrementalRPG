@@ -40,6 +40,15 @@ namespace UI
         private Coroutine _localesRefreshRoutine;
         private bool _isRefreshingView;
 
+        public Button BackButton
+        {
+            get
+            {
+                EnsureDependencies();
+                return _view != null ? _view.BackButton : null;
+            }
+        }
+
         private void Awake()
         {
             EnsureDependencies();
@@ -72,6 +81,7 @@ namespace UI
 
         public void Close()
         {
+            EnsureDependencies();
             _view?.Hide();
         }
 
@@ -85,6 +95,12 @@ namespace UI
                 Close();
             else
                 Open();
+        }
+
+        public bool IsVisible()
+        {
+            EnsureDependencies();
+            return _view != null && _view.IsVisible();
         }
 
         private void SubscribeView()

@@ -7,6 +7,7 @@ namespace UI
     public class MainMenuView : MonoBehaviour
     {
         [SerializeField] private MainMenuButtonView[] _buttons;
+        [SerializeField] private SettingsMenuController _settingsMenu;
         [SerializeField] private GameObject _settingsPanel;
         [SerializeField] private GameObject _authorsPanel;
 
@@ -38,13 +39,25 @@ namespace UI
                 continueButton.gameObject.SetActive(visible);
         }
 
-        public void ShowSettings() => ShowPanel(_settingsPanel, "Settings");
+        public void ShowSettings()
+        {
+            if (_settingsMenu != null)
+            {
+                HidePanels();
+                _settingsMenu.Open();
+                return;
+            }
+
+            ShowPanel(_settingsPanel, "Settings");
+        }
 
         public void ShowAuthors() => ShowPanel(_authorsPanel, "Authors");
 
         public void HidePanels()
         {
-            if (_settingsPanel != null)
+            if (_settingsMenu != null)
+                _settingsMenu.Close();
+            else if (_settingsPanel != null)
                 _settingsPanel.SetActive(false);
 
             if (_authorsPanel != null)

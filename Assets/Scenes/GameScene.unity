@@ -1758,8 +1758,6 @@ GameObject:
   m_Component:
   - component: {fileID: 120024700}
   - component: {fileID: 120024703}
-  - component: {fileID: 120024702}
-  - component: {fileID: 120024701}
   m_Layer: 5
   m_Name: PausePanel
   m_TagString: Untagged
@@ -1789,40 +1787,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 681.3333, y: 525.6667}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &120024701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120024699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ba251bf9d3f242978427c8f190c29d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI.SettingsMenuController
-  _view: {fileID: 120024702}
-  _hideOnAwake: 0
-  _localeLabelMode: 0
-  _localeLabelOverrides: []
---- !u!114 &120024702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120024699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb8fd3139233d416ebe587e7d796c74f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI.SettingsMenuView
-  _root: {fileID: 2009390800}
-  _masterVolumeSlider: {fileID: 0}
-  _musicVolumeSlider: {fileID: 0}
-  _sfxVolumeSlider: {fileID: 0}
-  _languageDropdown: {fileID: 0}
-  _backButton: {fileID: 0}
 --- !u!222 &120024703
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11398,7 +11362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &860529240
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25712,7 +25676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8fd3139233d416ebe587e7d796c74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.SettingsMenuView
-  _root: {fileID: 2009390800}
+  _root: {fileID: 1689692326}
   _masterVolumeSlider: {fileID: 1494913301}
   _musicVolumeSlider: {fileID: 1828393656}
   _sfxVolumeSlider: {fileID: 95251923}
@@ -27020,6 +26984,7 @@ MonoBehaviour:
   _hubView: {fileID: 2075618860}
   _menuCanvasView: {fileID: 1523771928}
   _hudView: {fileID: 919826143}
+  _pauseMenuController: {fileID: 2009390805}
   _sessionEndPopupView: {fileID: 2090979425}
 --- !u!1 &1866970553
 GameObject:
@@ -30212,6 +30177,7 @@ GameObject:
   - component: {fileID: 2009390803}
   - component: {fileID: 2009390802}
   - component: {fileID: 2009390801}
+  - component: {fileID: 2009390805}
   m_Layer: 5
   m_Name: MiscPanelsCanvas
   m_TagString: Untagged
@@ -30302,6 +30268,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2009390805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009390800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 903c66434d764baebeac63cf6d55d706, type: 3}
+  m_Name: ''
+  m_EditorClassIdentifier: Assembly-CSharp::UI.PauseMenuController
+  _root: {fileID: 860529239}
+  _pausePanel: {fileID: 120024699}
+  _settingsMenu: {fileID: 1689692331}
+  _resumeButton: {fileID: 251130219}
+  _settingsButton: {fileID: 1945469966}
+  _openPauseButtons:
+  - {fileID: 672221148}
+  - {fileID: 695805584}
+  _goToHubButtons:
+  - {fileID: 1312037152}
 --- !u!114 &2024573965 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7913124585289905880, guid: e892c826bacdf4549bb831809e0de618, type: 3}

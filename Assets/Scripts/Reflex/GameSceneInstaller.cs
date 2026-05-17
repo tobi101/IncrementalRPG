@@ -36,6 +36,7 @@ namespace Reflex
         [SerializeField] private HubView _hubView;
         [SerializeField] private MenuCanvasView _menuCanvasView;
         [SerializeField] private HudView _hudView;
+        [SerializeField] private PauseMenuController _pauseMenuController;
         [SerializeField] private SessionEndPopupView _sessionEndPopupView;
 
 
@@ -87,6 +88,13 @@ namespace Reflex
             builder.RegisterType(
                 typeof(GameplayFeature),
                 new[] { typeof(IGameFeature), typeof(GameplayFeature) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(GameplayInputBlocker),
+                new[] { typeof(GameplayInputBlocker) },
                 Lifetime.Singleton,
                 Resolution.Lazy
             );
@@ -201,6 +209,7 @@ namespace Reflex
             builder.RegisterValue(_hubView, new[] { typeof(HubView) });
             builder.RegisterValue(_menuCanvasView, new[] { typeof(MenuCanvasView) });
             builder.RegisterValue(_hudView, new[] { typeof(HudView) });
+            builder.RegisterValue(_pauseMenuController, new[] { typeof(PauseMenuController) });
             builder.RegisterValue(_sessionEndPopupView, new[] { typeof(SessionEndPopupView) });
         }
 
