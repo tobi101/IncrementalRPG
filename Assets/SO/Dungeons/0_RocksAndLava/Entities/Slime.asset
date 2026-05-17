@@ -17,7 +17,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000004
-      m_Key: entity.slime.name
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -36,3 +36,6 @@ MonoBehaviour:
   featureType: 0
   viewPrefab: {fileID: 5006508172201667331, guid: 8c0d80cf5d7254da592a2c44c6a575a1, type: 3}
   damageSound: {fileID: 8300000, guid: d9794b0d865f8446f9db681a3640d373, type: 3}
+  references:
+    version: 2
+    RefIds: []

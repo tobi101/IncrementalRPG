@@ -17,7 +17,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000001
-      m_Key: entity.bombs.name
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -30,8 +30,12 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  icon: {fileID: 0}
   maxHP: 5
   goldDrop: 0
   featureType: 1
   viewPrefab: {fileID: 3407093723635168924, guid: 850500abec315432e9752dbf2f60f589, type: 3}
   damageSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

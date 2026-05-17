@@ -18,7 +18,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000033
-      m_Key: skill.add_spawn_speed.name
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -27,15 +27,16 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000034
-      m_Key: skill.add_spawn_speed.description
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 4153240674832713612, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  additionalIcon: {fileID: 0}
   maxLevel: 3
   goldCostPerLevel: 64000000c80000002c010000
   prerequisites:
-  - node: {fileID: 11400000, guid: fdd60171723494925a2b7d360cb6b3e6, type: 2}
+  - node: {fileID: 11400000, guid: 52ec292eab03749e5ae85e8931e24366, type: 2}
     requiredLevel: 1
   effects:
   - effectType: 0
@@ -46,3 +47,6 @@ MonoBehaviour:
     - 0.25
     feature: 0
   positionInGraph: {x: 0, y: 200}
+  references:
+    version: 2
+    RefIds: []
