@@ -18,7 +18,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000019
-      m_Key: skill.bombs_spawn_speed.name
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -27,15 +27,18 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000020
-      m_Key: skill.bombs_spawn_speed.description
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 0}
+  additionalIcon: {fileID: 0}
   maxLevel: 2
   goldCostPerLevel: f4010000e8030000
   prerequisites:
-  - node: {fileID: 11400000, guid: 656bdb3708d0b4bfc8e2851bf995bd2b, type: 2}
+  - node: {fileID: 11400000, guid: 167514c2ba8a7400aad118fd1c1fc2ae, type: 2}
+    requiredLevel: 0
+  - node: {fileID: 11400000, guid: b0dcf6a583c3d8b4292e4af3745a4bb3, type: 2}
     requiredLevel: 0
   effects:
   - effectType: 0
@@ -45,3 +48,6 @@ MonoBehaviour:
     - 0.2
     feature: 0
   positionInGraph: {x: 100, y: 800}
+  references:
+    version: 2
+    RefIds: []

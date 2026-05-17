@@ -18,7 +18,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000008
-      m_Key: dungeon.any_biome.name
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -27,7 +27,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000009
-      m_Key: dungeon.any_biome.title
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -36,7 +36,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000010
-      m_Key: dungeon.any_biome.description
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -44,3 +44,6 @@ MonoBehaviour:
   previewImage: {fileID: 0}
   levels:
   - {fileID: 11400000, guid: 8d72ee2789aa42fdb5cddaade0b616eb, type: 2}
+  references:
+    version: 2
+    RefIds: []

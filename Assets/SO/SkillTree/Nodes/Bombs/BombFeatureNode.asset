@@ -18,7 +18,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000017
-      m_Key: skill.bombs_unlock.name
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -27,15 +27,16 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000018
-      m_Key: skill.bombs_unlock.description
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 0}
+  additionalIcon: {fileID: 0}
   maxLevel: 1
-  goldCostPerLevel: 64000000
+  goldCostPerLevel: 32000000
   prerequisites:
-  - node: {fileID: 11400000, guid: fdd60171723494925a2b7d360cb6b3e6, type: 2}
+  - node: {fileID: 11400000, guid: 238fc219b23d547a1b6e6c3907e17af4, type: 2}
     requiredLevel: 1
   effects:
   - effectType: 2
@@ -43,3 +44,6 @@ MonoBehaviour:
     valuesPerLevel: []
     feature: 1
   positionInGraph: {x: 100, y: 300}
+  references:
+    version: 2
+    RefIds: []

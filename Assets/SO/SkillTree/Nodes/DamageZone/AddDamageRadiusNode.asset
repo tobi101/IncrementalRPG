@@ -18,7 +18,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000027
-      m_Key: skill.add_damage_radius.name
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -27,7 +27,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000028
-      m_Key: skill.add_damage_radius.description
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -36,7 +36,7 @@ MonoBehaviour:
   maxLevel: 2
   goldCostPerLevel: 0a000000140000001e000000
   prerequisites:
-  - node: {fileID: 11400000, guid: 92c8bc70910f94f7d90659fed53b318d, type: 2}
+  - node: {fileID: 11400000, guid: 238fc219b23d547a1b6e6c3907e17af4, type: 2}
     requiredLevel: 1
   effects:
   - effectType: 1
@@ -46,3 +46,6 @@ MonoBehaviour:
     - 1.2
     feature: 0
   positionInGraph: {x: 200, y: 100}
+  references:
+    version: 2
+    RefIds: []

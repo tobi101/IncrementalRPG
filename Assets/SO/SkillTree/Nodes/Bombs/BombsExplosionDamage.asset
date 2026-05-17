@@ -18,7 +18,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000021
-      m_Key: skill.bombs_explosion_damage.name
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -32,16 +32,21 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 0}
-  maxLevel: 2
-  goldCostPerLevel: f4010000e8030000
+  additionalIcon: {fileID: 0}
+  maxLevel: 3
+  goldCostPerLevel: f4010000f4010000f4010000
   prerequisites:
-  - node: {fileID: 11400000, guid: d4a7bc70acca045b983d7a86ef37f217, type: 2}
-    requiredLevel: 1
+  - node: {fileID: 11400000, guid: 656bdb3708d0b4bfc8e2851bf995bd2b, type: 2}
+    requiredLevel: 0
   effects:
   - effectType: 1
     statType: 7
     valuesPerLevel:
     - 1.2
-    - 1.5
+    - 1.2
+    - 1.2
     feature: 0
   positionInGraph: {x: 200, y: 300}
+  references:
+    version: 2
+    RefIds: []

@@ -18,7 +18,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000023
-      m_Key: skill.bombs_explosion_radius.name
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -32,6 +32,7 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 0}
+  additionalIcon: {fileID: 0}
   maxLevel: 2
   goldCostPerLevel: 90010000f4010000
   prerequisites:
@@ -45,3 +46,6 @@ MonoBehaviour:
     - 1.5
     feature: 0
   positionInGraph: {x: 100, y: 400}
+  references:
+    version: 2
+    RefIds: []
