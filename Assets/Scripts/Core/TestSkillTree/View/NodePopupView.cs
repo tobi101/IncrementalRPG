@@ -1,4 +1,5 @@
 using TMPro;
+using IncrementalRPG.Scripts.AudioManager;
 using UI.Localization;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,7 @@ namespace Core.TestSkillTree.View
         private const float PopupGap = 15f;
 
         private SkillTreeService _service;
+        private AudioManager     _audioManager;
         private NodeDefinition   _current;
         private RectTransform    _rt;
         private Canvas           _canvas;
@@ -32,10 +34,11 @@ namespace Core.TestSkillTree.View
 
         private bool _blocked;
 
-        public void Bind(SkillTreeService service, NodeBorderColorConfig borderColorConfig)
+        public void Bind(SkillTreeService service, NodeBorderColorConfig borderColorConfig, AudioManager audioManager)
         {
             _service           = service;
             _borderColorConfig = borderColorConfig;
+            _audioManager      = audioManager;
             _rt                = (RectTransform)transform;
             _canvas            = GetComponentInParent<Canvas>();
             _nameBinding        = new LocalizedStringBinding(_nameText);
@@ -162,8 +165,27 @@ namespace Core.TestSkillTree.View
         private void OnUpgradeClicked()
         {
             if (_current == null) return;
-            _service.Upgrade(_current.id);
+
+            var result = _service.TryUpgrade(_current.id);
+            PlayUpgradeResultSound(result);
             Refresh();
+        }
+
+        private void PlayUpgradeResultSound(NodeUpgradeResult result)
+        {
+            switch (result)
+            {
+                case NodeUpgradeResult.Upgraded:
+                    _audioManager?.PlaySkillUpgrade();
+                    break;
+                case NodeUpgradeResult.UpgradedToMax:
+                    _audioManager?.PlaySkillMax();
+                    break;
+                case NodeUpgradeResult.Failed:
+                default:
+                    _audioManager?.PlaySkillError();
+                    break;
+            }
         }
 
         private void OnDestroy()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Core.Gameplay.Dungeon;
 using Core.TestSkillTree;
 using Entity;
+using IncrementalRPG.Scripts.AudioManager;
 using IncrementalRPG.Scripts.Core;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ namespace Core.Gameplay
         private readonly PoolManager _poolManager;
         private readonly TileGrid _tileGrid;
         private readonly SkillTreeService _skillTree;
+        private readonly AudioManager _audioManager;
         private SpawnTable _spawnTable;
 
         private float _spawnInterval = 2f;
@@ -37,11 +39,12 @@ namespace Core.Gameplay
             public Action OnDied;
         }
 
-        public SpawnService(PoolManager poolManager, TileGrid tileGrid, SkillTreeService skillTree)
+        public SpawnService(PoolManager poolManager, TileGrid tileGrid, SkillTreeService skillTree, AudioManager audioManager)
         {
             _poolManager = poolManager;
             _tileGrid = tileGrid;
             _skillTree = skillTree;
+            _audioManager = audioManager;
         }
 
         public void SetLevel(DungeonLevelConfig level)
@@ -146,6 +149,7 @@ namespace Core.Gameplay
                 if (config.featureType == FeatureType.None)
                     OnCreatureKilled?.Invoke(creature.TileCoord, config.goldDrop);
 
+                _audioManager?.PlayRandomSfx(config.deathSounds);
                 view.PlayDeath(() =>
                 {
                     _active.RemoveAll(e => e.Creature == creature);

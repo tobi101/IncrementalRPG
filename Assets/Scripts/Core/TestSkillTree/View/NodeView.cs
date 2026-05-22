@@ -1,4 +1,5 @@
 using TMPro;
+using IncrementalRPG.Scripts.AudioManager;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -18,13 +19,15 @@ namespace Core.TestSkillTree.View
         private NodeDefinition        _definition;
         private NodePopupView         _popup;
         private NodeBorderColorConfig _borderColorConfig;
+        private AudioManager          _audioManager;
 
-        public void Bind(NodeDefinition definition, SkillTreeService service, NodePopupView popup, NodeBorderColorConfig borderColorConfig)
+        public void Bind(NodeDefinition definition, SkillTreeService service, NodePopupView popup, NodeBorderColorConfig borderColorConfig, AudioManager audioManager)
         {
             _definition        = definition;
             _service           = service;
             _popup             = popup;
             _borderColorConfig = borderColorConfig;
+            _audioManager      = audioManager;
 
             if (_icon != null && definition.icon != null)
                 _icon.sprite = definition.icon;
@@ -80,9 +83,30 @@ namespace Core.TestSkillTree.View
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (!_service.CanUpgrade(_definition.id)) return;
-            _service.Upgrade(_definition.id);
+            var result = _service.TryUpgrade(_definition.id);
+            PlayUpgradeResultSound(result);
+
+            if (result == NodeUpgradeResult.Failed)
+                return;
+
             _popup.Refresh(_definition);
+        }
+
+        private void PlayUpgradeResultSound(NodeUpgradeResult result)
+        {
+            switch (result)
+            {
+                case NodeUpgradeResult.Upgraded:
+                    _audioManager?.PlaySkillUpgrade();
+                    break;
+                case NodeUpgradeResult.UpgradedToMax:
+                    _audioManager?.PlaySkillMax();
+                    break;
+                case NodeUpgradeResult.Failed:
+                default:
+                    _audioManager?.PlaySkillError();
+                    break;
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using Core.StateMachine.Features;
+using IncrementalRPG.Scripts.AudioManager;
 using Reflex.Attributes;
 using UI;
 
@@ -11,6 +12,8 @@ namespace Core.StateMachine.States
         [Inject] private MenuCanvasView _menuCanvas;
         [Inject] private HudView _hudView;
         [Inject] private SessionEndPopupView _sessionEndPopup;
+        [Inject] private PauseMenuController _pauseMenu;
+        [Inject] private AudioManager _audioManager;
 
         public event Action OnGoToHubRequested;
 
@@ -18,6 +21,7 @@ namespace Core.StateMachine.States
         {
             _menuCanvas.gameObject.SetActive(false);
             _hudView.gameObject.SetActive(true);
+            _pauseMenu?.EnableForGameplay();
             _gameplay.Enable();
             _gameplay.OnSessionExpired += HandleSessionExpired;
         }
@@ -25,6 +29,8 @@ namespace Core.StateMachine.States
         public void Exit()
         {
             _gameplay.OnSessionExpired -= HandleSessionExpired;
+            _pauseMenu?.DisableForGameplay();
+            _audioManager?.StopLavaLoop();
             _gameplay.Disable();
             _sessionEndPopup.Hide();
             _hudView.gameObject.SetActive(false);
@@ -35,6 +41,8 @@ namespace Core.StateMachine.States
 
         private void HandleSessionExpired()
         {
+            _pauseMenu?.DisableForGameplay();
+
             var recordResult = _gameplay.SessionRecordResult;
             _sessionEndPopup.Show(_gameplay.SessionGold, _gameplay.SessionKills,
                 recordResult.IsNewGoldRecord, recordResult.IsNewKillsRecord, () =>

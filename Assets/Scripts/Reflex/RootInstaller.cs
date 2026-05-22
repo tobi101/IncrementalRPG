@@ -1,3 +1,4 @@
+using Core.Settings;
 using Reflex.Core;
 using UnityEngine;
 
@@ -7,6 +8,10 @@ namespace Reflex
     {
         public void InstallBindings(ContainerBuilder builder)
         {
+            builder.RegisterValue(
+                GameSettingsServiceLocator.Instance,
+                new[] { typeof(GameSettingsService) }
+            );
         }
     }
 }

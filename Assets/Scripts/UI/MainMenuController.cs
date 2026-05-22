@@ -1,4 +1,5 @@
 using Core.Save;
+using IncrementalRPG.Scripts.AudioManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ namespace UI
         [SerializeField] private MainMenuView _view;
         [SerializeField] private string _gameSceneName = "GameScene";
         [SerializeField] private bool _deleteSaveOnNewGame = true;
+        [SerializeField] private AudioManager _audioManager;
+        [SerializeField] private bool _playMusicOnStart = true;
 
         private readonly SaveStorage _saveStorage = new SaveStorage();
 
@@ -26,6 +29,12 @@ namespace UI
             _view.HidePanels();
             RefreshContinueButton();
             Subscribe();
+        }
+
+        private void Start()
+        {
+            if (_playMusicOnStart)
+                AudioManager.Resolve(_audioManager)?.PlayMusic(MusicTrack.MainMenu);
         }
 
         private void OnDisable()

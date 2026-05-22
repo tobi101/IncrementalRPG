@@ -36,6 +36,10 @@ MonoBehaviour:
   featureType: 0
   viewPrefab: {fileID: 3915836458320417695, guid: 68002fd22a8a84e28850687a95818020, type: 3}
   damageSound: {fileID: 0}
+  deathSounds:
+  - {fileID: 8300000, guid: 301a5dea096534cc8b69bbdfd6f4fd1e, type: 3}
+  - {fileID: 8300000, guid: 7a6dbb311c6044258bcaf9b8e9f79e23, type: 3}
+  - {fileID: 8300000, guid: 2990090908634483eb1f968955f33129, type: 3}
   references:
     version: 2
     RefIds: []
