@@ -26,7 +26,7 @@ namespace Core.StateMachine.States
             _gameplay.OnSessionExpired += HandleSessionExpired;
         }
 
-        public void Exit()
+        public void Exit(GameStateExitReason reason)
         {
             _gameplay.OnSessionExpired -= HandleSessionExpired;
             _pauseMenu?.DisableForGameplay();
@@ -34,7 +34,7 @@ namespace Core.StateMachine.States
             _gameplay.Disable();
             _sessionEndPopup.Hide();
             _hudView.gameObject.SetActive(false);
-            _menuCanvas.gameObject.SetActive(true);
+            _menuCanvas.gameObject.SetActive(reason == GameStateExitReason.StateChange);
         }
 
         public void Tick(float deltaTime) => _gameplay.Tick(deltaTime);

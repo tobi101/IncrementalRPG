@@ -176,6 +176,7 @@ namespace Core.StateMachine.Features
         private void ExpireSession()
         {
             _runState = RunState.Expired;
+            _player.GoldTotal += _sessionGold;
             _sessionRecordResult = _player.UpdateSessionRecords(_sessionGold, _sessionKills);
             OnSessionExpired?.Invoke();
         }
@@ -226,7 +227,6 @@ namespace Core.StateMachine.Features
 
             if (finalAmount > 0)
             {
-                _player.GoldTotal += finalAmount;
                 _sessionGold += finalAmount;
                 OnSessionGoldEarned?.Invoke(_sessionGold, finalAmount);
             }

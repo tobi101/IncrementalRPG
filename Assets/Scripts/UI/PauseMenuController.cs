@@ -1,9 +1,12 @@
 using Core.Gameplay;
+using Core.Save;
 using Core.StateMachine;
 using Core.StateMachine.States;
 using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace UI
@@ -16,14 +19,18 @@ namespace UI
         [SerializeField] private Button _resumeButton;
         [SerializeField] private Button _settingsButton;
         [SerializeField] private Button[] _openPauseButtons;
-        [SerializeField] private Button[] _goToHubButtons;
+        [FormerlySerializedAs("_goToHubButtons")]
+        [SerializeField] private Button[] _exitToMainMenuButtons;
+        [SerializeField] private string _mainMenuSceneName = "MainMenuScene";
 
         [Inject] private GameStateMachine _stateMachine;
         [Inject] private GameplayInputBlocker _inputBlocker;
+        [Inject] private SaveService _saveService;
 
         private InputAction _pauseAction;
         private bool _isGameplayInputBlockingAllowed;
         private bool _isPauseShortcutEnabled;
+        private bool _isExitingToMainMenu;
 
         public bool IsOpen => Root.activeSelf;
 
@@ -110,10 +117,21 @@ namespace UI
             SetGameplayInputBlocked(true);
         }
 
-        private void GoToHub()
+        private void ExitToMainMenu()
         {
+            if (_isExitingToMainMenu)
+                return;
+
+            _isExitingToMainMenu = true;
+
+            var isExitingGameplaySession = _stateMachine != null && _stateMachine.IsCurrent<GameplayState>();
+
+            if (!isExitingGameplaySession)
+                _saveService?.Save();
+
             Close();
-            _stateMachine?.Enter<HubState>();
+            _stateMachine?.ExitCurrent(GameStateExitReason.SceneUnload);
+            SceneManager.LoadSceneAsync(_mainMenuSceneName);
         }
 
         private void HandlePausePerformed(InputAction.CallbackContext context)
@@ -142,7 +160,7 @@ namespace UI
                 AddListener(_settingsMenu.BackButton, ReturnToPause);
 
             AddListeners(_openPauseButtons, Open);
-            AddListeners(_goToHubButtons, GoToHub);
+            AddListeners(_exitToMainMenuButtons, ExitToMainMenu);
         }
 
         private void UnsubscribeButtons()
@@ -154,7 +172,7 @@ namespace UI
                 RemoveListener(_settingsMenu.BackButton, ReturnToPause);
 
             RemoveListeners(_openPauseButtons, Open);
-            RemoveListeners(_goToHubButtons, GoToHub);
+            RemoveListeners(_exitToMainMenuButtons, ExitToMainMenu);
         }
 
         private void SetPausePanelVisible(bool visible)

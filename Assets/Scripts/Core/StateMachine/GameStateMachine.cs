@@ -31,11 +31,19 @@ namespace Core.StateMachine
 
         public void Tick(float deltaTime) => _current?.Tick(deltaTime);
 
+        public bool IsCurrent<T>() where T : IGameState => _current is T;
+
         public void Enter<T>() where T : IGameState
         {
-            _current?.Exit();
+            _current?.Exit(GameStateExitReason.StateChange);
             _current = _states[typeof(T)];
             _current.Enter();
+        }
+
+        public void ExitCurrent(GameStateExitReason reason = GameStateExitReason.StateChange)
+        {
+            _current?.Exit(reason);
+            _current = null;
         }
     }
 }

@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4ca9672473fd434bba9080352c97beb
+    m_Address: Assets/Locales/FontTableCollection/Fonts Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: d41674b07417b47f9a6cd1ed2550fe94, type: 2}
   m_SchemaSet:

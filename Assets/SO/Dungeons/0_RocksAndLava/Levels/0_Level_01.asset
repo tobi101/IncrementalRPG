@@ -50,7 +50,11 @@ MonoBehaviour:
   initialBombSpawnDensity: 0
   spawnInterval: 2
   minSpawnInterval: 2
-  featureSpawnConfigs: []
+  featureSpawnConfigs:
+  - featureType: 1
+    spawnSpeedStat: 8
+    spawnInterval: 1
+    minSpawnInterval: 0.001
   goldDropMultiplier: 1
   references:
     version: 2
