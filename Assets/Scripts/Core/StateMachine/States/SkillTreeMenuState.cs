@@ -9,7 +9,7 @@ namespace Core.StateMachine.States
 
         public void Enter() => _skillTree.Enable();
 
-        public void Exit() => _skillTree.Disable();
+        public void Exit(GameStateExitReason reason) => _skillTree.Disable();
 
         public void Tick(float deltaTime) => _skillTree.Tick(deltaTime);
     }

@@ -5208,7 +5208,9 @@ MonoBehaviour:
     m_MarkToBaseAdjustmentRecords: []
     m_MarkToMarkAdjustmentRecords: []
   m_ShouldReimportFontFeatures: 0
-  m_FallbackFontAssetTable: []
+  m_FallbackFontAssetTable:
+  - {fileID: 11400000, guid: d3c7013a604c949a5bd0638cc4013daa, type: 2}
+  - {fileID: 11400000, guid: 765d990fad9a949e799f8d3d62fba365, type: 2}
   m_FontWeightTable:
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
@@ -5262,7 +5264,9 @@ MonoBehaviour:
   m_glyphInfoList: []
   m_KerningTable:
     kerningPairs: []
-  fallbackFontAssets: []
+  fallbackFontAssets:
+  - {fileID: 11400000, guid: d3c7013a604c949a5bd0638cc4013daa, type: 2}
+  - {fileID: 11400000, guid: 765d990fad9a949e799f8d3d62fba365, type: 2}
   atlas: {fileID: 0}
 --- !u!21 &2820027109463950193
 Material:

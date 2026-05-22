@@ -327,9 +327,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8121561288149095768}
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
-      propertyPath: _deathAnimationBody
-      value: 
+      propertyPath: _deathAnimationBodies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
+      propertyPath: _deathAnimationBodies.Array.data[0]._animationBody
+      value:
       objectReference: {fileID: 2833496773378701208}
+    - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
+      propertyPath: _deathAnimationBodies.Array.data[0]._animationName
+      value: explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
+      propertyPath: _deathAnimationBodies.Array.data[0]._visibleWhileAlive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
+      propertyPath: _deathAnimationBodies.Array.data[0]._waitForComplete
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

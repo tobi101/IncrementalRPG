@@ -18,7 +18,7 @@ namespace Core.StateMachine.States
             _hub.Enable();
         }
 
-        public void Exit() => _hub.Disable();
+        public void Exit(GameStateExitReason reason) => _hub.Disable();
 
         public void Tick(float deltaTime) { }
     }

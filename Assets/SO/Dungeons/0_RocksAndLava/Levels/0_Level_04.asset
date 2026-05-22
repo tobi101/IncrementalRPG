@@ -52,7 +52,7 @@ MonoBehaviour:
   minSpawnInterval: 2
   featureSpawnConfigs:
   - featureType: 1
-    spawnSpeedStat: 9
+    spawnSpeedStat: 8
     spawnInterval: 1
     minSpawnInterval: 0.001
   goldDropMultiplier: 1
