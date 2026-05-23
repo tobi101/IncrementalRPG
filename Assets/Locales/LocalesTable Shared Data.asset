@@ -155,6 +155,98 @@ MonoBehaviour:
     m_Key: hud.level_transition_message
     m_Metadata:
       m_Items: []
+  - m_Id: 2350604075655168
+    m_Key: audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350608911687680
+    m_Key: new_game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350609582776320
+    m_Key: continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350610291613696
+    m_Key: settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350691338149888
+    m_Key: authors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350692055375872
+    m_Key: quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350770883125248
+    m_Key: music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350787047972864
+    m_Key: sounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350952815255552
+    m_Key: language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2351378805547008
+    m_Key: back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2353037732470784
+    m_Key: exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2353874554839040
+    m_Key: record
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2354035586752512
+    m_Key: done
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2357656613281792
+    m_Key: enemies_score_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2357751190642688
+    m_Key: gold_score_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2358430856634368
+    m_Key: result_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2359326810300416
+    m_Key: enemies_defeated
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2359888998031360
+    m_Key: money_collected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2361592413937664
+    m_Key: unavailable_dungeon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2362271916351488
+    m_Key: depth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2362524539281408
+    m_Key: level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2362815347154944
+    m_Key: enemies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2363065608691712
+    m_Key: start
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

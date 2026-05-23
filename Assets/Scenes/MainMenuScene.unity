@@ -1000,6 +1000,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 2350691338149888
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1113,6 +1121,14 @@ PrefabInstance:
     - target: {fileID: 8173142952156100057, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 2350610291613696
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1276,9 +1292,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 2350770883125248
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -7879,6 +7895,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 2350610291613696
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8556,7 +8580,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.95
+  m_fontSize: 32.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8992,9 +9016,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 2350787047972864
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -10031,9 +10055,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 2350604075655168
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -10284,9 +10308,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 2350952815255552
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -10490,6 +10514,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 2350692055375872
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10652,9 +10684,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 2351378805547008
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -11265,6 +11297,14 @@ PrefabInstance:
     - target: {fileID: 8173142952156100057, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 2350608911687680
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
