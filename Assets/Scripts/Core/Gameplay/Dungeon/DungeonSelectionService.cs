@@ -48,12 +48,31 @@ namespace Core.Gameplay.Dungeon
             return dungeon.FirstPlayableLevelIndex;
         }
 
+        public bool HasDemoEndAcknowledged(DungeonConfig dungeon)
+        {
+            if (dungeon == null)
+                return false;
+
+            return _progressState.HasDemoEndAcknowledged(GetProgressKey(dungeon));
+        }
+
         public void MarkLevelReached(DungeonConfig dungeon, int levelIndex)
         {
             if (dungeon == null || levelIndex < 0)
                 return;
 
             if (!_progressState.SetReachedLevelIndex(GetProgressKey(dungeon), levelIndex))
+                return;
+
+            OnProgressChanged?.Invoke();
+        }
+
+        public void MarkDemoEndAcknowledged(DungeonConfig dungeon)
+        {
+            if (dungeon == null)
+                return;
+
+            if (!_progressState.SetDemoEndAcknowledged(GetProgressKey(dungeon)))
                 return;
 
             OnProgressChanged?.Invoke();

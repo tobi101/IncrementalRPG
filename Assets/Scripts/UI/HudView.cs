@@ -152,6 +152,18 @@ namespace UI
         private void HandleSessionGoldEarned(BigDouble sessionTotal, int delta)
         {
             _goldTarget = (double)sessionTotal;
+            if (delta <= 0)
+            {
+                _goldDisplayed = _goldTarget;
+                _pendingPopupGold = 0;
+                _batchTimer = 0f;
+
+                if (_sessionGoldText != null)
+                    _sessionGoldText.text = sessionTotal.ToString();
+
+                return;
+            }
+
             if (_pendingPopupGold == 0) _batchTimer = BatchWindow;
             _pendingPopupGold += delta;
         }
@@ -159,6 +171,14 @@ namespace UI
         private void HandleSessionKillsChanged(int total)
         {
             _killsTarget = total;
+
+            if (total <= 0)
+            {
+                _killsDisplayed = 0f;
+
+                if (_killsText != null)
+                    _killsText.text = "0";
+            }
         }
 
         private void HandleLevelKillGoalChanged(int current, int required)

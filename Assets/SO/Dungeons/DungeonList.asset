@@ -14,4 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.Dungeon.DungeonList
   dungeons:
   - {fileID: 11400000, guid: c00d93aa4447c4b36882931a07b547ec, type: 2}
-  - {fileID: 11400000, guid: f889b125a44ad482e8989648a2972391, type: 2}

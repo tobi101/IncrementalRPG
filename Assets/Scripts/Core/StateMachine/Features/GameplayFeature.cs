@@ -35,6 +35,7 @@ namespace Core.StateMachine.Features
         public event Action<DungeonConfig, DungeonLevelConfig, int> OnDungeonLevelChanged;
         public event Action<DungeonLevelConfig, int, float, float, float> OnLevelTransitionStarted;
         public event Action<DungeonLevelConfig, int> OnLevelTransitionFinished;
+        public event Action<DungeonConfig, DungeonLevelConfig, int> OnDemoLimitReached;
 
         public BigDouble SessionGold => _sessionGold;
         public int SessionKills => _sessionKills;
@@ -52,6 +53,7 @@ namespace Core.StateMachine.Features
             Playing,
             TransitionClosing,
             TransitionOpening,
+            DemoLimitReached,
             Expired
         }
 
@@ -71,6 +73,7 @@ namespace Core.StateMachine.Features
         private BigDouble _sessionGold;
         private int _sessionKills;
         private SessionRecordResult _sessionRecordResult;
+        private bool _sessionResultsApplied;
 
         public void Initialize()
         {
@@ -88,6 +91,7 @@ namespace Core.StateMachine.Features
             _sessionKills = 0;
             _levelKills = 0;
             _sessionRecordResult = default;
+            _sessionResultsApplied = false;
             _pendingLevelTransitionIndex = -1;
             _transitionTargetLevelIndex = -1;
             _transitionTimer = 0f;
@@ -117,6 +121,15 @@ namespace Core.StateMachine.Features
         {
             if (_runState == RunState.Ready)
                 _runState = RunState.Playing;
+        }
+
+        public void ContinueAfterDemoLimitReached()
+        {
+            if (_runState != RunState.DemoLimitReached)
+                return;
+
+            _dungeonSelection.MarkDemoEndAcknowledged(_currentDungeon);
+            RestartSessionFromCurrentLevel();
         }
 
         public void Disable()
@@ -195,9 +208,54 @@ namespace Core.StateMachine.Features
         private void ExpireSession()
         {
             _runState = RunState.Expired;
+            ApplySessionResults();
+            OnSessionExpired?.Invoke();
+        }
+
+        private void ReachDemoLimit()
+        {
+            _runState = RunState.DemoLimitReached;
+            _pendingLevelTransitionIndex = -1;
+            _transitionTargetLevelIndex = -1;
+            ApplySessionResults();
+            _dungeonSelection.MarkLevelReached(_currentDungeon, _currentLevelIndex);
+            OnDemoLimitReached?.Invoke(_currentDungeon, _currentLevel, _currentLevelIndex);
+        }
+
+        private void ApplySessionResults()
+        {
+            if (_sessionResultsApplied)
+                return;
+
             _player.GoldTotal += _sessionGold;
             _sessionRecordResult = _player.UpdateSessionRecords(_sessionGold, _sessionKills);
-            OnSessionExpired?.Invoke();
+            _sessionResultsApplied = true;
+        }
+
+        private void RestartSessionFromCurrentLevel()
+        {
+            _spawnService.DespawnAll();
+            ResetSessionStats();
+
+            if (!ApplyLevel(_currentLevelIndex))
+            {
+                _runState = RunState.Inactive;
+                return;
+            }
+
+            SpawnInitialEntities();
+            _runState = RunState.Playing;
+        }
+
+        private void ResetSessionStats()
+        {
+            _sessionGold = BigDouble.Zero;
+            _sessionKills = 0;
+            _sessionRecordResult = default;
+            _sessionResultsApplied = false;
+
+            OnSessionGoldEarned?.Invoke(_sessionGold, 0);
+            OnSessionKillsChanged?.Invoke(_sessionKills);
         }
 
         private void BeginLevelTransition(int nextLevelIndex)
@@ -268,6 +326,9 @@ namespace Core.StateMachine.Features
 
         private void HandleCreatureKilled(Vector2Int coord, int amount)
         {
+            if (_runState == RunState.Inactive || _runState == RunState.Expired || _runState == RunState.DemoLimitReached)
+                return;
+
             var levelGoldMultiplier = _currentLevel != null ? _currentLevel.goldDropMultiplier : 1f;
             var finalAmount = Mathf.RoundToInt(amount * levelGoldMultiplier * _skillTree.GetMultiplier(StatType.GoldDrop));
 
@@ -288,7 +349,13 @@ namespace Core.StateMachine.Features
             if (_levelKills < _currentLevel.killGoal) return;
 
             if (TryGetNextPlayableLevel(out var nextLevelIndex))
+            {
                 _pendingLevelTransitionIndex = nextLevelIndex;
+                return;
+            }
+
+            if (!_dungeonSelection.HasDemoEndAcknowledged(_currentDungeon))
+                ReachDemoLimit();
         }
 
         private void SpawnInitialEntities()

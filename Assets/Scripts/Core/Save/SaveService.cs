@@ -24,6 +24,7 @@ namespace Core.Save
                 saveable.Load(_data);
 
             gameplayFeature.OnSessionExpired += Save;
+            gameplayFeature.OnDemoLimitReached += (_, _, _) => Save();
             skillTreeService.OnUpgraded += Save;
             dungeonSelectionService.OnProgressChanged += Save;
 
