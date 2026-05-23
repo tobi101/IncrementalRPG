@@ -156,7 +156,7 @@ namespace Reflex
                 Resolution.Lazy
             );
             
-            builder.RegisterValue(AudioManager.Resolve(_audioManager));
+            builder.RegisterValue(ResolveAudioManager());
             builder.RegisterValue(_isometricGradientTilemapGenerator);
             
             var tileGrid = new TileGrid();
@@ -230,6 +230,20 @@ namespace Reflex
             builder.RegisterValue(_bombExplosionConfig, new[] { typeof(BombExplosionConfig) });
             builder.RegisterValue(_skillTreeConfig, new[] { typeof(SkillTreeConfig) });
             builder.RegisterValue(_nodeBorderColorConfig, new[] { typeof(NodeBorderColorConfig) });
+        }
+
+        private AudioManager ResolveAudioManager()
+        {
+            var audioManager = AudioManager.Resolve(_audioManager);
+            if (audioManager != null)
+                return audioManager;
+
+            Debug.LogWarning("[GameSceneInstaller] AudioManager was not found. Creating runtime fallback. Start from BootstrapScene or assign _audioManager to use configured audio clips.");
+
+            var audioManagerObject = new GameObject("AudioManager Runtime Fallback");
+            audioManager = audioManagerObject.AddComponent<AudioManager>();
+            DontDestroyOnLoad(audioManagerObject);
+            return audioManager;
         }
     }
 }
