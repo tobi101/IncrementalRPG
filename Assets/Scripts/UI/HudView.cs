@@ -19,6 +19,7 @@ namespace UI
         [SerializeField] private TMP_Text _dungeonLevelText;
         [SerializeField] private GoldPopupView _popupPrefab;
         [SerializeField] private RectTransform _popupContainer;
+        [SerializeField] private LevelTransitionCurtainView _levelTransitionCurtain;
         [SerializeField] private CanvasGroup _levelTransitionGroup;
         [SerializeField] private TMP_Text _levelTransitionText;
         [SerializeField] private LocalizedString _levelKillGoalFormat = new();
@@ -99,6 +100,7 @@ namespace UI
             ClearDungeonLevelNameBindings();
             _dungeonLevelBinding.Clear();
             _levelTransitionBinding.Clear();
+            _levelTransitionCurtain?.HideImmediately();
             SetLevelTransitionVisible(false);
             _transitionCoroutine = null;
         }
@@ -172,8 +174,17 @@ namespace UI
             BindLevelName(level != null ? level.displayName : null);
         }
 
-        private void HandleLevelTransitionStarted(DungeonLevelConfig nextLevel, int nextLevelIndex, float duration)
+        private void HandleLevelTransitionStarted(DungeonLevelConfig nextLevel, int nextLevelIndex,
+            float closeDuration, float holdDuration, float openDuration)
         {
+            var duration = closeDuration + holdDuration + openDuration;
+
+            if (_levelTransitionCurtain != null)
+            {
+                _levelTransitionCurtain.Play(closeDuration, holdDuration, openDuration);
+                return;
+            }
+
             if (_levelTransitionGroup == null && _levelTransitionText == null) return;
 
             if (_transitionCoroutine != null)
@@ -347,6 +358,7 @@ namespace UI
             }
 
             SetLevelTransitionVisible(false);
+            _levelTransitionCurtain?.HideImmediately();
         }
 
         private void SetLevelTransitionVisible(bool visible)

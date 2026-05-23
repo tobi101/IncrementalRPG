@@ -18,6 +18,7 @@ namespace Core.StateMachine.Features
     {
         [Inject] private IEnumerable<IService> _servicesEnumerable;
         [Inject] private DungeonList _dungeonList;
+        [Inject] private DungeonLevelTransitionConfig _levelTransitionConfig;
         [Inject] private DungeonSelectionService _dungeonSelection;
         [Inject] private IsometricGradientTilemapGenerator _generator;
         [Inject] private SpawnService _spawnService;
@@ -32,7 +33,7 @@ namespace Core.StateMachine.Features
         public event Action<int> OnSessionKillsChanged;
         public event Action<int, int> OnLevelKillGoalChanged;
         public event Action<DungeonConfig, DungeonLevelConfig, int> OnDungeonLevelChanged;
-        public event Action<DungeonLevelConfig, int, float> OnLevelTransitionStarted;
+        public event Action<DungeonLevelConfig, int, float, float, float> OnLevelTransitionStarted;
         public event Action<DungeonLevelConfig, int> OnLevelTransitionFinished;
 
         public BigDouble SessionGold => _sessionGold;
@@ -49,7 +50,8 @@ namespace Core.StateMachine.Features
             Inactive,
             Ready,
             Playing,
-            Transitioning,
+            TransitionClosing,
+            TransitionOpening,
             Expired
         }
 
@@ -61,6 +63,8 @@ namespace Core.StateMachine.Features
         private int _pendingLevelTransitionIndex = -1;
         private int _transitionTargetLevelIndex = -1;
         private float _transitionTimer;
+        private float _transitionHoldDuration;
+        private float _transitionOpenDuration;
         private float _sessionTimeLeft;
         private float _sessionTotalTime;
         private RunState _runState = RunState.Inactive;
@@ -87,6 +91,8 @@ namespace Core.StateMachine.Features
             _pendingLevelTransitionIndex = -1;
             _transitionTargetLevelIndex = -1;
             _transitionTimer = 0f;
+            _transitionHoldDuration = 0f;
+            _transitionOpenDuration = 0f;
             _currentDungeon = _dungeonSelection.GetSelectedOrDefault(_dungeonList);
 
             if (_currentDungeon == null || !_currentDungeon.HasPlayableLevels)
@@ -119,6 +125,8 @@ namespace Core.StateMachine.Features
             _pendingLevelTransitionIndex = -1;
             _transitionTargetLevelIndex = -1;
             _transitionTimer = 0f;
+            _transitionHoldDuration = 0f;
+            _transitionOpenDuration = 0f;
             _spawnService.DespawnAll();
         }
 
@@ -132,8 +140,11 @@ namespace Core.StateMachine.Features
                 case RunState.Playing:
                     TickPlaying(deltaTime);
                     break;
-                case RunState.Transitioning:
-                    TickTransition(deltaTime);
+                case RunState.TransitionClosing:
+                    TickTransitionClosing(deltaTime);
+                    break;
+                case RunState.TransitionOpening:
+                    TickTransitionOpening(deltaTime);
                     break;
             }
         }
@@ -165,12 +176,20 @@ namespace Core.StateMachine.Features
                 BeginLevelTransition(_pendingLevelTransitionIndex);
         }
 
-        private void TickTransition(float deltaTime)
+        private void TickTransitionClosing(float deltaTime)
         {
             _transitionTimer -= deltaTime;
 
             if (_transitionTimer <= 0f)
-                CompleteLevelTransition();
+                ApplyLevelBehindCurtain();
+        }
+
+        private void TickTransitionOpening(float deltaTime)
+        {
+            _transitionTimer -= deltaTime;
+
+            if (_transitionTimer <= 0f)
+                FinishLevelTransition();
         }
 
         private void ExpireSession()
@@ -190,33 +209,60 @@ namespace Core.StateMachine.Features
                 return;
             }
 
-            _runState = RunState.Transitioning;
+            _runState = RunState.TransitionClosing;
             _pendingLevelTransitionIndex = -1;
             _transitionTargetLevelIndex = nextLevelIndex;
-            _transitionTimer = Mathf.Max(0f, nextLevel.transitionDuration);
+            var transitionConfig = _levelTransitionConfig ?? new DungeonLevelTransitionConfig();
+            _transitionTimer = transitionConfig.CloseDuration;
+            _transitionHoldDuration = transitionConfig.HoldDuration;
+            _transitionOpenDuration = transitionConfig.OpenDuration;
 
-            _spawnService.DespawnAll();
-            OnLevelTransitionStarted?.Invoke(nextLevel, nextLevelIndex, _transitionTimer);
+            OnLevelTransitionStarted?.Invoke(nextLevel, nextLevelIndex,
+                _transitionTimer, _transitionHoldDuration, _transitionOpenDuration);
 
             if (_transitionTimer <= 0f)
-                CompleteLevelTransition();
+                ApplyLevelBehindCurtain();
         }
 
-        private void CompleteLevelTransition()
+        private void ApplyLevelBehindCurtain()
         {
             var targetIndex = _transitionTargetLevelIndex;
-            _transitionTargetLevelIndex = -1;
-            _transitionTimer = 0f;
+
+            _spawnService.DespawnAll();
 
             if (!ApplyLevel(targetIndex))
             {
+                _transitionTargetLevelIndex = -1;
+                _transitionTimer = 0f;
+                _transitionHoldDuration = 0f;
+                _transitionOpenDuration = 0f;
                 _runState = RunState.Inactive;
                 return;
             }
 
             SpawnInitialEntities();
-            _runState = RunState.Playing;
             _dungeonSelection.MarkLevelReached(_currentDungeon, _currentLevelIndex);
+
+            _transitionTimer = Mathf.Max(0f, _transitionHoldDuration + _transitionOpenDuration);
+            _transitionHoldDuration = 0f;
+            _transitionOpenDuration = 0f;
+
+            if (_transitionTimer <= 0f)
+            {
+                FinishLevelTransition();
+                return;
+            }
+
+            _runState = RunState.TransitionOpening;
+        }
+
+        private void FinishLevelTransition()
+        {
+            _transitionTargetLevelIndex = -1;
+            _transitionTimer = 0f;
+            _transitionHoldDuration = 0f;
+            _transitionOpenDuration = 0f;
+            _runState = RunState.Playing;
             OnLevelTransitionFinished?.Invoke(_currentLevel, _currentLevelIndex);
         }
 

@@ -23,6 +23,7 @@ namespace Reflex
     public class GameSceneInstaller : MonoBehaviour, IInstaller
     {
         [SerializeField] private DungeonList _dungeonList;
+        [SerializeField] private DungeonLevelTransitionConfig _levelTransitionConfig = new();
         [SerializeField] private DamageZoneConfig _damageZoneConfig;
         [SerializeField] private BombExplosionConfig _bombExplosionConfig;
         [SerializeField] private SkillTreeConfig _skillTreeConfig;
@@ -220,7 +221,11 @@ namespace Reflex
 
         private void InitializeConfigs(ContainerBuilder builder)
         {
+            if (_levelTransitionConfig == null)
+                _levelTransitionConfig = new DungeonLevelTransitionConfig();
+
             builder.RegisterValue(_dungeonList, new[] { typeof(DungeonList) });
+            builder.RegisterValue(_levelTransitionConfig, new[] { typeof(DungeonLevelTransitionConfig) });
             builder.RegisterValue(_damageZoneConfig, new[] { typeof(DamageZoneConfig) });
             builder.RegisterValue(_bombExplosionConfig, new[] { typeof(BombExplosionConfig) });
             builder.RegisterValue(_skillTreeConfig, new[] { typeof(SkillTreeConfig) });
