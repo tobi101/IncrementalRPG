@@ -12,13 +12,18 @@ namespace UI
         [SerializeField] private bool _deleteSaveOnNewGame = true;
         [SerializeField] private AudioManager _audioManager;
         [SerializeField] private bool _playMusicOnStart = true;
+        [SerializeField] private IntroPanelPlayer _introPlayer;
 
         private readonly SaveStorage _saveStorage = new SaveStorage();
+        private bool _isLoadingGame;
 
         private void Awake()
         {
             if (_view == null)
                 _view = GetComponent<MainMenuView>();
+
+            if (_introPlayer == null)
+                _introPlayer = GetComponentInChildren<IntroPanelPlayer>(true);
         }
 
         private void OnEnable()
@@ -89,20 +94,41 @@ namespace UI
 
         private void StartNewGame()
         {
+            if (_isLoadingGame)
+                return;
+
+            _isLoadingGame = true;
+            _view.HidePanels();
+            _view.SetButtonsInteractable(false);
+
             if (_deleteSaveOnNewGame)
                 _saveStorage.Delete();
+
+            AudioManager.Resolve(_audioManager)?.StopMusic(true);
+
+            if (_introPlayer != null)
+            {
+                _introPlayer.Play(LoadGameScene);
+                return;
+            }
 
             LoadGameScene();
         }
 
         private void ContinueGame()
         {
+            if (_isLoadingGame)
+                return;
+
             if (!_saveStorage.HasSave())
             {
                 RefreshContinueButton();
                 return;
             }
 
+            _isLoadingGame = true;
+            _view.HidePanels();
+            _view.SetButtonsInteractable(false);
             LoadGameScene();
         }
 

@@ -5,6 +5,7 @@ using Core.StateMachine.Features;
 using Core.StateMachine.States;
 using IncrementalRPG.Scripts.Reflex;
 using Reflex.Attributes;
+using UnityEngine.SceneManagement;
 
 namespace Core.StateMachine
 {
@@ -24,7 +25,9 @@ namespace Core.StateMachine
             foreach (var feature in _features)
                 feature.Initialize();
 
-            ((GameplayState)_states[typeof(GameplayState)]).OnGoToHubRequested += () => Enter<HubState>();
+            var gameplayState = (GameplayState)_states[typeof(GameplayState)];
+            gameplayState.OnGoToHubRequested += () => Enter<HubState>();
+            gameplayState.OnMainMenuRequested += LoadMainMenu;
         }
 
         public void OnStart() => Enter<HubState>();
@@ -44,6 +47,12 @@ namespace Core.StateMachine
         {
             _current?.Exit(reason);
             _current = null;
+        }
+
+        private void LoadMainMenu()
+        {
+            ExitCurrent(GameStateExitReason.SceneUnload);
+            SceneManager.LoadSceneAsync("MainMenuScene");
         }
     }
 }

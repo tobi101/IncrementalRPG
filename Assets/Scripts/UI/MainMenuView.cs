@@ -39,6 +39,17 @@ namespace UI
                 continueButton.gameObject.SetActive(visible);
         }
 
+        public void SetButtonsInteractable(bool interactable)
+        {
+            EnsureButtons();
+
+            foreach (var buttonView in _buttons)
+            {
+                if (buttonView != null && buttonView.Button != null)
+                    buttonView.Button.interactable = interactable;
+            }
+        }
+
         public void ShowSettings()
         {
             if (_settingsMenu != null)

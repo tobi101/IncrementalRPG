@@ -16,7 +16,6 @@ namespace Core.Gameplay.Dungeon
 
         [Header("Progression")]
         [Min(0)] public int killGoal = 10;
-        [Min(0f)] public float transitionDuration = 1.5f;
 
         [Header("Generation")]
         public TilemapGenerationConfig tilemapGenerationConfig;

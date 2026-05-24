@@ -158,6 +158,102 @@ MonoBehaviour:
     m_Localized: New level!
     m_Metadata:
       m_Items: []
+  - m_Id: 2350952815255552
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350787047972864
+    m_Localized: Sounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350770883125248
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350692055375872
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350691338149888
+    m_Localized: Authors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350610291613696
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350609582776320
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350608911687680
+    m_Localized: New Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350604075655168
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2351378805547008
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2353037732470784
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2353874554839040
+    m_Localized: Record!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2354035586752512
+    m_Localized: Done
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2357656613281792
+    m_Localized: 'Killed:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2357751190642688
+    m_Localized: 'Collected:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2358430856634368
+    m_Localized: Result
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2359326810300416
+    m_Localized: ENEMIES DEFEATED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2359888998031360
+    m_Localized: MONEY COLLECTED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2361592413937664
+    m_Localized: Dungeon is unavailable yet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2362271916351488
+    m_Localized: 'Depth:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2362524539281408
+    m_Localized: 'Level:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2362815347154944
+    m_Localized: 'Enemies:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2363065608691712
+    m_Localized: Start!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2467803314511872
+    m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -41,7 +41,6 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   killGoal: 10
-  transitionDuration: 1.5
   tilemapGenerationConfig: {fileID: 0}
   minPlayZoneSize: 10
   heatIndex: 1

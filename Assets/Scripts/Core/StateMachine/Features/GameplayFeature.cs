@@ -18,6 +18,7 @@ namespace Core.StateMachine.Features
     {
         [Inject] private IEnumerable<IService> _servicesEnumerable;
         [Inject] private DungeonList _dungeonList;
+        [Inject] private DungeonLevelTransitionConfig _levelTransitionConfig;
         [Inject] private DungeonSelectionService _dungeonSelection;
         [Inject] private IsometricGradientTilemapGenerator _generator;
         [Inject] private SpawnService _spawnService;
@@ -32,8 +33,9 @@ namespace Core.StateMachine.Features
         public event Action<int> OnSessionKillsChanged;
         public event Action<int, int> OnLevelKillGoalChanged;
         public event Action<DungeonConfig, DungeonLevelConfig, int> OnDungeonLevelChanged;
-        public event Action<DungeonLevelConfig, int, float> OnLevelTransitionStarted;
+        public event Action<DungeonLevelConfig, int, float, float, float> OnLevelTransitionStarted;
         public event Action<DungeonLevelConfig, int> OnLevelTransitionFinished;
+        public event Action<DungeonConfig, DungeonLevelConfig, int> OnDemoLimitReached;
 
         public BigDouble SessionGold => _sessionGold;
         public int SessionKills => _sessionKills;
@@ -49,7 +51,9 @@ namespace Core.StateMachine.Features
             Inactive,
             Ready,
             Playing,
-            Transitioning,
+            TransitionClosing,
+            TransitionOpening,
+            DemoLimitReached,
             Expired
         }
 
@@ -61,12 +65,15 @@ namespace Core.StateMachine.Features
         private int _pendingLevelTransitionIndex = -1;
         private int _transitionTargetLevelIndex = -1;
         private float _transitionTimer;
+        private float _transitionHoldDuration;
+        private float _transitionOpenDuration;
         private float _sessionTimeLeft;
         private float _sessionTotalTime;
         private RunState _runState = RunState.Inactive;
         private BigDouble _sessionGold;
         private int _sessionKills;
         private SessionRecordResult _sessionRecordResult;
+        private bool _sessionResultsApplied;
 
         public void Initialize()
         {
@@ -84,9 +91,12 @@ namespace Core.StateMachine.Features
             _sessionKills = 0;
             _levelKills = 0;
             _sessionRecordResult = default;
+            _sessionResultsApplied = false;
             _pendingLevelTransitionIndex = -1;
             _transitionTargetLevelIndex = -1;
             _transitionTimer = 0f;
+            _transitionHoldDuration = 0f;
+            _transitionOpenDuration = 0f;
             _currentDungeon = _dungeonSelection.GetSelectedOrDefault(_dungeonList);
 
             if (_currentDungeon == null || !_currentDungeon.HasPlayableLevels)
@@ -113,12 +123,23 @@ namespace Core.StateMachine.Features
                 _runState = RunState.Playing;
         }
 
+        public void ContinueAfterDemoLimitReached()
+        {
+            if (_runState != RunState.DemoLimitReached)
+                return;
+
+            _dungeonSelection.MarkDemoEndAcknowledged(_currentDungeon);
+            RestartSessionFromCurrentLevel();
+        }
+
         public void Disable()
         {
             _runState = RunState.Inactive;
             _pendingLevelTransitionIndex = -1;
             _transitionTargetLevelIndex = -1;
             _transitionTimer = 0f;
+            _transitionHoldDuration = 0f;
+            _transitionOpenDuration = 0f;
             _spawnService.DespawnAll();
         }
 
@@ -132,8 +153,11 @@ namespace Core.StateMachine.Features
                 case RunState.Playing:
                     TickPlaying(deltaTime);
                     break;
-                case RunState.Transitioning:
-                    TickTransition(deltaTime);
+                case RunState.TransitionClosing:
+                    TickTransitionClosing(deltaTime);
+                    break;
+                case RunState.TransitionOpening:
+                    TickTransitionOpening(deltaTime);
                     break;
             }
         }
@@ -165,20 +189,73 @@ namespace Core.StateMachine.Features
                 BeginLevelTransition(_pendingLevelTransitionIndex);
         }
 
-        private void TickTransition(float deltaTime)
+        private void TickTransitionClosing(float deltaTime)
         {
             _transitionTimer -= deltaTime;
 
             if (_transitionTimer <= 0f)
-                CompleteLevelTransition();
+                ApplyLevelBehindCurtain();
+        }
+
+        private void TickTransitionOpening(float deltaTime)
+        {
+            _transitionTimer -= deltaTime;
+
+            if (_transitionTimer <= 0f)
+                FinishLevelTransition();
         }
 
         private void ExpireSession()
         {
             _runState = RunState.Expired;
+            ApplySessionResults();
+            OnSessionExpired?.Invoke();
+        }
+
+        private void ReachDemoLimit()
+        {
+            _runState = RunState.DemoLimitReached;
+            _pendingLevelTransitionIndex = -1;
+            _transitionTargetLevelIndex = -1;
+            ApplySessionResults();
+            _dungeonSelection.MarkLevelReached(_currentDungeon, _currentLevelIndex);
+            OnDemoLimitReached?.Invoke(_currentDungeon, _currentLevel, _currentLevelIndex);
+        }
+
+        private void ApplySessionResults()
+        {
+            if (_sessionResultsApplied)
+                return;
+
             _player.GoldTotal += _sessionGold;
             _sessionRecordResult = _player.UpdateSessionRecords(_sessionGold, _sessionKills);
-            OnSessionExpired?.Invoke();
+            _sessionResultsApplied = true;
+        }
+
+        private void RestartSessionFromCurrentLevel()
+        {
+            _spawnService.DespawnAll();
+            ResetSessionStats();
+
+            if (!ApplyLevel(_currentLevelIndex))
+            {
+                _runState = RunState.Inactive;
+                return;
+            }
+
+            SpawnInitialEntities();
+            _runState = RunState.Playing;
+        }
+
+        private void ResetSessionStats()
+        {
+            _sessionGold = BigDouble.Zero;
+            _sessionKills = 0;
+            _sessionRecordResult = default;
+            _sessionResultsApplied = false;
+
+            OnSessionGoldEarned?.Invoke(_sessionGold, 0);
+            OnSessionKillsChanged?.Invoke(_sessionKills);
         }
 
         private void BeginLevelTransition(int nextLevelIndex)
@@ -190,38 +267,68 @@ namespace Core.StateMachine.Features
                 return;
             }
 
-            _runState = RunState.Transitioning;
+            _runState = RunState.TransitionClosing;
             _pendingLevelTransitionIndex = -1;
             _transitionTargetLevelIndex = nextLevelIndex;
-            _transitionTimer = Mathf.Max(0f, nextLevel.transitionDuration);
+            var transitionConfig = _levelTransitionConfig ?? new DungeonLevelTransitionConfig();
+            _transitionTimer = transitionConfig.CloseDuration;
+            _transitionHoldDuration = transitionConfig.HoldDuration;
+            _transitionOpenDuration = transitionConfig.OpenDuration;
 
-            _spawnService.DespawnAll();
-            OnLevelTransitionStarted?.Invoke(nextLevel, nextLevelIndex, _transitionTimer);
+            OnLevelTransitionStarted?.Invoke(nextLevel, nextLevelIndex,
+                _transitionTimer, _transitionHoldDuration, _transitionOpenDuration);
 
             if (_transitionTimer <= 0f)
-                CompleteLevelTransition();
+                ApplyLevelBehindCurtain();
         }
 
-        private void CompleteLevelTransition()
+        private void ApplyLevelBehindCurtain()
         {
             var targetIndex = _transitionTargetLevelIndex;
-            _transitionTargetLevelIndex = -1;
-            _transitionTimer = 0f;
+
+            _spawnService.DespawnAll();
 
             if (!ApplyLevel(targetIndex))
             {
+                _transitionTargetLevelIndex = -1;
+                _transitionTimer = 0f;
+                _transitionHoldDuration = 0f;
+                _transitionOpenDuration = 0f;
                 _runState = RunState.Inactive;
                 return;
             }
 
             SpawnInitialEntities();
-            _runState = RunState.Playing;
             _dungeonSelection.MarkLevelReached(_currentDungeon, _currentLevelIndex);
+
+            _transitionTimer = Mathf.Max(0f, _transitionHoldDuration + _transitionOpenDuration);
+            _transitionHoldDuration = 0f;
+            _transitionOpenDuration = 0f;
+
+            if (_transitionTimer <= 0f)
+            {
+                FinishLevelTransition();
+                return;
+            }
+
+            _runState = RunState.TransitionOpening;
+        }
+
+        private void FinishLevelTransition()
+        {
+            _transitionTargetLevelIndex = -1;
+            _transitionTimer = 0f;
+            _transitionHoldDuration = 0f;
+            _transitionOpenDuration = 0f;
+            _runState = RunState.Playing;
             OnLevelTransitionFinished?.Invoke(_currentLevel, _currentLevelIndex);
         }
 
         private void HandleCreatureKilled(Vector2Int coord, int amount)
         {
+            if (_runState == RunState.Inactive || _runState == RunState.Expired || _runState == RunState.DemoLimitReached)
+                return;
+
             var levelGoldMultiplier = _currentLevel != null ? _currentLevel.goldDropMultiplier : 1f;
             var finalAmount = Mathf.RoundToInt(amount * levelGoldMultiplier * _skillTree.GetMultiplier(StatType.GoldDrop));
 
@@ -242,7 +349,13 @@ namespace Core.StateMachine.Features
             if (_levelKills < _currentLevel.killGoal) return;
 
             if (TryGetNextPlayableLevel(out var nextLevelIndex))
+            {
                 _pendingLevelTransitionIndex = nextLevelIndex;
+                return;
+            }
+
+            if (!_dungeonSelection.HasDemoEndAcknowledged(_currentDungeon))
+                ReachDemoLimit();
         }
 
         private void SpawnInitialEntities()

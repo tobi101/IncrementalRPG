@@ -23,6 +23,7 @@ namespace Reflex
     public class GameSceneInstaller : MonoBehaviour, IInstaller
     {
         [SerializeField] private DungeonList _dungeonList;
+        [SerializeField] private DungeonLevelTransitionConfig _levelTransitionConfig = new();
         [SerializeField] private DamageZoneConfig _damageZoneConfig;
         [SerializeField] private BombExplosionConfig _bombExplosionConfig;
         [SerializeField] private SkillTreeConfig _skillTreeConfig;
@@ -38,6 +39,7 @@ namespace Reflex
         [SerializeField] private HudView _hudView;
         [SerializeField] private PauseMenuController _pauseMenuController;
         [SerializeField] private SessionEndPopupView _sessionEndPopupView;
+        [SerializeField] private DemoEndPopupView _demoEndPopupView;
 
 
         private void Awake()
@@ -155,7 +157,7 @@ namespace Reflex
                 Resolution.Lazy
             );
             
-            builder.RegisterValue(AudioManager.Resolve(_audioManager));
+            builder.RegisterValue(ResolveAudioManager());
             builder.RegisterValue(_isometricGradientTilemapGenerator);
             
             var tileGrid = new TileGrid();
@@ -211,6 +213,7 @@ namespace Reflex
             builder.RegisterValue(_hudView, new[] { typeof(HudView) });
             builder.RegisterValue(_pauseMenuController, new[] { typeof(PauseMenuController) });
             builder.RegisterValue(_sessionEndPopupView, new[] { typeof(SessionEndPopupView) });
+            builder.RegisterValue(new DemoEndPopupProvider(_demoEndPopupView), new[] { typeof(DemoEndPopupProvider) });
         }
 
         public void Exit()
@@ -220,11 +223,29 @@ namespace Reflex
 
         private void InitializeConfigs(ContainerBuilder builder)
         {
+            if (_levelTransitionConfig == null)
+                _levelTransitionConfig = new DungeonLevelTransitionConfig();
+
             builder.RegisterValue(_dungeonList, new[] { typeof(DungeonList) });
+            builder.RegisterValue(_levelTransitionConfig, new[] { typeof(DungeonLevelTransitionConfig) });
             builder.RegisterValue(_damageZoneConfig, new[] { typeof(DamageZoneConfig) });
             builder.RegisterValue(_bombExplosionConfig, new[] { typeof(BombExplosionConfig) });
             builder.RegisterValue(_skillTreeConfig, new[] { typeof(SkillTreeConfig) });
             builder.RegisterValue(_nodeBorderColorConfig, new[] { typeof(NodeBorderColorConfig) });
+        }
+
+        private AudioManager ResolveAudioManager()
+        {
+            var audioManager = AudioManager.Resolve(_audioManager);
+            if (audioManager != null)
+                return audioManager;
+
+            Debug.LogWarning("[GameSceneInstaller] AudioManager was not found. Creating runtime fallback. Start from BootstrapScene or assign _audioManager to use configured audio clips.");
+
+            var audioManagerObject = new GameObject("AudioManager Runtime Fallback");
+            audioManager = audioManagerObject.AddComponent<AudioManager>();
+            DontDestroyOnLoad(audioManagerObject);
+            return audioManager;
         }
     }
 }

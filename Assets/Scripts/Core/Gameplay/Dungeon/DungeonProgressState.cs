@@ -22,6 +22,20 @@ namespace Core.Gameplay.Dungeon
             return -1;
         }
 
+        public bool HasDemoEndAcknowledged(string dungeonId)
+        {
+            if (string.IsNullOrEmpty(dungeonId) || entries == null)
+                return false;
+
+            foreach (var entry in entries)
+            {
+                if (entry != null && entry.dungeonId == dungeonId)
+                    return entry.demoEndAcknowledged;
+            }
+
+            return false;
+        }
+
         public bool SetReachedLevelIndex(string dungeonId, int levelIndex)
         {
             if (string.IsNullOrEmpty(dungeonId) || levelIndex < 0)
@@ -46,6 +60,32 @@ namespace Core.Gameplay.Dungeon
 
             return true;
         }
+
+        public bool SetDemoEndAcknowledged(string dungeonId)
+        {
+            if (string.IsNullOrEmpty(dungeonId))
+                return false;
+
+            entries ??= new List<DungeonProgressEntry>();
+
+            foreach (var entry in entries)
+            {
+                if (entry == null || entry.dungeonId != dungeonId) continue;
+                if (entry.demoEndAcknowledged) return false;
+
+                entry.demoEndAcknowledged = true;
+                return true;
+            }
+
+            entries.Add(new DungeonProgressEntry
+            {
+                dungeonId = dungeonId,
+                reachedLevelIndex = -1,
+                demoEndAcknowledged = true
+            });
+
+            return true;
+        }
     }
 
     [Serializable]
@@ -53,5 +93,6 @@ namespace Core.Gameplay.Dungeon
     {
         public string dungeonId;
         public int reachedLevelIndex;
+        public bool demoEndAcknowledged;
     }
 }
