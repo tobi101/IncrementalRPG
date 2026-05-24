@@ -74,6 +74,30 @@ namespace Utils
         }
 
         /// <summary>
+        /// Formats a BigDouble for spendable currency display without rounding up.
+        /// </summary>
+        public static string FormatFloor(BigDouble value, int decimals = 2)
+        {
+            if (value.Mantissa == 0) return "0";
+
+            long exp = value.Exponent;
+            int mod = (int)((exp % 3 + 3) % 3);
+            double displayMantissa = value.Mantissa * Math.Pow(10, mod);
+            long displayExp = exp - mod;
+
+            string suffix = GetSuffix(displayExp);
+
+            if (displayExp < 3)
+                return Math.Floor(displayMantissa).ToString("F0");
+
+            int places = Math.Max(0, decimals);
+            double factor = Math.Pow(10, places);
+            double flooredMantissa = Math.Floor(displayMantissa * factor) / factor;
+            string format = places > 0 ? $"F{places}" : "F0";
+            return $"{flooredMantissa.ToString(format)}{suffix}";
+        }
+
+        /// <summary>
         /// Format with explicit decimal control for both small and large numbers.
         /// </summary>
         public static string Format(BigDouble value, int decimalsSmall, int decimalsLarge)
