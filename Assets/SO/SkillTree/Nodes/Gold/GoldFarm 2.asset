@@ -37,7 +37,7 @@ MonoBehaviour:
   goldCostPerLevel: d0070000c4090000b80b0000a00f000088130000
   prerequisites:
   - node: {fileID: 11400000, guid: a90c5ed93f5404b22b1db4a89c72a911, type: 2}
-    requiredLevel: 5
+    requiredLevel: 4
   effects:
   - effectType: 1
     statType: 9

@@ -20,15 +20,15 @@ MonoBehaviour:
   - node: {fileID: 11400000, guid: d4a7bc70acca045b983d7a86ef37f217, type: 2}
     gridPosition: {x: -2, y: 1}
   - node: {fileID: 11400000, guid: a90c5ed93f5404b22b1db4a89c72a911, type: 2}
-    gridPosition: {x: 0, y: -2}
+    gridPosition: {x: -2, y: -1}
   - node: {fileID: 11400000, guid: 52ec292eab03749e5ae85e8931e24366, type: 2}
     gridPosition: {x: 2, y: 1}
   - node: {fileID: 11400000, guid: 50ea615299d61b742a975ffd14fc824a, type: 2}
-    gridPosition: {x: 1, y: -3}
+    gridPosition: {x: -1, y: -2}
   - node: {fileID: 11400000, guid: 92c8bc70910f94f7d90659fed53b318d, type: 2}
-    gridPosition: {x: -1, y: -3}
+    gridPosition: {x: -4, y: -2}
   - node: {fileID: 11400000, guid: e3808a33829f125419a91fd47d3a793d, type: 2}
-    gridPosition: {x: 0, y: -4}
+    gridPosition: {x: -3, y: -3}
   - node: {fileID: 11400000, guid: d832b69edc4a6d846829747f694612bd, type: 2}
     gridPosition: {x: -4, y: 1}
   - node: {fileID: 11400000, guid: 167514c2ba8a7400aad118fd1c1fc2ae, type: 2}

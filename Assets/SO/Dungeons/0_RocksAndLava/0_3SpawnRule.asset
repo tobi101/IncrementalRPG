@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc3d346bb9514e0797c52539007067a, type: 3}
+  m_Name: 0_3SpawnRule
+  m_EditorClassIdentifier: Assembly-CSharp::Entity.SpawnTable
+  entries:
+  - config: {fileID: 11400000, guid: ea27611c1934e48299db5b237a35e436, type: 2}
+    weight: 70
+    requiredFeature: 0
+  - config: {fileID: 11400000, guid: c92105f795d624f9799ec804a854414b, type: 2}
+    weight: 30
+    requiredFeature: 0
+  - config: {fileID: 11400000, guid: f625a2aa271d14fe7834195662c85276, type: 2}
+    weight: 0
+    requiredFeature: 0
+  - config: {fileID: 11400000, guid: c52f6666baa494e00bdbd069deaf8776, type: 2}
+    weight: 0
+    requiredFeature: 1
