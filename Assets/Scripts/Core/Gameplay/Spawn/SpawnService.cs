@@ -23,14 +23,6 @@ namespace Core.Gameplay
         private float _timer;
         private readonly List<ActiveEntry> _active = new();
 
-        private struct FeatureTimer
-        {
-            public FeatureType Type;
-            public float Interval;
-            public float Elapsed;
-        }
-        private readonly List<FeatureTimer> _featureTimers = new();
-
         private struct ActiveEntry
         {
             public Creature Creature;
@@ -52,25 +44,11 @@ namespace Core.Gameplay
             _spawnTable = level.spawnTable;
             _spawnInterval = level.spawnInterval;
             _timer = 0f;
-            _featureTimers.Clear();
         }
 
         public void SetSpawnInterval(float interval)
         {
             _spawnInterval = interval;
-        }
-
-        public void SetFeatureSpawnInterval(FeatureType featureType, float interval)
-        {
-            for (var i = 0; i < _featureTimers.Count; i++)
-            {
-                if (_featureTimers[i].Type != featureType) continue;
-                var t = _featureTimers[i];
-                t.Interval = interval;
-                _featureTimers[i] = t;
-                return;
-            }
-            _featureTimers.Add(new FeatureTimer { Type = featureType, Interval = interval });
         }
 
         public void Initialize() { }
@@ -87,20 +65,19 @@ namespace Core.Gameplay
             if (_timer >= _spawnInterval)
             {
                 _timer = 0f;
-                TrySpawnOfType(FeatureType.None);
+                TrySpawnAny();
             }
+        }
 
-            for (var i = 0; i < _featureTimers.Count; i++)
-            {
-                var ft = _featureTimers[i];
-                ft.Elapsed += deltaTime;
-                if (ft.Elapsed >= ft.Interval)
-                {
-                    ft.Elapsed = 0f;
-                    TrySpawnOfType(ft.Type);
-                }
-                _featureTimers[i] = ft;
-            }
+        private void TrySpawnAny()
+        {
+            if (_spawnTable == null) return;
+            if (!_tileGrid.TryGetRandomFreeTile(out var coord)) return;
+
+            var config = _spawnTable.PickAny(_skillTree);
+            if (config == null) return;
+
+            Spawn(config, coord);
         }
 
         private void TrySpawnOfType(FeatureType featureType)
@@ -108,7 +85,7 @@ namespace Core.Gameplay
             if (_spawnTable == null) return;
             if (!_tileGrid.TryGetRandomFreeTile(out var coord)) return;
 
-            var config = _spawnTable.Pick(_skillTree, featureType);
+            var config = _spawnTable.PickOfType(_skillTree, featureType);
             if (config == null) return;
 
             Spawn(config, coord);
@@ -119,12 +96,6 @@ namespace Core.Gameplay
             var snapshot = new List<ActiveEntry>(_active);
             _active.Clear();
             _timer = 0f;
-            for (var i = 0; i < _featureTimers.Count; i++)
-            {
-                var ft = _featureTimers[i];
-                ft.Elapsed = 0f;
-                _featureTimers[i] = ft;
-            }
             foreach (var entry in snapshot)
             {
                 entry.Creature.OnDied -= entry.OnDied;
