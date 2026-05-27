@@ -263,6 +263,30 @@ MonoBehaviour:
     m_Key: wishlist
     m_Metadata:
       m_Items: []
+  - m_Id: 3927629706027008
+    m_Key: training
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3929410552979456
+    m_Key: barracks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3937105423097856
+    m_Key: craft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3950473898876928
+    m_Key: mine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3950498993397760
+    m_Key: dungeon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3950681080717312
+    m_Key: drill
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

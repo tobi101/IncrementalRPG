@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ namespace UI
     {
         [SerializeField] private Button _button;
         [SerializeField] private Image _glowImage;
+        [SerializeField] private TMP_Text _text;
 
         public Button Button => _button;
 
@@ -38,7 +40,10 @@ namespace UI
         private void SetGlowVisible(bool visible)
         {
             if (_glowImage == null) return;
+            if (_text == null) return;
+            
             _glowImage.enabled = visible;
+            _text.enabled = visible;
         }
     }
 }
