@@ -28,18 +28,23 @@ namespace Core.Gameplay.Bomb
 
         public void Update(float deltaTime) { }
 
-        private void HandleFeatureSpawned(Creature creature, Vector2Int coord, Entity.EntityConfig config)
+        private void HandleFeatureSpawned(Creature creature, CreatureView view, Vector2Int coord, Entity.EntityConfig config)
         {
             if (config.featureType != Entity.FeatureType.Bomb) return;
-            creature.OnDied += () => Explode(creature);
+
+            ScaleExplosionVisual(view);
+            creature.OnDied += () =>
+            {
+                ScaleExplosionVisual(view);
+                Explode(creature);
+            };
         }
 
         private void Explode(Creature source)
         {
             var epicenter = _tileGrid.GetWorldPosition(source.TileCoord);
 
-            var a = _config.baseRadius * _skillTree.GetMultiplier(StatType.BombExplosionRadius)
-                                       + _skillTree.GetBonus(StatType.BombExplosionRadius);
+            var a = GetRadius();
             var b = a * _config.aspectRatio;
             var damage = (int)((_config.baseDamage + _skillTree.GetBonus(StatType.BombExplosionDamage))
                                * _skillTree.GetMultiplier(StatType.BombExplosionDamage));
@@ -58,6 +63,22 @@ namespace Core.Gameplay.Bomb
                 if (dx * dx + dy * dy <= 1f)
                     creature.TakeDamage(damage);
             }
+        }
+
+        private float GetRadius()
+        {
+            return _config.baseRadius * _skillTree.GetMultiplier(StatType.BombExplosionRadius)
+                   + _skillTree.GetBonus(StatType.BombExplosionRadius);
+        }
+
+        private void ScaleExplosionVisual(CreatureView view)
+        {
+            if (view == null) return;
+
+            var visualScaler = view.GetComponentInChildren<BombExplosionVisualScaler>(true);
+            if (visualScaler == null) return;
+
+            visualScaler.ScaleToRadius(GetRadius(), _config.baseRadius);
         }
     }
 }

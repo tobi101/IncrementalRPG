@@ -1,4 +1,3 @@
-using Core.TestSkillTree;
 using Entity;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -28,7 +27,6 @@ namespace Core.Gameplay.Dungeon
         [Min(0f)] public float initialBombSpawnDensity;
         [Min(0.1f)] public float spawnInterval = 2f;
         [Min(0.0000001f)] public float minSpawnInterval = 0.5f;
-        public FeatureSpawnConfig[] featureSpawnConfigs = new FeatureSpawnConfig[0];
 
         [Header("Rewards")]
         [Min(0f)] public float goldDropMultiplier = 1f;

@@ -5,6 +5,7 @@ using IncrementalRPG.Scripts.AudioManager;
 using Model;
 using Reflex.Attributes;
 using TMPro;
+using Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,7 +53,7 @@ namespace Core.TestSkillTree.View
         private void RefreshGold()
         {
             if (_goldText == null) return;
-            _goldText.text = _player.GoldTotal.ToString();
+            _goldText.text = BigDoubleFormatter.FormatFloor(_player.GoldTotal);
         }
 
         private void Build()

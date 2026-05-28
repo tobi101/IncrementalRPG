@@ -254,6 +254,34 @@ MonoBehaviour:
     m_Localized: Main Menu
     m_Metadata:
       m_Items: []
+  - m_Id: 3927629706027008
+    m_Localized: Training
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3929410552979456
+    m_Localized: Barracks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2468028255035392
+    m_Localized: Wishlist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3937105423097856
+    m_Localized: Craft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3950473898876928
+    m_Localized: Mine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3950498993397760
+    m_Localized: Dungeon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3950681080717312
+    m_Localized: Drill
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

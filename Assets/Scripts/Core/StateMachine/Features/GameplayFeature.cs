@@ -408,14 +408,6 @@ namespace Core.StateMachine.Features
 
             var spawnInterval = level.spawnInterval * (1f - _skillTree.GetBonus(StatType.SpawnSpeed));
             _spawnService.SetSpawnInterval(Mathf.Max(spawnInterval, level.minSpawnInterval));
-
-            if (level.featureSpawnConfigs == null) return;
-
-            foreach (var fc in level.featureSpawnConfigs)
-            {
-                var featureInterval = fc.spawnInterval * (1f - _skillTree.GetBonus(fc.spawnSpeedStat));
-                _spawnService.SetFeatureSpawnInterval(fc.featureType, Mathf.Max(featureInterval, fc.minSpawnInterval));
-            }
         }
 
         private void GenerateLevelMap(DungeonLevelConfig level)
