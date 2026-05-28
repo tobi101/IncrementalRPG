@@ -12,7 +12,7 @@ namespace Core.Gameplay
     public class SpawnService : IService
     {
         public event Action<Vector2Int, int> OnCreatureKilled;
-        public event Action<Creature, Vector2Int, EntityConfig> OnFeatureSpawned;
+        public event Action<Creature, CreatureView, Vector2Int, EntityConfig> OnFeatureSpawned;
         private readonly PoolManager _poolManager;
         private readonly TileGrid _tileGrid;
         private readonly SkillTreeService _skillTree;
@@ -132,7 +132,7 @@ namespace Core.Gameplay
             _active.Add(new ActiveEntry { Creature = creature, View = view, Config = config, OnDied = onDied });
 
             if (config.featureType != FeatureType.None)
-                OnFeatureSpawned?.Invoke(creature, coord, config);
+                OnFeatureSpawned?.Invoke(creature, view, coord, config);
         }
     }
 }
