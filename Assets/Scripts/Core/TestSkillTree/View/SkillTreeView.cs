@@ -31,6 +31,7 @@ namespace Core.TestSkillTree.View
         private Player                   _player;
         private AudioManager             _audioManager;
         private readonly List<NodeView>  _nodeViews = new List<NodeView>();
+        private readonly Dictionary<string, NodeView> _nodeViewsById = new Dictionary<string, NodeView>();
         private readonly List<(NodeConnectionView view, NodeDefinition def)> _connectionViews = new();
 
         [Inject]
@@ -47,6 +48,7 @@ namespace Core.TestSkillTree.View
             Build();
 
             _service.OnUpgraded += RefreshAll;
+            _service.OnNodeUpgraded += PlayNodeUpgradeFeedback;
             _player.OnGoldChanged += RefreshGold;
             RefreshGold();
         }
@@ -100,6 +102,9 @@ namespace Core.TestSkillTree.View
                 ((RectTransform)nodeView.transform).anchoredPosition = nodePositions[def];
                 nodeView.Bind(def, _service, _popupView, _borderColorConfig, _audioManager);
                 _nodeViews.Add(nodeView);
+
+                if (!string.IsNullOrEmpty(nodeView.NodeId))
+                    _nodeViewsById[nodeView.NodeId] = nodeView;
             }
         }
 
@@ -112,11 +117,23 @@ namespace Core.TestSkillTree.View
                 view.Refresh(_service.GetState(def.id));
         }
 
+        private void PlayNodeUpgradeFeedback(string nodeId)
+        {
+            if (string.IsNullOrEmpty(nodeId))
+                return;
+
+            if (_nodeViewsById.TryGetValue(nodeId, out var nodeView))
+                nodeView.PlayUpgradeFeedback();
+        }
+
         private void OnDestroy()
         {
             _closeButton.onClick.RemoveAllListeners();
             if (_service != null)
+            {
                 _service.OnUpgraded -= RefreshAll;
+                _service.OnNodeUpgraded -= PlayNodeUpgradeFeedback;
+            }
             if (_player != null)
                 _player.OnGoldChanged -= RefreshGold;
         }

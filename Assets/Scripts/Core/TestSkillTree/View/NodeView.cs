@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using IncrementalRPG.Scripts.AudioManager;
 using UnityEngine;
@@ -14,12 +15,24 @@ namespace Core.TestSkillTree.View
         [SerializeField] private GameObject _additionalIconRoot;
         [SerializeField] private Image _borderIcon;
         [SerializeField] private TextMeshProUGUI _levelText;
+        [SerializeField] private RectTransform _feedbackRoot;
+        [SerializeField] private float _feedbackScale = 0.9f;
+        [SerializeField] private float _feedbackClockwiseRotationDegrees = 12f;
+        [SerializeField] private float _feedbackShrinkDuration = 0.08f;
+        [SerializeField] private float _feedbackReturnDuration = 0.14f;
 
         private SkillTreeService      _service;
         private NodeDefinition        _definition;
         private NodePopupView         _popup;
         private NodeBorderColorConfig _borderColorConfig;
         private AudioManager          _audioManager;
+        private RectTransform         _cachedFeedbackRoot;
+        private Vector3               _feedbackBaseScale;
+        private Quaternion            _feedbackBaseRotation;
+        private Coroutine             _feedbackRoutine;
+        private bool                  _hasFeedbackBaseTransform;
+
+        public string NodeId => _definition != null ? _definition.id : string.Empty;
 
         public void Bind(NodeDefinition definition, SkillTreeService service, NodePopupView popup, NodeBorderColorConfig borderColorConfig, AudioManager audioManager)
         {
@@ -33,6 +46,7 @@ namespace Core.TestSkillTree.View
                 _icon.sprite = definition.icon;
 
             SetupAdditionalIcon(definition);
+            CacheFeedbackBaseTransform(GetFeedbackRoot(), true);
             Refresh();
         }
 
@@ -58,6 +72,27 @@ namespace Core.TestSkillTree.View
                 _additionalIcon.color = stateColor;
 
             _levelText.text = $"{_service.GetLevel(_definition.id)}/{_definition.maxLevel}";
+        }
+
+        public void PlayUpgradeFeedback()
+        {
+            var target = GetFeedbackRoot();
+            if (target == null)
+                return;
+
+            CacheFeedbackBaseTransform(target);
+
+            if (_feedbackRoutine != null)
+            {
+                StopCoroutine(_feedbackRoutine);
+                _feedbackRoutine = null;
+                ResetFeedbackTransform();
+            }
+
+            if (!gameObject.activeInHierarchy)
+                return;
+
+            _feedbackRoutine = StartCoroutine(PlayUpgradeFeedbackRoutine(target));
         }
 
         private void SetupAdditionalIcon(NodeDefinition definition)
@@ -107,6 +142,108 @@ namespace Core.TestSkillTree.View
                     _audioManager?.PlaySkillError();
                     break;
             }
+        }
+
+        private RectTransform GetFeedbackRoot() =>
+            _feedbackRoot != null ? _feedbackRoot : (RectTransform)transform;
+
+        private void CacheFeedbackBaseTransform(RectTransform target, bool force = false)
+        {
+            if (target == null)
+                return;
+
+            if (!force && _hasFeedbackBaseTransform && _cachedFeedbackRoot == target)
+                return;
+
+            _cachedFeedbackRoot = target;
+            _feedbackBaseScale = target.localScale;
+            _feedbackBaseRotation = target.localRotation;
+            _hasFeedbackBaseTransform = true;
+        }
+
+        private IEnumerator PlayUpgradeFeedbackRoutine(RectTransform target)
+        {
+            ResetFeedbackTransform();
+
+            var targetScale = _feedbackBaseScale * _feedbackScale;
+            var targetRotation = _feedbackBaseRotation * Quaternion.Euler(0f, 0f, -_feedbackClockwiseRotationDegrees);
+
+            yield return AnimateFeedbackTransform(
+                target,
+                _feedbackBaseScale,
+                _feedbackBaseRotation,
+                targetScale,
+                targetRotation,
+                _feedbackShrinkDuration);
+
+            yield return AnimateFeedbackTransform(
+                target,
+                targetScale,
+                targetRotation,
+                _feedbackBaseScale,
+                _feedbackBaseRotation,
+                _feedbackReturnDuration);
+
+            ResetFeedbackTransform();
+            _feedbackRoutine = null;
+        }
+
+        private IEnumerator AnimateFeedbackTransform(
+            RectTransform target,
+            Vector3 fromScale,
+            Quaternion fromRotation,
+            Vector3 toScale,
+            Quaternion toRotation,
+            float duration)
+        {
+            if (target == null)
+                yield break;
+
+            if (duration <= 0f)
+            {
+                target.localScale = toScale;
+                target.localRotation = toRotation;
+                yield break;
+            }
+
+            var elapsed = 0f;
+            while (elapsed < duration)
+            {
+                if (target == null)
+                    yield break;
+
+                var t = Mathf.Clamp01(elapsed / duration);
+                var easedT = Mathf.SmoothStep(0f, 1f, t);
+
+                target.localScale = Vector3.Lerp(fromScale, toScale, easedT);
+                target.localRotation = Quaternion.Slerp(fromRotation, toRotation, easedT);
+
+                elapsed += Time.unscaledDeltaTime;
+                yield return null;
+            }
+
+            target.localScale = toScale;
+            target.localRotation = toRotation;
+        }
+
+        private void ResetFeedbackTransform()
+        {
+            if (!_hasFeedbackBaseTransform || _cachedFeedbackRoot == null)
+                return;
+
+            _cachedFeedbackRoot.localScale = _feedbackBaseScale;
+            _cachedFeedbackRoot.localRotation = _feedbackBaseRotation;
+        }
+
+        private void OnDisable()
+        {
+            if (_feedbackRoutine != null)
+            {
+                StopCoroutine(_feedbackRoutine);
+                _feedbackRoutine = null;
+            }
+
+            ResetFeedbackTransform();
         }
     }
 }

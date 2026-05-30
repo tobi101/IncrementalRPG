@@ -56,6 +56,11 @@ MonoBehaviour:
   _additionalIconRoot: {fileID: 6421001571431131877}
   _borderIcon: {fileID: 3340970767590097924}
   _levelText: {fileID: 1364153667135044050}
+  _feedbackRoot: {fileID: 7710281355405404693}
+  _feedbackScale: 0.9
+  _feedbackClockwiseRotationDegrees: 12
+  _feedbackShrinkDuration: 0.08
+  _feedbackReturnDuration: 0.14
 --- !u!222 &4180259189935674086
 CanvasRenderer:
   m_ObjectHideFlags: 0
