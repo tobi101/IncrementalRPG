@@ -41,6 +41,7 @@ namespace Core.TestSkillTree.View
             _player       = player;
             _audioManager = audioManager;
 
+            UI.UIButtonAudio.InstallInChildren(this);
             _popupView.Bind(service, _borderColorConfig, audioManager);
             _closeButton.onClick.AddListener(() => _stateMachine.Enter<HubState>());
             Build();

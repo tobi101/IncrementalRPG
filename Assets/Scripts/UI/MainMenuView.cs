@@ -23,6 +23,7 @@ namespace UI
         private void Awake()
         {
             EnsureButtons();
+            UIButtonAudio.InstallInChildren(this);
             HidePanels();
         }
 

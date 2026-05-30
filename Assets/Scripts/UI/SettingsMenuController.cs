@@ -52,6 +52,7 @@ namespace UI
         private void Awake()
         {
             EnsureDependencies();
+            UIButtonAudio.InstallInChildren(this);
 
             if (_hideOnAwake)
                 _view?.Hide();

@@ -40,6 +40,9 @@ namespace UI
 
         private void Start()
         {
+            UIButtonAudio.InstallInChildren(this);
+            SetHubFeatureClickSoundsEnabled(false);
+
             if (_dungeonButton != null && _dungeonButton.Button != null)
                 _dungeonButton.Button.onClick.AddListener(OpenDungeon);
 
@@ -164,6 +167,21 @@ namespace UI
                 _audioManager = AudioManager.Resolve();
 
             _audioManager?.PlaySfx(clip);
+        }
+
+        private void SetHubFeatureClickSoundsEnabled(bool enabled)
+        {
+            SetHubFeatureClickSoundEnabled(_dungeonButton, enabled);
+            SetHubFeatureClickSoundEnabled(_skillTreeButton, enabled);
+            SetHubFeatureClickSoundEnabled(_barracksButton, enabled);
+            SetHubFeatureClickSoundEnabled(_mineButton, enabled);
+            SetHubFeatureClickSoundEnabled(_craftButton, enabled);
+        }
+
+        private static void SetHubFeatureClickSoundEnabled(HubFeatureButtonView buttonView, bool enabled)
+        {
+            if (buttonView != null && buttonView.Button != null)
+                UIButtonAudio.SetClickSoundEnabled(buttonView.Button, enabled);
         }
     }
 }

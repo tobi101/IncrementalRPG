@@ -30,6 +30,7 @@ namespace UI
 
         private void Awake()
         {
+            UIButtonAudio.InstallInChildren(this);
             EnsureInitialized();
             gameObject.SetActive(false);
         }

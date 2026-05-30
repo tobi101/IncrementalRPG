@@ -2587,6 +2587,7 @@ MonoBehaviour:
   _videoDisplay: {fileID: 1579709956}
   _skipButton: {fileID: 0}
   _hidePanelOnAwake: 1
+  _hidePanelOnComplete: 0
   _aspectRatioFitter: {fileID: 1579709958}
   _videoPlayer: {fileID: 1696450600}
   _audioSource: {fileID: 709843576}
@@ -8095,7 +8096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
-      value: 2350610291613696
+      value: 2350609582776320
       objectReference: {fileID: 0}
     - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName

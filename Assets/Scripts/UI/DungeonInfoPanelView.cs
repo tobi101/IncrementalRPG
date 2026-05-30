@@ -28,6 +28,7 @@ namespace UI
         private void Awake()
         {
             _dungeonNameBinding = new LocalizedStringBinding(_dungeonNameText);
+            UIButtonAudio.EnsureOn(_startButton);
 
             if (_enemyIconPrefab != null)
                 _enemyIconPrefab.gameObject.SetActive(false);
