@@ -103,7 +103,13 @@ namespace UI
 
             if (_mapMenuFadeTransition != null)
             {
-                _mapMenuFadeTransition.Play(() => EnterDungeon(dungeon), HandleDungeonTransitionFinished);
+                _audioManager ??= AudioManager.Resolve();
+                _audioManager?.PlayFightStartFade();
+                _mapMenuFadeTransition.Play(() =>
+                {
+                    _audioManager?.PlayFightStartBurn();
+                    EnterDungeon(dungeon);
+                }, HandleDungeonTransitionFinished);
                 return;
             }
 

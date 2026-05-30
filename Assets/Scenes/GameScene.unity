@@ -31169,8 +31169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotAdventure.Scripts.Reflex.GameSceneInstaller
   _dungeonList: {fileID: 11400000, guid: 81c4b8305720e485ab98ed12fa135cda, type: 2}
   _levelTransitionConfig:
-    closeDuration: 1
-    holdDuration: 2
+    closeDuration: 0.5
+    holdDuration: 0.8
     openDuration: 1
   _damageZoneConfig: {fileID: 11400000, guid: b8cd0d72559cb4d80839102b7953891a, type: 2}
   _bombExplosionConfig: {fileID: 11400000, guid: 47c431b4657a848239e3277c11ca5cb1, type: 2}
