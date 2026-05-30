@@ -44,7 +44,7 @@ namespace UI
             _pauseAction.AddBinding("<Keyboard>/escape");
             _pauseAction.AddBinding("<Gamepad>/start");
 
-            InstallButtonAudio();
+            InstallButtonEffects();
             Close();
         }
 
@@ -222,10 +222,12 @@ namespace UI
             button.onClick.RemoveListener(listener);
         }
 
-        private void InstallButtonAudio()
+        private void InstallButtonEffects()
         {
             UIButtonAudio.InstallInChildren(Root.transform);
+            UIButtonPressScaler.InstallInChildren(Root.transform);
             InstallButtonAudio(_openPauseButtons);
+            InstallButtonPressScalers(_openPauseButtons);
         }
 
         private static void InstallButtonAudio(Button[] buttons)
@@ -235,6 +237,15 @@ namespace UI
 
             foreach (var button in buttons)
                 UIButtonAudio.EnsureOn(button);
+        }
+
+        private static void InstallButtonPressScalers(Button[] buttons)
+        {
+            if (buttons == null)
+                return;
+
+            foreach (var button in buttons)
+                UIButtonPressScaler.EnsureOn(button);
         }
     }
 }

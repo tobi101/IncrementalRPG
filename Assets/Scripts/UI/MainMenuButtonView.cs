@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace UI
@@ -13,18 +14,24 @@ namespace UI
         Exit
     }
 
-    public class MainMenuButtonView : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
+    public class MainMenuButtonView : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
     {
         [SerializeField] private MainMenuAction _action;
         [SerializeField] private Button _button;
-        [SerializeField] private GameObject[] _pressedVisuals;
+        [FormerlySerializedAs("_pressedVisuals")]
+        [SerializeField] private GameObject[] _hoverVisuals;
+        [SerializeField] private RectTransform _pressTarget;
+        [SerializeField, Min(0f)] private float _pressedScale = 0.94f;
 
         public MainMenuAction Action => _action;
         public Button Button => _button;
 
+        private Vector3 _pressTargetBaseScale = Vector3.one;
+
         private void Reset()
         {
             _button = GetComponent<Button>();
+            _pressTarget = transform.Find("ButtonVisualRoot/ButtonImage") as RectTransform;
         }
 
         private void Awake()
@@ -32,47 +39,82 @@ namespace UI
             if (_button == null)
                 _button = GetComponent<Button>();
 
-            SetPressedVisualsVisible(false);
+            if (_pressTarget == null)
+                _pressTarget = transform.Find("ButtonVisualRoot/ButtonImage") as RectTransform;
+
+            if (_pressTarget != null)
+                _pressTargetBaseScale = _pressTarget.localScale;
+
+            SetHoverVisualsVisible(false);
+            ResetPressTargetScale();
         }
 
         private void OnEnable()
         {
-            SetPressedVisualsVisible(false);
+            SetHoverVisualsVisible(false);
+            ResetPressTargetScale();
         }
 
         private void OnDisable()
         {
-            SetPressedVisualsVisible(false);
+            SetHoverVisualsVisible(false);
+            ResetPressTargetScale();
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            if (!CanInteract())
+                return;
+
+            SetHoverVisualsVisible(true);
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            if (_button != null && !_button.interactable)
+            if (!CanInteract())
                 return;
 
-            SetPressedVisualsVisible(true);
+            SetPressTargetScale(_pressedScale);
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            SetPressedVisualsVisible(false);
+            ResetPressTargetScale();
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            SetPressedVisualsVisible(false);
+            SetHoverVisualsVisible(false);
+            ResetPressTargetScale();
         }
 
-        private void SetPressedVisualsVisible(bool visible)
+        private void SetHoverVisualsVisible(bool visible)
         {
-            if (_pressedVisuals == null)
+            if (_hoverVisuals == null)
                 return;
 
-            foreach (var visual in _pressedVisuals)
+            foreach (var visual in _hoverVisuals)
             {
                 if (visual != null)
                     visual.SetActive(visible);
             }
+        }
+
+        private void SetPressTargetScale(float scale)
+        {
+            if (_pressTarget != null)
+                _pressTarget.localScale = _pressTargetBaseScale * scale;
+        }
+
+        private void ResetPressTargetScale()
+        {
+            if (_pressTarget != null)
+                _pressTarget.localScale = _pressTargetBaseScale;
+        }
+
+        private bool CanInteract()
+        {
+            return _button == null || _button.interactable;
         }
     }
 }
