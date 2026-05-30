@@ -250,6 +250,14 @@ MonoBehaviour:
     m_Localized: Start!
     m_Metadata:
       m_Items: []
+  - m_Id: 2462125627793408
+    m_Localized: Demo Complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2462160771866624
+    m_Localized: Thanks for playing the demo! Add the game to your wishlist to follow development.
+    m_Metadata:
+      m_Items: []
   - m_Id: 2467803314511872
     m_Localized: Main Menu
     m_Metadata:

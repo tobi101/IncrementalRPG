@@ -176,6 +176,114 @@ MonoBehaviour:
     m_Localized: "\u041D\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C!"
     m_Metadata:
       m_Items: []
+  - m_Id: 2350604075655168
+    m_Localized: Аудио
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350608911687680
+    m_Localized: Новая игра
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350609582776320
+    m_Localized: Продолжить
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350610291613696
+    m_Localized: Настройки
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350691338149888
+    m_Localized: Авторы
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350692055375872
+    m_Localized: Выйти
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350770883125248
+    m_Localized: Музыка
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350787047972864
+    m_Localized: Звуки
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350952815255552
+    m_Localized: Язык
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2351378805547008
+    m_Localized: Назад
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2353037732470784
+    m_Localized: Выход
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2353874554839040
+    m_Localized: Рекорд!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2354035586752512
+    m_Localized: Готово
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2357656613281792
+    m_Localized: 'Убито:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2357751190642688
+    m_Localized: 'Собрано:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2358430856634368
+    m_Localized: Результат
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2359326810300416
+    m_Localized: ПОБЕЖДЕНО ВРАГОВ
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2359888998031360
+    m_Localized: СОБРАНО ЗОЛОТА
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2361592413937664
+    m_Localized: Подземелье пока недоступно.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2362271916351488
+    m_Localized: 'Глубина:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2362524539281408
+    m_Localized: 'Уровень:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2362815347154944
+    m_Localized: 'Враги:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2363065608691712
+    m_Localized: Начать!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2462125627793408
+    m_Localized: Демоверсия завершена
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2462160771866624
+    m_Localized: Спасибо за игру! Добавьте игру в список желаемого, чтобы следить за разработкой.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2467803314511872
+    m_Localized: Главное меню
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2468028255035392
+    m_Localized: В список желаемого
+    m_Metadata:
+      m_Items: []
   - m_Id: 3929410552979456
     m_Localized: "\u041A\u0430\u0437\u0430\u0440\u043C\u044B"
     m_Metadata:

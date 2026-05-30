@@ -158,6 +158,138 @@ MonoBehaviour:
     m_Localized: 新等级！
     m_Metadata:
       m_Items: []
+  - m_Id: 2350604075655168
+    m_Localized: 音频
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350608911687680
+    m_Localized: 新游戏
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350609582776320
+    m_Localized: 继续
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350610291613696
+    m_Localized: 设置
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350691338149888
+    m_Localized: 作者
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350692055375872
+    m_Localized: 退出
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350770883125248
+    m_Localized: 音乐
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350787047972864
+    m_Localized: 音效
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2350952815255552
+    m_Localized: 语言
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2351378805547008
+    m_Localized: 返回
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2353037732470784
+    m_Localized: 退出
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2353874554839040
+    m_Localized: 新纪录！
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2354035586752512
+    m_Localized: 完成
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2357656613281792
+    m_Localized: 击败：
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2357751190642688
+    m_Localized: 收集：
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2358430856634368
+    m_Localized: 结果
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2359326810300416
+    m_Localized: 已击败敌人
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2359888998031360
+    m_Localized: 已收集金币
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2361592413937664
+    m_Localized: 地下城尚未开放。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2362271916351488
+    m_Localized: 深度：
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2362524539281408
+    m_Localized: 等级：
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2362815347154944
+    m_Localized: 敌人：
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2363065608691712
+    m_Localized: 开始！
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2462125627793408
+    m_Localized: 演示结束
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2462160771866624
+    m_Localized: 感谢游玩演示版！将游戏加入愿望单以关注开发进度。
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2467803314511872
+    m_Localized: 主菜单
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2468028255035392
+    m_Localized: 加入愿望单
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3927629706027008
+    m_Localized: 训练
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3929410552979456
+    m_Localized: 兵营
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3937105423097856
+    m_Localized: 制作
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3950473898876928
+    m_Localized: 矿井
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3950498993397760
+    m_Localized: 地下城
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3950681080717312
+    m_Localized: 钻机
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
