@@ -27,6 +27,7 @@ namespace UI
 
         private void Awake()
         {
+            UIButtonAudio.InstallInChildren(this);
             InitializeRecordText(_goldRecordText, ref _goldRecordBaseScale);
             InitializeRecordText(_killsRecordText, ref _killsRecordBaseScale);
             _hubButton.onClick.AddListener(OnHubButtonClicked);

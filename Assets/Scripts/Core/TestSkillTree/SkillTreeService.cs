@@ -21,6 +21,8 @@ namespace Core.TestSkillTree
 
         // Fired after any node is successfully upgraded.
         public event Action OnUpgraded;
+        // Fired after a specific node is successfully upgraded.
+        public event Action<string> OnNodeUpgraded;
 
         public void Load(SaveData data)
         {
@@ -104,6 +106,7 @@ namespace Core.TestSkillTree
             _state.SetLevel(nodeId, newLevel);
             RebuildCache();
             OnUpgraded?.Invoke();
+            OnNodeUpgraded?.Invoke(nodeId);
 
             return newLevel >= def.maxLevel
                 ? NodeUpgradeResult.UpgradedToMax

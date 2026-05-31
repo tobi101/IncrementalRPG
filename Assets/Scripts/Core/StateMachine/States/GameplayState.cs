@@ -30,6 +30,7 @@ namespace Core.StateMachine.States
             _hudView.gameObject.SetActive(true);
             _pauseMenu?.EnableForGameplay();
             _gameplay.OnSessionExpired += HandleSessionExpired;
+            _gameplay.OnLevelTransitionStarted += HandleLevelTransitionStarted;
             _gameplay.OnDemoLimitReached += HandleDemoLimitReached;
             _gameplay.Enable();
         }
@@ -37,6 +38,7 @@ namespace Core.StateMachine.States
         public void Exit(GameStateExitReason reason)
         {
             _gameplay.OnSessionExpired -= HandleSessionExpired;
+            _gameplay.OnLevelTransitionStarted -= HandleLevelTransitionStarted;
             _gameplay.OnDemoLimitReached -= HandleDemoLimitReached;
             _pauseMenu?.DisableForGameplay();
             _audioManager?.StopLavaLoop();
@@ -54,11 +56,18 @@ namespace Core.StateMachine.States
             _pauseMenu?.DisableForGameplay();
 
             var recordResult = _gameplay.SessionRecordResult;
+            _audioManager?.PlaySessionEnd();
             _sessionEndPopup.Show(_gameplay.SessionGold, _gameplay.SessionKills,
                 recordResult.IsNewGoldRecord, recordResult.IsNewKillsRecord, () =>
             {
                 OnGoToHubRequested?.Invoke();
             });
+        }
+
+        private void HandleLevelTransitionStarted(DungeonLevelConfig nextLevel, int nextLevelIndex,
+            float closeDuration, float holdDuration, float openDuration)
+        {
+            _audioManager?.PlayNewLevel();
         }
 
         private void HandleDemoLimitReached(DungeonConfig dungeon, DungeonLevelConfig level, int levelIndex)

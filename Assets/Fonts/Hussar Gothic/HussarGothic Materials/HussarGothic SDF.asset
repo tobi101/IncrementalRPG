@@ -5210,6 +5210,7 @@ MonoBehaviour:
   m_ShouldReimportFontFeatures: 0
   m_FallbackFontAssetTable:
   - {fileID: 11400000, guid: d3c7013a604c949a5bd0638cc4013daa, type: 2}
+  - {fileID: 11400000, guid: cc1c45f3e94c44c91b825869832ffbc7, type: 2}
   - {fileID: 11400000, guid: 765d990fad9a949e799f8d3d62fba365, type: 2}
   m_FontWeightTable:
   - regularTypeface: {fileID: 0}
@@ -5266,6 +5267,7 @@ MonoBehaviour:
     kerningPairs: []
   fallbackFontAssets:
   - {fileID: 11400000, guid: d3c7013a604c949a5bd0638cc4013daa, type: 2}
+  - {fileID: 11400000, guid: cc1c45f3e94c44c91b825869832ffbc7, type: 2}
   - {fileID: 11400000, guid: 765d990fad9a949e799f8d3d62fba365, type: 2}
   atlas: {fileID: 0}
 --- !u!21 &2820027109463950193

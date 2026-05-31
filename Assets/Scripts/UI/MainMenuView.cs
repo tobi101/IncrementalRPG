@@ -23,6 +23,8 @@ namespace UI
         private void Awake()
         {
             EnsureButtons();
+            UIButtonAudio.InstallInChildren(this);
+            InstallMainMenuButtonHoverAudio();
             HidePanels();
         }
 
@@ -81,6 +83,15 @@ namespace UI
                 return;
 
             _buttons = GetComponentsInChildren<MainMenuButtonView>(true);
+        }
+
+        private void InstallMainMenuButtonHoverAudio()
+        {
+            foreach (var buttonView in _buttons)
+            {
+                if (buttonView != null)
+                    UIButtonAudio.EnsureOn(buttonView.Button, playHoverSound: true, playClickSound: true);
+            }
         }
 
         private void ShowPanel(GameObject panel, string panelName)

@@ -42,6 +42,10 @@ namespace IncrementalRPG.Scripts.AudioManager
         [SerializeField] private AudioClip _skillUpgradeAudioClip;
         [SerializeField] private AudioClip _skillMaxAudioClip;
         [SerializeField] private AudioClip _skillErrorAudioClip;
+        [SerializeField] private AudioClip _sessionEndAudioClip;
+        [SerializeField] private AudioClip _newLevelAudioClip;
+        [SerializeField] private AudioClip _fightStartFadeAudioClip;
+        [SerializeField] private AudioClip _fightStartBurnAudioClip;
 
         [Header("Looping SFX")]
         [SerializeField] private AudioClip _lavaLoopClip;
@@ -125,6 +129,26 @@ namespace IncrementalRPG.Scripts.AudioManager
         public void PlaySkillError()
         {
             PlaySfxOneShot(_skillErrorAudioClip, 1f);
+        }
+
+        public void PlaySessionEnd()
+        {
+            PlaySfxOneShot(_sessionEndAudioClip, 1f);
+        }
+
+        public void PlayNewLevel()
+        {
+            PlaySfxOneShot(_newLevelAudioClip, 1f);
+        }
+
+        public void PlayFightStartFade()
+        {
+            PlaySfxOneShot(_fightStartFadeAudioClip, 1f);
+        }
+
+        public void PlayFightStartBurn()
+        {
+            PlaySfxOneShot(_fightStartBurnAudioClip, 1f);
         }
 
         public void PlaySfx(AudioClip clip, float pitch = 1f)

@@ -59,6 +59,8 @@ namespace UI
             if (_initialized)
                 return;
 
+            UIButtonAudio.InstallInChildren(this);
+
             if (_closeButton != null)
                 _closeButton.onClick.AddListener(Hide);
 
