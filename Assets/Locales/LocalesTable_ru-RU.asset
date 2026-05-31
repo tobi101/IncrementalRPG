@@ -177,111 +177,116 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2350604075655168
-    m_Localized: Аудио
+    m_Localized: "\u0410\u0443\u0434\u0438\u043E"
     m_Metadata:
       m_Items: []
   - m_Id: 2350608911687680
-    m_Localized: Новая игра
+    m_Localized: "\u041D\u043E\u0432\u0430\u044F \u0438\u0433\u0440\u0430"
     m_Metadata:
       m_Items: []
   - m_Id: 2350609582776320
-    m_Localized: Продолжить
+    m_Localized: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
     m_Metadata:
       m_Items: []
   - m_Id: 2350610291613696
-    m_Localized: Настройки
+    m_Localized: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
     m_Metadata:
       m_Items: []
   - m_Id: 2350691338149888
-    m_Localized: Авторы
+    m_Localized: "\u0410\u0432\u0442\u043E\u0440\u044B"
     m_Metadata:
       m_Items: []
   - m_Id: 2350692055375872
-    m_Localized: Выйти
+    m_Localized: "\u0412\u044B\u0439\u0442\u0438"
     m_Metadata:
       m_Items: []
   - m_Id: 2350770883125248
-    m_Localized: Музыка
+    m_Localized: "\u041C\u0443\u0437\u044B\u043A\u0430"
     m_Metadata:
       m_Items: []
   - m_Id: 2350787047972864
-    m_Localized: Звуки
+    m_Localized: "\u0417\u0432\u0443\u043A\u0438"
     m_Metadata:
       m_Items: []
   - m_Id: 2350952815255552
-    m_Localized: Язык
+    m_Localized: "\u042F\u0437\u044B\u043A"
     m_Metadata:
       m_Items: []
   - m_Id: 2351378805547008
-    m_Localized: Назад
+    m_Localized: "\u041D\u0430\u0437\u0430\u0434"
     m_Metadata:
       m_Items: []
   - m_Id: 2353037732470784
-    m_Localized: Выход
+    m_Localized: "\u0412\u044B\u0445\u043E\u0434"
     m_Metadata:
       m_Items: []
   - m_Id: 2353874554839040
-    m_Localized: Рекорд!
+    m_Localized: "\u0420\u0435\u043A\u043E\u0440\u0434!"
     m_Metadata:
       m_Items: []
   - m_Id: 2354035586752512
-    m_Localized: Готово
+    m_Localized: "\u0413\u043E\u0442\u043E\u0432\u043E"
     m_Metadata:
       m_Items: []
   - m_Id: 2357656613281792
-    m_Localized: 'Убито:'
+    m_Localized: "\u0423\u0431\u0438\u0442\u043E:"
     m_Metadata:
       m_Items: []
   - m_Id: 2357751190642688
-    m_Localized: 'Собрано:'
+    m_Localized: "\u0421\u043E\u0431\u0440\u0430\u043D\u043E:"
     m_Metadata:
       m_Items: []
   - m_Id: 2358430856634368
-    m_Localized: Результат
+    m_Localized: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442"
     m_Metadata:
       m_Items: []
   - m_Id: 2359326810300416
-    m_Localized: ПОБЕЖДЕНО ВРАГОВ
+    m_Localized: "\u041F\u041E\u0411\u0415\u0416\u0414\u0415\u041D\u041E \u0412\u0420\u0410\u0413\u041E\u0412"
     m_Metadata:
       m_Items: []
   - m_Id: 2359888998031360
-    m_Localized: СОБРАНО ЗОЛОТА
+    m_Localized: "\u0421\u041E\u0411\u0420\u0410\u041D\u041E \u0417\u041E\u041B\u041E\u0422\u0410"
     m_Metadata:
       m_Items: []
   - m_Id: 2361592413937664
-    m_Localized: Подземелье пока недоступно.
+    m_Localized: "\u041F\u043E\u0434\u0437\u0435\u043C\u0435\u043B\u044C\u0435 \u043F\u043E\u043A\u0430
+      \u043D\u0435\u0434\u043E\u0441\u0442\u0443\u043F\u043D\u043E."
     m_Metadata:
       m_Items: []
   - m_Id: 2362271916351488
-    m_Localized: 'Глубина:'
+    m_Localized: "\u0413\u043B\u0443\u0431\u0438\u043D\u0430:"
     m_Metadata:
       m_Items: []
   - m_Id: 2362524539281408
-    m_Localized: 'Уровень:'
+    m_Localized: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C:"
     m_Metadata:
       m_Items: []
   - m_Id: 2362815347154944
-    m_Localized: 'Враги:'
+    m_Localized: "\u0412\u0440\u0430\u0433\u0438:"
     m_Metadata:
       m_Items: []
   - m_Id: 2363065608691712
-    m_Localized: Начать!
+    m_Localized: "\u041D\u0430\u0447\u0430\u0442\u044C!"
     m_Metadata:
       m_Items: []
   - m_Id: 2462125627793408
-    m_Localized: Демоверсия завершена
+    m_Localized: "\u0414\u0435\u043C\u043E\u0432\u0435\u0440\u0441\u0438\u044F \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430"
     m_Metadata:
       m_Items: []
   - m_Id: 2462160771866624
-    m_Localized: Спасибо за игру! Добавьте игру в список желаемого, чтобы следить за разработкой.
+    m_Localized: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u0438\u0433\u0440\u0443!
+      \u0414\u043E\u0431\u0430\u0432\u044C\u0442\u0435 \u0438\u0433\u0440\u0443 \u0432
+      \u0441\u043F\u0438\u0441\u043E\u043A \u0436\u0435\u043B\u0430\u0435\u043C\u043E\u0433\u043E,
+      \u0447\u0442\u043E\u0431\u044B \u0441\u043B\u0435\u0434\u0438\u0442\u044C \u0437\u0430
+      \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u043E\u0439."
     m_Metadata:
       m_Items: []
   - m_Id: 2467803314511872
-    m_Localized: Главное меню
+    m_Localized: "\u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E"
     m_Metadata:
       m_Items: []
   - m_Id: 2468028255035392
-    m_Localized: В список желаемого
+    m_Localized: "\u0412 \u0441\u043F\u0438\u0441\u043E\u043A \u0436\u0435\u043B\u0430\u0435\u043C\u043E\u0433\u043E"
     m_Metadata:
       m_Items: []
   - m_Id: 3929410552979456
@@ -306,6 +311,126 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 3950681080717312
     m_Localized: "\u0411\u0443\u0440"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5129665181114368
+    m_Localized: Harding I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5129670914727936
+    m_Localized: Harding II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5129672458231808
+    m_Localized: Harding III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5129759225798656
+    m_Localized: Harding IV
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5129785536667648
+    m_Localized: Increases attack damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5129854142898176
+    m_Localized: Ka-Boom!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5129857812914176
+    m_Localized: Adds explosive barrels on the field
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5129910011027456
+    m_Localized: Range I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5129910711476224
+    m_Localized: Range II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5129911386759168
+    m_Localized: Range III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5130381018783744
+    m_Localized: Increases attack range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5134560734994432
+    m_Localized: Springness I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5134593794498560
+    m_Localized: Springness II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5134631723589632
+    m_Localized: Increases attack range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5130448047955968
+    m_Localized: Capital I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5130469128527872
+    m_Localized: Capital II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5130495946907648
+    m_Localized: Capital III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5130514699640832
+    m_Localized: Multiplies gold drop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5130541924868096
+    m_Localized: Territory I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5131142997991424
+    m_Localized: Territory II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5131166439956480
+    m_Localized: Increases map size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5131207405723648
+    m_Localized: Explosiveness I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5131257091448832
+    m_Localized: Explosiveness II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5131291149197312
+    m_Localized: Increases barrel explosion range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5131304055070720
+    m_Localized: Gunpowder I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5131355301076992
+    m_Localized: Gunpowder II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5131445126291456
+    m_Localized: Increases barrel damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5131532380397568
+    m_Localized: Trap I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5131576802271232
+    m_Localized: Trap II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5131607471022080
+    m_Localized: Increases barrel spawn frequency
     m_Metadata:
       m_Items: []
   references:

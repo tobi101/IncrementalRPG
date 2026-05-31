@@ -15,18 +15,18 @@ MonoBehaviour:
   id: bombs_explosion_radius_1
   displayName:
     m_TableReference:
-      m_TableCollectionName: LocalesTable
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 1000000000023
+      m_KeyId: 5131257091448832
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   description:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 5131291149197312
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

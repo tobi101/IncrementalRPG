@@ -15,18 +15,18 @@ MonoBehaviour:
   id: add_map_size
   displayName:
     m_TableReference:
-      m_TableCollectionName: LocalesTable
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 1000000000031
+      m_KeyId: 5130541924868096
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   description:
     m_TableReference:
-      m_TableCollectionName: LocalesTable
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 1000000000032
+      m_KeyId: 5131166439956480
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
