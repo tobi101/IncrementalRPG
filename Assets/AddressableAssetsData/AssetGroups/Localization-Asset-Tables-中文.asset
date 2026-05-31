@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: "Localization-Asset-Tables-\u4E2D\u6587"
+  m_Name: Localization-Asset-Tables-Chinese
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: "Localization-Asset-Tables-\u4E2D\u6587"
+  m_GroupName: Localization-Asset-Tables-Chinese
   m_GUID: 7d265c639fb5748ed9bc96af64d3fd63
   m_SerializeEntries:
   - m_GUID: e9be5260cb9b54c00b186ad8c68596f2

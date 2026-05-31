@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: "Localization-Assets-\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
+  m_Name: Localization-Assets-Russian
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: "Localization-Assets-\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
+  m_GroupName: Localization-Assets-Russian
   m_GUID: b06a66c5cd35048518b2fa2a83b9cfae
   m_SerializeEntries:
   - m_GUID: d3c7013a604c949a5bd0638cc4013daa
