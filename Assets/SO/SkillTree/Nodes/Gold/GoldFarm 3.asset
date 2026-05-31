@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
-  m_Name: BombsExplosionDamage 1
+  m_Name: GoldFarm 3
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
-  id: bombs_explosion_damage_1
+  id: gold_farm_2
   displayName:
     m_TableReference:
-      m_TableCollectionName: LocalesTable
+      m_TableCollectionName: 
     m_TableEntryReference:
-      m_KeyId: 1000000000021
+      m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -33,21 +33,22 @@ MonoBehaviour:
     m_LocalVariables: []
   icon: {fileID: 0}
   additionalIcon: {fileID: 0}
-  maxLevel: 4
-  goldCostPerLevel: 2c010000f4010000bc02000084030000
+  maxLevel: 3
+  goldCostPerLevel: d0070000b80b0000a00f0000
   prerequisites:
-  - node: {fileID: 11400000, guid: d4a7bc70acca045b983d7a86ef37f217, type: 2}
-    requiredLevel: 1
+  - node: {fileID: 11400000, guid: 14bee2f1f0fac084286f63911f3632e2, type: 2}
+    requiredLevel: 5
   effects:
-  - effectType: 0
-    statType: 7
+  - effectType: 1
+    statType: 9
     valuesPerLevel:
-    - 1
-    - 1
-    - 1
-    - 1
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
     feature: 0
-  positionInGraph: {x: 200, y: 300}
+  positionInGraph: {x: 0, y: 0}
   references:
     version: 2
     RefIds: []

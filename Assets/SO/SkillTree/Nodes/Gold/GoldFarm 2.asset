@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
   m_Name: GoldFarm 2
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
-  id: gold_farm_2
+  id: gold_farm_3
   displayName:
     m_TableReference:
       m_TableCollectionName: 
@@ -39,7 +39,7 @@ MonoBehaviour:
   - node: {fileID: 11400000, guid: a90c5ed93f5404b22b1db4a89c72a911, type: 2}
     requiredLevel: 5
   effects:
-  - effectType: 0
+  - effectType: 1
     statType: 9
     valuesPerLevel:
     - 0.1

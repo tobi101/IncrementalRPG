@@ -40,15 +40,15 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  killGoal: 110
+  killGoal: 50
   tilemapGenerationConfig: {fileID: 11400000, guid: b82edfeef95c1421b9b0f559dd96f756, type: 2}
   minPlayZoneSize: 7
   heatIndex: 5
   spawnTable: {fileID: 11400000, guid: 1340e9ca23522684e86fb9463e00c3ed, type: 2}
   initialEnemySpawnDensity: 0.5
-  initialBombSpawnDensity: 0.3
-  spawnInterval: 0.85
-  minSpawnInterval: 0.85
+  initialBombSpawnDensity: 0.02
+  spawnInterval: 0.6
+  minSpawnInterval: 0.6
   goldDropMultiplier: 1
   references:
     version: 2

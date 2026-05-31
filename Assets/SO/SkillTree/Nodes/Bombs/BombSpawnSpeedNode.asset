@@ -33,19 +33,20 @@ MonoBehaviour:
     m_LocalVariables: []
   icon: {fileID: 0}
   additionalIcon: {fileID: 0}
-  maxLevel: 2
-  goldCostPerLevel: f4010000e8030000
+  maxLevel: 3
+  goldCostPerLevel: e8030000e2040000dc050000
   prerequisites:
   - node: {fileID: 11400000, guid: 167514c2ba8a7400aad118fd1c1fc2ae, type: 2}
-    requiredLevel: 0
+    requiredLevel: 3
   - node: {fileID: 11400000, guid: b0dcf6a583c3d8b4292e4af3745a4bb3, type: 2}
-    requiredLevel: 0
+    requiredLevel: 3
   effects:
   - effectType: 0
     statType: 8
     valuesPerLevel:
-    - 0.1
-    - 0.2
+    - 0.05
+    - 0.05
+    - 0.05
     feature: 0
   positionInGraph: {x: 100, y: 800}
   references:
