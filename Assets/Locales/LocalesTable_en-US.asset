@@ -292,137 +292,125 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5129665181114368
-    m_Localized: "\u0417\u0430\u043A\u0430\u043B\u043A\u0430 I"
+    m_Localized: Harding I
     m_Metadata:
       m_Items: []
   - m_Id: 5129670914727936
-    m_Localized: "\u0417\u0430\u043A\u0430\u043B\u043A\u0430 II"
+    m_Localized: Harding II
     m_Metadata:
       m_Items: []
   - m_Id: 5129672458231808
-    m_Localized: "\u0417\u0430\u043A\u0430\u043B\u043A\u0430 III"
+    m_Localized: Harding III
     m_Metadata:
       m_Items: []
   - m_Id: 5129759225798656
-    m_Localized: "\u0417\u0430\u043A\u0430\u043B\u043A\u0430 IV"
+    m_Localized: Harding IV
     m_Metadata:
       m_Items: []
   - m_Id: 5129785536667648
-    m_Localized: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u0443\u0440\u043E\u043D \u0430\u0442\u0430\u043A\u0438"
+    m_Localized: Increases attack damage
     m_Metadata:
       m_Items: []
   - m_Id: 5129854142898176
-    m_Localized: "\u0411\u0430-\u0431\u0430\u0445!"
+    m_Localized: Ka-Boom!
     m_Metadata:
       m_Items: []
   - m_Id: 5129857812914176
-    m_Localized: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u0432\u0437\u0440\u044B\u0432\u0430\u044E\u0449\u0438\u0435\u0441\u044F
-      \u0431\u043E\u0447\u043A\u0438 \u043D\u0430 \u043F\u043E\u043B\u0435\t"
+    m_Localized: "Adds explosive barrels on the field\t"
     m_Metadata:
       m_Items: []
   - m_Id: 5129910011027456
-    m_Localized: "\u0420\u0430\u0437\u043C\u0430\u0445 I"
+    m_Localized: Range I
     m_Metadata:
       m_Items: []
   - m_Id: 5129910711476224
-    m_Localized: "\u0420\u0430\u0437\u043C\u0430\u0445 II"
+    m_Localized: Range II
     m_Metadata:
       m_Items: []
   - m_Id: 5129911386759168
-    m_Localized: "\u0420\u0430\u0437\u043C\u0430\u0445 III"
+    m_Localized: Range III
     m_Metadata:
       m_Items: []
   - m_Id: 5130381018783744
-    m_Localized: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u0440\u0430\u0434\u0438\u0443\u0441 \u0430\u0442\u0430\u043A\u0438"
+    m_Localized: Increases attack range
     m_Metadata:
       m_Items: []
   - m_Id: 5134560734994432
-    m_Localized: "\u041F\u0440\u0443\u0436\u0438\u043D\u0438\u0441\u0442\u043E\u0441\u0442\u044C
-      I\t"
+    m_Localized: Springness I
     m_Metadata:
       m_Items: []
   - m_Id: 5134593794498560
-    m_Localized: "\u041F\u0440\u0443\u0436\u0438\u043D\u0438\u0441\u0442\u043E\u0441\u0442\u044C
-      II"
+    m_Localized: Springness II
     m_Metadata:
       m_Items: []
   - m_Id: 5134631723589632
-    m_Localized: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u0430\u0442\u0430\u043A\u0438"
+    m_Localized: Increases attack range
     m_Metadata:
       m_Items: []
   - m_Id: 5130448047955968
-    m_Localized: "\u041A\u0430\u043F\u0438\u0442\u0430\u043B I"
+    m_Localized: Capital I
     m_Metadata:
       m_Items: []
   - m_Id: 5130469128527872
-    m_Localized: "\u041A\u0430\u043F\u0438\u0442\u0430\u043B II"
+    m_Localized: Capital II
     m_Metadata:
       m_Items: []
   - m_Id: 5130495946907648
-    m_Localized: "\u041A\u0430\u043F\u0438\u0442\u0430\u043B III"
+    m_Localized: Capital III
     m_Metadata:
       m_Items: []
   - m_Id: 5130514699640832
-    m_Localized: "\u041F\u0440\u0438\u0443\u043C\u043D\u043E\u0436\u0430\u0435\u0442
-      \u0432\u044B\u043F\u043E\u0434\u0430\u044E\u0449\u0435\u0435 \u0437\u043E\u043B\u043E\u0442\u043E"
+    m_Localized: Multiplies gold drop
     m_Metadata:
       m_Items: []
   - m_Id: 5130541924868096
-    m_Localized: "\u0422\u0435\u0440\u0440\u0438\u0442\u043E\u0440\u0438\u044F I\t\r\n"
+    m_Localized: 'Territory I
+
+'
     m_Metadata:
       m_Items: []
   - m_Id: 5131142997991424
-    m_Localized: "\u0422\u0435\u0440\u0440\u0438\u0442\u043E\u0440\u0438\u044F II"
+    m_Localized: Territory II
     m_Metadata:
       m_Items: []
   - m_Id: 5131166439956480
-    m_Localized: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u0440\u0430\u0437\u043C\u0435\u0440 \u043A\u0430\u0440\u0442\u044B"
+    m_Localized: Increases map size
     m_Metadata:
       m_Items: []
   - m_Id: 5131207405723648
-    m_Localized: "\u0412\u0437\u0440\u044B\u0432\u043D\u0430\u044F \u0440\u0435\u0430\u043A\u0446\u0438\u044F
-      I"
+    m_Localized: Explosiveness I
     m_Metadata:
       m_Items: []
   - m_Id: 5131257091448832
-    m_Localized: "\u0412\u0437\u0440\u044B\u0432\u043D\u0430\u044F \u0440\u0435\u0430\u043A\u0446\u0438\u044F
-      II"
+    m_Localized: Explosiveness II
     m_Metadata:
       m_Items: []
   - m_Id: 5131291149197312
-    m_Localized: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u0440\u0430\u0434\u0438\u0443\u0441 \u0432\u0437\u0440\u044B\u0432\u0430 \u0431\u043E\u0447\u043A\u0438"
+    m_Localized: Increases barrel explosion range
     m_Metadata:
       m_Items: []
   - m_Id: 5131304055070720
-    m_Localized: "\u041F\u043E\u0440\u043E\u0445 I"
+    m_Localized: Gunpowder I
     m_Metadata:
       m_Items: []
   - m_Id: 5131355301076992
-    m_Localized: "\u041F\u043E\u0440\u043E\u0445 II"
+    m_Localized: Gunpowder II
     m_Metadata:
       m_Items: []
   - m_Id: 5131445126291456
-    m_Localized: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u0443\u0440\u043E\u043D \u0431\u043E\u0447\u043A\u0438"
+    m_Localized: Increases barrel damage
     m_Metadata:
       m_Items: []
   - m_Id: 5131532380397568
-    m_Localized: "\u041B\u043E\u0432\u0443\u0448\u043A\u0430 I"
+    m_Localized: Trap I
     m_Metadata:
       m_Items: []
   - m_Id: 5131576802271232
-    m_Localized: "\u041B\u043E\u0432\u0443\u0448\u043A\u0430 II"
+    m_Localized: Trap II
     m_Metadata:
       m_Items: []
   - m_Id: 5131607471022080
-    m_Localized: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u0447\u0430\u0441\u0442\u043E\u0442\u0443 \u043F\u043E\u044F\u0432\u043B\u0435\u043D\u0438\u044F
-      \u0431\u043E\u0447\u043A\u0438\t"
+    m_Localized: Increases barrel spawn frequency
     m_Metadata:
       m_Items: []
   references:
