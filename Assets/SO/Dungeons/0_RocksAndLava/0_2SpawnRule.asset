@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entity.SpawnTable
   entries:
   - config: {fileID: 11400000, guid: ea27611c1934e48299db5b237a35e436, type: 2}
-    weight: 90
+    weight: 70
     requiredFeature: 0
   - config: {fileID: 11400000, guid: c92105f795d624f9799ec804a854414b, type: 2}
-    weight: 0
+    weight: 20
     requiredFeature: 0
   - config: {fileID: 11400000, guid: f625a2aa271d14fe7834195662c85276, type: 2}
     weight: 0
     requiredFeature: 0
   - config: {fileID: 11400000, guid: c52f6666baa494e00bdbd069deaf8776, type: 2}
-    weight: 0
+    weight: 10
     requiredFeature: 1

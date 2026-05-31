@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: defc4df3ea64e462090a58eb94ac39c2, type: 3}
   m_Name: BombExplosionConfig
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.Bomb.BombExplosionConfig
-  baseDamage: 20
-  baseRadius: 2
+  baseDamage: 10
+  baseRadius: 3
   aspectRatio: 0.55

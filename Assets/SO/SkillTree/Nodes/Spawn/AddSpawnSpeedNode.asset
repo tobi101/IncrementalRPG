@@ -34,17 +34,17 @@ MonoBehaviour:
   icon: {fileID: 4153240674832713612, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
   additionalIcon: {fileID: 0}
   maxLevel: 3
-  goldCostPerLevel: 64000000c80000002c010000
+  goldCostPerLevel: 6400000096000000c8000000
   prerequisites:
-  - node: {fileID: 11400000, guid: 52ec292eab03749e5ae85e8931e24366, type: 2}
+  - node: {fileID: 11400000, guid: 238fc219b23d547a1b6e6c3907e17af4, type: 2}
     requiredLevel: 1
   effects:
   - effectType: 0
     statType: 3
     valuesPerLevel:
-    - 0.15
-    - 0.2
-    - 0.25
+    - 0.1
+    - 0.1
+    - 0.1
     feature: 0
   positionInGraph: {x: 0, y: 200}
   references:

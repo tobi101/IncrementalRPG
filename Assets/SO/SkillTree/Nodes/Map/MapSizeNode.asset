@@ -34,7 +34,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 3917a92ba53ee4220b6789dc0bc2d4a2, type: 3}
   additionalIcon: {fileID: 21300000, guid: a5839163429d1423bb90ec3946c1c316, type: 3}
   maxLevel: 1
-  goldCostPerLevel: a00f0000
+  goldCostPerLevel: d0070000
   prerequisites:
   - node: {fileID: 11400000, guid: a90c5ed93f5404b22b1db4a89c72a911, type: 2}
     requiredLevel: 5

@@ -40,7 +40,7 @@ MonoBehaviour:
   - effectType: 0
     statType: 1
     valuesPerLevel:
-    - 2
+    - 1
     feature: 0
   positionInGraph: {x: -100, y: 100}
   references:
