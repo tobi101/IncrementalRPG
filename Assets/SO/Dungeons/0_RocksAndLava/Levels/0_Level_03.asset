@@ -47,8 +47,8 @@ MonoBehaviour:
   spawnTable: {fileID: 11400000, guid: 1340e9ca23522684e86fb9463e00c3ed, type: 2}
   initialEnemySpawnDensity: 0.5
   initialBombSpawnDensity: 0.02
-  spawnInterval: 0.6
-  minSpawnInterval: 0.6
+  spawnInterval: 0.7
+  minSpawnInterval: 0.7
   goldDropMultiplier: 1
   references:
     version: 2
