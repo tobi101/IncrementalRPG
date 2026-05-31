@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,12 +5,11 @@ namespace Boot
 {
     public class Loader : MonoBehaviour
     {
-        private IEnumerator Start()
+        private void Start()
         {
-            yield return  null;
-            
-            Debug.Log("All app services are initialized.");
-            SceneManager.LoadSceneAsync("MainMenuScene");
+            Debug.Log("[Loader] Bootstrap started.");
+            Debug.Log("[Loader] Loading MainMenuScene.");
+            SceneManager.LoadScene("MainMenuScene");
         }
     }
 }
