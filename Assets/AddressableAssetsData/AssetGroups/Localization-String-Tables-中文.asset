@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-String-Tables-Chinese
+  m_Name: "Localization-String-Tables-\u4E2D\u6587"
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: Localization-String-Tables-Chinese
-  m_GUID: 1194d49e68f8f4f328e909ca959f3e51
+  m_GroupName: "Localization-String-Tables-\u4E2D\u6587"
+  m_GUID: 756a9a63db58d470eb290c90d74c733e
   m_SerializeEntries:
   - m_GUID: c9b13d1c5ec414df39a5736fc01f8307
     m_Address: LocalesTable_zh
@@ -25,5 +25,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: d41674b07417b47f9a6cd1ed2550fe94, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 0877d287085e440acbfaf90affe88077, type: 2}
-    - {fileID: 11400000, guid: 40b5d100d8e3041f2a6262ad164aecc3, type: 2}
+    - {fileID: 11400000, guid: a55b11f4ff3234090bfed8d731fe1932, type: 2}
+    - {fileID: 11400000, guid: 8c3775ba709084f76816db76f3b4f9c1, type: 2}

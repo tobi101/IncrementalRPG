@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5d17a21594effb4e9591490b009e7aa, type: 3}
-  m_Name: "Localization-Assets-\u0420\u0443\u0441\u0441\u043A\u0438\u0439_BundledAssetGroupSchema"
+  m_Name: Localization-Asset-Tables-Chinese_BundledAssetGroupSchema
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.GroupSchemas.BundledAssetGroupSchema
-  m_Group: {fileID: 11400000, guid: 4f85c9dcc555f440b81e25470c6f1de0, type: 2}
+  m_Group: {fileID: 11400000, guid: b61289ee71a83445da6b07631e8b5cdf, type: 2}
   m_InternalBundleIdMode: 1
   m_Compression: 1
   m_IncludeAddressInCatalog: 1

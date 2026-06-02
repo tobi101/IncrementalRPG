@@ -15,14 +15,13 @@ namespace UI
     {
         [SerializeField] private TMP_Text _sessionGoldText;
         [SerializeField] private TMP_Text _killsText;
-        [SerializeField] private TMP_Text _levelKillGoalText;
+        [SerializeField] private TMP_Text _goalValueText;
         [SerializeField] private TMP_Text _dungeonLevelText;
         [SerializeField] private GoldPopupView _popupPrefab;
         [SerializeField] private RectTransform _popupContainer;
         [SerializeField] private LevelTransitionCurtainView _levelTransitionCurtain;
         [SerializeField] private CanvasGroup _levelTransitionGroup;
         [SerializeField] private TMP_Text _levelTransitionText;
-        [SerializeField] private LocalizedString _levelKillGoalFormat = new();
         [SerializeField] private LocalizedString _dungeonLevelFormat = new();
         [SerializeField] private LocalizedString _levelTransitionMessage = new();
         [SerializeField] private float _levelTransitionFadeDuration = 0.25f;
@@ -43,7 +42,6 @@ namespace UI
         private int _pendingPopupGold;
         private float _batchTimer;
         private Coroutine _transitionCoroutine;
-        private LocalizedStringBinding _levelKillGoalBinding;
         private LocalizedStringBinding _dungeonLevelBinding;
         private LocalizedStringBinding _levelTransitionBinding;
         private LocalizedString _boundDungeonName;
@@ -55,7 +53,6 @@ namespace UI
 
         private void Awake()
         {
-            _levelKillGoalBinding = new LocalizedStringBinding(_levelKillGoalText);
             _dungeonLevelBinding = new LocalizedStringBinding(_dungeonLevelText);
             _levelTransitionBinding = new LocalizedStringBinding(_levelTransitionText);
             _dungeonNameChanged = HandleDungeonNameChanged;
@@ -79,7 +76,6 @@ namespace UI
 
             _gameplay.OnSessionGoldEarned += HandleSessionGoldEarned;
             _gameplay.OnSessionKillsChanged += HandleSessionKillsChanged;
-            _gameplay.OnLevelKillGoalChanged += HandleLevelKillGoalChanged;
             _gameplay.OnDungeonLevelChanged += HandleDungeonLevelChanged;
             _gameplay.OnLevelTransitionStarted += HandleLevelTransitionStarted;
         }
@@ -96,7 +92,7 @@ namespace UI
             _killsTarget = 0;
             if (_sessionGoldText != null) _sessionGoldText.text = "0";
             if (_killsText != null) _killsText.text = "0";
-            UpdateLevelKillGoalText(0, 0);
+            if (_goalValueText != null) _goalValueText.text = "0";
             ClearDungeonLevelNameBindings();
             _dungeonLevelBinding.Clear();
             _levelTransitionBinding.Clear();
@@ -181,15 +177,12 @@ namespace UI
             }
         }
 
-        private void HandleLevelKillGoalChanged(int current, int required)
-        {
-            UpdateLevelKillGoalText(current, required);
-        }
-
         private void HandleDungeonLevelChanged(DungeonConfig dungeon, DungeonLevelConfig level, int levelIndex)
         {
-            if (_dungeonLevelText == null) return;
+            if (_goalValueText != null)
+                _goalValueText.text = level != null ? level.killGoal.ToString() : "0";
 
+            if (_dungeonLevelText == null) return;
             BindDungeonName(dungeon != null ? dungeon.displayName : null);
             BindLevelName(level != null ? level.displayName : null);
         }
@@ -233,28 +226,6 @@ namespace UI
 
             SetLevelTransitionVisible(false);
             _transitionCoroutine = null;
-        }
-
-        private void UpdateLevelKillGoalText(int current, int required)
-        {
-            if (_levelKillGoalText == null)
-                return;
-
-            if (required <= 0)
-            {
-                _levelKillGoalBinding.Clear();
-                _levelKillGoalText.text = current.ToString();
-                return;
-            }
-
-            if (_levelKillGoalFormat == null || _levelKillGoalFormat.IsEmpty)
-            {
-                _levelKillGoalBinding.Clear();
-                return;
-            }
-
-            _levelKillGoalFormat.Arguments = new object[] { current, required };
-            _levelKillGoalBinding.Bind(_levelKillGoalFormat);
         }
 
         private void BindDungeonName(LocalizedString localizedName)
@@ -412,13 +383,11 @@ namespace UI
             {
                 _gameplay.OnSessionGoldEarned -= HandleSessionGoldEarned;
                 _gameplay.OnSessionKillsChanged -= HandleSessionKillsChanged;
-                _gameplay.OnLevelKillGoalChanged -= HandleLevelKillGoalChanged;
                 _gameplay.OnDungeonLevelChanged -= HandleDungeonLevelChanged;
                 _gameplay.OnLevelTransitionStarted -= HandleLevelTransitionStarted;
             }
 
             ClearDungeonLevelNameBindings();
-            _levelKillGoalBinding?.Dispose();
             _dungeonLevelBinding?.Dispose();
             _levelTransitionBinding?.Dispose();
         }

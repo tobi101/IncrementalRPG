@@ -22,13 +22,13 @@ MonoBehaviour:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5e16a8991d72045cca2b18fdb76a85e4
-    m_Address: "\u4E2D\u6587"
+    m_Address: Chinese
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7418ddd7ec04642f7959bc239ab22726
-    m_Address: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
+    m_Address: Russian
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale

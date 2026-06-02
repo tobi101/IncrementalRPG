@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
-  m_Name: "Localization-Assets-\u4E2D\u6587_ContentUpdateGroupSchema"
+  m_Name: Localization-Asset-Tables-Russian_ContentUpdateGroupSchema
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.GroupSchemas.ContentUpdateGroupSchema
-  m_Group: {fileID: 11400000, guid: 3d74bc1c6a46a42a7b6aea4b885ff54f, type: 2}
+  m_Group: {fileID: 11400000, guid: 684a9cda0e1234dad9c5e57b908b9d9b, type: 2}
   m_StaticContent: 0
