@@ -34,7 +34,7 @@ namespace UI
             {
                 elapsed += Time.deltaTime;
                 var t = elapsed / duration;
-                ((RectTransform)transform).anchoredPosition = new Vector2(0f, startY + moveDistance * t);
+                ((RectTransform)transform).anchoredPosition = new Vector2(0f, startY - moveDistance * t);
                 _text.color = new Color(startColor.r, startColor.g, startColor.b, 1f - t);
                 yield return null;
             }

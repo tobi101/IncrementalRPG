@@ -368,7 +368,7 @@ namespace UI
                 ? _popupPool.Dequeue()
                 : Instantiate(_popupPrefab, _popupContainer);
 
-            var startY = _activePopupCount * 50f;
+            var startY = _popupContainer.rect.height * 0.5f - _activePopupCount * 50f;
             _activePopupCount++;
             popup.Show(amount, startY, () =>
             {
