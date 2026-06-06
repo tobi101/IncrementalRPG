@@ -1,3 +1,4 @@
+using System;
 using Core.Gameplay;
 using Core.Save;
 using Core.StateMachine;
@@ -27,12 +28,16 @@ namespace UI
         [Inject] private GameplayInputBlocker _inputBlocker;
         [Inject] private SaveService _saveService;
 
+        public event Action<bool> OnPauseChanged;
+
         private InputAction _pauseAction;
         private bool _isGameplayInputBlockingAllowed;
         private bool _isPauseShortcutEnabled;
         private bool _isExitingToMainMenu;
+        private bool _isGameplayPaused;
 
         public bool IsOpen => Root.activeSelf;
+        public bool IsGameplayPaused => _isGameplayPaused;
 
         private GameObject Root => _root != null ? _root : gameObject;
 
@@ -92,6 +97,7 @@ namespace UI
             SetPausePanelVisible(true);
             _settingsMenu?.Close();
             SetGameplayInputBlocked(true);
+            SetGameplayPaused(true);
         }
 
         public void Close()
@@ -100,6 +106,7 @@ namespace UI
             SetPausePanelVisible(false);
             Root.SetActive(false);
             SetGameplayInputBlocked(false);
+            SetGameplayPaused(false);
         }
 
         private void OpenSettings()
@@ -108,6 +115,7 @@ namespace UI
             SetPausePanelVisible(false);
             _settingsMenu?.Open();
             SetGameplayInputBlocked(true);
+            SetGameplayPaused(true);
         }
 
         private void ReturnToPause()
@@ -116,6 +124,7 @@ namespace UI
             _settingsMenu?.Close();
             SetPausePanelVisible(true);
             SetGameplayInputBlocked(true);
+            SetGameplayPaused(true);
         }
 
         private void ExitToMainMenu()
@@ -185,6 +194,16 @@ namespace UI
         private void SetGameplayInputBlocked(bool blocked)
         {
             _inputBlocker?.SetBlocked(_isGameplayInputBlockingAllowed && blocked);
+        }
+
+        private void SetGameplayPaused(bool paused)
+        {
+            var shouldPause = _isGameplayInputBlockingAllowed && paused;
+            if (_isGameplayPaused == shouldPause)
+                return;
+
+            _isGameplayPaused = shouldPause;
+            OnPauseChanged?.Invoke(_isGameplayPaused);
         }
 
         private static void AddListeners(Button[] buttons, UnityEngine.Events.UnityAction listener)

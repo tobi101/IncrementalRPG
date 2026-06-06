@@ -217,6 +217,11 @@ namespace UI
             _skipAction = new InputAction("SkipIntro", InputActionType.Button);
             _skipAction.AddBinding("<Keyboard>/escape");
             _skipAction.AddBinding("<Keyboard>/space");
+            _skipAction.AddBinding("<Mouse>/leftButton");
+            _skipAction.AddBinding("<Mouse>/rightButton");
+            _skipAction.AddBinding("<Mouse>/middleButton");
+            _skipAction.AddBinding("<Mouse>/backButton");
+            _skipAction.AddBinding("<Mouse>/forwardButton");
             _skipAction.AddBinding("<Gamepad>/start");
             _skipAction.AddBinding("<Gamepad>/buttonSouth");
         }

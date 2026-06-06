@@ -45,6 +45,7 @@ namespace Core.StateMachine.Features
         public DungeonConfig CurrentDungeon => _currentDungeon;
         public DungeonLevelConfig CurrentLevel => _currentLevel;
         public SessionRecordResult SessionRecordResult => _sessionRecordResult;
+        public bool IsPaused => _isPaused;
 
         private enum RunState
         {
@@ -74,6 +75,7 @@ namespace Core.StateMachine.Features
         private int _sessionKills;
         private SessionRecordResult _sessionRecordResult;
         private bool _sessionResultsApplied;
+        private bool _isPaused;
 
         public void Initialize()
         {
@@ -92,6 +94,8 @@ namespace Core.StateMachine.Features
             _levelKills = 0;
             _sessionRecordResult = default;
             _sessionResultsApplied = false;
+            _isPaused = false;
+            _spawnService.SetPaused(false);
             _pendingLevelTransitionIndex = -1;
             _transitionTargetLevelIndex = -1;
             _transitionTimer = 0f;
@@ -132,8 +136,21 @@ namespace Core.StateMachine.Features
             RestartSessionFromCurrentLevel();
         }
 
+        public void SetPaused(bool isPaused)
+        {
+            if (_runState == RunState.Inactive)
+                isPaused = false;
+
+            if (_isPaused == isPaused)
+                return;
+
+            _isPaused = isPaused;
+            _spawnService.SetPaused(_isPaused);
+        }
+
         public void Disable()
         {
+            SetPaused(false);
             _runState = RunState.Inactive;
             _pendingLevelTransitionIndex = -1;
             _transitionTargetLevelIndex = -1;
@@ -145,6 +162,9 @@ namespace Core.StateMachine.Features
 
         public void Tick(float deltaTime)
         {
+            if (_isPaused)
+                return;
+
             switch (_runState)
             {
                 case RunState.Ready:

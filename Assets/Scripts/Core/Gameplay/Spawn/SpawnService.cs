@@ -22,6 +22,8 @@ namespace Core.Gameplay
         private float _spawnInterval = 2f;
         private float _timer;
         private readonly List<ActiveEntry> _active = new();
+        private readonly List<Action> _pendingDeathCompletions = new();
+        private bool _isPaused;
 
         private struct ActiveEntry
         {
@@ -69,6 +71,17 @@ namespace Core.Gameplay
             }
         }
 
+        public void SetPaused(bool isPaused)
+        {
+            if (_isPaused == isPaused)
+                return;
+
+            _isPaused = isPaused;
+
+            if (!_isPaused)
+                FlushPendingDeathCompletions();
+        }
+
         private void TrySpawnAny()
         {
             if (_spawnTable == null) return;
@@ -95,6 +108,7 @@ namespace Core.Gameplay
         {
             var snapshot = new List<ActiveEntry>(_active);
             _active.Clear();
+            _pendingDeathCompletions.Clear();
             _timer = 0f;
             foreach (var entry in snapshot)
             {
@@ -121,18 +135,43 @@ namespace Core.Gameplay
                     OnCreatureKilled?.Invoke(creature.TileCoord, config.goldDrop);
 
                 _audioManager?.PlayRandomSfx(config.deathSounds);
-                view.PlayDeath(() =>
+                Action completeDeath = () =>
                 {
                     _active.RemoveAll(e => e.Creature == creature);
                     _tileGrid.Free(creature);
                     _poolManager.Return(view, config);
-                });
+                };
+
+                view.PlayDeath(() => CompleteDeathOrDefer(completeDeath));
             };
             creature.OnDied += onDied;
             _active.Add(new ActiveEntry { Creature = creature, View = view, Config = config, OnDied = onDied });
 
             if (config.featureType != FeatureType.None)
                 OnFeatureSpawned?.Invoke(creature, view, coord, config);
+        }
+
+        private void CompleteDeathOrDefer(Action completeDeath)
+        {
+            if (!_isPaused)
+            {
+                completeDeath?.Invoke();
+                return;
+            }
+
+            _pendingDeathCompletions.Add(completeDeath);
+        }
+
+        private void FlushPendingDeathCompletions()
+        {
+            if (_pendingDeathCompletions.Count == 0)
+                return;
+
+            var snapshot = new List<Action>(_pendingDeathCompletions);
+            _pendingDeathCompletions.Clear();
+
+            foreach (var completeDeath in snapshot)
+                completeDeath?.Invoke();
         }
     }
 }

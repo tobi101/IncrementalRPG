@@ -28,6 +28,8 @@ namespace Core.StateMachine.States
             _demoEndPopup = _demoEndPopupProvider?.View;
             _menuCanvas.gameObject.SetActive(false);
             _hudView.gameObject.SetActive(true);
+            if (_pauseMenu != null)
+                _pauseMenu.OnPauseChanged += HandlePauseChanged;
             _pauseMenu?.EnableForGameplay();
             _gameplay.OnSessionExpired += HandleSessionExpired;
             _gameplay.OnLevelTransitionStarted += HandleLevelTransitionStarted;
@@ -40,6 +42,9 @@ namespace Core.StateMachine.States
             _gameplay.OnSessionExpired -= HandleSessionExpired;
             _gameplay.OnLevelTransitionStarted -= HandleLevelTransitionStarted;
             _gameplay.OnDemoLimitReached -= HandleDemoLimitReached;
+            if (_pauseMenu != null)
+                _pauseMenu.OnPauseChanged -= HandlePauseChanged;
+            _gameplay.SetPaused(false);
             _pauseMenu?.DisableForGameplay();
             _audioManager?.StopLavaLoop();
             _gameplay.Disable();
@@ -50,6 +55,11 @@ namespace Core.StateMachine.States
         }
 
         public void Tick(float deltaTime) => _gameplay.Tick(deltaTime);
+
+        private void HandlePauseChanged(bool isPaused)
+        {
+            _gameplay.SetPaused(isPaused);
+        }
 
         private void HandleSessionExpired()
         {

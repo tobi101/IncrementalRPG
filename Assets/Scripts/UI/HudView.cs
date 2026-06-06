@@ -120,6 +120,12 @@ namespace UI
 
         private void Update()
         {
+            var isGameplayPaused = IsGameplayPaused();
+            _levelTransitionCurtain?.SetPaused(isGameplayPaused);
+
+            if (isGameplayPaused)
+                return;
+
             if (_batchTimer > 0f)
             {
                 _batchTimer -= Time.deltaTime;
@@ -194,6 +200,7 @@ namespace UI
 
             if (_levelTransitionCurtain != null)
             {
+                _levelTransitionCurtain.SetPaused(IsGameplayPaused());
                 _levelTransitionCurtain.Play(closeDuration, holdDuration, openDuration);
                 return;
             }
@@ -219,7 +226,7 @@ namespace UI
 
             var holdDuration = Mathf.Max(0f, duration - _levelTransitionFadeDuration * 2f);
             if (holdDuration > 0f)
-                yield return new WaitForSeconds(holdDuration);
+                yield return WaitForGameplaySeconds(holdDuration);
 
             if (_levelTransitionGroup != null)
                 yield return FadeTransitionGroup(1f, 0f, _levelTransitionFadeDuration);
@@ -331,13 +338,33 @@ namespace UI
             var elapsed = 0f;
             while (elapsed < duration)
             {
-                elapsed += Time.deltaTime;
+                elapsed += GetGameplayDeltaTime();
                 var t = Mathf.Clamp01(elapsed / duration);
                 _levelTransitionGroup.alpha = Mathf.Lerp(from, to, t);
                 yield return null;
             }
 
             _levelTransitionGroup.alpha = to;
+        }
+
+        private IEnumerator WaitForGameplaySeconds(float duration)
+        {
+            var elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += GetGameplayDeltaTime();
+                yield return null;
+            }
+        }
+
+        private float GetGameplayDeltaTime()
+        {
+            return IsGameplayPaused() ? 0f : Time.deltaTime;
+        }
+
+        private bool IsGameplayPaused()
+        {
+            return _gameplay != null && _gameplay.IsPaused;
         }
 
         private void HideLevelTransition()

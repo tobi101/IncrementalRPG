@@ -16,6 +16,7 @@ namespace UI
         private Vector2 _topClosedPosition;
         private Vector2 _bottomClosedPosition;
         private bool _positionsCached;
+        private bool _isPaused;
 
         private void Awake()
         {
@@ -50,8 +51,15 @@ namespace UI
                 Mathf.Max(0f, openDuration)));
         }
 
+        public void SetPaused(bool isPaused)
+        {
+            _isPaused = isPaused;
+        }
+
         public void HideImmediately()
         {
+            _isPaused = false;
+
             if (_routine != null)
             {
                 StopCoroutine(_routine);
@@ -78,7 +86,7 @@ namespace UI
             yield return AnimateCurtains(0f, 1f, closeDuration);
 
             if (holdDuration > 0f)
-                yield return new WaitForSeconds(holdDuration);
+                yield return WaitForGameplaySeconds(holdDuration);
 
             yield return AnimateCurtains(1f, 0f, openDuration);
 
@@ -100,13 +108,28 @@ namespace UI
             var elapsed = 0f;
             while (elapsed < duration)
             {
-                elapsed += Time.deltaTime;
+                elapsed += GetGameplayDeltaTime();
                 var t = Mathf.Clamp01(elapsed / duration);
                 SetCurtainProgress(Mathf.Lerp(from, to, t));
                 yield return null;
             }
 
             SetCurtainProgress(to);
+        }
+
+        private IEnumerator WaitForGameplaySeconds(float duration)
+        {
+            var elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += GetGameplayDeltaTime();
+                yield return null;
+            }
+        }
+
+        private float GetGameplayDeltaTime()
+        {
+            return _isPaused ? 0f : Time.deltaTime;
         }
 
         private void SetCurtainProgress(float progress)
