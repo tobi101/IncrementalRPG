@@ -32,13 +32,13 @@ namespace Core.Gameplay
         public void Bind(DamageZone damageZone)
         {
             _damageZone = damageZone;
-            _damageZone.OnDamageTick += HandleDamageTick;
+            _damageZone.OnZoneTick += HandleZoneTick;
         }
 
         private void OnDestroy()
         {
             if (_damageZone != null)
-                _damageZone.OnDamageTick -= HandleDamageTick;
+                _damageZone.OnZoneTick -= HandleZoneTick;
         }
 
         private void Update()
@@ -56,7 +56,7 @@ namespace Core.Gameplay
             _wave2.transform.localScale  = _wave2BaseScale  * s;
         }
 
-        private void HandleDamageTick()
+        private void HandleZoneTick()
         {
             PlayAttack(_wave1);
             PlayAttack(_wave2);

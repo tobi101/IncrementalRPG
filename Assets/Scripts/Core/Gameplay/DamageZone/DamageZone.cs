@@ -33,7 +33,7 @@ namespace Core.Gameplay
         public State CurrentState { get; private set; } = State.Idle;
 
         public event Action<State> OnStateChanged;
-        public event Action OnDamageTick;
+        public event Action OnZoneTick;
 
         public DamageZone(TileGrid tileGrid, DamageZoneConfig config, DamageZoneView view, AudioManager audioManager, Player player,
             SkillTreeService skillTree, GameplayInputBlocker inputBlocker)
@@ -61,9 +61,7 @@ namespace Core.Gameplay
             }
 
             UpdateAim();
-            RefreshCreaturesInZone();
-            UpdateState();
-            TickDamage(deltaTime);
+            TickZone(deltaTime);
         }
 
         public void UpdateAim()
@@ -84,19 +82,27 @@ namespace Core.Gameplay
         private void RefreshCreaturesInZone()
         {
             _creaturesInZone.Clear();
-            var a = RadiusX;
-            var b = RadiusY;
 
             foreach (var creature in _tileGrid.GetAll())
             {
                 if (!creature.IsAlive) continue;
 
-                var creatureWorldPos = _tileGrid.GetWorldPosition(creature.TileCoord);
-                var dx = (creatureWorldPos.x - _worldPosition.x) / a;
-                var dy = (creatureWorldPos.y - _worldPosition.y) / b;
-                if (dx * dx + dy * dy <= 1f)
+                if (IntersectsCreatureHitArea(creature))
                     _creaturesInZone.Add(creature);
             }
+        }
+
+        private bool IntersectsCreatureHitArea(Creature creature)
+        {
+            var hitRadius = Mathf.Max(0f, creature.Config.damageZoneHitRadius);
+            var radiusX = RadiusX + hitRadius;
+            var radiusY = RadiusY + hitRadius;
+
+            var footWorldPos = _tileGrid.GetWorldPosition(creature.TileCoord);
+            var dx = (footWorldPos.x - _worldPosition.x) / radiusX;
+            var dy = (footWorldPos.y - _worldPosition.y) / radiusY;
+
+            return dx * dx + dy * dy <= 1f;
         }
 
         private void UpdateState()
@@ -104,22 +110,20 @@ namespace Core.Gameplay
             var newState = _creaturesInZone.Count > 0 ? State.Attacking : State.Idle;
             if (newState == CurrentState) return;
 
-            if (newState == State.Attacking)
-                _tickTimer = 0f;
-
             CurrentState = newState;
             OnStateChanged?.Invoke(CurrentState);
         }
 
-        private void TickDamage(float deltaTime)
+        private void TickZone(float deltaTime)
         {
-            if (CurrentState != State.Attacking) return;
-
             _tickTimer += deltaTime;
             var tickInterval = _config.tickInterval / _skillTree.GetMultiplier(StatType.AttackSpeed);
             if (_tickTimer < tickInterval) return;
 
             _tickTimer = 0f;
+            RefreshCreaturesInZone();
+            UpdateState();
+
             var damage = (int)((_config.damagePerTick + _skillTree.GetBonus(StatType.ZoneDamage)) * _skillTree.GetMultiplier(StatType.ZoneDamage));
             for (var i = 0; i < _creaturesInZone.Count; i++)
             {
@@ -128,7 +132,7 @@ namespace Core.Gameplay
             }
 
             _audioManager.PlayWaveAudio();
-            OnDamageTick?.Invoke();
+            OnZoneTick?.Invoke();
         }
 
         private void StopDamageRegistration()

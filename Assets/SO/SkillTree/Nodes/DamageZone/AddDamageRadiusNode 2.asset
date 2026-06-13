@@ -39,7 +39,7 @@ MonoBehaviour:
   - node: {fileID: 11400000, guid: 13e9c910a41ef5a449c0f49e2ae48ac7, type: 2}
     requiredLevel: 4
   effects:
-  - effectType: 0
+  - effectType: 1
     statType: 0
     valuesPerLevel:
     - 0.25

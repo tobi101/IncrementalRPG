@@ -35,6 +35,9 @@ MonoBehaviour:
   goldDrop: 0
   featureType: 1
   viewPrefab: {fileID: 3407093723635168924, guid: 850500abec315432e9752dbf2f60f589, type: 3}
+  damageZoneHitRadius: 0.25
+  drawDamageZoneHitAreaGizmo: 0
+  damageZoneHitAreaGizmoColor: {r: 1, g: 0.85, b: 0, a: 0.8}
   damageSound: {fileID: 0}
   deathSounds:
   - {fileID: 8300000, guid: 2c76051213afd4b3c86d2b65db9c4b73, type: 3}

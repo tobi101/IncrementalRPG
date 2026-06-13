@@ -83,6 +83,17 @@ namespace Entity
                 CompleteDeath();
         }
 
+        private void OnDrawGizmos()
+        {
+            if (!TryGetDamageZoneHitAreaGizmo(out var center, out var radius, out var color))
+                return;
+
+            var previousColor = Gizmos.color;
+            Gizmos.color = color;
+            DrawCircleXY(center, radius);
+            Gizmos.color = previousColor;
+        }
+
         private void HandleHealthChanged(int current, int max)
         {
             if (_animationBody != null && current < _previousHealth)
@@ -231,6 +242,38 @@ namespace Entity
             }
 
             return false;
+        }
+
+        private bool TryGetDamageZoneHitAreaGizmo(out Vector3 center, out float radius, out Color color)
+        {
+            center = _footAnchor != null ? _footAnchor.position : transform.position;
+            radius = 0f;
+            color = default;
+
+            var config = _bound?.Config;
+            if (config == null || !config.drawDamageZoneHitAreaGizmo)
+                return false;
+
+            radius = Mathf.Max(0f, config.damageZoneHitRadius);
+            if (radius <= 0f)
+                return false;
+
+            color = config.damageZoneHitAreaGizmoColor;
+            return true;
+        }
+
+        private static void DrawCircleXY(Vector3 center, float radius)
+        {
+            const int segments = 32;
+            var previous = center + new Vector3(radius, 0f, 0f);
+
+            for (var i = 1; i <= segments; i++)
+            {
+                var angle = i * (2f * Mathf.PI / segments);
+                var next = center + new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0f);
+                Gizmos.DrawLine(previous, next);
+                previous = next;
+            }
         }
 
         private void CompleteDeath()
