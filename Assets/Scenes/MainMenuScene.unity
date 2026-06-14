@@ -786,7 +786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4155020799929537984, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_text
-      value: AUTHORS
+      value: authors
       objectReference: {fileID: 0}
     - target: {fileID: 4155020799929537984, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_fontSize
@@ -885,8 +885,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
-      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
-      value: 2350691338149888
+      propertyPath: m_StringReference.m_TableEntryReference.m_Key
+      value: authors
       objectReference: {fileID: 0}
     - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
@@ -924,7 +924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4155020799929537984, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_text
-      value: SETTINGS
+      value: settings
       objectReference: {fileID: 0}
     - target: {fileID: 4155020799929537984, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_fontSize
@@ -1023,8 +1023,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
-      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
-      value: 2350610291613696
+      propertyPath: m_StringReference.m_TableEntryReference.m_Key
+      value: settings
       objectReference: {fileID: 0}
     - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
@@ -1194,8 +1194,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2350770883125248
-      m_Key: 
+      m_KeyId: 0
+      m_Key: music
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -7772,7 +7772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4155020799929537984, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_text
-      value: CONTINUE
+      value: continue
       objectReference: {fileID: 0}
     - target: {fileID: 4155020799929537984, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_fontSize
@@ -7871,8 +7871,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
-      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
-      value: 2350609582776320
+      propertyPath: m_StringReference.m_TableEntryReference.m_Key
+      value: continue
       objectReference: {fileID: 0}
     - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
@@ -8871,8 +8871,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2350787047972864
-      m_Key: 
+      m_KeyId: 0
+      m_Key: sounds
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -9994,8 +9994,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2350604075655168
-      m_Key: 
+      m_KeyId: 0
+      m_Key: audio
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -10247,8 +10247,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2350952815255552
-      m_Key: 
+      m_KeyId: 0
+      m_Key: language
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -10369,7 +10369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4155020799929537984, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_text
-      value: QUIT
+      value: quit
       objectReference: {fileID: 0}
     - target: {fileID: 4155020799929537984, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_fontSize
@@ -10468,8 +10468,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
-      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
-      value: 2350692055375872
+      propertyPath: m_StringReference.m_TableEntryReference.m_Key
+      value: quit
       objectReference: {fileID: 0}
     - target: {fileID: 9143605073900966240, guid: cda63e28ef72e4559bca2986e580ffd9, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
@@ -10639,8 +10639,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2351378805547008
-      m_Key: 
+      m_KeyId: 0
+      m_Key: back
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []

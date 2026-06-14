@@ -669,8 +669,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 3927629706027008
-      m_Key: 
+      m_KeyId: 0
+      m_Key: training
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -1467,8 +1467,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2357656613281792
-      m_Key: 
+      m_KeyId: 0
+      m_Key: enemies_score_title
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -1741,8 +1741,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2350609582776320
-      m_Key: 
+      m_KeyId: 0
+      m_Key: continue
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -3353,8 +3353,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2359326810300416
-      m_Key: 
+      m_KeyId: 0
+      m_Key: enemies_defeated
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -3955,8 +3955,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 3937105423097856
-      m_Key: 
+      m_KeyId: 0
+      m_Key: craft
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -4736,8 +4736,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2350610291613696
-      m_Key: 
+      m_KeyId: 0
+      m_Key: settings
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -5346,8 +5346,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2351378805547008
-      m_Key: 
+      m_KeyId: 0
+      m_Key: back
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -6110,8 +6110,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2353037732470784
-      m_Key: 
+      m_KeyId: 0
+      m_Key: exit
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -10043,7 +10043,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554870277}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
   m_Name: 
@@ -10403,8 +10403,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2363065608691712
-      m_Key: 
+      m_KeyId: 0
+      m_Key: start
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -10581,8 +10581,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 1000000000037
-      m_Key: 
+      m_KeyId: 0
+      m_Key: hud.level_transition_message
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -10942,8 +10942,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2362815347154944
-      m_Key: 
+      m_KeyId: 0
+      m_Key: enemies
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -12138,8 +12138,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2359888998031360
-      m_Key: 
+      m_KeyId: 0
+      m_Key: money_collected
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -12419,8 +12419,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 3950473898876928
-      m_Key: 
+      m_KeyId: 0
+      m_Key: mine
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -13356,8 +13356,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2468028255035392
-      m_Key: 
+      m_KeyId: 0
+      m_Key: wishlist
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -13704,8 +13704,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 3929410552979456
-      m_Key: 
+      m_KeyId: 0
+      m_Key: barracks
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -14223,7 +14223,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878960399}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
   m_Name: 
@@ -14708,10 +14708,10 @@ MonoBehaviour:
   _levelTransitionText: {fileID: 583864717}
   _dungeonLevelFormat:
     m_TableReference:
-      m_TableCollectionName: LocalesTable
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 1000000000036
-      m_Key: 
+      m_KeyId: 0
+      m_Key: hud.dungeon_level_format
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -14719,8 +14719,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 1000000000037
-      m_Key: 
+      m_KeyId: 0
+      m_Key: hud.level_transition_message
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -14882,8 +14882,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2357751190642688
-      m_Key: 
+      m_KeyId: 0
+      m_Key: gold_score_title
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -22767,8 +22767,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2462160771866624
-      m_Key: 
+      m_KeyId: 0
+      m_Key: demo_description
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -23199,8 +23199,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2350952815255552
-      m_Key: 
+      m_KeyId: 0
+      m_Key: language
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -24519,8 +24519,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 3950498993397760
-      m_Key: 
+      m_KeyId: 0
+      m_Key: dungeon
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -24971,7 +24971,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257155878}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
   m_Name: 
@@ -25158,8 +25158,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2350609582776320
-      m_Key: 
+      m_KeyId: 0
+      m_Key: continue
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -25336,8 +25336,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2353874554839040
-      m_Key: 
+      m_KeyId: 0
+      m_Key: record
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -25514,8 +25514,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2358430856634368
-      m_Key: 
+      m_KeyId: 0
+      m_Key: result_title
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -26739,8 +26739,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 3950681080717312
-      m_Key: 
+      m_KeyId: 0
+      m_Key: drill
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -27563,8 +27563,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2462125627793408
-      m_Key: 
+      m_KeyId: 0
+      m_Key: demo_title
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -27841,8 +27841,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2362271916351488
-      m_Key: 
+      m_KeyId: 0
+      m_Key: depth
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -28926,8 +28926,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2353874554839040
-      m_Key: 
+      m_KeyId: 0
+      m_Key: record
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -29606,8 +29606,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2362524539281408
-      m_Key: 
+      m_KeyId: 0
+      m_Key: level
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -30391,8 +30391,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2354035586752512
-      m_Key: 
+      m_KeyId: 0
+      m_Key: done
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -31405,8 +31405,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2350787047972864
-      m_Key: 
+      m_KeyId: 0
+      m_Key: sounds
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -32267,8 +32267,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2467803314511872
-      m_Key: 
+      m_KeyId: 0
+      m_Key: main_menu
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -35306,8 +35306,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2350770883125248
-      m_Key: 
+      m_KeyId: 0
+      m_Key: music
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -35752,7 +35752,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064595344}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
   m_Name: 
@@ -36421,7 +36421,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107874154}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
   m_Name: 
@@ -36683,8 +36683,8 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 2350604075655168
-      m_Key: 
+      m_KeyId: 0
+      m_Key: audio
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
