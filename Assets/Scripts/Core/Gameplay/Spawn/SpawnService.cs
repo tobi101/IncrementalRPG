@@ -6,6 +6,7 @@ using Entity;
 using IncrementalRPG.Scripts.AudioManager;
 using IncrementalRPG.Scripts.Core;
 using UnityEngine;
+using Utils;
 
 namespace Core.Gameplay
 {
@@ -17,6 +18,7 @@ namespace Core.Gameplay
         private readonly TileGrid _tileGrid;
         private readonly SkillTreeService _skillTree;
         private readonly AudioManager _audioManager;
+        private readonly DamagePopupService _damagePopupService;
         private SpawnTable _spawnTable;
 
         private float _spawnInterval = 2f;
@@ -31,14 +33,17 @@ namespace Core.Gameplay
             public CreatureView View;
             public EntityConfig Config;
             public Action OnDied;
+            public Action<BigDouble> OnDamageTaken;
         }
 
-        public SpawnService(PoolManager poolManager, TileGrid tileGrid, SkillTreeService skillTree, AudioManager audioManager)
+        public SpawnService(PoolManager poolManager, TileGrid tileGrid, SkillTreeService skillTree, AudioManager audioManager,
+            DamagePopupService damagePopupService)
         {
             _poolManager = poolManager;
             _tileGrid = tileGrid;
             _skillTree = skillTree;
             _audioManager = audioManager;
+            _damagePopupService = damagePopupService;
         }
 
         public void SetLevel(DungeonLevelConfig level)
@@ -113,6 +118,7 @@ namespace Core.Gameplay
             foreach (var entry in snapshot)
             {
                 entry.Creature.OnDied -= entry.OnDied;
+                entry.Creature.OnDamageTaken -= entry.OnDamageTaken;
                 _tileGrid.Free(entry.Creature);
                 _poolManager.Return(entry.View, entry.Config);
             }
@@ -126,10 +132,17 @@ namespace Core.Gameplay
             view.Bind(creature);
             _tileGrid.Place(creature);
 
+            Action<BigDouble> onDamageTaken = damage =>
+            {
+                if (view != null)
+                    _damagePopupService.ShowDamage(damage, view.DamagePopupWorldPosition);
+            };
+
             Action onDied = null;
             onDied = () =>
             {
                 creature.OnDied -= onDied;
+                creature.OnDamageTaken -= onDamageTaken;
 
                 if (config.featureType == FeatureType.None)
                     OnCreatureKilled?.Invoke(creature.TileCoord, config.goldDrop);
@@ -144,8 +157,16 @@ namespace Core.Gameplay
 
                 view.PlayDeath(() => CompleteDeathOrDefer(completeDeath));
             };
+            creature.OnDamageTaken += onDamageTaken;
             creature.OnDied += onDied;
-            _active.Add(new ActiveEntry { Creature = creature, View = view, Config = config, OnDied = onDied });
+            _active.Add(new ActiveEntry
+            {
+                Creature = creature,
+                View = view,
+                Config = config,
+                OnDied = onDied,
+                OnDamageTaken = onDamageTaken
+            });
 
             if (config.featureType != FeatureType.None)
                 OnFeatureSpawned?.Invoke(creature, view, coord, config);

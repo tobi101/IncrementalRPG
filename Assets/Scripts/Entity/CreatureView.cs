@@ -30,6 +30,8 @@ namespace Entity
         }
 
         [SerializeField] private Transform _footAnchor;
+        [SerializeField] private Transform _damagePopupAnchor;
+        [SerializeField] private Vector3 _damagePopupOffset = new Vector3(0f, 1f, 0f);
         [SerializeField] private SkeletonAnimation _animationBody;
         [SerializeField] private SkeletonAnimation[] _additionalAnimationBodies = Array.Empty<SkeletonAnimation>();
         [SerializeField] private DeathAnimationBody[] _deathAnimationBodies = Array.Empty<DeathAnimationBody>();
@@ -37,6 +39,18 @@ namespace Entity
         public Vector3 FootOffset => _footAnchor != null
             ? transform.position - _footAnchor.position
             : Vector3.zero;
+
+        public Vector3 DamagePopupWorldPosition
+        {
+            get
+            {
+                if (_damagePopupAnchor != null)
+                    return _damagePopupAnchor.position;
+
+                var origin = _footAnchor != null ? _footAnchor.position : transform.position;
+                return origin + _damagePopupOffset;
+            }
+        }
 
         private Creature _bound;
         private int _previousHealth;

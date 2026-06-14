@@ -26,16 +26,20 @@ namespace IncrementalRPG.Scripts.AudioManager
         [Header("Sources")]
         [FormerlySerializedAs("_audioSource")]
         [SerializeField] private AudioSource _sfxSource;
+        [SerializeField] private AudioSource _hitsSource;
         [SerializeField] private AudioSource _musicSource;
         [SerializeField] private AudioSource _loopingSfxSource;
         [SerializeField] private bool _createMissingSfxSource = true;
+        [SerializeField] private bool _createMissingHitsSource = true;
         [SerializeField] private bool _createMissingMusicSource = true;
         [SerializeField] private bool _createMissingLoopingSfxSource = true;
         [SerializeField] private AudioMixerGroup _sfxMixerGroup;
+        [SerializeField] private AudioMixerGroup _hitsMixerGroup;
         [SerializeField] private AudioMixerGroup _musicMixerGroup;
 
         [Header("SFX")]
         [SerializeField] private AudioClip _hitAudioClip;
+        [SerializeField] [Min(1)] private int _maxHitAudioRequestsPerFrame = 20;
         [SerializeField] private AudioClip _waveAudioClip;
         [SerializeField] private AudioClip _uiHoverAudioClip;
         [SerializeField] private AudioClip _uiClickAudioClip;
@@ -65,10 +69,13 @@ namespace IncrementalRPG.Scripts.AudioManager
         private Coroutine _loopingSfxFadeRoutine;
         private MusicTrack _currentMusicTrack = MusicTrack.None;
         private bool _warnedAboutMissingSfxSource;
+        private bool _warnedAboutMissingHitsSource;
         private bool _warnedAboutMissingMusicSource;
         private bool _warnedAboutMissingLoopingSfxSource;
         private bool _warnedAboutMissingLavaLoopClip;
         private bool _sourcesConfigured;
+        private int _hitAudioRequestFrame = -1;
+        private int _hitAudioRequestsThisFrame;
 
         public static AudioManager Resolve(AudioManager fallback = null)
         {
@@ -95,10 +102,13 @@ namespace IncrementalRPG.Scripts.AudioManager
 
         public void PlayHitAudio(float delay = 0f)
         {
+            if (_hitAudioClip == null) return;
+            if (!TryRegisterHitAudioRequest()) return;
+
             if (delay <= 0f)
-                PlayImmediate();
+                PlayHitImmediate();
             else
-                StartCoroutine(PlayDelayed(delay));
+                StartCoroutine(PlayHitDelayed(delay));
         }
 
         public void PlayWaveAudio()
@@ -317,15 +327,25 @@ namespace IncrementalRPG.Scripts.AudioManager
             _musicFadeRoutine = StartCoroutine(FadeOutMusic());
         }
 
-        private IEnumerator PlayDelayed(float delay)
+        private IEnumerator PlayHitDelayed(float delay)
         {
             yield return new WaitForSeconds(delay);
-            PlayImmediate();
+            PlayHitImmediate();
         }
 
-        private void PlayImmediate()
+        private void PlayHitImmediate()
         {
-            PlaySfxOneShot(_hitAudioClip, Random.Range(0.85f, 1.2f));
+            PlayHitsOneShot(_hitAudioClip, Random.Range(0.85f, 1.2f));
+        }
+
+        private void PlayHitsOneShot(AudioClip clip, float pitch)
+        {
+            if (clip == null) return;
+
+            InitializeSources();
+            if (!HasHitsSource()) return;
+
+            PlayOneShot(_hitsSource, clip, pitch);
         }
 
         private void PlaySfxOneShot(AudioClip clip, float pitch)
@@ -335,8 +355,30 @@ namespace IncrementalRPG.Scripts.AudioManager
             InitializeSources();
             if (!HasSfxSource()) return;
 
-            _sfxSource.pitch = pitch;
-            _sfxSource.PlayOneShot(clip);
+            PlayOneShot(_sfxSource, clip, pitch);
+        }
+
+        private bool TryRegisterHitAudioRequest()
+        {
+            var frame = Time.frameCount;
+            if (_hitAudioRequestFrame != frame)
+            {
+                _hitAudioRequestFrame = frame;
+                _hitAudioRequestsThisFrame = 0;
+            }
+
+            var maxRequests = Mathf.Max(1, _maxHitAudioRequestsPerFrame);
+            if (_hitAudioRequestsThisFrame >= maxRequests)
+                return false;
+
+            _hitAudioRequestsThisFrame++;
+            return true;
+        }
+
+        private static void PlayOneShot(AudioSource source, AudioClip clip, float pitch)
+        {
+            source.pitch = pitch;
+            source.PlayOneShot(clip);
         }
 
         private static AudioClip PickRandomClip(AudioClip[] clips)
@@ -406,6 +448,9 @@ namespace IncrementalRPG.Scripts.AudioManager
             if (_sfxSource == null && _createMissingSfxSource)
                 _sfxSource = gameObject.AddComponent<AudioSource>();
 
+            if (_hitsSource == null && _createMissingHitsSource)
+                _hitsSource = gameObject.AddComponent<AudioSource>();
+
             if (_musicSource == null && _createMissingMusicSource)
                 _musicSource = gameObject.AddComponent<AudioSource>();
 
@@ -421,6 +466,14 @@ namespace IncrementalRPG.Scripts.AudioManager
 
                 if (_sfxMixerGroup != null)
                     _sfxSource.outputAudioMixerGroup = _sfxMixerGroup;
+            }
+
+            if (_hitsSource != null)
+            {
+                _hitsSource.playOnAwake = false;
+
+                if (_hitsMixerGroup != null)
+                    _hitsSource.outputAudioMixerGroup = _hitsMixerGroup;
             }
 
             if (_loopingSfxSource != null)
@@ -592,6 +645,20 @@ namespace IncrementalRPG.Scripts.AudioManager
             {
                 Debug.LogWarning("[AudioManager] SFX AudioSource is not assigned.");
                 _warnedAboutMissingSfxSource = true;
+            }
+
+            return false;
+        }
+
+        private bool HasHitsSource()
+        {
+            if (_hitsSource != null)
+                return true;
+
+            if (!_warnedAboutMissingHitsSource)
+            {
+                Debug.LogWarning("[AudioManager] Hits AudioSource is not assigned.");
+                _warnedAboutMissingHitsSource = true;
             }
 
             return false;

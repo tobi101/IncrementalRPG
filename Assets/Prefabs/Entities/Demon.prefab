@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Demon
       objectReference: {fileID: 0}
+    - target: {fileID: 3953999934297207767, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
       propertyPath: _animationBody
       value: 
@@ -331,19 +335,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
       propertyPath: _deathAnimationBodies.Array.data[0]._animationBody
-      value:
+      value: 
       objectReference: {fileID: 5057635849746960713}
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
       propertyPath: _deathAnimationBodies.Array.data[0]._animationName
       value: explosion
       objectReference: {fileID: 0}
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
-      propertyPath: _deathAnimationBodies.Array.data[0]._visibleWhileAlive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
       propertyPath: _deathAnimationBodies.Array.data[0]._waitForComplete
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
+      propertyPath: _deathAnimationBodies.Array.data[0]._visibleWhileAlive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

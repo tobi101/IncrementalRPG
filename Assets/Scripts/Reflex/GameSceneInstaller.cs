@@ -169,6 +169,13 @@ namespace Reflex
                 Lifetime.Singleton,
                 Resolution.Lazy
             );
+
+            builder.RegisterType(
+                typeof(DamagePopupService),
+                new[] { typeof(IService), typeof(DamagePopupService) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
             
             builder.RegisterType(
                 typeof(SpawnService),
