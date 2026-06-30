@@ -15,13 +15,15 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: fad4b764f59f44122aba33456cd3981d
   m_SerializeEntries:
+  - m_GUID: 4d7d7c299be0b428f838e2afcc3b07b8
+    m_Address: dynamocg SDF
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Locale-ru-RU
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 65c04d1b687a94fe6b2d028edf0ee3a1
     m_Address: Assets/Locales/LocalesTable Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a4ca9672473fd434bba9080352c97beb
-    m_Address: Assets/Locales/FontTableCollection/Fonts Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

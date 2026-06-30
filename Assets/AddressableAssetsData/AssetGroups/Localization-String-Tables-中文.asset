@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-String-Tables-zh
+  m_Name: "Localization-String-Tables-\u4E2D\u6587"
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: Localization-String-Tables-zh
-  m_GUID: 756a9a63db58d470eb290c90d74c733e
+  m_GroupName: "Localization-String-Tables-\u4E2D\u6587"
+  m_GUID: 513c18a76cc5449caa085de8697f2f33
   m_SerializeEntries:
   - m_GUID: c9b13d1c5ec414df39a5736fc01f8307
     m_Address: LocalesTable_zh

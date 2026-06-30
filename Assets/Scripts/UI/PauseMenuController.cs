@@ -264,7 +264,12 @@ namespace UI
                 return;
 
             foreach (var button in buttons)
+            {
+                if (button != null && button.GetComponent<PauseButtonVisualState>() != null)
+                    continue;
+
                 UIButtonPressScaler.EnsureOn(button);
+            }
         }
     }
 }
