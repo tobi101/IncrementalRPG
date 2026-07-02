@@ -431,6 +431,18 @@ MonoBehaviour:
     m_Key: start_new_game_question
     m_Metadata:
       m_Items: []
+  - m_Id: 16979086487314432
+    m_Key: run_completed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16979179688943616
+    m_Key: statistics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16986933019271168
+    m_Key: new_high_score
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

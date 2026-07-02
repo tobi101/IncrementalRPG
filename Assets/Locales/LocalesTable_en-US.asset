@@ -215,7 +215,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2357751190642688
-    m_Localized: 'Collected:'
+    m_Localized: 'Gold Collected:'
     m_Metadata:
       m_Items: []
   - m_Id: 2358430856634368
@@ -223,7 +223,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2359326810300416
-    m_Localized: ENEMIES DEFEATED
+    m_Localized: 'Enemies Defeated:'
     m_Metadata:
       m_Items: []
   - m_Id: 2359888998031360
@@ -431,6 +431,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 16956008478793728
     m_Localized: Start a new game?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16979086487314432
+    m_Localized: Run Completed!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16979179688943616
+    m_Localized: 'Statistics:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16986933019271168
+    m_Localized: New High Score!
     m_Metadata:
       m_Items: []
   references:
