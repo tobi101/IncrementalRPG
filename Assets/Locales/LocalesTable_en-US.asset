@@ -413,6 +413,26 @@ MonoBehaviour:
     m_Localized: Increases barrel spawn frequency
     m_Metadata:
       m_Items: []
+  - m_Id: 16955360282664960
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16955413831344128
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16955634871164928
+    m_Localized: Warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16955748104790016
+    m_Localized: The previous progess will be lost.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16956008478793728
+    m_Localized: Start a new game?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -49,20 +49,30 @@ namespace UI
 
         private void Subscribe()
         {
-            Bind(MainMenuAction.NewGame, StartNewGame);
+            if (_view == null)
+                return;
+
+            Bind(MainMenuAction.NewGame, RequestNewGame);
             Bind(MainMenuAction.Continue, ContinueGame);
             Bind(MainMenuAction.Settings, ShowSettings);
             Bind(MainMenuAction.Authors, ShowAuthors);
             Bind(MainMenuAction.Exit, ExitGame);
+            Bind(_view.NewGameConfirmButton, ConfirmNewGame);
+            Bind(_view.NewGameCancelButton, CancelNewGame);
         }
 
         private void Unsubscribe()
         {
-            Unbind(MainMenuAction.NewGame, StartNewGame);
+            if (_view == null)
+                return;
+
+            Unbind(MainMenuAction.NewGame, RequestNewGame);
             Unbind(MainMenuAction.Continue, ContinueGame);
             Unbind(MainMenuAction.Settings, ShowSettings);
             Unbind(MainMenuAction.Authors, ShowAuthors);
             Unbind(MainMenuAction.Exit, ExitGame);
+            Unbind(_view.NewGameConfirmButton, ConfirmNewGame);
+            Unbind(_view.NewGameCancelButton, CancelNewGame);
         }
 
         private void Bind(MainMenuAction action, UnityEngine.Events.UnityAction handler)
@@ -73,6 +83,15 @@ namespace UI
 
             buttonView.Button.onClick.RemoveListener(handler);
             buttonView.Button.onClick.AddListener(handler);
+        }
+
+        private void Bind(UnityEngine.UI.Button button, UnityEngine.Events.UnityAction handler)
+        {
+            if (button == null)
+                return;
+
+            button.onClick.RemoveListener(handler);
+            button.onClick.AddListener(handler);
         }
 
         private void Unbind(MainMenuAction action, UnityEngine.Events.UnityAction handler)
@@ -87,9 +106,48 @@ namespace UI
             buttonView.Button.onClick.RemoveListener(handler);
         }
 
+        private void Unbind(UnityEngine.UI.Button button, UnityEngine.Events.UnityAction handler)
+        {
+            if (button == null)
+                return;
+
+            button.onClick.RemoveListener(handler);
+        }
+
         private void RefreshContinueButton()
         {
             _view.SetContinueVisible(_saveStorage.HasSave());
+        }
+
+        private void RequestNewGame()
+        {
+            if (_isLoadingGame)
+                return;
+
+            if (_saveStorage.HasSave())
+            {
+                _view.ShowAttention();
+                return;
+            }
+
+            StartNewGame();
+        }
+
+        private void ConfirmNewGame()
+        {
+            if (_isLoadingGame)
+                return;
+
+            _view.HideAttention();
+            StartNewGame();
+        }
+
+        private void CancelNewGame()
+        {
+            if (_isLoadingGame)
+                return;
+
+            _view.HideAttention();
         }
 
         private void StartNewGame()

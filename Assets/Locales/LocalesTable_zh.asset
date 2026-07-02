@@ -19,131 +19,131 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1000000000001
-    m_Localized: 炸弹
+    m_Localized: "\u70B8\u5F39"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000002
-    m_Localized: 恶魔
+    m_Localized: "\u6076\u9B54"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000003
-    m_Localized: 骷髅
+    m_Localized: "\u9AB7\u9AC5"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000004
-    m_Localized: 史莱姆
+    m_Localized: "\u53F2\u83B1\u59C6"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000005
-    m_Localized: 岩石与熔岩
+    m_Localized: "\u5CA9\u77F3\u4E0E\u7194\u5CA9"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000006
-    m_Localized: 岩石与熔岩
+    m_Localized: "\u5CA9\u77F3\u4E0E\u7194\u5CA9"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000007
-    m_Localized: 由岩石、灰烬和熔岩组成的灼热洞窟。
+    m_Localized: "\u7531\u5CA9\u77F3\u3001\u7070\u70EC\u548C\u7194\u5CA9\u7EC4\u6210\u7684\u707C\u70ED\u6D1E\u7A9F\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000008
-    m_Localized: 任意生物群系
+    m_Localized: "\u4EFB\u610F\u751F\u7269\u7FA4\u7CFB"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000009
-    m_Localized: 任意生物群系
+    m_Localized: "\u4EFB\u610F\u751F\u7269\u7FA4\u7CFB"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000010
-    m_Localized: 用于混合生物群系规则的测试地下城。
+    m_Localized: "\u7528\u4E8E\u6DF7\u5408\u751F\u7269\u7FA4\u7CFB\u89C4\u5219\u7684\u6D4B\u8BD5\u5730\u4E0B\u57CE\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000011
-    m_Localized: 第 1 级
+    m_Localized: "\u7B2C 1 \u7EA7"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000012
-    m_Localized: 第 1 级
+    m_Localized: "\u7B2C 1 \u7EA7"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000013
-    m_Localized: 地下城第一关。
+    m_Localized: "\u5730\u4E0B\u57CE\u7B2C\u4E00\u5173\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000014
-    m_Localized: 第 1 级
+    m_Localized: "\u7B2C 1 \u7EA7"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000015
-    m_Localized: 第 1 级
+    m_Localized: "\u7B2C 1 \u7EA7"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000016
-    m_Localized: 地下城第一关。
+    m_Localized: "\u5730\u4E0B\u57CE\u7B2C\u4E00\u5173\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000017
-    m_Localized: 解锁炸弹
+    m_Localized: "\u89E3\u9501\u70B8\u5F39"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000018
-    m_Localized: 解锁炸弹生成。
+    m_Localized: "\u89E3\u9501\u70B8\u5F39\u751F\u6210\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000019
-    m_Localized: 炸弹生成速度
+    m_Localized: "\u70B8\u5F39\u751F\u6210\u901F\u5EA6"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000020
-    m_Localized: 提高炸弹生成速度。
+    m_Localized: "\u63D0\u9AD8\u70B8\u5F39\u751F\u6210\u901F\u5EA6\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000021
-    m_Localized: 炸弹伤害
+    m_Localized: "\u70B8\u5F39\u4F24\u5BB3"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000023
-    m_Localized: 爆炸半径
+    m_Localized: "\u7206\u70B8\u534A\u5F84"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000025
-    m_Localized: 攻击速度
+    m_Localized: "\u653B\u51FB\u901F\u5EA6"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000026
-    m_Localized: 提高攻击速度。
+    m_Localized: "\u63D0\u9AD8\u653B\u51FB\u901F\u5EA6\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000027
-    m_Localized: 伤害半径
+    m_Localized: "\u4F24\u5BB3\u534A\u5F84"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000028
-    m_Localized: 增加伤害区域半径。
+    m_Localized: "\u589E\u52A0\u4F24\u5BB3\u533A\u57DF\u534A\u5F84\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000029
-    m_Localized: 区域伤害
+    m_Localized: "\u533A\u57DF\u4F24\u5BB3"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000030
-    m_Localized: 提高区域伤害。
+    m_Localized: "\u63D0\u9AD8\u533A\u57DF\u4F24\u5BB3\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000031
-    m_Localized: 地图大小
+    m_Localized: "\u5730\u56FE\u5927\u5C0F"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000032
-    m_Localized: 增加地图大小。
+    m_Localized: "\u589E\u52A0\u5730\u56FE\u5927\u5C0F\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000033
-    m_Localized: 生成速度
+    m_Localized: "\u751F\u6210\u901F\u5EA6"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000034
-    m_Localized: 提高敌人生成速度。
+    m_Localized: "\u63D0\u9AD8\u654C\u4EBA\u751F\u6210\u901F\u5EA6\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000035
@@ -155,139 +155,139 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000037
-    m_Localized: 新等级！
+    m_Localized: "\u65B0\u7B49\u7EA7\uFF01"
     m_Metadata:
       m_Items: []
   - m_Id: 2350604075655168
-    m_Localized: 音频
+    m_Localized: "\u97F3\u9891"
     m_Metadata:
       m_Items: []
   - m_Id: 2350608911687680
-    m_Localized: 新游戏
+    m_Localized: "\u65B0\u6E38\u620F"
     m_Metadata:
       m_Items: []
   - m_Id: 2350609582776320
-    m_Localized: 继续
+    m_Localized: "\u7EE7\u7EED"
     m_Metadata:
       m_Items: []
   - m_Id: 2350610291613696
-    m_Localized: 设置
+    m_Localized: "\u8BBE\u7F6E"
     m_Metadata:
       m_Items: []
   - m_Id: 2350691338149888
-    m_Localized: 作者
+    m_Localized: "\u4F5C\u8005"
     m_Metadata:
       m_Items: []
   - m_Id: 2350692055375872
-    m_Localized: 退出
+    m_Localized: "\u9000\u51FA"
     m_Metadata:
       m_Items: []
   - m_Id: 2350770883125248
-    m_Localized: 音乐
+    m_Localized: "\u97F3\u4E50"
     m_Metadata:
       m_Items: []
   - m_Id: 2350787047972864
-    m_Localized: 音效
+    m_Localized: "\u97F3\u6548"
     m_Metadata:
       m_Items: []
   - m_Id: 2350952815255552
-    m_Localized: 语言
+    m_Localized: "\u8BED\u8A00"
     m_Metadata:
       m_Items: []
   - m_Id: 2351378805547008
-    m_Localized: 返回
+    m_Localized: "\u8FD4\u56DE"
     m_Metadata:
       m_Items: []
   - m_Id: 2353037732470784
-    m_Localized: 退出
+    m_Localized: "\u9000\u51FA"
     m_Metadata:
       m_Items: []
   - m_Id: 2353874554839040
-    m_Localized: 新纪录！
+    m_Localized: "\u65B0\u7EAA\u5F55\uFF01"
     m_Metadata:
       m_Items: []
   - m_Id: 2354035586752512
-    m_Localized: 完成
+    m_Localized: "\u5B8C\u6210"
     m_Metadata:
       m_Items: []
   - m_Id: 2357656613281792
-    m_Localized: 击败：
+    m_Localized: "\u51FB\u8D25\uFF1A"
     m_Metadata:
       m_Items: []
   - m_Id: 2357751190642688
-    m_Localized: 收集：
+    m_Localized: "\u6536\u96C6\uFF1A"
     m_Metadata:
       m_Items: []
   - m_Id: 2358430856634368
-    m_Localized: 结果
+    m_Localized: "\u7ED3\u679C"
     m_Metadata:
       m_Items: []
   - m_Id: 2359326810300416
-    m_Localized: 已击败敌人
+    m_Localized: "\u5DF2\u51FB\u8D25\u654C\u4EBA"
     m_Metadata:
       m_Items: []
   - m_Id: 2359888998031360
-    m_Localized: 已收集金币
+    m_Localized: "\u5DF2\u6536\u96C6\u91D1\u5E01"
     m_Metadata:
       m_Items: []
   - m_Id: 2361592413937664
-    m_Localized: 地下城尚未开放。
+    m_Localized: "\u5730\u4E0B\u57CE\u5C1A\u672A\u5F00\u653E\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 2362271916351488
-    m_Localized: 深度：
+    m_Localized: "\u6DF1\u5EA6\uFF1A"
     m_Metadata:
       m_Items: []
   - m_Id: 2362524539281408
-    m_Localized: 等级：
+    m_Localized: "\u7B49\u7EA7\uFF1A"
     m_Metadata:
       m_Items: []
   - m_Id: 2362815347154944
-    m_Localized: 敌人：
+    m_Localized: "\u654C\u4EBA\uFF1A"
     m_Metadata:
       m_Items: []
   - m_Id: 2363065608691712
-    m_Localized: 开始！
+    m_Localized: "\u5F00\u59CB\uFF01"
     m_Metadata:
       m_Items: []
   - m_Id: 2462125627793408
-    m_Localized: 演示结束
+    m_Localized: "\u6F14\u793A\u7ED3\u675F"
     m_Metadata:
       m_Items: []
   - m_Id: 2462160771866624
-    m_Localized: 感谢游玩演示版！将游戏加入愿望单以关注开发进度。
+    m_Localized: "\u611F\u8C22\u6E38\u73A9\u6F14\u793A\u7248\uFF01\u5C06\u6E38\u620F\u52A0\u5165\u613F\u671B\u5355\u4EE5\u5173\u6CE8\u5F00\u53D1\u8FDB\u5EA6\u3002"
     m_Metadata:
       m_Items: []
   - m_Id: 2467803314511872
-    m_Localized: 主菜单
+    m_Localized: "\u4E3B\u83DC\u5355"
     m_Metadata:
       m_Items: []
   - m_Id: 2468028255035392
-    m_Localized: 加入愿望单
+    m_Localized: "\u52A0\u5165\u613F\u671B\u5355"
     m_Metadata:
       m_Items: []
   - m_Id: 3927629706027008
-    m_Localized: 训练
+    m_Localized: "\u8BAD\u7EC3"
     m_Metadata:
       m_Items: []
   - m_Id: 3929410552979456
-    m_Localized: 兵营
+    m_Localized: "\u5175\u8425"
     m_Metadata:
       m_Items: []
   - m_Id: 3937105423097856
-    m_Localized: 制作
+    m_Localized: "\u5236\u4F5C"
     m_Metadata:
       m_Items: []
   - m_Id: 3950473898876928
-    m_Localized: 矿井
+    m_Localized: "\u77FF\u4E95"
     m_Metadata:
       m_Items: []
   - m_Id: 3950498993397760
-    m_Localized: 地下城
+    m_Localized: "\u5730\u4E0B\u57CE"
     m_Metadata:
       m_Items: []
   - m_Id: 3950681080717312
-    m_Localized: 钻机
+    m_Localized: "\u94BB\u673A"
     m_Metadata:
       m_Items: []
   references:

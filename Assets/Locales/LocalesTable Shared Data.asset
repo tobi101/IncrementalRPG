@@ -411,6 +411,26 @@ MonoBehaviour:
     m_Key: skill_speed_d
     m_Metadata:
       m_Items: []
+  - m_Id: 16955360282664960
+    m_Key: yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16955413831344128
+    m_Key: no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16955634871164928
+    m_Key: warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16955748104790016
+    m_Key: previous_progress_lost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16956008478793728
+    m_Key: start_new_game_question
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
