@@ -28,6 +28,7 @@ namespace Reflex
         [SerializeField] private BombExplosionConfig _bombExplosionConfig;
         [SerializeField] private SkillTreeConfig _skillTreeConfig;
         [SerializeField] private NodeBorderColorConfig _nodeBorderColorConfig;
+        [SerializeField] private NodeCircleSpriteConfig _nodeCircleSpriteConfig;
         
         [SerializeField] private AudioManager _audioManager;
         [SerializeField] private IsometricGradientTilemapGenerator _isometricGradientTilemapGenerator;
@@ -239,6 +240,7 @@ namespace Reflex
             builder.RegisterValue(_bombExplosionConfig, new[] { typeof(BombExplosionConfig) });
             builder.RegisterValue(_skillTreeConfig, new[] { typeof(SkillTreeConfig) });
             builder.RegisterValue(_nodeBorderColorConfig, new[] { typeof(NodeBorderColorConfig) });
+            builder.RegisterValue(_nodeCircleSpriteConfig, new[] { typeof(NodeCircleSpriteConfig) });
         }
 
         private AudioManager ResolveAudioManager()

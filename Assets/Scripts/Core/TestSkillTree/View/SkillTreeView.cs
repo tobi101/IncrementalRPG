@@ -22,9 +22,11 @@ namespace Core.TestSkillTree.View
         [SerializeField] private NodePopupView      _popupView;
         [SerializeField] private TextMeshProUGUI    _goldText;
         [SerializeField] private Button             _closeButton;
+        [SerializeField] private Vector2            _contentPadding = new Vector2(600f, 600f);
 
         [Inject] private GameStateMachine     _stateMachine;
         [Inject] private NodeBorderColorConfig _borderColorConfig;
+        [Inject] private NodeCircleSpriteConfig _circleSpriteConfig;
 
         private SkillTreeService         _service;
         private SkillTreeConfig          _config;
@@ -73,6 +75,8 @@ namespace Core.TestSkillTree.View
                 nodePositions[entry.node] = _config.GridToGraphPosition(entry.gridPosition);
             }
 
+            ConfigureContentBounds(nodePositions);
+
             // Connections first so they render behind nodes.
             foreach (var entry in entries)
             {
@@ -100,12 +104,81 @@ namespace Core.TestSkillTree.View
                 var def = entry.node;
                 var nodeView = Instantiate(_nodeViewPrefab, _nodesLayer);
                 ((RectTransform)nodeView.transform).anchoredPosition = nodePositions[def];
-                nodeView.Bind(def, _service, _popupView, _borderColorConfig, _audioManager);
+                nodeView.Bind(def, _service, _popupView, _circleSpriteConfig, _audioManager);
                 _nodeViews.Add(nodeView);
 
                 if (!string.IsNullOrEmpty(nodeView.NodeId))
                     _nodeViewsById[nodeView.NodeId] = nodeView;
             }
+        }
+
+        private void ConfigureContentBounds(Dictionary<NodeDefinition, Vector2> nodePositions)
+        {
+            var content = GetContentTransform();
+            if (content == null || nodePositions.Count == 0)
+                return;
+
+            var min = new Vector2(float.PositiveInfinity, float.PositiveInfinity);
+            var max = new Vector2(float.NegativeInfinity, float.NegativeInfinity);
+
+            foreach (var position in nodePositions.Values)
+            {
+                min = Vector2.Min(min, position);
+                max = Vector2.Max(max, position);
+            }
+
+            var halfNodeSize = GetNodeSize() * 0.5f;
+            min -= halfNodeSize + _contentPadding;
+            max += halfNodeSize + _contentPadding;
+
+            var center = (min + max) * 0.5f;
+            var contentSize = max - min;
+            contentSize = new Vector2(
+                Mathf.Max(1f, contentSize.x),
+                Mathf.Max(1f, contentSize.y));
+
+            ConfigureRect(content, contentSize);
+            ConfigureRect(_connectionsLayer, contentSize);
+            ConfigureRect(_nodesLayer, contentSize);
+            content.localScale = Vector3.one;
+
+            var definitions = new List<NodeDefinition>(nodePositions.Keys);
+            foreach (var definition in definitions)
+                nodePositions[definition] -= center;
+        }
+
+        private RectTransform GetContentTransform()
+        {
+            if (_nodesLayer != null)
+                return _nodesLayer.parent as RectTransform;
+
+            return _connectionsLayer != null
+                ? _connectionsLayer.parent as RectTransform
+                : null;
+        }
+
+        private Vector2 GetNodeSize()
+        {
+            var nodeRect = _nodeViewPrefab != null
+                ? _nodeViewPrefab.transform as RectTransform
+                : null;
+
+            if (nodeRect == null)
+                return Vector2.zero;
+
+            return nodeRect.rect.size;
+        }
+
+        private static void ConfigureRect(RectTransform rect, Vector2 size)
+        {
+            if (rect == null)
+                return;
+
+            rect.anchorMin = Vector2.one * 0.5f;
+            rect.anchorMax = Vector2.one * 0.5f;
+            rect.pivot = Vector2.one * 0.5f;
+            rect.anchoredPosition = Vector2.zero;
+            rect.sizeDelta = size;
         }
 
         private void RefreshAll()

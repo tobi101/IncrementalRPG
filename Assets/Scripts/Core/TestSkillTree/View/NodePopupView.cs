@@ -12,8 +12,7 @@ namespace Core.TestSkillTree.View
         [SerializeField] private TextMeshProUGUI _nameText;
         [SerializeField] private TextMeshProUGUI _descriptionText;
         [SerializeField] private TextMeshProUGUI _costText;
-
-        [SerializeField] private Image _borderImage;
+        
         [SerializeField] private Image _framePriceImage;
         [SerializeField] private Image _backGlowImage;
 
@@ -86,9 +85,6 @@ namespace Core.TestSkillTree.View
 
         private void ApplyVisualState(NodeState state)
         {
-            if (_borderColorConfig != null)
-                _borderImage.color = _borderColorConfig.GetColor(state);
-
             if (_framePriceSpriteConfig != null && _framePriceImage != null)
                 _framePriceImage.sprite = _framePriceSpriteConfig.GetSprite(state);
 

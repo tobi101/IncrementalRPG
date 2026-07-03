@@ -13,8 +13,6 @@ namespace Core.TestSkillTree.View
         [SerializeField] private float _zoomFactor       = 1.12f; // multiplier per scroll step
         [SerializeField] private float _rubberBandDamping = 0.3f; // 0 = wall, 1 = no resistance
         [SerializeField] private float _snapDuration      = 0.35f;
-        [Tooltip("Optional. If assigned, its size defines the pan bounds. If empty, bounds are derived from Content size.")]
-        [SerializeField] private RectTransform _boundsRect;
 
         private Vector2   _grabPoint;
         private Coroutine _snapCoroutine;
@@ -90,12 +88,7 @@ namespace Core.TestSkillTree.View
         private Vector2 ClampedPosition(Vector2 position)
         {
             var viewportSize = ((RectTransform)_content.parent).rect.size;
-
-            Vector2 boundsSize;
-            if (_boundsRect != null)
-                boundsSize = _boundsRect.rect.size;
-            else
-                boundsSize = _content.rect.size * _content.localScale.x;
+            var boundsSize = _content.rect.size * _content.localScale.x;
 
             // With pivot 0.5/0.5 the content center is at anchoredPosition.
             // Allowed travel = half the excess size on each axis.
