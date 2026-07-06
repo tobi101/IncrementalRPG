@@ -23,6 +23,7 @@ namespace Core.TestSkillTree.View
         [SerializeField] private TextMeshProUGUI    _goldText;
         [SerializeField] private Button             _closeButton;
         [SerializeField] private Vector2            _contentPadding = new Vector2(600f, 600f);
+        [SerializeField] private NodeDefinition     _initialFocusNode;
 
         [Inject] private GameStateMachine     _stateMachine;
         [Inject] private NodeBorderColorConfig _borderColorConfig;
@@ -35,6 +36,10 @@ namespace Core.TestSkillTree.View
         private readonly List<NodeView>  _nodeViews = new List<NodeView>();
         private readonly Dictionary<string, NodeView> _nodeViewsById = new Dictionary<string, NodeView>();
         private readonly List<(NodeConnectionView view, NodeDefinition def)> _connectionViews = new();
+        private SkillTreePanZoomController _panZoomController;
+        private Vector2 _initialFocusPosition;
+        private bool _hasInitialFocusPosition;
+        private bool _hasAppliedInitialFocus;
 
         [Inject]
         public void Construct(SkillTreeConfig config, SkillTreeService service, Player player, AudioManager audioManager)
@@ -43,6 +48,7 @@ namespace Core.TestSkillTree.View
             _service      = service;
             _player       = player;
             _audioManager = audioManager;
+            _panZoomController = GetComponentInChildren<SkillTreePanZoomController>(true);
 
             UI.UIButtonAudio.InstallInChildren(this);
             _popupView.Bind(service, _borderColorConfig, audioManager);
@@ -53,6 +59,17 @@ namespace Core.TestSkillTree.View
             _service.OnNodeUpgraded += PlayNodeUpgradeFeedback;
             _player.OnGoldChanged += RefreshGold;
             RefreshGold();
+        }
+
+        public void Show()
+        {
+            gameObject.SetActive(true);
+            ApplyInitialFocusIfNeeded();
+        }
+
+        public void Hide()
+        {
+            gameObject.SetActive(false);
         }
 
         private void RefreshGold()
@@ -76,6 +93,7 @@ namespace Core.TestSkillTree.View
             }
 
             ConfigureContentBounds(nodePositions);
+            CacheInitialFocusPosition(entries, nodePositions);
 
             // Connections first so they render behind nodes.
             foreach (var entry in entries)
@@ -110,6 +128,56 @@ namespace Core.TestSkillTree.View
                 if (!string.IsNullOrEmpty(nodeView.NodeId))
                     _nodeViewsById[nodeView.NodeId] = nodeView;
             }
+        }
+
+        private void CacheInitialFocusPosition(List<SkillTreeNodeEntry> entries, Dictionary<NodeDefinition, Vector2> nodePositions)
+        {
+            _hasInitialFocusPosition = false;
+
+            var focusNode = GetInitialFocusNode(entries, nodePositions);
+            if (focusNode == null || !nodePositions.TryGetValue(focusNode, out _initialFocusPosition))
+                return;
+
+            _hasInitialFocusPosition = true;
+        }
+
+        private NodeDefinition GetInitialFocusNode(List<SkillTreeNodeEntry> entries, Dictionary<NodeDefinition, Vector2> nodePositions)
+        {
+            if (_initialFocusNode != null && nodePositions.ContainsKey(_initialFocusNode))
+                return _initialFocusNode;
+
+            foreach (var entry in entries)
+            {
+                var node = entry.node;
+                if (node == null || !nodePositions.ContainsKey(node))
+                    continue;
+
+                if (node.prerequisites == null || node.prerequisites.Count == 0)
+                    return node;
+            }
+
+            return entries.Count > 0
+                ? entries[0].node
+                : null;
+        }
+
+        private void ApplyInitialFocusIfNeeded()
+        {
+            if (_hasAppliedInitialFocus)
+                return;
+
+            _hasAppliedInitialFocus = true;
+
+            if (!_hasInitialFocusPosition)
+                return;
+
+            Canvas.ForceUpdateCanvases();
+
+            if (_panZoomController == null)
+                _panZoomController = GetComponentInChildren<SkillTreePanZoomController>(true);
+
+            if (_panZoomController != null)
+                _panZoomController.FocusOnContentPoint(_initialFocusPosition, 1f);
         }
 
         private void ConfigureContentBounds(Dictionary<NodeDefinition, Vector2> nodePositions)

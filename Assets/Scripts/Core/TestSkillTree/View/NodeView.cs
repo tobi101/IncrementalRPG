@@ -1,5 +1,6 @@
 using System.Collections;
 using IncrementalRPG.Scripts.AudioManager;
+using Spine.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
@@ -18,15 +19,10 @@ namespace Core.TestSkillTree.View
         [SerializeField] private float _feedbackClockwiseRotationDegrees = 12f;
         [SerializeField] private float _feedbackShrinkDuration = 0.08f;
         [SerializeField] private float _feedbackReturnDuration = 0.14f;
-        [SerializeField] private RectTransform _chainBase;
-        [SerializeField] private RectTransform _leftChain;
-        [SerializeField] private RectTransform _rightChain;
-        [SerializeField] private RectTransform _lockTransform;
-        [SerializeField] private float _chainExitDistance = 24f;
-        [SerializeField] private float _chainExitScale = 0.75f;
-        [SerializeField] private float _chainExitDuration = 0.18f;
-        [SerializeField] private float _lockedClickShakeDistance = 4f;
-        [SerializeField] private float _lockedClickShakeDuration = 0.2f;
+        [SerializeField] private SkeletonGraphic _lockedSkeleton;
+        [SerializeField] private string _lockedIdleAnimationName = "idle";
+        [SerializeField] private string _lockedOpenAnimationName = "open";
+        [SerializeField] private string _lockedCancelAnimationName = "cancel";
 
         private SkillTreeService      _service;
         private NodeDefinition        _definition;
@@ -38,16 +34,10 @@ namespace Core.TestSkillTree.View
         private Quaternion            _feedbackBaseRotation;
         private Coroutine             _feedbackRoutine;
         private bool                  _hasFeedbackBaseTransform;
-        private Vector2               _leftChainBasePosition;
-        private Vector2               _rightChainBasePosition;
-        private Vector2               _lockBasePosition;
-        private Vector3               _leftChainBaseScale;
-        private Vector3               _rightChainBaseScale;
-        private Coroutine             _chainExitRoutine;
-        private Coroutine             _lockShakeRoutine;
         private NodeState             _lastVisibleState;
         private bool                  _hasLastVisibleState;
-        private bool                  _hasLockedVisualBaseTransform;
+        private bool                  _lockedOpenAnimationPlaying;
+        private int                   _lockedAnimationVersion;
 
         public string NodeId => _definition != null ? _definition.id : string.Empty;
 
@@ -63,7 +53,6 @@ namespace Core.TestSkillTree.View
                 _icon.sprite = definition.icon;
 
             CacheFeedbackBaseTransform(GetFeedbackRoot(), true);
-            CacheLockedVisualBaseTransform();
             Refresh();
         }
 
@@ -119,8 +108,8 @@ namespace Core.TestSkillTree.View
             if (isLocked)
                 ShowLockedVisual();
             else if (wasLocked)
-                PlayChainsExitFeedback();
-            else if (_chainExitRoutine == null)
+                PlayLockedOpenFeedback();
+            else if (!_lockedOpenAnimationPlaying)
                 HideLockedVisualImmediate();
 
             _lastVisibleState = state;
@@ -277,235 +266,119 @@ namespace Core.TestSkillTree.View
             _cachedFeedbackRoot.localRotation = _feedbackBaseRotation;
         }
 
-        private void CacheLockedVisualBaseTransform()
-        {
-            if (_hasLockedVisualBaseTransform)
-                return;
-
-            if (_leftChain != null)
-            {
-                _leftChainBasePosition = _leftChain.anchoredPosition;
-                _leftChainBaseScale = _leftChain.localScale;
-            }
-
-            if (_rightChain != null)
-            {
-                _rightChainBasePosition = _rightChain.anchoredPosition;
-                _rightChainBaseScale = _rightChain.localScale;
-            }
-
-            if (_lockTransform != null)
-                _lockBasePosition = _lockTransform.anchoredPosition;
-
-            _hasLockedVisualBaseTransform = true;
-        }
-
         private void ShowLockedVisual()
         {
-            CacheLockedVisualBaseTransform();
-
-            if (_chainExitRoutine != null)
-            {
-                StopCoroutine(_chainExitRoutine);
-                _chainExitRoutine = null;
-            }
-
-            SetActive(_chainBase, true);
-            SetActive(_leftChain, true);
-            SetActive(_rightChain, true);
-            SetActive(_lockTransform, true);
-            ResetChainTransforms();
+            PlayLockedIdleAnimation();
         }
 
         private void HideLockedVisualImmediate()
         {
-            StopLockedVisualCoroutines();
-            ResetLockedVisualTransforms();
-            SetActive(_lockTransform, false);
-            SetActive(_leftChain, false);
-            SetActive(_rightChain, false);
-            SetActive(_chainBase, false);
+            _lockedAnimationVersion++;
+            _lockedOpenAnimationPlaying = false;
+            ResetLockedSkeletonPose();
+            SetActive(_lockedSkeleton, false);
         }
 
-        private void PlayChainsExitFeedback()
+        private void PlayLockedOpenFeedback()
         {
-            if (_chainExitRoutine != null)
+            if (_lockedOpenAnimationPlaying)
                 return;
 
-            if (!gameObject.activeInHierarchy || _leftChain == null || _rightChain == null)
+            _lockedOpenAnimationPlaying = true;
+
+            var version = ++_lockedAnimationVersion;
+            var entry = PlayLockedSkeletonAnimation(_lockedOpenAnimationName, false, true);
+            if (entry == null)
             {
                 HideLockedVisualImmediate();
                 return;
             }
 
-            CacheLockedVisualBaseTransform();
-
-            if (_lockShakeRoutine != null)
+            entry.Complete += _ =>
             {
-                StopCoroutine(_lockShakeRoutine);
-                _lockShakeRoutine = null;
-            }
+                if (version != _lockedAnimationVersion)
+                    return;
 
-            ResetLockedVisualTransforms();
-            SetActive(_chainBase, true);
-            SetActive(_leftChain, true);
-            SetActive(_rightChain, true);
-            SetActive(_lockTransform, false);
-
-            _chainExitRoutine = StartCoroutine(PlayChainsExitRoutine());
+                HideLockedVisualImmediate();
+            };
         }
 
         private void PlayLockedClickFeedback()
         {
-            if (_lockTransform == null || !gameObject.activeInHierarchy)
+            if (_lockedSkeleton == null || !gameObject.activeInHierarchy)
                 return;
 
-            CacheLockedVisualBaseTransform();
+            _lockedOpenAnimationPlaying = false;
 
-            if (_lockShakeRoutine != null)
+            var version = ++_lockedAnimationVersion;
+            var entry = PlayLockedSkeletonAnimation(_lockedCancelAnimationName, false, true);
+            if (entry == null)
             {
-                StopCoroutine(_lockShakeRoutine);
-                _lockShakeRoutine = null;
+                PlayLockedIdleAnimation();
+                return;
             }
 
-            _lockTransform.anchoredPosition = _lockBasePosition;
-            SetActive(_chainBase, true);
-            SetActive(_lockTransform, true);
+            entry.Complete += _ =>
+            {
+                if (version != _lockedAnimationVersion)
+                    return;
 
-            _lockShakeRoutine = StartCoroutine(PlayLockedClickFeedbackRoutine());
+                PlayLockedIdleAnimation();
+            };
         }
 
-        private IEnumerator PlayChainsExitRoutine()
+        private void PlayLockedIdleAnimation()
         {
-            var leftStartPosition = _leftChainBasePosition;
-            var rightStartPosition = _rightChainBasePosition;
-            var leftEndPosition = leftStartPosition + Vector2.left * _chainExitDistance;
-            var rightEndPosition = rightStartPosition + Vector2.right * _chainExitDistance;
-            var leftEndScale = _leftChainBaseScale * _chainExitScale;
-            var rightEndScale = _rightChainBaseScale * _chainExitScale;
+            _lockedOpenAnimationPlaying = false;
+            _lockedAnimationVersion++;
 
-            yield return AnimateChains(
-                leftStartPosition,
-                rightStartPosition,
-                leftEndPosition,
-                rightEndPosition,
-                _leftChainBaseScale,
-                _rightChainBaseScale,
-                leftEndScale,
-                rightEndScale,
-                _chainExitDuration);
-
-            ResetChainTransforms();
-            SetActive(_leftChain, false);
-            SetActive(_rightChain, false);
-            SetActive(_chainBase, false);
-            _chainExitRoutine = null;
+            if (PlayLockedSkeletonAnimation(_lockedIdleAnimationName, true, true) == null)
+                HideLockedVisualImmediate();
         }
 
-        private IEnumerator AnimateChains(
-            Vector2 leftStartPosition,
-            Vector2 rightStartPosition,
-            Vector2 leftEndPosition,
-            Vector2 rightEndPosition,
-            Vector3 leftStartScale,
-            Vector3 rightStartScale,
-            Vector3 leftEndScale,
-            Vector3 rightEndScale,
-            float duration)
+        private Spine.TrackEntry PlayLockedSkeletonAnimation(string animationName, bool loop, bool resetPose)
         {
-            if (duration <= 0f)
-            {
-                _leftChain.anchoredPosition = leftEndPosition;
-                _rightChain.anchoredPosition = rightEndPosition;
-                _leftChain.localScale = leftEndScale;
-                _rightChain.localScale = rightEndScale;
-                yield break;
-            }
+            if (string.IsNullOrEmpty(animationName))
+                return null;
 
-            var elapsed = 0f;
-            while (elapsed < duration)
-            {
-                var t = Mathf.Clamp01(elapsed / duration);
-                var easedT = Mathf.SmoothStep(0f, 1f, t);
+            if (!EnsureLockedSkeletonReady())
+                return null;
 
-                _leftChain.anchoredPosition = Vector2.Lerp(leftStartPosition, leftEndPosition, easedT);
-                _rightChain.anchoredPosition = Vector2.Lerp(rightStartPosition, rightEndPosition, easedT);
-                _leftChain.localScale = Vector3.Lerp(leftStartScale, leftEndScale, easedT);
-                _rightChain.localScale = Vector3.Lerp(rightStartScale, rightEndScale, easedT);
+            if (_lockedSkeleton.Skeleton.Data.FindAnimation(animationName) == null)
+                return null;
 
-                elapsed += Time.unscaledDeltaTime;
-                yield return null;
-            }
+            if (resetPose)
+                ResetLockedSkeletonPose();
 
-            _leftChain.anchoredPosition = leftEndPosition;
-            _rightChain.anchoredPosition = rightEndPosition;
-            _leftChain.localScale = leftEndScale;
-            _rightChain.localScale = rightEndScale;
+            var entry = _lockedSkeleton.AnimationState.SetAnimation(0, animationName, loop);
+            if (entry != null)
+                entry.MixDuration = 0f;
+
+            return entry;
         }
 
-        private IEnumerator PlayLockedClickFeedbackRoutine()
+        private bool EnsureLockedSkeletonReady()
         {
-            if (_lockedClickShakeDuration <= 0f)
-            {
-                _lockTransform.anchoredPosition = _lockBasePosition;
-                _lockShakeRoutine = null;
-                yield break;
-            }
+            if (_lockedSkeleton == null)
+                return false;
 
-            var elapsed = 0f;
-            while (elapsed < _lockedClickShakeDuration)
-            {
-                var t = Mathf.Clamp01(elapsed / _lockedClickShakeDuration);
-                var damping = 1f - t;
-                var offset = Mathf.Sin(t * Mathf.PI * 8f) * _lockedClickShakeDistance * damping;
+            SetActive(_lockedSkeleton, true);
 
-                _lockTransform.anchoredPosition = _lockBasePosition + Vector2.right * offset;
+            if (!_lockedSkeleton.IsValid)
+                _lockedSkeleton.Initialize(false);
 
-                elapsed += Time.unscaledDeltaTime;
-                yield return null;
-            }
-
-            _lockTransform.anchoredPosition = _lockBasePosition;
-            _lockShakeRoutine = null;
+            return _lockedSkeleton.IsValid &&
+                   _lockedSkeleton.Skeleton != null &&
+                   _lockedSkeleton.AnimationState != null;
         }
 
-        private void StopLockedVisualCoroutines()
+        private void ResetLockedSkeletonPose()
         {
-            if (_chainExitRoutine != null)
-            {
-                StopCoroutine(_chainExitRoutine);
-                _chainExitRoutine = null;
-            }
+            if (_lockedSkeleton == null || !_lockedSkeleton.IsValid)
+                return;
 
-            if (_lockShakeRoutine != null)
-            {
-                StopCoroutine(_lockShakeRoutine);
-                _lockShakeRoutine = null;
-            }
-        }
-
-        private void ResetLockedVisualTransforms()
-        {
-            CacheLockedVisualBaseTransform();
-            ResetChainTransforms();
-
-            if (_lockTransform != null)
-                _lockTransform.anchoredPosition = _lockBasePosition;
-        }
-
-        private void ResetChainTransforms()
-        {
-            if (_leftChain != null)
-            {
-                _leftChain.anchoredPosition = _leftChainBasePosition;
-                _leftChain.localScale = _leftChainBaseScale;
-            }
-
-            if (_rightChain != null)
-            {
-                _rightChain.anchoredPosition = _rightChainBasePosition;
-                _rightChain.localScale = _rightChainBaseScale;
-            }
+            _lockedSkeleton.AnimationState?.ClearTracks();
+            _lockedSkeleton.Skeleton?.SetToSetupPose();
         }
 
         private static void SetActive(Component target, bool active)
@@ -523,8 +396,14 @@ namespace Core.TestSkillTree.View
             }
 
             ResetFeedbackTransform();
-            StopLockedVisualCoroutines();
-            ResetLockedVisualTransforms();
+
+            _lockedAnimationVersion++;
+            _lockedOpenAnimationPlaying = false;
+
+            if (_hasLastVisibleState && _lastVisibleState == NodeState.Locked)
+                PlayLockedIdleAnimation();
+            else
+                HideLockedVisualImmediate();
         }
     }
 }

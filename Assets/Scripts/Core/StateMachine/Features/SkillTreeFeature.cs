@@ -7,11 +7,11 @@ namespace Core.StateMachine.Features
     {
         [Inject] private SkillTreeView _view;
 
-        public void Initialize() => _view.gameObject.SetActive(false);
+        public void Initialize() => _view.Hide();
 
-        public void Enable() => _view.gameObject.SetActive(true);
+        public void Enable() => _view.Show();
 
-        public void Disable() => _view.gameObject.SetActive(false);
+        public void Disable() => _view.Hide();
 
         public void Tick(float deltaTime) { }
     }

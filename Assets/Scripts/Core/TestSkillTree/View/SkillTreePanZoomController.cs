@@ -17,15 +17,23 @@ namespace Core.TestSkillTree.View
         private Vector2   _grabPoint;
         private Coroutine _snapCoroutine;
 
+        public void FocusOnContentPoint(Vector2 contentPoint, float zoom)
+        {
+            if (_content == null)
+                return;
+
+            StopSnap();
+
+            var clampedZoom = Mathf.Clamp(zoom, _minZoom, _maxZoom);
+            _content.localScale = Vector3.one * clampedZoom;
+            _content.anchoredPosition = ClampedPosition(-contentPoint * clampedZoom);
+        }
+
         public void OnBeginDrag(PointerEventData eventData)
         {
             _popupView.Block();
 
-            if (_snapCoroutine != null)
-            {
-                StopCoroutine(_snapCoroutine);
-                _snapCoroutine = null;
-            }
+            StopSnap();
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 _content,
@@ -115,6 +123,15 @@ namespace Core.TestSkillTree.View
             }
 
             _content.anchoredPosition = target;
+            _snapCoroutine = null;
+        }
+
+        private void StopSnap()
+        {
+            if (_snapCoroutine == null)
+                return;
+
+            StopCoroutine(_snapCoroutine);
             _snapCoroutine = null;
         }
     }

@@ -1,0 +1,24 @@
+lock_n_chain.png
+size:195,42
+filter:Linear,Linear
+scale:0.4
+chain1_ 2
+bounds:47,3,40,10
+chain1_1
+bounds:129,30,40,10
+chain2_ 1
+bounds:171,3,37,10
+rotate:90
+chain2_ 2
+bounds:183,3,37,10
+rotate:90
+chain3_ 1
+bounds:129,18,38,10
+chain3_ 2
+bounds:129,6,38,10
+chain_ shad
+bounds:47,15,45,25
+lock_p1
+bounds:2,2,43,38
+lock_p2
+bounds:94,9,33,31

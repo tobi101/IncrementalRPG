@@ -1,0 +1,1430 @@
+fileFormatVersion: 2
+guid: 1f1e106b331a7414cababd61e26b22ef
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1811345818357558454
+    second: magic_ruins_0
+  - first:
+      213: -8255753192699872735
+    second: magic_ruins_1
+  - first:
+      213: 1492038835768647009
+    second: magic_ruins_2
+  - first:
+      213: -8378276510941312461
+    second: magic_ruins_3
+  - first:
+      213: 206791931615074455
+    second: magic_ruins_4
+  - first:
+      213: 9052570884752856740
+    second: magic_ruins_5
+  - first:
+      213: -8517717478428466116
+    second: magic_ruins_6
+  - first:
+      213: 246096130625303850
+    second: magic_ruins_7
+  - first:
+      213: -4885671867712513096
+    second: magic_ruins_8
+  - first:
+      213: -986873102387817258
+    second: magic_ruins_9
+  - first:
+      213: 5417184649695685963
+    second: magic_ruins_10
+  - first:
+      213: 6941864125651498142
+    second: magic_ruins_11
+  - first:
+      213: 5153351398623231715
+    second: magic_ruins_12
+  - first:
+      213: 3648056624401417571
+    second: magic_ruins_13
+  - first:
+      213: -2710120664255685891
+    second: magic_ruins_14
+  - first:
+      213: 8117514065023593018
+    second: magic_ruins_15
+  - first:
+      213: 6969141244835164187
+    second: magic_ruins_16
+  - first:
+      213: 7282775609414032457
+    second: magic_ruins_17
+  - first:
+      213: -1046824534230778375
+    second: magic_ruins_18
+  - first:
+      213: 7334713769495159399
+    second: magic_ruins_19
+  - first:
+      213: 458720236824309774
+    second: magic_ruins_20
+  - first:
+      213: 4882977303427183668
+    second: magic_ruins_21
+  - first:
+      213: 5177249351127887982
+    second: magic_ruins_22
+  - first:
+      213: 7121954696154363373
+    second: magic_ruins_23
+  - first:
+      213: -5391362696111067913
+    second: magic_ruins_24
+  - first:
+      213: 8685643898479765531
+    second: magic_ruins_25
+  - first:
+      213: 96165022277524236
+    second: magic_ruins_26
+  - first:
+      213: 8917094699550725955
+    second: magic_ruins_27
+  - first:
+      213: -8803197776970668140
+    second: magic_ruins_28
+  - first:
+      213: -6816753274914657054
+    second: magic_ruins_29
+  - first:
+      213: 5215815775390074628
+    second: magic_ruins_30
+  - first:
+      213: -4115190248113970989
+    second: magic_ruins_31
+  - first:
+      213: -364176664449630734
+    second: magic_ruins_32
+  - first:
+      213: -5128660919896580550
+    second: magic_ruins_33
+  - first:
+      213: -7629025478898958215
+    second: magic_ruins_34
+  - first:
+      213: 5410022918272784444
+    second: magic_ruins_35
+  - first:
+      213: 4263543574262308552
+    second: magic_ruins_36
+  - first:
+      213: 4636047148046766034
+    second: magic_ruins_37
+  - first:
+      213: 3855244233140873587
+    second: magic_ruins_38
+  - first:
+      213: -6161687151517113665
+    second: magic_ruins_39
+  - first:
+      213: -8673394073792927894
+    second: magic_ruins_40
+  - first:
+      213: 5391641057782020578
+    second: magic_ruins_41
+  - first:
+      213: 6141193053235905444
+    second: magic_ruins_42
+  - first:
+      213: 6135507885388269197
+    second: magic_ruins_43
+  - first:
+      213: -4392783413278281061
+    second: magic_ruins_44
+  - first:
+      213: -507080547919968827
+    second: magic_ruins_45
+  - first:
+      213: -4365761387698794489
+    second: magic_ruins_46
+  - first:
+      213: 5015553799301968030
+    second: magic_ruins_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: magic_ruins_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 1307
+        height: 799
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43986b339eccd6e0800000000000000
+      internalID: -1811345818357558454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_1
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 631
+        width: 127
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ab3db463cad6d80800000000000000
+      internalID: -8255753192699872735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_2
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 752
+        width: 72
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16dd31d7a69c4b410800000000000000
+      internalID: 1492038835768647009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_3
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 631
+        width: 93
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a085f37e16abb80800000000000000
+      internalID: -8378276510941312461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_4
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 752
+        width: 74
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 798555a8a2caed200800000000000000
+      internalID: 206791931615074455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_5
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 659
+        width: 121
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6dcb1d14131ad70800000000000000
+      internalID: 9052570884752856740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_6
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 752
+        width: 62
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34a229051dfac980800000000000000
+      internalID: -8517717478428466116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_7
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 652
+        width: 93
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a25f48e702f4a6300800000000000000
+      internalID: 246096130625303850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_8
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 652
+        width: 92
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb50eb525b923cb0800000000000000
+      internalID: -4885671867712513096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_9
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 733
+        width: 96
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d459cd542ced42f0800000000000000
+      internalID: -986873102387817258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_10
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 699
+        width: 72
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4d6fc7ccb4bd2b40800000000000000
+      internalID: 5417184649695685963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_11
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 349
+        width: 67
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e943c7884a4765060800000000000000
+      internalID: 6941864125651498142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_12
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 531
+        width: 92
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee33bd1bc1648740800000000000000
+      internalID: 5153351398623231715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_13
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 531
+        width: 93
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36505f1fb2080a230800000000000000
+      internalID: 3648056624401417571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_14
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 628
+        width: 80
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfa189c5d97b36ad0800000000000000
+      internalID: -2710120664255685891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_15
+      rect:
+        serializedVersion: 2
+        x: 1914
+        y: 628
+        width: 89
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3ae7f0a80437a070800000000000000
+      internalID: 8117514065023593018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_16
+      rect:
+        serializedVersion: 2
+        x: 2003
+        y: 643
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b107cefb90d57b060800000000000000
+      internalID: 6969141244835164187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_17
+      rect:
+        serializedVersion: 2
+        x: 2011
+        y: 603
+        width: 53
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c900ab4dd911560800000000000000
+      internalID: 7282775609414032457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_18
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 643
+        width: 38
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fdb207e1aee871f0800000000000000
+      internalID: -1046824534230778375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_19
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 349
+        width: 267
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 762ece7ff432ac560800000000000000
+      internalID: 7334713769495159399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_20
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 507
+        width: 92
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e00323fff93bd5600800000000000000
+      internalID: 458720236824309774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_21
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 507
+        width: 92
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43472118cf1d3c340800000000000000
+      internalID: 4882977303427183668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_22
+      rect:
+        serializedVersion: 2
+        x: 2011
+        y: 543
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e607997cad849d740800000000000000
+      internalID: 5177249351127887982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_23
+      rect:
+        serializedVersion: 2
+        x: 2019
+        y: 490
+        width: 61
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de5b4baff0446d260800000000000000
+      internalID: 7121954696154363373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_24
+      rect:
+        serializedVersion: 2
+        x: 2057
+        y: 543
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fce10b41380e25b0800000000000000
+      internalID: -5391362696111067913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_25
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 349
+        width: 43
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18ec6e6b1b998870800000000000000
+      internalID: 8685643898479765531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_26
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 470
+        width: 74
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b5ba80495a55100800000000000000
+      internalID: 96165022277524236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_27
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 349
+        width: 92
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3475d3b6262efbb70800000000000000
+      internalID: 8917094699550725955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_28
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 414
+        width: 121
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 497a7206342c4d580800000000000000
+      internalID: -8803197776970668140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_29
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 414
+        width: 121
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ec2b3f53070661a0800000000000000
+      internalID: -6816753274914657054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_30
+      rect:
+        serializedVersion: 2
+        x: 2019
+        y: 414
+        width: 56
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 407010a20dc426840800000000000000
+      internalID: 5215815775390074628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_31
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 293
+        width: 93
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d0e306c548e3e6c0800000000000000
+      internalID: -4115190248113970989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_32
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 293
+        width: 93
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fd3effc04f22faf0800000000000000
+      internalID: -364176664449630734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_33
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 293
+        width: 93
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3ed220f01653d8b0800000000000000
+      internalID: -5128660919896580550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_34
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 354
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970c2db4fb1402690800000000000000
+      internalID: -7629025478898958215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_35
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 293
+        width: 41
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c381f5e3e23441b40800000000000000
+      internalID: 5410022918272784444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_36
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 1
+        width: 462
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cedd44aa462b2b30800000000000000
+      internalID: 4263543574262308552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_37
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 172
+        width: 93
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df4a4d715c865040800000000000000
+      internalID: 4636047148046766034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_38
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 172
+        width: 93
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3792cbe3434908530800000000000000
+      internalID: 3855244233140873587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_39
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 172
+        width: 92
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb2ebb48e2a4d7aa0800000000000000
+      internalID: -6161687151517113665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_40
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 249
+        width: 49
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6728922b0ae1a780800000000000000
+      internalID: -8673394073792927894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_41
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 188
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e93285d9f4f2da40800000000000000
+      internalID: 5391641057782020578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_42
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 126
+        width: 268
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a309336b86e93550800000000000000
+      internalID: 6141193053235905444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_43
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 138
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d860d291ae3b52550800000000000000
+      internalID: 6135507885388269197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_44
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 68
+        width: 44
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b92f15472c2b903c0800000000000000
+      internalID: -4392783413278281061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_45
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 1
+        width: 276
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c548b4adec76f8f0800000000000000
+      internalID: -507080547919968827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_46
+      rect:
+        serializedVersion: 2
+        x: 2046
+        y: 68
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700d8101623b963c0800000000000000
+      internalID: -4365761387698794489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_ruins_47
+      rect:
+        serializedVersion: 2
+        x: 2046
+        y: 1
+        width: 54
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e90314f5b93da9540800000000000000
+      internalID: 5015553799301968030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      magic_ruins_0: -1811345818357558454
+      magic_ruins_1: -8255753192699872735
+      magic_ruins_10: 5417184649695685963
+      magic_ruins_11: 6941864125651498142
+      magic_ruins_12: 5153351398623231715
+      magic_ruins_13: 3648056624401417571
+      magic_ruins_14: -2710120664255685891
+      magic_ruins_15: 8117514065023593018
+      magic_ruins_16: 6969141244835164187
+      magic_ruins_17: 7282775609414032457
+      magic_ruins_18: -1046824534230778375
+      magic_ruins_19: 7334713769495159399
+      magic_ruins_2: 1492038835768647009
+      magic_ruins_20: 458720236824309774
+      magic_ruins_21: 4882977303427183668
+      magic_ruins_22: 5177249351127887982
+      magic_ruins_23: 7121954696154363373
+      magic_ruins_24: -5391362696111067913
+      magic_ruins_25: 8685643898479765531
+      magic_ruins_26: 96165022277524236
+      magic_ruins_27: 8917094699550725955
+      magic_ruins_28: -8803197776970668140
+      magic_ruins_29: -6816753274914657054
+      magic_ruins_3: -8378276510941312461
+      magic_ruins_30: 5215815775390074628
+      magic_ruins_31: -4115190248113970989
+      magic_ruins_32: -364176664449630734
+      magic_ruins_33: -5128660919896580550
+      magic_ruins_34: -7629025478898958215
+      magic_ruins_35: 5410022918272784444
+      magic_ruins_36: 4263543574262308552
+      magic_ruins_37: 4636047148046766034
+      magic_ruins_38: 3855244233140873587
+      magic_ruins_39: -6161687151517113665
+      magic_ruins_4: 206791931615074455
+      magic_ruins_40: -8673394073792927894
+      magic_ruins_41: 5391641057782020578
+      magic_ruins_42: 6141193053235905444
+      magic_ruins_43: 6135507885388269197
+      magic_ruins_44: -4392783413278281061
+      magic_ruins_45: -507080547919968827
+      magic_ruins_46: -4365761387698794489
+      magic_ruins_47: 5015553799301968030
+      magic_ruins_5: 9052570884752856740
+      magic_ruins_6: -8517717478428466116
+      magic_ruins_7: 246096130625303850
+      magic_ruins_8: -4885671867712513096
+      magic_ruins_9: -986873102387817258
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
