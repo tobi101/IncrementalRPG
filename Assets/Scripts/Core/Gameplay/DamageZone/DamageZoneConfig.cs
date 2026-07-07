@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core.Gameplay
 {
@@ -6,7 +7,9 @@ namespace Core.Gameplay
     public class DamageZoneConfig : ScriptableObject
     {
         public int damagePerTick = 1;
-        public float tickInterval = 1f;
+        [FormerlySerializedAs("tickInterval")]
+        public float baseManualAttackCooldown = 1f;
+        public float baseAutoAttackInterval = 1f;
         public float baseRadius = 0.6f;
         public float aspectRatio = 0.55f;
     }

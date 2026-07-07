@@ -107,11 +107,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000025
-    m_Localized: Attack Speed
+    m_Localized: Manual Attack Speed
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000026
-    m_Localized: Increases attack speed.
+    m_Localized: Reduces manual attack cooldown.
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000027
@@ -156,6 +156,22 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1000000000037
     m_Localized: New level!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000038
+    m_Localized: Auto Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000039
+    m_Localized: Unlocks automatic damage zone attacks.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000040
+    m_Localized: Auto Attack Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000041
+    m_Localized: Reduces automatic attack interval.
     m_Metadata:
       m_Items: []
   - m_Id: 2350952815255552
@@ -336,15 +352,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5134560734994432
-    m_Localized: Springness I
+    m_Localized: Manual Speed I
     m_Metadata:
       m_Items: []
   - m_Id: 5134593794498560
-    m_Localized: Springness II
+    m_Localized: Manual Speed II
     m_Metadata:
       m_Items: []
   - m_Id: 5134631723589632
-    m_Localized: Increases attack range
+    m_Localized: Reduces manual attack cooldown
     m_Metadata:
       m_Items: []
   - m_Id: 5130448047955968

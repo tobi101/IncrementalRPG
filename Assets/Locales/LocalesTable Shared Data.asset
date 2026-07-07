@@ -155,6 +155,22 @@ MonoBehaviour:
     m_Key: hud.level_transition_message
     m_Metadata:
       m_Items: []
+  - m_Id: 1000000000038
+    m_Key: skill.auto_attack_unlock.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000039
+    m_Key: skill.auto_attack_unlock.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000040
+    m_Key: skill.auto_attack_speed.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000041
+    m_Key: skill.auto_attack_speed.description
+    m_Metadata:
+      m_Items: []
   - m_Id: 2350604075655168
     m_Key: audio
     m_Metadata:

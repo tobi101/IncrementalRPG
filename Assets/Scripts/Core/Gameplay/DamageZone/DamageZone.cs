@@ -13,6 +13,10 @@ namespace Core.Gameplay
     public class DamageZone : IService
     {
         public enum State { Idle, Attacking }
+        public enum AttackSource { Manual, Auto }
+
+        private const float MinAttackInterval = 0.05f;
+        private const float MinAttackSpeedMultiplier = 0.01f;
 
         private readonly TileGrid _tileGrid;
         private readonly DamageZoneConfig _config;
@@ -25,7 +29,8 @@ namespace Core.Gameplay
         private readonly List<Creature> _creaturesInZone = new List<Creature>();
 
         private Vector3 _worldPosition;
-        private float _tickTimer;
+        private float _manualAttackCooldownRemaining;
+        private float _autoAttackTimer;
 
         public Vector3 WorldPosition => _worldPosition;
         public float RadiusX => _config.baseRadius * _skillTree.GetMultiplier(StatType.ZoneRadius);
@@ -33,7 +38,7 @@ namespace Core.Gameplay
         public State CurrentState { get; private set; } = State.Idle;
 
         public event Action<State> OnStateChanged;
-        public event Action OnZoneTick;
+        public event Action<AttackSource> OnZoneTick;
 
         public DamageZone(TileGrid tileGrid, DamageZoneConfig config, DamageZoneView view, AudioManager audioManager, Player player,
             SkillTreeService skillTree, GameplayInputBlocker inputBlocker)
@@ -61,7 +66,8 @@ namespace Core.Gameplay
             }
 
             UpdateAim();
-            TickZone(deltaTime);
+            UpdateManualAttack(deltaTime);
+            UpdateAutoAttack(deltaTime);
         }
 
         public void UpdateAim()
@@ -114,13 +120,68 @@ namespace Core.Gameplay
             OnStateChanged?.Invoke(CurrentState);
         }
 
-        private void TickZone(float deltaTime)
+        private void UpdateManualAttack(float deltaTime)
         {
-            _tickTimer += deltaTime;
-            var tickInterval = _config.tickInterval / _skillTree.GetMultiplier(StatType.AttackSpeed);
-            if (_tickTimer < tickInterval) return;
+            if (_manualAttackCooldownRemaining > 0f)
+                _manualAttackCooldownRemaining = Mathf.Max(0f, _manualAttackCooldownRemaining - deltaTime);
 
-            _tickTimer = 0f;
+            if (!WasManualAttackRequested())
+                return;
+
+            if (_manualAttackCooldownRemaining > 0f)
+                return;
+
+            PerformAttack(AttackSource.Manual);
+            _manualAttackCooldownRemaining = GetManualAttackCooldown();
+        }
+
+        private void UpdateAutoAttack(float deltaTime)
+        {
+            if (!_skillTree.IsUnlocked(GameFeature.AutoAttack))
+            {
+                _autoAttackTimer = 0f;
+                return;
+            }
+
+            _autoAttackTimer += deltaTime;
+            var autoAttackInterval = GetAutoAttackInterval();
+            if (_autoAttackTimer < autoAttackInterval)
+                return;
+
+            _autoAttackTimer = 0f;
+            PerformAttack(AttackSource.Auto);
+        }
+
+        private bool WasManualAttackRequested()
+        {
+            return Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame;
+        }
+
+        private float GetManualAttackCooldown()
+        {
+            return GetAttackInterval(_config.baseManualAttackCooldown, StatType.ManualAttackSpeed);
+        }
+
+        private float GetAutoAttackInterval()
+        {
+            return GetAttackInterval(_config.baseAutoAttackInterval, StatType.AutoAttackSpeed);
+        }
+
+        private float GetAttackInterval(float baseInterval, StatType speedStat)
+        {
+            var attackSpeed = GetAttackSpeedMultiplier(speedStat);
+            return Mathf.Max(MinAttackInterval, Mathf.Max(MinAttackInterval, baseInterval) / attackSpeed);
+        }
+
+        private float GetAttackSpeedMultiplier(StatType speedStat)
+        {
+            var additiveSpeed = 1f + _skillTree.GetBonus(speedStat);
+            var multiplicativeSpeed = _skillTree.GetMultiplier(speedStat);
+            return Mathf.Max(MinAttackSpeedMultiplier, additiveSpeed * multiplicativeSpeed);
+        }
+
+        private void PerformAttack(AttackSource source)
+        {
             RefreshCreaturesInZone();
             UpdateState();
 
@@ -132,13 +193,14 @@ namespace Core.Gameplay
             }
 
             _audioManager.PlayWaveAudio();
-            OnZoneTick?.Invoke();
+            OnZoneTick?.Invoke(source);
         }
 
         private void StopDamageRegistration()
         {
             _creaturesInZone.Clear();
-            _tickTimer = 0f;
+            _manualAttackCooldownRemaining = 0f;
+            _autoAttackTimer = 0f;
 
             if (CurrentState == State.Idle)
                 return;

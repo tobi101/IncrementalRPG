@@ -17,6 +17,10 @@ MonoBehaviour:
   entries:
   - node: {fileID: 11400000, guid: 238fc219b23d547a1b6e6c3907e17af4, type: 2}
     gridPosition: {x: 0, y: 0}
+  - node: {fileID: 11400000, guid: 13642fc5eae842d58e77718b42c3e6b1, type: 2}
+    gridPosition: {x: 0, y: 1}
+  - node: {fileID: 11400000, guid: c9aa8fa52b844b1a8d4231620039eac5, type: 2}
+    gridPosition: {x: 0, y: 2}
   - node: {fileID: 11400000, guid: d4a7bc70acca045b983d7a86ef37f217, type: 2}
     gridPosition: {x: -2, y: 1}
   - node: {fileID: 11400000, guid: a90c5ed93f5404b22b1db4a89c72a911, type: 2}

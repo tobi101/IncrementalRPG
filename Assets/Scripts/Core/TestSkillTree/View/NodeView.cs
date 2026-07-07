@@ -33,6 +33,9 @@ namespace Core.TestSkillTree.View
         private Vector3               _feedbackBaseScale;
         private Quaternion            _feedbackBaseRotation;
         private Coroutine             _feedbackRoutine;
+        private Coroutine             _revealRoutine;
+        private Vector3               _revealBaseScale;
+        private bool                  _hasRevealBaseScale;
         private bool                  _hasFeedbackBaseTransform;
         private NodeState             _lastVisibleState;
         private bool                  _hasLastVisibleState;
@@ -52,13 +55,19 @@ namespace Core.TestSkillTree.View
             if (_icon != null && definition.icon != null)
                 _icon.sprite = definition.icon;
 
+            CacheRevealBaseScale(true);
             CacheFeedbackBaseTransform(GetFeedbackRoot(), true);
             Refresh();
         }
 
         public void Refresh()
         {
-            var state = _service.GetState(_definition.id);
+            Refresh(_service.GetState(_definition.id));
+        }
+
+        public void Refresh(NodeState state)
+        {
+            StopRevealRoutine(true);
 
             if (state == NodeState.Hidden)
             {
@@ -72,6 +81,40 @@ namespace Core.TestSkillTree.View
 
             ApplyStateCircle(state);
             ApplyLockedVisualState(state);
+        }
+
+        public void PrepareReveal(NodeState state, float startScale)
+        {
+            StopRevealRoutine(false);
+            CacheRevealBaseScale();
+
+            gameObject.SetActive(true);
+
+            ApplyStateCircle(state);
+            ApplyLockedVisualState(state);
+
+            var target = GetRevealRoot();
+            if (target != null)
+                target.localScale = _revealBaseScale * Mathf.Max(0f, startScale);
+        }
+
+        public void PlayReveal(float duration, float startScale)
+        {
+            var target = GetRevealRoot();
+            if (target == null)
+                return;
+
+            CacheRevealBaseScale();
+            StopRevealRoutine(false);
+            target.localScale = _revealBaseScale * Mathf.Max(0f, startScale);
+
+            if (!gameObject.activeInHierarchy)
+            {
+                ResetRevealTransform();
+                return;
+            }
+
+            _revealRoutine = StartCoroutine(PlayRevealRoutine(target, duration));
         }
 
         private void Update()
@@ -177,6 +220,75 @@ namespace Core.TestSkillTree.View
 
         private RectTransform GetFeedbackRoot() =>
             _feedbackRoot != null ? _feedbackRoot : (RectTransform)transform;
+
+        private RectTransform GetRevealRoot() =>
+            (RectTransform)transform;
+
+        private void CacheRevealBaseScale(bool force = false)
+        {
+            var target = GetRevealRoot();
+            if (target == null)
+                return;
+
+            if (!force && _hasRevealBaseScale)
+                return;
+
+            _revealBaseScale = target.localScale;
+            _hasRevealBaseScale = true;
+        }
+
+        private void StopRevealRoutine(bool resetTransform)
+        {
+            if (_revealRoutine != null)
+            {
+                StopCoroutine(_revealRoutine);
+                _revealRoutine = null;
+            }
+
+            if (resetTransform)
+                ResetRevealTransform();
+        }
+
+        private IEnumerator PlayRevealRoutine(RectTransform target, float duration)
+        {
+            if (target == null)
+                yield break;
+
+            if (duration <= 0f)
+            {
+                ResetRevealTransform();
+                _revealRoutine = null;
+                yield break;
+            }
+
+            var fromScale = target.localScale;
+            var elapsed = 0f;
+            while (elapsed < duration)
+            {
+                if (target == null)
+                    yield break;
+
+                var t = Mathf.Clamp01(elapsed / duration);
+                var easedT = Mathf.SmoothStep(0f, 1f, t);
+                target.localScale = Vector3.Lerp(fromScale, _revealBaseScale, easedT);
+
+                elapsed += Time.unscaledDeltaTime;
+                yield return null;
+            }
+
+            ResetRevealTransform();
+            _revealRoutine = null;
+        }
+
+        private void ResetRevealTransform()
+        {
+            if (!_hasRevealBaseScale)
+                return;
+
+            var target = GetRevealRoot();
+            if (target != null)
+                target.localScale = _revealBaseScale;
+        }
 
         private void CacheFeedbackBaseTransform(RectTransform target, bool force = false)
         {
@@ -395,6 +507,7 @@ namespace Core.TestSkillTree.View
                 _feedbackRoutine = null;
             }
 
+            StopRevealRoutine(true);
             ResetFeedbackTransform();
 
             _lockedAnimationVersion++;

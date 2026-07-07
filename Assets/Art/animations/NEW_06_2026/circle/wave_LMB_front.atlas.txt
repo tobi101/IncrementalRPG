@@ -1,0 +1,8 @@
+wave_LMB_front.png
+size:301,421
+filter:Linear,Linear
+curve3
+bounds:2,2,297,138
+offsets:0,2,297,142
+curve4
+bounds:2,142,297,277

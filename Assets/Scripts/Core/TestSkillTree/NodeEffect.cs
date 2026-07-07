@@ -20,24 +20,26 @@ namespace Core.TestSkillTree
     
     public enum StatType
     {
-        ZoneRadius,
-        ZoneDamage,
-        AttackSpeed,
-        SpawnSpeed,
-        MapSize,
-        SessionTime,
-        BombExplosionRadius,
-        BombExplosionDamage,
-        BombSpawnSpeed,
-        GoldDrop,
-        InitialEnemySpawnDensity,
-        InitialBombSpawnDensity,
+        ZoneRadius = 0,
+        ZoneDamage = 1,
+        ManualAttackSpeed = 2,
+        AutoAttackSpeed = 12,
+        SpawnSpeed = 3,
+        MapSize = 4,
+        SessionTime = 5,
+        BombExplosionRadius = 6,
+        BombExplosionDamage = 7,
+        BombSpawnSpeed = 8,
+        GoldDrop = 9,
+        InitialEnemySpawnDensity = 10,
+        InitialBombSpawnDensity = 11,
     }
 
     public enum GameFeature
     {
         None = 0,
-        Bombs,
+        Bombs = 1,
+        AutoAttack = 2,
     }
 
     public enum NodeEffectType

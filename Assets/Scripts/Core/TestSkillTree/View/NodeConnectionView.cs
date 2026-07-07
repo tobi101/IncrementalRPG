@@ -10,22 +10,57 @@ namespace Core.TestSkillTree.View
     {
         [SerializeField] private float _thickness = 4f;
 
+        private RectTransform _rectTransform;
+        private float _fullLength;
+
         public void Setup(Vector2 from, Vector2 to)
         {
             var delta    = to - from;
             var distance = delta.magnitude;
             var angle    = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
 
-            var rt  = (RectTransform)transform;
-            rt.pivot            = new Vector2(0f, 0.5f);
-            rt.sizeDelta        = new Vector2(distance, _thickness);
-            rt.anchoredPosition = from;
-            rt.localEulerAngles = new Vector3(0f, 0f, angle);
+            _rectTransform = (RectTransform)transform;
+            _fullLength = distance;
+
+            _rectTransform.pivot            = new Vector2(0f, 0.5f);
+            _rectTransform.sizeDelta        = new Vector2(distance, _thickness);
+            _rectTransform.anchoredPosition = from;
+            _rectTransform.localEulerAngles = new Vector3(0f, 0f, angle);
         }
 
         public void Refresh(NodeState state)
         {
-            gameObject.SetActive(state != NodeState.Hidden);
+            var isVisible = state != NodeState.Hidden;
+            gameObject.SetActive(isVisible);
+
+            if (isVisible)
+                SetRevealProgress(1f);
+        }
+
+        public void PrepareReveal()
+        {
+            gameObject.SetActive(true);
+            SetRevealProgress(0f);
+        }
+
+        public void SetRevealProgress(float progress)
+        {
+            var rt = GetRectTransform();
+            if (rt == null)
+                return;
+
+            if (_fullLength <= 0f)
+                _fullLength = rt.sizeDelta.x;
+
+            rt.sizeDelta = new Vector2(_fullLength * Mathf.Clamp01(progress), _thickness);
+        }
+
+        private RectTransform GetRectTransform()
+        {
+            if (_rectTransform == null)
+                _rectTransform = (RectTransform)transform;
+
+            return _rectTransform;
         }
     }
 }

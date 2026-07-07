@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DamageZoneConfig
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.DamageZoneConfig
   damagePerTick: 1
-  tickInterval: 0.75
+  baseManualAttackCooldown: 0.75
+  baseAutoAttackInterval: 0.75
   baseRadius: 1
   aspectRatio: 0.55

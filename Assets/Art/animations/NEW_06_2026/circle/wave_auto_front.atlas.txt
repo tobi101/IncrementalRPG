@@ -1,0 +1,6 @@
+wave_auto_front.png
+size:301,117
+filter:Linear,Linear
+curve2
+bounds:2,2,297,113
+offsets:0,2,297,117

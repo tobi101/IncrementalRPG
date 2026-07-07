@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Core.StateMachine;
 using Core.StateMachine.States;
@@ -24,6 +25,10 @@ namespace Core.TestSkillTree.View
         [SerializeField] private Button             _closeButton;
         [SerializeField] private Vector2            _contentPadding = new Vector2(600f, 600f);
         [SerializeField] private NodeDefinition     _initialFocusNode;
+        [SerializeField] private float              _connectionRevealDuration = 0.25f;
+        [SerializeField] private float              _nodeRevealDuration = 0.18f;
+        [SerializeField] private float              _nodeRevealStartScale = 0.15f;
+        [SerializeField] private float              _revealWaveDelay = 0.04f;
 
         [Inject] private GameStateMachine     _stateMachine;
         [Inject] private NodeBorderColorConfig _borderColorConfig;
@@ -36,10 +41,14 @@ namespace Core.TestSkillTree.View
         private readonly List<NodeView>  _nodeViews = new List<NodeView>();
         private readonly Dictionary<string, NodeView> _nodeViewsById = new Dictionary<string, NodeView>();
         private readonly List<(NodeConnectionView view, NodeDefinition def)> _connectionViews = new();
+        private readonly Dictionary<string, NodeDefinition> _nodeDefinitionsById = new Dictionary<string, NodeDefinition>();
+        private readonly Dictionary<string, NodeState> _lastNodeStates = new Dictionary<string, NodeState>();
+        private readonly Dictionary<string, List<NodeConnectionView>> _incomingConnectionsByNodeId = new Dictionary<string, List<NodeConnectionView>>();
         private SkillTreePanZoomController _panZoomController;
         private Vector2 _initialFocusPosition;
         private bool _hasInitialFocusPosition;
         private bool _hasAppliedInitialFocus;
+        private Coroutine _revealRoutine;
 
         [Inject]
         public void Construct(SkillTreeConfig config, SkillTreeService service, Player player, AudioManager audioManager)
@@ -69,6 +78,7 @@ namespace Core.TestSkillTree.View
 
         public void Hide()
         {
+            CompleteActiveRevealFromCachedStates();
             gameObject.SetActive(false);
         }
 
@@ -80,6 +90,13 @@ namespace Core.TestSkillTree.View
 
         private void Build()
         {
+            _nodeViews.Clear();
+            _nodeViewsById.Clear();
+            _connectionViews.Clear();
+            _nodeDefinitionsById.Clear();
+            _lastNodeStates.Clear();
+            _incomingConnectionsByNodeId.Clear();
+
             var nodePositions = new Dictionary<NodeDefinition, Vector2>();
             var entries = new List<SkillTreeNodeEntry>();
 
@@ -90,6 +107,9 @@ namespace Core.TestSkillTree.View
 
                 entries.Add(entry);
                 nodePositions[entry.node] = _config.GridToGraphPosition(entry.gridPosition);
+
+                if (!string.IsNullOrEmpty(entry.node.id))
+                    _nodeDefinitionsById[entry.node.id] = entry.node;
             }
 
             ConfigureContentBounds(nodePositions);
@@ -114,6 +134,8 @@ namespace Core.TestSkillTree.View
                     connection.Setup(from, to);
                     connection.Refresh(_service.GetState(def.id));
                     _connectionViews.Add((connection, def));
+
+                    RegisterIncomingConnection(def.id, connection);
                 }
             }
 
@@ -127,6 +149,36 @@ namespace Core.TestSkillTree.View
 
                 if (!string.IsNullOrEmpty(nodeView.NodeId))
                     _nodeViewsById[nodeView.NodeId] = nodeView;
+            }
+
+            CacheCurrentNodeStates();
+        }
+
+        private void RegisterIncomingConnection(string nodeId, NodeConnectionView connection)
+        {
+            if (string.IsNullOrEmpty(nodeId) || connection == null)
+                return;
+
+            if (!_incomingConnectionsByNodeId.TryGetValue(nodeId, out var connections))
+            {
+                connections = new List<NodeConnectionView>();
+                _incomingConnectionsByNodeId[nodeId] = connections;
+            }
+
+            connections.Add(connection);
+        }
+
+        private void CacheCurrentNodeStates()
+        {
+            _lastNodeStates.Clear();
+
+            foreach (var nodeView in _nodeViews)
+            {
+                var nodeId = nodeView.NodeId;
+                if (string.IsNullOrEmpty(nodeId))
+                    continue;
+
+                _lastNodeStates[nodeId] = _service.GetState(nodeId);
             }
         }
 
@@ -251,11 +303,203 @@ namespace Core.TestSkillTree.View
 
         private void RefreshAll()
         {
+            CompleteActiveRevealFromCachedStates();
+
+            var canAnimateReveal = isActiveAndEnabled && gameObject.activeInHierarchy;
+            var currentStates = new Dictionary<string, NodeState>();
+            var revealedNodeIds = new HashSet<string>();
+
             foreach (var nodeView in _nodeViews)
-                nodeView.Refresh();
+            {
+                var nodeId = nodeView.NodeId;
+                if (string.IsNullOrEmpty(nodeId))
+                {
+                    nodeView.Refresh();
+                    continue;
+                }
+
+                var state = _service.GetState(nodeId);
+                currentStates[nodeId] = state;
+
+                _lastNodeStates.TryGetValue(nodeId, out var previousState);
+                var shouldReveal = canAnimateReveal &&
+                                   previousState == NodeState.Hidden &&
+                                   state != NodeState.Hidden;
+
+                if (shouldReveal)
+                {
+                    nodeView.PrepareReveal(state, 0f);
+                    revealedNodeIds.Add(nodeId);
+                    continue;
+                }
+
+                nodeView.Refresh(state);
+            }
 
             foreach (var (view, def) in _connectionViews)
-                view.Refresh(_service.GetState(def.id));
+            {
+                var state = currentStates.TryGetValue(def.id, out var cachedState)
+                    ? cachedState
+                    : _service.GetState(def.id);
+
+                if (revealedNodeIds.Contains(def.id))
+                    view.PrepareReveal();
+                else
+                    view.Refresh(state);
+            }
+
+            _lastNodeStates.Clear();
+            foreach (var pair in currentStates)
+                _lastNodeStates[pair.Key] = pair.Value;
+
+            if (revealedNodeIds.Count > 0)
+                _revealRoutine = StartCoroutine(PlayRevealSequence(revealedNodeIds));
+        }
+
+        private void CompleteActiveRevealFromCachedStates()
+        {
+            if (_revealRoutine == null)
+                return;
+
+            StopCoroutine(_revealRoutine);
+            _revealRoutine = null;
+
+            foreach (var nodeView in _nodeViews)
+            {
+                var nodeId = nodeView.NodeId;
+                if (!string.IsNullOrEmpty(nodeId) && _lastNodeStates.TryGetValue(nodeId, out var state))
+                    nodeView.Refresh(state);
+            }
+
+            foreach (var (view, def) in _connectionViews)
+            {
+                if (_lastNodeStates.TryGetValue(def.id, out var state))
+                    view.Refresh(state);
+            }
+        }
+
+        private IEnumerator PlayRevealSequence(HashSet<string> revealedNodeIds)
+        {
+            var pending = new HashSet<string>(revealedNodeIds);
+
+            while (pending.Count > 0)
+            {
+                var wave = GetNextRevealWave(pending);
+                if (wave.Count == 0)
+                    wave.AddRange(pending);
+
+                yield return PlayConnectionRevealWave(wave);
+
+                foreach (var nodeId in wave)
+                {
+                    if (_nodeViewsById.TryGetValue(nodeId, out var nodeView))
+                        nodeView.PlayReveal(_nodeRevealDuration, _nodeRevealStartScale);
+                }
+
+                yield return WaitUnscaled(_nodeRevealDuration);
+
+                foreach (var nodeId in wave)
+                    pending.Remove(nodeId);
+
+                if (pending.Count > 0)
+                    yield return WaitUnscaled(_revealWaveDelay);
+            }
+
+            _revealRoutine = null;
+        }
+
+        private List<string> GetNextRevealWave(HashSet<string> pending)
+        {
+            var wave = new List<string>();
+
+            foreach (var nodeId in pending)
+            {
+                if (!_nodeDefinitionsById.TryGetValue(nodeId, out var definition) ||
+                    !HasPendingPrerequisite(definition, pending))
+                {
+                    wave.Add(nodeId);
+                }
+            }
+
+            return wave;
+        }
+
+        private static bool HasPendingPrerequisite(NodeDefinition definition, HashSet<string> pending)
+        {
+            if (definition.prerequisites == null)
+                return false;
+
+            foreach (var prerequisite in definition.prerequisites)
+            {
+                var prerequisiteId = prerequisite.node != null
+                    ? prerequisite.node.id
+                    : string.Empty;
+
+                if (!string.IsNullOrEmpty(prerequisiteId) && pending.Contains(prerequisiteId))
+                    return true;
+            }
+
+            return false;
+        }
+
+        private IEnumerator PlayConnectionRevealWave(List<string> wave)
+        {
+            var connections = new List<NodeConnectionView>();
+
+            foreach (var nodeId in wave)
+            {
+                if (!_incomingConnectionsByNodeId.TryGetValue(nodeId, out var incomingConnections))
+                    continue;
+
+                foreach (var connection in incomingConnections)
+                {
+                    if (connection == null)
+                        continue;
+
+                    connection.PrepareReveal();
+                    connections.Add(connection);
+                }
+            }
+
+            if (connections.Count == 0)
+                yield break;
+
+            if (_connectionRevealDuration <= 0f)
+            {
+                foreach (var connection in connections)
+                    connection.SetRevealProgress(1f);
+
+                yield break;
+            }
+
+            var elapsed = 0f;
+            while (elapsed < _connectionRevealDuration)
+            {
+                var t = Mathf.Clamp01(elapsed / _connectionRevealDuration);
+                var easedT = Mathf.SmoothStep(0f, 1f, t);
+
+                foreach (var connection in connections)
+                    connection.SetRevealProgress(easedT);
+
+                elapsed += Time.unscaledDeltaTime;
+                yield return null;
+            }
+
+            foreach (var connection in connections)
+                connection.SetRevealProgress(1f);
+        }
+
+        private static IEnumerator WaitUnscaled(float duration)
+        {
+            if (duration <= 0f)
+                yield break;
+
+            var elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                yield return null;
+            }
         }
 
         private void PlayNodeUpgradeFeedback(string nodeId)
@@ -267,9 +511,21 @@ namespace Core.TestSkillTree.View
                 nodeView.PlayUpgradeFeedback();
         }
 
+        private void OnDisable()
+        {
+            CompleteActiveRevealFromCachedStates();
+        }
+
         private void OnDestroy()
         {
             _closeButton.onClick.RemoveAllListeners();
+
+            if (_revealRoutine != null)
+            {
+                StopCoroutine(_revealRoutine);
+                _revealRoutine = null;
+            }
+
             if (_service != null)
             {
                 _service.OnUpgraded -= RefreshAll;
