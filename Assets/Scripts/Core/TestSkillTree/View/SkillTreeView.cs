@@ -65,7 +65,7 @@ namespace Core.TestSkillTree.View
             Build();
 
             _service.OnUpgraded += RefreshAll;
-            _service.OnNodeUpgraded += PlayNodeUpgradeFeedback;
+            _service.OnNodeUpgraded += HandleNodeUpgraded;
             _player.OnGoldChanged += RefreshGold;
             RefreshGold();
         }
@@ -502,13 +502,13 @@ namespace Core.TestSkillTree.View
             }
         }
 
-        private void PlayNodeUpgradeFeedback(string nodeId)
+        private void HandleNodeUpgraded(string nodeId)
         {
             if (string.IsNullOrEmpty(nodeId))
                 return;
 
             if (_nodeViewsById.TryGetValue(nodeId, out var nodeView))
-                nodeView.PlayUpgradeFeedback();
+                nodeView.PlayLevelUpgrade(_service.GetLevel(nodeId));
         }
 
         private void OnDisable()
@@ -529,7 +529,7 @@ namespace Core.TestSkillTree.View
             if (_service != null)
             {
                 _service.OnUpgraded -= RefreshAll;
-                _service.OnNodeUpgraded -= PlayNodeUpgradeFeedback;
+                _service.OnNodeUpgraded -= HandleNodeUpgraded;
             }
             if (_player != null)
                 _player.OnGoldChanged -= RefreshGold;

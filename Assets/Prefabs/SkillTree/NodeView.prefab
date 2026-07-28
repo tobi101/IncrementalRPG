@@ -32,6 +32,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7710281355405404693}
+  - {fileID: 4774748742481939435}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -54,11 +55,7 @@ MonoBehaviour:
   _icon: {fileID: 7067717992799436699}
   _stateCircleImage: {fileID: 3340970767590097924}
   _stateCircleRotationDegreesPerSecond: 18
-  _feedbackRoot: {fileID: 7710281355405404693}
-  _feedbackScale: 0.9
-  _feedbackClockwiseRotationDegrees: 12
-  _feedbackShrinkDuration: 0.08
-  _feedbackReturnDuration: 0.14
+  _levelCounter: {fileID: 8643125793345028170}
   _lockedSkeleton: {fileID: 4353650043811947079}
   _lockedIdleAnimationName: idle
   _lockedOpenAnimationName: open
@@ -437,3 +434,84 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2878199148084053351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4774748742481939435}
+  - component: {fileID: 2660277147465094238}
+  - component: {fileID: 8643125793345028170}
+  m_Layer: 5
+  m_Name: Counter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4774748742481939435
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878199148084053351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4903392965996050273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -48.375}
+  m_SizeDelta: {x: 118, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2660277147465094238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878199148084053351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: -8
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &8643125793345028170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878199148084053351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 480be21144d343e3b90242573e587efb, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.View.NodeLevelCounterView
+  _container: {fileID: 4774748742481939435}
+  _layoutGroup: {fileID: 2660277147465094238}
+  _lampPrefab: {fileID: 7235915384728239055, guid: c2ec286d27134542bc37f1a1a3b8b9eb, type: 3}
+  _idleOffAnimationName: idle_off
+  _turnOnAnimationName: on
+  _idleOnAnimationName: idle_on
