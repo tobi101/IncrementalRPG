@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: a7effb429cfb6d9499e50a3b266d8311
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Core/Contracts/IStackSizeLimitable.cs
+  uploadId: 941644

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: fa276eeb7b4ad3049bf2b2a436e5942f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Tools/MonoSingleton.cs
+  uploadId: 941644

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4b8a3cf361c213544b136821af5c5a14
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo1 Inventories/SO/Rules/Consumable
+    Inventory Rule Preset.asset
+  uploadId: 941644

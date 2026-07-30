@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dcfc6846c9bd4f14cbc05ff54f4775b3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo2 Loot/Prefabs/Filter
+    Button.prefab
+  uploadId: 941644

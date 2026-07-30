@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: df793ae3f6914c908fb0d04a8b64742a
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Inventories/InventoryPlacementGeometry.cs
+  uploadId: 941644

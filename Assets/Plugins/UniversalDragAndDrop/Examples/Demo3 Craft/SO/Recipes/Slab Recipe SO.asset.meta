@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 11cf9ee79d58af347b7346cef7b1f2de
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo3 Craft/SO/Recipes/Slab
+    Recipe SO.asset
+  uploadId: 941644

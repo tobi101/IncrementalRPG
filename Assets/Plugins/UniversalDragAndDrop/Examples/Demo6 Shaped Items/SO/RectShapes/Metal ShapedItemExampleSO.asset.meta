@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 18f3714ce812bd640b59302cda84ad0a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo6 Shaped Items/SO/RectShapes/Metal
+    ShapedItemExampleSO.asset
+  uploadId: 941644

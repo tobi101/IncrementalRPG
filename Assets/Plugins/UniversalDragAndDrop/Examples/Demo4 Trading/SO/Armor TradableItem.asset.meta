@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3ef1275359d08144f86d181c977691dd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo4 Trading/SO/Armor
+    TradableItem.asset
+  uploadId: 941644

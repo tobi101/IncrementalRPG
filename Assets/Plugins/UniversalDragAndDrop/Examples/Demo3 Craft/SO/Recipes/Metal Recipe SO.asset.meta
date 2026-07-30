@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 996cc37f3705a1c4f8439f2c909b0f28
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo3 Craft/SO/Recipes/Metal
+    Recipe SO.asset
+  uploadId: 941644

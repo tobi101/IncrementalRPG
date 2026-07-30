@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f36ef02c6b3c7984f9376a24807f7160
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo1 Inventories/SO/Items/BowExampleSO.asset
+  uploadId: 941644

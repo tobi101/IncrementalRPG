@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2292ca8dafca1fa4b91056d72f344476
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo6 Shaped Items/Editor/DragAndDropSystem.Examples.ShapedItems.Editor.asmdef
+  uploadId: 941644

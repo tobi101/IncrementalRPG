@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 09b595e01348413cb744002e29d2b081
+timeCreated: 1761091163
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Rules/CompositeRule.cs
+  uploadId: 941644

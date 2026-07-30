@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a0e7c3bcd306e7a4c9e6a93d4a0d2b90
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo3 Craft/SO/Items/Metal
+    SO.asset
+  uploadId: 941644

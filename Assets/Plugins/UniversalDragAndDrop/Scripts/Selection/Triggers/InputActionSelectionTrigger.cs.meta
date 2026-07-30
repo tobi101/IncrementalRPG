@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 2b8e7e376bc514547ba66684cf36859c
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Selection/Triggers/InputActionSelectionTrigger.cs
+  uploadId: 941644

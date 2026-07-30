@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 7d2dd6b264f6491f95256a04772ac0c1
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Inventories/IdentityItemAdapterConverter.cs
+  uploadId: 941644

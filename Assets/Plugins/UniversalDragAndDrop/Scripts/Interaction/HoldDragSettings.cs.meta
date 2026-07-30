@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 3b0cf4f7021ad1a49b56e1d1cd2915e9
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Interaction/HoldDragSettings.cs
+  uploadId: 941644

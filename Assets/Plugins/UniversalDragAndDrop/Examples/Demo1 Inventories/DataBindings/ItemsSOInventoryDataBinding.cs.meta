@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b172a1c875df4947ab83e23fd6ac19a6
+timeCreated: 1760111702
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo1 Inventories/DataBindings/ItemsSOInventoryDataBinding.cs
+  uploadId: 941644

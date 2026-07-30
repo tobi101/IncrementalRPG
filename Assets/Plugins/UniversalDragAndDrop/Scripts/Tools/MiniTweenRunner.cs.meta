@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: f70eb4f61b81f194bb13e80f3204fd0d
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Tools/MiniTweenRunner.cs
+  uploadId: 941644

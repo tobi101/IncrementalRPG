@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a990aeb453b3f56469aa33dd089e149c
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/README.md
+  uploadId: 941644

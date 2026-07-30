@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: dd4b2a6f2b634299957aa66846fd359b
+timeCreated: 1774103073
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Inventories/Strategies/SeparableStacksStrategy.cs
+  uploadId: 941644

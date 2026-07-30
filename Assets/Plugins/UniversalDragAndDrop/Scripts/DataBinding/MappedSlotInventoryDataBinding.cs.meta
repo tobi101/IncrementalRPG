@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 5f67357416e6fcc46a1239df1e11940b
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/DataBinding/MappedSlotInventoryDataBinding.cs
+  uploadId: 941644

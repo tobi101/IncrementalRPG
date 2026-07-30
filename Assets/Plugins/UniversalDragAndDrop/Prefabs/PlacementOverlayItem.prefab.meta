@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8ec015131e3dfc642903d080ddf795ca
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Prefabs/PlacementOverlayItem.prefab
+  uploadId: 941644

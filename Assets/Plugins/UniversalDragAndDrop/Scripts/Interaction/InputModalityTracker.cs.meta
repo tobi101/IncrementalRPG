@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 688a74ff5d833a644ac2eab66a38a13d
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Interaction/InputModalityTracker.cs
+  uploadId: 941644

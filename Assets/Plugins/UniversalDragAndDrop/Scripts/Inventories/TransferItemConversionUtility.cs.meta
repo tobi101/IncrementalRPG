@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 6a6467aa51f114c43a027df7a050af49
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Inventories/TransferItemConversionUtility.cs
+  uploadId: 941644

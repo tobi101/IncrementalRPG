@@ -1,0 +1,23 @@
+{
+  "name": "UDND.Runtime",
+  "rootNamespace": "UDND",
+  "references": [
+    "Unity.InputSystem",
+    "Unity.ugui"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [
+    {
+      "name": "com.unity.inputsystem",
+      "expression": "",
+      "define": "UDND_INPUT_SYSTEM"
+    }
+  ],
+  "noEngineReferences": false
+}

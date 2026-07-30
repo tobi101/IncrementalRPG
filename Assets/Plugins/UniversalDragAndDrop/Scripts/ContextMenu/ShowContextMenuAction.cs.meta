@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: d915d864827a7f746be17a818afa9bc7
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/ContextMenu/ShowContextMenuAction.cs
+  uploadId: 941644

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4af40b5895ba8d2479afac6ca07f25d5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo3 Craft/SO/Items/Planks
+    SO.asset
+  uploadId: 941644

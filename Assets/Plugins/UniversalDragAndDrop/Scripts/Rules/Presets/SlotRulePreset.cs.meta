@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 8352fa4dcc0356f4890cd3efd108600c
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Rules/Presets/SlotRulePreset.cs
+  uploadId: 941644

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2b6695366851d034693ba5a4f221bb61
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo1 Inventories/SO/Contexts/SortEntry
+    rev.asset
+  uploadId: 941644

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 147677cb42d6db241a5dbe7e7f8c6a77
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo4 Trading/SO/Consumable
+    1 TradableItem.asset
+  uploadId: 941644

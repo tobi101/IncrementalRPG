@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4ee298a444b14420b92831d1436f6591
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo6 Shaped Items/Adapters/ShapedItemAdapter.cs
+  uploadId: 941644

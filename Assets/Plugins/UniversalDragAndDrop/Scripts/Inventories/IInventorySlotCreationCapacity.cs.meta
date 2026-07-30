@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: a3f27c8e1b4d92e05c6f3a7b891d4e52
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Inventories/IInventorySlotCreationCapacity.cs
+  uploadId: 941644

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 3915e9ca14f44e8098fb474fa95a18e1
+timeCreated: 1776471055
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/UI/Tooltip/FadeTooltipView.cs
+  uploadId: 941644

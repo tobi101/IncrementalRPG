@@ -1,0 +1,49 @@
+using System.Collections.Generic;
+using UDND.Examples;
+using UnityEngine;
+using UDND.Core;
+using UDND.DataBinding;
+using UDND.Rules;
+
+namespace UDND.Examples.Loot
+{
+    /// <summary>
+    /// DataBinding for the player inventory.
+    /// Connects PlayerInventoryData (data) with the inventory UI.
+    /// Preserves item positions in slots.
+    /// </summary>
+    public class PlayerInventoryDataBinding : SlotIndexedInventoryDataBinding<ItemExampleWith3DSO, ItemAdapterSoWith3DAdapter>
+    {
+        [Header("Player Data")]
+        [SerializeField, Tooltip("Player inventory data component")]
+        private PlayerInventoryData _playerData;
+
+        protected override IEnumerable<(int index, IReadOnlyList<ItemExampleWith3DSO> items)> GetOccupiedSlots()
+        {
+            var slots = _playerData.Slots;
+            for (int i = 0; i < slots.Count; i++)
+                if (slots[i] != null)
+                    yield return (i, new[] { slots[i] });
+        }
+
+        protected override ItemAdapterSoWith3DAdapter CreateAdapter(ItemExampleWith3DSO item) => new(item);
+        protected override void AddToSlotData(int index, IReadOnlyList<ItemAdapterSoWith3DAdapter> adapters) => _playerData.SetItem(index, adapters[0].item);
+        protected override void RemoveFromSlotData(int index, IReadOnlyList<ItemAdapterSoWith3DAdapter> adapters) => _playerData.ClearSlot(index);
+        
+        // Additionally forbid placing into an occupied slot in any inventory mode
+        protected override RuleResult CanDrop(DragContext context, DragEntry entry)
+        {
+            // Get the slot index the item is being dropped onto
+            int targetIndex = context.TargetBaseSlot.Index;
+
+            // Check whether this slot is occupied
+            if (_playerData.GetItem(targetIndex) != null)
+            {
+                return RuleResult.Failure("This slot is already occupied!");
+            }
+
+            // If the slot is free, allow the drop
+            return RuleResult.Success();
+        }
+    }
+}

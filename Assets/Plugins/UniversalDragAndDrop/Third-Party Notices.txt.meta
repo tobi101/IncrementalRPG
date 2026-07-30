@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9f8a420e9ea438d4e89ec7753f068f70
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Third-Party Notices.txt
+  uploadId: 941644

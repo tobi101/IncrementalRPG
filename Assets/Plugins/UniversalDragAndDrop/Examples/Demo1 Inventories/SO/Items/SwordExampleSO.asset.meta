@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f03d5c3c4add6dc45a3b8fac5c5385e9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo1 Inventories/SO/Items/SwordExampleSO.asset
+  uploadId: 941644

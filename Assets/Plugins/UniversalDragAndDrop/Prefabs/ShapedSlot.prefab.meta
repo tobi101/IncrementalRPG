@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2c88374149dec9d46a49070d0a44a0d2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Prefabs/ShapedSlot.prefab
+  uploadId: 941644

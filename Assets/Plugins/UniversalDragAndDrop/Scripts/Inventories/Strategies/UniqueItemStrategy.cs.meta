@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: aa21c327dfea4261a444f843fc01d7da
+timeCreated: 1774102974
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Inventories/Strategies/UniqueItemStrategy.cs
+  uploadId: 941644

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 299f606572ad47ed92ca7233f496d095
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Inventories/PlacementCandidateSource.cs
+  uploadId: 941644

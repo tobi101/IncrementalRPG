@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 868d34b6989121045a68e31f716d1b9b
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Actions/Inheritors/SortInventoryAction.cs
+  uploadId: 941644

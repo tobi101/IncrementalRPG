@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: b5ace2d8ba988d84493f73c52a2793f4
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Rules/IDragRule.cs
+  uploadId: 941644

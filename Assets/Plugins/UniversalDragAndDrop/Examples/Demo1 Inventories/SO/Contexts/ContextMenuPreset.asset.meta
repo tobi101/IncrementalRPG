@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e13e0075bbf3eea4db2d49d405237989
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo1 Inventories/SO/Contexts/ContextMenuPreset.asset
+  uploadId: 941644

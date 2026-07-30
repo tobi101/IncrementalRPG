@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 15666f2386976ce43a0e5ca6c1039d11
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Inventories/Strategies/IStrategy.cs
+  uploadId: 941644

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 12e8498427ef3df4c898adf9f77d2077
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/UI/InventoryDropArea.cs
+  uploadId: 941644

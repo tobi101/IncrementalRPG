@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: e40b2dbb1c825174aa6609d78ae0a77b
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Tools/Inspector/Editor/InspectorDrawers.cs
+  uploadId: 941644

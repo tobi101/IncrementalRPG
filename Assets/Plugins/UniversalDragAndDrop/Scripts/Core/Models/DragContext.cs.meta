@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 12d2f4840c381244c888d7b900247bbe
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Core/Models/DragContext.cs
+  uploadId: 941644

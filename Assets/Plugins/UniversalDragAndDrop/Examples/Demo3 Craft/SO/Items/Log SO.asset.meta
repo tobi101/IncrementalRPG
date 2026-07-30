@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5df2bba02ec483b41ac1796fa9e011c5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo3 Craft/SO/Items/Log
+    SO.asset
+  uploadId: 941644

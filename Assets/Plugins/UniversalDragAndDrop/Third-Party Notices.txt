@@ -1,0 +1,53 @@
+Universal Drag & Drop System - Third-Party Notices
+==================================================
+
+This file documents third-party assets known to be included in this package.
+It is provided for attribution and release review purposes and is not legal advice.
+
+
+Google Noto Emoji
+-----------------
+
+Included files:
+
+- 2D/*.png
+- Examples/2D/Google emoji/*.png
+
+Source:
+
+- https://github.com/googlefonts/noto-emoji
+
+Copyright:
+
+- Copyright Google LLC and contributors.
+
+License:
+
+- Noto Emoji image resources are distributed by Google under the Apache License,
+  Version 2.0, except where the upstream project states otherwise.
+- License text: https://www.apache.org/licenses/LICENSE-2.0
+- Upstream license information: https://github.com/googlefonts/noto-emoji
+
+Notes:
+
+- These images are used as sample/demo item icons.
+- This package is not endorsed by, sponsored by, or affiliated with Google LLC.
+- If any Noto Emoji asset was modified for this package, the modified version is
+  distributed only as a demo asset for this package.
+
+
+
+Free icon set 24x24 by LittleSmith
+-----------------
+
+Included files:
+
+- Examples/2D/Icons/*.png
+
+Source:
+
+- https://littlesmith.itch.io/free-icon-set-24x24
+
+Notes:
+
+- These images are used as sample/demo item icons.

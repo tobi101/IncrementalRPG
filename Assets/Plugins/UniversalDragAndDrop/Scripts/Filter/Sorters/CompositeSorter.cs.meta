@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 14d0a4163541364409343ee68ff4c33d
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Filter/Sorters/CompositeSorter.cs
+  uploadId: 941644

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: c04e8e68c417f3446b4f42072e6a529f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/ContextMenu/InventoryContextMenuViewBinder.cs
+  uploadId: 941644

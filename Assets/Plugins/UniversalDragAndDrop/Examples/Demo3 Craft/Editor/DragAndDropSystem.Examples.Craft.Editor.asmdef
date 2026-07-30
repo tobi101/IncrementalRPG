@@ -1,0 +1,19 @@
+{
+  "name": "UDND.Examples.Craft.Editor",
+  "rootNamespace": "UDND.Examples.Craft",
+  "references": [
+    "UDND.Editor",
+    "UDND.Examples"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

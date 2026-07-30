@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 34c6745c14aa6884aaef1e7e86d2a758
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Selection/Operations/SelectByConditionOperation.cs
+  uploadId: 941644

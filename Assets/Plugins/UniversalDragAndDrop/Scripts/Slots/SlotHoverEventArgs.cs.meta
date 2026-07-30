@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 39c26073be6f1554998dac9cf3987376
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Slots/SlotHoverEventArgs.cs
+  uploadId: 941644

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1a44d51b801f9bc4e88c5a19fd76b878
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo1 Inventories/SO/Items/ArmorExampleSO.asset
+  uploadId: 941644

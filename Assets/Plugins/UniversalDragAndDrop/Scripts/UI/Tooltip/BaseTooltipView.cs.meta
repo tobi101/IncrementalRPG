@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: e2f0edbf5dd6ffa41916a64a44fabbe1
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/UI/Tooltip/BaseTooltipView.cs
+  uploadId: 941644

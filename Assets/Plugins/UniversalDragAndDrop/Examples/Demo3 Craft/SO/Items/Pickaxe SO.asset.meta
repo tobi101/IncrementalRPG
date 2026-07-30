@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a1ac07c10320b0e48bc2f902aaf7641d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo3 Craft/SO/Items/Pickaxe
+    SO.asset
+  uploadId: 941644

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: b1c684082123a3a4a8bb9ac5f97c60a4
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/DataBinding/ListInventoryDataBinding.cs
+  uploadId: 941644

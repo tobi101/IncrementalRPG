@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 321517d48a68e344dae74add752990cd
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Slots/BaseSlot.cs
+  uploadId: 941644

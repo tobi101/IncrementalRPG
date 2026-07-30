@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 599fe720816ea364cbe5d3a9711d16c4
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Selection/StartMultiDragAction.cs
+  uploadId: 941644

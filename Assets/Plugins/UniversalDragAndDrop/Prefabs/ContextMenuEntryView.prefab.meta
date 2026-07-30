@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 97e6c742d1703da4c8fb9daffa415919
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Prefabs/ContextMenuEntryView.prefab
+  uploadId: 941644

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: cbc4733fb458b534a982c37a7368c1eb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo3 Craft/SO/Items/Shield
+    SO.asset
+  uploadId: 941644

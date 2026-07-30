@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 4c1ba8e40a1acec45bbbc3576e1968dd
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Filter/DelegateFilter.cs
+  uploadId: 941644

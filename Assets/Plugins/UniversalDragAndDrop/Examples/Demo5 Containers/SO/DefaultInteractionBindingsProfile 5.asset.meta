@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 280e4129d3a583a4dbbc6c317aa5a05c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo5 Containers/SO/DefaultInteractionBindingsProfile
+    5.asset
+  uploadId: 941644

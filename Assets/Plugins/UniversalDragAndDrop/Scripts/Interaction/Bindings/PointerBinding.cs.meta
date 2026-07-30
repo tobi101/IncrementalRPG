@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 6fda2326418e4a3d92156f801b3e562a
+timeCreated: 1772476471
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Interaction/Bindings/PointerBinding.cs
+  uploadId: 941644

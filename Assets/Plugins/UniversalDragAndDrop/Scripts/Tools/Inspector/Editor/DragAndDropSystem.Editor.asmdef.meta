@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3464a73de92d6134ab5f2a14b1466534
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Tools/Inspector/Editor/DragAndDropSystem.Editor.asmdef
+  uploadId: 941644

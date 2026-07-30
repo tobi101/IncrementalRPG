@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 2d4ce5c4d4be9f54f9d7db10ea1d0581
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Selection/SelectionSlotAction.cs
+  uploadId: 941644

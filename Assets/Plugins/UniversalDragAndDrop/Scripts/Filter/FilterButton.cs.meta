@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: dac4925c974aace4ba5e9033495b148f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Filter/FilterButton.cs
+  uploadId: 941644

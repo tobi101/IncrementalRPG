@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4d69c4bd5a61f7b47bc62643adf86de0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo4 Trading/SO/Ring TradableItem.asset
+  uploadId: 941644

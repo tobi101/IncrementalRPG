@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: cf899c0da0d5436488f5e429b798f2dd
+timeCreated: 1772476378
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Interaction/Bindings/InputActionBinding.cs
+  uploadId: 941644

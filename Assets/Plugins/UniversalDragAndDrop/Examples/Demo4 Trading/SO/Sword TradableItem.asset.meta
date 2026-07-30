@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3422b3eb35408774ea7dec51ea25b0b9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo4 Trading/SO/Sword
+    TradableItem.asset
+  uploadId: 941644

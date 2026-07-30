@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 67b84b9754967ba4d927565aa4cad513
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Selection/Operations/ToggleFilledSlotOperation.cs
+  uploadId: 941644

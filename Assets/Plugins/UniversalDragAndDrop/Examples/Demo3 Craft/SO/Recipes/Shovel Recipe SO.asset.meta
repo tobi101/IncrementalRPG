@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c974a1b85f4dd9c488076618f3ce5f0d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo3 Craft/SO/Recipes/Shovel
+    Recipe SO.asset
+  uploadId: 941644

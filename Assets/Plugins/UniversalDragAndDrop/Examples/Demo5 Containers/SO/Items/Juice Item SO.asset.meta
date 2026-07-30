@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4a2bed2baf22e3048803008fc503d51b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo5 Containers/SO/Items/Juice
+    Item SO.asset
+  uploadId: 941644

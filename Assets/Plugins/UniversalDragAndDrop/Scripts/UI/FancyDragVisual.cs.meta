@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: cfa1951ae2568c348ab6cfcded93161b
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/UI/FancyDragVisual.cs
+  uploadId: 941644

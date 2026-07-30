@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1bcb54d72019c834d8ead55aaef39a84
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Prefabs/Selectable Slot.prefab
+  uploadId: 941644

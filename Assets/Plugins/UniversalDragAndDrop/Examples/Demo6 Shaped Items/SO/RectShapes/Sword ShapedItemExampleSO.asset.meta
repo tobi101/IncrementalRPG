@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4e9ad99a1bb66bc418d3f45d6df6cf1e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo6 Shaped Items/SO/RectShapes/Sword
+    ShapedItemExampleSO.asset
+  uploadId: 941644

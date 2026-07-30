@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 73edb7064c14fcd4ea9336662cfae191
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Selection/Operations/RangeSelectOperation.cs
+  uploadId: 941644

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7007273127c636b40a9fc2ac564883ac
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Prefabs/TooltipCanvas.prefab
+  uploadId: 941644

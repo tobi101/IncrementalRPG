@@ -1,0 +1,24 @@
+using System.Runtime.CompilerServices;
+using UnityEngine;
+using UDND.Core;
+
+namespace UDND.Examples.Containers
+{
+    /// <summary>
+    /// Adapter mapping ItemInstance to IItemAdapter.
+    /// Containers are not stackable (MaxStackSize = 1).
+    /// </summary>
+    public class ContainerItemAdapterAdapter : IItemAdapter
+    {
+        public readonly IContainerizeItemInstance Instance;
+
+        public ContainerItemAdapterAdapter(IContainerizeItemInstance instance) => Instance = instance;
+
+        // IItemAdapter
+        public string ItemId => Instance is ContainerItemInstance
+            ? $"container:{Instance.GetHashCode()}"
+            : $"itemAdapter:{Instance.GetItem().GetInstanceID()}";
+        public Sprite Icon => Instance.GetItem().Icon;
+        public string DisplayName => Instance.GetItem().DisplayName;
+    }
+}

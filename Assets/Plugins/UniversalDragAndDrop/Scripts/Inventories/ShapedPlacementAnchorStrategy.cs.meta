@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 89d4ce4549f44ad08e7f64aa73c5d544
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Inventories/ShapedPlacementAnchorStrategy.cs
+  uploadId: 941644

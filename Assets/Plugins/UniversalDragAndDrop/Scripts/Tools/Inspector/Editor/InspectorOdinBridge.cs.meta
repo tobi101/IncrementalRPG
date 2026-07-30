@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 2ce81f99614c8bd43a7f4ab77c49223d
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Tools/Inspector/Editor/InspectorOdinBridge.cs
+  uploadId: 941644

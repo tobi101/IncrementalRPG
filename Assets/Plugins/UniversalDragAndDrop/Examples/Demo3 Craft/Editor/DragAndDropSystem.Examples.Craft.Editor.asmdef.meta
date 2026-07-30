@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7cd582c6dd122a54a9281c710c800948
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Examples/Demo3 Craft/Editor/DragAndDropSystem.Examples.Craft.Editor.asmdef
+  uploadId: 941644

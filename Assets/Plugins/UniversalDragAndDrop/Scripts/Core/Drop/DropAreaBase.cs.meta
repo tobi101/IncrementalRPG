@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 5856d2463a1afb54b9acda15baa4c170
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.0
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Core/Drop/DropAreaBase.cs
+  uploadId: 941644
