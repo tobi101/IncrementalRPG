@@ -7,6 +7,16 @@ namespace Entity
     {
         None,
         Bomb,
+        Crystal,
+    }
+
+    public enum EntityKind
+    {
+        None,
+        Slime,
+        Skeleton,
+        Demon,
+        Crystal,
     }
 
     [CreateAssetMenu(fileName = "EntityConfig", menuName = "RPG/Entity Config")]
@@ -16,7 +26,13 @@ namespace Entity
         public LocalizedString description = new();
         public Sprite icon;
         public int maxHP;
+
+        [Header("Rewards and Progression")]
+        public EntityKind entityKind;
+        [Min(0)] public int shardDrop;
         public int goldDrop;
+        public bool countsAsEnemyKill = true;
+
         public FeatureType featureType;
         public GameObject viewPrefab;
 

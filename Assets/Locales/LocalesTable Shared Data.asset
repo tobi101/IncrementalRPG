@@ -171,6 +171,70 @@ MonoBehaviour:
     m_Key: skill.auto_attack_speed.description
     m_Metadata:
       m_Items: []
+  - m_Id: 1000000000042
+    m_Key: skill.special_attack_unlock.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000043
+    m_Key: skill.special_attack_unlock.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000044
+    m_Key: entity.crystal_1.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000045
+    m_Key: entity.crystal_2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000046
+    m_Key: skill.shard_slime.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000047
+    m_Key: skill.shard_slime.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000048
+    m_Key: skill.shard_skeleton.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000049
+    m_Key: skill.shard_skeleton.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000050
+    m_Key: skill.shard_demon.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000051
+    m_Key: skill.shard_demon.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000052
+    m_Key: skill.shard_crystal.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000053
+    m_Key: skill.shard_crystal.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000054
+    m_Key: skill.shard_pickup_speed.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000055
+    m_Key: skill.shard_pickup_speed.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000056
+    m_Key: skill.shards_unlock.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000057
+    m_Key: skill.shards_unlock.description
+    m_Metadata:
+      m_Items: []
   - m_Id: 2350604075655168
     m_Key: audio
     m_Metadata:

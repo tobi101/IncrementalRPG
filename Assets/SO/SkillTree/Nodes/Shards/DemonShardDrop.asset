@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
+  m_Name: DemonShardDrop
+  m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
+  id: shard_drop_demon
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
+    m_TableEntryReference:
+      m_KeyId: 1000000000050
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
+    m_TableEntryReference:
+      m_KeyId: 1000000000051
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  icon: {fileID: 21300000, guid: 7b973355f9d04471d9b13014444761b3, type: 3}
+  additionalIcon: {fileID: 21300000, guid: a5f0a83b01a7a42f2b12fc3214a5909b, type: 3}
+  maxLevel: 5
+  goldCostPerLevel: f4010000ee0200001a0400007805000008070000
+  prerequisites:
+  - node: {fileID: 11400000, guid: e36ec83d508e4d719e5e5dcf32670809, type: 2}
+    requiredLevel: 2
+  effects:
+  - effectType: 1
+    statType: 15
+    valuesPerLevel:
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    feature: 0
+  positionInGraph: {x: 750, y: -750}
+  references:
+    version: 2
+    RefIds: []

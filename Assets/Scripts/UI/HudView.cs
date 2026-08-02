@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Core.Gameplay.Dungeon;
 using Core.StateMachine.Features;
+using Model;
 using Reflex.Attributes;
 using TMPro;
 using UI.Localization;
@@ -14,6 +15,8 @@ namespace UI
     public class HudView : MonoBehaviour
     {
         [SerializeField] private TMP_Text _sessionGoldText;
+        [SerializeField] private TMP_Text _shardText;
+        [SerializeField] private GameObject _shardCounterRoot;
         [SerializeField] private TMP_Text _killsText;
         [SerializeField] private TMP_Text _goalValueText;
         [SerializeField] private TMP_Text _dungeonLevelText;
@@ -30,6 +33,8 @@ namespace UI
         private const float LerpSpeed = 8f;
 
         private GameplayFeature _gameplay;
+        private Player _player;
+        private Core.TestSkillTree.SkillTreeService _skillTree;
         private readonly Queue<GoldPopupView> _popupPool = new();
 
         private const float BatchWindow = 0.2f;
@@ -60,9 +65,12 @@ namespace UI
         }
 
         [Inject]
-        public void Construct(GameplayFeature gameplay)
+        public void Construct(GameplayFeature gameplay, Player player,
+            Core.TestSkillTree.SkillTreeService skillTree)
         {
             _gameplay = gameplay;
+            _player = player;
+            _skillTree = skillTree;
 
             if (_popupPrefab != null)
             {
@@ -78,6 +86,10 @@ namespace UI
             _gameplay.OnSessionKillsChanged += HandleSessionKillsChanged;
             _gameplay.OnDungeonLevelChanged += HandleDungeonLevelChanged;
             _gameplay.OnLevelTransitionStarted += HandleLevelTransitionStarted;
+            _player.OnShardsChanged += RefreshShards;
+            _skillTree.OnUpgraded += RefreshShardFeatureVisibility;
+            RefreshShardFeatureVisibility();
+            RefreshShards();
         }
 
         private void OnEnable()
@@ -91,6 +103,7 @@ namespace UI
             _killsDisplayed = 0;
             _killsTarget = 0;
             if (_sessionGoldText != null) _sessionGoldText.text = "0";
+            RefreshShards();
             if (_killsText != null) _killsText.text = "0";
             if (_goalValueText != null) _goalValueText.text = "0";
             ClearDungeonLevelNameBindings();
@@ -168,6 +181,20 @@ namespace UI
 
             if (_pendingPopupGold == 0) _batchTimer = BatchWindow;
             _pendingPopupGold += delta;
+        }
+
+        private void RefreshShards()
+        {
+            if (_shardText == null || _player == null)
+                return;
+
+            _shardText.text = BigDoubleFormatter.FormatFloor(_player.ShardTotal);
+        }
+
+        private void RefreshShardFeatureVisibility()
+        {
+            if (_shardCounterRoot != null && _skillTree != null)
+                _shardCounterRoot.SetActive(_skillTree.IsUnlocked(Core.TestSkillTree.GameFeature.Shards));
         }
 
         private void HandleSessionKillsChanged(int total)
@@ -413,6 +440,12 @@ namespace UI
                 _gameplay.OnDungeonLevelChanged -= HandleDungeonLevelChanged;
                 _gameplay.OnLevelTransitionStarted -= HandleLevelTransitionStarted;
             }
+
+            if (_player != null)
+                _player.OnShardsChanged -= RefreshShards;
+
+            if (_skillTree != null)
+                _skillTree.OnUpgraded -= RefreshShardFeatureVisibility;
 
             ClearDungeonLevelNameBindings();
             _dungeonLevelBinding?.Dispose();

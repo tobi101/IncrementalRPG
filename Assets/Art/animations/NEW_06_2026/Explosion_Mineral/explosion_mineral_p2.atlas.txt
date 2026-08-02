@@ -1,0 +1,13 @@
+explosion_mineral_p2.png
+size:102,50
+filter:Linear,Linear
+scale:0.5
+2_1
+bounds:2,2,46,30
+rotate:90
+2_2
+bounds:65,12,36,35
+rotate:90
+2_3
+bounds:34,3,45,29
+rotate:90

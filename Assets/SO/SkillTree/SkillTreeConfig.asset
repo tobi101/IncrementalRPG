@@ -19,6 +19,8 @@ MonoBehaviour:
     gridPosition: {x: 0, y: 0}
   - node: {fileID: 11400000, guid: 13642fc5eae842d58e77718b42c3e6b1, type: 2}
     gridPosition: {x: 0, y: 1}
+  - node: {fileID: 11400000, guid: 12c78051627b42eea619764a0d11d157, type: 2}
+    gridPosition: {x: 1, y: 1}
   - node: {fileID: 11400000, guid: c9aa8fa52b844b1a8d4231620039eac5, type: 2}
     gridPosition: {x: 0, y: 2}
   - node: {fileID: 11400000, guid: d4a7bc70acca045b983d7a86ef37f217, type: 2}
@@ -61,4 +63,16 @@ MonoBehaviour:
     gridPosition: {x: 8, y: 4}
   - node: {fileID: 11400000, guid: b0cb80651a52e5e4abef0900829afa78, type: 2}
     gridPosition: {x: 10, y: 5}
+  - node: {fileID: 11400000, guid: 22691ad0ed1649d5aa0681a820e6bf5d, type: 2}
+    gridPosition: {x: 2, y: -2}
+  - node: {fileID: 11400000, guid: c0f856a8cb6045b3961104751b16d3e8, type: 2}
+    gridPosition: {x: 3, y: -3}
+  - node: {fileID: 11400000, guid: e36ec83d508e4d719e5e5dcf32670809, type: 2}
+    gridPosition: {x: 4, y: -4}
+  - node: {fileID: 11400000, guid: 1889eb3b7a8149e48e17d56d5576bff0, type: 2}
+    gridPosition: {x: 5, y: -5}
+  - node: {fileID: 11400000, guid: f62cc21fb36a428d89412bd69f3da183, type: 2}
+    gridPosition: {x: 2, y: -3}
+  - node: {fileID: 11400000, guid: 07bfcf8fca844e4b90fb72e492a17fab, type: 2}
+    gridPosition: {x: 2, y: -4}
   nodes: []

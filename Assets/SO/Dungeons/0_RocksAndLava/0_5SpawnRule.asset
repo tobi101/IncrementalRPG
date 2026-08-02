@@ -25,3 +25,9 @@ MonoBehaviour:
   - config: {fileID: 11400000, guid: c52f6666baa494e00bdbd069deaf8776, type: 2}
     weight: 10
     requiredFeature: 1
+  - config: {fileID: 11400000, guid: 1e905119e4ae4153a3189c39ce2c9704, type: 2}
+    weight: 2.5
+    requiredFeature: 4
+  - config: {fileID: 11400000, guid: d32e14a8a63a49caa657c781fe5aa024, type: 2}
+    weight: 2.5
+    requiredFeature: 4

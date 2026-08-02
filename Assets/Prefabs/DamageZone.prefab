@@ -88,7 +88,7 @@ MeshRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -32760
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &4434155949019342478
@@ -131,7 +131,7 @@ MonoBehaviour:
   physicsMovementRelativeTo: {fileID: 0}
   updateTiming: 1
   unscaledTime: 0
-  _animationName: ready
+  _animationName: idle
   loop: 1
   timeScale: 1
 --- !u!1 &3381724056986946900
@@ -321,8 +321,9 @@ MonoBehaviour:
   _circle: {fileID: 8976878302267159265}
   _manualWaveBack: {fileID: 2335988490714689617}
   _manualWaveFront: {fileID: 7448005837226889518}
-  _autoWaveBack: {fileID: 3387075250310272701}
-  _autoWaveFront: {fileID: 876137939879865259}
+  _autoWaveBack: {fileID: 2335988490714689617}
+  _autoWaveFront: {fileID: 7448005837226889518}
+  _specialWave: {fileID: 4434155949019342478}
   _baseRadiusX: 0.6
 --- !u!1 &6345784117869258714
 GameObject:

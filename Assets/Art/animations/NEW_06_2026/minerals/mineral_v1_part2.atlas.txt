@@ -1,0 +1,12 @@
+mineral_v1_part2.png
+size:183,80
+filter:Linear,Linear
+scale:0.715
+mineral_1
+bounds:136,2,76,45
+rotate:90
+mineral_2
+bounds:2,7,69,71
+mineral_3
+bounds:73,11,67,61
+rotate:90

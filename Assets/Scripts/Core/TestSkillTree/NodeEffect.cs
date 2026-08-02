@@ -33,6 +33,11 @@ namespace Core.TestSkillTree
         GoldDrop = 9,
         InitialEnemySpawnDensity = 10,
         InitialBombSpawnDensity = 11,
+        SlimeShardDrop = 13,
+        SkeletonShardDrop = 14,
+        DemonShardDrop = 15,
+        CrystalShardDropBonus = 16,
+        ShardPickupSpeed = 17,
     }
 
     public enum GameFeature
@@ -40,6 +45,8 @@ namespace Core.TestSkillTree
         None = 0,
         Bombs = 1,
         AutoAttack = 2,
+        SpecialAttack = 3,
+        Shards = 4,
     }
 
     public enum NodeEffectType

@@ -1,5 +1,6 @@
 using Core.Gameplay;
 using Core.Gameplay.Bomb;
+using Core.Gameplay.Shards;
 using Core.Gameplay.Dungeon;
 using Core.Save;
 using Core.StateMachine;
@@ -26,6 +27,7 @@ namespace Reflex
         [SerializeField] private DungeonLevelTransitionConfig _levelTransitionConfig = new();
         [SerializeField] private DamageZoneConfig _damageZoneConfig;
         [SerializeField] private BombExplosionConfig _bombExplosionConfig;
+        [SerializeField] private ShardPickupConfig _shardPickupConfig;
         [SerializeField] private SkillTreeConfig _skillTreeConfig;
         [SerializeField] private NodeBorderColorConfig _nodeBorderColorConfig;
         [SerializeField] private NodeCircleSpriteConfig _nodeCircleSpriteConfig;
@@ -139,7 +141,7 @@ namespace Reflex
             
             builder.RegisterType(
                 typeof(SaveService),
-                new[] { typeof(SaveService) },
+                new[] { typeof(SaveService), typeof(ITickable) },
                 Lifetime.Singleton,
                 Resolution.Eager
             );
@@ -193,6 +195,13 @@ namespace Reflex
             );
 
             builder.RegisterType(
+                typeof(ShardDropService),
+                new[] { typeof(IService), typeof(ShardDropService) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
                 typeof(BombExplosionService),
                 new[] { typeof(IService), typeof(BombExplosionService) },
                 Lifetime.Singleton,
@@ -238,6 +247,7 @@ namespace Reflex
             builder.RegisterValue(_levelTransitionConfig, new[] { typeof(DungeonLevelTransitionConfig) });
             builder.RegisterValue(_damageZoneConfig, new[] { typeof(DamageZoneConfig) });
             builder.RegisterValue(_bombExplosionConfig, new[] { typeof(BombExplosionConfig) });
+            builder.RegisterValue(_shardPickupConfig, new[] { typeof(ShardPickupConfig) });
             builder.RegisterValue(_skillTreeConfig, new[] { typeof(SkillTreeConfig) });
             builder.RegisterValue(_nodeBorderColorConfig, new[] { typeof(NodeBorderColorConfig) });
             builder.RegisterValue(_nodeCircleSpriteConfig, new[] { typeof(NodeCircleSpriteConfig) });

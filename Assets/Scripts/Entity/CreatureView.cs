@@ -110,10 +110,28 @@ namespace Entity
 
         private void HandleHealthChanged(int current, int max)
         {
-            if (_animationBody != null && current < _previousHealth)
-                _animationBody.AnimationState.SetAnimation(0, DamageAnimationName, false);
+            if (current < _previousHealth)
+                PlayDamageAnimations();
 
             _previousHealth = current;
+        }
+
+        private void PlayDamageAnimations()
+        {
+            PlayDamageAnimation(_animationBody);
+
+            if (_additionalAnimationBodies == null) return;
+
+            foreach (var animationBody in _additionalAnimationBodies)
+                PlayDamageAnimation(animationBody);
+        }
+
+        private static void PlayDamageAnimation(SkeletonAnimation animationBody)
+        {
+            if (animationBody == null) return;
+            if (animationBody.Skeleton.Data.FindAnimation(DamageAnimationName) == null) return;
+
+            animationBody.AnimationState.SetAnimation(0, DamageAnimationName, false);
         }
 
         private void ResetAnimationBodies()

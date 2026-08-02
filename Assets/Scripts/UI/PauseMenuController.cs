@@ -19,7 +19,7 @@ namespace UI
         [SerializeField] private SettingsMenuController _settingsMenu;
         [SerializeField] private Button _resumeButton;
         [SerializeField] private Button _settingsButton;
-        [SerializeField] private Button[] _openPauseButtons;
+        [SerializeField] private SideMenuFlyoutView[] _sideMenus;
         [FormerlySerializedAs("_goToHubButtons")]
         [SerializeField] private Button[] _exitToMainMenuButtons;
         [SerializeField] private string _mainMenuSceneName = "MainMenuScene";
@@ -35,6 +35,7 @@ namespace UI
         private bool _isPauseShortcutEnabled;
         private bool _isExitingToMainMenu;
         private bool _isGameplayPaused;
+        private SideMenuFlyoutView _settingsReturnSideMenu;
 
         public bool IsOpen => Root.activeSelf;
         public bool IsGameplayPaused => _isGameplayPaused;
@@ -80,6 +81,7 @@ namespace UI
             _isGameplayInputBlockingAllowed = true;
             _isPauseShortcutEnabled = true;
             _pauseAction?.Enable();
+            CloseAllSideMenus();
             Close();
         }
 
@@ -93,6 +95,8 @@ namespace UI
 
         public void Open()
         {
+            _settingsReturnSideMenu = null;
+            CloseAllSideMenus();
             Root.SetActive(true);
             SetPausePanelVisible(true);
             _settingsMenu?.Close();
@@ -102,6 +106,8 @@ namespace UI
 
         public void Close()
         {
+            _settingsReturnSideMenu = null;
+            CloseAllSideMenus();
             _settingsMenu?.Close();
             SetPausePanelVisible(false);
             Root.SetActive(false);
@@ -111,6 +117,8 @@ namespace UI
 
         private void OpenSettings()
         {
+            _settingsReturnSideMenu = null;
+            CloseAllSideMenus();
             Root.SetActive(true);
             SetPausePanelVisible(false);
             _settingsMenu?.Open();
@@ -118,13 +126,43 @@ namespace UI
             SetGameplayPaused(true);
         }
 
+        private void OpenSettingsFromSideMenu(SideMenuFlyoutView source)
+        {
+            _settingsReturnSideMenu = source;
+            CloseAllSideMenus();
+            Root.SetActive(true);
+            SetPausePanelVisible(false);
+            _settingsMenu?.Open();
+            SetGameplayInputBlocked(false);
+            SetGameplayPaused(false);
+        }
+
         private void ReturnToPause()
         {
+            _settingsReturnSideMenu = null;
             Root.SetActive(true);
             _settingsMenu?.Close();
             SetPausePanelVisible(true);
             SetGameplayInputBlocked(true);
             SetGameplayPaused(true);
+        }
+
+        private void ReturnFromSettings()
+        {
+            if (_isGameplayInputBlockingAllowed)
+            {
+                ReturnToPause();
+                return;
+            }
+
+            var returnSideMenu = _settingsReturnSideMenu;
+            _settingsReturnSideMenu = null;
+            _settingsMenu?.Close();
+            SetPausePanelVisible(false);
+            Root.SetActive(false);
+            SetGameplayInputBlocked(false);
+            SetGameplayPaused(false);
+            returnSideMenu?.Open();
         }
 
         private void ExitToMainMenu()
@@ -134,14 +172,29 @@ namespace UI
 
             _isExitingToMainMenu = true;
 
-            var isExitingGameplaySession = _stateMachine != null && _stateMachine.IsCurrent<GameplayState>();
-
-            if (!isExitingGameplaySession)
-                _saveService?.Save();
+            // Session gold is applied only by GameplayFeature, while already collected shards live
+            // directly in Player. Saving here preserves shards without committing unfinished session gold.
+            _saveService?.Save();
 
             Close();
             _stateMachine?.ExitCurrent(GameStateExitReason.SceneUnload);
             SceneManager.LoadSceneAsync(_mainMenuSceneName);
+        }
+
+        private void ExitToMainMenu(SideMenuFlyoutView source)
+        {
+            ExitToMainMenu();
+        }
+
+        private void ExitApplication(SideMenuFlyoutView source)
+        {
+            _saveService?.Save();
+            Close();
+            Application.Quit();
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
         }
 
         private void HandlePausePerformed(InputAction.CallbackContext context)
@@ -151,7 +204,7 @@ namespace UI
 
             if (IsSettingsOpen)
             {
-                ReturnToPause();
+                ReturnFromSettings();
                 return;
             }
 
@@ -167,9 +220,9 @@ namespace UI
             AddListener(_settingsButton, OpenSettings);
 
             if (_settingsMenu != null && _settingsMenu.BackButton != null)
-                AddListener(_settingsMenu.BackButton, ReturnToPause);
+                AddListener(_settingsMenu.BackButton, ReturnFromSettings);
 
-            AddListeners(_openPauseButtons, Open);
+            SubscribeSideMenus();
             AddListeners(_exitToMainMenuButtons, ExitToMainMenu);
         }
 
@@ -179,10 +232,54 @@ namespace UI
             RemoveListener(_settingsButton, OpenSettings);
 
             if (_settingsMenu != null && _settingsMenu.BackButton != null)
-                RemoveListener(_settingsMenu.BackButton, ReturnToPause);
+                RemoveListener(_settingsMenu.BackButton, ReturnFromSettings);
 
-            RemoveListeners(_openPauseButtons, Open);
+            UnsubscribeSideMenus();
             RemoveListeners(_exitToMainMenuButtons, ExitToMainMenu);
+        }
+
+        private void SubscribeSideMenus()
+        {
+            if (_sideMenus == null)
+                return;
+
+            foreach (var sideMenu in _sideMenus)
+            {
+                if (sideMenu == null)
+                    continue;
+
+                sideMenu.SettingsRequested -= OpenSettingsFromSideMenu;
+                sideMenu.SettingsRequested += OpenSettingsFromSideMenu;
+                sideMenu.MainMenuRequested -= ExitToMainMenu;
+                sideMenu.MainMenuRequested += ExitToMainMenu;
+                sideMenu.ExitRequested -= ExitApplication;
+                sideMenu.ExitRequested += ExitApplication;
+            }
+        }
+
+        private void UnsubscribeSideMenus()
+        {
+            if (_sideMenus == null)
+                return;
+
+            foreach (var sideMenu in _sideMenus)
+            {
+                if (sideMenu == null)
+                    continue;
+
+                sideMenu.SettingsRequested -= OpenSettingsFromSideMenu;
+                sideMenu.MainMenuRequested -= ExitToMainMenu;
+                sideMenu.ExitRequested -= ExitApplication;
+            }
+        }
+
+        private void CloseAllSideMenus()
+        {
+            if (_sideMenus == null)
+                return;
+
+            foreach (var sideMenu in _sideMenus)
+                sideMenu?.CloseImmediate();
         }
 
         private void SetPausePanelVisible(bool visible)
@@ -245,31 +342,6 @@ namespace UI
         {
             UIButtonAudio.InstallInChildren(Root.transform);
             UIButtonPressScaler.InstallInChildren(Root.transform);
-            InstallButtonAudio(_openPauseButtons);
-            InstallButtonPressScalers(_openPauseButtons);
-        }
-
-        private static void InstallButtonAudio(Button[] buttons)
-        {
-            if (buttons == null)
-                return;
-
-            foreach (var button in buttons)
-                UIButtonAudio.EnsureOn(button);
-        }
-
-        private static void InstallButtonPressScalers(Button[] buttons)
-        {
-            if (buttons == null)
-                return;
-
-            foreach (var button in buttons)
-            {
-                if (button != null && button.GetComponent<PauseButtonVisualState>() != null)
-                    continue;
-
-                UIButtonPressScaler.EnsureOn(button);
-            }
         }
     }
 }

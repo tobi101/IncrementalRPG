@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Gameplay;
+using Core.Gameplay.Shards;
 using UnityEngine;
 using Core.Gameplay.Dungeon;
 using Core.TestSkillTree;
@@ -24,6 +25,7 @@ namespace Core.StateMachine.Features
         [Inject] private SpawnService _spawnService;
         [Inject] private TileGrid _tileGrid;
         [Inject] private DamageZone _damageZone;
+        [Inject] private ShardDropService _shardDropService;
         [Inject] private Player _player;
         [Inject] private SkillTreeService _skillTree;
         [Inject] private AudioManager _audioManager;
@@ -52,6 +54,7 @@ namespace Core.StateMachine.Features
             Inactive,
             Ready,
             Playing,
+            LootGrace,
             TransitionClosing,
             TransitionOpening,
             DemoLimitReached,
@@ -64,6 +67,9 @@ namespace Core.StateMachine.Features
         private int _currentLevelIndex;
         private int _levelKills;
         private int _pendingLevelTransitionIndex = -1;
+        private bool _pendingDemoLimit;
+        private bool _lootGraceEndsAtDemoLimit;
+        private float _lootGraceTimer;
         private int _transitionTargetLevelIndex = -1;
         private float _transitionTimer;
         private float _transitionHoldDuration;
@@ -84,7 +90,7 @@ namespace Core.StateMachine.Features
             foreach (var service in _services)
                 service.Initialize();
 
-            _spawnService.OnCreatureKilled += HandleCreatureKilled;
+            _spawnService.OnEnemyKilled += HandleEnemyKilled;
         }
 
         public void Enable()
@@ -97,6 +103,9 @@ namespace Core.StateMachine.Features
             _isPaused = false;
             _spawnService.SetPaused(false);
             _pendingLevelTransitionIndex = -1;
+            _pendingDemoLimit = false;
+            _lootGraceEndsAtDemoLimit = false;
+            _lootGraceTimer = 0f;
             _transitionTargetLevelIndex = -1;
             _transitionTimer = 0f;
             _transitionHoldDuration = 0f;
@@ -153,11 +162,15 @@ namespace Core.StateMachine.Features
             SetPaused(false);
             _runState = RunState.Inactive;
             _pendingLevelTransitionIndex = -1;
+            _pendingDemoLimit = false;
+            _lootGraceEndsAtDemoLimit = false;
+            _lootGraceTimer = 0f;
             _transitionTargetLevelIndex = -1;
             _transitionTimer = 0f;
             _transitionHoldDuration = 0f;
             _transitionOpenDuration = 0f;
             _spawnService.DespawnAll();
+            _shardDropService.DespawnAll();
         }
 
         public void Tick(float deltaTime)
@@ -172,6 +185,9 @@ namespace Core.StateMachine.Features
                     break;
                 case RunState.Playing:
                     TickPlaying(deltaTime);
+                    break;
+                case RunState.LootGrace:
+                    TickLootGrace(deltaTime);
                     break;
                 case RunState.TransitionClosing:
                     TickTransitionClosing(deltaTime);
@@ -205,8 +221,31 @@ namespace Core.StateMachine.Features
             foreach (var service in _services)
                 service.Update(deltaTime);
 
-            if (_pendingLevelTransitionIndex >= 0 && _runState == RunState.Playing)
-                BeginLevelTransition(_pendingLevelTransitionIndex);
+            if (_runState != RunState.Playing)
+                return;
+
+            if (_pendingLevelTransitionIndex >= 0)
+                BeginLootGrace(_pendingLevelTransitionIndex, false);
+            else if (_pendingDemoLimit)
+                BeginLootGrace(-1, true);
+        }
+
+        private void TickLootGrace(float deltaTime)
+        {
+            _damageZone.UpdateAim();
+            _shardDropService.Update(deltaTime);
+            _lootGraceTimer -= deltaTime;
+
+            if (_lootGraceTimer > 0f)
+                return;
+
+            if (_lootGraceEndsAtDemoLimit)
+            {
+                ReachDemoLimit();
+                return;
+            }
+
+            BeginLevelTransition(_pendingLevelTransitionIndex);
         }
 
         private void TickTransitionClosing(float deltaTime)
@@ -228,6 +267,7 @@ namespace Core.StateMachine.Features
         private void ExpireSession()
         {
             _runState = RunState.Expired;
+            _shardDropService.DespawnAll();
             ApplySessionResults();
             OnSessionExpired?.Invoke();
         }
@@ -236,6 +276,10 @@ namespace Core.StateMachine.Features
         {
             _runState = RunState.DemoLimitReached;
             _pendingLevelTransitionIndex = -1;
+            _pendingDemoLimit = false;
+            _lootGraceEndsAtDemoLimit = false;
+            _lootGraceTimer = 0f;
+            _shardDropService.DespawnAll();
             _transitionTargetLevelIndex = -1;
             ApplySessionResults();
             _dungeonSelection.MarkLevelReached(_currentDungeon, _currentLevelIndex);
@@ -255,6 +299,7 @@ namespace Core.StateMachine.Features
         private void RestartSessionFromCurrentLevel()
         {
             _spawnService.DespawnAll();
+            _shardDropService.DespawnAll();
             ResetSessionStats();
 
             if (!ApplyLevel(_currentLevelIndex))
@@ -273,6 +318,10 @@ namespace Core.StateMachine.Features
             _sessionKills = 0;
             _sessionRecordResult = default;
             _sessionResultsApplied = false;
+            _pendingLevelTransitionIndex = -1;
+            _pendingDemoLimit = false;
+            _lootGraceEndsAtDemoLimit = false;
+            _lootGraceTimer = 0f;
 
             OnSessionGoldEarned?.Invoke(_sessionGold, 0);
             OnSessionKillsChanged?.Invoke(_sessionKills);
@@ -289,6 +338,9 @@ namespace Core.StateMachine.Features
 
             _runState = RunState.TransitionClosing;
             _pendingLevelTransitionIndex = -1;
+            _pendingDemoLimit = false;
+            _lootGraceEndsAtDemoLimit = false;
+            _lootGraceTimer = 0f;
             _transitionTargetLevelIndex = nextLevelIndex;
             var transitionConfig = _levelTransitionConfig ?? new DungeonLevelTransitionConfig();
             _transitionTimer = transitionConfig.CloseDuration;
@@ -302,11 +354,29 @@ namespace Core.StateMachine.Features
                 ApplyLevelBehindCurtain();
         }
 
+        private void BeginLootGrace(int nextLevelIndex, bool endsAtDemoLimit)
+        {
+            _runState = RunState.LootGrace;
+            _pendingLevelTransitionIndex = nextLevelIndex;
+            _pendingDemoLimit = false;
+            _lootGraceEndsAtDemoLimit = endsAtDemoLimit;
+            _lootGraceTimer = (_levelTransitionConfig ?? new DungeonLevelTransitionConfig()).LootGraceDuration;
+
+            if (_lootGraceTimer <= 0f)
+            {
+                if (_lootGraceEndsAtDemoLimit)
+                    ReachDemoLimit();
+                else
+                    BeginLevelTransition(_pendingLevelTransitionIndex);
+            }
+        }
+
         private void ApplyLevelBehindCurtain()
         {
             var targetIndex = _transitionTargetLevelIndex;
 
             _spawnService.DespawnAll();
+            _shardDropService.DespawnAll();
 
             if (!ApplyLevel(targetIndex))
             {
@@ -344,13 +414,14 @@ namespace Core.StateMachine.Features
             OnLevelTransitionFinished?.Invoke(_currentLevel, _currentLevelIndex);
         }
 
-        private void HandleCreatureKilled(Vector2Int coord, int amount)
+        private void HandleEnemyKilled(SpawnService.EntityDestroyedContext context)
         {
             if (_runState == RunState.Inactive || _runState == RunState.Expired || _runState == RunState.DemoLimitReached)
                 return;
 
             var levelGoldMultiplier = _currentLevel != null ? _currentLevel.goldDropMultiplier : 1f;
-            var finalAmount = Mathf.RoundToInt(amount * levelGoldMultiplier * _skillTree.GetMultiplier(StatType.GoldDrop));
+            var goldDrop = context.Config != null ? context.Config.goldDrop : 0;
+            var finalAmount = Mathf.RoundToInt(goldDrop * levelGoldMultiplier * _skillTree.GetMultiplier(StatType.GoldDrop));
 
             if (finalAmount > 0)
             {
@@ -375,7 +446,7 @@ namespace Core.StateMachine.Features
             }
 
             if (!_dungeonSelection.HasDemoEndAcknowledged(_currentDungeon))
-                ReachDemoLimit();
+                _pendingDemoLimit = true;
         }
 
         private void SpawnInitialEntities()

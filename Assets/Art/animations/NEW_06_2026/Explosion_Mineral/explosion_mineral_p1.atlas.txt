@@ -1,0 +1,10 @@
+explosion_mineral_p1.png
+size:137,36
+filter:Linear,Linear
+scale:0.5
+1_1
+bounds:2,2,48,32
+1_2
+bounds:52,7,45,27
+1_3
+bounds:99,7,36,27

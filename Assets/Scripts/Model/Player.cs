@@ -7,6 +7,7 @@ namespace Model
     public class Player : ISaveable
     {
         public event Action OnGoldChanged;
+        public event Action OnShardsChanged;
         private PlayerInfo _playerInfo;
 
         public float ArmorIndex => _playerInfo.ArmorIndex;
@@ -17,6 +18,24 @@ namespace Model
         {
             get => _playerInfo.GoldTotal;
             set { _playerInfo.GoldTotal = value; OnGoldChanged?.Invoke(); }
+        }
+
+        public BigDouble ShardTotal
+        {
+            get => _playerInfo.ShardTotal;
+            private set
+            {
+                _playerInfo.ShardTotal = value;
+                OnShardsChanged?.Invoke();
+            }
+        }
+
+        public void AddShards(int amount)
+        {
+            if (amount <= 0)
+                return;
+
+            ShardTotal += amount;
         }
 
         public SessionRecordResult UpdateSessionRecords(BigDouble sessionGold, int sessionKills)

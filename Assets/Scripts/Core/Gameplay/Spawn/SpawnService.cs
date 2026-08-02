@@ -12,7 +12,24 @@ namespace Core.Gameplay
 {
     public class SpawnService : IService
     {
-        public event Action<Vector2Int, int> OnCreatureKilled;
+        public readonly struct EntityDestroyedContext
+        {
+            public Creature Creature { get; }
+            public EntityConfig Config { get; }
+            public Vector2Int TileCoord { get; }
+            public Vector3 WorldPosition { get; }
+
+            public EntityDestroyedContext(Creature creature, EntityConfig config, Vector2Int tileCoord, Vector3 worldPosition)
+            {
+                Creature = creature;
+                Config = config;
+                TileCoord = tileCoord;
+                WorldPosition = worldPosition;
+            }
+        }
+
+        public event Action<EntityDestroyedContext> OnEntityDestroyed;
+        public event Action<EntityDestroyedContext> OnEnemyKilled;
         public event Action<Creature, CreatureView, Vector2Int, EntityConfig> OnFeatureSpawned;
         private readonly PoolManager _poolManager;
         private readonly TileGrid _tileGrid;
@@ -144,8 +161,15 @@ namespace Core.Gameplay
                 creature.OnDied -= onDied;
                 creature.OnDamageTaken -= onDamageTaken;
 
-                if (config.featureType == FeatureType.None)
-                    OnCreatureKilled?.Invoke(creature.TileCoord, config.goldDrop);
+                var destroyedContext = new EntityDestroyedContext(
+                    creature,
+                    config,
+                    creature.TileCoord,
+                    _tileGrid.GetWorldPosition(creature.TileCoord));
+
+                OnEntityDestroyed?.Invoke(destroyedContext);
+                if (config.countsAsEnemyKill)
+                    OnEnemyKilled?.Invoke(destroyedContext);
 
                 _audioManager?.PlayRandomSfx(config.deathSounds);
                 Action completeDeath = () =>

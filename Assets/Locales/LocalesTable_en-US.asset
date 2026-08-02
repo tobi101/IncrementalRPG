@@ -174,6 +174,70 @@ MonoBehaviour:
     m_Localized: Reduces automatic attack interval.
     m_Metadata:
       m_Items: []
+  - m_Id: 1000000000042
+    m_Localized: Special Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000043
+    m_Localized: Unlocks a powerful damage zone attack activated with the right mouse button.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000044
+    m_Localized: Crystal I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000045
+    m_Localized: Crystal II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000046
+    m_Localized: Slime Shard Yield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000047
+    m_Localized: Multiplies the shard value dropped by slimes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000048
+    m_Localized: Skeleton Shard Yield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000049
+    m_Localized: Multiplies the shard value dropped by skeletons.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000050
+    m_Localized: Demon Shard Yield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000051
+    m_Localized: Multiplies the shard value dropped by demons.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000052
+    m_Localized: Crystal Shard Yield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000053
+    m_Localized: Adds a fixed amount to the shard value dropped by crystals.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000054
+    m_Localized: Shard Collection Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000055
+    m_Localized: Reduces the time required to collect shards with the damage zone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000056
+    m_Localized: Shards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000000057
+    m_Localized: Unlocks shard drops from creatures and allows crystals to appear on the field.
+    m_Metadata:
+      m_Items: []
   - m_Id: 2350952815255552
     m_Localized: Language
     m_Metadata:

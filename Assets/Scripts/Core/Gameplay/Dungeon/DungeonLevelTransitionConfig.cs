@@ -9,11 +9,14 @@ namespace Core.Gameplay.Dungeon
         [Min(0f)] public float closeDuration = 0.75f;
         [Min(0f)] public float holdDuration;
         [Min(0f)] public float openDuration = 0.75f;
+        [Min(0f)] public float lootGraceDuration = 1.5f;
 
         public float CloseDuration => Mathf.Max(0f, closeDuration);
 
         public float HoldDuration => Mathf.Max(0f, holdDuration);
 
         public float OpenDuration => Mathf.Max(0f, openDuration);
+
+        public float LootGraceDuration => Mathf.Max(0f, lootGraceDuration);
     }
 }

@@ -15,5 +15,7 @@ MonoBehaviour:
   damagePerTick: 1
   baseManualAttackCooldown: 0.75
   baseAutoAttackInterval: 0.75
+  baseSpecialAttackCooldown: 5
+  specialAttackDamageMultiplier: 5
   baseRadius: 1
   aspectRatio: 0.55

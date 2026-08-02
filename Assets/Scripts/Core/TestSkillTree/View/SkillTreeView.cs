@@ -22,6 +22,8 @@ namespace Core.TestSkillTree.View
         [SerializeField] private NodeConnectionView _connectionViewPrefab;
         [SerializeField] private NodePopupView      _popupView;
         [SerializeField] private TextMeshProUGUI    _goldText;
+        [SerializeField] private TextMeshProUGUI    _shardText;
+        [SerializeField] private GameObject         _shardCounterRoot;
         [SerializeField] private Button             _closeButton;
         [SerializeField] private Vector2            _contentPadding = new Vector2(600f, 600f);
         [SerializeField] private NodeDefinition     _initialFocusNode;
@@ -67,7 +69,10 @@ namespace Core.TestSkillTree.View
             _service.OnUpgraded += RefreshAll;
             _service.OnNodeUpgraded += HandleNodeUpgraded;
             _player.OnGoldChanged += RefreshGold;
+            _player.OnShardsChanged += RefreshShards;
             RefreshGold();
+            RefreshShardFeatureVisibility();
+            RefreshShards();
         }
 
         public void Show()
@@ -86,6 +91,18 @@ namespace Core.TestSkillTree.View
         {
             if (_goldText == null) return;
             _goldText.text = BigDoubleFormatter.FormatFloor(_player.GoldTotal);
+        }
+
+        private void RefreshShards()
+        {
+            if (_shardText == null) return;
+            _shardText.text = BigDoubleFormatter.FormatFloor(_player.ShardTotal);
+        }
+
+        private void RefreshShardFeatureVisibility()
+        {
+            if (_shardCounterRoot != null && _service != null)
+                _shardCounterRoot.SetActive(_service.IsUnlocked(GameFeature.Shards));
         }
 
         private void Build()
@@ -304,6 +321,7 @@ namespace Core.TestSkillTree.View
         private void RefreshAll()
         {
             CompleteActiveRevealFromCachedStates();
+            RefreshShardFeatureVisibility();
 
             var canAnimateReveal = isActiveAndEnabled && gameObject.activeInHierarchy;
             var currentStates = new Dictionary<string, NodeState>();
@@ -532,7 +550,10 @@ namespace Core.TestSkillTree.View
                 _service.OnNodeUpgraded -= HandleNodeUpgraded;
             }
             if (_player != null)
+            {
                 _player.OnGoldChanged -= RefreshGold;
+                _player.OnShardsChanged -= RefreshShards;
+            }
         }
     }
 }
