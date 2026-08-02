@@ -525,6 +525,22 @@ MonoBehaviour:
     m_Localized: New High Score!
     m_Metadata:
       m_Items: []
+  - m_Id: 28148395125235712
+    m_Localized: LVL Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28148395150401536
+    m_Localized: 'Depth traveled:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28148395150401537
+    m_Localized: 'Dungeon level:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28148395150401538
+    m_Localized: 'Potential enemies:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

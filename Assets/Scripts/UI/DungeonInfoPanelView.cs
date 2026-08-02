@@ -24,11 +24,14 @@ namespace UI
         private readonly List<Image> _spawnedEnemyIcons = new();
         private Action _onStartClicked;
         private LocalizedStringBinding _dungeonNameBinding;
+        private GridLayoutGroup _enemyGridLayout;
+        private Vector2 _enemyGridDefaultCellSize;
 
         private void Awake()
         {
             _dungeonNameBinding = new LocalizedStringBinding(_dungeonNameText);
             UIButtonAudio.EnsureOn(_startButton);
+            InitializeEnemyGridLayout();
 
             if (_enemyIconPrefab != null)
                 _enemyIconPrefab.gameObject.SetActive(false);
@@ -157,6 +160,8 @@ namespace UI
                 tooltipTrigger.Bind(config, _enemyTooltipView);
                 _spawnedEnemyIcons.Add(icon);
             }
+
+            FitEnemyIconGrid();
         }
 
         private void ClearEnemyIcons()
@@ -171,6 +176,60 @@ namespace UI
             }
 
             _spawnedEnemyIcons.Clear();
+            ResetEnemyIconGrid();
+        }
+
+        private void InitializeEnemyGridLayout()
+        {
+            if (_enemyGridLayout != null || _enemyIconsContainer == null)
+                return;
+
+            _enemyGridLayout = _enemyIconsContainer.GetComponent<GridLayoutGroup>();
+            if (_enemyGridLayout != null)
+                _enemyGridDefaultCellSize = _enemyGridLayout.cellSize;
+        }
+
+        private void FitEnemyIconGrid()
+        {
+            InitializeEnemyGridLayout();
+            ResetEnemyIconGrid();
+
+            if (_enemyGridLayout == null || _spawnedEnemyIcons.Count == 0
+                || _enemyGridLayout.constraint != GridLayoutGroup.Constraint.FixedColumnCount)
+                return;
+
+            var columns = Mathf.Max(1, _enemyGridLayout.constraintCount);
+            var rows = Mathf.CeilToInt((float)_spawnedEnemyIcons.Count / columns);
+            if (rows <= 1)
+                return;
+
+            if (_enemyIconsContainer is not RectTransform containerRect)
+                return;
+
+            Canvas.ForceUpdateCanvases();
+            var availableWidth = containerRect.rect.width
+                                 - _enemyGridLayout.padding.horizontal
+                                 - _enemyGridLayout.spacing.x * (columns - 1);
+            var availableHeight = containerRect.rect.height
+                                  - _enemyGridLayout.padding.vertical
+                                  - _enemyGridLayout.spacing.y * (rows - 1);
+
+            if (availableWidth <= 0f || availableHeight <= 0f
+                || _enemyGridDefaultCellSize.x <= 0f || _enemyGridDefaultCellSize.y <= 0f)
+                return;
+
+            var scale = Mathf.Min(1f,
+                availableWidth / (columns * _enemyGridDefaultCellSize.x),
+                availableHeight / (rows * _enemyGridDefaultCellSize.y));
+            _enemyGridLayout.cellSize = _enemyGridDefaultCellSize * scale;
+        }
+
+        private void ResetEnemyIconGrid()
+        {
+            InitializeEnemyGridLayout();
+
+            if (_enemyGridLayout != null && _enemyGridDefaultCellSize != Vector2.zero)
+                _enemyGridLayout.cellSize = _enemyGridDefaultCellSize;
         }
 
         private void HandleStartClicked()

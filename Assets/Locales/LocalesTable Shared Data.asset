@@ -523,6 +523,22 @@ MonoBehaviour:
     m_Key: new_high_score
     m_Metadata:
       m_Items: []
+  - m_Id: 28148395125235712
+    m_Key: level_selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28148395150401536
+    m_Key: depth_traveled
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28148395150401537
+    m_Key: dungeon_level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28148395150401538
+    m_Key: potential_enemies
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
