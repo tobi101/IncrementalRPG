@@ -2639,7 +2639,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5844278948545720406, guid: b5d848b57d72843f58ccf89528754c48, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 51d7e7e6a79cb4701b0970ae4e7fcf8f, type: 3}
+  m_Resource: {fileID: 8300000, guid: 1d9537b0a7c20496d8201b4c035bb9a4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -2745,7 +2745,7 @@ MonoBehaviour:
   _aspectRatioFitter: {fileID: 1579709958}
   _videoPlayer: {fileID: 1696450600}
   _audioSource: {fileID: 709843576}
-  _audioClip: {fileID: 8300000, guid: 51d7e7e6a79cb4701b0970ae4e7fcf8f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 1d9537b0a7c20496d8201b4c035bb9a4, type: 3}
   _allowInputSkip: 1
   _prepareTimeout: 5
 --- !u!1 &750996517
@@ -10553,7 +10553,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696450598}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 7738844d57749472bbaeeac56da9fdfb, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 2c6e3ac944ce04f399e52b84f806ddf1, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
