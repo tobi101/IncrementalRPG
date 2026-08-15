@@ -1,0 +1,1352 @@
+fileFormatVersion: 2
+guid: fe0cc9ac81cdb43ffb57cb29999dac51
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6497416923881671304
+    second: LevelCounter_0
+  - first:
+      213: -7810331237423772497
+    second: LevelCounter_1
+  - first:
+      213: 5422972066572717649
+    second: LevelCounter_2
+  - first:
+      213: 8414484539583544680
+    second: LevelCounter_3
+  - first:
+      213: 2770506730246204523
+    second: LevelCounter_4
+  - first:
+      213: 3122496329090085715
+    second: LevelCounter_5
+  - first:
+      213: -5068956856097435862
+    second: LevelCounter_6
+  - first:
+      213: -2217825085051917754
+    second: LevelCounter_7
+  - first:
+      213: 7397833287748808424
+    second: LevelCounter_8
+  - first:
+      213: -4964027476790216493
+    second: LevelCounter_9
+  - first:
+      213: -9210846775302058089
+    second: LevelCounter_10
+  - first:
+      213: 7384850053596794380
+    second: LevelCounter_11
+  - first:
+      213: 6411467994911349598
+    second: LevelCounter_12
+  - first:
+      213: -2273188687320603103
+    second: LevelCounter_13
+  - first:
+      213: 631725762814239687
+    second: LevelCounter_14
+  - first:
+      213: 1855051387148710429
+    second: LevelCounter_15
+  - first:
+      213: -1513756416423706376
+    second: LevelCounter_16
+  - first:
+      213: -3754455256871869077
+    second: LevelCounter_17
+  - first:
+      213: -427799306889620382
+    second: LevelCounter_18
+  - first:
+      213: -4469538569080359241
+    second: LevelCounter_19
+  - first:
+      213: 87063489061581265
+    second: LevelCounter_20
+  - first:
+      213: -3530117486264399677
+    second: LevelCounter_21
+  - first:
+      213: 3556594779299993707
+    second: LevelCounter_22
+  - first:
+      213: 148232779792961106
+    second: LevelCounter_23
+  - first:
+      213: -2926420646110778999
+    second: LevelCounter_24
+  - first:
+      213: -1174449714031234244
+    second: LevelCounter_25
+  - first:
+      213: -2281337600029190154
+    second: LevelCounter_26
+  - first:
+      213: 6016674578447355980
+    second: LevelCounter_27
+  - first:
+      213: -5145144085058820316
+    second: LevelCounter_28
+  - first:
+      213: -2419101611520818716
+    second: LevelCounter_29
+  - first:
+      213: -5860246385987423970
+    second: LevelCounter_30
+  - first:
+      213: 6527509200463636611
+    second: LevelCounter_31
+  - first:
+      213: 2972511893759965613
+    second: LevelCounter_32
+  - first:
+      213: -9214744149590782209
+    second: LevelCounter_33
+  - first:
+      213: 6563334846223412806
+    second: LevelCounter_34
+  - first:
+      213: 2420575623308446959
+    second: LevelCounter_35
+  - first:
+      213: -8932963653013823737
+    second: LevelCounter_36
+  - first:
+      213: 1069889212655951005
+    second: LevelCounter_37
+  - first:
+      213: -4305575868298128714
+    second: LevelCounter_38
+  - first:
+      213: 2443384924334662277
+    second: LevelCounter_39
+  - first:
+      213: 917658699560742151
+    second: LevelCounter_40
+  - first:
+      213: -7053117124623598694
+    second: LevelCounter_41
+  - first:
+      213: 3882093186124665617
+    second: LevelCounter_42
+  - first:
+      213: 3597229424334194344
+    second: LevelCounter_43
+  - first:
+      213: -5795599769671136047
+    second: LevelCounter_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LevelCounter_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 531
+        width: 85
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88a049974467b2a50800000000000000
+      internalID: 6497416923881671304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 531
+        width: 85
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac0837de112c9390800000000000000
+      internalID: -7810331237423772497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_2
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 565
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ecee6cc54424b40800000000000000
+      internalID: 5422972066572717649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_3
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 531
+        width: 38
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86db4ed5b1146c470800000000000000
+      internalID: 8414484539583544680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_4
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 530
+        width: 85
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6c67204131d27620800000000000000
+      internalID: 2770506730246204523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 531
+        width: 79
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35330eb1ed5555b20800000000000000
+      internalID: 3122496329090085715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_6
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 495
+        width: 79
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2f088a889277a9b0800000000000000
+      internalID: -5068956856097435862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_7
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 495
+        width: 66
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64aa78fe5d3b831e0800000000000000
+      internalID: -2217825085051917754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_8
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 499
+        width: 55
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eee3d70e226aa660800000000000000
+      internalID: 7397833287748808424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_9
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 447
+        width: 29
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d8f3a67f4b3c1bb0800000000000000
+      internalID: -4964027476790216493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_10
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 445
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79f8195b8af7c2080800000000000000
+      internalID: -9210846775302058089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_11
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 445
+        width: 92
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0e49244ff14c7660800000000000000
+      internalID: 7384850053596794380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_12
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 460
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5b1a750c2c1af850800000000000000
+      internalID: 6411467994911349598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_13
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 460
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 126a1d8cee20470e0800000000000000
+      internalID: -2273188687320603103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_14
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 379
+        width: 91
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c36108fb3754c800800000000000000
+      internalID: 631725762814239687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_15
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 460
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d12381b78677eb910800000000000000
+      internalID: 1855051387148710429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 371
+        width: 105
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f0c89a3f8e0efae0800000000000000
+      internalID: -1513756416423706376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_17
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 411
+        width: 57
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b65ed09f5de75ebc0800000000000000
+      internalID: -3754455256871869077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_18
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 356
+        width: 96
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2649fa50cc6201af0800000000000000
+      internalID: -427799306889620382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_19
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 406
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6be002a5209f1c0800000000000000
+      internalID: -4469538569080359241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_20
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 343
+        width: 81
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d1fb6238cf453100800000000000000
+      internalID: 87063489061581265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_21
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 273
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c8c0df79d0820fc0800000000000000
+      internalID: -3530117486264399677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_22
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 379
+        width: 44
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b685f2eab109b5130800000000000000
+      internalID: 3556594779299993707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_23
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 227
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25ec0a78de0ae0200800000000000000
+      internalID: 148232779792961106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 333
+        width: 72
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 989a23d5de34367d0800000000000000
+      internalID: -2926420646110778999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_25
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 316
+        width: 104
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c33fb94253483bfe0800000000000000
+      internalID: -1174449714031234244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_26
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 327
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f794813a8f0750e0800000000000000
+      internalID: -2281337600029190154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_27
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 233
+        width: 81
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c405a71c6a58f7350800000000000000
+      internalID: 6016674578447355980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_28
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 277
+        width: 79
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427eddbf6b6c898b0800000000000000
+      internalID: -5145144085058820316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_29
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 196
+        width: 108
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e10ab9b6ef9d6ed0800000000000000
+      internalID: -2419101611520818716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_30
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 273
+        width: 19
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e11f3faf5f83caea0800000000000000
+      internalID: -5860246385987423970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_31
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 119
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388aab9980f569a50800000000000000
+      internalID: 6527509200463636611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_32
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 115
+        width: 112
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da9bf2e71db704920800000000000000
+      internalID: 2972511893759965613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_33
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 163
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe488b8407ae1080800000000000000
+      internalID: -9214744149590782209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_34
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 164
+        width: 29
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64ee613c446a51b50800000000000000
+      internalID: 6563334846223412806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_35
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 128
+        width: 40
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fec054364bc979120800000000000000
+      internalID: 2420575623308446959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_36
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 123
+        width: 103
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f92aee2ecb70480800000000000000
+      internalID: -8932963653013823737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_37
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 113
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c5165029209de00800000000000000
+      internalID: 1069889212655951005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_38
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 80
+        width: 73
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b298984f858f34c0800000000000000
+      internalID: -4305575868298128714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_39
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 119
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5822380a4a5a8e120800000000000000
+      internalID: 2443384924334662277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_40
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1
+        width: 115
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70d6d5ca9bd2cbc00800000000000000
+      internalID: 917658699560742151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_41
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 82
+        width: 84
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9bf59b185b4e1e90800000000000000
+      internalID: -7053117124623598694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_42
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 28
+        width: 108
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 113dcef3f27ffd530800000000000000
+      internalID: 3882093186124665617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_43
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 1
+        width: 102
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a6c50d3a1debe130800000000000000
+      internalID: 3597229424334194344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelCounter_44
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1
+        width: 73
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc8a6447b4e19fa0800000000000000
+      internalID: -5795599769671136047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LevelCounter_0: 6497416923881671304
+      LevelCounter_1: -7810331237423772497
+      LevelCounter_10: -9210846775302058089
+      LevelCounter_11: 7384850053596794380
+      LevelCounter_12: 6411467994911349598
+      LevelCounter_13: -2273188687320603103
+      LevelCounter_14: 631725762814239687
+      LevelCounter_15: 1855051387148710429
+      LevelCounter_16: -1513756416423706376
+      LevelCounter_17: -3754455256871869077
+      LevelCounter_18: -427799306889620382
+      LevelCounter_19: -4469538569080359241
+      LevelCounter_2: 5422972066572717649
+      LevelCounter_20: 87063489061581265
+      LevelCounter_21: -3530117486264399677
+      LevelCounter_22: 3556594779299993707
+      LevelCounter_23: 148232779792961106
+      LevelCounter_24: -2926420646110778999
+      LevelCounter_25: -1174449714031234244
+      LevelCounter_26: -2281337600029190154
+      LevelCounter_27: 6016674578447355980
+      LevelCounter_28: -5145144085058820316
+      LevelCounter_29: -2419101611520818716
+      LevelCounter_3: 8414484539583544680
+      LevelCounter_30: -5860246385987423970
+      LevelCounter_31: 6527509200463636611
+      LevelCounter_32: 2972511893759965613
+      LevelCounter_33: -9214744149590782209
+      LevelCounter_34: 6563334846223412806
+      LevelCounter_35: 2420575623308446959
+      LevelCounter_36: -8932963653013823737
+      LevelCounter_37: 1069889212655951005
+      LevelCounter_38: -4305575868298128714
+      LevelCounter_39: 2443384924334662277
+      LevelCounter_4: 2770506730246204523
+      LevelCounter_40: 917658699560742151
+      LevelCounter_41: -7053117124623598694
+      LevelCounter_42: 3882093186124665617
+      LevelCounter_43: 3597229424334194344
+      LevelCounter_44: -5795599769671136047
+      LevelCounter_5: 3122496329090085715
+      LevelCounter_6: -5068956856097435862
+      LevelCounter_7: -2217825085051917754
+      LevelCounter_8: 7397833287748808424
+      LevelCounter_9: -4964027476790216493
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
