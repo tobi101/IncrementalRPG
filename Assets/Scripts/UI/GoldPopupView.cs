@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using Utils;
 
 namespace UI
 {
@@ -11,11 +12,11 @@ namespace UI
 
         private Action _onComplete;
 
-        public void Show(int amount, float startY, Action onComplete)
+        public void Show(BigDouble amount, float startY, Action onComplete)
         {
             StopAllCoroutines();
             _onComplete = onComplete;
-            _text.text = $"+{amount}";
+            _text.text = "+" + BigDoubleFormatter.FormatFloor(amount);
             ((RectTransform)transform).anchoredPosition = new Vector2(0f, startY);
             _text.color = new Color(_text.color.r, _text.color.g, _text.color.b, 1f);
             gameObject.SetActive(true);

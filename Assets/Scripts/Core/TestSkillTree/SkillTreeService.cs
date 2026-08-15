@@ -4,6 +4,7 @@ using System.Linq;
 using Core.Save;
 using Model;
 using Reflex.Attributes;
+using Utils;
 
 namespace Core.TestSkillTree
 {
@@ -71,7 +72,7 @@ namespace Core.TestSkillTree
             return _state.GetLevel(grandparent.id) >= 1;
         }
 
-        public int GetUpgradeCost(string nodeId)
+        public BigDouble GetUpgradeCost(string nodeId)
         {
             var def   = GetDefinition(nodeId);
             var level = _state.GetLevel(nodeId);

@@ -3,6 +3,7 @@ using Core.TestSkillTree;
 using Entity;
 using IncrementalRPG.Scripts.Core;
 using UnityEngine;
+using Utils;
 
 namespace Core.Gameplay.Bomb
 {
@@ -46,8 +47,10 @@ namespace Core.Gameplay.Bomb
 
             var a = GetRadius();
             var b = a * _config.aspectRatio;
-            var damage = (int)((_config.baseDamage + _skillTree.GetBonus(StatType.BombExplosionDamage))
-                               * _skillTree.GetMultiplier(StatType.BombExplosionDamage));
+            var baseDamage = BigDouble.Max(BigDouble.Zero,
+                _config.baseDamage + _skillTree.GetBonus(StatType.BombExplosionDamage));
+            var damage = BigDoubleMath.MultiplyAndRound(baseDamage,
+                Mathf.Max(0f, _skillTree.GetMultiplier(StatType.BombExplosionDamage)));
 
             // var debugGo = new GameObject("BombExplosionDebug");
             // debugGo.AddComponent<BombExplosionDebugView>().Show(epicenter, a, b, 0.5f);

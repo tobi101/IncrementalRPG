@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.Serialization;
+using Utils;
 
 namespace Core.Gameplay
 {
     [CreateAssetMenu(fileName = "DamageZoneConfig", menuName = "IncrementalRPG/Damage Zone Config")]
     public class DamageZoneConfig : ScriptableObject
     {
-        public int damagePerTick = 1;
+        public BigDouble damagePerTick = BigDouble.One;
         [FormerlySerializedAs("tickInterval")]
         public float baseManualAttackCooldown = 1f;
         public float baseAutoAttackInterval = 1f;
@@ -17,5 +18,10 @@ namespace Core.Gameplay
 
         public float baseRadius = 0.6f;
         public float aspectRatio = 0.55f;
+
+        private void OnValidate()
+        {
+            damagePerTick = BigDoubleMath.SanitizeNonNegativeInteger(damagePerTick, BigDouble.One);
+        }
     }
 }

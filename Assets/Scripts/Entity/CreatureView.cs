@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Spine;
 using Spine.Unity;
 using UnityEngine;
+using Utils;
 
 namespace Entity
 {
@@ -53,7 +54,7 @@ namespace Entity
         }
 
         private Creature _bound;
-        private int _previousHealth;
+        private BigDouble _previousHealth;
         private readonly List<TrackEntry> _deathTrackEntries = new();
         private int _pendingDeathAnimations;
         private Action _deathCompleteCallback;
@@ -108,7 +109,7 @@ namespace Entity
             Gizmos.color = previousColor;
         }
 
-        private void HandleHealthChanged(int current, int max)
+        private void HandleHealthChanged(BigDouble current, BigDouble max)
         {
             if (current < _previousHealth)
                 PlayDamageAnimations();

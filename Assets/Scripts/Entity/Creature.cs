@@ -6,10 +6,10 @@ namespace Entity
 {
     public class Creature : Entity
     {
-        public int CurrentHP { get; private set; }
+        public BigDouble CurrentHP { get; private set; }
         public bool IsAlive => CurrentHP > 0;
 
-        public event Action<int, int> OnHealthChanged; // current, max
+        public event Action<BigDouble, BigDouble> OnHealthChanged; // current, max
         public event Action<BigDouble> OnDamageTaken;
         public event Action OnDied;
 
@@ -18,19 +18,22 @@ namespace Entity
             CurrentHP = config.maxHP;
         }
 
-        public void TakeDamage(int amount)
+        public void TakeDamage(BigDouble amount)
         {
             if (!IsAlive) return;
 
+            amount = BigDoubleMath.SanitizeNonNegativeInteger(amount, BigDouble.Zero);
+            if (amount <= BigDouble.Zero) return;
+
             var previousHealth = CurrentHP;
-            CurrentHP = Mathf.Max(0, CurrentHP - amount);
-            var damageTaken = Mathf.Max(0, previousHealth - CurrentHP);
+            CurrentHP = BigDouble.Max(BigDouble.Zero, CurrentHP - amount);
+            var damageTaken = BigDouble.Max(BigDouble.Zero, previousHealth - CurrentHP);
 
             OnHealthChanged?.Invoke(CurrentHP, Config.maxHP);
             if (damageTaken > 0)
                 OnDamageTaken?.Invoke(damageTaken);
 
-            if (CurrentHP == 0)
+            if (CurrentHP == BigDouble.Zero)
                 OnDied?.Invoke();
         }
     }

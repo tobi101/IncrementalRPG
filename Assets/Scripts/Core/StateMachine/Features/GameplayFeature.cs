@@ -31,7 +31,7 @@ namespace Core.StateMachine.Features
         [Inject] private AudioManager _audioManager;
 
         public event Action OnSessionExpired;
-        public event Action<BigDouble, int> OnSessionGoldEarned;
+        public event Action<BigDouble, BigDouble> OnSessionGoldEarned;
         public event Action<int> OnSessionKillsChanged;
         public event Action<int, int> OnLevelKillGoalChanged;
         public event Action<DungeonConfig, DungeonLevelConfig, int> OnDungeonLevelChanged;
@@ -420,8 +420,9 @@ namespace Core.StateMachine.Features
                 return;
 
             var levelGoldMultiplier = _currentLevel != null ? _currentLevel.goldDropMultiplier : 1f;
-            var goldDrop = context.Config != null ? context.Config.goldDrop : 0;
-            var finalAmount = Mathf.RoundToInt(goldDrop * levelGoldMultiplier * _skillTree.GetMultiplier(StatType.GoldDrop));
+            var goldDrop = context.Config != null ? context.Config.goldDrop : BigDouble.Zero;
+            var finalAmount = BigDoubleMath.MultiplyAndRound(goldDrop,
+                Mathf.Max(0f, levelGoldMultiplier * _skillTree.GetMultiplier(StatType.GoldDrop)));
 
             if (finalAmount > 0)
             {

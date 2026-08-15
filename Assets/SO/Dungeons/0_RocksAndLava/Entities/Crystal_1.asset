@@ -31,10 +31,16 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 21300000, guid: 7b973355f9d04471d9b13014444761b3, type: 3}
-  maxHP: 20
+  maxHP:
+    mantissa: 2
+    exponent: 1
   entityKind: 4
-  shardDrop: 50
-  goldDrop: 0
+  shardDrop:
+    mantissa: 5
+    exponent: 1
+  goldDrop:
+    mantissa: 0
+    exponent: 0
   countsAsEnemyKill: 0
   featureType: 2
   viewPrefab: {fileID: 3154142987783796786, guid: 4766743d9fe044944ae2042bcadfabf7, type: 3}

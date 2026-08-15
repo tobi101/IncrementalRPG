@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utils;
 
 namespace Core.Gameplay.Shards
 {
@@ -10,7 +11,8 @@ namespace Core.Gameplay.Shards
         public Sprite icon;
 
         [Header("Drop")]
-        [Min(1)] public int basePickupValue = 10;
+        public BigDouble basePickupValue = 10;
+        [Min(1)] public int maxPickupCount = 32;
         [Min(0.01f)] public float lifetime = 15f;
         [Min(0f)] public float hitRadius = 0.12f;
 
@@ -24,7 +26,11 @@ namespace Core.Gameplay.Shards
 
         private void OnValidate()
         {
-            basePickupValue = Mathf.Max(1, basePickupValue);
+            basePickupValue = BigDoubleMath.SanitizeNonNegativeInteger(basePickupValue, BigDouble.One);
+            if (basePickupValue < BigDouble.One)
+                basePickupValue = BigDouble.One;
+
+            maxPickupCount = Mathf.Max(1, maxPickupCount);
             lifetime = Mathf.Max(0.01f, lifetime);
             hitRadius = Mathf.Max(0f, hitRadius);
             scatterDuration = Mathf.Max(0f, scatterDuration);

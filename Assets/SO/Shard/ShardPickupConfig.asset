@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.Shards.ShardPickupConfig
   pickupPrefab: {fileID: 100005, guid: af9b8fcc9e6b45c99cb2a7d9fb36ace1, type: 3}
   icon: {fileID: 21300000, guid: 7b973355f9d04471d9b13014444761b3, type: 3}
-  basePickupValue: 10
+  basePickupValue:
+    mantissa: 1
+    exponent: 1
+  maxPickupCount: 32
   lifetime: 15
   hitRadius: 0.12
   scatterDuration: 0.4

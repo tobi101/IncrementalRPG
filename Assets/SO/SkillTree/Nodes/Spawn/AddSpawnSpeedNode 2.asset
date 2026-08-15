@@ -34,7 +34,17 @@ MonoBehaviour:
   icon: {fileID: 4153240674832713612, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
   additionalIcon: {fileID: 0}
   maxLevel: 3
-  goldCostPerLevel: 2c01000090010000f401000058020000bc020000
+  goldCostPerLevel:
+  - mantissa: 3
+    exponent: 2
+  - mantissa: 4
+    exponent: 2
+  - mantissa: 5
+    exponent: 2
+  - mantissa: 6
+    exponent: 2
+  - mantissa: 7
+    exponent: 2
   prerequisites:
   - node: {fileID: 11400000, guid: 9ae3dedb00f784a268592bfaeced1753, type: 2}
     requiredLevel: 1

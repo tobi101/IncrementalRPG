@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Localization;
+using Utils;
 
 namespace Entity
 {
@@ -25,12 +26,12 @@ namespace Entity
         public LocalizedString entityName = new();
         public LocalizedString description = new();
         public Sprite icon;
-        public int maxHP;
+        public BigDouble maxHP;
 
         [Header("Rewards and Progression")]
         public EntityKind entityKind;
-        [Min(0)] public int shardDrop;
-        public int goldDrop;
+        public BigDouble shardDrop;
+        public BigDouble goldDrop;
         public bool countsAsEnemyKill = true;
 
         public FeatureType featureType;
@@ -46,5 +47,15 @@ namespace Entity
         [Header("Audio")]
         public AudioClip damageSound;
         public AudioClip[] deathSounds;
+
+        private void OnValidate()
+        {
+            maxHP = BigDoubleMath.SanitizeNonNegativeInteger(maxHP, BigDouble.One);
+            if (maxHP < BigDouble.One)
+                maxHP = BigDouble.One;
+
+            shardDrop = BigDoubleMath.SanitizeNonNegativeInteger(shardDrop, BigDouble.Zero);
+            goldDrop = BigDoubleMath.SanitizeNonNegativeInteger(goldDrop, BigDouble.Zero);
+        }
     }
 }

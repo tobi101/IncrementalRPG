@@ -736,7 +736,7 @@ namespace Core.TestSkillTree.Editor
 
             node.id = CreateUniqueNodeId(displayName);
             node.maxLevel = 1;
-            node.goldCostPerLevel = new[] { 0 };
+            node.goldCostPerLevel = new[] { Utils.BigDouble.Zero };
             node.prerequisites = new List<NodePrerequisite>();
             node.effects = Array.Empty<NodeEffect>();
 

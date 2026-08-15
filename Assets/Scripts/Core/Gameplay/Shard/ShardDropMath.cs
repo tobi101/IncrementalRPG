@@ -1,36 +1,47 @@
+using System;
 using System.Collections.Generic;
-using UnityEngine;
+using Utils;
 
 namespace Core.Gameplay.Shards
 {
     public static class ShardDropMath
     {
-        public static List<int> BuildPickupValues(int baseDrop, int nominalPickupValue, int finalDrop)
+        public static List<BigDouble> BuildPickupValues(BigDouble baseDrop, BigDouble nominalPickupValue,
+            BigDouble finalDrop, int maxPickupCount)
         {
-            var result = new List<int>();
-            baseDrop = Mathf.Max(0, baseDrop);
-            finalDrop = Mathf.Max(0, finalDrop);
-            nominalPickupValue = Mathf.Max(1, nominalPickupValue);
+            var result = new List<BigDouble>();
+            baseDrop = BigDoubleMath.SanitizeNonNegativeInteger(baseDrop, BigDouble.Zero);
+            finalDrop = BigDoubleMath.SanitizeNonNegativeInteger(finalDrop, BigDouble.Zero);
+            nominalPickupValue = BigDoubleMath.SanitizeNonNegativeInteger(nominalPickupValue, BigDouble.One);
 
-            if (baseDrop == 0 || finalDrop == 0)
+            if (baseDrop <= BigDouble.Zero || finalDrop <= BigDouble.Zero)
                 return result;
 
-            var allocatedBase = 0;
-            var allocatedFinal = 0;
+            if (nominalPickupValue < BigDouble.One)
+                nominalPickupValue = BigDouble.One;
 
-            while (allocatedBase < baseDrop)
+            maxPickupCount = Math.Max(1, maxPickupCount);
+            var desiredCount = baseDrop / nominalPickupValue;
+            var pickupCount = desiredCount >= maxPickupCount
+                ? maxPickupCount
+                : Math.Max(1, (int)Math.Ceiling(desiredCount.ToDouble()));
+
+            if (finalDrop < pickupCount)
+                pickupCount = Math.Max(1, (int)finalDrop.ToDouble());
+
+            var remaining = finalDrop;
+            for (var i = 0; i < pickupCount; i++)
             {
-                var baseValue = Mathf.Min(nominalPickupValue, baseDrop - allocatedBase);
-                allocatedBase += baseValue;
+                var pickupsLeft = pickupCount - i;
+                var pickupValue = pickupsLeft == 1
+                    ? remaining
+                    : BigDoubleMath.FloorToInteger(remaining / pickupsLeft);
 
-                var targetAllocated = allocatedBase == baseDrop
-                    ? finalDrop
-                    : Mathf.RoundToInt((float)finalDrop * allocatedBase / baseDrop);
-                var pickupValue = targetAllocated - allocatedFinal;
-                allocatedFinal = targetAllocated;
+                if (pickupValue <= BigDouble.Zero)
+                    continue;
 
-                if (pickupValue > 0)
-                    result.Add(pickupValue);
+                result.Add(pickupValue);
+                remaining -= pickupValue;
             }
 
             return result;

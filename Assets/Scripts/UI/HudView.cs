@@ -39,12 +39,10 @@ namespace UI
 
         private const float BatchWindow = 0.2f;
 
-        private double _goldDisplayed;
-        private double _goldTarget;
         private float _killsDisplayed;
         private int _killsTarget;
         private int _activePopupCount;
-        private int _pendingPopupGold;
+        private BigDouble _pendingPopupGold;
         private float _batchTimer;
         private Coroutine _transitionCoroutine;
         private LocalizedStringBinding _dungeonLevelBinding;
@@ -96,10 +94,8 @@ namespace UI
         {
             ResetPopups();
             _activePopupCount = 0;
-            _pendingPopupGold = 0;
+            _pendingPopupGold = BigDouble.Zero;
             _batchTimer = 0f;
-            _goldDisplayed = 0;
-            _goldTarget = 0;
             _killsDisplayed = 0;
             _killsTarget = 0;
             if (_sessionGoldText != null) _sessionGoldText.text = "0";
@@ -145,15 +141,8 @@ namespace UI
                 if (_batchTimer <= 0f)
                 {
                     SpawnPopup(_pendingPopupGold);
-                    _pendingPopupGold = 0;
+                    _pendingPopupGold = BigDouble.Zero;
                 }
-            }
-
-            if (_goldDisplayed < _goldTarget)
-            {
-                _goldDisplayed += (_goldTarget - _goldDisplayed) * Time.deltaTime * LerpSpeed;
-                if (_goldTarget - _goldDisplayed < 0.5) _goldDisplayed = _goldTarget;
-                _sessionGoldText.text = new BigDouble(_goldDisplayed).ToString();
             }
 
             if ((int)_killsDisplayed < _killsTarget)
@@ -164,22 +153,19 @@ namespace UI
             }
         }
 
-        private void HandleSessionGoldEarned(BigDouble sessionTotal, int delta)
+        private void HandleSessionGoldEarned(BigDouble sessionTotal, BigDouble delta)
         {
-            _goldTarget = (double)sessionTotal;
+            if (_sessionGoldText != null)
+                _sessionGoldText.text = BigDoubleFormatter.FormatFloor(sessionTotal);
+
             if (delta <= 0)
             {
-                _goldDisplayed = _goldTarget;
-                _pendingPopupGold = 0;
+                _pendingPopupGold = BigDouble.Zero;
                 _batchTimer = 0f;
-
-                if (_sessionGoldText != null)
-                    _sessionGoldText.text = sessionTotal.ToString();
-
                 return;
             }
 
-            if (_pendingPopupGold == 0) _batchTimer = BatchWindow;
+            if (_pendingPopupGold == BigDouble.Zero) _batchTimer = BatchWindow;
             _pendingPopupGold += delta;
         }
 
@@ -414,7 +400,7 @@ namespace UI
             _levelTransitionGroup.gameObject.SetActive(visible);
         }
 
-        private void SpawnPopup(int amount)
+        private void SpawnPopup(BigDouble amount)
         {
             if (_popupPrefab == null) return;
 

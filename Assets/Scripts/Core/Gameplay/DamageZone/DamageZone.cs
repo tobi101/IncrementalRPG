@@ -7,6 +7,7 @@ using IncrementalRPG.Scripts.Core;
 using Model;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Utils;
 
 namespace Core.Gameplay
 {
@@ -254,15 +255,16 @@ namespace Core.Gameplay
             OnZoneTick?.Invoke(source);
         }
 
-        private int GetDamage(AttackSource source)
+        private BigDouble GetDamage(AttackSource source)
         {
-            var damage = (_config.damagePerTick + _skillTree.GetBonus(StatType.ZoneDamage))
-                         * _skillTree.GetMultiplier(StatType.ZoneDamage);
+            var damage = BigDouble.Max(BigDouble.Zero,
+                _config.damagePerTick + _skillTree.GetBonus(StatType.ZoneDamage));
+            var multiplier = Mathf.Max(0f, _skillTree.GetMultiplier(StatType.ZoneDamage));
 
             if (source == AttackSource.Special)
-                damage *= Mathf.Max(0f, _config.specialAttackDamageMultiplier);
+                multiplier *= Mathf.Max(0f, _config.specialAttackDamageMultiplier);
 
-            return (int)damage;
+            return BigDoubleMath.MultiplyAndRound(damage, multiplier);
         }
 
         private void StopDamageRegistration()

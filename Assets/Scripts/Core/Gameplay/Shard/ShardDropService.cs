@@ -20,7 +20,7 @@ namespace Core.Gameplay.Shards
             public Vector3 StartPosition;
             public Vector3 EndPosition;
             public Vector3 Position;
-            public int Value;
+            public BigDouble Value;
             public float ScatterElapsed;
             public float LifetimeRemaining;
             public float CollectionElapsed;
@@ -40,7 +40,7 @@ namespace Core.Gameplay.Shards
 
         public int ActiveCount => _active.Count;
 
-        public event Action<int, Vector3> OnShardCollected;
+        public event Action<BigDouble, Vector3> OnShardCollected;
 
         public ShardDropService(SpawnService spawnService, DamageZone damageZone, ShardPickupConfig config,
             SkillTreeService skillTree, Player player)
@@ -75,8 +75,8 @@ namespace Core.Gameplay.Shards
             _damageZone.UpdateAim();
 
             var pickupDuration = GetPickupDuration();
-            var collectedValue = 0;
-            var collectedPositions = new List<(int value, Vector3 position)>();
+            var collectedValue = BigDouble.Zero;
+            var collectedPositions = new List<(BigDouble value, Vector3 position)>();
 
             for (var i = _active.Count - 1; i >= 0; i--)
             {
@@ -134,26 +134,31 @@ namespace Core.Gameplay.Shards
             var values = ShardDropMath.BuildPickupValues(
                 entityConfig.shardDrop,
                 _config.basePickupValue,
-                finalDrop);
+                finalDrop,
+                _config.maxPickupCount);
 
             foreach (var value in values)
                 Spawn(value, context.WorldPosition);
         }
 
-        private int GetFinalDrop(EntityConfig entityConfig)
+        private BigDouble GetFinalDrop(EntityConfig entityConfig)
         {
-            var baseDrop = Mathf.Max(0, entityConfig.shardDrop);
+            var baseDrop = BigDoubleMath.SanitizeNonNegativeInteger(entityConfig.shardDrop, BigDouble.Zero);
 
             switch (entityConfig.entityKind)
             {
                 case EntityKind.Slime:
-                    return Mathf.Max(0, Mathf.RoundToInt(baseDrop * _skillTree.GetMultiplier(StatType.SlimeShardDrop)));
+                    return BigDoubleMath.MultiplyAndRound(baseDrop,
+                        Mathf.Max(0f, _skillTree.GetMultiplier(StatType.SlimeShardDrop)));
                 case EntityKind.Skeleton:
-                    return Mathf.Max(0, Mathf.RoundToInt(baseDrop * _skillTree.GetMultiplier(StatType.SkeletonShardDrop)));
+                    return BigDoubleMath.MultiplyAndRound(baseDrop,
+                        Mathf.Max(0f, _skillTree.GetMultiplier(StatType.SkeletonShardDrop)));
                 case EntityKind.Demon:
-                    return Mathf.Max(0, Mathf.RoundToInt(baseDrop * _skillTree.GetMultiplier(StatType.DemonShardDrop)));
+                    return BigDoubleMath.MultiplyAndRound(baseDrop,
+                        Mathf.Max(0f, _skillTree.GetMultiplier(StatType.DemonShardDrop)));
                 case EntityKind.Crystal:
-                    return Mathf.Max(0, Mathf.RoundToInt(baseDrop + _skillTree.GetBonus(StatType.CrystalShardDropBonus)));
+                    return BigDoubleMath.SanitizeNonNegativeInteger(
+                        baseDrop + _skillTree.GetBonus(StatType.CrystalShardDropBonus), BigDouble.Zero);
                 default:
                     return baseDrop;
             }
@@ -167,7 +172,7 @@ namespace Core.Gameplay.Shards
             return Mathf.Max(0.01f, _config.baseCollectionDuration / speedMultiplier);
         }
 
-        private void Spawn(int value, Vector3 origin)
+        private void Spawn(BigDouble value, Vector3 origin)
         {
             if (value <= 0)
                 return;

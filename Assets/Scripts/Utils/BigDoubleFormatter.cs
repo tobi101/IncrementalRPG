@@ -1,124 +1,54 @@
 using System;
+using System.Globalization;
 
 namespace Utils
 {
     public static class BigDoubleFormatter
     {
-        static readonly string[] NamedSuffixes =
-        {
-            "",     // 10^0
-            "K",    // 10^3
-            "M",    // 10^6
-            "B",    // 10^9
-            "T",    // 10^12
-            "Qa",   // 10^15
-            "Qi",   // 10^18
-            "Sx",   // 10^21
-            "Sp",   // 10^24
-            "Oc",   // 10^27
-            "No",   // 10^30
-            "De",   // 10^33
-        };
+        public static string Format(BigDouble value, int decimals = 2) =>
+            FormatEngineering(value, decimals, false);
 
-        // Generates: aa, ab, ... az, ba, bb, ... zz, aaa, ...
-        static string GenerateSuffix(long index)
-        {
-            long i = index;
-            string suffix = "";
-            do
-            {
-                suffix = (char)('a' + i % 26) + suffix;
-                i = i / 26 - 1;
-            }
-            while (i >= 0);
+        public static string FormatFloor(BigDouble value, int decimals = 2) =>
+            FormatEngineering(value, decimals, true);
 
-            return suffix;
-        }
-
-        static string GetSuffix(long exponent)
-        {
-            if (exponent < 0) return "";
-
-            long index = exponent / 3;
-
-            if (index < NamedSuffixes.Length)
-                return NamedSuffixes[index];
-
-            return GenerateSuffix(index - NamedSuffixes.Length);
-        }
-
-        /// <summary>
-        /// Formats a BigDouble for display.
-        /// Small numbers (below 1000) show no suffix and no decimals.
-        /// Larger numbers show 2 decimal places and a suffix (K, M, B, ... aa, ab, ...).
-        /// </summary>
-        public static string Format(BigDouble value, int decimals = 2)
-        {
-            if (value.Mantissa == 0) return "0";
-
-            long exp = value.Exponent;
-
-            // Align exponent to nearest lower multiple of 3
-            int mod = (int)((exp % 3 + 3) % 3);
-            double displayMantissa = value.Mantissa * Math.Pow(10, mod);
-            long displayExp = exp - mod;
-
-            string suffix = GetSuffix(displayExp);
-
-            // Numbers below 1000: no suffix, no decimals
-            if (displayExp < 3)
-                return ((long)Math.Round(displayMantissa * Math.Pow(10, mod - mod))).ToString();
-
-            string format = decimals > 0 ? $"F{decimals}" : "F0";
-            return $"{displayMantissa.ToString(format)}{suffix}";
-        }
-
-        /// <summary>
-        /// Formats a BigDouble for spendable currency display without rounding up.
-        /// </summary>
-        public static string FormatFloor(BigDouble value, int decimals = 2)
-        {
-            if (value.Mantissa == 0) return "0";
-
-            long exp = value.Exponent;
-            int mod = (int)((exp % 3 + 3) % 3);
-            double displayMantissa = value.Mantissa * Math.Pow(10, mod);
-            long displayExp = exp - mod;
-
-            string suffix = GetSuffix(displayExp);
-
-            if (displayExp < 3)
-                return Math.Floor(displayMantissa).ToString("F0");
-
-            int places = Math.Max(0, decimals);
-            double factor = Math.Pow(10, places);
-            double flooredMantissa = Math.Floor(displayMantissa * factor) / factor;
-            string format = places > 0 ? $"F{places}" : "F0";
-            return $"{flooredMantissa.ToString(format)}{suffix}";
-        }
-
-        /// <summary>
-        /// Format with explicit decimal control for both small and large numbers.
-        /// </summary>
         public static string Format(BigDouble value, int decimalsSmall, int decimalsLarge)
         {
-            if (value.Mantissa == 0) return "0";
+            var decimals = value.Exponent < 3 ? decimalsSmall : decimalsLarge;
+            return FormatEngineering(value, decimals, false);
+        }
 
-            long exp = value.Exponent;
-            int mod = (int)((exp % 3 + 3) % 3);
-            double displayMantissa = value.Mantissa * Math.Pow(10, mod);
-            long displayExp = exp - mod;
+        private static string FormatEngineering(BigDouble value, int decimals, bool floor)
+        {
+            value = value.NormalizedOr(BigDouble.Zero);
+            if (value.IsZero)
+                return "0";
 
-            string suffix = GetSuffix(displayExp);
+            decimals = Math.Max(0, Math.Min(15, decimals));
 
-            if (displayExp < 3)
+            // long.MinValue cannot be rounded down to the preceding multiple of three.
+            if (value.Exponent < long.MinValue + 2)
+                return value.ToScientificString();
+
+            var remainder = (int)((value.Exponent % 3 + 3) % 3);
+            var engineeringExponent = value.Exponent - remainder;
+            var displayMantissa = value.Mantissa * Math.Pow(10d, remainder);
+            var factor = Math.Pow(10d, decimals);
+
+            displayMantissa = floor
+                ? Math.Floor(displayMantissa * factor) / factor
+                : Math.Round(displayMantissa, decimals, MidpointRounding.AwayFromZero);
+
+            if (!floor && Math.Abs(displayMantissa) >= 1000d && engineeringExponent <= long.MaxValue - 3)
             {
-                string smallFmt = decimalsSmall > 0 ? $"F{decimalsSmall}" : "F0";
-                return displayMantissa.ToString(smallFmt);
+                displayMantissa /= 1000d;
+                engineeringExponent += 3;
             }
 
-            string largeFmt = decimalsLarge > 0 ? $"F{decimalsLarge}" : "F0";
-            return $"{displayMantissa.ToString(largeFmt)}{suffix}";
+            var format = decimals == 0 ? "0" : "0." + new string('#', decimals);
+            var mantissaText = displayMantissa.ToString(format, CultureInfo.InvariantCulture);
+            return engineeringExponent == 0
+                ? mantissaText
+                : mantissaText + "e" + engineeringExponent.ToString(CultureInfo.InvariantCulture);
         }
     }
 }

@@ -3,6 +3,7 @@ using IncrementalRPG.Scripts.AudioManager;
 using UI.Localization;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 
 namespace Core.TestSkillTree.View
 {
@@ -101,7 +102,7 @@ namespace Core.TestSkillTree.View
             if (_costText != null)
             {
                 var cost = _service.GetUpgradeCost(_current.id);
-                _costText.text = cost > 0 ? $"{cost}" : "";
+                _costText.text = cost > 0 ? BigDoubleFormatter.FormatFloor(cost) : "";
             }
         }
 
