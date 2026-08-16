@@ -47,7 +47,9 @@ namespace IncrementalRPG.Scripts.AudioManager
         [SerializeField] private AudioClip _skillMaxAudioClip;
         [SerializeField] private AudioClip _skillErrorAudioClip;
         [SerializeField] private AudioClip _sessionEndAudioClip;
-        [SerializeField] private AudioClip _newLevelAudioClip;
+        [SerializeField] private AudioClip _curtainCloseAudioClip;
+        [SerializeField] private AudioClip _curtainOpenAudioClip;
+        [SerializeField] private AudioClip _levelCounterOnAudioClip;
         [SerializeField] private AudioClip _fightStartFadeAudioClip;
         [SerializeField] private AudioClip _fightStartBurnAudioClip;
 
@@ -146,9 +148,19 @@ namespace IncrementalRPG.Scripts.AudioManager
             PlaySfxOneShot(_sessionEndAudioClip, 1f);
         }
 
-        public void PlayNewLevel()
+        public void PlayCurtainClose()
         {
-            PlaySfxOneShot(_newLevelAudioClip, 1f);
+            PlaySfxOneShot(_curtainCloseAudioClip, 1f);
+        }
+
+        public void PlayCurtainOpen()
+        {
+            PlaySfxOneShot(_curtainOpenAudioClip, 1f);
+        }
+
+        public void PlayLevelCounterOn()
+        {
+            PlaySfxOneShot(_levelCounterOnAudioClip, 1f);
         }
 
         public void PlayFightStartFade()

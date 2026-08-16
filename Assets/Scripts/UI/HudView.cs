@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core.Gameplay.Dungeon;
@@ -14,6 +15,9 @@ namespace UI
 {
     public class HudView : MonoBehaviour
     {
+        public event Action OnLevelTransitionOpeningStarted;
+        public event Action OnLevelTransitionLampAnimationStarted;
+
         [SerializeField] private TMP_Text _sessionGoldText;
         [SerializeField] private TMP_Text _shardText;
         [SerializeField] private GameObject _shardCounterRoot;
@@ -64,6 +68,11 @@ namespace UI
             _dungeonNameChanged = HandleDungeonNameChanged;
             _levelNameChanged = HandleLevelNameChanged;
 
+            if (_levelTransitionCurtain != null)
+            {
+                _levelTransitionCurtain.OpeningStarted += HandleLevelTransitionOpeningStarted;
+                _levelTransitionCurtain.LampAnimationStarted += HandleLevelTransitionLampAnimationStarted;
+            }
         }
 
         [Inject]
@@ -473,8 +482,24 @@ namespace UI
             });
         }
 
+        private void HandleLevelTransitionOpeningStarted()
+        {
+            OnLevelTransitionOpeningStarted?.Invoke();
+        }
+
+        private void HandleLevelTransitionLampAnimationStarted()
+        {
+            OnLevelTransitionLampAnimationStarted?.Invoke();
+        }
+
         private void OnDestroy()
         {
+            if (_levelTransitionCurtain != null)
+            {
+                _levelTransitionCurtain.OpeningStarted -= HandleLevelTransitionOpeningStarted;
+                _levelTransitionCurtain.LampAnimationStarted -= HandleLevelTransitionLampAnimationStarted;
+            }
+
             if (_gameplay != null)
             {
                 _gameplay.OnSessionGoldEarned -= HandleSessionGoldEarned;

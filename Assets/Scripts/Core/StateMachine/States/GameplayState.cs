@@ -33,6 +33,8 @@ namespace Core.StateMachine.States
             _pauseMenu?.EnableForGameplay();
             _gameplay.OnSessionExpired += HandleSessionExpired;
             _gameplay.OnLevelTransitionStarted += HandleLevelTransitionStarted;
+            _hudView.OnLevelTransitionOpeningStarted += HandleLevelTransitionOpeningStarted;
+            _hudView.OnLevelTransitionLampAnimationStarted += HandleLevelTransitionLampAnimationStarted;
             _gameplay.OnDemoLimitReached += HandleDemoLimitReached;
             _gameplay.Enable();
         }
@@ -41,6 +43,8 @@ namespace Core.StateMachine.States
         {
             _gameplay.OnSessionExpired -= HandleSessionExpired;
             _gameplay.OnLevelTransitionStarted -= HandleLevelTransitionStarted;
+            _hudView.OnLevelTransitionOpeningStarted -= HandleLevelTransitionOpeningStarted;
+            _hudView.OnLevelTransitionLampAnimationStarted -= HandleLevelTransitionLampAnimationStarted;
             _gameplay.OnDemoLimitReached -= HandleDemoLimitReached;
             if (_pauseMenu != null)
                 _pauseMenu.OnPauseChanged -= HandlePauseChanged;
@@ -77,7 +81,17 @@ namespace Core.StateMachine.States
         private void HandleLevelTransitionStarted(DungeonLevelConfig nextLevel, int nextLevelIndex,
             float closeDuration, float holdDuration, float openDuration)
         {
-            _audioManager?.PlayNewLevel();
+            _audioManager?.PlayCurtainClose();
+        }
+
+        private void HandleLevelTransitionOpeningStarted()
+        {
+            _audioManager?.PlayCurtainOpen();
+        }
+
+        private void HandleLevelTransitionLampAnimationStarted()
+        {
+            _audioManager?.PlayLevelCounterOn();
         }
 
         private void HandleDemoLimitReached(DungeonConfig dungeon, DungeonLevelConfig level, int levelIndex)

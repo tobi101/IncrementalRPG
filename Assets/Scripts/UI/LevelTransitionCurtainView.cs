@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -6,6 +7,9 @@ namespace UI
 {
     public sealed class LevelTransitionCurtainView : MonoBehaviour
     {
+        public event Action OpeningStarted;
+        public event Action LampAnimationStarted;
+
         [SerializeField, FormerlySerializedAs("_bottomCurtain")]
         private RectTransform _leftCurtain;
 
@@ -52,6 +56,15 @@ namespace UI
             SetRevealAlpha(0f);
             SetCurtainProgress(0f);
             SetRootVisible(false);
+
+            if (_lampCounter != null)
+                _lampCounter.TurnOnAnimationStarted += HandleLampAnimationStarted;
+        }
+
+        private void OnDestroy()
+        {
+            if (_lampCounter != null)
+                _lampCounter.TurnOnAnimationStarted -= HandleLampAnimationStarted;
         }
 
         private void OnDisable()
@@ -124,6 +137,7 @@ namespace UI
 
             yield return AnimateCurtains(0f, 1f, closeDuration);
             yield return PlayClosedPhase(holdDuration);
+            OpeningStarted?.Invoke();
             yield return AnimateOpening(openDuration);
 
             SetRootVisible(false);
@@ -218,6 +232,11 @@ namespace UI
 
             SetRevealAlpha(0f);
             SetCurtainProgress(0f);
+        }
+
+        private void HandleLampAnimationStarted()
+        {
+            LampAnimationStarted?.Invoke();
         }
 
         private float GetGameplayDeltaTime()

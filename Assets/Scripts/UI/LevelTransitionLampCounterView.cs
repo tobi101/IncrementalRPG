@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Spine.Unity;
 using UnityEngine;
@@ -7,6 +8,8 @@ namespace UI
     [DisallowMultipleComponent]
     public sealed class LevelTransitionLampCounterView : MonoBehaviour
     {
+        public event Action TurnOnAnimationStarted;
+
         [SerializeField] private RectTransform _container;
         [SerializeField] private SkeletonGraphic _lampPrefab;
         [SerializeField] private float _spacing = -8f;
@@ -141,6 +144,7 @@ namespace UI
                 _turnOnAnimationName,
                 false);
             turnOnEntry.MixDuration = 0f;
+            TurnOnAnimationStarted?.Invoke();
 
             var idleOnEntry = lamp.AnimationState.AddAnimation(
                 0,
