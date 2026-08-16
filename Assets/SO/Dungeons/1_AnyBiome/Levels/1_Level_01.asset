@@ -40,7 +40,9 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  killGoal: 10
+  xpGoal:
+    mantissa: 1
+    exponent: 1
   tilemapGenerationConfig: {fileID: 0}
   minPlayZoneSize: 10
   heatIndex: 1

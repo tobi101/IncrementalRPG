@@ -33,7 +33,7 @@ namespace Core.StateMachine.Features
         public event Action OnSessionExpired;
         public event Action<BigDouble, BigDouble> OnSessionGoldEarned;
         public event Action<int> OnSessionKillsChanged;
-        public event Action<int, int> OnLevelKillGoalChanged;
+        public event Action<BigDouble, BigDouble> OnLevelExperienceChanged;
         public event Action<DungeonConfig, DungeonLevelConfig, int> OnDungeonLevelChanged;
         public event Action<DungeonLevelConfig, int, float, float, float> OnLevelTransitionStarted;
         public event Action<DungeonLevelConfig, int> OnLevelTransitionFinished;
@@ -41,8 +41,8 @@ namespace Core.StateMachine.Features
 
         public BigDouble SessionGold => _sessionGold;
         public int SessionKills => _sessionKills;
-        public int LevelKills => _levelKills;
-        public int CurrentLevelKillGoal => _currentLevel != null ? _currentLevel.killGoal : 0;
+        public BigDouble LevelExperience => _levelExperience.Current;
+        public BigDouble CurrentLevelExperienceGoal => _levelExperience.Goal;
         public int CurrentLevelIndex => _currentLevelIndex;
         public DungeonConfig CurrentDungeon => _currentDungeon;
         public DungeonLevelConfig CurrentLevel => _currentLevel;
@@ -65,7 +65,7 @@ namespace Core.StateMachine.Features
         private DungeonConfig _currentDungeon;
         private DungeonLevelConfig _currentLevel;
         private int _currentLevelIndex;
-        private int _levelKills;
+        private readonly LevelExperienceProgress _levelExperience = new();
         private int _pendingLevelTransitionIndex = -1;
         private bool _pendingDemoLimit;
         private bool _lootGraceEndsAtDemoLimit;
@@ -97,7 +97,6 @@ namespace Core.StateMachine.Features
         {
             _sessionGold = BigDouble.Zero;
             _sessionKills = 0;
-            _levelKills = 0;
             _sessionRecordResult = default;
             _sessionResultsApplied = false;
             _isPaused = false;
@@ -430,15 +429,16 @@ namespace Core.StateMachine.Features
                 OnSessionGoldEarned?.Invoke(_sessionGold, finalAmount);
             }
 
-            _levelKills++;
             _sessionKills++;
             OnSessionKillsChanged?.Invoke(_sessionKills);
-            OnLevelKillGoalChanged?.Invoke(_levelKills, CurrentLevelKillGoal);
+
+            var xpReward = context.Config != null ? context.Config.xpReward : BigDouble.Zero;
+            _levelExperience.Add(xpReward);
+            OnLevelExperienceChanged?.Invoke(_levelExperience.Current, _levelExperience.Goal);
 
             if (_runState != RunState.Playing) return;
             if (_pendingLevelTransitionIndex >= 0) return;
-            if (_currentLevel == null || _currentLevel.killGoal <= 0) return;
-            if (_levelKills < _currentLevel.killGoal) return;
+            if (!_levelExperience.IsGoalReached) return;
 
             if (TryGetNextPlayableLevel(out var nextLevelIndex))
             {
@@ -481,7 +481,7 @@ namespace Core.StateMachine.Features
 
             _currentLevelIndex = levelIndex;
             _currentLevel = level;
-            _levelKills = 0;
+            _levelExperience.Reset(level.xpGoal);
 
             ConfigureSpawn(level);
             GenerateLevelMap(level);
@@ -489,7 +489,7 @@ namespace Core.StateMachine.Features
             _generator.CameraAutoFitter.PrepareLavaAnimation();
 
             OnDungeonLevelChanged?.Invoke(_currentDungeon, _currentLevel, _currentLevelIndex);
-            OnLevelKillGoalChanged?.Invoke(_levelKills, CurrentLevelKillGoal);
+            OnLevelExperienceChanged?.Invoke(_levelExperience.Current, _levelExperience.Goal);
 
             return true;
         }

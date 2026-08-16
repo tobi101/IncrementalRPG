@@ -1,6 +1,7 @@
 using Entity;
 using UnityEngine;
 using UnityEngine.Localization;
+using Utils;
 
 namespace Core.Gameplay.Dungeon
 {
@@ -14,7 +15,7 @@ namespace Core.Gameplay.Dungeon
         public LocalizedString description = new();
 
         [Header("Progression")]
-        [Min(0)] public int killGoal = 10;
+        public BigDouble xpGoal = 10;
 
         [Header("Generation")]
         public TilemapGenerationConfig tilemapGenerationConfig;
@@ -32,5 +33,10 @@ namespace Core.Gameplay.Dungeon
         [Min(0f)] public float goldDropMultiplier = 1f;
 
         public bool IsPlayable => spawnTable != null && tilemapGenerationConfig != null;
+
+        private void OnValidate()
+        {
+            xpGoal = BigDoubleMath.SanitizeNonNegativeInteger(xpGoal, BigDouble.Zero);
+        }
     }
 }

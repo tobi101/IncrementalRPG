@@ -41,6 +41,9 @@ MonoBehaviour:
   goldDrop:
     mantissa: 0
     exponent: 0
+  xpReward:
+    mantissa: 0
+    exponent: 0
   countsAsEnemyKill: 0
   featureType: 2
   viewPrefab: {fileID: 3154142987783796786, guid: 4766743d9fe044944ae2042bcadfabf7, type: 3}

@@ -18,7 +18,7 @@ namespace UI
         [SerializeField] private TMP_Text _shardText;
         [SerializeField] private GameObject _shardCounterRoot;
         [SerializeField] private TMP_Text _killsText;
-        [SerializeField] private TMP_Text _goalValueText;
+        [SerializeField] private TMP_Text _experienceText;
         [SerializeField] private TMP_Text _dungeonLevelText;
         [SerializeField] private GoldPopupView _popupPrefab;
         [SerializeField] private RectTransform _popupContainer;
@@ -41,6 +41,9 @@ namespace UI
 
         private float _killsDisplayed;
         private int _killsTarget;
+        private BigDouble _experienceDisplayed;
+        private BigDouble _experienceTarget;
+        private BigDouble _experienceGoal;
         private int _activePopupCount;
         private BigDouble _pendingPopupGold;
         private float _batchTimer;
@@ -82,12 +85,14 @@ namespace UI
 
             _gameplay.OnSessionGoldEarned += HandleSessionGoldEarned;
             _gameplay.OnSessionKillsChanged += HandleSessionKillsChanged;
+            _gameplay.OnLevelExperienceChanged += HandleLevelExperienceChanged;
             _gameplay.OnDungeonLevelChanged += HandleDungeonLevelChanged;
             _gameplay.OnLevelTransitionStarted += HandleLevelTransitionStarted;
             _player.OnShardsChanged += RefreshShards;
             _skillTree.OnUpgraded += RefreshShardFeatureVisibility;
             RefreshShardFeatureVisibility();
             RefreshShards();
+            HandleLevelExperienceChanged(_gameplay.LevelExperience, _gameplay.CurrentLevelExperienceGoal);
         }
 
         private void OnEnable()
@@ -98,10 +103,16 @@ namespace UI
             _batchTimer = 0f;
             _killsDisplayed = 0;
             _killsTarget = 0;
+            _experienceDisplayed = BigDouble.Zero;
+            _experienceTarget = BigDouble.Zero;
+            _experienceGoal = BigDouble.Zero;
             if (_sessionGoldText != null) _sessionGoldText.text = "0";
             RefreshShards();
             if (_killsText != null) _killsText.text = "0";
-            if (_goalValueText != null) _goalValueText.text = "0";
+            if (_gameplay != null)
+                HandleLevelExperienceChanged(_gameplay.LevelExperience, _gameplay.CurrentLevelExperienceGoal);
+            else
+                RefreshExperienceText();
             ClearDungeonLevelNameBindings();
             _dungeonLevelBinding.Clear();
             _levelTransitionBinding.Clear();
@@ -149,7 +160,19 @@ namespace UI
             {
                 _killsDisplayed += (_killsTarget - _killsDisplayed) * Time.deltaTime * LerpSpeed;
                 if (_killsTarget - _killsDisplayed < 0.5f) _killsDisplayed = _killsTarget;
-                _killsText.text = ((int)_killsDisplayed).ToString();
+                if (_killsText != null)
+                    _killsText.text = ((int)_killsDisplayed).ToString();
+            }
+
+            if (_experienceDisplayed < _experienceTarget)
+            {
+                var interpolation = Mathf.Clamp01(Time.deltaTime * LerpSpeed);
+                _experienceDisplayed += (_experienceTarget - _experienceDisplayed) * interpolation;
+
+                if (_experienceTarget - _experienceDisplayed < BigDouble.One)
+                    _experienceDisplayed = _experienceTarget;
+
+                RefreshExperienceText();
             }
         }
 
@@ -196,11 +219,30 @@ namespace UI
             }
         }
 
+        private void HandleLevelExperienceChanged(BigDouble current, BigDouble goal)
+        {
+            current = current.NormalizedOr(BigDouble.Zero);
+            _experienceGoal = BigDouble.Max(BigDouble.Zero, goal.NormalizedOr(BigDouble.Zero));
+            _experienceTarget = BigDouble.Max(BigDouble.Zero, current);
+
+            if (_experienceDisplayed > _experienceTarget)
+                _experienceDisplayed = _experienceTarget;
+
+            RefreshExperienceText();
+        }
+
+        private void RefreshExperienceText()
+        {
+            if (_experienceText == null)
+                return;
+
+            _experienceText.text = BigDoubleFormatter.FormatFloor(_experienceDisplayed)
+                                   + " / "
+                                   + BigDoubleFormatter.FormatFloor(_experienceGoal);
+        }
+
         private void HandleDungeonLevelChanged(DungeonConfig dungeon, DungeonLevelConfig level, int levelIndex)
         {
-            if (_goalValueText != null)
-                _goalValueText.text = level != null ? level.killGoal.ToString() : "0";
-
             if (_dungeonLevelText == null) return;
             BindDungeonName(dungeon != null ? dungeon.displayName : null);
             BindLevelName(level != null ? level.displayName : null);
@@ -423,6 +465,7 @@ namespace UI
             {
                 _gameplay.OnSessionGoldEarned -= HandleSessionGoldEarned;
                 _gameplay.OnSessionKillsChanged -= HandleSessionKillsChanged;
+                _gameplay.OnLevelExperienceChanged -= HandleLevelExperienceChanged;
                 _gameplay.OnDungeonLevelChanged -= HandleDungeonLevelChanged;
                 _gameplay.OnLevelTransitionStarted -= HandleLevelTransitionStarted;
             }

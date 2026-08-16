@@ -32,6 +32,7 @@ namespace Entity
         public EntityKind entityKind;
         public BigDouble shardDrop;
         public BigDouble goldDrop;
+        public BigDouble xpReward = BigDouble.One;
         public bool countsAsEnemyKill = true;
 
         public FeatureType featureType;
@@ -56,6 +57,7 @@ namespace Entity
 
             shardDrop = BigDoubleMath.SanitizeNonNegativeInteger(shardDrop, BigDouble.Zero);
             goldDrop = BigDoubleMath.SanitizeNonNegativeInteger(goldDrop, BigDouble.Zero);
+            xpReward = BigDoubleMath.SanitizeNonNegativeInteger(xpReward, BigDouble.Zero);
         }
     }
 }
