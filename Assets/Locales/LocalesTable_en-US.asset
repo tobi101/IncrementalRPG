@@ -179,7 +179,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000043
-    m_Localized: Unlocks a powerful damage zone attack activated with the right mouse button.
+    m_Localized: Unlocks a powerful damage zone attack activated with the right mouse
+      button.
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000044
@@ -235,7 +236,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1000000000057
-    m_Localized: Unlocks shard drops from creatures and allows crystals to appear on the field.
+    m_Localized: Unlocks shard drops from creatures and allows crystals to appear
+      on the field.
     m_Metadata:
       m_Items: []
   - m_Id: 2350952815255552
@@ -539,6 +541,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 28148395150401538
     m_Localized: 'Potential enemies:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32992485876686848
+    m_Localized: Level Completed
     m_Metadata:
       m_Items: []
   references:

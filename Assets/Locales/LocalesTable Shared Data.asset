@@ -539,6 +539,10 @@ MonoBehaviour:
     m_Key: potential_enemies
     m_Metadata:
       m_Items: []
+  - m_Id: 32992485876686848
+    m_Key: hud.level_transition_message_v2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

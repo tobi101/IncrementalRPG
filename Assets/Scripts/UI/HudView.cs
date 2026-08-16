@@ -63,6 +63,7 @@ namespace UI
             _levelTransitionBinding = new LocalizedStringBinding(_levelTransitionText);
             _dungeonNameChanged = HandleDungeonNameChanged;
             _levelNameChanged = HandleLevelNameChanged;
+
         }
 
         [Inject]
@@ -255,8 +256,21 @@ namespace UI
 
             if (_levelTransitionCurtain != null)
             {
+                if (_levelTransitionText != null)
+                    _levelTransitionBinding.Bind(_levelTransitionMessage);
+
+                var levelCount = _gameplay != null && _gameplay.CurrentDungeon != null
+                    ? _gameplay.CurrentDungeon.LevelCount
+                    : 0;
+                var newlyCompletedLevelIndex = nextLevelIndex - 1;
+
                 _levelTransitionCurtain.SetPaused(IsGameplayPaused());
-                _levelTransitionCurtain.Play(closeDuration, holdDuration, openDuration);
+                _levelTransitionCurtain.Play(
+                    closeDuration,
+                    holdDuration,
+                    openDuration,
+                    levelCount,
+                    newlyCompletedLevelIndex);
                 return;
             }
 
