@@ -53,3 +53,17 @@ MonoBehaviour:
   minSpawnInterval: 0.5
   featureSpawnConfigs: []
   goldDropMultiplier: 1
+  lootPool:
+    entries:
+    - item: {fileID: 11400000, guid: db8e5b58920c41c39f358049c71f5e7c, type: 2}
+      weight: 35
+    - item: {fileID: 11400000, guid: 02509ae1449549f7bc673fea896d4a83, type: 2}
+      weight: 25
+    - item: {fileID: 11400000, guid: 4262f558ae8b4dde918f33df68a6bc84, type: 2}
+      weight: 20
+    - item: {fileID: 11400000, guid: c2e7f4207e8f4adbb5440fac8b6eb2e2, type: 2}
+      weight: 10
+    - item: {fileID: 11400000, guid: 0bb2bca6be174c77a1d82ff49f874c49, type: 2}
+      weight: 5
+    - item: {fileID: 11400000, guid: 12f6126cb5be428bbbb58e7d9bc84cc7, type: 2}
+      weight: 5

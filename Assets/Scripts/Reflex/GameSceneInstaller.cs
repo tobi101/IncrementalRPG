@@ -3,6 +3,7 @@ using Core.Gameplay.Bomb;
 using Core.Gameplay.Shards;
 using Core.Gameplay.Dungeon;
 using Core.Save;
+using Core.Items;
 using Core.StateMachine;
 using Core.StateMachine.Features;
 using Core.StateMachine.States;
@@ -107,6 +108,20 @@ namespace Reflex
             builder.RegisterType(
                 typeof(DungeonSelectionService),
                 new[] { typeof(DungeonSelectionService), typeof(ISaveable) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(PlayerItemStorage),
+                new[] { typeof(PlayerItemStorage), typeof(ISaveable) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(LevelTransitionCoordinator),
+                new[] { typeof(IAwakeable), typeof(LevelTransitionCoordinator) },
                 Lifetime.Singleton,
                 Resolution.Lazy
             );

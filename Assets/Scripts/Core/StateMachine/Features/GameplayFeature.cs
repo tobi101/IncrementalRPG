@@ -38,6 +38,8 @@ namespace Core.StateMachine.Features
         public event Action<DungeonLevelConfig, int, float, float, float> OnLevelTransitionStarted;
         public event Action<DungeonLevelConfig, int> OnLevelTransitionFinished;
         public event Action<DungeonConfig, DungeonLevelConfig, int> OnDemoLimitReached;
+        public event Action<bool> OnPauseChanged;
+        public event Action OnDisabled;
 
         public BigDouble SessionGold => _sessionGold;
         public int SessionKills => _sessionKills;
@@ -55,8 +57,7 @@ namespace Core.StateMachine.Features
             Ready,
             Playing,
             LootGrace,
-            TransitionClosing,
-            TransitionOpening,
+            Transitioning,
             DemoLimitReached,
             Expired
         }
@@ -71,9 +72,6 @@ namespace Core.StateMachine.Features
         private bool _lootGraceEndsAtDemoLimit;
         private float _lootGraceTimer;
         private int _transitionTargetLevelIndex = -1;
-        private float _transitionTimer;
-        private float _transitionHoldDuration;
-        private float _transitionOpenDuration;
         private float _sessionTimeLeft;
         private float _sessionTotalTime;
         private RunState _runState = RunState.Inactive;
@@ -106,9 +104,6 @@ namespace Core.StateMachine.Features
             _lootGraceEndsAtDemoLimit = false;
             _lootGraceTimer = 0f;
             _transitionTargetLevelIndex = -1;
-            _transitionTimer = 0f;
-            _transitionHoldDuration = 0f;
-            _transitionOpenDuration = 0f;
             _currentDungeon = _dungeonSelection.GetSelectedOrDefault(_dungeonList);
 
             if (_currentDungeon == null || !_currentDungeon.HasPlayableLevels)
@@ -154,6 +149,7 @@ namespace Core.StateMachine.Features
 
             _isPaused = isPaused;
             _spawnService.SetPaused(_isPaused);
+            OnPauseChanged?.Invoke(_isPaused);
         }
 
         public void Disable()
@@ -165,11 +161,9 @@ namespace Core.StateMachine.Features
             _lootGraceEndsAtDemoLimit = false;
             _lootGraceTimer = 0f;
             _transitionTargetLevelIndex = -1;
-            _transitionTimer = 0f;
-            _transitionHoldDuration = 0f;
-            _transitionOpenDuration = 0f;
             _spawnService.DespawnAll();
             _shardDropService.DespawnAll();
+            OnDisabled?.Invoke();
         }
 
         public void Tick(float deltaTime)
@@ -187,12 +181,6 @@ namespace Core.StateMachine.Features
                     break;
                 case RunState.LootGrace:
                     TickLootGrace(deltaTime);
-                    break;
-                case RunState.TransitionClosing:
-                    TickTransitionClosing(deltaTime);
-                    break;
-                case RunState.TransitionOpening:
-                    TickTransitionOpening(deltaTime);
                     break;
             }
         }
@@ -245,22 +233,6 @@ namespace Core.StateMachine.Features
             }
 
             BeginLevelTransition(_pendingLevelTransitionIndex);
-        }
-
-        private void TickTransitionClosing(float deltaTime)
-        {
-            _transitionTimer -= deltaTime;
-
-            if (_transitionTimer <= 0f)
-                ApplyLevelBehindCurtain();
-        }
-
-        private void TickTransitionOpening(float deltaTime)
-        {
-            _transitionTimer -= deltaTime;
-
-            if (_transitionTimer <= 0f)
-                FinishLevelTransition();
         }
 
         private void ExpireSession()
@@ -335,22 +307,16 @@ namespace Core.StateMachine.Features
                 return;
             }
 
-            _runState = RunState.TransitionClosing;
+            _runState = RunState.Transitioning;
             _pendingLevelTransitionIndex = -1;
             _pendingDemoLimit = false;
             _lootGraceEndsAtDemoLimit = false;
             _lootGraceTimer = 0f;
             _transitionTargetLevelIndex = nextLevelIndex;
             var transitionConfig = _levelTransitionConfig ?? new DungeonLevelTransitionConfig();
-            _transitionTimer = transitionConfig.CloseDuration;
-            _transitionHoldDuration = transitionConfig.HoldDuration;
-            _transitionOpenDuration = transitionConfig.OpenDuration;
 
             OnLevelTransitionStarted?.Invoke(nextLevel, nextLevelIndex,
-                _transitionTimer, _transitionHoldDuration, _transitionOpenDuration);
-
-            if (_transitionTimer <= 0f)
-                ApplyLevelBehindCurtain();
+                transitionConfig.CloseDuration, transitionConfig.HoldDuration, transitionConfig.OpenDuration);
         }
 
         private void BeginLootGrace(int nextLevelIndex, bool endsAtDemoLimit)
@@ -370,8 +336,11 @@ namespace Core.StateMachine.Features
             }
         }
 
-        private void ApplyLevelBehindCurtain()
+        public bool ApplyPendingLevelBehindCurtain()
         {
+            if (_runState != RunState.Transitioning)
+                return false;
+
             var targetIndex = _transitionTargetLevelIndex;
 
             _spawnService.DespawnAll();
@@ -380,35 +349,20 @@ namespace Core.StateMachine.Features
             if (!ApplyLevel(targetIndex))
             {
                 _transitionTargetLevelIndex = -1;
-                _transitionTimer = 0f;
-                _transitionHoldDuration = 0f;
-                _transitionOpenDuration = 0f;
                 _runState = RunState.Inactive;
-                return;
+                return false;
             }
 
             SpawnInitialEntities();
-            _dungeonSelection.MarkLevelReached(_currentDungeon, _currentLevelIndex);
-
-            _transitionTimer = Mathf.Max(0f, _transitionHoldDuration + _transitionOpenDuration);
-            _transitionHoldDuration = 0f;
-            _transitionOpenDuration = 0f;
-
-            if (_transitionTimer <= 0f)
-            {
-                FinishLevelTransition();
-                return;
-            }
-
-            _runState = RunState.TransitionOpening;
+            return true;
         }
 
-        private void FinishLevelTransition()
+        public void FinishPendingLevelTransition()
         {
+            if (_runState != RunState.Transitioning)
+                return;
+
             _transitionTargetLevelIndex = -1;
-            _transitionTimer = 0f;
-            _transitionHoldDuration = 0f;
-            _transitionOpenDuration = 0f;
             _runState = RunState.Playing;
             OnLevelTransitionFinished?.Invoke(_currentLevel, _currentLevelIndex);
         }

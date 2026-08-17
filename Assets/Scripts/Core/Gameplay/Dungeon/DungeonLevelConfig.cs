@@ -31,6 +31,7 @@ namespace Core.Gameplay.Dungeon
 
         [Header("Rewards")]
         [Min(0f)] public float goldDropMultiplier = 1f;
+        public LevelLootPool lootPool = new();
 
         public bool IsPlayable => spawnTable != null && tilemapGenerationConfig != null;
 

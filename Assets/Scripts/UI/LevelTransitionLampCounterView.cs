@@ -9,6 +9,7 @@ namespace UI
     public sealed class LevelTransitionLampCounterView : MonoBehaviour
     {
         public event Action TurnOnAnimationStarted;
+        public event Action TurnOnAnimationCompleted;
 
         [SerializeField] private RectTransform _container;
         [SerializeField] private SkeletonGraphic _lampPrefab;
@@ -144,6 +145,7 @@ namespace UI
                 _turnOnAnimationName,
                 false);
             turnOnEntry.MixDuration = 0f;
+            turnOnEntry.Complete += _ => TurnOnAnimationCompleted?.Invoke();
             TurnOnAnimationStarted?.Invoke();
 
             var idleOnEntry = lamp.AnimationState.AddAnimation(

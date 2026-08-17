@@ -9,6 +9,7 @@ namespace UI
     {
         public event Action OpeningStarted;
         public event Action LampAnimationStarted;
+        public event Action LampAnimationCompleted;
 
         [SerializeField, FormerlySerializedAs("_bottomCurtain")]
         private RectTransform _leftCurtain;
@@ -41,6 +42,7 @@ namespace UI
         private Vector2 _rightOpenPosition;
         private bool _referencePositionsCached;
         private bool _isPreparingGeometry;
+        private bool _isTransitionActive;
         private bool _isPaused;
 
         private void Awake()
@@ -58,13 +60,19 @@ namespace UI
             SetRootVisible(false);
 
             if (_lampCounter != null)
+            {
                 _lampCounter.TurnOnAnimationStarted += HandleLampAnimationStarted;
+                _lampCounter.TurnOnAnimationCompleted += HandleLampAnimationCompleted;
+            }
         }
 
         private void OnDestroy()
         {
-            if (_lampCounter != null)
-                _lampCounter.TurnOnAnimationStarted -= HandleLampAnimationStarted;
+            if (_lampCounter == null)
+                return;
+
+            _lampCounter.TurnOnAnimationStarted -= HandleLampAnimationStarted;
+            _lampCounter.TurnOnAnimationCompleted -= HandleLampAnimationCompleted;
         }
 
         private void OnDisable()
@@ -73,33 +81,64 @@ namespace UI
                 StopCoroutine(_routine);
 
             _routine = null;
+            _isTransitionActive = false;
         }
 
         private void OnRectTransformDimensionsChange()
         {
-            if (!_referencePositionsCached || _routine != null || _isPreparingGeometry)
+            if (!_referencePositionsCached || _isTransitionActive || _isPreparingGeometry)
                 return;
 
             PrepareCurtainGeometry();
             SetCurtainProgress(0f);
         }
 
-        public void Play(float closeDuration, float holdDuration, float openDuration,
-            int levelCount, int newlyCompletedLevelIndex)
+        public void Prepare(int levelCount, int newlyCompletedLevelIndex)
         {
             gameObject.SetActive(true);
 
             if (_routine != null)
                 StopCoroutine(_routine);
 
+            _routine = null;
+            _isTransitionActive = true;
             CacheReferencePositions();
             PrepareCurtainGeometry();
-            _lampCounter?.Prepare(levelCount, newlyCompletedLevelIndex);
+            _lampCounter.Prepare(levelCount, newlyCompletedLevelIndex);
+            SetRootVisible(true);
+            SetRevealAlpha(0f);
+            SetInteractionEnabled(false);
+            SetCurtainProgress(0f);
+        }
 
-            _routine = StartCoroutine(PlayRoutine(
-                Mathf.Max(0f, closeDuration),
-                Mathf.Max(0f, holdDuration),
-                Mathf.Max(0f, openDuration)));
+        public void PlayClose(float duration, Action completed)
+        {
+            StartPhase(CloseRoutine(Mathf.Max(0f, duration), completed));
+        }
+
+        public void PlayReveal()
+        {
+            StartPhase(RevealRoutine());
+        }
+
+        public void PlayOpen(float duration, Action completed)
+        {
+            SetInteractionEnabled(false);
+            OpeningStarted?.Invoke();
+            StartPhase(OpenRoutine(Mathf.Max(0f, duration), completed));
+        }
+
+        public void SetInteractionEnabled(bool enabled)
+        {
+            if (_rootGroup != null)
+                _rootGroup.interactable = enabled;
+
+            if (_revealGroup != null)
+            {
+                _revealGroup.interactable = enabled;
+                _revealGroup.blocksRaycasts = enabled;
+            }
+
         }
 
         public void SetPaused(bool isPaused)
@@ -111,6 +150,7 @@ namespace UI
         public void HideImmediately()
         {
             _isPaused = false;
+            _isTransitionActive = false;
             _lampCounter?.SetPaused(false);
 
             if (_routine != null)
@@ -122,6 +162,7 @@ namespace UI
             CacheReferencePositions();
             PrepareCurtainGeometry();
             SetRevealAlpha(0f);
+            SetInteractionEnabled(false);
             SetCurtainProgress(0f);
             SetRootVisible(false);
 
@@ -129,22 +170,47 @@ namespace UI
                 gameObject.SetActive(false);
         }
 
-        private IEnumerator PlayRoutine(float closeDuration, float holdDuration, float openDuration)
+        private void StartPhase(IEnumerator phase)
         {
-            SetRootVisible(true);
-            SetRevealAlpha(0f);
-            SetCurtainProgress(0f);
+            if (_routine != null)
+                StopCoroutine(_routine);
 
-            yield return AnimateCurtains(0f, 1f, closeDuration);
-            yield return PlayClosedPhase(holdDuration);
-            OpeningStarted?.Invoke();
-            yield return AnimateOpening(openDuration);
+            _routine = StartCoroutine(phase);
+        }
 
+        private IEnumerator CloseRoutine(float duration, Action completed)
+        {
+            yield return AnimateCurtains(0f, 1f, duration);
+            _routine = null;
+            completed?.Invoke();
+        }
+
+        private IEnumerator RevealRoutine()
+        {
+            yield return FadeReveal(0f, 1f, _revealFadeInDuration);
+
+            var elapsed = 0f;
+            while (elapsed < _lampAnimationDelay)
+            {
+                elapsed += GetGameplayDeltaTime();
+                yield return null;
+            }
+
+            _routine = null;
+            _lampCounter.PlayNewlyCompleted();
+        }
+
+        private IEnumerator OpenRoutine(float duration, Action completed)
+        {
+            yield return AnimateOpening(duration);
             SetRootVisible(false);
+            _isTransitionActive = false;
             _routine = null;
 
             if (_hideWhenIdle)
                 gameObject.SetActive(false);
+
+            completed?.Invoke();
         }
 
         private IEnumerator AnimateCurtains(float from, float to, float duration)
@@ -167,42 +233,23 @@ namespace UI
             SetCurtainProgress(to);
         }
 
-        private IEnumerator PlayClosedPhase(float duration)
+        private IEnumerator FadeReveal(float from, float to, float duration)
         {
             if (duration <= 0f)
             {
-                SetRevealAlpha(1f);
-                _lampCounter?.PlayNewlyCompleted();
+                SetRevealAlpha(to);
                 yield break;
             }
 
-            var fadeDuration = Mathf.Min(_revealFadeInDuration, duration);
-            var lampStartTime = Mathf.Min(duration, fadeDuration + _lampAnimationDelay);
-            var lampStarted = false;
             var elapsed = 0f;
-
             while (elapsed < duration)
             {
                 elapsed += GetGameplayDeltaTime();
-
-                var revealAlpha = fadeDuration <= 0f
-                    ? 1f
-                    : Mathf.Clamp01(elapsed / fadeDuration);
-                SetRevealAlpha(revealAlpha);
-
-                if (!lampStarted && elapsed >= lampStartTime)
-                {
-                    _lampCounter?.PlayNewlyCompleted();
-                    lampStarted = true;
-                }
-
+                SetRevealAlpha(Mathf.Lerp(from, to, Mathf.Clamp01(elapsed / duration)));
                 yield return null;
             }
 
-            SetRevealAlpha(1f);
-
-            if (!lampStarted)
-                _lampCounter?.PlayNewlyCompleted();
+            SetRevealAlpha(to);
         }
 
         private IEnumerator AnimateOpening(float duration)
@@ -237,6 +284,11 @@ namespace UI
         private void HandleLampAnimationStarted()
         {
             LampAnimationStarted?.Invoke();
+        }
+
+        private void HandleLampAnimationCompleted()
+        {
+            LampAnimationCompleted?.Invoke();
         }
 
         private float GetGameplayDeltaTime()
@@ -294,7 +346,6 @@ namespace UI
                 _rightCurtain.anchoredPosition = _rightReferencePosition;
 
             Canvas.ForceUpdateCanvases();
-
             CalculateClosedPositions();
 
             if (_leftCurtain != null)
@@ -304,7 +355,6 @@ namespace UI
                 _rightCurtain.anchoredPosition = _rightClosedPosition;
 
             Canvas.ForceUpdateCanvases();
-
             _leftOpenPosition = GetOpenPosition(_leftCurtain, _leftClosedPosition, -1f);
             _rightOpenPosition = GetOpenPosition(_rightCurtain, _rightClosedPosition, 1f);
             _isPreparingGeometry = false;
@@ -362,12 +412,8 @@ namespace UI
 
         private void SetRevealAlpha(float alpha)
         {
-            if (_revealGroup == null)
-                return;
-
-            _revealGroup.alpha = Mathf.Clamp01(alpha);
-            _revealGroup.interactable = false;
-            _revealGroup.blocksRaycasts = false;
+            if (_revealGroup != null)
+                _revealGroup.alpha = Mathf.Clamp01(alpha);
         }
     }
 }

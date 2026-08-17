@@ -27,6 +27,7 @@ namespace UI
         [SerializeField] private GoldPopupView _popupPrefab;
         [SerializeField] private RectTransform _popupContainer;
         [SerializeField] private LevelTransitionCurtainView _levelTransitionCurtain;
+        [SerializeField] private LootboxView _lootboxView;
         [SerializeField] private CanvasGroup _levelTransitionGroup;
         [SerializeField] private TMP_Text _levelTransitionText;
         [SerializeField] private LocalizedString _dungeonLevelFormat = new();
@@ -60,6 +61,9 @@ namespace UI
         private LocalizedString.ChangeHandler _levelNameChanged;
         private string _currentDungeonName = string.Empty;
         private string _currentLevelName = string.Empty;
+
+        public LevelTransitionCurtainView LevelTransitionCurtain => _levelTransitionCurtain;
+        public LootboxView Lootbox => _lootboxView;
 
         private void Awake()
         {
@@ -97,7 +101,6 @@ namespace UI
             _gameplay.OnSessionKillsChanged += HandleSessionKillsChanged;
             _gameplay.OnLevelExperienceChanged += HandleLevelExperienceChanged;
             _gameplay.OnDungeonLevelChanged += HandleDungeonLevelChanged;
-            _gameplay.OnLevelTransitionStarted += HandleLevelTransitionStarted;
             _player.OnShardsChanged += RefreshShards;
             _skillTree.OnUpgraded += RefreshShardFeatureVisibility;
             RefreshShardFeatureVisibility();
@@ -127,6 +130,7 @@ namespace UI
             _dungeonLevelBinding.Clear();
             _levelTransitionBinding.Clear();
             _levelTransitionCurtain?.HideImmediately();
+            _lootboxView?.ResetView();
             SetLevelTransitionVisible(false);
             _transitionCoroutine = null;
         }
@@ -152,6 +156,7 @@ namespace UI
         {
             var isGameplayPaused = IsGameplayPaused();
             _levelTransitionCurtain?.SetPaused(isGameplayPaused);
+            _lootboxView?.SetPaused(isGameplayPaused);
 
             if (isGameplayPaused)
                 return;
@@ -258,37 +263,10 @@ namespace UI
             BindLevelName(level != null ? level.displayName : null);
         }
 
-        private void HandleLevelTransitionStarted(DungeonLevelConfig nextLevel, int nextLevelIndex,
-            float closeDuration, float holdDuration, float openDuration)
+        public void PrepareLevelTransitionMessage()
         {
-            var duration = closeDuration + holdDuration + openDuration;
-
-            if (_levelTransitionCurtain != null)
-            {
-                if (_levelTransitionText != null)
-                    _levelTransitionBinding.Bind(_levelTransitionMessage);
-
-                var levelCount = _gameplay != null && _gameplay.CurrentDungeon != null
-                    ? _gameplay.CurrentDungeon.LevelCount
-                    : 0;
-                var newlyCompletedLevelIndex = nextLevelIndex - 1;
-
-                _levelTransitionCurtain.SetPaused(IsGameplayPaused());
-                _levelTransitionCurtain.Play(
-                    closeDuration,
-                    holdDuration,
-                    openDuration,
-                    levelCount,
-                    newlyCompletedLevelIndex);
-                return;
-            }
-
-            if (_levelTransitionGroup == null && _levelTransitionText == null) return;
-
-            if (_transitionCoroutine != null)
-                StopCoroutine(_transitionCoroutine);
-
-            _transitionCoroutine = StartCoroutine(PlayLevelTransition(duration));
+            if (_levelTransitionText != null)
+                _levelTransitionBinding.Bind(_levelTransitionMessage);
         }
 
         private IEnumerator PlayLevelTransition(float duration)
@@ -506,7 +484,6 @@ namespace UI
                 _gameplay.OnSessionKillsChanged -= HandleSessionKillsChanged;
                 _gameplay.OnLevelExperienceChanged -= HandleLevelExperienceChanged;
                 _gameplay.OnDungeonLevelChanged -= HandleDungeonLevelChanged;
-                _gameplay.OnLevelTransitionStarted -= HandleLevelTransitionStarted;
             }
 
             if (_player != null)
