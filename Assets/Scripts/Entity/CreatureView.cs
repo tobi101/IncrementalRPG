@@ -133,6 +133,7 @@ namespace Entity
             if (animationBody.Skeleton.Data.FindAnimation(DamageAnimationName) == null) return;
 
             animationBody.AnimationState.SetAnimation(0, DamageAnimationName, false);
+            animationBody.AnimationState.AddAnimation(0, IdleAnimationName, true, 0f);
         }
 
         private void ResetAnimationBodies()
