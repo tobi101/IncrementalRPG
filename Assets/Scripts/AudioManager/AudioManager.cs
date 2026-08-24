@@ -40,6 +40,7 @@ namespace IncrementalRPG.Scripts.AudioManager
         [Header("SFX")]
         [SerializeField] private AudioClip _hitAudioClip;
         [SerializeField] [Min(1)] private int _maxHitAudioRequestsPerFrame = 20;
+        [SerializeField] [Min(1)] private int _maxDeathAudioRequestsPerFrame = 4;
         [SerializeField] private AudioClip _waveAudioClip;
         [SerializeField] private AudioClip _uiHoverAudioClip;
         [SerializeField] private AudioClip _uiClickAudioClip;
@@ -78,6 +79,8 @@ namespace IncrementalRPG.Scripts.AudioManager
         private bool _sourcesConfigured;
         private int _hitAudioRequestFrame = -1;
         private int _hitAudioRequestsThisFrame;
+        private int _deathAudioRequestFrame = -1;
+        private int _deathAudioRequestsThisFrame;
 
         public static AudioManager Resolve(AudioManager fallback = null)
         {
@@ -183,6 +186,18 @@ namespace IncrementalRPG.Scripts.AudioManager
             var clip = PickRandomClip(clips);
             if (clip != null)
                 PlaySfxOneShot(clip, pitch);
+        }
+
+        public void PlayRandomDeathSfx(AudioClip[] clips, float pitch = 1f)
+        {
+            var clip = PickRandomClip(clips);
+            if (clip == null)
+                return;
+
+            if (!TryRegisterDeathAudioRequest())
+                return;
+
+            PlaySfxOneShot(clip, pitch);
         }
 
         public void PlayLavaLoop(bool immediate = false)
@@ -384,6 +399,23 @@ namespace IncrementalRPG.Scripts.AudioManager
                 return false;
 
             _hitAudioRequestsThisFrame++;
+            return true;
+        }
+
+        private bool TryRegisterDeathAudioRequest()
+        {
+            var frame = Time.frameCount;
+            if (_deathAudioRequestFrame != frame)
+            {
+                _deathAudioRequestFrame = frame;
+                _deathAudioRequestsThisFrame = 0;
+            }
+
+            var maxRequests = Mathf.Max(1, _maxDeathAudioRequestsPerFrame);
+            if (_deathAudioRequestsThisFrame >= maxRequests)
+                return false;
+
+            _deathAudioRequestsThisFrame++;
             return true;
         }
 

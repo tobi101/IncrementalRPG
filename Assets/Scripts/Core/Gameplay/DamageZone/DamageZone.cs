@@ -245,11 +245,11 @@ namespace Core.Gameplay
             UpdateState();
 
             var damage = GetDamage(source);
+            if (_creaturesInZone.Count > 0)
+                _audioManager.PlayHitAudio();
+
             for (var i = 0; i < _creaturesInZone.Count; i++)
-            {
                 _creaturesInZone[i].TakeDamage(damage);
-                _audioManager.PlayHitAudio(i * 0.1f);
-            }
 
             _audioManager.PlayWaveAudio();
             OnZoneTick?.Invoke(source);

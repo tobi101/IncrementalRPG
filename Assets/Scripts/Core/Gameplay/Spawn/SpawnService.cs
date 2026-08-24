@@ -171,7 +171,7 @@ namespace Core.Gameplay
                 if (config.countsAsEnemyKill)
                     OnEnemyKilled?.Invoke(destroyedContext);
 
-                _audioManager?.PlayRandomSfx(config.deathSounds);
+                _audioManager?.PlayRandomDeathSfx(config.deathSounds);
                 Action completeDeath = () =>
                 {
                     _active.RemoveAll(e => e.Creature == creature);
