@@ -1,37 +1,42 @@
-using Spine.Unity;
 using UnityEngine;
 
 namespace Entity
 {
     public sealed class SkeletonTint : MonoBehaviour
     {
-        [SerializeField] private SkeletonAnimation _skeletonAnimation;
+        private static readonly int ColorId = Shader.PropertyToID("_Color");
+
+        [SerializeField] private Renderer _renderer;
         [SerializeField] private Color _color = Color.white;
+
+        private MaterialPropertyBlock _propertyBlock;
 
         public Color Color => _color;
 
-        private void Awake()
+        private void OnEnable()
         {
-            ApplyColor();
+            _propertyBlock = new MaterialPropertyBlock();
+            ApplyColor(_propertyBlock);
         }
 
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            ApplyColor();
+            ApplyColor(new MaterialPropertyBlock());
         }
 #endif
 
         public void SetColor(Color color)
         {
             _color = color;
-            ApplyColor();
+            ApplyColor(_propertyBlock);
         }
 
-        private void ApplyColor()
+        private void ApplyColor(MaterialPropertyBlock propertyBlock)
         {
-            _skeletonAnimation.Initialize(false);
-            _skeletonAnimation.Skeleton.SetColor(_color);
+            _renderer.GetPropertyBlock(propertyBlock);
+            propertyBlock.SetColor(ColorId, _color);
+            _renderer.SetPropertyBlock(propertyBlock);
         }
     }
 }

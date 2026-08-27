@@ -253,6 +253,7 @@ Shader "AllIn1SpriteShader/AllIn1SpriteShaderSRPBatch"
 		[HideInInspector] _MinYUV("_MinYUV", Range(0, 1)) = 0.0
 		[HideInInspector] _MaxYUV("_MaxYUV", Range(0, 1)) = 1.0
 		[HideInInspector] _RandomSeed("_MaxYUV", Range(0, 10000)) = 0.0
+		[Toggle(SPINE_MESH_ON)] _SpineMeshRenderer("Spine Mesh Renderer", Float) = 0
     	_EditorDrawers("Editor Drawers", Int) = 6
     }
 

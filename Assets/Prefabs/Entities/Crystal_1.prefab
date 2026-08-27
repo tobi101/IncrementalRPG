@@ -281,6 +281,8 @@ GameObject:
   - component: {fileID: 3740022513199142020}
   - component: {fileID: 6041086425572673591}
   - component: {fileID: 8827627151995612021}
+  - component: {fileID: 1103893073433421340}
+  - component: {fileID: 5584019946182307481}
   m_Layer: 0
   m_Name: Spine GameObject (mineral_v1_part2)
   m_TagString: Untagged
@@ -382,7 +384,7 @@ MonoBehaviour:
   zSpacing: 0
   useClipping: 1
   immutableTriangles: 0
-  pmaVertexColors: 1
+  pmaVertexColors: 0
   clearStateOnDisable: 0
   tintBlack: 0
   singleSubmesh: 0
@@ -415,8 +417,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab90be3f66e409fa55dc54d721e72c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity.SkeletonTint
-  _skeletonAnimation: {fileID: 6041086425572673591}
+  _renderer: {fileID: 3740022513199142020}
   _color: {r: 0.38431373, g: 0.6627451, b: 1, a: 1}
+--- !u!114 &1103893073433421340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6061582601347845965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26947ae098a8447408d80c0c86e35b48, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: spine-unity::Spine.Unity.SkeletonRendererCustomMaterials
+  skeletonRenderer: {fileID: 6041086425572673591}
+  customSlotMaterials: []
+  customMaterialOverrides:
+  - overrideDisabled: 0
+    originalMaterial: {fileID: 2100000, guid: a3b20d162443141a6842a4efcaa6f224, type: 2}
+    replacementMaterial: {fileID: 2100000, guid: 47ab59a2e6f594386bd26f50202ccec4, type: 2}
+--- !u!114 &5584019946182307481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6061582601347845965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e403d3ed4d1b4959a839655693e0e191, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Entity.ShineSweepAnimator
+  _renderer: {fileID: 3740022513199142020}
+  _sweepDuration: 0.6
+  _pauseDuration: 3.5
+  _initialDelay: 0
 --- !u!1 &6370502936042472334
 GameObject:
   m_ObjectHideFlags: 0

@@ -559,7 +559,7 @@ col.a *= _Alpha;
 #endif
 
 	col *= _Color;
-	#if !defined(HDRP_PASS) && UNITY_VERSION >= 60000000
+	#if !defined(HDRP_PASS) && UNITY_VERSION >= 60000000 && !defined(SPINE_MESH_ON)
 		col *= unity_SpriteColor;
 	#endif
 

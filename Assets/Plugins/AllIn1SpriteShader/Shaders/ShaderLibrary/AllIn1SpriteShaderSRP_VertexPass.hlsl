@@ -20,13 +20,13 @@ v2f vert(appdata v)
 		#endif
 		half3 localPos = v.vertex.x * camRight + v.vertex.y * camUp;
 
-		#if UNITY_VERSION >= 60000000
+		#if UNITY_VERSION >= 60000000 && !defined(SPINE_MESH_ON)
 			localPos.xy *= unity_SpriteProps.xy;
 		#endif
 		o.vertex = TransformObjectToHClip(half4(localPos, 1).xyz);
 	#else
 		half3 localPos = v.vertex.xyz;
-		#if UNITY_VERSION >= 60000000 && !defined(HDRP_PASS)
+		#if UNITY_VERSION >= 60000000 && !defined(HDRP_PASS) && !defined(SPINE_MESH_ON)
 			localPos.xy *= unity_SpriteProps.xy;
 		#endif
 		o.vertex = TransformObjectToHClip(localPos);

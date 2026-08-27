@@ -68,6 +68,7 @@
 #pragma shader_feature_local MANUALWIND_ON
 #pragma shader_feature ATLAS_ON
 #pragma shader_feature PREMULTIPLYALPHA_ON
+#pragma shader_feature_local SPINE_MESH_ON
 
 #pragma shader_feature BILBOARD_ON
 #pragma shader_feature BILBOARDY_ON
