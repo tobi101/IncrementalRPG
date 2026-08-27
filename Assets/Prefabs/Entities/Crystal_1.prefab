@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 7392189154903098342}
   - component: {fileID: 3740022513199142020}
   - component: {fileID: 6041086425572673591}
+  - component: {fileID: 8827627151995612021}
   m_Layer: 0
   m_Name: Spine GameObject (mineral_v1_part2)
   m_TagString: Untagged
@@ -402,6 +403,20 @@ MonoBehaviour:
   _animationName: idle
   loop: 1
   timeScale: 1
+--- !u!114 &8827627151995612021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6061582601347845965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab90be3f66e409fa55dc54d721e72c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity.SkeletonTint
+  _skeletonAnimation: {fileID: 6041086425572673591}
+  _color: {r: 0.38431373, g: 0.6627451, b: 1, a: 1}
 --- !u!1 &6370502936042472334
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +608,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6638843514653722815}
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
+      propertyPath: _deathAnimationBodies.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
       propertyPath: _additionalAnimationBodies.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -601,40 +620,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6041086425572673591}
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
-      propertyPath: _deathAnimationBodies.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
-      propertyPath: '_deathAnimationBodies.Array.data[0]._animationBody'
+      propertyPath: _deathAnimationBodies.Array.data[0]._animationBody
       value: 
       objectReference: {fileID: 7191256789436691117}
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
-      propertyPath: '_deathAnimationBodies.Array.data[0]._animationName'
+      propertyPath: _deathAnimationBodies.Array.data[0]._animationName
       value: explosion
       objectReference: {fileID: 0}
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
-      propertyPath: '_deathAnimationBodies.Array.data[0]._visibleWhileAlive'
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
-      propertyPath: '_deathAnimationBodies.Array.data[0]._waitForComplete'
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
-      propertyPath: '_deathAnimationBodies.Array.data[1]._animationBody'
+      propertyPath: _deathAnimationBodies.Array.data[1]._animationBody
       value: 
       objectReference: {fileID: 7979288187743818711}
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
-      propertyPath: '_deathAnimationBodies.Array.data[1]._animationName'
+      propertyPath: _deathAnimationBodies.Array.data[1]._animationName
       value: explosion
       objectReference: {fileID: 0}
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
-      propertyPath: '_deathAnimationBodies.Array.data[1]._visibleWhileAlive'
+      propertyPath: _deathAnimationBodies.Array.data[0]._waitForComplete
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
+      propertyPath: _deathAnimationBodies.Array.data[1]._waitForComplete
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
+      propertyPath: _deathAnimationBodies.Array.data[0]._visibleWhileAlive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4910977008139682609, guid: f5d7e718a7af04204abaefff947ed55a, type: 3}
-      propertyPath: '_deathAnimationBodies.Array.data[1]._waitForComplete'
-      value: 1
+      propertyPath: _deathAnimationBodies.Array.data[1]._visibleWhileAlive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
