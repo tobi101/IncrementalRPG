@@ -1,0 +1,2028 @@
+fileFormatVersion: 2
+guid: 1f2b0d3372eee425b87bad611501589e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1799217373486434476
+    second: rama_resycle_0
+  - first:
+      213: 6701444837134840179
+    second: rama_resycle_1
+  - first:
+      213: -431968048049047216
+    second: rama_resycle_2
+  - first:
+      213: -8490058677358990279
+    second: rama_resycle_3
+  - first:
+      213: 6128233904733730307
+    second: rama_resycle_4
+  - first:
+      213: -7932603337942959702
+    second: rama_resycle_5
+  - first:
+      213: 3989416554982499366
+    second: rama_resycle_6
+  - first:
+      213: 3868470870484648986
+    second: rama_resycle_7
+  - first:
+      213: -3373943110393439749
+    second: rama_resycle_8
+  - first:
+      213: -221809688453804273
+    second: rama_resycle_9
+  - first:
+      213: -3042011770126594765
+    second: rama_resycle_10
+  - first:
+      213: 6615127954003612003
+    second: rama_resycle_11
+  - first:
+      213: 7270501643927045375
+    second: rama_resycle_12
+  - first:
+      213: -2222374286906792691
+    second: rama_resycle_13
+  - first:
+      213: -3326303886533887098
+    second: rama_resycle_14
+  - first:
+      213: -8637719777052196479
+    second: rama_resycle_15
+  - first:
+      213: 7902445009988395496
+    second: rama_resycle_16
+  - first:
+      213: 967731111737561683
+    second: rama_resycle_17
+  - first:
+      213: -7307546730305910356
+    second: rama_resycle_18
+  - first:
+      213: -2202247860156658214
+    second: rama_resycle_19
+  - first:
+      213: 1278543988939366176
+    second: rama_resycle_20
+  - first:
+      213: -5544973488251765232
+    second: rama_resycle_21
+  - first:
+      213: 1401385661505233243
+    second: rama_resycle_22
+  - first:
+      213: 675002943351560321
+    second: rama_resycle_23
+  - first:
+      213: 4251813541895513030
+    second: rama_resycle_24
+  - first:
+      213: -3497893212476930628
+    second: rama_resycle_25
+  - first:
+      213: -7377515219369318653
+    second: rama_resycle_26
+  - first:
+      213: 3491214585178924761
+    second: rama_resycle_27
+  - first:
+      213: -1913195889526582231
+    second: rama_resycle_28
+  - first:
+      213: 6226120683354556127
+    second: rama_resycle_29
+  - first:
+      213: -1252215046703297512
+    second: rama_resycle_30
+  - first:
+      213: 2063684088905402761
+    second: rama_resycle_31
+  - first:
+      213: 6961430414336698278
+    second: rama_resycle_32
+  - first:
+      213: -7676225351528532231
+    second: rama_resycle_33
+  - first:
+      213: 6592795178322392277
+    second: rama_resycle_34
+  - first:
+      213: -6365845642157996380
+    second: rama_resycle_35
+  - first:
+      213: 3530402574630915295
+    second: rama_resycle_36
+  - first:
+      213: 2971107391557356560
+    second: rama_resycle_37
+  - first:
+      213: 7214962411489435193
+    second: rama_resycle_38
+  - first:
+      213: -7063190014136638470
+    second: rama_resycle_39
+  - first:
+      213: 1244405349335542690
+    second: rama_resycle_40
+  - first:
+      213: 4324837686385634039
+    second: rama_resycle_41
+  - first:
+      213: 5741761283504242347
+    second: rama_resycle_42
+  - first:
+      213: 7755794004058577093
+    second: rama_resycle_43
+  - first:
+      213: -5883452774462788450
+    second: rama_resycle_44
+  - first:
+      213: 4258885774733669033
+    second: rama_resycle_45
+  - first:
+      213: -6915462588260126018
+    second: rama_resycle_46
+  - first:
+      213: 9162461261385702584
+    second: rama_resycle_47
+  - first:
+      213: -5846119005684420430
+    second: rama_resycle_48
+  - first:
+      213: 9033980942653624164
+    second: rama_resycle_49
+  - first:
+      213: -6967209869101109292
+    second: rama_resycle_50
+  - first:
+      213: -5110299846024496594
+    second: rama_resycle_51
+  - first:
+      213: -1760388395592662348
+    second: rama_resycle_52
+  - first:
+      213: 586847755924032250
+    second: rama_resycle_53
+  - first:
+      213: 5675891526970077200
+    second: rama_resycle_54
+  - first:
+      213: -3804371970866381710
+    second: rama_resycle_55
+  - first:
+      213: 3838732970601509566
+    second: rama_resycle_56
+  - first:
+      213: 7822125205319424315
+    second: rama_resycle_57
+  - first:
+      213: 2576062094397145645
+    second: rama_resycle_58
+  - first:
+      213: 7848233563979400026
+    second: rama_resycle_59
+  - first:
+      213: -7455763859233978767
+    second: rama_resycle_60
+  - first:
+      213: -8043655965740910495
+    second: rama_resycle_61
+  - first:
+      213: 9020473905143048841
+    second: rama_resycle_62
+  - first:
+      213: 7048467317021477689
+    second: rama_resycle_63
+  - first:
+      213: -5133648824853085598
+    second: rama_resycle_64
+  - first:
+      213: -6306963288046951081
+    second: rama_resycle_65
+  - first:
+      213: 6095512915836444321
+    second: rama_resycle_66
+  - first:
+      213: -7710506420933847953
+    second: rama_resycle_67
+  - first:
+      213: -2776425954339602854
+    second: rama_resycle_68
+  - first:
+      213: -5572884757993506025
+    second: rama_resycle_69
+  - first:
+      213: 7319605923796594151
+    second: rama_resycle_70
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rama_resycle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1059
+        width: 56
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45731abd455e707e0800000000000000
+      internalID: -1799217373486434476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1089
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3713c47d290500d50800000000000000
+      internalID: 6701444837134840179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1089
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 059b7b55957510af0800000000000000
+      internalID: -431968048049047216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_3
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1089
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c6bcd7d904d2a80800000000000000
+      internalID: -8490058677358990279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1089
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 306b820844cdb0550800000000000000
+      internalID: 6128233904733730307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_5
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 1089
+        width: 43
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa9f4d9fa4bb9e190800000000000000
+      internalID: -7932603337942959702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_6
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1089
+        width: 43
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6246bcc48314d5730800000000000000
+      internalID: 3989416554982499366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_7
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1089
+        width: 43
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a140f2bb2c19fa530800000000000000
+      internalID: 3868470870484648986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_8
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 1089
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf95f94fd985d21d0800000000000000
+      internalID: -3373943110393439749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_9
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1089
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0f88f77349fbecf0800000000000000
+      internalID: -221809688453804273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_10
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1089
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33d0c0f896a98c5d0800000000000000
+      internalID: -3042011770126594765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_11
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1089
+        width: 43
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 361542263d7adcb50800000000000000
+      internalID: 6615127954003612003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_12
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 1089
+        width: 43
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff44a2179b206e460800000000000000
+      internalID: 7270501643927045375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_13
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1089
+        width: 43
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0565f65c5a8821e0800000000000000
+      internalID: -2222374286906792691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_14
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1089
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b752c1d3896d1d0800000000000000
+      internalID: -3326303886533887098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_15
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1089
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 181007b90a7a02880800000000000000
+      internalID: -8637719777052196479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_16
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 1089
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1aa6d1edf1bad60800000000000000
+      internalID: 7902445009988395496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_17
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 1089
+        width: 43
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3521631a1521e6d00800000000000000
+      internalID: 967731111737561683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_18
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 1044
+        width: 13
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca98c8047f0669a90800000000000000
+      internalID: -7307546730305910356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 998
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: add8ffb3d3b0071e0800000000000000
+      internalID: -2202247860156658214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_20
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 983
+        width: 13
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02f1172ebfc4eb110800000000000000
+      internalID: 1278543988939366176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 937
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01e7bcfadfb4c03b0800000000000000
+      internalID: -5544973488251765232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_22
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 922
+        width: 13
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b51685395d8b27310800000000000000
+      internalID: 1401385661505233243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 877
+        width: 12
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18810d4c9971e5900800000000000000
+      internalID: 675002943351560321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_24
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 861
+        width: 13
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c3a0e7a3e9710b30800000000000000
+      internalID: 4251813541895513030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 816
+        width: 12
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb50018e7acf47fc0800000000000000
+      internalID: -3497893212476930628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_26
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 800
+        width: 13
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3072478eefccd9990800000000000000
+      internalID: -7377515219369318653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 755
+        width: 12
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6a0400b29437030800000000000000
+      internalID: 3491214585178924761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_28
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 739
+        width: 13
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 924d70b9976f275e0800000000000000
+      internalID: -1913195889526582231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 694
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd68f0c26cf976650800000000000000
+      internalID: 6226120683354556127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_30
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 679
+        width: 13
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81cc9deac0d3f9ee0800000000000000
+      internalID: -1252215046703297512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 633
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98905d7bebda3ac10800000000000000
+      internalID: 2063684088905402761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_32
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 618
+        width: 13
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a7a32f1418fb9060800000000000000
+      internalID: 6961430414336698278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 572
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f63b4296b1987590800000000000000
+      internalID: -7676225351528532231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_34
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 557
+        width: 13
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d470d8d8405e7b50800000000000000
+      internalID: 6592795178322392277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 12
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6443cbd19f7a7a0800000000000000
+      internalID: -6365845642157996380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_36
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 496
+        width: 13
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdc000fcf628ef030800000000000000
+      internalID: 3530402574630915295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 451
+        width: 12
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01c40575e6e7b3920800000000000000
+      internalID: 2971107391557356560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_38
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 435
+        width: 13
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93e9f943612b02460800000000000000
+      internalID: 7214962411489435193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 390
+        width: 12
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af3ac42ca128afd90800000000000000
+      internalID: -7063190014136638470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_40
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 374
+        width: 13
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2abadb37214054110800000000000000
+      internalID: 1244405349335542690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 329
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7faec3836f8e40c30800000000000000
+      internalID: 4324837686385634039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_42
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 314
+        width: 13
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bae7c585775deaf40800000000000000
+      internalID: 5741761283504242347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 268
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c814030e8d12ab60800000000000000
+      internalID: 7755794004058577093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_44
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 253
+        width: 13
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ceb5d9fd6c95ea0800000000000000
+      internalID: -5883452774462788450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 207
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a2f6fd2c0a9a1b30800000000000000
+      internalID: 4258885774733669033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_46
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 192
+        width: 13
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb270496a675700a0800000000000000
+      internalID: -6915462588260126018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 147
+        width: 12
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bc1c21f8f9972f70800000000000000
+      internalID: 9162461261385702584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_48
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 131
+        width: 13
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b035870db96edea0800000000000000
+      internalID: -5846119005684420430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 86
+        width: 12
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f8482adc52f5d70800000000000000
+      internalID: 9033980942653624164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_50
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 70
+        width: 13
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dfe1a4b98f7f4f90800000000000000
+      internalID: -6967209869101109292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 12
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2af9f59d519419b0800000000000000
+      internalID: -5110299846024496594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_52
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 7
+        width: 13
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b2caf5c418d197e0800000000000000
+      internalID: -1760388395592662348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_53
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 46
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa461dbce6e42800800000000000000
+      internalID: 586847755924032250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_54
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 44
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01073b88541d4ce40800000000000000
+      internalID: 5675891526970077200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_55
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 44
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27c7e0359d7243bc0800000000000000
+      internalID: -3804371970866381710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_56
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 0
+        width: 43
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb2784c5c4be54530800000000000000
+      internalID: 3838732970601509566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_57
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 0
+        width: 43
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3991bb4e65cd8c60800000000000000
+      internalID: 7822125205319424315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_58
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 43
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2204e783d200c320800000000000000
+      internalID: 2576062094397145645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_59
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 0
+        width: 44
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a534a4f38d68aec60800000000000000
+      internalID: 7848233563979400026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_60
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 0
+        width: 44
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 176c929b54ec78890800000000000000
+      internalID: -7455763859233978767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_61
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 0
+        width: 44
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 168bf8a24813f5090800000000000000
+      internalID: -8043655965740910495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_62
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 0
+        width: 43
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a6bb569392f2d70800000000000000
+      internalID: 9020473905143048841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_63
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 0
+        width: 43
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b04023eaf21d160800000000000000
+      internalID: 7048467317021477689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_64
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 0
+        width: 43
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 262c701d79d91c8b0800000000000000
+      internalID: -5133648824853085598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_65
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 0
+        width: 43
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75528842e4a2978a0800000000000000
+      internalID: -6306963288046951081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_66
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 0
+        width: 44
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae9c3893bc979450800000000000000
+      internalID: 6095512915836444321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_67
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 0
+        width: 44
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f649edd1347cef490800000000000000
+      internalID: -7710506420933847953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_68
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 0
+        width: 44
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5eb96efd472879d0800000000000000
+      internalID: -2776425954339602854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_69
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 0
+        width: 43
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71bbb99c6d229a2b0800000000000000
+      internalID: -5572884757993506025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rama_resycle_70
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 0
+        width: 43
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edadb78ec6749560800000000000000
+      internalID: 7319605923796594151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rama_resycle_0: -1799217373486434476
+      rama_resycle_1: 6701444837134840179
+      rama_resycle_10: -3042011770126594765
+      rama_resycle_11: 6615127954003612003
+      rama_resycle_12: 7270501643927045375
+      rama_resycle_13: -2222374286906792691
+      rama_resycle_14: -3326303886533887098
+      rama_resycle_15: -8637719777052196479
+      rama_resycle_16: 7902445009988395496
+      rama_resycle_17: 967731111737561683
+      rama_resycle_18: -7307546730305910356
+      rama_resycle_19: -2202247860156658214
+      rama_resycle_2: -431968048049047216
+      rama_resycle_20: 1278543988939366176
+      rama_resycle_21: -5544973488251765232
+      rama_resycle_22: 1401385661505233243
+      rama_resycle_23: 675002943351560321
+      rama_resycle_24: 4251813541895513030
+      rama_resycle_25: -3497893212476930628
+      rama_resycle_26: -7377515219369318653
+      rama_resycle_27: 3491214585178924761
+      rama_resycle_28: -1913195889526582231
+      rama_resycle_29: 6226120683354556127
+      rama_resycle_3: -8490058677358990279
+      rama_resycle_30: -1252215046703297512
+      rama_resycle_31: 2063684088905402761
+      rama_resycle_32: 6961430414336698278
+      rama_resycle_33: -7676225351528532231
+      rama_resycle_34: 6592795178322392277
+      rama_resycle_35: -6365845642157996380
+      rama_resycle_36: 3530402574630915295
+      rama_resycle_37: 2971107391557356560
+      rama_resycle_38: 7214962411489435193
+      rama_resycle_39: -7063190014136638470
+      rama_resycle_4: 6128233904733730307
+      rama_resycle_40: 1244405349335542690
+      rama_resycle_41: 4324837686385634039
+      rama_resycle_42: 5741761283504242347
+      rama_resycle_43: 7755794004058577093
+      rama_resycle_44: -5883452774462788450
+      rama_resycle_45: 4258885774733669033
+      rama_resycle_46: -6915462588260126018
+      rama_resycle_47: 9162461261385702584
+      rama_resycle_48: -5846119005684420430
+      rama_resycle_49: 9033980942653624164
+      rama_resycle_5: -7932603337942959702
+      rama_resycle_50: -6967209869101109292
+      rama_resycle_51: -5110299846024496594
+      rama_resycle_52: -1760388395592662348
+      rama_resycle_53: 586847755924032250
+      rama_resycle_54: 5675891526970077200
+      rama_resycle_55: -3804371970866381710
+      rama_resycle_56: 3838732970601509566
+      rama_resycle_57: 7822125205319424315
+      rama_resycle_58: 2576062094397145645
+      rama_resycle_59: 7848233563979400026
+      rama_resycle_6: 3989416554982499366
+      rama_resycle_60: -7455763859233978767
+      rama_resycle_61: -8043655965740910495
+      rama_resycle_62: 9020473905143048841
+      rama_resycle_63: 7048467317021477689
+      rama_resycle_64: -5133648824853085598
+      rama_resycle_65: -6306963288046951081
+      rama_resycle_66: 6095512915836444321
+      rama_resycle_67: -7710506420933847953
+      rama_resycle_68: -2776425954339602854
+      rama_resycle_69: -5572884757993506025
+      rama_resycle_7: 3868470870484648986
+      rama_resycle_70: 7319605923796594151
+      rama_resycle_8: -3373943110393439749
+      rama_resycle_9: -221809688453804273
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

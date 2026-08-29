@@ -1,0 +1,1118 @@
+fileFormatVersion: 2
+guid: f0dce12e9408e45188ea43d76be4bf90
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -180320154423838574
+    second: inventory_primer_0
+  - first:
+      213: -2371164323557946503
+    second: inventory_primer_1
+  - first:
+      213: 4542303190841940928
+    second: inventory_primer_2
+  - first:
+      213: 8393693955191599238
+    second: inventory_primer_3
+  - first:
+      213: 5339873416415909370
+    second: inventory_primer_4
+  - first:
+      213: 1785743960687919830
+    second: inventory_primer_5
+  - first:
+      213: 6452808941231217380
+    second: inventory_primer_6
+  - first:
+      213: 1689361740699978574
+    second: inventory_primer_7
+  - first:
+      213: -2219942608081051571
+    second: inventory_primer_8
+  - first:
+      213: 7877628033071904225
+    second: inventory_primer_9
+  - first:
+      213: 8930264050552075022
+    second: inventory_primer_10
+  - first:
+      213: -2868673611462670576
+    second: inventory_primer_11
+  - first:
+      213: -7988045496333821023
+    second: inventory_primer_12
+  - first:
+      213: -8278462008841040590
+    second: inventory_primer_13
+  - first:
+      213: -3357270313751877545
+    second: inventory_primer_14
+  - first:
+      213: 4160202720309355372
+    second: inventory_primer_15
+  - first:
+      213: 822029701032926476
+    second: inventory_primer_16
+  - first:
+      213: 2730460161039316865
+    second: inventory_primer_17
+  - first:
+      213: -4655707991011114909
+    second: inventory_primer_18
+  - first:
+      213: 4218536000880912938
+    second: inventory_primer_19
+  - first:
+      213: 6988897193113106546
+    second: inventory_primer_20
+  - first:
+      213: -8159603488018567538
+    second: inventory_primer_21
+  - first:
+      213: -6080970686430128803
+    second: inventory_primer_22
+  - first:
+      213: -8611380538766160517
+    second: inventory_primer_23
+  - first:
+      213: 3950396646955204639
+    second: inventory_primer_24
+  - first:
+      213: 6945817331757914792
+    second: inventory_primer_25
+  - first:
+      213: -8320881070534380502
+    second: inventory_primer_26
+  - first:
+      213: 201475263877905060
+    second: inventory_primer_27
+  - first:
+      213: -7948986592540932946
+    second: inventory_primer_28
+  - first:
+      213: -2742865742023356997
+    second: inventory_primer_29
+  - first:
+      213: 4489937769451998639
+    second: inventory_primer_30
+  - first:
+      213: -3958198912396490020
+    second: inventory_primer_31
+  - first:
+      213: 3746689444264878749
+    second: inventory_primer_32
+  - first:
+      213: -5385975222728184346
+    second: inventory_primer_33
+  - first:
+      213: 3770279186020488142
+    second: inventory_primer_34
+  - first:
+      213: 8299406824543499939
+    second: inventory_primer_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: inventory_primer_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 820
+        width: 271
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29839b166cf5f7df0800000000000000
+      internalID: -180320154423838574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_1
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 820
+        width: 272
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97bcf365c9ee71fd0800000000000000
+      internalID: -2371164323557946503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_2
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 820
+        width: 272
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cbd1489fa0890f30800000000000000
+      internalID: 4542303190841940928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_3
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 820
+        width: 272
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680f9883e246c7470800000000000000
+      internalID: 8393693955191599238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_4
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 820
+        width: 273
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af59503949a0b1a40800000000000000
+      internalID: 5339873416415909370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_5
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 820
+        width: 272
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d24a94cbac38c810800000000000000
+      internalID: 1785743960687919830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_6
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 820
+        width: 272
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea1d892b8bfc8950800000000000000
+      internalID: 6452808941231217380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_7
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 820
+        width: 272
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4bce837d81d17710800000000000000
+      internalID: 1689361740699978574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_8
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 820
+        width: 271
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d40239fa5fd2131e0800000000000000
+      internalID: -2219942608081051571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 546
+        width: 271
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5f8e765f4f25d60800000000000000
+      internalID: 7877628033071904225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_10
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 546
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e03f893e6dbaeeb70800000000000000
+      internalID: 8930264050552075022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_11
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 546
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0170b3c9c8c6038d0800000000000000
+      internalID: -2868673611462670576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_12
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 546
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab1d5d81f2c42190800000000000000
+      internalID: -7988045496333821023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_13
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 546
+        width: 273
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23d86740aaefc1d80800000000000000
+      internalID: -8278462008841040590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_14
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 546
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 758eaddef649861d0800000000000000
+      internalID: -3357270313751877545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_15
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 546
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6327a915520cb930800000000000000
+      internalID: 4160202720309355372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_16
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 546
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0d53e468af686b00800000000000000
+      internalID: 822029701032926476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_17
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 546
+        width: 271
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 187ba14cc0b84e520800000000000000
+      internalID: 2730460161039316865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 271
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 360c5d9cf3a936fb0800000000000000
+      internalID: -4655707991011114909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_19
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 272
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2a24bc54204b8a30800000000000000
+      internalID: 4218536000880912938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_20
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 272
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2783b37e7fc8df060800000000000000
+      internalID: 6988897193113106546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_21
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 272
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8e6d9cebd343ce80800000000000000
+      internalID: -8159603488018567538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_22
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 272
+        width: 273
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d55d4c9016d0c9ba0800000000000000
+      internalID: -6080970686430128803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_23
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 272
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d8129660b3e7880800000000000000
+      internalID: -8611380538766160517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_24
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 272
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f10c8aff1d0a2d630800000000000000
+      internalID: 3950396646955204639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_25
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 272
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aa9e2e0010846060800000000000000
+      internalID: 6945817331757914792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_26
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 272
+        width: 271
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a24b68490ca468c80800000000000000
+      internalID: -8320881070534380502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 271
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa787e5fa8cbc200800000000000000
+      internalID: 201475263877905060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_28
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 272
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea441434fc68fa190800000000000000
+      internalID: -7948986592540932946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_29
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 272
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd0c14d3226fe9d0800000000000000
+      internalID: -2742865742023356997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_30
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 0
+        width: 272
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fadcbc3dc967f4e30800000000000000
+      internalID: 4489937769451998639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_31
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 0
+        width: 273
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda05448f07a119c0800000000000000
+      internalID: -3958198912396490020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_32
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 0
+        width: 272
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d922d11e23aeef330800000000000000
+      internalID: 3746689444264878749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_33
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 0
+        width: 272
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed2b30321c2145b0800000000000000
+      internalID: -5385975222728184346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_34
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 1
+        width: 272
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec3dcc2a1f8b25430800000000000000
+      internalID: 3770279186020488142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventory_primer_35
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 1
+        width: 271
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a63e57e88a6d2370800000000000000
+      internalID: 8299406824543499939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      inventory_primer_0: -180320154423838574
+      inventory_primer_1: -2371164323557946503
+      inventory_primer_10: 8930264050552075022
+      inventory_primer_11: -2868673611462670576
+      inventory_primer_12: -7988045496333821023
+      inventory_primer_13: -8278462008841040590
+      inventory_primer_14: -3357270313751877545
+      inventory_primer_15: 4160202720309355372
+      inventory_primer_16: 822029701032926476
+      inventory_primer_17: 2730460161039316865
+      inventory_primer_18: -4655707991011114909
+      inventory_primer_19: 4218536000880912938
+      inventory_primer_2: 4542303190841940928
+      inventory_primer_20: 6988897193113106546
+      inventory_primer_21: -8159603488018567538
+      inventory_primer_22: -6080970686430128803
+      inventory_primer_23: -8611380538766160517
+      inventory_primer_24: 3950396646955204639
+      inventory_primer_25: 6945817331757914792
+      inventory_primer_26: -8320881070534380502
+      inventory_primer_27: 201475263877905060
+      inventory_primer_28: -7948986592540932946
+      inventory_primer_29: -2742865742023356997
+      inventory_primer_3: 8393693955191599238
+      inventory_primer_30: 4489937769451998639
+      inventory_primer_31: -3958198912396490020
+      inventory_primer_32: 3746689444264878749
+      inventory_primer_33: -5385975222728184346
+      inventory_primer_34: 3770279186020488142
+      inventory_primer_35: 8299406824543499939
+      inventory_primer_4: 5339873416415909370
+      inventory_primer_5: 1785743960687919830
+      inventory_primer_6: 6452808941231217380
+      inventory_primer_7: 1689361740699978574
+      inventory_primer_8: -2219942608081051571
+      inventory_primer_9: 7877628033071904225
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
