@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: b280e8626dc64962920b40be5ec8f1ee
+timeCreated: 1785965410
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.4
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Slots/CrossFeedbackSlot.cs
+  uploadId: 974942

@@ -10,18 +10,20 @@ namespace UDND.UI
     /// Demonstrates how the default visual can be overridden
     /// </summary>
     [RequireComponent(typeof(RectTransform))]
-    public class FancyDragVisual : IDragVisual
+    public class FancyBaseDragVisual : BaseDragVisual
     {
         [Header("Components")]
         [SerializeField] private Image _iconImage;
+        [SerializeField] private GameObject _countParent;
         // Replace to TMP Support
         // [SerializeField] private TMPro.TMP_Text _countText;
         [SerializeField] private Text _countText;
+        [SerializeField] private GameObject _rotatingObject;
         [SerializeField] private Image _glowEffect;
 
         [Header("Animation")]
-        [SerializeField] private float _bobSpeed = 2f;
-        [SerializeField] private float _bobAmount = 5f;
+        [SerializeField] private float _bobSpeed = 5f;
+        [SerializeField] private float _bobAmount = 8f;
         [SerializeField] private float _rotationSpeed = 50f;
 
         [Header("Colors")]
@@ -32,15 +34,15 @@ namespace UDND.UI
         private float _bobTimer;
         private float _orientationAngle;
 
-        public override void Show(IReadOnlyList<DragEntry> entries)
+        public override void Show(DragEntry entry)
         {
-            if (entries == null || entries.Count == 0 || _iconImage == null)
+            if (_iconImage == null)
             {
                 Hide();
                 return;
             }
 
-            var stack = entries[0].Stack;
+            var stack = entry.Stack;
             if (stack == null || stack.IsEmpty)
             {
                 Hide();
@@ -49,29 +51,25 @@ namespace UDND.UI
 
             _iconImage.sprite = stack.Icon;
             _iconImage.color = _normalColor;
-            _orientationAngle = entries[0].OrientationTopology
-                .GetVisualAngleDegrees(entries[0].Orientation);
+            _orientationAngle = entry.OrientationTopology
+                .GetVisualAngleDegrees(entry.Orientation);
 
             if (_glowEffect != null)
             {
                 _glowEffect.color = _glowColor;
             }
 
-            if (_countText != null)
+            if (_countParent != null)
             {
-                if (entries.Count > 1)
+                if (entry.Stack.Count > 1)
                 {
-                    _countText.gameObject.SetActive(true);
-                    _countText.text = entries.Count.ToString();
-                }
-                else if (stack.Count > 1)
-                {
-                    _countText.gameObject.SetActive(true);
-                    _countText.text = stack.Count.ToString();
+                    _countParent.SetActive(true);
+                    if (_countText != null)
+                        _countText.text = entry.Stack.Count.ToString();
                 }
                 else
                 {
-                    _countText.gameObject.SetActive(false);
+                    _countParent.SetActive(false);
                 }
             }
 
@@ -96,9 +94,9 @@ namespace UDND.UI
             _rectTransform.position = _basePosition + Vector3.up * bobOffset;
 
             // Rotation
-            if (_iconImage != null)
+            if (_rotatingObject != null)
             {
-                _iconImage.transform.rotation = Quaternion.Euler(0, 0, _orientationAngle + Mathf.Sin(_bobTimer) * _rotationSpeed);
+                _rotatingObject.transform.rotation = Quaternion.Euler(0, 0, _orientationAngle + Mathf.Sin(_bobTimer) * _rotationSpeed);
             }
 
             // Glow pulse

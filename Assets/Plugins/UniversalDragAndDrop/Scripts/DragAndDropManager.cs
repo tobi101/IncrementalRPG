@@ -44,6 +44,12 @@ namespace UDND
 
         public bool IsDragging => _currentContext != null;
         public DragContext CurrentContext => _currentContext;
+
+        /// <summary>
+        /// Processor bound to the active drop target. Bound before the target is told it became
+        /// active, so drop-preview code can reuse the very probe the drop would run.
+        /// </summary>
+        public IDropProcessor CurrentProcessor => _currentProcessor;
         public bool HasActiveDropTarget => _currentProcessor != null || _dropTargetStack.Count > 0;
         public bool HasActiveSlotDropTarget => _activeDropTarget?.GetTargetSlot() != null;
 
@@ -76,6 +82,17 @@ namespace UDND
         protected override void DeInit()
         {
             base.DeInit();
+        }
+
+        /// <summary>
+        /// Runs from Start, not Init: the presenter and the router are found by scanning the scene,
+        /// so every other Awake has to have run first or a perfectly good setup reports as missing.
+        /// </summary>
+        private void Start()
+        {
+            // A duplicate manager is destroyed in Awake but still gets its Start call this frame.
+            if (ReferenceEquals(_instance, this))
+                UDNDSetupValidator.LogSceneSetupIssues();
         }
 
         /// <summary>
@@ -243,7 +260,8 @@ namespace UDND
             if (_dropTargetStack.Count > 0)
             {
                 var currentTop = _dropTargetStack[_dropTargetStack.Count - 1];
-                currentTop.OnBecomeInactiveTarget();
+                if (IsTargetAlive(currentTop))
+                    currentTop.OnBecomeInactiveTarget();
             }
 
             // Add the new target
@@ -274,7 +292,7 @@ namespace UDND
             bool wasTop = (index == _dropTargetStack.Count - 1);
 
             // Deactivate it if it was the top target
-            if (wasTop)
+            if (wasTop && IsTargetAlive(target))
             {
                 target.OnBecomeInactiveTarget();
             }
@@ -292,12 +310,61 @@ namespace UDND
         }
 
         /// <summary>
+        /// A drop target backed by a destroyed UnityEngine.Object is unusable: touching it
+        /// raises MissingReferenceException. The stack stores IDropTarget, so the engine's
+        /// null overload does not apply and the check has to be explicit.
+        ///
+        /// This happens whenever a view disappears without popping itself — a destroyed
+        /// inventory GameObject, or a UI Toolkit element detached from its panel, where no
+        /// OnDisable equivalent exists to run the pop.
+        /// </summary>
+        private static bool IsTargetAlive(IDropTarget target)
+        {
+            if (target == null)
+                return false;
+
+            return !(target is UnityEngine.Object unityTarget) || unityTarget != null;
+        }
+
+        /// <summary>
+        /// Drops every target whose backing object no longer exists. Returns true if the
+        /// active target was among them.
+        /// </summary>
+        private bool PruneDeadDropTargets()
+        {
+            bool removedActive = false;
+
+            for (int i = _dropTargetStack.Count - 1; i >= 0; i--)
+            {
+                if (IsTargetAlive(_dropTargetStack[i]))
+                    continue;
+
+                if (ReferenceEquals(_dropTargetStack[i], _activeDropTarget))
+                    removedActive = true;
+
+                _dropTargetStack.RemoveAt(i);
+                Extensions.DragAndDropLog(
+                    "<color=yellow>Dropped a destroyed target from the stack</color>");
+            }
+
+            if (removedActive || !IsTargetAlive(_activeDropTarget))
+            {
+                _activeDropTarget = null;
+                _currentProcessor = null;
+            }
+
+            return removedActive;
+        }
+
+        /// <summary>
         /// Activate the top target in the stack
         /// </summary>
         private void ActivateTopTarget()
         {
             if (!IsDragging)
                 return;
+
+            PruneDeadDropTargets();
 
             if (_dropTargetStack.Count > 0)
             {
@@ -345,7 +412,10 @@ namespace UDND
             if (!IsDragging || _isCompletingDrag)
                 return;
 
-            _ = CompleteDragAsync(requested);
+            // Fire-and-forget: the returned task is the only place an exception raised outside
+            // CompleteDragAsync's own try block (its finally, most notably) can surface. Dropping
+            // it on the floor would let the drag pipeline fail without a single line in the console.
+            CompleteDragAsync(requested).LogFaults();
         }
 
         public bool RotateCurrentDrag(int orientationSteps = 1)
@@ -417,6 +487,14 @@ namespace UDND
             if (_activeDropTarget == null)
                 return;
 
+            if (!IsTargetAlive(_activeDropTarget))
+            {
+                // ActivateTopTarget prunes and falls back to whatever is still under the
+                // pointer, so a dead preview target does not block rotation.
+                ActivateTopTarget();
+                return;
+            }
+
             _activeDropTarget.OnBecomeInactiveTarget();
             _activeDropTarget.OnBecomeActiveTarget();
         }
@@ -435,6 +513,12 @@ namespace UDND
             _isProcessingTransfer = true;
             bool success = false;
             DropResult result = default;
+
+            // Drop targets that died between hover and release would otherwise hand us a
+            // destroyed processor (DropAreaBase is its own processor), turning the drop into
+            // a logged exception instead of a clean no-op.
+            PruneDeadDropTargets();
+
             IDropProcessor processorToUse = _currentProcessor;
             var dragContext = _currentContext;
 
@@ -539,7 +623,7 @@ namespace UDND
                 return true;
             }
 
-            _ = SplitDropAsync(requested, splitCount);
+            SplitDropAsync(requested, splitCount).LogFaults();
             return true;
         }
 
@@ -569,7 +653,9 @@ namespace UDND
                     entry.GrabOffset,
                     entry.Orientation,
                     entry.OrientationTopology);
-                var splitContext = new DragContext(new[] { splitEntry });
+                // Derived, not new: the split portion keeps the drag's conversion session, so the
+                // items it moves are the ones the preview already resolved.
+                var splitContext = _currentContext.CreateDerived(new[] { splitEntry });
 
                 bool success = false;
                 if (_currentProcessor is InventoryDropProcessor inventoryProcessor)
@@ -645,23 +731,57 @@ namespace UDND
         {
             var dragContext = _currentContext;
 
-            // Deactivate all targets in the stack
+            // Deactivate all targets in the stack.
+            //
+            // This runs from CompleteDragAsync's finally block, so it must not throw: an
+            // escaping exception would skip the state reset below and strand the manager
+            // with IsDragging stuck true, refusing every later StartDrag. A destroyed or
+            // misbehaving presenter is not worth losing the whole drag system over.
             foreach (var target in _dropTargetStack)
             {
-                target.OnBecomeInactiveTarget();
+                if (!IsTargetAlive(target))
+                    continue;
+
+                try
+                {
+                    target.OnBecomeInactiveTarget();
+                }
+                catch (System.Exception ex)
+                {
+                    Debug.LogException(ex);
+                }
             }
             _dropTargetStack.Clear();
 
             if (_activeDropTarget != null)
             {
-                UDNDEvents.RaiseDragExitSlot(_currentContext);
+                try
+                {
+                    UDNDEvents.RaiseDragExitSlot(_currentContext);
+                }
+                catch (System.Exception ex)
+                {
+                    Debug.LogException(ex);
+                }
             }
 
-            SetDraggedState(dragContext?.Entries, false);
-            RefreshDragInventories(dragContext);
+            // Drop the drag state before any presentation work. Everything below this point talks to
+            // slots and inventories that may have been destroyed or rebuilt mid-drag, and a throw
+            // there must not leave IsDragging stuck true.
             _currentContext = null;
             _activeDropTarget = null;
             _currentProcessor = null;
+
+            try
+            {
+                SetDraggedState(dragContext?.Entries, false);
+                RefreshDragInventories(dragContext);
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogException(ex);
+            }
+
             UDNDEvents.RaiseDragEnded();
         }
 
@@ -716,7 +836,7 @@ namespace UDND
                 return false;
             }
 
-            _ = TryAutoTransferAsync(sourceSlots, sourceInventory, targetInventory, CancellationToken.None);
+            TryAutoTransferAsync(sourceSlots, sourceInventory, targetInventory, CancellationToken.None).LogFaults();
             return true;
         }
 

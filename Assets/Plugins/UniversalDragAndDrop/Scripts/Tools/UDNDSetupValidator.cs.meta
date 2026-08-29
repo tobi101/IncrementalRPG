@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 965afdedcbd544f4fb6f5ab784d1e88b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.4
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Tools/UDNDSetupValidator.cs
+  uploadId: 974942

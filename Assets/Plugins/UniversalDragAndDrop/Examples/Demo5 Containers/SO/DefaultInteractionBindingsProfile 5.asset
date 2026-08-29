@@ -31,15 +31,7 @@ MonoBehaviour:
     _triggerPhase: 1
     _action:
       rid: 8490481047700242461
-  _keyBindings:
-  - _label: 
-    _key: 32
-    _modifier: 0
-    _triggerPhase: 0
-    _action:
-      rid: 8248673145938509824
-  _legacyInputActionBindings: []
-  _inputActionBindings: []
+  _keyBindings: []
   references:
     version: 2
     RefIds:
@@ -51,9 +43,6 @@ MonoBehaviour:
           _overrideAmount: 0
           _amount: 0
           _customAmount: 1
-    - rid: 8248673145938509824
-      type: {class: ShowContextMenuAction, ns: UDND.ContextMenu, asm: UDND.Runtime}
-      data: 
     - rid: 8490480985322553345
       type: {class: CompleteDragAction, ns: UDND.Interaction, asm: UDND.Runtime}
       data:

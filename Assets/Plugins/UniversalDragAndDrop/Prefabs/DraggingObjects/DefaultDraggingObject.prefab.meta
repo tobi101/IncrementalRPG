@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 901bc8f86bf32466c9ed43cd0d92bb98
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.4
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Prefabs/DraggingObjects/DefaultDraggingObject.prefab
+  uploadId: 974942

@@ -16,7 +16,7 @@ namespace UDND.UI
     public class DragVisualPresenter : MonoSingleton<DragVisualPresenter>
     {
         [SerializeField] private Canvas _canvas;
-        [SerializeField] private IDragVisual _defaultDragVisualPrefab;
+        [SerializeField] private BaseDragVisual _defaultDragVisualPrefab;
         [SerializeField] private Transform _visualContainer;
         [Header("Batch Layout")]
         [SerializeField, Min(0f)] private float _batchVisualRadius = 36f;
@@ -36,6 +36,7 @@ namespace UDND.UI
         private bool _subscribed;
 
         public Canvas PresentationCanvas => _canvas;
+        public BaseDragVisual DefaultDragVisualPrefab => _defaultDragVisualPrefab;
         public Transform VisualContainer => _visualContainer != null ? _visualContainer : _canvas != null ? _canvas.transform : transform;
 
         protected override void Init()
@@ -85,7 +86,7 @@ namespace UDND.UI
                 _bindersByInventory.Remove(binder.Inventory);
         }
 
-        public MonoBehaviour ResolveVisualPrefab(IInventory inventory)
+        public BaseDragVisual ResolveVisualPrefab(IInventory inventory)
         {
             if (inventory != null &&
                 _bindersByInventory.TryGetValue(inventory, out var binder) &&
@@ -144,8 +145,7 @@ namespace UDND.UI
                 if (visual == null)
                     continue;
 
-                var entryPayload = new List<DragEntry>(1) { context.Entries[i] };
-                visual.View.Show(entryPayload);
+                visual.View.Show(context.Entries[i]);
                 _activeVisuals.Add(new ActiveVisual(visual, i));
             }
 
@@ -163,8 +163,7 @@ namespace UDND.UI
                 if (visual.Instance == null || !visual.Instance.IsAlive || visual.Index >= context.Entries.Count)
                     continue;
 
-                var entryPayload = new List<DragEntry>(1) { context.Entries[visual.Index] };
-                visual.Instance.View.Show(entryPayload);
+                visual.Instance.View.Show(context.Entries[visual.Index]);
             }
         }
 
@@ -228,7 +227,7 @@ namespace UDND.UI
                 return null;
 
             var instance = Instantiate(prefab, VisualContainer);
-            if (instance is IDragVisual dragVisual)
+            if (instance is BaseDragVisual dragVisual)
                 return new VisualInstance(instance, dragVisual);
 
             Debug.LogError($"Prefab {prefab.name} does not implement IDragVisual!");
@@ -404,7 +403,7 @@ namespace UDND.UI
 
         private sealed class VisualInstance
         {
-            public VisualInstance(MonoBehaviour behaviour, IDragVisual view)
+            public VisualInstance(MonoBehaviour behaviour, BaseDragVisual view)
             {
                 Behaviour = behaviour;
                 View = view;
@@ -412,7 +411,7 @@ namespace UDND.UI
             }
 
             public MonoBehaviour Behaviour { get; }
-            public IDragVisual View { get; }
+            public BaseDragVisual View { get; }
             public Vector3 BaseScale { get; }
             public Transform Transform => Behaviour != null ? Behaviour.transform : null;
 

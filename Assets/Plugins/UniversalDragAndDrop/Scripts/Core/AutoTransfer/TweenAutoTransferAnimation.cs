@@ -45,7 +45,7 @@ namespace UDND.Core
             // Create the visual instance
             var visualInstance = UnityEngine.Object.Instantiate(visualPrefab, visualContainer);
 
-            if (!(visualInstance is IDragVisual dragVisual))
+            if (!(visualInstance is BaseDragVisual dragVisual))
             {
                 Debug.LogError("TweenAutoTransferAnimation: Visual prefab doesn't implement IDragVisual!");
                 UnityEngine.Object.Destroy(visualInstance.gameObject);
@@ -71,9 +71,7 @@ namespace UDND.Core
             visualRect.position = startPos;
 
             // Show the visual with the item
-            // Create a temporary DragEntry for the visual
-            var entries = new[] { new DragEntry(stack, sourceBaseSlot, null) };
-            dragVisual.Show(entries);
+            dragVisual.Show(new DragEntry(stack, sourceBaseSlot, null));
 
             Func<float, Vector3> customPath = null;
             if (_useArc)

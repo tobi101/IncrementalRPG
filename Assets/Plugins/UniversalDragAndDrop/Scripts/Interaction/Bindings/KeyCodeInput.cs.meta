@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: dda9a550a42a6dc41823bca1c5006d8c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373610
+  packageName: Universal Drag&Drop
+  packageVersion: 1.0.4
+  assetPath: Assets/Plugins/UniversalDragAndDrop/Scripts/Interaction/Bindings/KeyCodeInput.cs
+  uploadId: 974942
