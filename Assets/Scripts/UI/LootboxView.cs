@@ -119,6 +119,13 @@ namespace UI
                 yield return null;
             }
 
+            if (_batch.Rewards.Count == 0)
+            {
+                _spinRoutine = null;
+                SpinCompleted?.Invoke();
+                yield break;
+            }
+
             EnsureItemPool();
             yield return SpinRoutine();
         }

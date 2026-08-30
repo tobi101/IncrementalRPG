@@ -36,6 +36,21 @@ namespace UI
         public bool IsOpen => _isOpen;
         public Button ReturnToHubButton => _returnToHubButton;
 
+        public void SetToggleButton(Button toggleButton)
+        {
+            if (_isSubscribed)
+                RemoveListener(_toggleButton, Toggle);
+
+            _toggleButton = toggleButton;
+
+            if (_isSubscribed)
+                AddListener(_toggleButton, Toggle);
+
+            UIButtonAudio.EnsureOn(_toggleButton);
+            if (_toggleButton.GetComponent<PauseButtonVisualState>() == null)
+                UIButtonPressScaler.EnsureOn(_toggleButton);
+        }
+
         private void Awake()
         {
             EnsureAnimationReferences();

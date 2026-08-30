@@ -40,6 +40,16 @@ namespace UI
         public bool IsOpen => Root.activeSelf;
         public bool IsGameplayPaused => _isGameplayPaused;
 
+        public void RegisterSideMenu(SideMenuFlyoutView sideMenu)
+        {
+            var count = _sideMenus.Length;
+            Array.Resize(ref _sideMenus, count + 1);
+            _sideMenus[count] = sideMenu;
+
+            if (isActiveAndEnabled)
+                SubscribeSideMenu(sideMenu);
+        }
+
         private GameObject Root => _root != null ? _root : gameObject;
 
         private bool IsSettingsOpen => _settingsMenu != null && _settingsMenu.IsVisible();
@@ -248,13 +258,18 @@ namespace UI
                 if (sideMenu == null)
                     continue;
 
-                sideMenu.SettingsRequested -= OpenSettingsFromSideMenu;
-                sideMenu.SettingsRequested += OpenSettingsFromSideMenu;
-                sideMenu.MainMenuRequested -= ExitToMainMenu;
-                sideMenu.MainMenuRequested += ExitToMainMenu;
-                sideMenu.ExitRequested -= ExitApplication;
-                sideMenu.ExitRequested += ExitApplication;
+                SubscribeSideMenu(sideMenu);
             }
+        }
+
+        private void SubscribeSideMenu(SideMenuFlyoutView sideMenu)
+        {
+            sideMenu.SettingsRequested -= OpenSettingsFromSideMenu;
+            sideMenu.SettingsRequested += OpenSettingsFromSideMenu;
+            sideMenu.MainMenuRequested -= ExitToMainMenu;
+            sideMenu.MainMenuRequested += ExitToMainMenu;
+            sideMenu.ExitRequested -= ExitApplication;
+            sideMenu.ExitRequested += ExitApplication;
         }
 
         private void UnsubscribeSideMenus()

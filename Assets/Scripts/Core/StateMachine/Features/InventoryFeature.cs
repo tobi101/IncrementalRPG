@@ -1,12 +1,12 @@
-using Core.TestSkillTree.View;
 using Reflex.Attributes;
 using UI;
+using UI.Inventory;
 
 namespace Core.StateMachine.Features
 {
-    public class SkillTreeFeature : IGameFeature
+    public sealed class InventoryFeature : IGameFeature
     {
-        [Inject] private SkillTreeView _view;
+        [Inject] private PlayerInventoryView _view;
         [Inject] private HubFeature _hub;
         [Inject] private MenuBackdropView _backdrop;
 

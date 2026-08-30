@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Core.Gameplay.Dungeon;
+using Core.Items;
 using Core.StateMachine.Features;
 using Core.TestSkillTree;
 using IncrementalRPG.Scripts.Reflex;
@@ -10,7 +11,7 @@ namespace Core.Save
 {
     public class SaveService : ITickable
     {
-        private const float ShardSaveDelay = 0.5f;
+        private const float SaveDelay = 0.5f;
 
         private SaveData _data;
         private readonly List<ISaveable> _saveables;
@@ -21,7 +22,8 @@ namespace Core.Save
         public SaveData GetData() => _data;
 
         public SaveService(IEnumerable<ISaveable> saveables, GameplayFeature gameplayFeature,
-            SkillTreeService skillTreeService, DungeonSelectionService dungeonSelectionService, Player player)
+            SkillTreeService skillTreeService, DungeonSelectionService dungeonSelectionService,
+            Player player, PlayerItemStorage itemStorage)
         {
             _saveables = new List<ISaveable>(saveables);
             _data = _storage.LoadOrDefault();
@@ -34,6 +36,8 @@ namespace Core.Save
             skillTreeService.OnUpgraded += Save;
             dungeonSelectionService.OnProgressChanged += Save;
             player.OnShardsChanged += ScheduleSave;
+            player.OnGoldChanged += ScheduleSave;
+            itemStorage.OnChanged += ScheduleSave;
 
             Debug.Log($"[SaveService] Loaded. Version: {_data.Version}, Path: {_storage.SavePath}");
         }
@@ -78,7 +82,7 @@ namespace Core.Save
         private void ScheduleSave()
         {
             _savePending = true;
-            _saveDelayRemaining = ShardSaveDelay;
+            _saveDelayRemaining = SaveDelay;
         }
     }
 }

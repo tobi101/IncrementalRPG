@@ -17,6 +17,7 @@ using Model;
 using Reflex.Core;
 using Reflex.Enums;
 using UI;
+using UI.Inventory;
 using UnityEngine;
 using Resolution = Reflex.Enums.Resolution;
 
@@ -39,11 +40,14 @@ namespace Reflex
         [SerializeField] private DamageZoneView _damageZoneView;
         [SerializeField] private SkillTreeView _skillTreeView;
         [SerializeField] private HubView _hubView;
+        [SerializeField] private MenuBackdropView _menuBackdropView;
         [SerializeField] private MenuCanvasView _menuCanvasView;
         [SerializeField] private HudView _hudView;
         [SerializeField] private PauseMenuController _pauseMenuController;
         [SerializeField] private SessionEndPopupView _sessionEndPopupView;
         [SerializeField] private DemoEndPopupView _demoEndPopupView;
+        [SerializeField] private PlayerInventoryView _inventoryView;
+        [SerializeField] private ItemCatalog _itemCatalog;
 
 
         private void Awake()
@@ -92,6 +96,13 @@ namespace Reflex
             );
 
             builder.RegisterType(
+                typeof(InventoryMenuState),
+                new[] { typeof(IGameState), typeof(InventoryMenuState) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
                 typeof(GameplayFeature),
                 new[] { typeof(IGameFeature), typeof(GameplayFeature) },
                 Lifetime.Singleton,
@@ -120,6 +131,13 @@ namespace Reflex
             );
 
             builder.RegisterType(
+                typeof(RunConsumableService),
+                new[] { typeof(IAwakeable), typeof(RunConsumableService) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
                 typeof(LevelTransitionCoordinator),
                 new[] { typeof(IAwakeable), typeof(LevelTransitionCoordinator) },
                 Lifetime.Singleton,
@@ -129,6 +147,13 @@ namespace Reflex
             builder.RegisterType(
                 typeof(SkillTreeFeature),
                 new[] { typeof(IGameFeature), typeof(SkillTreeFeature) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
+
+            builder.RegisterType(
+                typeof(InventoryFeature),
+                new[] { typeof(IGameFeature), typeof(InventoryFeature) },
                 Lifetime.Singleton,
                 Resolution.Lazy
             );
@@ -241,11 +266,15 @@ namespace Reflex
             builder.RegisterValue(_damageZoneView, new[] { typeof(DamageZoneView) });
             builder.RegisterValue(_skillTreeView, new[] { typeof(SkillTreeView) });
             builder.RegisterValue(_hubView, new[] { typeof(HubView) });
+            builder.RegisterValue(_menuBackdropView, new[] { typeof(MenuBackdropView) });
             builder.RegisterValue(_menuCanvasView, new[] { typeof(MenuCanvasView) });
             builder.RegisterValue(_hudView, new[] { typeof(HudView) });
             builder.RegisterValue(_pauseMenuController, new[] { typeof(PauseMenuController) });
             builder.RegisterValue(_sessionEndPopupView, new[] { typeof(SessionEndPopupView) });
             builder.RegisterValue(new DemoEndPopupProvider(_demoEndPopupView), new[] { typeof(DemoEndPopupProvider) });
+            builder.RegisterValue(_inventoryView,
+                new[] { typeof(PlayerInventoryView), typeof(IPlayerInventoryGateway) });
+            builder.RegisterValue(_itemCatalog, new[] { typeof(ItemCatalog) });
         }
 
         public void Exit()

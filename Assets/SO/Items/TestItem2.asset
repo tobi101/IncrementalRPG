@@ -14,6 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Core.Items.ItemDefinition
   itemId: test2
   displayName: Test2
+  description:
   icon: {fileID: 21300000, guid: 46510039e8b9f4e3d9c364833899b8da, type: 3}
+  category: 1
   stackable: 0
   maxStackSize: 1
+  width: 1
+  height: 2
+  sellPrice:
+    mantissa: 1
+    exponent: 1
+  rarity: 1
+  equipmentSlot: 3
+  defaultStats: []
+  effectId:
+  effectValue: 0
+  forgeModifierId:
+  forgeModifierValue: 0

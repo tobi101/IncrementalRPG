@@ -11,7 +11,7 @@ namespace Core.StateMachine.Features
 
         public void Enable() => _view.gameObject.SetActive(true);
 
-        public void Disable() { }
+        public void Disable() => _view.gameObject.SetActive(false);
 
         public void Tick(float deltaTime) { }
     }

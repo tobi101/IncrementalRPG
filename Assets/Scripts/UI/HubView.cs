@@ -12,6 +12,7 @@ namespace UI
     {
         [SerializeField] private HubFeatureButtonView _dungeonButton;
         [SerializeField] private HubFeatureButtonView _skillTreeButton;
+        [SerializeField] private HubFeatureButtonView _inventoryButton;
         [SerializeField] private HubFeatureButtonView _barracksButton;
         [SerializeField] private HubFeatureButtonView _mineButton;
         [SerializeField] private HubFeatureButtonView _craftButton;
@@ -49,6 +50,9 @@ namespace UI
             if (_skillTreeButton != null && _skillTreeButton.Button != null)
                 _skillTreeButton.Button.onClick.AddListener(OpenSkillTree);
 
+            if (_inventoryButton != null && _inventoryButton.Button != null)
+                _inventoryButton.Button.onClick.AddListener(OpenInventory);
+
             if (_barracksButton != null && _barracksButton.Button != null)
                 _barracksButton.Button.onClick.AddListener(OpenBarracks);
 
@@ -66,6 +70,9 @@ namespace UI
 
             if (_skillTreeButton != null && _skillTreeButton.Button != null)
                 _skillTreeButton.Button.onClick.RemoveListener(OpenSkillTree);
+
+            if (_inventoryButton != null && _inventoryButton.Button != null)
+                _inventoryButton.Button.onClick.RemoveListener(OpenInventory);
 
             if (_barracksButton != null && _barracksButton.Button != null)
                 _barracksButton.Button.onClick.RemoveListener(OpenBarracks);
@@ -141,6 +148,11 @@ namespace UI
         {
             PlayOpenSound(_skillTreeOpenSound);
             _stateMachine.Enter<SkillTreeMenuState>();
+        }
+
+        private void OpenInventory()
+        {
+            _stateMachine.Enter<InventoryMenuState>();
         }
 
         private void OpenBarracks()

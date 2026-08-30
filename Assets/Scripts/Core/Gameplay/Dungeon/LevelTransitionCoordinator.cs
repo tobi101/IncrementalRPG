@@ -12,7 +12,7 @@ namespace Core.Gameplay.Dungeon
 
         [Inject] private GameplayFeature _gameplay;
         [Inject] private DungeonSelectionService _dungeonSelection;
-        [Inject] private PlayerItemStorage _itemStorage;
+        [Inject] private IPlayerInventoryGateway _inventory;
         [Inject] private HudView _hud;
 
         private LevelTransitionCurtainView _curtain;
@@ -43,7 +43,7 @@ namespace Core.Gameplay.Dungeon
             _openDuration = openDuration;
 
             var rolledItems = _gameplay.CurrentLevel.lootPool.Roll(RewardCount);
-            var batch = _itemStorage.Grant(rolledItems);
+            var batch = _inventory.Grant(rolledItems);
 
             _dungeonSelection.MarkLevelReached(_gameplay.CurrentDungeon, nextLevelIndex);
             _hud.PrepareLevelTransitionMessage();
