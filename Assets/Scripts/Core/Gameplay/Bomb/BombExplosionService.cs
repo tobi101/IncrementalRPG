@@ -43,7 +43,7 @@ namespace Core.Gameplay.Bomb
 
         private void Explode(Creature source)
         {
-            var epicenter = _tileGrid.GetWorldPosition(source.TileCoord);
+            var epicenter = source.WorldPosition;
 
             var a = GetRadius();
             var b = a * _config.aspectRatio;
@@ -60,7 +60,7 @@ namespace Core.Gameplay.Bomb
             {
                 if (creature == source) continue;
 
-                var pos = _tileGrid.GetWorldPosition(creature.TileCoord);
+                var pos = creature.WorldPosition;
                 var dx = (pos.x - epicenter.x) / a;
                 var dy = (pos.y - epicenter.y) / b;
                 if (dx * dx + dy * dy <= 1f)

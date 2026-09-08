@@ -137,7 +137,7 @@ namespace Core.Gameplay
         private bool IntersectsCreatureHitArea(Creature creature)
         {
             var hitRadius = Mathf.Max(0f, creature.Config.damageZoneHitRadius);
-            var footWorldPos = _tileGrid.GetWorldPosition(creature.TileCoord);
+            var footWorldPos = creature.WorldPosition;
             return ContainsWorldCircle(footWorldPos, hitRadius);
         }
 

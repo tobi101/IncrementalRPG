@@ -205,6 +205,12 @@ namespace Reflex
             
             var tileGrid = new TileGrid();
             builder.RegisterValue(tileGrid, new[] { typeof(TileGrid) });
+            builder.RegisterType(
+                typeof(EnemyMovementService),
+                new[] { typeof(EnemyMovementService) },
+                Lifetime.Singleton,
+                Resolution.Lazy
+            );
             
             builder.RegisterType(
                 typeof(PoolManager),

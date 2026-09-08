@@ -38,6 +38,13 @@ namespace Entity
         public FeatureType featureType;
         public GameObject viewPrefab;
 
+        [Header("Movement")]
+        public bool canMove;
+        [Range(0f, 1f)] public float moveChance = 0.05f;
+        [Min(0.01f)] public float moveCheckInterval = 3f;
+        [Tooltip("Neighboring cell transitions per second, including diagonal transitions.")]
+        [Min(0.01f)] public float moveSpeed = 1f;
+
         [Header("Gameplay Bounds")]
         [Min(0f)] public float damageZoneHitRadius = 0.25f;
 

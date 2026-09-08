@@ -8,6 +8,8 @@ namespace Entity
     {
         public BigDouble CurrentHP { get; private set; }
         public bool IsAlive => CurrentHP > 0;
+        public Vector3 WorldPosition { get; internal set; }
+        public bool IsMoving { get; internal set; }
 
         public event Action<BigDouble, BigDouble> OnHealthChanged; // current, max
         public event Action<BigDouble> OnDamageTaken;
@@ -16,6 +18,12 @@ namespace Entity
         public Creature(EntityConfig config, Vector2Int tileCoord) : base(config, tileCoord)
         {
             CurrentHP = config.maxHP;
+        }
+
+        internal void SetTilePosition(Vector2Int tileCoord, Vector3 worldPosition)
+        {
+            TileCoord = tileCoord;
+            WorldPosition = worldPosition;
         }
 
         public void TakeDamage(BigDouble amount)

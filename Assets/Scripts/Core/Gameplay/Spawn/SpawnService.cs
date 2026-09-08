@@ -36,6 +36,7 @@ namespace Core.Gameplay
         private readonly SkillTreeService _skillTree;
         private readonly AudioManager _audioManager;
         private readonly DamagePopupService _damagePopupService;
+        private readonly EnemyMovementService _movementService;
         private SpawnTable _spawnTable;
 
         private float _spawnInterval = 2f;
@@ -43,6 +44,7 @@ namespace Core.Gameplay
         private readonly List<ActiveEntry> _active = new();
         private readonly List<Action> _pendingDeathCompletions = new();
         private bool _isPaused;
+        private bool _areViewsPaused;
 
         private struct ActiveEntry
         {
@@ -54,13 +56,14 @@ namespace Core.Gameplay
         }
 
         public SpawnService(PoolManager poolManager, TileGrid tileGrid, SkillTreeService skillTree, AudioManager audioManager,
-            DamagePopupService damagePopupService)
+            DamagePopupService damagePopupService, EnemyMovementService movementService)
         {
             _poolManager = poolManager;
             _tileGrid = tileGrid;
             _skillTree = skillTree;
             _audioManager = audioManager;
             _damagePopupService = damagePopupService;
+            _movementService = movementService;
         }
 
         public void SetLevel(DungeonLevelConfig level)
@@ -85,6 +88,8 @@ namespace Core.Gameplay
 
         public void Update(float deltaTime)
         {
+            if (_isPaused) return;
+            _movementService.Update(deltaTime);
             _timer += deltaTime;
             if (_timer >= _spawnInterval)
             {
@@ -99,9 +104,18 @@ namespace Core.Gameplay
                 return;
 
             _isPaused = isPaused;
+            SetViewsPaused(isPaused);
 
             if (!_isPaused)
                 FlushPendingDeathCompletions();
+        }
+
+        public void SetViewsPaused(bool isPaused)
+        {
+            if (_areViewsPaused == isPaused) return;
+            _areViewsPaused = isPaused;
+            foreach (var entry in _active)
+                entry.View.SetPaused(isPaused);
         }
 
         private void TrySpawnAny()
@@ -136,6 +150,7 @@ namespace Core.Gameplay
             {
                 entry.Creature.OnDied -= entry.OnDied;
                 entry.Creature.OnDamageTaken -= entry.OnDamageTaken;
+                _movementService.Unregister(entry.Creature);
                 _tileGrid.Free(entry.Creature);
                 _poolManager.Return(entry.View, entry.Config);
             }
@@ -145,9 +160,10 @@ namespace Core.Gameplay
         {
             var creature = new Creature(config, coord);
             var view = _poolManager.Get(config);
-            view.transform.position = _tileGrid.GetWorldPosition(coord) + view.FootOffset;
-            view.Bind(creature);
             _tileGrid.Place(creature);
+            view.Bind(creature);
+            view.SetPaused(_areViewsPaused);
+            _movementService.Register(creature);
 
             Action<BigDouble> onDamageTaken = damage =>
             {
@@ -160,12 +176,14 @@ namespace Core.Gameplay
             {
                 creature.OnDied -= onDied;
                 creature.OnDamageTaken -= onDamageTaken;
+                _movementService.Unregister(creature);
+                _tileGrid.Free(creature);
 
                 var destroyedContext = new EntityDestroyedContext(
                     creature,
                     config,
                     creature.TileCoord,
-                    _tileGrid.GetWorldPosition(creature.TileCoord));
+                    creature.WorldPosition);
 
                 OnEntityDestroyed?.Invoke(destroyedContext);
                 if (config.countsAsEnemyKill)
@@ -175,7 +193,6 @@ namespace Core.Gameplay
                 Action completeDeath = () =>
                 {
                     _active.RemoveAll(e => e.Creature == creature);
-                    _tileGrid.Free(creature);
                     _poolManager.Return(view, config);
                 };
 

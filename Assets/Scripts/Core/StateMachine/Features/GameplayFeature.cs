@@ -149,6 +149,7 @@ namespace Core.StateMachine.Features
 
             _isPaused = isPaused;
             _spawnService.SetPaused(_isPaused);
+            _spawnService.SetViewsPaused(_isPaused || _runState != RunState.Playing);
             OnPauseChanged?.Invoke(_isPaused);
         }
 
@@ -168,6 +169,7 @@ namespace Core.StateMachine.Features
 
         public void Tick(float deltaTime)
         {
+            _spawnService.SetViewsPaused(_isPaused || _runState != RunState.Playing);
             if (_isPaused)
                 return;
 
@@ -238,6 +240,7 @@ namespace Core.StateMachine.Features
         private void ExpireSession()
         {
             _runState = RunState.Expired;
+            _spawnService.SetViewsPaused(true);
             _shardDropService.DespawnAll();
             ApplySessionResults();
             OnSessionExpired?.Invoke();
@@ -322,6 +325,7 @@ namespace Core.StateMachine.Features
         private void BeginLootGrace(int nextLevelIndex, bool endsAtDemoLimit)
         {
             _runState = RunState.LootGrace;
+            _spawnService.SetViewsPaused(true);
             _pendingLevelTransitionIndex = nextLevelIndex;
             _pendingDemoLimit = false;
             _lootGraceEndsAtDemoLimit = endsAtDemoLimit;

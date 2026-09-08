@@ -9,8 +9,8 @@ namespace Entity
 {
     public class CreatureView : MonoBehaviour
     {
-        private static readonly int GetHitTrigger = Animator.StringToHash("Get Hit");
         private const string IdleAnimationName = "idle";
+        private const string MoveAnimationName = "move";
         private const string DamageAnimationName = "damage";
         private const string DeathAnimationName = "explosion";
 
@@ -37,14 +37,21 @@ namespace Entity
         [SerializeField] private SkeletonAnimation[] _additionalAnimationBodies = Array.Empty<SkeletonAnimation>();
         [SerializeField] private DeathAnimationBody[] _deathAnimationBodies = Array.Empty<DeathAnimationBody>();
 
+        [Header("Facing")]
+        [Tooltip("The direction the authored prefab faces before horizontal mirroring.")]
+        [SerializeField] private bool _facesRightByDefault;
+
         public Vector3 FootOffset => _footAnchor != null
             ? transform.position - _footAnchor.position
             : Vector3.zero;
+
+        public Vector3 FootWorldPosition => _footAnchor != null ? _footAnchor.position : transform.position;
 
         public Vector3 DamagePopupWorldPosition
         {
             get
             {
+                SyncPosition();
                 if (_damagePopupAnchor != null)
                     return _damagePopupAnchor.position;
 
@@ -58,14 +65,23 @@ namespace Entity
         private readonly List<TrackEntry> _deathTrackEntries = new();
         private int _pendingDeathAnimations;
         private Action _deathCompleteCallback;
+        private bool _isPaused;
+        private readonly Dictionary<SkeletonAnimation, float> _pausedAnimationSpeeds = new();
+        private readonly Dictionary<SkeletonAnimation, float> _originalFacingScales = new();
+        private Vector3 _lastWorldPosition;
+        private bool _isFacingRight;
 
         public void Bind(Creature creature)
         {
+            Unbind();
             _bound = creature;
             _previousHealth = creature.CurrentHP;
             _bound.OnHealthChanged += HandleHealthChanged;
 
             ResetAnimationBodies();
+            ResetFacing();
+            _lastWorldPosition = creature.WorldPosition;
+            SyncPosition();
 
             PlayIdleAnimation(_animationBody);
             PlayAdditionalIdleAnimations();
@@ -81,12 +97,15 @@ namespace Entity
 
         public void ResetForPool()
         {
+            SetPaused(false);
             Unbind();
             ResetAnimationBodies();
+            ResetFacing();
         }
 
         public void PlayDeath(Action onComplete)
         {
+            SyncPosition();
             Unbind();
             ClearDeathCallback();
 
@@ -96,6 +115,104 @@ namespace Entity
 
             if (_pendingDeathAnimations == 0)
                 CompleteDeath();
+        }
+
+        private void LateUpdate()
+        {
+            if (_bound == null) return;
+            SyncPosition();
+            if (_isPaused || !_bound.IsAlive) return;
+
+            RefreshLocomotionAnimation(_animationBody);
+            if (_additionalAnimationBodies == null) return;
+            foreach (var body in _additionalAnimationBodies)
+                RefreshLocomotionAnimation(body);
+        }
+
+        private void SyncPosition()
+        {
+            if (_bound == null) return;
+
+            var worldPosition = _bound.WorldPosition;
+            var horizontalMovement = worldPosition.x - _lastWorldPosition.x;
+            // The game's fixed, unrotated camera maps world X to screen left/right.
+            // Grid X alone cannot describe left/right on an isometric board.
+            if (_bound.Config.canMove && Mathf.Abs(horizontalMovement) > 0.00001f)
+                SetFacing(horizontalMovement > 0f);
+
+            transform.position = worldPosition + FootOffset;
+            _lastWorldPosition = worldPosition;
+        }
+
+        private void ResetFacing()
+        {
+            CacheFacingScale(_animationBody);
+            if (_additionalAnimationBodies != null)
+                foreach (var body in _additionalAnimationBodies) CacheFacingScale(body);
+            if (_deathAnimationBodies != null)
+                foreach (var body in _deathAnimationBodies) CacheFacingScale(body?.AnimationBody);
+
+            _isFacingRight = _facesRightByDefault;
+            foreach (var pair in _originalFacingScales)
+                if (pair.Key != null && pair.Key.Skeleton != null)
+                    pair.Key.Skeleton.ScaleX = pair.Value;
+        }
+
+        private void CacheFacingScale(SkeletonAnimation body)
+        {
+            if (body == null || _originalFacingScales.ContainsKey(body)) return;
+            body.Initialize(false);
+            if (body.Skeleton != null)
+                _originalFacingScales.Add(body, body.Skeleton.ScaleX);
+        }
+
+        private void SetFacing(bool faceRight)
+        {
+            if (_isFacingRight == faceRight) return;
+            _isFacingRight = faceRight;
+            var multiplier = faceRight == _facesRightByDefault ? 1f : -1f;
+            foreach (var pair in _originalFacingScales)
+                if (pair.Key != null && pair.Key.Skeleton != null)
+                    pair.Key.Skeleton.ScaleX = pair.Value * multiplier;
+        }
+
+        private void RefreshLocomotionAnimation(SkeletonAnimation body)
+        {
+            if (body == null) return;
+            var current = body.AnimationState.GetCurrent(0);
+            if (current != null && current.Animation.Name == DamageAnimationName && !current.IsComplete) return;
+
+            var animation = _bound.IsMoving && body.Skeleton.Data.FindAnimation(MoveAnimationName) != null
+                ? MoveAnimationName : IdleAnimationName;
+            if (current != null && current.Animation.Name == animation) return;
+            if (body.Skeleton.Data.FindAnimation(animation) != null)
+                body.AnimationState.SetAnimation(0, animation, true);
+        }
+
+        public void SetPaused(bool isPaused)
+        {
+            if (_isPaused == isPaused) return;
+            _isPaused = isPaused;
+            if (!isPaused)
+            {
+                foreach (var pair in _pausedAnimationSpeeds)
+                    if (pair.Key != null) pair.Key.timeScale = pair.Value;
+                _pausedAnimationSpeeds.Clear();
+                return;
+            }
+
+            PauseAnimation(_animationBody);
+            if (_additionalAnimationBodies != null)
+                foreach (var body in _additionalAnimationBodies) PauseAnimation(body);
+            if (_deathAnimationBodies != null)
+                foreach (var body in _deathAnimationBodies) PauseAnimation(body?.AnimationBody);
+        }
+
+        private void PauseAnimation(SkeletonAnimation body)
+        {
+            if (body == null || _pausedAnimationSpeeds.ContainsKey(body)) return;
+            _pausedAnimationSpeeds.Add(body, body.timeScale);
+            body.timeScale = 0f;
         }
 
         private void OnDrawGizmos()
@@ -111,6 +228,7 @@ namespace Entity
 
         private void HandleHealthChanged(BigDouble current, BigDouble max)
         {
+            SyncPosition();
             if (current < _previousHealth)
                 PlayDamageAnimations();
 
@@ -133,7 +251,6 @@ namespace Entity
             if (animationBody.Skeleton.Data.FindAnimation(DamageAnimationName) == null) return;
 
             animationBody.AnimationState.SetAnimation(0, DamageAnimationName, false);
-            animationBody.AnimationState.AddAnimation(0, IdleAnimationName, true, 0f);
         }
 
         private void ResetAnimationBodies()

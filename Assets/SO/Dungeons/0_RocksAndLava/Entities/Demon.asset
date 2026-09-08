@@ -46,6 +46,10 @@ MonoBehaviour:
     exponent: 0
   countsAsEnemyKill: 1
   featureType: 0
+  canMove: 1
+  moveChance: 0.05
+  moveCheckInterval: 3
+  moveSpeed: 1
   viewPrefab: {fileID: 4410620522826001164, guid: fc78efcae8da34268b1702183abf3ac3, type: 3}
   damageZoneHitRadius: 0.25
   drawDamageZoneHitAreaGizmo: 0
