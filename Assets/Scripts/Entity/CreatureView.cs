@@ -80,6 +80,8 @@ namespace Entity
 
             ResetAnimationBodies();
             ResetFacing();
+            if (creature.Config.countsAsEnemyKill && creature.Config.featureType == FeatureType.None)
+                SetFacing(UnityEngine.Random.Range(0, 2) == 1);
             _lastWorldPosition = creature.WorldPosition;
             SyncPosition();
 
