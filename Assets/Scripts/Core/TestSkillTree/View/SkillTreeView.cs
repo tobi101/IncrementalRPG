@@ -68,7 +68,7 @@ namespace Core.TestSkillTree.View
 
             _service.OnUpgraded += RefreshAll;
             _service.OnNodeUpgraded += HandleNodeUpgraded;
-            _player.OnGoldChanged += RefreshGold;
+            _player.OnGoldChanged += HandleGoldChanged;
             _player.OnShardsChanged += RefreshShards;
             RefreshGold();
             RefreshShardFeatureVisibility();
@@ -78,6 +78,8 @@ namespace Core.TestSkillTree.View
         public void Show()
         {
             gameObject.SetActive(true);
+            RefreshGold();
+            RefreshAll();
             ApplyInitialFocusIfNeeded();
         }
 
@@ -85,6 +87,15 @@ namespace Core.TestSkillTree.View
         {
             CompleteActiveRevealFromCachedStates();
             gameObject.SetActive(false);
+        }
+
+        private void HandleGoldChanged()
+        {
+            RefreshGold();
+
+            // Hidden trees catch up in Show; avoid refreshing every node while farming.
+            if (isActiveAndEnabled)
+                RefreshAll();
         }
 
         private void RefreshGold()
@@ -370,6 +381,8 @@ namespace Core.TestSkillTree.View
             foreach (var pair in currentStates)
                 _lastNodeStates[pair.Key] = pair.Value;
 
+            _popupView.RefreshCurrent();
+
             if (revealedNodeIds.Count > 0)
                 _revealRoutine = StartCoroutine(PlayRevealSequence(revealedNodeIds));
         }
@@ -551,7 +564,7 @@ namespace Core.TestSkillTree.View
             }
             if (_player != null)
             {
-                _player.OnGoldChanged -= RefreshGold;
+                _player.OnGoldChanged -= HandleGoldChanged;
                 _player.OnShardsChanged -= RefreshShards;
             }
         }

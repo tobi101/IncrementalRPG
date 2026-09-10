@@ -45,6 +45,7 @@ namespace Core.Gameplay
         private readonly List<Action> _pendingDeathCompletions = new();
         private bool _isPaused;
         private bool _areViewsPaused;
+        private bool _areDeathAnimationsPaused;
 
         private struct ActiveEntry
         {
@@ -110,12 +111,14 @@ namespace Core.Gameplay
                 FlushPendingDeathCompletions();
         }
 
-        public void SetViewsPaused(bool isPaused)
+        public void SetViewsPaused(bool isPaused, bool pauseDeathAnimations = true)
         {
-            if (_areViewsPaused == isPaused) return;
+            var areDeathAnimationsPaused = isPaused && pauseDeathAnimations;
+            if (_areViewsPaused == isPaused && _areDeathAnimationsPaused == areDeathAnimationsPaused) return;
             _areViewsPaused = isPaused;
+            _areDeathAnimationsPaused = areDeathAnimationsPaused;
             foreach (var entry in _active)
-                entry.View.SetPaused(isPaused);
+                entry.View.SetPaused(entry.Creature.IsAlive ? _areViewsPaused : _areDeathAnimationsPaused);
         }
 
         private void TrySpawnAny()
@@ -196,6 +199,8 @@ namespace Core.Gameplay
                     _poolManager.Return(view, config);
                 };
 
+                // A creature can die after its living animation was paused for a transition.
+                view.SetPaused(_areDeathAnimationsPaused);
                 view.PlayDeath(() => CompleteDeathOrDefer(completeDeath));
             };
             creature.OnDamageTaken += onDamageTaken;

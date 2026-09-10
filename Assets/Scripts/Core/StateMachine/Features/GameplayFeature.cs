@@ -149,7 +149,7 @@ namespace Core.StateMachine.Features
 
             _isPaused = isPaused;
             _spawnService.SetPaused(_isPaused);
-            _spawnService.SetViewsPaused(_isPaused || _runState != RunState.Playing);
+            RefreshViewPauseState();
             OnPauseChanged?.Invoke(_isPaused);
         }
 
@@ -169,7 +169,7 @@ namespace Core.StateMachine.Features
 
         public void Tick(float deltaTime)
         {
-            _spawnService.SetViewsPaused(_isPaused || _runState != RunState.Playing);
+            RefreshViewPauseState();
             if (_isPaused)
                 return;
 
@@ -190,6 +190,13 @@ namespace Core.StateMachine.Features
         private void TickReady()
         {
             _damageZone.UpdateAim();
+        }
+
+        private void RefreshViewPauseState()
+        {
+            var isLevelTransition = _runState == RunState.LootGrace || _runState == RunState.Transitioning;
+            _spawnService.SetViewsPaused(_isPaused || _runState != RunState.Playing,
+                pauseDeathAnimations: _isPaused || !isLevelTransition);
         }
 
         private void TickPlaying(float deltaTime)
@@ -240,7 +247,7 @@ namespace Core.StateMachine.Features
         private void ExpireSession()
         {
             _runState = RunState.Expired;
-            _spawnService.SetViewsPaused(true);
+            RefreshViewPauseState();
             _shardDropService.DespawnAll();
             ApplySessionResults();
             OnSessionExpired?.Invoke();
@@ -325,7 +332,7 @@ namespace Core.StateMachine.Features
         private void BeginLootGrace(int nextLevelIndex, bool endsAtDemoLimit)
         {
             _runState = RunState.LootGrace;
-            _spawnService.SetViewsPaused(true);
+            RefreshViewPauseState();
             _pendingLevelTransitionIndex = nextLevelIndex;
             _pendingDemoLimit = false;
             _lootGraceEndsAtDemoLimit = endsAtDemoLimit;

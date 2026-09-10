@@ -84,6 +84,12 @@ namespace Core.TestSkillTree.View
             Refresh();
         }
 
+        public void RefreshCurrent()
+        {
+            if (isActiveAndEnabled && _current != null)
+                Refresh();
+        }
+
         private void ApplyVisualState(NodeState state)
         {
             if (_framePriceSpriteConfig != null && _framePriceImage != null)
