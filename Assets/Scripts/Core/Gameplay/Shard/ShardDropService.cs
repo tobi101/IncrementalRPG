@@ -24,7 +24,6 @@ namespace Core.Gameplay.Shards
             public float ScatterElapsed;
             public float LifetimeRemaining;
             public float CollectionElapsed;
-            public float ElapsedLifetime;
             public bool IsSettled;
         }
 
@@ -40,7 +39,7 @@ namespace Core.Gameplay.Shards
 
         public int ActiveCount => _active.Count;
 
-        public event Action<BigDouble, Vector3> OnShardCollected;
+        public event Action<BigDouble, ShardPickupView> OnShardCollected;
 
         public ShardDropService(SpawnService spawnService, DamageZone damageZone, ShardPickupConfig config,
             SkillTreeService skillTree, Player player)
@@ -76,29 +75,23 @@ namespace Core.Gameplay.Shards
 
             var pickupDuration = GetPickupDuration();
             var collectedValue = BigDouble.Zero;
-            var collectedPositions = new List<(BigDouble value, Vector3 position)>();
+            var collectedShards = new List<(BigDouble value, ShardPickupView view)>();
 
             for (var i = _active.Count - 1; i >= 0; i--)
             {
                 var shard = _active[i];
-                shard.ElapsedLifetime += deltaTime;
 
                 if (!shard.IsSettled)
                     UpdateScatter(shard, deltaTime);
                 else
                     UpdateCollection(shard, deltaTime, pickupDuration);
 
-                var collectionProgress = pickupDuration <= 0f
-                    ? 1f
-                    : Mathf.Clamp01(shard.CollectionElapsed / pickupDuration);
-                shard.View.SetVisualProgress(collectionProgress, shard.ElapsedLifetime);
-
                 // Collection wins if collection and expiration happen during the same frame.
                 if (shard.IsSettled && shard.CollectionElapsed >= pickupDuration)
                 {
                     collectedValue += shard.Value;
-                    collectedPositions.Add((shard.Value, shard.Position));
-                    ReturnAt(i);
+                    collectedShards.Add((shard.Value, shard.View));
+                    _active.RemoveAt(i);
                     continue;
                 }
 
@@ -111,8 +104,12 @@ namespace Core.Gameplay.Shards
                 return;
 
             _player.AddShards(collectedValue);
-            foreach (var collected in collectedPositions)
-                OnShardCollected?.Invoke(collected.value, collected.position);
+            foreach (var collected in collectedShards)
+            {
+                OnShardCollected?.Invoke(collected.value, collected.view);
+                collected.view.ResetForPool();
+                _pool.Return(collected.view);
+            }
         }
 
         public void DespawnAll()
@@ -214,6 +211,8 @@ namespace Core.Gameplay.Shards
                 shard.CollectionElapsed = Mathf.Min(pickupDuration, shard.CollectionElapsed + deltaTime);
             else
                 shard.CollectionElapsed = 0f;
+
+            shard.View.SetCollectionProgress(shard.CollectionElapsed / pickupDuration, deltaTime);
         }
 
         private void ReturnAt(int index)

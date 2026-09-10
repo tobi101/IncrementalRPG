@@ -5,25 +5,29 @@ namespace Core.Gameplay.Shards
     public sealed class ShardPickupView : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _icon;
-        [SerializeField] private SpriteRenderer _glow;
-        [SerializeField] private Color _collectedColor = Color.white;
-        [SerializeField, Min(0f)] private float _glowPulseAmount = 0.08f;
-        [SerializeField, Min(0f)] private float _glowPulseSpeed = 4f;
 
-        private Color _iconBaseColor = Color.white;
-        private Color _glowBaseColor = new Color(0.35f, 0.2f, 1f, 0.35f);
-        private Vector3 _glowBaseScale = Vector3.one;
+        private static readonly int ShineLocation = Shader.PropertyToID("_ShineLocation");
+        private static readonly int ShineGlow = Shader.PropertyToID("_ShineGlow");
+        private const float LiftHeight = 0.06f;
+        private const float LiftSpeed = 0.4f;
+        private const float ShineIntensity = 0.3f;
+
+        private MaterialPropertyBlock _properties;
+        private Vector3 _iconBasePosition;
+        private float _lift;
+
+        public SpriteRenderer Icon => _icon;
 
         private void Awake()
         {
-            CacheBaseVisuals();
+            _properties = new MaterialPropertyBlock();
+            _iconBasePosition = _icon.transform.localPosition;
         }
 
         public void Prepare(Vector3 worldPosition)
         {
-            CacheBaseVisuals();
             transform.position = worldPosition;
-            SetVisualProgress(0f, 0f);
+            ResetForPool();
         }
 
         public void SetWorldPosition(Vector3 worldPosition)
@@ -31,36 +35,22 @@ namespace Core.Gameplay.Shards
             transform.position = worldPosition;
         }
 
-        public void SetVisualProgress(float collectionProgress, float elapsedLifetime)
+        public void SetCollectionProgress(float progress, float deltaTime)
         {
-            collectionProgress = Mathf.Clamp01(collectionProgress);
+            _properties.SetFloat(ShineLocation, progress);
+            _properties.SetFloat(ShineGlow, progress > 0f && progress < 1f ? ShineIntensity : 0f);
+            _icon.SetPropertyBlock(_properties);
 
-            if (_icon != null)
-                _icon.color = Color.Lerp(_iconBaseColor, _collectedColor, collectionProgress);
-
-            if (_glow == null)
-                return;
-
-            var pulse = 1f + Mathf.Sin(elapsedLifetime * _glowPulseSpeed) * _glowPulseAmount;
-            _glow.transform.localScale = _glowBaseScale * pulse;
-            _glow.color = Color.Lerp(_glowBaseColor, Color.white, collectionProgress);
+            _lift = Mathf.MoveTowards(_lift, Mathf.SmoothStep(0f, LiftHeight, progress), LiftSpeed * deltaTime);
+            _icon.transform.localPosition = _iconBasePosition + Vector3.up * _lift;
         }
 
         public void ResetForPool()
         {
-            SetVisualProgress(0f, 0f);
-        }
-
-        private void CacheBaseVisuals()
-        {
-            if (_icon != null)
-                _iconBaseColor = _icon.color;
-
-            if (_glow != null)
-            {
-                _glowBaseColor = _glow.color;
-                _glowBaseScale = _glow.transform.localScale;
-            }
+            _lift = 0f;
+            _icon.transform.localPosition = _iconBasePosition;
+            _properties.Clear();
+            _icon.SetPropertyBlock(_properties);
         }
     }
 }

@@ -10,11 +10,12 @@ namespace Core.Gameplay
         private const string AnimIdle   = "idle";
         private const string AnimAttack = "attack";
         private const string AnimReady  = "ready";
+        private const string WaveIdle = "none";
+        private static readonly string[] WaveAttacks = { "attack1", "attack2", "attack3", "attack4" };
         private const string SpecialCooldownBoneName = "cooldown";
 
         [SerializeField] private SkeletonAnimation _circle;
-        [SerializeField] private SkeletonAnimation _manualWaveBack;
-        [SerializeField] private SkeletonAnimation _manualWaveFront;
+        [SerializeField] private SkeletonAnimation _manualWave;
         [SerializeField] private SkeletonAnimation _autoWaveBack;
         [SerializeField] private SkeletonAnimation _autoWaveFront;
         [SerializeField] private SkeletonAnimation _specialWave;
@@ -24,8 +25,7 @@ namespace Core.Gameplay
         [SerializeField] private float _baseRadiusX = 0.6f;
 
         private Vector3 _circleBaseScale;
-        private Vector3 _manualWaveBackBaseScale;
-        private Vector3 _manualWaveFrontBaseScale;
+        private Vector3 _manualWaveBaseScale;
         private Vector3 _autoWaveBackBaseScale;
         private Vector3 _autoWaveFrontBaseScale;
         private Vector3 _specialWaveBaseScale;
@@ -45,8 +45,7 @@ namespace Core.Gameplay
         private void Awake()
         {
             _circleBaseScale = GetBaseScale(_circle);
-            _manualWaveBackBaseScale = GetBaseScale(_manualWaveBack);
-            _manualWaveFrontBaseScale = GetBaseScale(_manualWaveFront);
+            _manualWaveBaseScale = GetBaseScale(_manualWave);
             _autoWaveBackBaseScale = GetBaseScale(_autoWaveBack);
             _autoWaveFrontBaseScale = GetBaseScale(_autoWaveFront);
             _specialWaveBaseScale = GetBaseScale(_specialWave);
@@ -83,8 +82,7 @@ namespace Core.Gameplay
         {
             var s = _damageZone.RadiusX / _baseRadiusX;
             SetScale(_circle, _circleBaseScale, s);
-            SetScale(_manualWaveBack, _manualWaveBackBaseScale, s);
-            SetScale(_manualWaveFront, _manualWaveFrontBaseScale, s);
+            SetScale(_manualWave, _manualWaveBaseScale, s);
             SetScale(_autoWaveBack, _autoWaveBackBaseScale, s);
             SetScale(_autoWaveFront, _autoWaveFrontBaseScale, s);
             SetScale(_specialWave, _specialWaveBaseScale, s);
@@ -95,12 +93,12 @@ namespace Core.Gameplay
             switch (source)
             {
                 case DamageZone.AttackSource.Manual:
-                    PlayAttack(_manualWaveBack);
-                    PlayAttack(_manualWaveFront);
+                    PlayAttack(_manualWave, WaveAttacks[Random.Range(0, WaveAttacks.Length)]);
                     break;
                 case DamageZone.AttackSource.Auto:
-                    PlayAttack(_autoWaveBack);
-                    PlayAttack(_autoWaveFront);
+                    var animationName = WaveAttacks[Random.Range(0, 2)];
+                    PlayAttack(_autoWaveBack, animationName);
+                    PlayAttack(_autoWaveFront, animationName);
                     break;
                 case DamageZone.AttackSource.Special:
                     PlaySpecialAttack();
@@ -224,12 +222,12 @@ namespace Core.Gameplay
             _specialCooldownBone.ScaleY = scale;
         }
 
-        private void PlayAttack(SkeletonAnimation wave)
+        private void PlayAttack(SkeletonAnimation wave, string animationName)
         {
-            if (!EnsureReady(wave) || wave.Skeleton.Data.FindAnimation(AnimAttack) == null)
+            if (!EnsureReady(wave) || wave.Skeleton.Data.FindAnimation(animationName) == null)
                 return;
 
-            var entry = wave.AnimationState.SetAnimation(0, AnimAttack, false);
+            var entry = wave.AnimationState.SetAnimation(0, animationName, false);
             if (entry == null)
                 return;
 
@@ -242,10 +240,10 @@ namespace Core.Gameplay
 
         private void PlayIdle(SkeletonAnimation wave)
         {
-            if (!EnsureReady(wave) || wave.Skeleton.Data.FindAnimation(AnimIdle) == null)
+            if (!EnsureReady(wave) || wave.Skeleton.Data.FindAnimation(WaveIdle) == null)
                 return;
 
-            var idle = wave.AnimationState.SetAnimation(0, AnimIdle, true);
+            var idle = wave.AnimationState.SetAnimation(0, WaveIdle, true);
             if (idle != null)
                 idle.MixDuration = 0f;
         }

@@ -6,6 +6,7 @@ using Core.StateMachine;
 using Core.StateMachine.States;
 using Model;
 using Reflex.Attributes;
+using Spine.Unity;
 using UDND.Core;
 using UDND.DataBinding;
 using UDND.Interaction;
@@ -26,6 +27,7 @@ namespace UI.Inventory
 
         [Header("Drop Areas")]
         [SerializeField] private Graphic _recycleDropPanel;
+        [SerializeField] private SkeletonGraphic _recycleGraphic;
         [SerializeField] private Image _helmetSlot;
         [SerializeField] private Image _chestSlot;
         [SerializeField] private Image _weaponSlot;
@@ -94,7 +96,7 @@ namespace UI.Inventory
                 itemUseInput.Input.Configure(itemUseInput.Slot, _consumables);
 
             var recycleArea = _recycleDropPanel.gameObject.AddComponent<InventoryRecycleDropArea>();
-            recycleArea.Configure(_player, _recycleDropPanel);
+            recycleArea.Configure(_player, _recycleDropPanel, _recycleGraphic);
 
             _helmetDropArea = CreateEquipmentDropArea(_helmetSlot, EquipmentSlot.Helmet);
             _chestDropArea = CreateEquipmentDropArea(_chestSlot, EquipmentSlot.Chest);

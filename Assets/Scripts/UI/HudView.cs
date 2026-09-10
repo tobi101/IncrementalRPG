@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core.Gameplay.Dungeon;
+using Core.Gameplay.Shards;
 using Core.StateMachine.Features;
 using Model;
 using Reflex.Attributes;
@@ -9,6 +10,7 @@ using TMPro;
 using UI.Localization;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.UI;
 using Utils;
 
 namespace UI
@@ -40,9 +42,12 @@ namespace UI
         private GameplayFeature _gameplay;
         private Player _player;
         private Core.TestSkillTree.SkillTreeService _skillTree;
+        private ShardDropService _shardDropService;
         private readonly Queue<GoldPopupView> _popupPool = new();
+        private readonly List<(RectTransform icon, Vector3 start, float elapsed)> _shardFlights = new();
 
         private const float BatchWindow = 0.2f;
+        private const float ShardFlightDuration = 0.35f;
 
         private float _killsDisplayed;
         private int _killsTarget;
@@ -81,11 +86,12 @@ namespace UI
 
         [Inject]
         public void Construct(GameplayFeature gameplay, Player player,
-            Core.TestSkillTree.SkillTreeService skillTree)
+            Core.TestSkillTree.SkillTreeService skillTree, ShardDropService shardDropService)
         {
             _gameplay = gameplay;
             _player = player;
             _skillTree = skillTree;
+            _shardDropService = shardDropService;
 
             if (_popupPrefab != null)
             {
@@ -102,6 +108,7 @@ namespace UI
             _gameplay.OnLevelExperienceChanged += HandleLevelExperienceChanged;
             _gameplay.OnDungeonLevelChanged += HandleDungeonLevelChanged;
             _player.OnShardsChanged += RefreshShards;
+            _shardDropService.OnShardCollected += HandleShardCollected;
             _skillTree.OnUpgraded += RefreshShardFeatureVisibility;
             RefreshShardFeatureVisibility();
             RefreshShards();
@@ -138,6 +145,9 @@ namespace UI
         private void OnDisable()
         {
             HideLevelTransition();
+            foreach (var flight in _shardFlights)
+                Destroy(flight.icon.gameObject);
+            _shardFlights.Clear();
         }
 
         private void ResetPopups()
@@ -160,6 +170,8 @@ namespace UI
 
             if (isGameplayPaused)
                 return;
+
+            UpdateShardFlights();
 
             if (_batchTimer > 0f)
             {
@@ -205,6 +217,60 @@ namespace UI
 
             if (_pendingPopupGold == BigDouble.Zero) _batchTimer = BatchWindow;
             _pendingPopupGold += delta;
+        }
+
+        private void HandleShardCollected(BigDouble value, ShardPickupView shard)
+        {
+            if (!isActiveAndEnabled)
+                return;
+
+            var canvas = _shardText.canvas.rootCanvas;
+            var container = (RectTransform)canvas.transform;
+            var uiCamera = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera;
+            var worldCamera = Camera.main;
+            var source = shard.Icon;
+            var bounds = source.bounds;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(container,
+                worldCamera.WorldToScreenPoint(bounds.center), uiCamera, out var start);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(container,
+                worldCamera.WorldToScreenPoint(bounds.min), uiCamera, out var min);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(container,
+                worldCamera.WorldToScreenPoint(bounds.max), uiCamera, out var max);
+
+            var image = new GameObject("ShardFlight", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image))
+                .GetComponent<Image>();
+            image.transform.SetParent(container, false);
+            image.gameObject.layer = container.gameObject.layer;
+            image.sprite = source.sprite;
+            image.color = source.color;
+            image.raycastTarget = false;
+            image.rectTransform.sizeDelta = max - min;
+            image.rectTransform.localPosition = start;
+            _shardFlights.Add((image.rectTransform, start, 0f));
+        }
+
+        private void UpdateShardFlights()
+        {
+            for (var i = _shardFlights.Count - 1; i >= 0; i--)
+            {
+                var flight = _shardFlights[i];
+                flight.elapsed += Time.deltaTime;
+                var t = Mathf.Clamp01(flight.elapsed / ShardFlightDuration);
+                var target = flight.icon.parent.InverseTransformPoint(
+                    _shardText.rectTransform.TransformPoint(_shardText.rectTransform.rect.center));
+                flight.icon.localPosition = Vector3.Lerp(flight.start, target, t * t)
+                                            + Vector3.up * (Mathf.Sin(t * Mathf.PI) * 45f);
+
+                if (t >= 1f)
+                {
+                    Destroy(flight.icon.gameObject);
+                    _shardFlights.RemoveAt(i);
+                }
+                else
+                {
+                    _shardFlights[i] = flight;
+                }
+            }
         }
 
         private void RefreshShards()
@@ -488,6 +554,9 @@ namespace UI
 
             if (_player != null)
                 _player.OnShardsChanged -= RefreshShards;
+
+            if (_shardDropService != null)
+                _shardDropService.OnShardCollected -= HandleShardCollected;
 
             if (_skillTree != null)
                 _skillTree.OnUpgraded -= RefreshShardFeatureVisibility;
