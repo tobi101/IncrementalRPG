@@ -1,0 +1,1092 @@
+fileFormatVersion: 2
+guid: 5ba04d32de5d240da946f4bb39abf28e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 176231631387453304
+    second: fire_auto_contour_up_0
+  - first:
+      213: -261689006713730623
+    second: fire_auto_contour_up_1
+  - first:
+      213: 6788279091332460582
+    second: fire_auto_contour_up_2
+  - first:
+      213: 1482637638903705816
+    second: fire_auto_contour_up_3
+  - first:
+      213: -863958783249739303
+    second: fire_auto_contour_up_4
+  - first:
+      213: 5882461289101843115
+    second: fire_auto_contour_up_5
+  - first:
+      213: 2313043605332614614
+    second: fire_auto_contour_up_6
+  - first:
+      213: -4330865336751754113
+    second: fire_auto_contour_up_7
+  - first:
+      213: 7476904484079159377
+    second: fire_auto_contour_up_8
+  - first:
+      213: -7530321006450720429
+    second: fire_auto_contour_up_9
+  - first:
+      213: 2631184432874419868
+    second: fire_auto_contour_up_10
+  - first:
+      213: -4672195850641286226
+    second: fire_auto_contour_up_11
+  - first:
+      213: -4883561082494667478
+    second: fire_auto_contour_up_12
+  - first:
+      213: -2689600645156748647
+    second: fire_auto_contour_up_13
+  - first:
+      213: 1534261784766130719
+    second: fire_auto_contour_up_14
+  - first:
+      213: 8390324684675715247
+    second: fire_auto_contour_up_15
+  - first:
+      213: 2047348180184377833
+    second: fire_auto_contour_up_16
+  - first:
+      213: -3617638651398414063
+    second: fire_auto_contour_up_17
+  - first:
+      213: -2539492605475720909
+    second: fire_auto_contour_up_18
+  - first:
+      213: 3200516202072362077
+    second: fire_auto_contour_up_19
+  - first:
+      213: -9140778111654824579
+    second: fire_auto_contour_up_20
+  - first:
+      213: 5565863163994238696
+    second: fire_auto_contour_up_21
+  - first:
+      213: 5681345228831144824
+    second: fire_auto_contour_up_22
+  - first:
+      213: 4839874292416491787
+    second: fire_auto_contour_up_23
+  - first:
+      213: -6882130031005658460
+    second: fire_auto_contour_up_24
+  - first:
+      213: 7581676532977697264
+    second: fire_auto_contour_up_25
+  - first:
+      213: -8999385576895576525
+    second: fire_auto_contour_up_26
+  - first:
+      213: 1025693753151385417
+    second: fire_auto_contour_up_27
+  - first:
+      213: -2145318406751657543
+    second: fire_auto_contour_up_28
+  - first:
+      213: -1962652426383494782
+    second: fire_auto_contour_up_29
+  - first:
+      213: -7589924601521791410
+    second: fire_auto_contour_up_30
+  - first:
+      213: 5419748969547001863
+    second: fire_auto_contour_up_31
+  - first:
+      213: 9038091470970234829
+    second: fire_auto_contour_up_32
+  - first:
+      213: 923909246267611027
+    second: fire_auto_contour_up_33
+  - first:
+      213: -7130415497225676271
+    second: fire_auto_contour_up_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fire_auto_contour_up_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 324
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 877690b2cb9127200800000000000000
+      internalID: 176231631387453304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_1
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1
+        width: 300
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c904312c3b4e5cf0800000000000000
+      internalID: -261689006713730623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_2
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1
+        width: 271
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62035132edfc43e50800000000000000
+      internalID: 6788279091332460582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1
+        width: 249
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d0ba75c313639410800000000000000
+      internalID: 1482637638903705816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_4
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 1
+        width: 227
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d112d7601a9204f0800000000000000
+      internalID: -863958783249739303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_5
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 1
+        width: 219
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baad6e53063b2a150800000000000000
+      internalID: 5882461289101843115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_6
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1
+        width: 192
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddd6dd67e4991020800000000000000
+      internalID: 2313043605332614614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_7
+      rect:
+        serializedVersion: 2
+        x: 1783
+        y: 1
+        width: 177
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f74fbd01ceca5e3c0800000000000000
+      internalID: -4330865336751754113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_8
+      rect:
+        serializedVersion: 2
+        x: 2015
+        y: 393
+        width: 96
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1584011930d43c760800000000000000
+      internalID: 7476904484079159377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_9
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 1
+        width: 159
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 351c7d521fcee7790800000000000000
+      internalID: -7530321006450720429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_10
+      rect:
+        serializedVersion: 2
+        x: 2289
+        y: 1
+        width: 147
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9674041d48d38420800000000000000
+      internalID: 2631184432874419868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_11
+      rect:
+        serializedVersion: 2
+        x: 2634
+        y: 395
+        width: 52
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eabd871d0a6092fb0800000000000000
+      internalID: -4672195850641286226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_12
+      rect:
+        serializedVersion: 2
+        x: 2004
+        y: 354
+        width: 100
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a25bbf6d11b1a3cb0800000000000000
+      internalID: -4883561082494667478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_13
+      rect:
+        serializedVersion: 2
+        x: 2436
+        y: 1
+        width: 138
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99245cd967e9caad0800000000000000
+      internalID: -2689600645156748647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_14
+      rect:
+        serializedVersion: 2
+        x: 2627
+        y: 364
+        width: 62
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1a2171e6faca4510800000000000000
+      internalID: 1534261784766130719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_15
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1
+        width: 128
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa0994cc8db607470800000000000000
+      internalID: 8390324684675715247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_16
+      rect:
+        serializedVersion: 2
+        x: 2828
+        y: 1
+        width: 120
+        height: 381
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e9ae639254a96c10800000000000000
+      internalID: 2047348180184377833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_17
+      rect:
+        serializedVersion: 2
+        x: 2948
+        y: 1
+        width: 113
+        height: 381
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 111aca940d09bcdc0800000000000000
+      internalID: -3617638651398414063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_18
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 293
+        width: 106
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33173ec1ee8e1ccd0800000000000000
+      internalID: -2539492605475720909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_19
+      rect:
+        serializedVersion: 2
+        x: 2581
+        y: 294
+        width: 66
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5cc76a57848a6c20800000000000000
+      internalID: 3200516202072362077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_20
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 190
+        width: 111
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d75f524ccbe652180800000000000000
+      internalID: -9140778111654824579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_21
+      rect:
+        serializedVersion: 2
+        x: 2574
+        y: 255
+        width: 60
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eeee46fe0bed3d40800000000000000
+      internalID: 5565863163994238696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_22
+      rect:
+        serializedVersion: 2
+        x: 2589
+        y: 195
+        width: 65
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87b37d2726138de40800000000000000
+      internalID: 5681345228831144824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_23
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 157
+        width: 88
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b01b705b600ba2340800000000000000
+      internalID: 4839874292416491787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_24
+      rect:
+        serializedVersion: 2
+        x: 2590
+        y: 158
+        width: 61
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a21cdb2333cd70a0800000000000000
+      internalID: -6882130031005658460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_25
+      rect:
+        serializedVersion: 2
+        x: 1964
+        y: 124
+        width: 91
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f10d0623a6873960800000000000000
+      internalID: 7581676532977697264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_26
+      rect:
+        serializedVersion: 2
+        x: 2575
+        y: 124
+        width: 64
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3368d54af72cb1380800000000000000
+      internalID: -8999385576895576525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_27
+      rect:
+        serializedVersion: 2
+        x: 1989
+        y: 85
+        width: 80
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94fececb80ffb3e00800000000000000
+      internalID: 1025693753151385417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_28
+      rect:
+        serializedVersion: 2
+        x: 2610
+        y: 92
+        width: 46
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b1e573864c4a32e0800000000000000
+      internalID: -2145318406751657543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_29
+      rect:
+        serializedVersion: 2
+        x: 1997
+        y: 57
+        width: 85
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2817adb440243c4e0800000000000000
+      internalID: -1962652426383494782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_30
+      rect:
+        serializedVersion: 2
+        x: 2614
+        y: 62
+        width: 48
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e9b4eb9cb2ba690800000000000000
+      internalID: -7589924601521791410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_31
+      rect:
+        serializedVersion: 2
+        x: 2005
+        y: 24
+        width: 102
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70073a509f0d63b40800000000000000
+      internalID: 5419748969547001863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_32
+      rect:
+        serializedVersion: 2
+        x: 2623
+        y: 33
+        width: 53
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc72ba69e40cd6d70800000000000000
+      internalID: 9038091470970234829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_33
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 1
+        width: 106
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 397da7c709262dc00800000000000000
+      internalID: 923909246267611027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_auto_contour_up_34
+      rect:
+        serializedVersion: 2
+        x: 2642
+        y: 1
+        width: 58
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a5ce242ecab0d90800000000000000
+      internalID: -7130415497225676271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fire_auto_contour_up_0: 176231631387453304
+      fire_auto_contour_up_1: -261689006713730623
+      fire_auto_contour_up_10: 2631184432874419868
+      fire_auto_contour_up_11: -4672195850641286226
+      fire_auto_contour_up_12: -4883561082494667478
+      fire_auto_contour_up_13: -2689600645156748647
+      fire_auto_contour_up_14: 1534261784766130719
+      fire_auto_contour_up_15: 8390324684675715247
+      fire_auto_contour_up_16: 2047348180184377833
+      fire_auto_contour_up_17: -3617638651398414063
+      fire_auto_contour_up_18: -2539492605475720909
+      fire_auto_contour_up_19: 3200516202072362077
+      fire_auto_contour_up_2: 6788279091332460582
+      fire_auto_contour_up_20: -9140778111654824579
+      fire_auto_contour_up_21: 5565863163994238696
+      fire_auto_contour_up_22: 5681345228831144824
+      fire_auto_contour_up_23: 4839874292416491787
+      fire_auto_contour_up_24: -6882130031005658460
+      fire_auto_contour_up_25: 7581676532977697264
+      fire_auto_contour_up_26: -8999385576895576525
+      fire_auto_contour_up_27: 1025693753151385417
+      fire_auto_contour_up_28: -2145318406751657543
+      fire_auto_contour_up_29: -1962652426383494782
+      fire_auto_contour_up_3: 1482637638903705816
+      fire_auto_contour_up_30: -7589924601521791410
+      fire_auto_contour_up_31: 5419748969547001863
+      fire_auto_contour_up_32: 9038091470970234829
+      fire_auto_contour_up_33: 923909246267611027
+      fire_auto_contour_up_34: -7130415497225676271
+      fire_auto_contour_up_4: -863958783249739303
+      fire_auto_contour_up_5: 5882461289101843115
+      fire_auto_contour_up_6: 2313043605332614614
+      fire_auto_contour_up_7: -4330865336751754113
+      fire_auto_contour_up_8: 7476904484079159377
+      fire_auto_contour_up_9: -7530321006450720429
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
