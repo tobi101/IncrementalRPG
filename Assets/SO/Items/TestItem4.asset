@@ -15,7 +15,7 @@ MonoBehaviour:
   itemId: test4
   displayName: Test4
   description:
-  icon: {fileID: 21300000, guid: 32617440f9fe04c6db93d33c7151597f, type: 3}
+  icon: {fileID: 2805869032646550298, guid: f93901fd000a14dad92b78ed6198e8ab, type: 3}
   category: 2
   stackable: 1
   maxStackSize: 99

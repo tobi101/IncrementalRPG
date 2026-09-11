@@ -55,6 +55,7 @@ namespace UI.Inventory
         private EquipmentDropArea _bootsDropArea;
         private SideMenuFlyoutView _sideMenu;
         private bool _started;
+        private readonly HashSet<string> _usedRewardIds = new();
 
         protected override void Awake()
         {
@@ -146,22 +147,54 @@ namespace UI.Inventory
                 var adapter = new GameItemAdapter(state, definition);
                 ItemStack.TryCreate(new[] { adapter }, out var stack);
 
-                if (!_runtimeInventory.TryAddStack(stack))
-                    continue;
+                bool placed;
+                using (BeginSync())
+                    placed = _runtimeInventory.TryAddStack(stack);
 
-                var placement = _runtimeInventory.Placements.First(candidate =>
-                    candidate.Stack.Adapters.Contains(adapter));
-                _storage.Place(new[] { state }, placement.AnchorIndex, placement.Orientation);
-                rewards.Add(new LootReward(state.InstanceId, definition));
+                if (placed)
+                {
+                    var placement = _runtimeInventory.Placements.First(candidate =>
+                        candidate.Stack.Adapters.Contains(adapter));
+                    _storage.Place(new[] { state }, placement.AnchorIndex, placement.Orientation);
+                }
+                else
+                {
+                    // Keep overflow in saved storage. ReloadUI places it when a cell becomes available.
+                    _storage.Place(new[] { state }, -1, 0);
+                }
+
+                rewards.Add(new LootReward(state.InstanceId, definition, !placed));
             }
 
             return new LootBatch(rewards);
         }
 
+        public bool CanUseReward(LootReward reward)
+        {
+            if (_usedRewardIds.Contains(reward.InstanceId) ||
+                !_storage.Items.Any(item => item.InstanceId == reward.InstanceId &&
+                                            item.ItemDefinitionId == reward.Definition.itemId))
+                return false;
+
+            // Current consumables only register a test effect; scrolls have no use handler yet.
+            return reward.Definition.category == ItemCategory.Armor &&
+                   reward.Definition.equipmentSlot != EquipmentSlot.None;
+        }
+
+        public bool TryUseReward(LootReward reward)
+        {
+            if (!CanUseReward(reward) || !_usedRewardIds.Add(reward.InstanceId))
+                return false;
+
+            _storage.Equip(reward.Definition.equipmentSlot, reward.InstanceId);
+            return true;
+        }
+
         protected override IEnumerable<PlacementData<PlayerItemInstanceState>> GetPlacements()
         {
             var visited = new HashSet<string>();
-            foreach (var item in _storage.Items)
+            // Restore occupied cells first, then try saved overflow in the remaining space.
+            foreach (var item in _storage.Items.OrderBy(item => item.AnchorIndex < 0))
             {
                 if (!visited.Add(item.InstanceId))
                     continue;
@@ -238,6 +271,13 @@ namespace UI.Inventory
             }
 
             _storage.SynchronizePlacements(placements);
+        }
+
+        protected override void OnDropCompletedFrom(DragContext context)
+        {
+            base.OnDropCompletedFrom(context);
+            if (_storage.Items.Any(item => item.AnchorIndex < 0))
+                ReloadUI();
         }
 
         private EquipmentDropArea CreateEquipmentDropArea(Image image, EquipmentSlot slot)

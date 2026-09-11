@@ -13,6 +13,7 @@ namespace UI
     {
         public event Action SpinCompleted;
         public event Action ContinueClicked;
+        public event Action UseNowClicked;
 
         [Header("Chest")]
         [SerializeField] private SkeletonGraphic _chest;
@@ -22,79 +23,117 @@ namespace UI
 
         [Header("Roll")]
         [SerializeField] private RectTransform _itemViewport;
-        [SerializeField] private RectTransform[] _finalAnchors;
+        [SerializeField] private Sprite[] _ambientIcons;
         [SerializeField] private Vector2 _itemSize = new(150f, 150f);
         [SerializeField, Min(1f)] private float _itemSpacing = 190f;
-        [SerializeField, Min(1f)] private float _spinSpeed = 1100f;
-        [SerializeField, Min(0f)] private float _spinStartDelay = 0.6f;
+        [SerializeField, Min(1f)] private float _spinSpeed = 2200f;
+        [SerializeField, Min(0f), Tooltip("Minimum opening time. The reel also waits for the Spine animation to finish.")]
+        private float _spinStartDelay = 0.6f;
         [SerializeField, Min(0f)] private float _constantSpinDuration = 1.8f;
         [SerializeField, Min(0.01f)] private float _settleDuration = 1.2f;
         [SerializeField, Min(0f)] private float _winnerEntryPadding = 40f;
 
-        [Header("Continue")]
-        [SerializeField] private Button _continueButton;
+        [Header("Result")]
+        [SerializeField] private LootRewardPopupView _resultPopupPrefab;
+        [SerializeField] private RectTransform _resultPopupParent;
+        [SerializeField] private GameObject[] _transitionLabels;
 
         private readonly List<Image> _itemViews = new();
-        private LootBatch _batch;
+        private LootReward _reward;
+        private LootRewardPopupView _resultPopup;
+        private int _finalItemCount;
+        private bool _prepared;
+        private bool _spinStarted;
+        private bool _spinFinished;
         private Coroutine _spinRoutine;
         private int _rollingItemCount;
         private bool _isPaused;
+        private Spine.TrackEntry _openingEntry;
+        private bool _openingCompleted;
 
         private void Awake()
         {
-            _continueButton.onClick.AddListener(HandleContinueClicked);
-            ResetView();
+            _resultPopup = Instantiate(_resultPopupPrefab, _resultPopupParent, false);
+            _resultPopup.ContinueClicked += HandleContinueClicked;
+            _resultPopup.UseNowClicked += HandleUseNowClicked;
+            // Prepare can run before Awake while the transition curtain is inactive.
+            if (!_prepared)
+                ResetView();
         }
 
         private void OnDisable()
         {
+            CancelOpening();
             if (_spinRoutine != null)
                 StopCoroutine(_spinRoutine);
 
             _spinRoutine = null;
+            _resultPopup?.Hide();
         }
 
         private void OnDestroy()
         {
-            _continueButton.onClick.RemoveListener(HandleContinueClicked);
+            CancelOpening();
+            if (_resultPopup == null)
+                return;
+
+            _resultPopup.ContinueClicked -= HandleContinueClicked;
+            _resultPopup.UseNowClicked -= HandleUseNowClicked;
+            Destroy(_resultPopup.gameObject);
         }
 
-        public void Prepare(LootBatch batch)
+        public void Prepare(LootReward reward)
         {
-            _batch = batch;
             ResetView();
+            _reward = reward;
+            _prepared = true;
         }
 
         public void PlayOpen()
         {
-            PrepareChest();
-            var openEntry = _chest.AnimationState.SetAnimation(0, _openAnimationName, false);
-            openEntry.MixDuration = 0f;
-            openEntry.Complete += _ => BeginOpenIdle();
-            _spinRoutine = StartCoroutine(BeginSpinAfterDelay());
+            if (!_prepared || _spinStarted)
+                return;
+
+            _spinStarted = true;
+            _spinRoutine = StartCoroutine(OpenAndSpinRoutine());
         }
 
-        public void ShowContinueButton()
+        public void ShowResult(bool canUse, string status)
         {
-            _continueButton.gameObject.SetActive(true);
-            _continueButton.interactable = true;
-            _continueButton.transform.SetAsLastSibling();
+            if (!_spinFinished)
+                return;
+
+            foreach (var label in _transitionLabels)
+                label.SetActive(false);
+            _resultPopup.Show(_reward, canUse, status);
+            _resultPopup.SetPaused(_isPaused);
         }
+
+        public void HideResult() => _resultPopup.Hide();
+
+        public void ShowUseUnavailable(string status) => _resultPopup.ShowUseUnavailable(status);
 
         public void SetPaused(bool isPaused)
         {
             _isPaused = isPaused;
+            _resultPopup?.SetPaused(isPaused);
             _chest.timeScale = isPaused ? 0f : 1f;
         }
 
         public void ResetView()
         {
+            CancelOpening();
             if (_spinRoutine != null)
                 StopCoroutine(_spinRoutine);
 
             _spinRoutine = null;
-            _continueButton.gameObject.SetActive(false);
-            _continueButton.interactable = false;
+            _prepared = false;
+            _spinStarted = false;
+            _spinFinished = false;
+            _resultPopup?.Hide();
+            _chest.gameObject.SetActive(true);
+            foreach (var label in _transitionLabels)
+                label.SetActive(true);
 
             foreach (var itemView in _itemViews)
                 itemView.gameObject.SetActive(false);
@@ -104,28 +143,47 @@ namespace UI
             idleEntry.MixDuration = 0f;
         }
 
-        private void BeginOpenIdle()
+        private void HandleOpeningCompleted(Spine.TrackEntry entry)
         {
+            if (!ReferenceEquals(entry, _openingEntry))
+                return;
+
+            _openingEntry.Complete -= HandleOpeningCompleted;
+            _openingEntry = null;
+            _openingCompleted = true;
             var idleEntry = _chest.AnimationState.SetAnimation(0, _openIdleAnimationName, true);
             idleEntry.MixDuration = 0f;
         }
 
-        private IEnumerator BeginSpinAfterDelay()
+        private void CancelOpening()
         {
+            if (_openingEntry != null)
+                _openingEntry.Complete -= HandleOpeningCompleted;
+            _openingEntry = null;
+            _openingCompleted = false;
+        }
+
+        private IEnumerator OpenAndSpinRoutine()
+        {
+            PrepareChest();
+            _openingCompleted = false;
+            _openingEntry = _chest.AnimationState.SetAnimation(0, _openAnimationName, false);
+            _openingEntry.MixDuration = 0f;
+            _openingEntry.Complete += HandleOpeningCompleted;
+
             var elapsed = 0f;
-            while (elapsed < _spinStartDelay)
+            while (!_openingCompleted || _isPaused || elapsed < _spinStartDelay)
             {
                 elapsed += GetGameplayDeltaTime();
                 yield return null;
             }
 
-            if (_batch.Rewards.Count == 0)
-            {
-                _spinRoutine = null;
-                SpinCompleted?.Invoke();
-                yield break;
-            }
+            // Give the fully opened pose a rendered frame before replacing the chest.
+            yield return null;
+            while (_isPaused)
+                yield return null;
 
+            _chest.gameObject.SetActive(false);
             EnsureItemPool();
             yield return SpinRoutine();
         }
@@ -147,7 +205,7 @@ namespace UI
             var winnerLeadOffset = CalculateWinnerLeadOffset(outgoingStartPositions);
             var brakingDistance = _spinSpeed * _settleDuration * 0.5f;
             var approachDistance = winnerLeadOffset - brakingDistance;
-            PrepareWinnerItems(winnerLeadOffset);
+            PrepareFinalItems(winnerLeadOffset);
 
             elapsed = 0f;
             var approachDuration = approachDistance / _spinSpeed;
@@ -156,7 +214,7 @@ namespace UI
                 elapsed += GetGameplayDeltaTime();
                 var distance = Mathf.Min(approachDistance, elapsed * _spinSpeed);
                 MoveOutgoingItems(outgoingStartPositions, distance);
-                PositionWinnerItems(winnerLeadOffset - distance);
+                PositionFinalItems(winnerLeadOffset - distance);
                 yield return null;
             }
 
@@ -170,15 +228,15 @@ namespace UI
                 var remainingDistance = brakingDistance * (1f - t) * (1f - t);
                 var traveledDistance = brakingDistance - remainingDistance;
                 MoveOutgoingItems(outgoingBrakingPositions, traveledDistance);
-                PositionWinnerItems(remainingDistance);
+                PositionFinalItems(remainingDistance);
                 yield return null;
             }
 
             for (var i = 0; i < _rollingItemCount; i++)
                 _itemViews[i].gameObject.SetActive(false);
 
-            for (var i = 0; i < _batch.Rewards.Count; i++)
-                GetWinnerView(i).rectTransform.anchoredPosition = _finalAnchors[i].anchoredPosition;
+            PositionFinalItems(0f);
+            _spinFinished = true;
 
             _spinRoutine = null;
             SpinCompleted?.Invoke();
@@ -187,7 +245,8 @@ namespace UI
         private void EnsureItemPool()
         {
             _rollingItemCount = Mathf.CeilToInt(_itemViewport.rect.width / _itemSpacing) + 3;
-            var requiredCount = _rollingItemCount + _batch.Rewards.Count;
+            _finalItemCount = 2 * Mathf.CeilToInt((_itemViewport.rect.width * 0.5f + _itemSize.x * 0.5f) / _itemSpacing) + 1;
+            var requiredCount = _rollingItemCount + _finalItemCount;
 
             while (_itemViews.Count < requiredCount)
             {
@@ -217,14 +276,14 @@ namespace UI
             foreach (var itemView in _itemViews)
                 itemView.gameObject.SetActive(false);
 
-            var right = _itemViewport.rect.xMax + _itemSize.x * 0.5f;
+            var left = _itemViewport.rect.xMin - _itemSize.x * 0.5f;
 
             for (var i = 0; i < _rollingItemCount; i++)
             {
                 var itemView = _itemViews[i];
                 itemView.gameObject.SetActive(true);
-                itemView.sprite = GetRandomRewardIcon();
-                itemView.rectTransform.anchoredPosition = new Vector2(right + i * _itemSpacing, 0f);
+                itemView.sprite = GetAmbientIcon();
+                itemView.rectTransform.anchoredPosition = new Vector2(left + i * _itemSpacing, 0f);
             }
         }
 
@@ -250,7 +309,7 @@ namespace UI
                 {
                     rightMost += _itemSpacing;
                     position.x = rightMost;
-                    itemView.sprite = GetRandomRewardIcon();
+                    itemView.sprite = GetAmbientIcon();
                     itemView.rectTransform.anchoredPosition = position;
                 }
             }
@@ -267,12 +326,9 @@ namespace UI
 
         private float CalculateWinnerLeadOffset(IReadOnlyList<Vector2> outgoingPositions)
         {
-            var leftmostAnchorX = float.MaxValue;
-            foreach (var anchor in _finalAnchors)
-                leftmostAnchorX = Mathf.Min(leftmostAnchorX, anchor.anchoredPosition.x);
-
+            var leftmostFinalX = GetFinalPosition(0).x;
             var rightEntryX = _itemViewport.rect.xMax + _itemSize.x * 0.5f + _winnerEntryPadding;
-            var winnerEntryOffset = rightEntryX - leftmostAnchorX;
+            var entryOffset = rightEntryX - leftmostFinalX;
 
             var rightmostOutgoingX = float.MinValue;
             foreach (var position in outgoingPositions)
@@ -280,18 +336,18 @@ namespace UI
 
             var leftExitX = _itemViewport.rect.xMin - _itemSize.x * 0.5f;
             var outgoingExitDistance = rightmostOutgoingX - leftExitX + _itemSpacing;
+            var continuousEntryOffset = rightmostOutgoingX + _itemSpacing - leftmostFinalX;
             var brakingDistance = _spinSpeed * _settleDuration * 0.5f;
-            return Mathf.Max(winnerEntryOffset, outgoingExitDistance, brakingDistance);
+            return Mathf.Max(entryOffset, outgoingExitDistance, continuousEntryOffset, brakingDistance);
         }
 
-        private void PrepareWinnerItems(float leadOffset)
+        private void PrepareFinalItems(float leadOffset)
         {
-            for (var i = 0; i < _batch.Rewards.Count; i++)
+            for (var i = 0; i < _finalItemCount; i++)
             {
-                var itemView = GetWinnerView(i);
-                itemView.sprite = _batch.Rewards[i].Definition.icon;
-                itemView.rectTransform.anchoredPosition =
-                    _finalAnchors[i].anchoredPosition + Vector2.right * leadOffset;
+                var itemView = GetFinalView(i);
+                itemView.sprite = i == _finalItemCount / 2 ? _reward.Definition.icon : GetAmbientIcon();
+                itemView.rectTransform.anchoredPosition = GetFinalPosition(i) + Vector2.right * leadOffset;
                 itemView.gameObject.SetActive(true);
             }
         }
@@ -303,28 +359,36 @@ namespace UI
                     startPositions[i] + Vector2.left * distance;
         }
 
-        private void PositionWinnerItems(float offset)
+        private void PositionFinalItems(float offset)
         {
-            for (var i = 0; i < _batch.Rewards.Count; i++)
-                GetWinnerView(i).rectTransform.anchoredPosition =
-                    _finalAnchors[i].anchoredPosition + Vector2.right * offset;
+            for (var i = 0; i < _finalItemCount; i++)
+                GetFinalView(i).rectTransform.anchoredPosition =
+                    GetFinalPosition(i) + Vector2.right * offset;
         }
 
-        private Image GetWinnerView(int rewardIndex)
-        {
-            return _itemViews[_rollingItemCount + rewardIndex];
-        }
+        private Vector2 GetFinalPosition(int index) =>
+            new(_itemViewport.rect.center.x + (index - _finalItemCount / 2) * _itemSpacing, 0f);
 
-        private Sprite GetRandomRewardIcon()
+        private Image GetFinalView(int index) => _itemViews[_rollingItemCount + index];
+
+        private Sprite GetAmbientIcon()
         {
-            var index = UnityEngine.Random.Range(0, _batch.Rewards.Count);
-            return _batch.Rewards[index].Definition.icon;
+            if (_ambientIcons == null || _ambientIcons.Length == 0)
+                return _reward.Definition.icon;
+
+            return _ambientIcons[UnityEngine.Random.Range(0, _ambientIcons.Length)];
         }
 
         private void HandleContinueClicked()
         {
-            _continueButton.interactable = false;
-            ContinueClicked?.Invoke();
+            if (_spinFinished && !_isPaused)
+                ContinueClicked?.Invoke();
+        }
+
+        private void HandleUseNowClicked()
+        {
+            if (_spinFinished && !_isPaused)
+                UseNowClicked?.Invoke();
         }
 
         private void PrepareChest()

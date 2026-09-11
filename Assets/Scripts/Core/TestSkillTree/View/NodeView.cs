@@ -12,6 +12,7 @@ namespace Core.TestSkillTree.View
     public class NodeView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         [SerializeField] private Image _icon;
+        [SerializeField] private Image _additionalIcon;
         [SerializeField, FormerlySerializedAs("_borderIcon")] private Image _stateCircleImage;
         [SerializeField] private float _stateCircleRotationDegreesPerSecond = 18f;
         [SerializeField] private NodeLevelCounterView _levelCounter;
@@ -43,8 +44,17 @@ namespace Core.TestSkillTree.View
             _circleSpriteConfig = circleSpriteConfig;
             _audioManager      = audioManager;
 
-            if (_icon != null && definition.icon != null)
+            if (_icon != null)
+            {
                 _icon.sprite = definition.icon;
+                _icon.enabled = definition.icon != null;
+            }
+
+            if (_additionalIcon != null)
+            {
+                _additionalIcon.sprite = definition.additionalIcon;
+                _additionalIcon.gameObject.SetActive(definition.additionalIcon != null);
+            }
 
             _levelCounter?.Initialize(definition.maxLevel, service.GetLevel(definition.id));
 

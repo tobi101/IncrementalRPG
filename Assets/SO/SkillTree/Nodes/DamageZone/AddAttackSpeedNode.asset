@@ -31,7 +31,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  icon: {fileID: 4153240674832713612, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  icon: {fileID: 21300000, guid: 5ce615f9c62504c56ab1ca5b23ad4745, type: 3}
   additionalIcon: {fileID: 0}
   maxLevel: 4
   goldCostPerLevel:

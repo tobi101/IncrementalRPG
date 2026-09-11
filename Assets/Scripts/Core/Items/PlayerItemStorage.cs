@@ -41,11 +41,13 @@ namespace Core.Items
     {
         public string InstanceId { get; }
         public ItemDefinition Definition { get; }
+        public bool IsPendingPlacement { get; }
 
-        public LootReward(string instanceId, ItemDefinition definition)
+        public LootReward(string instanceId, ItemDefinition definition, bool isPendingPlacement = false)
         {
             InstanceId = instanceId;
             Definition = definition;
+            IsPendingPlacement = isPendingPlacement;
         }
     }
 
