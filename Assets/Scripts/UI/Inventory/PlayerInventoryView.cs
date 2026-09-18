@@ -7,19 +7,23 @@ using Core.StateMachine.States;
 using Model;
 using Reflex.Attributes;
 using Spine.Unity;
+using TMPro;
 using UDND.Core;
 using UDND.DataBinding;
 using UDND.Interaction;
 using UDND.Inventories;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+using Utils;
 
 namespace UI.Inventory
 {
     [DisallowMultipleComponent]
     public sealed class PlayerInventoryView :
         PlacementInventoryDataBinding<PlayerItemInstanceState, GameItemAdapter>,
-        IPlayerInventoryGateway
+        IPlayerInventoryGateway, Core.Forge.IForgeInventoryGateway
     {
         [Header("Grid")]
         [SerializeField] private UniversalInventory _runtimeInventory;
@@ -40,6 +44,8 @@ namespace UI.Inventory
         [Header("Universal Drag And Drop")]
         [SerializeField] private GameObject _dragCanvasPrefab;
         [SerializeField] private GameObject _tooltipCanvasPrefab;
+        [SerializeField] private TMP_Text _consumableFeedback;
+        [SerializeField] private GameObject _consumableFeedbackRoot;
 
         [Inject] private PlayerItemStorage _storage;
         [Inject] private ItemCatalog _itemCatalog;
@@ -52,10 +58,10 @@ namespace UI.Inventory
         private EquipmentDropArea _helmetDropArea;
         private EquipmentDropArea _chestDropArea;
         private EquipmentDropArea _weaponDropArea;
-        private EquipmentDropArea _bootsDropArea;
         private SideMenuFlyoutView _sideMenu;
         private bool _started;
         private readonly HashSet<string> _usedRewardIds = new();
+        private string _feedbackKey;
 
         protected override void Awake()
         {
@@ -94,7 +100,7 @@ namespace UI.Inventory
             _pauseMenuController.RegisterSideMenu(_sideMenu);
 
             foreach (var itemUseInput in _itemUseInputs)
-                itemUseInput.Input.Configure(itemUseInput.Slot, _consumables);
+                itemUseInput.Input.Configure(itemUseInput.Slot, _consumables, ShowConsumableFeedback, _storage);
 
             var recycleArea = _recycleDropPanel.gameObject.AddComponent<InventoryRecycleDropArea>();
             recycleArea.Configure(_player, _recycleDropPanel, _recycleGraphic);
@@ -102,10 +108,17 @@ namespace UI.Inventory
             _helmetDropArea = CreateEquipmentDropArea(_helmetSlot, EquipmentSlot.Helmet);
             _chestDropArea = CreateEquipmentDropArea(_chestSlot, EquipmentSlot.Chest);
             _weaponDropArea = CreateEquipmentDropArea(_weaponSlot, EquipmentSlot.Weapon);
-            _bootsDropArea = CreateEquipmentDropArea(_bootsSlot, EquipmentSlot.Boots);
+            if (_bootsSlot != null)
+            {
+                // Decorative silhouette only; boots are not an equipment/drop slot.
+                _bootsSlot.gameObject.SetActive(true);
+                _bootsSlot.raycastTarget = false;
+                _bootsSlot.preserveAspect = true;
+            }
 
             _storage.OnChanged += RefreshEquipment;
             _storage.OnInventoryRefreshRequested += ReloadUI;
+            LocalizationSettings.SelectedLocaleChanged += HandleLocaleChanged;
 
             _started = true;
             base.OnEnable();
@@ -120,6 +133,7 @@ namespace UI.Inventory
 
         protected override void OnDisable()
         {
+            ClearConsumableFeedback();
             if (_started)
                 base.OnDisable();
         }
@@ -131,6 +145,7 @@ namespace UI.Inventory
 
             _storage.OnChanged -= RefreshEquipment;
             _storage.OnInventoryRefreshRequested -= ReloadUI;
+            LocalizationSettings.SelectedLocaleChanged -= HandleLocaleChanged;
             _sideMenu.ReturnToHubButton.onClick.RemoveListener(ReturnToHub);
         }
 
@@ -138,11 +153,26 @@ namespace UI.Inventory
 
         public void Hide() => gameObject.SetActive(false);
 
-        public LootBatch Grant(IReadOnlyList<ItemDefinition> definitions)
+        public LootBatch Grant(IReadOnlyList<LootDrop> drops)
         {
-            var rewards = new List<LootReward>(definitions.Count);
-            foreach (var definition in definitions)
+            var rewards = new List<LootReward>(drops.Count);
+            foreach (var drop in drops)
             {
+                var definition = drop.Definition;
+                if (definition.category == ItemCategory.Currency)
+                {
+                    var amount = BigDoubleMath.SanitizeNonNegativeInteger(drop.CurrencyAmount, BigDouble.Zero);
+                    if (amount <= 0)
+                        throw new ArgumentException("Currency reward must have a positive amount.", nameof(drops));
+                    switch (definition.currency)
+                    {
+                        case RewardCurrency.Gold: _player.GoldTotal += amount; break;
+                        case RewardCurrency.Shards: _player.AddShards(amount); break;
+                        default: throw new ArgumentOutOfRangeException(nameof(definition.currency));
+                    }
+                    rewards.Add(new LootReward(null, definition, currencyAmount: amount));
+                    continue;
+                }
                 var state = _storage.Create(definition);
                 var adapter = new GameItemAdapter(state, definition);
                 ItemStack.TryCreate(new[] { adapter }, out var stack);
@@ -166,28 +196,105 @@ namespace UI.Inventory
                 rewards.Add(new LootReward(state.InstanceId, definition, !placed));
             }
 
+            _runtimeInventory.NotifyContentRefreshed();
             return new LootBatch(rewards);
         }
 
-        public bool CanUseReward(LootReward reward)
+        public bool HasForgeSpace()
         {
-            if (_usedRewardIds.Contains(reward.InstanceId) ||
+            ReloadUI();
+            var topology = _runtimeInventory.Topology;
+            for (var i = 0; i < _runtimeInventory.SlotCount; i++)
+            {
+                var cell = topology.ToCell(i);
+                var clear = true;
+                for (var y = 0; y < 2 && clear; y++)
+                    for (var x = 0; x < 2 && clear; x++)
+                    {
+                        clear = topology.TryToIndex(cell + new Vector2Int(x, y), out var index) && index < _runtimeInventory.SlotCount &&
+                            topology.ToCell(index) == cell + new Vector2Int(x, y) && _runtimeInventory.GetPlacementAt(index) == null;
+                    }
+                if (clear) return true;
+            }
+            return false;
+        }
+
+        public bool TryStoreForgedItem(PlayerItemInstanceState state)
+        {
+            if (_storage.TryGet(state.InstanceId, out _)) return true;
+            ReloadUI();
+            var adapter = new GameItemAdapter(state, _itemCatalog.Get(state.ItemDefinitionId));
+            ItemStack.TryCreate(new[] { adapter }, out var stack);
+            using (BeginSync())
+                if (!_runtimeInventory.TryAddStack(stack)) return false;
+            var placement = _runtimeInventory.Placements.First(p => p.Stack.Adapters.Contains(adapter));
+            _storage.Place(new[] { state }, placement.AnchorIndex, placement.Orientation);
+            _runtimeInventory.NotifyContentRefreshed();
+            return true;
+        }
+
+        public bool CanUseReward(LootReward reward) => reward.Definition != null &&
+            (reward.Definition.category == ItemCategory.Consumable || reward.Definition.category == ItemCategory.Armor) &&
+            string.IsNullOrEmpty(GetRewardUseUnavailableKey(reward));
+
+        public string GetRewardUseUnavailableKey(LootReward reward)
+        {
+            if (reward.Definition != null && reward.Definition.category is ItemCategory.Currency or ItemCategory.Scroll)
+                return string.Empty;
+            if (reward.Definition == null || _usedRewardIds.Contains(reward.InstanceId) ||
                 !_storage.Items.Any(item => item.InstanceId == reward.InstanceId &&
                                             item.ItemDefinitionId == reward.Definition.itemId))
-                return false;
+                return ItemText.UseResultKey(ConsumableUseResult.MissingItem);
 
-            // Current consumables only register a test effect; scrolls have no use handler yet.
-            return reward.Definition.category == ItemCategory.Armor &&
-                   reward.Definition.equipmentSlot != EquipmentSlot.None;
+            if (reward.Definition.category == ItemCategory.Consumable)
+                return ItemText.UseResultKey(_consumables.CanUse(reward.InstanceId));
+            return _storage.CanEquip(reward.Definition.equipmentSlot, reward.InstanceId)
+                ? string.Empty : "potion.use.unsupported";
         }
 
         public bool TryUseReward(LootReward reward)
         {
-            if (!CanUseReward(reward) || !_usedRewardIds.Add(reward.InstanceId))
+            if (!CanUseReward(reward))
                 return false;
 
-            _storage.Equip(reward.Definition.equipmentSlot, reward.InstanceId);
+            if (reward.Definition.category == ItemCategory.Consumable)
+            {
+                if (!_consumables.TryUse(reward.InstanceId))
+                    return false;
+            }
+            else if (!_storage.Equip(reward.Definition.equipmentSlot, reward.InstanceId))
+                return false;
+            _usedRewardIds.Add(reward.InstanceId);
             return true;
+        }
+
+        private void ShowConsumableFeedback(ConsumableUseResult result)
+        {
+            _feedbackKey = result == ConsumableUseResult.Success ? "potion.use.prepared" : ItemText.UseResultKey(result);
+            RefreshConsumableFeedback();
+            _consumableFeedbackRoot?.SetActive(true);
+            CancelInvoke(nameof(ClearConsumableFeedback));
+            Invoke(nameof(ClearConsumableFeedback), 5f);
+        }
+
+        private void ClearConsumableFeedback()
+        {
+            CancelInvoke(nameof(ClearConsumableFeedback));
+            _feedbackKey = null;
+            _consumableFeedbackRoot?.SetActive(false);
+        }
+
+        private void RefreshConsumableFeedback()
+        {
+            if (_consumableFeedback != null)
+                _consumableFeedback.text = string.IsNullOrEmpty(_feedbackKey) ? string.Empty : ItemText.Get(_feedbackKey);
+        }
+
+        private void HandleLocaleChanged(Locale locale)
+        {
+            RefreshConsumableFeedback();
+            if (_started && isActiveAndEnabled)
+                ReloadUI();
         }
 
         protected override IEnumerable<PlacementData<PlayerItemInstanceState>> GetPlacements()
@@ -199,8 +306,8 @@ namespace UI.Inventory
                 if (!visited.Add(item.InstanceId))
                     continue;
 
-                var definition = _itemCatalog.Get(item.ItemDefinitionId);
-                if (item.AnchorIndex < 0 || !definition.stackable)
+                if (!_itemCatalog.TryGet(item.ItemDefinitionId, out var definition)) continue;
+                if (item.AnchorIndex < 0 || !definition.IsStackable)
                 {
                     yield return new PlacementData<PlayerItemInstanceState>(
                         new[] { item }, item.AnchorIndex, item.Orientation);
@@ -297,15 +404,14 @@ namespace UI.Inventory
             RefreshEquipmentSlot(_helmetDropArea, EquipmentSlot.Helmet);
             RefreshEquipmentSlot(_chestDropArea, EquipmentSlot.Chest);
             RefreshEquipmentSlot(_weaponDropArea, EquipmentSlot.Weapon);
-            RefreshEquipmentSlot(_bootsDropArea, EquipmentSlot.Boots);
         }
 
         private void RefreshEquipmentSlot(EquipmentDropArea dropArea, EquipmentSlot slot)
         {
+            if (dropArea == null) return;
             var equippedId = _storage.GetEquipped(slot);
-            var icon = string.IsNullOrEmpty(equippedId)
-                ? null
-                : _itemCatalog.Get(_storage.Get(equippedId).ItemDefinitionId).icon;
+            var icon = _storage.TryGet(equippedId, out var item) && _itemCatalog.TryGet(item.ItemDefinitionId, out var definition)
+                ? definition.GetIcon(item) : null;
             dropArea.SetEquippedIcon(icon);
         }
     }

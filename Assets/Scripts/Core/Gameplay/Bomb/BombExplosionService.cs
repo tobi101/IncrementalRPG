@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Core.TestSkillTree;
+using Core.Items;
 using Entity;
 using IncrementalRPG.Scripts.Core;
 using UnityEngine;
@@ -13,13 +14,15 @@ namespace Core.Gameplay.Bomb
         private readonly SpawnService _spawnService;
         private readonly BombExplosionConfig _config;
         private readonly SkillTreeService _skillTree;
+        private readonly PlayerItemStorage _equipment;
 
-        public BombExplosionService(TileGrid tileGrid, SpawnService spawnService, BombExplosionConfig config, SkillTreeService skillTree)
+        public BombExplosionService(TileGrid tileGrid, SpawnService spawnService, BombExplosionConfig config, SkillTreeService skillTree, PlayerItemStorage equipment)
         {
             _tileGrid = tileGrid;
             _spawnService = spawnService;
             _config = config;
             _skillTree = skillTree;
+            _equipment = equipment;
         }
 
         public void Initialize()
@@ -47,10 +50,7 @@ namespace Core.Gameplay.Bomb
 
             var a = GetRadius();
             var b = a * _config.aspectRatio;
-            var baseDamage = BigDouble.Max(BigDouble.Zero,
-                _config.baseDamage + _skillTree.GetBonus(StatType.BombExplosionDamage));
-            var damage = BigDoubleMath.MultiplyAndRound(baseDamage,
-                Mathf.Max(0f, _skillTree.GetMultiplier(StatType.BombExplosionDamage)));
+            var damage = GetDamage();
 
             // var debugGo = new GameObject("BombExplosionDebug");
             // debugGo.AddComponent<BombExplosionDebugView>().Show(epicenter, a, b, 0.5f);
@@ -68,11 +68,17 @@ namespace Core.Gameplay.Bomb
             }
         }
 
-        private float GetRadius()
+        public BigDouble GetDamage()
         {
-            return _config.baseRadius * _skillTree.GetMultiplier(StatType.BombExplosionRadius)
-                   + _skillTree.GetBonus(StatType.BombExplosionRadius);
+            var trained = BigDouble.Max(BigDouble.Zero, _config.baseDamage + _skillTree.GetBonus(StatType.BombExplosionDamage));
+            return BigDoubleMath.MultiplyAndRound(trained,
+                (double)Mathf.Max(0f, _skillTree.GetMultiplier(StatType.BombExplosionDamage)) *
+                _equipment.GetEquipmentMultiplier(EquipmentStats.BombDamage));
         }
+
+        public float GetRadius() => (_config.baseRadius * _skillTree.GetMultiplier(StatType.BombExplosionRadius)
+                   + _skillTree.GetBonus(StatType.BombExplosionRadius)) *
+                   _equipment.GetEquipmentMultiplier(EquipmentStats.BombRadius);
 
         private void ScaleExplosionVisual(CreatureView view)
         {

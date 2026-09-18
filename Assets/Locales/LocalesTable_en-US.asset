@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: en-US
   m_SharedData: {fileID: 11400000, guid: 65c04d1b687a94fe6b2d028edf0ee3a1, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 3838683570720735372
   m_TableData:
   - m_Id: 1000000000001
     m_Localized: Bomb
@@ -362,7 +363,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3950473898876928
-    m_Localized: Mine
+    m_Localized: Shrine
     m_Metadata:
       m_Items: []
   - m_Id: 3950498993397760
@@ -547,6 +548,407 @@ MonoBehaviour:
     m_Localized: Level Completed
     m_Metadata:
       m_Items: []
+  - m_Id: 1000000001001
+    m_Localized: Wealth Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001002
+    m_Localized: 'Next level: +{0:P0} gold from creatures. Item sales are unaffected.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001003
+    m_Localized: Large Wealth Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001004
+    m_Localized: 'Next level: +{0:P0} gold from creatures. Item sales are unaffected.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001005
+    m_Localized: Rage Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001006
+    m_Localized: 'Next level: +{0:P0} manual, automatic and special attack damage.
+      Barrel explosions are unaffected.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001007
+    m_Localized: Large Rage Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001008
+    m_Localized: 'Next level: +{0:P0} manual, automatic and special attack damage.
+      Barrel explosions are unaffected.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001009
+    m_Localized: Concentration Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001010
+    m_Localized: 'Next level: special attack cooldown duration reduced by {0:P0}.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001101
+    m_Localized: Creature gold +{0:P0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001102
+    m_Localized: Attack damage +{0:P0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001103
+    m_Localized: "Special cooldown \u2212{0:P0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001104
+    m_Localized: Right-click to prepare for the next level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001105
+    m_Localized: Potion prepared for the next level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001106
+    m_Localized: A potion of this type is already prepared or active. The new item
+      was not consumed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001107
+    m_Localized: This item is no longer available.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001108
+    m_Localized: This item cannot be used now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001109
+    m_Localized: 'Sell price: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001110
+    m_Localized: "Inventory full \u2014 reward saved."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001111
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001112
+    m_Localized: Use now
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941685620736
+    m_Localized: Manual damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980864
+    m_Localized: Auto damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980865
+    m_Localized: Manual attacks / sec
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980866
+    m_Localized: Auto attacks / sec
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980867
+    m_Localized: Player zone radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980868
+    m_Localized: Barrel damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980869
+    m_Localized: Barrel blast radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980870
+    m_Localized: Unknown bonus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980871
+    m_Localized: Hero stats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980872
+    m_Localized: Right-click an item to equip or remove it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980873
+    m_Localized: Locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980874
+    m_Localized: '{0}/s'
+    m_Metadata:
+      m_Items:
+      - rid: 3838683570720735372
+  - m_Id: 44922941719175168
+    m_Localized: Common
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175169
+    m_Localized: Rare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175170
+    m_Localized: Unique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175171
+    m_Localized: Legendary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175172
+    m_Localized: Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175173
+    m_Localized: Chest armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175174
+    m_Localized: Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44927918780964864
+    m_Localized: Attacks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44927918835490816
+    m_Localized: Area of effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44927918835490817
+    m_Localized: Barrels
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44927918835490818
+    m_Localized: Right-click to equip / remove
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369033089024
+    m_Localized: Gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369045671936
+    m_Localized: Added to your gold balance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369045671937
+    m_Localized: Shards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369045671938
+    m_Localized: Added to your shard balance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369045671939
+    m_Localized: Precision Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369045671940
+    m_Localized: Increases the central forging QTE range by {0:P0}.
+    m_Metadata:
+      m_Items:
+      - rid: 3838683570720735372
+  - m_Id: 44941369049866240
+    m_Localized: Helmet Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866241
+    m_Localized: Guarantees a helmet when forging.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866242
+    m_Localized: Chestplate Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866243
+    m_Localized: Guarantees a chestplate when forging.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866244
+    m_Localized: Weapon Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866245
+    m_Localized: Guarantees a weapon when forging.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866246
+    m_Localized: Rarity Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866247
+    m_Localized: Guarantees Rare equipment when forging.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866248
+    m_Localized: Empowerment Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866249
+    m_Localized: Increases the strength of all forging bonuses by {0:P0}.
+    m_Metadata:
+      m_Items:
+      - rid: 3838683570720735372
+  - m_Id: 44941369049866250
+    m_Localized: '{0} +{1}'
+    m_Metadata:
+      m_Items:
+      - rid: 3838683570720735372
+  - m_Id: 44966829339172864
+    m_Localized: FORGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829385310208
+    m_Localized: 'Forging level:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829385310209
+    m_Localized: 'Forge gear with shards.
+
+
+      Add a scroll to influence the result
+      of your craft.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829385310210
+    m_Localized: "FORGE \xB7 {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 3838683570720735372
+  - m_Id: 44966829389504512
+    m_Localized: Select a scroll, or forge without one
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504513
+    m_Localized: 'No scrolls yet.
+
+
+      You can forge without one.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504514
+    m_Localized: Left click to stop the cursor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504515
+    m_Localized: TAKE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504516
+    m_Localized: "BREAK \xB7 {0} GOLD"
+    m_Metadata:
+      m_Items:
+      - rid: 3838683570720735372
+  - m_Id: 44966829389504517
+    m_Localized: Finish your current craft first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504518
+    m_Localized: Forging is currently unavailable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504519
+    m_Localized: Forging unlocks at location {0}.
+    m_Metadata:
+      m_Items:
+      - rid: 3838683570720735372
+  - m_Id: 44966829389504520
+    m_Localized: Not enough shards.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504521
+    m_Localized: This scroll is no longer available.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504522
+    m_Localized: "You need a free 2\xD72 space in your inventory."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504523
+    m_Localized: Item forged without an additional bonus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504524
+    m_Localized: One random stat improved!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504525
+    m_Localized: All stats improved!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504526
+    m_Localized: Perfect strike!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504527
+    m_Localized: Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504528
+    m_Localized: Chestplate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504529
+    m_Localized: Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504530
+    m_Localized: Sentinel Helm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504531
+    m_Localized: Seeker Helm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504532
+    m_Localized: Bastion Helm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504533
+    m_Localized: Sentinel Plate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504534
+    m_Localized: Seeker Plate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504535
+    m_Localized: Bastion Plate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504536
+    m_Localized: Sentinel Blade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504537
+    m_Localized: Seeker Blade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504538
+    m_Localized: Bastion Blade
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3838683570720735372
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 44922941714980874
+        - id: 44941369045671940
+        - id: 44941369049866249
+        - id: 44941369049866250
+        - id: 44966829385310210
+        - id: 44966829389504516
+        - id: 44966829389504519

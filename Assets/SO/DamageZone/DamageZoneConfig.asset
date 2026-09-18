@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a77db39a51f4563b778ca9e4b5c279, type: 3}
   m_Name: DamageZoneConfig
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.DamageZoneConfig
-  damagePerTick:
+  baseManualAttackDamage:
     mantissa: 1
     exponent: 0
   baseManualAttackCooldown: 0.75
+  baseAutoAttackDamage:
+    mantissa: 1
+    exponent: 0
   baseAutoAttackInterval: 0.75
+  baseSpecialAttackDamage:
+    mantissa: 5
+    exponent: 0
   baseSpecialAttackCooldown: 5
-  specialAttackDamageMultiplier: 5
   baseRadius: 1
   aspectRatio: 0.55

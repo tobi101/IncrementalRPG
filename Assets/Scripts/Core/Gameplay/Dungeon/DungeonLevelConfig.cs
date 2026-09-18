@@ -28,6 +28,8 @@ namespace Core.Gameplay.Dungeon
         [Min(0f)] public float initialBombSpawnDensity;
         [Min(0.1f)] public float spawnInterval = 2f;
         [Min(0.0000001f)] public float minSpawnInterval = 0.5f;
+        [Min(0.1f)] public float bombSpawnInterval = 10f;
+        [Min(0.0000001f)] public float minBombSpawnInterval = 0.5f;
 
         [Header("Rewards")]
         [Min(0f)] public float goldDropMultiplier = 1f;

@@ -16,10 +16,11 @@ namespace Core.Items
             State = state;
             Definition = definition;
 
-            var offsets = new List<Vector2Int>(definition.width * definition.height);
-            for (var y = 0; y < definition.height; y++)
+            var size = definition.InventorySize;
+            var offsets = new List<Vector2Int>(size.x * size.y);
+            for (var y = 0; y < size.y; y++)
             {
-                for (var x = 0; x < definition.width; x++)
+                for (var x = 0; x < size.x; x++)
                     offsets.Add(new Vector2Int(x, y));
             }
 
@@ -28,14 +29,14 @@ namespace Core.Items
 
         public PlayerItemInstanceState State { get; }
         public ItemDefinition Definition { get; }
-        public string ItemId => Definition.stackable ? Definition.itemId : State.InstanceId;
-        public Sprite Icon => Definition.icon;
-        public string DisplayName => Definition.displayName;
-        public int MaxStackSize => Definition.stackable ? Definition.maxStackSize : 1;
+        public string ItemId => Definition.IsStackable ? Definition.itemId : State.InstanceId;
+        public Sprite Icon => Definition.GetIcon(State);
+        public string DisplayName => Definition.GetDisplayName(State);
+        public int MaxStackSize => Definition.IsStackable ? Definition.maxStackSize : 1;
         public IPlacementShape PlacementShape => _shape;
         public ItemRarity Rarity => State.HasRolledData ? State.Rarity : Definition.rarity;
         public BigDouble SellPrice => State.HasRolledData ? State.SellPrice : Definition.sellPrice;
-        public IReadOnlyList<ItemStatState> Stats => State.HasRolledData ? State.Stats : GetDefaultStats();
+        public IReadOnlyList<ItemStatState> Stats => State.HasRolledData ? State.Stats : Definition.CopyDefaultStats();
         public string Category => Definition.category.ToString();
         public string Subcategory => Definition.equipmentSlot.ToString();
         int IFilterable.Rarity => (int)Rarity;
@@ -48,45 +49,24 @@ namespace Core.Items
             {
                 var text = new StringBuilder();
                 if (Definition.category == ItemCategory.Armor)
-                    text.AppendLine(GetRarityName(Rarity));
-                if (!string.IsNullOrEmpty(Definition.description))
-                    text.AppendLine(Definition.description);
+                    text.AppendLine(EquipmentStats.RarityName(Rarity));
+                var description = Definition.GetDescription();
+                if (!string.IsNullOrEmpty(description))
+                    text.AppendLine(description);
                 if (Definition.category == ItemCategory.Consumable)
-                    text.AppendLine("ПКМ — использовать");
+                    text.AppendLine(ItemText.Get("potion.use.inventory_hint"));
 
                 foreach (var stat in Stats)
-                    text.AppendLine($"{stat.StatId}: {stat.Value:+0.##;-0.##;0}");
+                    if (stat != null)
+                        text.AppendLine($"{EquipmentStats.Name(stat.StatId)}: {EquipmentStats.FormatPercent(stat.Value)}");
 
-                text.Append($"Цена продажи: {BigDoubleFormatter.Format(SellPrice)}");
+                if (Definition.category == ItemCategory.Armor)
+                    text.AppendLine(ItemText.Get("equipment.inventory_hint"));
+
+                text.Append(ItemText.Get("item.sell_price", BigDoubleFormatter.Format(SellPrice)));
                 return text.ToString();
             }
         }
 
-        private IReadOnlyList<ItemStatState> GetDefaultStats()
-        {
-            var stats = new List<ItemStatState>(Definition.defaultStats.Length);
-            foreach (var stat in Definition.defaultStats)
-            {
-                stats.Add(new ItemStatState
-                {
-                    StatId = stat.statId,
-                    Value = stat.value
-                });
-            }
-
-            return stats;
-        }
-
-        private static string GetRarityName(ItemRarity rarity)
-        {
-            return rarity switch
-            {
-                ItemRarity.Common => "Обычная",
-                ItemRarity.Rare => "Редкая",
-                ItemRarity.Unique => "Уникальная",
-                ItemRarity.Legendary => "Легендарная",
-                _ => string.Empty
-            };
-        }
     }
 }

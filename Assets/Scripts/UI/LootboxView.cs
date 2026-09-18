@@ -30,6 +30,7 @@ namespace UI
         [SerializeField, Min(0f), Tooltip("Minimum opening time. The reel also waits for the Spine animation to finish.")]
         private float _spinStartDelay = 0.6f;
         [SerializeField, Min(0f)] private float _constantSpinDuration = 1.8f;
+        [SerializeField] private AudioSource _spinAudioSource;
         [SerializeField, Min(0.01f)] private float _settleDuration = 1.2f;
         [SerializeField, Min(0f)] private float _winnerEntryPadding = 40f;
 
@@ -40,6 +41,7 @@ namespace UI
 
         private readonly List<Image> _itemViews = new();
         private LootReward _reward;
+        private Sprite[] _rewardIcons;
         private LootRewardPopupView _resultPopup;
         private int _finalItemCount;
         private bool _prepared;
@@ -50,6 +52,8 @@ namespace UI
         private bool _isPaused;
         private Spine.TrackEntry _openingEntry;
         private bool _openingCompleted;
+        private bool _applicationPaused;
+        private bool IsPresentationPaused => _isPaused || _applicationPaused || !Application.isFocused;
 
         private void Awake()
         {
@@ -63,6 +67,7 @@ namespace UI
 
         private void OnDisable()
         {
+            _spinAudioSource?.Stop();
             CancelOpening();
             if (_spinRoutine != null)
                 StopCoroutine(_spinRoutine);
@@ -82,10 +87,11 @@ namespace UI
             Destroy(_resultPopup.gameObject);
         }
 
-        public void Prepare(LootReward reward)
+        public void Prepare(LootReward reward, Sprite[] rewardIcons = null)
         {
             ResetView();
             _reward = reward;
+            _rewardIcons = rewardIcons != null && rewardIcons.Length > 0 ? rewardIcons : _ambientIcons;
             _prepared = true;
         }
 
@@ -117,11 +123,27 @@ namespace UI
         {
             _isPaused = isPaused;
             _resultPopup?.SetPaused(isPaused);
-            _chest.timeScale = isPaused ? 0f : 1f;
+            RefreshPresentationPause();
+        }
+
+        private void OnApplicationFocus(bool focused) => RefreshPresentationPause();
+
+        private void OnApplicationPause(bool paused)
+        {
+            _applicationPaused = paused;
+            RefreshPresentationPause();
+        }
+
+        private void RefreshPresentationPause()
+        {
+            _chest.timeScale = IsPresentationPaused ? 0f : 1f;
+            if (IsPresentationPaused) _spinAudioSource?.Pause();
+            else _spinAudioSource?.UnPause();
         }
 
         public void ResetView()
         {
+            _spinAudioSource?.Stop();
             CancelOpening();
             if (_spinRoutine != null)
                 StopCoroutine(_spinRoutine);
@@ -172,7 +194,7 @@ namespace UI
             _openingEntry.Complete += HandleOpeningCompleted;
 
             var elapsed = 0f;
-            while (!_openingCompleted || _isPaused || elapsed < _spinStartDelay)
+            while (!_openingCompleted || IsPresentationPaused || elapsed < _spinStartDelay)
             {
                 elapsed += GetGameplayDeltaTime();
                 yield return null;
@@ -180,7 +202,7 @@ namespace UI
 
             // Give the fully opened pose a rendered frame before replacing the chest.
             yield return null;
-            while (_isPaused)
+            while (IsPresentationPaused)
                 yield return null;
 
             _chest.gameObject.SetActive(false);
@@ -191,6 +213,8 @@ namespace UI
         private IEnumerator SpinRoutine()
         {
             LayoutRollingItems();
+            _spinAudioSource?.Play();
+            RefreshPresentationPause();
 
             var elapsed = 0f;
             while (elapsed < _constantSpinDuration)
@@ -237,6 +261,7 @@ namespace UI
 
             PositionFinalItems(0f);
             _spinFinished = true;
+            _spinAudioSource?.Stop();
 
             _spinRoutine = null;
             SpinCompleted?.Invoke();
@@ -373,10 +398,10 @@ namespace UI
 
         private Sprite GetAmbientIcon()
         {
-            if (_ambientIcons == null || _ambientIcons.Length == 0)
+            if (_rewardIcons == null || _rewardIcons.Length == 0)
                 return _reward.Definition.icon;
 
-            return _ambientIcons[UnityEngine.Random.Range(0, _ambientIcons.Length)];
+            return _rewardIcons[UnityEngine.Random.Range(0, _rewardIcons.Length)];
         }
 
         private void HandleContinueClicked()
@@ -396,14 +421,14 @@ namespace UI
             if (!_chest.IsValid)
                 _chest.Initialize(false);
 
-            _chest.timeScale = _isPaused ? 0f : 1f;
+            _chest.timeScale = IsPresentationPaused ? 0f : 1f;
             _chest.AnimationState.ClearTracks();
             _chest.Skeleton.SetToSetupPose();
         }
 
         private float GetGameplayDeltaTime()
         {
-            return _isPaused ? 0f : Time.deltaTime;
+            return IsPresentationPaused ? 0f : Time.deltaTime;
         }
     }
 }

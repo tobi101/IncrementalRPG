@@ -42,6 +42,14 @@ namespace Model
             ShardTotal += amount;
         }
 
+        public bool TrySpendShards(BigDouble amount)
+        {
+            if (amount <= 0 || BigDoubleMath.SanitizeNonNegativeInteger(amount, BigDouble.Zero) != amount || ShardTotal < amount)
+                return false;
+            ShardTotal -= amount;
+            return true;
+        }
+
         public SessionRecordResult UpdateSessionRecords(BigDouble sessionGold, int sessionKills)
         {
             sessionGold = BigDoubleMath.SanitizeNonNegativeInteger(sessionGold, BigDouble.Zero);

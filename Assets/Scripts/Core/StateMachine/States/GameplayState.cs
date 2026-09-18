@@ -25,6 +25,7 @@ namespace Core.StateMachine.States
 
         public void Enter()
         {
+            _audioManager?.PlayMusic(MusicTrack.Gameplay);
             _demoEndPopup = _demoEndPopupProvider?.View;
             _menuCanvas.gameObject.SetActive(false);
             _hudView.gameObject.SetActive(true);
@@ -33,6 +34,7 @@ namespace Core.StateMachine.States
             _pauseMenu?.EnableForGameplay();
             _gameplay.OnSessionExpired += HandleSessionExpired;
             _gameplay.OnLevelTransitionStarted += HandleLevelTransitionStarted;
+            _gameplay.OnLevelTransitionFinished += HandleLevelTransitionFinished;
             _hudView.OnLevelTransitionOpeningStarted += HandleLevelTransitionOpeningStarted;
             _hudView.OnLevelTransitionLampAnimationStarted += HandleLevelTransitionLampAnimationStarted;
             _gameplay.OnDemoLimitReached += HandleDemoLimitReached;
@@ -43,6 +45,7 @@ namespace Core.StateMachine.States
         {
             _gameplay.OnSessionExpired -= HandleSessionExpired;
             _gameplay.OnLevelTransitionStarted -= HandleLevelTransitionStarted;
+            _gameplay.OnLevelTransitionFinished -= HandleLevelTransitionFinished;
             _hudView.OnLevelTransitionOpeningStarted -= HandleLevelTransitionOpeningStarted;
             _hudView.OnLevelTransitionLampAnimationStarted -= HandleLevelTransitionLampAnimationStarted;
             _gameplay.OnDemoLimitReached -= HandleDemoLimitReached;
@@ -82,6 +85,12 @@ namespace Core.StateMachine.States
             float closeDuration, float holdDuration, float openDuration)
         {
             _audioManager?.PlayCurtainClose();
+            _audioManager?.PlayMusic(MusicTrack.RoundComplete);
+        }
+
+        private void HandleLevelTransitionFinished(DungeonLevelConfig level, int levelIndex)
+        {
+            _audioManager?.PlayMusic(MusicTrack.Gameplay);
         }
 
         private void HandleLevelTransitionOpeningStarted()

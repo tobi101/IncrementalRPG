@@ -11,6 +11,8 @@ namespace UI.Inventory
         private Image _background;
         private Color _normalColor;
 
+        public bool IsHighlighted => _isHighlighted;
+
         public void Configure(Image background)
         {
             _background = background;

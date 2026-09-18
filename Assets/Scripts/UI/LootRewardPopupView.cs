@@ -3,6 +3,9 @@ using Core.Items;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+using Utils;
 
 namespace UI
 {
@@ -26,18 +29,24 @@ namespace UI
         private bool _isPaused;
         private bool _canUse;
         private bool _submitted;
+        private LootReward _reward;
+        private string _unavailableKey;
+        private Vector2? _continueButtonPosition;
+        private RectTransform _continueButtonGlow;
 
         private void Awake()
         {
             _continueButton.onClick.AddListener(HandleContinue);
             _useNowButton.onClick.AddListener(HandleUseNow);
             UIButtonAudio.InstallInChildren(this);
+            LocalizationSettings.SelectedLocaleChanged += HandleLocaleChanged;
         }
 
         private void OnDestroy()
         {
             _continueButton.onClick.RemoveListener(HandleContinue);
             _useNowButton.onClick.RemoveListener(HandleUseNow);
+            LocalizationSettings.SelectedLocaleChanged -= HandleLocaleChanged;
         }
 
         private void OnDisable() => _isOpen = false;
@@ -57,9 +66,10 @@ namespace UI
             if (_isOpen)
                 return;
 
-            _title.text = reward.Definition.displayName.ToUpperInvariant();
+            _reward = reward;
+            _unavailableKey = status;
             _icon.sprite = reward.Definition.icon;
-            _status.text = status;
+            RefreshTexts();
             _canUse = canUse;
             _submitted = false;
             _isOpen = true;
@@ -89,8 +99,41 @@ namespace UI
         {
             _canUse = false;
             _submitted = false;
-            _status.text = status;
+            _unavailableKey = status;
+            RefreshTexts();
             RefreshInteraction();
+        }
+
+        private void HandleLocaleChanged(Locale locale)
+        {
+            if (_isOpen)
+                RefreshTexts();
+        }
+
+        private void RefreshTexts()
+        {
+            var definition = _reward.Definition;
+            var name = definition.GetDisplayName();
+            _title.text = (definition.category == ItemCategory.Currency
+                ? ItemText.Get("loot.currency_amount", name, BigDoubleFormatter.Format(_reward.CurrencyAmount))
+                : name).ToUpperInvariant();
+            var showUse = definition.category is ItemCategory.Consumable or ItemCategory.Armor;
+            _useNowGroup.gameObject.SetActive(showUse);
+            var continueRect = (RectTransform)_continueButton.transform;
+            _continueButtonPosition ??= continueRect.anchoredPosition;
+            continueRect.anchoredPosition = showUse ? _continueButtonPosition.Value
+                : new Vector2(0f, _continueButtonPosition.Value.y);
+            _continueButtonGlow ??= _composition.Find("ContinueButtonGlow") as RectTransform;
+            if (_continueButtonGlow != null)
+                _continueButtonGlow.anchoredPosition = continueRect.anchoredPosition;
+            var status = _reward.IsPendingPlacement ? ItemText.Get("loot.inventory_full") : string.Empty;
+            if (!string.IsNullOrEmpty(_unavailableKey))
+                status += (status.Length > 0 ? "\n" : string.Empty) + ItemText.Get(_unavailableKey);
+            else if (definition.category is ItemCategory.Consumable or ItemCategory.Scroll or ItemCategory.Currency)
+                status += (status.Length > 0 ? "\n" : string.Empty) + definition.GetDescription();
+            _status.text = status;
+            _continueButton.GetComponentInChildren<TMP_Text>(true).text = ItemText.Get("loot.continue");
+            _useNowButton.GetComponentInChildren<TMP_Text>(true).text = ItemText.Get("loot.use_now");
         }
 
         private void RefreshInteraction()

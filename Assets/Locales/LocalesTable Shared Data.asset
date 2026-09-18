@@ -543,6 +543,378 @@ MonoBehaviour:
     m_Key: hud.level_transition_message_v2
     m_Metadata:
       m_Items: []
+  - m_Id: 1000000001001
+    m_Key: item.potion_wealth.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001002
+    m_Key: item.potion_wealth.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001003
+    m_Key: item.potion_wealth_large.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001004
+    m_Key: item.potion_wealth_large.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001005
+    m_Key: item.potion_rage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001006
+    m_Key: item.potion_rage.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001007
+    m_Key: item.potion_rage_large.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001008
+    m_Key: item.potion_rage_large.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001009
+    m_Key: item.potion_concentration.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001010
+    m_Key: item.potion_concentration.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001101
+    m_Key: potion.effect.wealth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001102
+    m_Key: potion.effect.rage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001103
+    m_Key: potion.effect.concentration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001104
+    m_Key: potion.use.inventory_hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001105
+    m_Key: potion.use.prepared
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001106
+    m_Key: potion.use.family_occupied
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001107
+    m_Key: potion.use.missing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001108
+    m_Key: potion.use.unsupported
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001109
+    m_Key: item.sell_price
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001110
+    m_Key: loot.inventory_full
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001111
+    m_Key: loot.continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000000001112
+    m_Key: loot.use_now
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941685620736
+    m_Key: equipment.stat.manual_attack_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980864
+    m_Key: equipment.stat.auto_attack_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980865
+    m_Key: equipment.stat.manual_attack_speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980866
+    m_Key: equipment.stat.auto_attack_speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980867
+    m_Key: equipment.stat.player_zone_radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980868
+    m_Key: equipment.stat.barrel_explosion_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980869
+    m_Key: equipment.stat.barrel_explosion_radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980870
+    m_Key: equipment.stat.unknown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980871
+    m_Key: equipment.statistics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980872
+    m_Key: equipment.inventory_hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980873
+    m_Key: equipment.locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941714980874
+    m_Key: equipment.per_second
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175168
+    m_Key: item.rarity.common
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175169
+    m_Key: item.rarity.rare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175170
+    m_Key: item.rarity.unique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175171
+    m_Key: item.rarity.legendary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175172
+    m_Key: equipment.slot.helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175173
+    m_Key: equipment.slot.chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44922941719175174
+    m_Key: equipment.slot.weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44927918780964864
+    m_Key: equipment.section.attacks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44927918835490816
+    m_Key: equipment.section.zone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44927918835490817
+    m_Key: equipment.section.barrels
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44927918835490818
+    m_Key: equipment.panel_hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369033089024
+    m_Key: item.reward_gold.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369045671936
+    m_Key: item.reward_gold.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369045671937
+    m_Key: item.reward_shards.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369045671938
+    m_Key: item.reward_shards.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369045671939
+    m_Key: item.scroll_precision.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369045671940
+    m_Key: item.scroll_precision.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866240
+    m_Key: item.scroll_helmet.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866241
+    m_Key: item.scroll_helmet.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866242
+    m_Key: item.scroll_chest.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866243
+    m_Key: item.scroll_chest.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866244
+    m_Key: item.scroll_weapon.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866245
+    m_Key: item.scroll_weapon.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866246
+    m_Key: item.scroll_rarity.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866247
+    m_Key: item.scroll_rarity.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866248
+    m_Key: item.scroll_empowerment.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866249
+    m_Key: item.scroll_empowerment.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44941369049866250
+    m_Key: loot.currency_amount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829339172864
+    m_Key: forge.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829385310208
+    m_Key: forge.level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829385310209
+    m_Key: forge.hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829385310210
+    m_Key: forge.start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504512
+    m_Key: forge.optional_scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504513
+    m_Key: forge.no_scrolls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504514
+    m_Key: forge.qte_hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504515
+    m_Key: forge.take
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504516
+    m_Key: forge.break
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504517
+    m_Key: forge.busy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504518
+    m_Key: forge.invalid_config
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504519
+    m_Key: forge.locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504520
+    m_Key: forge.no_shards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504521
+    m_Key: forge.no_scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504522
+    m_Key: forge.no_space
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504523
+    m_Key: forge.outcome.none
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504524
+    m_Key: forge.outcome.onestat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504525
+    m_Key: forge.outcome.allstats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504526
+    m_Key: forge.outcome.rarity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504527
+    m_Key: forge.item.helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504528
+    m_Key: forge.item.chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504529
+    m_Key: forge.item.weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504530
+    m_Key: forge.name.helmet1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504531
+    m_Key: forge.name.helmet2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504532
+    m_Key: forge.name.helmet3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504533
+    m_Key: forge.name.chest1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504534
+    m_Key: forge.name.chest2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504535
+    m_Key: forge.name.chest3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504536
+    m_Key: forge.name.weapon1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504537
+    m_Key: forge.name.weapon2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44966829389504538
+    m_Key: forge.name.weapon3
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

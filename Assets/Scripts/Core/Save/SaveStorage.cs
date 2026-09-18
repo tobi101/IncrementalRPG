@@ -8,7 +8,22 @@ namespace Core.Save
     {
         private const string FileName = "save.json";
 
-        public string SavePath => Path.Combine(Application.persistentDataPath, FileName);
+#if UNITY_EDITOR
+        // Editor regression runs use a temporary directory, never the player's real save.
+        public static string EditorSaveDirectoryOverride { get; set; }
+#endif
+
+        public string SavePath
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!string.IsNullOrEmpty(EditorSaveDirectoryOverride))
+                    return Path.Combine(EditorSaveDirectoryOverride, FileName);
+#endif
+                return Path.Combine(Application.persistentDataPath, FileName);
+            }
+        }
 
         public bool HasSave() => File.Exists(SavePath);
 
@@ -40,7 +55,12 @@ namespace Core.Save
                     Directory.CreateDirectory(directory);
 
                 var json = JsonUtility.ToJson(data, prettyPrint: true);
-                File.WriteAllText(SavePath, json);
+                var temporaryPath = SavePath + ".tmp";
+                File.WriteAllText(temporaryPath, json);
+                if (File.Exists(SavePath))
+                    File.Replace(temporaryPath, SavePath, null);
+                else
+                    File.Move(temporaryPath, SavePath);
             }
             catch (Exception e)
             {

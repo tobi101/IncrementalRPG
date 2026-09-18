@@ -200,8 +200,7 @@ MeshRenderer:
   m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: b4c9037e640df4f858a7ea7cc46aaa18, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -300,9 +299,9 @@ Transform:
   m_Children:
   - {fileID: 3915310281128178256}
   - {fileID: 2337158227264469056}
+  - {fileID: 3566205013256010702}
   - {fileID: 7645991634932266265}
   - {fileID: 3929147979281408809}
-  - {fileID: 3566205013256010702}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7913124585289905880
@@ -389,8 +388,7 @@ MeshRenderer:
   m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 18bd6d2b5387444f7827636a4574859e, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -523,8 +521,7 @@ MeshRenderer:
   m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 922f5d9eef3f0472f9b29b01973d9e88, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -736,7 +733,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e3501002f468384b80d5853d04e19ca, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: spine-unity-examples::Spine.Unity.Prototyping.SkeletonColorInitialize
   skeletonColor: {r: 1, g: 0.60784316, b: 0.23921569, a: 1}
   slotSettings: []

@@ -1,0 +1,1144 @@
+fileFormatVersion: 2
+guid: 02b94d99323e24664b5a8f0b1013b6b6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7159840955232404404
+    second: ambient_back_0
+  - first:
+      213: -1733303166387986545
+    second: ambient_back_1
+  - first:
+      213: -4427331530824164363
+    second: ambient_back_2
+  - first:
+      213: -7611108873976856945
+    second: ambient_back_3
+  - first:
+      213: -3666534464286631831
+    second: ambient_back_4
+  - first:
+      213: -3804008012782621751
+    second: ambient_back_5
+  - first:
+      213: 580861201391615760
+    second: ambient_back_6
+  - first:
+      213: 5177376331256772131
+    second: ambient_back_7
+  - first:
+      213: 961965750895538855
+    second: ambient_back_8
+  - first:
+      213: 9214981219967759359
+    second: ambient_back_9
+  - first:
+      213: 4421268273680918890
+    second: ambient_back_10
+  - first:
+      213: -6851202298039476520
+    second: ambient_back_11
+  - first:
+      213: 4005309282115324588
+    second: ambient_back_12
+  - first:
+      213: 6026345681173013153
+    second: ambient_back_13
+  - first:
+      213: 523783372326676565
+    second: ambient_back_14
+  - first:
+      213: -7273634779516439447
+    second: ambient_back_15
+  - first:
+      213: -5065392963568327382
+    second: ambient_back_16
+  - first:
+      213: -8534185850539463235
+    second: ambient_back_17
+  - first:
+      213: -1256474088491166848
+    second: ambient_back_18
+  - first:
+      213: 822573929738615072
+    second: ambient_back_19
+  - first:
+      213: -6402506922254485238
+    second: ambient_back_20
+  - first:
+      213: -8638094986315392534
+    second: ambient_back_21
+  - first:
+      213: -3392256739687567216
+    second: ambient_back_22
+  - first:
+      213: -2689415680761888174
+    second: ambient_back_23
+  - first:
+      213: 2621757900259429218
+    second: ambient_back_24
+  - first:
+      213: 15061397272428363
+    second: ambient_back_25
+  - first:
+      213: -8303048154684490770
+    second: ambient_back_26
+  - first:
+      213: 8677901487389833788
+    second: ambient_back_27
+  - first:
+      213: -11847892403779389
+    second: ambient_back_28
+  - first:
+      213: 3507277488440132719
+    second: ambient_back_29
+  - first:
+      213: 8054117925785637052
+    second: ambient_back_30
+  - first:
+      213: -9150593251928076182
+    second: ambient_back_31
+  - first:
+      213: -2106403394115582552
+    second: ambient_back_32
+  - first:
+      213: -6424995575927260807
+    second: ambient_back_33
+  - first:
+      213: -4878354570018091848
+    second: ambient_back_34
+  - first:
+      213: 4693753495260239155
+    second: ambient_back_35
+  - first:
+      213: 1413329631773161977
+    second: ambient_back_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ambient_back_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2609
+        height: 2254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b3cbe01a6ddc5360800000000000000
+      internalID: 7159840955232404404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_1
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 2231
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8f526f14f112f7e0800000000000000
+      internalID: -1733303166387986545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_2
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 2226
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fbd6520e65fe82c0800000000000000
+      internalID: -4427331530824164363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_3
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 2224
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8e39c3fdc8ef5690800000000000000
+      internalID: -7611108873976856945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_4
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 2229
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 968d773b45add1dc0800000000000000
+      internalID: -3666534464286631831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_5
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 2230
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb2a5bedd2753bc0800000000000000
+      internalID: -3804008012782621751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_6
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 2227
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01ff0c46f22af0800800000000000000
+      internalID: 580861201391615760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_7
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 2229
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3263315a75cb9d740800000000000000
+      internalID: 5177376331256772131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_8
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 2227
+        width: 83
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a27834f0c6995d00800000000000000
+      internalID: 961965750895538855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_9
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 2226
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff3f214b89032ef70800000000000000
+      internalID: 9214981219967759359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_10
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 2228
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a69a47de1108b5d30800000000000000
+      internalID: 4421268273680918890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_11
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 2228
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de54052fc3abe0a0800000000000000
+      internalID: -6851202298039476520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_12
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 2224
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa0f003297b59730800000000000000
+      internalID: 4005309282115324588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_13
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 2227
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a2e604d771e1a350800000000000000
+      internalID: 6026345681173013153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_14
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 2228
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558a9c6b33ad44700800000000000000
+      internalID: 523783372326676565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_15
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 2227
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 964fef494bbde0b90800000000000000
+      internalID: -7273634779516439447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_16
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 2224
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a252fbeefeb14b9b0800000000000000
+      internalID: -5065392963568327382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_17
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 2224
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd2e6b5f2b709980800000000000000
+      internalID: -8534185850539463235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_18
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 2220
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 083500e397b109ee0800000000000000
+      internalID: -1256474088491166848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_19
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1221
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 029319381ae5a6b00800000000000000
+      internalID: 822573929738615072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_20
+      rect:
+        serializedVersion: 2
+        x: 2566
+        y: 1226
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a09ba0b40e9b527a0800000000000000
+      internalID: -6402506922254485238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_21
+      rect:
+        serializedVersion: 2
+        x: 2567
+        y: 1169
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae9969460625f1880800000000000000
+      internalID: -8638094986315392534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_22
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1138
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0907ffbd7784ce0d0800000000000000
+      internalID: -3392256739687567216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_23
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1142
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25282deffa64daad0800000000000000
+      internalID: -2689415680761888174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_24
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1094
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26b890c6bea526420800000000000000
+      internalID: 2621757900259429218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_25
+      rect:
+        serializedVersion: 2
+        x: 2569
+        y: 1108
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f7e32d242853000800000000000000
+      internalID: 15061397272428363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_26
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1092
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb711bd1b5a5cc80800000000000000
+      internalID: -8303048154684490770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_27
+      rect:
+        serializedVersion: 2
+        x: 2564
+        y: 1089
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3a74bfdc691e6870800000000000000
+      internalID: 8677901487389833788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_28
+      rect:
+        serializedVersion: 2
+        x: 2566
+        y: 1094
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c88fe59768e5dff0800000000000000
+      internalID: -11847892403779389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_29
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1078
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f64c23b1b4a5ca030800000000000000
+      internalID: 3507277488440132719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_30
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1052
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb01f89b499f5cf60800000000000000
+      internalID: 8054117925785637052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_31
+      rect:
+        serializedVersion: 2
+        x: 2559
+        y: 1028
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a609db65bef820180800000000000000
+      internalID: -9150593251928076182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_32
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1007
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a54014f54d84c2e0800000000000000
+      internalID: -2106403394115582552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_33
+      rect:
+        serializedVersion: 2
+        x: 2564
+        y: 1002
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97936659094d5d6a0800000000000000
+      internalID: -6424995575927260807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_34
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 971
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bc0bad7d5a9c4cb0800000000000000
+      internalID: -4878354570018091848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_35
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 972
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3351c347fef832140800000000000000
+      internalID: 4693753495260239155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ambient_back_36
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 0
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f97f5cdfc72d9310800000000000000
+      internalID: 1413329631773161977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ambient_back_0: 7159840955232404404
+      ambient_back_1: -1733303166387986545
+      ambient_back_10: 4421268273680918890
+      ambient_back_11: -6851202298039476520
+      ambient_back_12: 4005309282115324588
+      ambient_back_13: 6026345681173013153
+      ambient_back_14: 523783372326676565
+      ambient_back_15: -7273634779516439447
+      ambient_back_16: -5065392963568327382
+      ambient_back_17: -8534185850539463235
+      ambient_back_18: -1256474088491166848
+      ambient_back_19: 822573929738615072
+      ambient_back_2: -4427331530824164363
+      ambient_back_20: -6402506922254485238
+      ambient_back_21: -8638094986315392534
+      ambient_back_22: -3392256739687567216
+      ambient_back_23: -2689415680761888174
+      ambient_back_24: 2621757900259429218
+      ambient_back_25: 15061397272428363
+      ambient_back_26: -8303048154684490770
+      ambient_back_27: 8677901487389833788
+      ambient_back_28: -11847892403779389
+      ambient_back_29: 3507277488440132719
+      ambient_back_3: -7611108873976856945
+      ambient_back_30: 8054117925785637052
+      ambient_back_31: -9150593251928076182
+      ambient_back_32: -2106403394115582552
+      ambient_back_33: -6424995575927260807
+      ambient_back_34: -4878354570018091848
+      ambient_back_35: 4693753495260239155
+      ambient_back_36: 1413329631773161977
+      ambient_back_4: -3666534464286631831
+      ambient_back_5: -3804008012782621751
+      ambient_back_6: 580861201391615760
+      ambient_back_7: 5177376331256772131
+      ambient_back_8: 961965750895538855
+      ambient_back_9: 9214981219967759359
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

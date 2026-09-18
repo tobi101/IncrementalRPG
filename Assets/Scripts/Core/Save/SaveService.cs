@@ -23,7 +23,7 @@ namespace Core.Save
 
         public SaveService(IEnumerable<ISaveable> saveables, GameplayFeature gameplayFeature,
             SkillTreeService skillTreeService, DungeonSelectionService dungeonSelectionService,
-            Player player, PlayerItemStorage itemStorage)
+            Player player, PlayerItemStorage itemStorage, RunConsumableService consumables, Core.Forge.ForgeService forge)
         {
             _saveables = new List<ISaveable>(saveables);
             _data = _storage.LoadOrDefault();
@@ -38,6 +38,8 @@ namespace Core.Save
             player.OnShardsChanged += ScheduleSave;
             player.OnGoldChanged += ScheduleSave;
             itemStorage.OnChanged += ScheduleSave;
+            consumables.OnEffectsChanged += Save;
+            forge.OnChanged += Save;
 
             Debug.Log($"[SaveService] Loaded. Version: {_data.Version}, Path: {_storage.SavePath}");
         }

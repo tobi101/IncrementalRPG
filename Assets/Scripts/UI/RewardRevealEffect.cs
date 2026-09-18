@@ -64,6 +64,8 @@ namespace UI
             ApplyFrame();
         }
 
+        public void SetAccent(Color color) => _accent = color;
+
         public void SetPaused(bool paused) => _paused = paused;
 
         public void Stop()

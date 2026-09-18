@@ -373,8 +373,8 @@ MonoBehaviour:
   _skillMaxAudioClip: {fileID: 8300000, guid: ddf8774f8db9d4e6a961223abb97e156, type: 3}
   _skillErrorAudioClip: {fileID: 8300000, guid: 8c0ec71c2f08149c0a0a3853ae32f172, type: 3}
   _sessionEndAudioClip: {fileID: 8300000, guid: a4a87035539fc46f19b5a738976adc56, type: 3}
-  _curtainCloseAudioClip: {fileID: 8300000, guid: 7d5b0c7a015ad454a81d8efdcc04a08b, type: 3}
-  _curtainOpenAudioClip: {fileID: 8300000, guid: c869107260fe14eeda9a88e12a4998d8, type: 3}
+  _curtainCloseAudioClip: {fileID: 8300000, guid: f0c7a0a91428142ebbcc6cba204a4cc6, type: 3}
+  _curtainOpenAudioClip: {fileID: 8300000, guid: 1d73a10cc1a3647789200b9ac8b2d8bc, type: 3}
   _levelCounterOnAudioClip: {fileID: 8300000, guid: 8120ab87539aa4300b68b29e70d06512, type: 3}
   _fightStartFadeAudioClip: {fileID: 8300000, guid: e5938351a08b646b6a9907f7025e6182, type: 3}
   _fightStartBurnAudioClip: {fileID: 8300000, guid: b2636e8d4c2754b56a5c3bfad0def8f0, type: 3}
@@ -386,6 +386,7 @@ MonoBehaviour:
   _mainMenuMusicClip: {fileID: 8300000, guid: 86730e41fc5af4d08bf9cfb17d89af29, type: 3}
   _hubMusicClip: {fileID: 8300000, guid: e66fa81c18f474a0580428ef466beac8, type: 3}
   _gameplayMusicClip: {fileID: 8300000, guid: 77a70e9b9042b4499a20af34158beb20, type: 3}
+  _roundCompleteMusicClip: {fileID: 8300000, guid: a70794803e4774980bf28a85663762af, type: 3}
   _musicSourceVolume: 0.1
   _musicFadeDuration: 0.5
 --- !u!114 &1603826652

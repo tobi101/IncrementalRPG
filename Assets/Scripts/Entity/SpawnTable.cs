@@ -18,7 +18,7 @@ namespace Entity
     {
         public SpawnEntry[] entries;
 
-        public EntityConfig PickAny(SkillTreeService skillTree)
+        public EntityConfig PickNonBomb(SkillTreeService skillTree)
         {
             return PickMatching(skillTree, null);
         }
@@ -42,7 +42,7 @@ namespace Entity
             {
                 if (!IsMatching(e, skillTree, featureType)) continue;
 
-                var weight = GetEffectiveWeight(e, skillTree);
+                var weight = e.weight;
                 if (weight > 0f)
                     total += weight;
             }
@@ -55,7 +55,7 @@ namespace Entity
             {
                 if (!IsMatching(e, skillTree, featureType)) continue;
 
-                var weight = GetEffectiveWeight(e, skillTree);
+                var weight = e.weight;
                 if (weight <= 0f) continue;
 
                 cumulative += weight;
@@ -69,19 +69,11 @@ namespace Entity
         private static bool IsMatching(SpawnEntry entry, SkillTreeService skillTree, FeatureType? featureType)
         {
             if (entry?.config == null) return false;
+            if (!featureType.HasValue && entry.config.featureType == FeatureType.Bomb) return false;
             if (featureType.HasValue && entry.config.featureType != featureType.Value) return false;
             return entry.requiredFeature == GameFeature.None
                    || (skillTree != null && skillTree.IsUnlocked(entry.requiredFeature));
         }
 
-        private static float GetEffectiveWeight(SpawnEntry entry, SkillTreeService skillTree)
-        {
-            var weight = entry.weight;
-
-            if (skillTree != null && entry.config.featureType == FeatureType.Bomb)
-                weight *= Mathf.Max(0f, 1f + skillTree.GetBonus(StatType.BombSpawnSpeed));
-
-            return weight;
-        }
     }
 }

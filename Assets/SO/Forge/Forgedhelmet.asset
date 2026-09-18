@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606bfc2eb22c42eebea49cf3f6aece36, type: 3}
+  m_Name: Forgedhelmet
+  m_EditorClassIdentifier: Assembly-CSharp::Core.Items.ItemDefinition
+  itemId: forged_helmet
+  displayName: helmet
+  description: 
+  localizedName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: forge.item.helmet
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  icon: {fileID: 21300000, guid: 2d88f7804f9404978bee029e17cd73cf, type: 3}
+  category: 1
+  stackable: 0
+  maxStackSize: 1
+  width: 1
+  height: 1
+  sellPrice:
+    mantissa: 0
+    exponent: 0
+  rarity: 0
+  equipmentSlot: 1
+  defaultStats: []
+  forgeNameKeys:
+  - forge.name.helmet1
+  - forge.name.helmet2
+  - forge.name.helmet3
+  forgeIcons:
+  - {fileID: 21300000, guid: 2d88f7804f9404978bee029e17cd73cf, type: 3}
+  effectId: 
+  effectValue: 0
+  forgeModifierId: 
+  forgeModifierValue: 0
+  currency: 0
+  references:
+    version: 2
+    RefIds: []

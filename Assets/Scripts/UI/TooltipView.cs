@@ -46,6 +46,7 @@ namespace UI
 
         public void Show(LocalizedString text, RectTransform anchor)
         {
+            _localizedTextChanged ??= HandleLocalizedTextChanged;
             ClearLocalizedText();
             _anchor = anchor;
 

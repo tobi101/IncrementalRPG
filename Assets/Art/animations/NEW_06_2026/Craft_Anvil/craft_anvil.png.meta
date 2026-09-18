@@ -1,0 +1,3744 @@
+fileFormatVersion: 2
+guid: bce3d737aeaef4b9699d0af21dc02780
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 664668099015254479
+    second: craft_anvil_0
+  - first:
+      213: -2474362645452446157
+    second: craft_anvil_1
+  - first:
+      213: -4415483851385683838
+    second: craft_anvil_2
+  - first:
+      213: -8473516402629588969
+    second: craft_anvil_3
+  - first:
+      213: 6665775756300466849
+    second: craft_anvil_4
+  - first:
+      213: 2174288789070533316
+    second: craft_anvil_5
+  - first:
+      213: 2731050234859700367
+    second: craft_anvil_6
+  - first:
+      213: 7524480386572472201
+    second: craft_anvil_7
+  - first:
+      213: -7820387866612746456
+    second: craft_anvil_8
+  - first:
+      213: -5545105716461824228
+    second: craft_anvil_9
+  - first:
+      213: 6000064917475764137
+    second: craft_anvil_10
+  - first:
+      213: -2460524223604578549
+    second: craft_anvil_11
+  - first:
+      213: -8252234561641247093
+    second: craft_anvil_12
+  - first:
+      213: 5940593878328527124
+    second: craft_anvil_13
+  - first:
+      213: 6909405902813191604
+    second: craft_anvil_14
+  - first:
+      213: 3798528523473637931
+    second: craft_anvil_15
+  - first:
+      213: 2267473395313642787
+    second: craft_anvil_16
+  - first:
+      213: -7066485335542636137
+    second: craft_anvil_17
+  - first:
+      213: 4243287347902517161
+    second: craft_anvil_18
+  - first:
+      213: 732710623814772216
+    second: craft_anvil_19
+  - first:
+      213: -1326111808128795572
+    second: craft_anvil_20
+  - first:
+      213: 8253778674576661901
+    second: craft_anvil_21
+  - first:
+      213: -3546007364358224233
+    second: craft_anvil_22
+  - first:
+      213: -3167080661810814311
+    second: craft_anvil_23
+  - first:
+      213: 6153838870947661652
+    second: craft_anvil_24
+  - first:
+      213: 8208422993030111935
+    second: craft_anvil_25
+  - first:
+      213: 7077545341669368925
+    second: craft_anvil_26
+  - first:
+      213: -1079654369467747930
+    second: craft_anvil_27
+  - first:
+      213: -5323735023208833153
+    second: craft_anvil_28
+  - first:
+      213: 943174328881577234
+    second: craft_anvil_29
+  - first:
+      213: -3151865283705046931
+    second: craft_anvil_30
+  - first:
+      213: -2573821646117503601
+    second: craft_anvil_31
+  - first:
+      213: 1088397395239677627
+    second: craft_anvil_32
+  - first:
+      213: -8324407407431377518
+    second: craft_anvil_33
+  - first:
+      213: -5534049317550729247
+    second: craft_anvil_34
+  - first:
+      213: -5660288503529746688
+    second: craft_anvil_35
+  - first:
+      213: 6194361322707050991
+    second: craft_anvil_36
+  - first:
+      213: -111941525185918887
+    second: craft_anvil_37
+  - first:
+      213: -7767597796262516287
+    second: craft_anvil_38
+  - first:
+      213: 287041625991079203
+    second: craft_anvil_39
+  - first:
+      213: -1246801771806856924
+    second: craft_anvil_40
+  - first:
+      213: 462966645180641278
+    second: craft_anvil_41
+  - first:
+      213: 1007032663562676807
+    second: craft_anvil_42
+  - first:
+      213: -2969313046517017299
+    second: craft_anvil_43
+  - first:
+      213: 6810994202383421207
+    second: craft_anvil_44
+  - first:
+      213: 1542258213556786853
+    second: craft_anvil_45
+  - first:
+      213: -5336874234307767942
+    second: craft_anvil_46
+  - first:
+      213: -6694795460636282012
+    second: craft_anvil_47
+  - first:
+      213: -5370150003999140254
+    second: craft_anvil_48
+  - first:
+      213: -1268617422643944264
+    second: craft_anvil_49
+  - first:
+      213: -3382639310475153089
+    second: craft_anvil_50
+  - first:
+      213: 7762809742144762038
+    second: craft_anvil_51
+  - first:
+      213: -8872095990353065233
+    second: craft_anvil_52
+  - first:
+      213: 1553046708963386409
+    second: craft_anvil_53
+  - first:
+      213: 6043006570658407401
+    second: craft_anvil_54
+  - first:
+      213: 7664774320065468338
+    second: craft_anvil_55
+  - first:
+      213: 4290683536824500582
+    second: craft_anvil_56
+  - first:
+      213: -765486655199635163
+    second: craft_anvil_57
+  - first:
+      213: -749392702509321831
+    second: craft_anvil_58
+  - first:
+      213: 3340492262952570919
+    second: craft_anvil_59
+  - first:
+      213: -6482560823804740061
+    second: craft_anvil_60
+  - first:
+      213: 4513373317748894596
+    second: craft_anvil_61
+  - first:
+      213: 3256689444236480548
+    second: craft_anvil_62
+  - first:
+      213: 4389694465889727256
+    second: craft_anvil_63
+  - first:
+      213: 1331937333561177972
+    second: craft_anvil_64
+  - first:
+      213: -8631664510035515705
+    second: craft_anvil_65
+  - first:
+      213: -623329774380484283
+    second: craft_anvil_66
+  - first:
+      213: 8869518498480889027
+    second: craft_anvil_67
+  - first:
+      213: -6088992436952410852
+    second: craft_anvil_68
+  - first:
+      213: -700455812107551
+    second: craft_anvil_69
+  - first:
+      213: -4233522639526049750
+    second: craft_anvil_70
+  - first:
+      213: -2132608221164604493
+    second: craft_anvil_71
+  - first:
+      213: 5169821534997763669
+    second: craft_anvil_72
+  - first:
+      213: -2509335671149709788
+    second: craft_anvil_73
+  - first:
+      213: 9084927745716274816
+    second: craft_anvil_74
+  - first:
+      213: -3349570533075471194
+    second: craft_anvil_75
+  - first:
+      213: -4134406870886210401
+    second: craft_anvil_76
+  - first:
+      213: -5302217393628961773
+    second: craft_anvil_77
+  - first:
+      213: 5018993707042710744
+    second: craft_anvil_78
+  - first:
+      213: -7044742996289625071
+    second: craft_anvil_79
+  - first:
+      213: -3759086575929677253
+    second: craft_anvil_80
+  - first:
+      213: 5706994445220256516
+    second: craft_anvil_81
+  - first:
+      213: -4580276787779409887
+    second: craft_anvil_82
+  - first:
+      213: -8936835077738021446
+    second: craft_anvil_83
+  - first:
+      213: 6589260543619364505
+    second: craft_anvil_84
+  - first:
+      213: -9193465048389901547
+    second: craft_anvil_85
+  - first:
+      213: -560911048266497357
+    second: craft_anvil_86
+  - first:
+      213: -8703150773108406106
+    second: craft_anvil_87
+  - first:
+      213: 1726625656903278494
+    second: craft_anvil_88
+  - first:
+      213: 5113593862555728538
+    second: craft_anvil_89
+  - first:
+      213: 7637387510501679786
+    second: craft_anvil_90
+  - first:
+      213: 1018656003545035914
+    second: craft_anvil_91
+  - first:
+      213: 9149896997025081009
+    second: craft_anvil_92
+  - first:
+      213: 2356095824989759215
+    second: craft_anvil_93
+  - first:
+      213: -1662091662087721070
+    second: craft_anvil_94
+  - first:
+      213: 3524373971707610966
+    second: craft_anvil_95
+  - first:
+      213: 3944822353326304479
+    second: craft_anvil_96
+  - first:
+      213: 5030251971314116195
+    second: craft_anvil_97
+  - first:
+      213: 4351248600700242529
+    second: craft_anvil_98
+  - first:
+      213: -4134087917762978650
+    second: craft_anvil_99
+  - first:
+      213: 4043079112668773047
+    second: craft_anvil_100
+  - first:
+      213: -1610363509993002140
+    second: craft_anvil_101
+  - first:
+      213: 8864470309039118699
+    second: craft_anvil_102
+  - first:
+      213: 44753825725883547
+    second: craft_anvil_103
+  - first:
+      213: 4651651784530368776
+    second: craft_anvil_104
+  - first:
+      213: -421919538830249144
+    second: craft_anvil_105
+  - first:
+      213: -104192863890580856
+    second: craft_anvil_106
+  - first:
+      213: -1721142696332297348
+    second: craft_anvil_107
+  - first:
+      213: -1644945341988907487
+    second: craft_anvil_108
+  - first:
+      213: 5358686807489722637
+    second: craft_anvil_109
+  - first:
+      213: -3949951092264465117
+    second: craft_anvil_110
+  - first:
+      213: 6345934098541771270
+    second: craft_anvil_111
+  - first:
+      213: -8964883242653747568
+    second: craft_anvil_112
+  - first:
+      213: -958399932772966106
+    second: craft_anvil_113
+  - first:
+      213: 6670234555870863169
+    second: craft_anvil_114
+  - first:
+      213: 2922442460311987953
+    second: craft_anvil_115
+  - first:
+      213: 1215081312845832481
+    second: craft_anvil_116
+  - first:
+      213: -71105160659054284
+    second: craft_anvil_117
+  - first:
+      213: 6837321356200488569
+    second: craft_anvil_118
+  - first:
+      213: 8744555135588746794
+    second: craft_anvil_119
+  - first:
+      213: -1822003504638543197
+    second: craft_anvil_120
+  - first:
+      213: -8432816631670895677
+    second: craft_anvil_121
+  - first:
+      213: 7863370816229153787
+    second: craft_anvil_122
+  - first:
+      213: 1017595479674537136
+    second: craft_anvil_123
+  - first:
+      213: -6593075560205283311
+    second: craft_anvil_124
+  - first:
+      213: -3844616008216058293
+    second: craft_anvil_125
+  - first:
+      213: 1612839553585169617
+    second: craft_anvil_126
+  - first:
+      213: -38250100478819240
+    second: craft_anvil_127
+  - first:
+      213: 9028967670604940256
+    second: craft_anvil_128
+  - first:
+      213: -5934106810055374340
+    second: craft_anvil_129
+  - first:
+      213: 8065821555464915892
+    second: craft_anvil_130
+  - first:
+      213: -1789968135928775128
+    second: craft_anvil_131
+  - first:
+      213: -1678559267642401802
+    second: craft_anvil_132
+  - first:
+      213: 5083942098971333939
+    second: craft_anvil_133
+  - first:
+      213: -4503687139372094894
+    second: craft_anvil_134
+  - first:
+      213: 6671433036149860654
+    second: craft_anvil_135
+  - first:
+      213: -9173512886443544548
+    second: craft_anvil_136
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: craft_anvil_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1236
+        width: 38
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc1a65f4d10693900800000000000000
+      internalID: 664668099015254479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_1
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1060
+        width: 334
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 336af40a84c49add0800000000000000
+      internalID: -2474362645452446157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_2
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1123
+        width: 302
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280cea6d4dc09b2c0800000000000000
+      internalID: -4415483851385683838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_3
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 1123
+        width: 84
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71841d6f9b5086a80800000000000000
+      internalID: -8473516402629588969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_4
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 1228
+        width: 152
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aa33bacbb7918c50800000000000000
+      internalID: 6665775756300466849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_5
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 1228
+        width: 115
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c2d9af3220ac2e10800000000000000
+      internalID: 2174288789070533316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_6
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 1109
+        width: 84
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f804f8808b3a6e520800000000000000
+      internalID: 2731050234859700367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_7
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 1078
+        width: 277
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98fcb019b035c6860800000000000000
+      internalID: 7524480386572472201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_8
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 1229
+        width: 138
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 827b5c46ba6687390800000000000000
+      internalID: -7820387866612746456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_9
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 1229
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c171e48eab3db03b0800000000000000
+      internalID: -5545105716461824228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_10
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 1229
+        width: 49
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a72d63b043844350800000000000000
+      internalID: 6000064917475764137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_11
+      rect:
+        serializedVersion: 2
+        x: 2090
+        y: 1087
+        width: 86
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b072eca41467addd0800000000000000
+      internalID: -2460524223604578549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_12
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 1186
+        width: 137
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e0c2e636c2a7d80800000000000000
+      internalID: -8252234561641247093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_13
+      rect:
+        serializedVersion: 2
+        x: 2313
+        y: 1188
+        width: 43
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419c1a068aa317250800000000000000
+      internalID: 5940593878328527124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_14
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 1188
+        width: 79
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bdda2e9f0423ef50800000000000000
+      internalID: 6909405902813191604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_15
+      rect:
+        serializedVersion: 2
+        x: 2435
+        y: 1247
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22d5de019517b430800000000000000
+      internalID: 3798528523473637931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_16
+      rect:
+        serializedVersion: 2
+        x: 2435
+        y: 1188
+        width: 25
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32d81591a0fa77f10800000000000000
+      internalID: 2267473395313642787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_17
+      rect:
+        serializedVersion: 2
+        x: 2821
+        y: 1219
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7916974f60dceed90800000000000000
+      internalID: -7066485335542636137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_18
+      rect:
+        serializedVersion: 2
+        x: 2858
+        y: 1234
+        width: 77
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af83ab6c5f23ea30800000000000000
+      internalID: 4243287347902517161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_19
+      rect:
+        serializedVersion: 2
+        x: 2971
+        y: 1177
+        width: 83
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f562a72e6c1b2a00800000000000000
+      internalID: 732710623814772216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_20
+      rect:
+        serializedVersion: 2
+        x: 3054
+        y: 1177
+        width: 92
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4c38082654b89de0800000000000000
+      internalID: -1326111808128795572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_21
+      rect:
+        serializedVersion: 2
+        x: 3146
+        y: 1177
+        width: 78
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d16d069ff4b8270800000000000000
+      internalID: 8253778674576661901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_22
+      rect:
+        serializedVersion: 2
+        x: 3224
+        y: 1200
+        width: 52
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7964284f61d0acec0800000000000000
+      internalID: -3546007364358224233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_23
+      rect:
+        serializedVersion: 2
+        x: 3276
+        y: 1200
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 992e1c10be44c04d0800000000000000
+      internalID: -3167080661810814311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_24
+      rect:
+        serializedVersion: 2
+        x: 3316
+        y: 1226
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45783d349d3d66550800000000000000
+      internalID: 6153838870947661652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_25
+      rect:
+        serializedVersion: 2
+        x: 3353
+        y: 1226
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb265b9d83d2ae170800000000000000
+      internalID: 8208422993030111935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_26
+      rect:
+        serializedVersion: 2
+        x: 3381
+        y: 1246
+        width: 45
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d546ce36dfd783260800000000000000
+      internalID: 7077545341669368925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_27
+      rect:
+        serializedVersion: 2
+        x: 3576
+        y: 1234
+        width: 77
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a13dab321c4401f0800000000000000
+      internalID: -1079654369467747930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_28
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1070
+        width: 488
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7fd457e33b4e16b0800000000000000
+      internalID: -5323735023208833153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_29
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 1109
+        width: 267
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21df0421e04d61d00800000000000000
+      internalID: 943174328881577234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_30
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 1101
+        width: 252
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68ffd849335244d0800000000000000
+      internalID: -3151865283705046931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_31
+      rect:
+        serializedVersion: 2
+        x: 2460
+        y: 1219
+        width: 77
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8d74fb79d2f74cd0800000000000000
+      internalID: -2573821646117503601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_32
+      rect:
+        serializedVersion: 2
+        x: 2537
+        y: 1213
+        width: 53
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbea8b51aa3ca1f00800000000000000
+      internalID: 1088397395239677627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_33
+      rect:
+        serializedVersion: 2
+        x: 2590
+        y: 1222
+        width: 77
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d1c6a4193c97c80800000000000000
+      internalID: -8324407407431377518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_34
+      rect:
+        serializedVersion: 2
+        x: 2667
+        y: 1225
+        width: 77
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e755e1677b1333b0800000000000000
+      internalID: -5534049317550729247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_35
+      rect:
+        serializedVersion: 2
+        x: 2744
+        y: 1226
+        width: 77
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00fc1e4789d9271b0800000000000000
+      internalID: -5660288503529746688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_36
+      rect:
+        serializedVersion: 2
+        x: 2858
+        y: 1219
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe16f5acdcac6f550800000000000000
+      internalID: 6194361322707050991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_37
+      rect:
+        serializedVersion: 2
+        x: 3403
+        y: 1199
+        width: 19
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9588da3a6cd427ef0800000000000000
+      internalID: -111941525185918887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_38
+      rect:
+        serializedVersion: 2
+        x: 3422
+        y: 1222
+        width: 77
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c96aa375f2f33490800000000000000
+      internalID: -7767597796262516287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_39
+      rect:
+        serializedVersion: 2
+        x: 3499
+        y: 1228
+        width: 77
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325e2f886d6cbf300800000000000000
+      internalID: 287041625991079203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_40
+      rect:
+        serializedVersion: 2
+        x: 2461
+        y: 1188
+        width: 77
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 429ef16f46872bee0800000000000000
+      internalID: -1246801771806856924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_41
+      rect:
+        serializedVersion: 2
+        x: 2565
+        y: 1118
+        width: 39
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: effa8dcf5b9cc6600800000000000000
+      internalID: 462966645180641278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_42
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 1184
+        width: 47
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74a6edc3fd2b9fd00800000000000000
+      internalID: 1007032663562676807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_43
+      rect:
+        serializedVersion: 2
+        x: 2887
+        y: 1207
+        width: 77
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d259b6b2481eac6d0800000000000000
+      internalID: -2969313046517017299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_44
+      rect:
+        serializedVersion: 2
+        x: 3326
+        y: 1205
+        width: 77
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71f0f401423858e50800000000000000
+      internalID: 6810994202383421207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_45
+      rect:
+        serializedVersion: 2
+        x: 3422
+        y: 1164
+        width: 79
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a61bfa8ca3376510800000000000000
+      internalID: 1542258213556786853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_46
+      rect:
+        serializedVersion: 2
+        x: 3501
+        y: 1202
+        width: 77
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a71962de82d9fe5b0800000000000000
+      internalID: -5336874234307767942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_47
+      rect:
+        serializedVersion: 2
+        x: 3578
+        y: 1164
+        width: 33
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46370e4cffe4713a0800000000000000
+      internalID: -6694795460636282012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_48
+      rect:
+        serializedVersion: 2
+        x: 3611
+        y: 1196
+        width: 55
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 266911d06056975b0800000000000000
+      internalID: -5370150003999140254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_49
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 1110
+        width: 167
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4af6fec27f46ee0800000000000000
+      internalID: -1268617422643944264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_50
+      rect:
+        serializedVersion: 2
+        x: 2343
+        y: 1110
+        width: 118
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f313bd718737e01d0800000000000000
+      internalID: -3382639310475153089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_51
+      rect:
+        serializedVersion: 2
+        x: 2461
+        y: 1110
+        width: 77
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b0fa73d45a0bbb60800000000000000
+      internalID: 7762809742144762038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_52
+      rect:
+        serializedVersion: 2
+        x: 2542
+        y: 1110
+        width: 19
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fea86d104bbffd480800000000000000
+      internalID: -8872095990353065233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_53
+      rect:
+        serializedVersion: 2
+        x: 2609
+        y: 1020
+        width: 278
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9242a5fd0c78d8510800000000000000
+      internalID: 1553046708963386409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_54
+      rect:
+        serializedVersion: 2
+        x: 2887
+        y: 1020
+        width: 84
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e3227375721dd350800000000000000
+      internalID: 6043006570658407401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_55
+      rect:
+        serializedVersion: 2
+        x: 2971
+        y: 1141
+        width: 153
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b7d90762afbe5a60800000000000000
+      internalID: 7664774320065468338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_56
+      rect:
+        serializedVersion: 2
+        x: 3124
+        y: 1141
+        width: 74
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6618a0891f19b8b30800000000000000
+      internalID: 4290683536824500582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_57
+      rect:
+        serializedVersion: 2
+        x: 3224
+        y: 1164
+        width: 102
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 529168c51f17065f0800000000000000
+      internalID: -765486655199635163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_58
+      rect:
+        serializedVersion: 2
+        x: 3326
+        y: 1164
+        width: 96
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99179a9be4f9995f0800000000000000
+      internalID: -749392702509321831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_59
+      rect:
+        serializedVersion: 2
+        x: 3501
+        y: 1164
+        width: 76
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7209a34b300db5e20800000000000000
+      internalID: 3340492262952570919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_60
+      rect:
+        serializedVersion: 2
+        x: 3611
+        y: 1165
+        width: 55
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32e314ed6415906a0800000000000000
+      internalID: -6482560823804740061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_61
+      rect:
+        serializedVersion: 2
+        x: 3626
+        y: 1100
+        width: 52
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48b262f9e19b2ae30800000000000000
+      internalID: 4513373317748894596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_62
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1060
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 420da7b7bc5123d20800000000000000
+      internalID: 3256689444236480548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_63
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 1054
+        width: 198
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813fadfebd35bec30800000000000000
+      internalID: 4389694465889727256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_64
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 1051
+        width: 117
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477befda2fdfb7210800000000000000
+      internalID: 1331937333561177972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_65
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1026
+        width: 281
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c6acf25cda263880800000000000000
+      internalID: -8631664510035515705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_66
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 916
+        width: 149
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549702c6fdc7957f0800000000000000
+      internalID: -623329774380484283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_67
+      rect:
+        serializedVersion: 2
+        x: 2008
+        y: 1087
+        width: 36
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cc95b6e41cd61b70800000000000000
+      internalID: 8869518498480889027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_68
+      rect:
+        serializedVersion: 2
+        x: 2008
+        y: 993
+        width: 169
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c155963b3ad8f7ba0800000000000000
+      internalID: -6088992436952410852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_69
+      rect:
+        serializedVersion: 2
+        x: 2188
+        y: 982
+        width: 295
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e2732c60f28dfff0800000000000000
+      internalID: -700455812107551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_70
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 1046
+        width: 82
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28c97ae6918f35c0800000000000000
+      internalID: -4233522639526049750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_71
+      rect:
+        serializedVersion: 2
+        x: 2565
+        y: 1046
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b3f7643f147762e0800000000000000
+      internalID: -2132608221164604493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_72
+      rect:
+        serializedVersion: 2
+        x: 2971
+        y: 1022
+        width: 223
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 556d4b19b45eeb740800000000000000
+      internalID: 5169821534997763669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_73
+      rect:
+        serializedVersion: 2
+        x: 3194
+        y: 1022
+        width: 51
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 426b7ea808c0d2dd0800000000000000
+      internalID: -2509335671149709788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_74
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 987
+        width: 378
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 086428596a5241e70800000000000000
+      internalID: 9084927745716274816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_75
+      rect:
+        serializedVersion: 2
+        x: 3626
+        y: 987
+        width: 54
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a4bbe1d85fe381d0800000000000000
+      internalID: -3349570533075471194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_76
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 793
+        width: 475
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f94a4ef1bd2af96c0800000000000000
+      internalID: -4134406870886210401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_77
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 970
+        width: 113
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31429d27f5dba66b0800000000000000
+      internalID: -5302217393628961773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_78
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 860
+        width: 287
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4a33e4f2c07a540800000000000000
+      internalID: 5018993707042710744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_79
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 1012
+        width: 108
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1146c3cc19b0c3e90800000000000000
+      internalID: -7044742996289625071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_80
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 1026
+        width: 43
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3aa5c9fcaa05dbc0800000000000000
+      internalID: -3759086575929677253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_81
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 870
+        width: 345
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b1b720631533f40800000000000000
+      internalID: 5706994445220256516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_82
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 916
+        width: 291
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 128e07367869f60c0800000000000000
+      internalID: -4580276787779409887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_83
+      rect:
+        serializedVersion: 2
+        x: 2504
+        y: 816
+        width: 105
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abdbc2f98dbf9f380800000000000000
+      internalID: -8936835077738021446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_84
+      rect:
+        serializedVersion: 2
+        x: 2011
+        y: 750
+        width: 177
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 996fde29d81c17b50800000000000000
+      internalID: 6589260543619364505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_85
+      rect:
+        serializedVersion: 2
+        x: 2621
+        y: 991
+        width: 49
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51320cf5f304a6080800000000000000
+      internalID: -9193465048389901547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_86
+      rect:
+        serializedVersion: 2
+        x: 2694
+        y: 811
+        width: 307
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b2cb799f5e3738f0800000000000000
+      internalID: -560911048266497357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_87
+      rect:
+        serializedVersion: 2
+        x: 3001
+        y: 876
+        width: 247
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8053eab72383780800000000000000
+      internalID: -8703150773108406106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_88
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 793
+        width: 298
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9f9bcb03e436f710800000000000000
+      internalID: 1726625656903278494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_89
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 870
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9a7047668227f640800000000000000
+      internalID: 5113593862555728538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_90
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 870
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa22577e9737df960800000000000000
+      internalID: 7637387510501679786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_91
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 750
+        width: 329
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a84fe97fc3ef22e00800000000000000
+      internalID: 1018656003545035914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_92
+      rect:
+        serializedVersion: 2
+        x: 2188
+        y: 816
+        width: 135
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b6e71f27d6fafe70800000000000000
+      internalID: 9149896997025081009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_93
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 552
+        width: 248
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe6ab417ba882b020800000000000000
+      internalID: 2356095824989759215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_94
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 876
+        width: 18
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f6f1180701fe8e0800000000000000
+      internalID: -1662091662087721070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_95
+      rect:
+        serializedVersion: 2
+        x: 3269
+        y: 797
+        width: 405
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 657c34f447719e030800000000000000
+      internalID: 3524373971707610966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_96
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 624
+        width: 374
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdce800a703deb630800000000000000
+      internalID: 3944822353326304479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_97
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 860
+        width: 42
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 366e2e8348b0fc540800000000000000
+      internalID: 5030251971314116195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_98
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 633
+        width: 357
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16a47266c8db26c30800000000000000
+      internalID: 4351248600700242529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_99
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 647
+        width: 84
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6acd08f21f4c0a6c0800000000000000
+      internalID: -4134087917762978650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_100
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 551
+        width: 414
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ba7c652807eb1830800000000000000
+      internalID: 4043079112668773047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_101
+      rect:
+        serializedVersion: 2
+        x: 2609
+        y: 816
+        width: 12
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46bad937be6d6a9e0800000000000000
+      internalID: -1610363509993002140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_102
+      rect:
+        serializedVersion: 2
+        x: 3001
+        y: 811
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b691644b7cce40b70800000000000000
+      internalID: 8864470309039118699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_103
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 553
+        width: 750
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b942bbc0e5ffe9000800000000000000
+      internalID: 44753825725883547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_104
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 647
+        width: 84
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8099ebb07acfd8040800000000000000
+      internalID: 4651651784530368776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_105
+      rect:
+        serializedVersion: 2
+        x: 2188
+        y: 750
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 843f9343a6a052af0800000000000000
+      internalID: -421919538830249144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_106
+      rect:
+        serializedVersion: 2
+        x: 2621
+        y: 552
+        width: 400
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88adbaf6425dd8ef0800000000000000
+      internalID: -104192863890580856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_107
+      rect:
+        serializedVersion: 2
+        x: 3635
+        y: 761
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7bfa5136d54d18e0800000000000000
+      internalID: -1721142696332297348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_108
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 647
+        width: 28
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12651df3deafb29e0800000000000000
+      internalID: -1644945341988907487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_109
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 633
+        width: 84
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d093ff68241ed5a40800000000000000
+      internalID: 5358686807489722637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_110
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 657
+        width: 150
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32d0969c864fe29c0800000000000000
+      internalID: -3949951092264465117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_111
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 545
+        width: 296
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60afe9fb079411850800000000000000
+      internalID: 6345934098541771270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_112
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 553
+        width: 200
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09675c45036569380800000000000000
+      internalID: -8964883242653747568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_113
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 369
+        width: 428
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6212f46c65413b2f0800000000000000
+      internalID: -958399932772966106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_114
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 556
+        width: 86
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14fd737fcfe619c50800000000000000
+      internalID: 6670234555870863169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_115
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 417
+        width: 336
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f62a631fe99e8820800000000000000
+      internalID: 2922442460311987953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_116
+      rect:
+        serializedVersion: 2
+        x: 3269
+        y: 547
+        width: 330
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12124692406dcd010800000000000000
+      internalID: 1215081312845832481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_117
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 950
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 431583dab32630ff0800000000000000
+      internalID: -71105160659054284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_118
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 278
+        width: 476
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ea58b3c8b03ee50800000000000000
+      internalID: 6837321356200488569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_119
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 545
+        width: 34
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a26c59fa096ea5970800000000000000
+      internalID: 8744555135588746794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_120
+      rect:
+        serializedVersion: 2
+        x: 2303
+        y: 469
+        width: 116
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aab0864771f6b6e0800000000000000
+      internalID: -1822003504638543197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_121
+      rect:
+        serializedVersion: 2
+        x: 2747
+        y: 278
+        width: 443
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cb0045d3fd98fa80800000000000000
+      internalID: -8432816631670895677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_122
+      rect:
+        serializedVersion: 2
+        x: 3190
+        y: 486
+        width: 85
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfb138e681e402d60800000000000000
+      internalID: 7863370816229153787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_123
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 417
+        width: 36
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b44b0382b93f1e00800000000000000
+      internalID: 1017595479674537136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_124
+      rect:
+        serializedVersion: 2
+        x: 3634
+        y: 457
+        width: 35
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11097a8a5b0b084a0800000000000000
+      internalID: -6593075560205283311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_125
+      rect:
+        serializedVersion: 2
+        x: 3634
+        y: 278
+        width: 36
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4660843c1e25aac0800000000000000
+      internalID: -3844616008216058293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_126
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 1
+        width: 388
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d4c42f5705f16610800000000000000
+      internalID: 1612839553585169617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_127
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 315
+        width: 26
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 854465c7cbb187ff0800000000000000
+      internalID: -38250100478819240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_128
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 367
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3c4e642465d4d70800000000000000
+      internalID: 9028967670604940256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_129
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 317
+        width: 255
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf94c67eb41d5ada0800000000000000
+      internalID: -5934106810055374340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_130
+      rect:
+        serializedVersion: 2
+        x: 2373
+        y: 278
+        width: 374
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bbcc2b58fd8fef60800000000000000
+      internalID: 8065821555464915892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_131
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 1
+        width: 475
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82e72bac671c827e0800000000000000
+      internalID: -1789968135928775128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_132
+      rect:
+        serializedVersion: 2
+        x: 1814
+        y: 1
+        width: 475
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb1cbd4d3f84b8e0800000000000000
+      internalID: -1678559267642401802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_133
+      rect:
+        serializedVersion: 2
+        x: 2289
+        y: 1
+        width: 475
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33517d3376acd8640800000000000000
+      internalID: 5083942098971333939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_134
+      rect:
+        serializedVersion: 2
+        x: 2764
+        y: 1
+        width: 467
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25a2b368860bf71c0800000000000000
+      internalID: -4503687139372094894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_135
+      rect:
+        serializedVersion: 2
+        x: 3231
+        y: 1
+        width: 444
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e29a486eff0b59c50800000000000000
+      internalID: 6671433036149860654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craft_anvil_136
+      rect:
+        serializedVersion: 2
+        x: 3260
+        y: 278
+        width: 374
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c10701512a221b080800000000000000
+      internalID: -9173512886443544548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      craft_anvil_0: 664668099015254479
+      craft_anvil_1: -2474362645452446157
+      craft_anvil_10: 6000064917475764137
+      craft_anvil_100: 4043079112668773047
+      craft_anvil_101: -1610363509993002140
+      craft_anvil_102: 8864470309039118699
+      craft_anvil_103: 44753825725883547
+      craft_anvil_104: 4651651784530368776
+      craft_anvil_105: -421919538830249144
+      craft_anvil_106: -104192863890580856
+      craft_anvil_107: -1721142696332297348
+      craft_anvil_108: -1644945341988907487
+      craft_anvil_109: 5358686807489722637
+      craft_anvil_11: -2460524223604578549
+      craft_anvil_110: -3949951092264465117
+      craft_anvil_111: 6345934098541771270
+      craft_anvil_112: -8964883242653747568
+      craft_anvil_113: -958399932772966106
+      craft_anvil_114: 6670234555870863169
+      craft_anvil_115: 2922442460311987953
+      craft_anvil_116: 1215081312845832481
+      craft_anvil_117: -71105160659054284
+      craft_anvil_118: 6837321356200488569
+      craft_anvil_119: 8744555135588746794
+      craft_anvil_12: -8252234561641247093
+      craft_anvil_120: -1822003504638543197
+      craft_anvil_121: -8432816631670895677
+      craft_anvil_122: 7863370816229153787
+      craft_anvil_123: 1017595479674537136
+      craft_anvil_124: -6593075560205283311
+      craft_anvil_125: -3844616008216058293
+      craft_anvil_126: 1612839553585169617
+      craft_anvil_127: -38250100478819240
+      craft_anvil_128: 9028967670604940256
+      craft_anvil_129: -5934106810055374340
+      craft_anvil_13: 5940593878328527124
+      craft_anvil_130: 8065821555464915892
+      craft_anvil_131: -1789968135928775128
+      craft_anvil_132: -1678559267642401802
+      craft_anvil_133: 5083942098971333939
+      craft_anvil_134: -4503687139372094894
+      craft_anvil_135: 6671433036149860654
+      craft_anvil_136: -9173512886443544548
+      craft_anvil_14: 6909405902813191604
+      craft_anvil_15: 3798528523473637931
+      craft_anvil_16: 2267473395313642787
+      craft_anvil_17: -7066485335542636137
+      craft_anvil_18: 4243287347902517161
+      craft_anvil_19: 732710623814772216
+      craft_anvil_2: -4415483851385683838
+      craft_anvil_20: -1326111808128795572
+      craft_anvil_21: 8253778674576661901
+      craft_anvil_22: -3546007364358224233
+      craft_anvil_23: -3167080661810814311
+      craft_anvil_24: 6153838870947661652
+      craft_anvil_25: 8208422993030111935
+      craft_anvil_26: 7077545341669368925
+      craft_anvil_27: -1079654369467747930
+      craft_anvil_28: -5323735023208833153
+      craft_anvil_29: 943174328881577234
+      craft_anvil_3: -8473516402629588969
+      craft_anvil_30: -3151865283705046931
+      craft_anvil_31: -2573821646117503601
+      craft_anvil_32: 1088397395239677627
+      craft_anvil_33: -8324407407431377518
+      craft_anvil_34: -5534049317550729247
+      craft_anvil_35: -5660288503529746688
+      craft_anvil_36: 6194361322707050991
+      craft_anvil_37: -111941525185918887
+      craft_anvil_38: -7767597796262516287
+      craft_anvil_39: 287041625991079203
+      craft_anvil_4: 6665775756300466849
+      craft_anvil_40: -1246801771806856924
+      craft_anvil_41: 462966645180641278
+      craft_anvil_42: 1007032663562676807
+      craft_anvil_43: -2969313046517017299
+      craft_anvil_44: 6810994202383421207
+      craft_anvil_45: 1542258213556786853
+      craft_anvil_46: -5336874234307767942
+      craft_anvil_47: -6694795460636282012
+      craft_anvil_48: -5370150003999140254
+      craft_anvil_49: -1268617422643944264
+      craft_anvil_5: 2174288789070533316
+      craft_anvil_50: -3382639310475153089
+      craft_anvil_51: 7762809742144762038
+      craft_anvil_52: -8872095990353065233
+      craft_anvil_53: 1553046708963386409
+      craft_anvil_54: 6043006570658407401
+      craft_anvil_55: 7664774320065468338
+      craft_anvil_56: 4290683536824500582
+      craft_anvil_57: -765486655199635163
+      craft_anvil_58: -749392702509321831
+      craft_anvil_59: 3340492262952570919
+      craft_anvil_6: 2731050234859700367
+      craft_anvil_60: -6482560823804740061
+      craft_anvil_61: 4513373317748894596
+      craft_anvil_62: 3256689444236480548
+      craft_anvil_63: 4389694465889727256
+      craft_anvil_64: 1331937333561177972
+      craft_anvil_65: -8631664510035515705
+      craft_anvil_66: -623329774380484283
+      craft_anvil_67: 8869518498480889027
+      craft_anvil_68: -6088992436952410852
+      craft_anvil_69: -700455812107551
+      craft_anvil_7: 7524480386572472201
+      craft_anvil_70: -4233522639526049750
+      craft_anvil_71: -2132608221164604493
+      craft_anvil_72: 5169821534997763669
+      craft_anvil_73: -2509335671149709788
+      craft_anvil_74: 9084927745716274816
+      craft_anvil_75: -3349570533075471194
+      craft_anvil_76: -4134406870886210401
+      craft_anvil_77: -5302217393628961773
+      craft_anvil_78: 5018993707042710744
+      craft_anvil_79: -7044742996289625071
+      craft_anvil_8: -7820387866612746456
+      craft_anvil_80: -3759086575929677253
+      craft_anvil_81: 5706994445220256516
+      craft_anvil_82: -4580276787779409887
+      craft_anvil_83: -8936835077738021446
+      craft_anvil_84: 6589260543619364505
+      craft_anvil_85: -9193465048389901547
+      craft_anvil_86: -560911048266497357
+      craft_anvil_87: -8703150773108406106
+      craft_anvil_88: 1726625656903278494
+      craft_anvil_89: 5113593862555728538
+      craft_anvil_9: -5545105716461824228
+      craft_anvil_90: 7637387510501679786
+      craft_anvil_91: 1018656003545035914
+      craft_anvil_92: 9149896997025081009
+      craft_anvil_93: 2356095824989759215
+      craft_anvil_94: -1662091662087721070
+      craft_anvil_95: 3524373971707610966
+      craft_anvil_96: 3944822353326304479
+      craft_anvil_97: 5030251971314116195
+      craft_anvil_98: 4351248600700242529
+      craft_anvil_99: -4134087917762978650
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

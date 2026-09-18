@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Core.TestSkillTree;
+using Core.Items;
 using Entity;
 using IncrementalRPG.Scripts.AudioManager;
 using IncrementalRPG.Scripts.Core;
@@ -26,6 +27,8 @@ namespace Core.Gameplay
         private readonly Player _player;
         private readonly SkillTreeService _skillTree;
         private readonly GameplayInputBlocker _inputBlocker;
+        private readonly RunConsumableService _consumables;
+        private readonly PlayerItemStorage _equipment;
 
         private readonly List<Creature> _creaturesInZone = new List<Creature>();
 
@@ -35,7 +38,8 @@ namespace Core.Gameplay
         private float _specialAttackCooldownRemaining;
 
         public Vector3 WorldPosition => _worldPosition;
-        public float RadiusX => _config.baseRadius * _skillTree.GetMultiplier(StatType.ZoneRadius);
+        public float RadiusX => _config.baseRadius * _skillTree.GetMultiplier(StatType.ZoneRadius)
+                                * _equipment.GetEquipmentMultiplier(EquipmentStats.ZoneRadius);
         public float RadiusY => RadiusX * _config.aspectRatio;
         public bool IsSpecialAttackUnlocked => _skillTree.IsUnlocked(GameFeature.SpecialAttack);
         public bool IsSpecialAttackReady => IsSpecialAttackUnlocked && _specialAttackCooldownRemaining <= 0f;
@@ -60,7 +64,7 @@ namespace Core.Gameplay
         public event Action<AttackSource> OnZoneTick;
 
         public DamageZone(TileGrid tileGrid, DamageZoneConfig config, DamageZoneView view, AudioManager audioManager, Player player,
-            SkillTreeService skillTree, GameplayInputBlocker inputBlocker)
+            SkillTreeService skillTree, GameplayInputBlocker inputBlocker, RunConsumableService consumables, PlayerItemStorage equipment)
         {
             _tileGrid = tileGrid;
             _config = config;
@@ -69,6 +73,8 @@ namespace Core.Gameplay
             _player = player;
             _skillTree = skillTree;
             _inputBlocker = inputBlocker;
+            _consumables = consumables;
+            _equipment = equipment;
         }
 
         public void Initialize()
@@ -211,25 +217,26 @@ namespace Core.Gameplay
             return Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame;
         }
 
-        private float GetManualAttackCooldown()
+        public float GetManualAttackCooldown()
         {
-            return GetAttackInterval(_config.baseManualAttackCooldown, StatType.ManualAttackSpeed);
+            return GetAttackInterval(_config.baseManualAttackCooldown, StatType.ManualAttackSpeed, EquipmentStats.ManualSpeed);
         }
 
-        private float GetAutoAttackInterval()
+        public float GetAutoAttackInterval()
         {
-            return GetAttackInterval(_config.baseAutoAttackInterval, StatType.AutoAttackSpeed);
+            return GetAttackInterval(_config.baseAutoAttackInterval, StatType.AutoAttackSpeed, EquipmentStats.AutoSpeed);
         }
 
         private float GetSpecialAttackCooldown()
         {
-            return Mathf.Max(0f, _config.baseSpecialAttackCooldown);
+            return Mathf.Max(0f, _config.baseSpecialAttackCooldown) * _consumables.SpecialCooldownMultiplier;
         }
 
-        private float GetAttackInterval(float baseInterval, StatType speedStat)
+        private float GetAttackInterval(float baseInterval, StatType speedStat, string equipmentStat)
         {
             var attackSpeed = GetAttackSpeedMultiplier(speedStat);
-            return Mathf.Max(MinAttackInterval, Mathf.Max(MinAttackInterval, baseInterval) / attackSpeed);
+            return Mathf.Max(MinAttackInterval, Mathf.Max(MinAttackInterval, baseInterval) /
+                attackSpeed / _equipment.GetEquipmentMultiplier(equipmentStat));
         }
 
         private float GetAttackSpeedMultiplier(StatType speedStat)
@@ -255,17 +262,30 @@ namespace Core.Gameplay
             OnZoneTick?.Invoke(source);
         }
 
-        private BigDouble GetDamage(AttackSource source)
+        public BigDouble GetDamage(AttackSource source)
         {
+            var (baseDamage, damageStat) = source switch
+            {
+                AttackSource.Manual => (_config.baseManualAttackDamage, StatType.ManualAttackDamage),
+                AttackSource.Auto => (_config.baseAutoAttackDamage, StatType.AutoAttackDamage),
+                AttackSource.Special => (_config.baseSpecialAttackDamage, StatType.SpecialAttackDamage),
+                _ => throw new ArgumentOutOfRangeException(nameof(source), source, null)
+            };
+
             var damage = BigDouble.Max(BigDouble.Zero,
-                _config.damagePerTick + _skillTree.GetBonus(StatType.ZoneDamage));
-            var multiplier = Mathf.Max(0f, _skillTree.GetMultiplier(StatType.ZoneDamage));
-
-            if (source == AttackSource.Special)
-                multiplier *= Mathf.Max(0f, _config.specialAttackDamageMultiplier);
-
-            return BigDoubleMath.MultiplyAndRound(damage, multiplier);
+                baseDamage + _skillTree.GetBonus(damageStat));
+            var multiplier = Mathf.Max(0f, _skillTree.GetMultiplier(damageStat));
+            var equipmentMultiplier = source switch
+            {
+                AttackSource.Manual => _equipment.GetEquipmentMultiplier(EquipmentStats.ManualDamage),
+                AttackSource.Auto => _equipment.GetEquipmentMultiplier(EquipmentStats.AutoDamage),
+                _ => 1f
+            };
+            return BigDoubleMath.MultiplyAndRound(damage,
+                (double)multiplier * equipmentMultiplier * _consumables.AttackDamageMultiplier);
         }
+
+        public void ResetAttackTimers() => StopDamageRegistration();
 
         private void StopDamageRegistration()
         {

@@ -5,6 +5,7 @@ using Core.Gameplay;
 using Core.Gameplay.Shards;
 using UnityEngine;
 using Core.Gameplay.Dungeon;
+using Core.Items;
 using Core.TestSkillTree;
 using Entity;
 using IncrementalRPG.Scripts.AudioManager;
@@ -29,6 +30,7 @@ namespace Core.StateMachine.Features
         [Inject] private Player _player;
         [Inject] private SkillTreeService _skillTree;
         [Inject] private AudioManager _audioManager;
+        [Inject] private RunConsumableService _consumables;
 
         public event Action OnSessionExpired;
         public event Action<BigDouble, BigDouble> OnSessionGoldEarned;
@@ -127,7 +129,10 @@ namespace Core.StateMachine.Features
         public void StartSession()
         {
             if (_runState == RunState.Ready)
+            {
+                BeginLevelEffects();
                 _runState = RunState.Playing;
+            }
         }
 
         public void ContinueAfterDemoLimitReached()
@@ -155,6 +160,8 @@ namespace Core.StateMachine.Features
 
         public void Disable()
         {
+            _consumables.EndRun();
+            _damageZone.ResetAttackTimers();
             SetPaused(false);
             _runState = RunState.Inactive;
             _pendingLevelTransitionIndex = -1;
@@ -246,6 +253,8 @@ namespace Core.StateMachine.Features
 
         private void ExpireSession()
         {
+            _consumables.EndRun();
+            _damageZone.ResetAttackTimers();
             _runState = RunState.Expired;
             RefreshViewPauseState();
             _shardDropService.DespawnAll();
@@ -255,6 +264,7 @@ namespace Core.StateMachine.Features
 
         private void ReachDemoLimit()
         {
+            _consumables.EndRun();
             _runState = RunState.DemoLimitReached;
             _pendingLevelTransitionIndex = -1;
             _pendingDemoLimit = false;
@@ -290,6 +300,7 @@ namespace Core.StateMachine.Features
             }
 
             SpawnInitialEntities();
+            BeginLevelEffects();
             _runState = RunState.Playing;
         }
 
@@ -331,6 +342,8 @@ namespace Core.StateMachine.Features
 
         private void BeginLootGrace(int nextLevelIndex, bool endsAtDemoLimit)
         {
+            _consumables.EndLevel();
+            _damageZone.ResetAttackTimers();
             _runState = RunState.LootGrace;
             RefreshViewPauseState();
             _pendingLevelTransitionIndex = nextLevelIndex;
@@ -374,6 +387,7 @@ namespace Core.StateMachine.Features
                 return;
 
             _transitionTargetLevelIndex = -1;
+            BeginLevelEffects();
             _runState = RunState.Playing;
             OnLevelTransitionFinished?.Invoke(_currentLevel, _currentLevelIndex);
         }
@@ -386,7 +400,8 @@ namespace Core.StateMachine.Features
             var levelGoldMultiplier = _currentLevel != null ? _currentLevel.goldDropMultiplier : 1f;
             var goldDrop = context.Config != null ? context.Config.goldDrop : BigDouble.Zero;
             var finalAmount = BigDoubleMath.MultiplyAndRound(goldDrop,
-                Mathf.Max(0f, levelGoldMultiplier * _skillTree.GetMultiplier(StatType.GoldDrop)));
+                Mathf.Max(0f, levelGoldMultiplier * _skillTree.GetMultiplier(StatType.GoldDrop)) *
+                _consumables.CreatureGoldMultiplier);
 
             if (finalAmount > 0)
             {
@@ -430,6 +445,12 @@ namespace Core.StateMachine.Features
             _spawnService.SpawnInitial(bombCount, FeatureType.Bomb);
         }
 
+        private void BeginLevelEffects()
+        {
+            _consumables.BeginLevel();
+            _damageZone.ResetAttackTimers();
+        }
+
         private bool ApplyLevel(int levelIndex)
         {
             if (_currentDungeon == null || !_currentDungeon.TryGetLevel(levelIndex, out var level) || level == null)
@@ -465,6 +486,9 @@ namespace Core.StateMachine.Features
 
             var spawnInterval = level.spawnInterval * (1f - _skillTree.GetBonus(StatType.SpawnSpeed));
             _spawnService.SetSpawnInterval(Mathf.Max(spawnInterval, level.minSpawnInterval));
+
+            var bombSpawnInterval = level.bombSpawnInterval * (1f - _skillTree.GetBonus(StatType.BombSpawnSpeed));
+            _spawnService.SetBombSpawnInterval(Mathf.Max(bombSpawnInterval, level.minBombSpawnInterval));
         }
 
         private void GenerateLevelMap(DungeonLevelConfig level)

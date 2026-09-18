@@ -1,4 +1,6 @@
 using Core.Gameplay;
+using Core.Forge;
+using UI.Forge;
 using Core.Gameplay.Bomb;
 using Core.Gameplay.Shards;
 using Core.Gameplay.Dungeon;
@@ -48,6 +50,8 @@ namespace Reflex
         [SerializeField] private DemoEndPopupView _demoEndPopupView;
         [SerializeField] private PlayerInventoryView _inventoryView;
         [SerializeField] private ItemCatalog _itemCatalog;
+        [SerializeField] private ForgeConfig _forgeConfig;
+        [SerializeField] private CraftView _craftView;
 
 
         private void Awake()
@@ -132,7 +136,7 @@ namespace Reflex
 
             builder.RegisterType(
                 typeof(RunConsumableService),
-                new[] { typeof(IAwakeable), typeof(RunConsumableService) },
+                new[] { typeof(ISaveable), typeof(RunConsumableService) },
                 Lifetime.Singleton,
                 Resolution.Lazy
             );
@@ -279,8 +283,12 @@ namespace Reflex
             builder.RegisterValue(_sessionEndPopupView, new[] { typeof(SessionEndPopupView) });
             builder.RegisterValue(new DemoEndPopupProvider(_demoEndPopupView), new[] { typeof(DemoEndPopupProvider) });
             builder.RegisterValue(_inventoryView,
-                new[] { typeof(PlayerInventoryView), typeof(IPlayerInventoryGateway) });
+                new[] { typeof(PlayerInventoryView), typeof(IPlayerInventoryGateway), typeof(IForgeInventoryGateway) });
             builder.RegisterValue(_itemCatalog, new[] { typeof(ItemCatalog) });
+            builder.RegisterValue(_forgeConfig);
+            builder.RegisterValue(_craftView);
+            builder.RegisterType(typeof(ForgeService), new[] { typeof(ForgeService), typeof(ISaveable) }, Lifetime.Singleton, Resolution.Lazy);
+            builder.RegisterType(typeof(ForgeFeature), new[] { typeof(ForgeFeature), typeof(IGameFeature) }, Lifetime.Singleton, Resolution.Lazy);
         }
 
         public void Exit()

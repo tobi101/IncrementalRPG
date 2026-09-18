@@ -11,7 +11,8 @@ namespace IncrementalRPG.Scripts.AudioManager
         None,
         MainMenu,
         Hub,
-        Gameplay
+        Gameplay,
+        RoundComplete
     }
 
     public class AudioManager : MonoBehaviour
@@ -65,6 +66,7 @@ namespace IncrementalRPG.Scripts.AudioManager
         [SerializeField] private AudioClip _mainMenuMusicClip;
         [SerializeField] private AudioClip _hubMusicClip;
         [SerializeField] private AudioClip _gameplayMusicClip;
+        [SerializeField] private AudioClip _roundCompleteMusicClip;
         [SerializeField] [Range(0f, 1f)] private float _musicSourceVolume = 1f;
         [SerializeField] [Min(0f)] private float _musicFadeDuration = 0.5f;
 
@@ -554,6 +556,8 @@ namespace IncrementalRPG.Scripts.AudioManager
                     return _hubMusicClip;
                 case MusicTrack.Gameplay:
                     return _gameplayMusicClip;
+                case MusicTrack.RoundComplete:
+                    return _roundCompleteMusicClip;
                 case MusicTrack.None:
                 default:
                     return null;

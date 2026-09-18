@@ -5,10 +5,10 @@ namespace Core.StateMachine.States
 {
     public class CraftState : IGameState
     {
-        [Inject] private HubFeature _hub;
+        [Inject] private ForgeFeature _forge;
 
-        public void Enter() => _hub.Enable();
-        public void Exit(GameStateExitReason reason) { }
+        public void Enter() => _forge.Enable();
+        public void Exit(GameStateExitReason reason) => _forge.Disable();
         public void Tick(float deltaTime) { }
     }
 }

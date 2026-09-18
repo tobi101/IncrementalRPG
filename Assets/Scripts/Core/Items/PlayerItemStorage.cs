@@ -12,6 +12,8 @@ namespace Core.Items
         public string InstanceId;
         public string ItemDefinitionId;
         public int Quantity = 1;
+        public string RolledNameKey;
+        public int RolledIconIndex = -1;
         public int AnchorIndex = -1;
         public int Orientation;
         public bool HasRolledData;
@@ -37,17 +39,32 @@ namespace Core.Items
         public string EquippedBootsId;
     }
 
+    public readonly struct LootDrop
+    {
+        public ItemDefinition Definition { get; }
+        public BigDouble CurrencyAmount { get; }
+
+        public LootDrop(ItemDefinition definition, BigDouble currencyAmount)
+        {
+            Definition = definition;
+            CurrencyAmount = currencyAmount;
+        }
+    }
+
     public readonly struct LootReward
     {
         public string InstanceId { get; }
         public ItemDefinition Definition { get; }
         public bool IsPendingPlacement { get; }
+        public BigDouble CurrencyAmount { get; }
 
-        public LootReward(string instanceId, ItemDefinition definition, bool isPendingPlacement = false)
+        public LootReward(string instanceId, ItemDefinition definition, bool isPendingPlacement = false,
+            BigDouble currencyAmount = default)
         {
             InstanceId = instanceId;
             Definition = definition;
             IsPendingPlacement = isPendingPlacement;
+            CurrencyAmount = currencyAmount;
         }
     }
 
@@ -63,7 +80,11 @@ namespace Core.Items
 
     public sealed class PlayerItemStorage : ISaveable
     {
+        private static readonly EquipmentSlot[] SupportedSlots = { EquipmentSlot.Helmet, EquipmentSlot.Chest, EquipmentSlot.Weapon };
+        private readonly ItemCatalog _catalog;
         private PlayerItemStorageState _state = new();
+
+        public PlayerItemStorage(ItemCatalog catalog) => _catalog = catalog;
 
         public event Action OnChanged;
         public event Action OnInventoryRefreshRequested;
@@ -72,17 +93,7 @@ namespace Core.Items
 
         public PlayerItemInstanceState Create(ItemDefinition definition)
         {
-            var stats = new List<ItemStatState>(definition.defaultStats.Length);
-            foreach (var stat in definition.defaultStats)
-            {
-                stats.Add(new ItemStatState
-                {
-                    StatId = stat.statId,
-                    Value = stat.value
-                });
-            }
-
-            return Create(definition, definition.rarity, stats, definition.sellPrice);
+            return Create(definition, definition.rarity, definition.CopyDefaultStats(), definition.sellPrice);
         }
 
         public PlayerItemInstanceState Create(
@@ -91,6 +102,16 @@ namespace Core.Items
             IReadOnlyList<ItemStatState> stats,
             BigDouble sellPrice)
         {
+            if (definition.category == ItemCategory.Currency)
+                throw new ArgumentException("Currency rewards are credited directly to the player.", nameof(definition));
+            if (definition.category == ItemCategory.Armor)
+            {
+                if (!EquipmentStats.IsSupportedSlot(definition.equipmentSlot))
+                    throw new ArgumentException("Armor requires Helmet, Chest or Weapon slot.", nameof(definition));
+                if (!EquipmentStats.Validate(stats, out var error))
+                    throw new ArgumentException(error, nameof(stats));
+            }
+            stats ??= Array.Empty<ItemStatState>();
             var rolledStats = new List<ItemStatState>(stats.Count);
             foreach (var stat in stats)
             {
@@ -118,6 +139,12 @@ namespace Core.Items
         public PlayerItemInstanceState Get(string instanceId)
         {
             return _state.Items.First(item => item.InstanceId == instanceId);
+        }
+
+        public bool TryGet(string instanceId, out PlayerItemInstanceState item)
+        {
+            item = _state.Items.FirstOrDefault(candidate => candidate.InstanceId == instanceId);
+            return item != null;
         }
 
         public void Place(IReadOnlyList<PlayerItemInstanceState> items, int anchorIndex, int orientation)
@@ -209,15 +236,14 @@ namespace Core.Items
 
         public IEnumerable<PlayerItemInstanceState> GetEquippedItems()
         {
-            return _state.Items.Where(item =>
-                item.InstanceId == _state.EquippedHelmetId ||
-                item.InstanceId == _state.EquippedChestId ||
-                item.InstanceId == _state.EquippedWeaponId ||
-                item.InstanceId == _state.EquippedBootsId);
+            foreach (var slot in SupportedSlots)
+                if (TryGetCompatibleItem(slot, GetEquipped(slot), out var item))
+                    yield return item;
         }
 
         public float GetEquippedStatTotal(string statId)
         {
+            if (!EquipmentStats.IsKnown(statId)) return 0f;
             var total = 0f;
             foreach (var item in GetEquippedItems())
             {
@@ -231,8 +257,26 @@ namespace Core.Items
             return total;
         }
 
-        public void Equip(EquipmentSlot slot, string instanceId)
+        public float GetEquipmentMultiplier(string statId) => 1f + GetEquippedStatTotal(statId);
+
+        private bool TryGetCompatibleItem(EquipmentSlot slot, string instanceId, out PlayerItemInstanceState item)
         {
+            item = null;
+            return EquipmentStats.IsSupportedSlot(slot) &&
+                   !string.IsNullOrEmpty(instanceId) && TryGet(instanceId, out item) &&
+                   _catalog.TryGet(item.ItemDefinitionId, out var definition) &&
+                   definition.category == ItemCategory.Armor && definition.equipmentSlot == slot;
+        }
+
+        public bool CanEquip(EquipmentSlot slot, string instanceId) =>
+            TryGetCompatibleItem(slot, instanceId, out var item) && EquipmentStats.Validate(item.Stats, out _);
+
+        public bool Equip(EquipmentSlot slot, string instanceId)
+        {
+            if (!EquipmentStats.IsSupportedSlot(slot) ||
+                (!string.IsNullOrEmpty(instanceId) && !CanEquip(slot, instanceId)))
+                return false;
+            if (GetEquipped(slot) == instanceId) return true;
             switch (slot)
             {
                 case EquipmentSlot.Helmet:
@@ -244,18 +288,23 @@ namespace Core.Items
                 case EquipmentSlot.Weapon:
                     _state.EquippedWeaponId = instanceId;
                     break;
-                case EquipmentSlot.Boots:
-                    _state.EquippedBootsId = instanceId;
-                    break;
             }
 
             OnChanged?.Invoke();
+            return true;
         }
 
         public void Load(SaveData data)
         {
             _state = data.PlayerItemStorageState ?? new PlayerItemStorageState();
             _state.Items ??= new List<PlayerItemInstanceState>();
+            // Remove only retired prototypes; preserve all other saved items.
+            foreach (var item in _state.Items.Where(item => item.ItemDefinitionId is
+                         "test1" or "test2" or "test3" or "test4" or "test5" or "test6").ToArray())
+            {
+                _state.Items.Remove(item);
+                ClearEquipmentReference(item.InstanceId);
+            }
             if (data.Version < 2)
             {
                 foreach (var item in _state.Items)
@@ -266,6 +315,25 @@ namespace Core.Items
             }
 
             ExpandLegacyQuantities();
+            foreach (var item in _state.Items)
+            {
+                if (!_catalog.TryGet(item.ItemDefinitionId, out var definition)) continue;
+                // The old 2x1 helmet could be rotated. A single-cell placement only accepts orientation zero.
+                if (definition.category == ItemCategory.Armor && definition.equipmentSlot == EquipmentSlot.Helmet)
+                    item.Orientation = 0;
+                // Only legacy, unrolled records may inherit definition data once.
+                if (!item.HasRolledData)
+                {
+                    item.Stats = definition.CopyDefaultStats();
+                    item.Rarity = definition.rarity;
+                    item.SellPrice = definition.sellPrice;
+                    item.HasRolledData = true;
+                }
+            }
+            foreach (var slot in SupportedSlots)
+                if (!CanEquip(slot, GetEquipped(slot))) Equip(slot, null);
+            _state.EquippedBootsId = null;
+            OnChanged?.Invoke();
             OnInventoryRefreshRequested?.Invoke();
         }
 

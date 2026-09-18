@@ -41,6 +41,8 @@ namespace Core.Gameplay
 
         private float _spawnInterval = 2f;
         private float _timer;
+        private float _bombSpawnInterval;
+        private float _bombTimer;
         private readonly List<ActiveEntry> _active = new();
         private readonly List<Action> _pendingDeathCompletions = new();
         private bool _isPaused;
@@ -71,12 +73,19 @@ namespace Core.Gameplay
         {
             _spawnTable = level.spawnTable;
             _spawnInterval = level.spawnInterval;
+            _bombSpawnInterval = level.bombSpawnInterval;
             _timer = 0f;
+            _bombTimer = 0f;
         }
 
         public void SetSpawnInterval(float interval)
         {
             _spawnInterval = interval;
+        }
+
+        public void SetBombSpawnInterval(float interval)
+        {
+            _bombSpawnInterval = interval;
         }
 
         public void Initialize() { }
@@ -95,7 +104,16 @@ namespace Core.Gameplay
             if (_timer >= _spawnInterval)
             {
                 _timer = 0f;
-                TrySpawnAny();
+                TrySpawnNonBomb();
+            }
+
+            if (!_skillTree.IsUnlocked(GameFeature.Bombs)) return;
+
+            _bombTimer += deltaTime;
+            if (_bombTimer >= _bombSpawnInterval)
+            {
+                _bombTimer = 0f;
+                TrySpawnOfType(FeatureType.Bomb);
             }
         }
 
@@ -121,12 +139,12 @@ namespace Core.Gameplay
                 entry.View.SetPaused(entry.Creature.IsAlive ? _areViewsPaused : _areDeathAnimationsPaused);
         }
 
-        private void TrySpawnAny()
+        private void TrySpawnNonBomb()
         {
             if (_spawnTable == null) return;
             if (!_tileGrid.TryGetRandomFreeTile(out var coord)) return;
 
-            var config = _spawnTable.PickAny(_skillTree);
+            var config = _spawnTable.PickNonBomb(_skillTree);
             if (config == null) return;
 
             Spawn(config, coord);
@@ -149,6 +167,7 @@ namespace Core.Gameplay
             _active.Clear();
             _pendingDeathCompletions.Clear();
             _timer = 0f;
+            _bombTimer = 0f;
             foreach (var entry in snapshot)
             {
                 entry.Creature.OnDied -= entry.OnDied;

@@ -21,7 +21,9 @@ namespace Core.TestSkillTree
     public enum StatType
     {
         ZoneRadius = 0,
-        ZoneDamage = 1,
+        ManualAttackDamage = 1,
+        AutoAttackDamage = 18,
+        SpecialAttackDamage = 19,
         ManualAttackSpeed = 2,
         AutoAttackSpeed = 12,
         SpawnSpeed = 3,

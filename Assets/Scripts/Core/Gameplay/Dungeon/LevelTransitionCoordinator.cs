@@ -3,6 +3,7 @@ using Core.StateMachine.Features;
 using IncrementalRPG.Scripts.Reflex;
 using Reflex.Attributes;
 using UI;
+using System.Linq;
 
 namespace Core.Gameplay.Dungeon
 {
@@ -54,7 +55,9 @@ namespace Core.Gameplay.Dungeon
 
             _dungeonSelection.MarkLevelReached(_gameplay.CurrentDungeon, nextLevelIndex);
             _hud.PrepareLevelTransitionMessage();
-            _lootbox.Prepare(_reward);
+            _lootbox.Prepare(_reward, _gameplay.CurrentLevel.lootPool.entries
+                .Where(entry => entry != null && entry.IsValid && entry.item.icon != null)
+                .Select(entry => entry.item.icon).Distinct().ToArray());
             _lootbox.SetPaused(_gameplay.IsPaused);
             _curtain.SetPaused(_gameplay.IsPaused);
             _curtain.Prepare(_gameplay.CurrentDungeon.LevelCount, nextLevelIndex - 1);
@@ -83,10 +86,7 @@ namespace Core.Gameplay.Dungeon
             _spinCompleted = true;
             _awaitingRewardChoice = true;
             var canUse = _inventory.CanUseReward(_reward);
-            var status = _reward.IsPendingPlacement ? "INVENTORY FULL — REWARD SAVED" : string.Empty;
-            if (!canUse)
-                status += (status.Length > 0 ? "\n" : string.Empty) + "THIS ITEM CANNOT BE USED NOW";
-            _lootbox.ShowResult(canUse, status);
+            _lootbox.ShowResult(canUse, _inventory.GetRewardUseUnavailableKey(_reward));
             _curtain.SetInteractionEnabled(true);
         }
 
@@ -110,7 +110,7 @@ namespace Core.Gameplay.Dungeon
             if (!_inventory.TryUseReward(_reward))
             {
                 _awaitingRewardChoice = true;
-                _lootbox.ShowUseUnavailable("THIS ITEM CANNOT BE USED NOW");
+                _lootbox.ShowUseUnavailable(_inventory.GetRewardUseUnavailableKey(_reward));
                 return;
             }
 

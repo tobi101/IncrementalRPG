@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3753bb1c5ea24926973bd18e4843dad, type: 3}
+  m_Name: ForgeConfig
+  m_EditorClassIdentifier: Assembly-CSharp::Core.Forge.ForgeConfig
+  firstAvailableLocation: 2
+  levels:
+  - shardCost:
+      mantissa: 5
+      exponent: 0
+    rarityWeights:
+    - 60
+    - 30
+    - 9
+    - 1
+    cursorPeriod: 2.4
+    rarityRange: 0.06
+    allStatsRange: 0.24
+    oneStatRange: 0.6
+    allStatsBonus: 0.1
+    oneStatBonus: 0.15
+  - shardCost:
+      mantissa: 8
+      exponent: 0
+    rarityWeights:
+    - 50
+    - 34
+    - 14
+    - 2
+    cursorPeriod: 2.2
+    rarityRange: 0.07
+    allStatsRange: 0.26
+    oneStatRange: 0.62
+    allStatsBonus: 0.1
+    oneStatBonus: 0.15
+  - shardCost:
+      mantissa: 1.2
+      exponent: 1
+    rarityWeights:
+    - 40
+    - 37
+    - 19
+    - 4
+    cursorPeriod: 2
+    rarityRange: 0.08
+    allStatsRange: 0.28
+    oneStatRange: 0.64
+    allStatsBonus: 0.1
+    oneStatBonus: 0.15
+  - shardCost:
+      mantissa: 1.8
+      exponent: 1
+    rarityWeights:
+    - 30
+    - 40
+    - 24
+    - 6
+    cursorPeriod: 1.8
+    rarityRange: 0.09
+    allStatsRange: 0.3
+    oneStatRange: 0.66
+    allStatsBonus: 0.1
+    oneStatBonus: 0.15
+  equipment:
+  - {fileID: 11400000, guid: 2bee9d82022954222bec582c57479199, type: 2}
+  - {fileID: 11400000, guid: a50ff8a4028d844048cef77d2b9d7da3, type: 2}
+  - {fileID: 11400000, guid: 3ea1f7a0481254d7db5a68633083acb0, type: 2}
+  statRanges:
+  - {x: 0.03, y: 0.07}
+  - {x: 0.06, y: 0.12}
+  - {x: 0.1, y: 0.18}
+  - {x: 0.15, y: 0.25}
+  goldPerBonusPercent: 2

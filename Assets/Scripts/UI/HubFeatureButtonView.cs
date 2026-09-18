@@ -60,11 +60,18 @@ namespace UI
 
         private void SetGlowVisible(bool visible)
         {
-            if (_glowImage == null) return;
-            if (_text == null) return;
-            
-            _glowImage.enabled = visible;
-            _text.enabled = visible;
+            if (_glowImage != null)
+                _glowImage.enabled = visible;
+
+            if (_text == null)
+                return;
+
+            // Toggle the whole label so its text and backdrop appear together.
+            var label = _text.GetComponentInParent<HubLabelView>(true);
+            if (label != null)
+                label.gameObject.SetActive(visible);
+            else
+                _text.enabled = visible;
         }
 
         private void PlaySkeletonAnimation(string animationName, bool loop)
