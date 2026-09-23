@@ -90,6 +90,7 @@ namespace Core.Gameplay
                     var position = origin + new Vector3Int(x, y, 0);
 
                     targetTilemap.SetTile(position, tile);
+                    ApplyCheckerboardTint(position, x, y);
                 }
             }
 
@@ -120,6 +121,21 @@ namespace Core.Gameplay
             targetTilemap.ClearAllTiles();
             leftPillarTilemap?.ClearAllTiles();
             rightPillarTilemap?.ClearAllTiles();
+        }
+
+        private void ApplyCheckerboardTint(Vector3Int position, int x, int y)
+        {
+            if (!config.checkerboardEnabled || (x + y) % 2 == 0)
+                return;
+
+            var brightness = 1f - Mathf.Clamp01(config.checkerboardDarkening);
+            var color = targetTilemap.GetColor(position);
+            color.r *= brightness;
+            color.g *= brightness;
+            color.b *= brightness;
+
+            targetTilemap.RemoveTileFlags(position, TileFlags.LockColor);
+            targetTilemap.SetColor(position, color);
         }
 
         private void GeneratePillar()

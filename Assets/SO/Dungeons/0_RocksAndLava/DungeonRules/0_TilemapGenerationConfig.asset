@@ -41,4 +41,6 @@ MonoBehaviour:
   seed: 4321
   noiseScale: 0.87
   noiseBorderStrength: 0.2
+  checkerboardEnabled: 1
+  checkerboardDarkening: 0.2
   pillarHeight: 15

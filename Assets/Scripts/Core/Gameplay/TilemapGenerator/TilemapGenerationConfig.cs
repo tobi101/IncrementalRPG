@@ -29,6 +29,12 @@ namespace Core.Gameplay
         [Tooltip("Сила смещения границы шумом: 0 = ровная линия, 1 = сильные волны")]
         [Range(0f, 1f)] public float noiseBorderStrength = 0.25f;
 
+        [Header("Checkerboard")]
+        [Tooltip("Чередовать обычные и затемнённые клетки пола")]
+        public bool checkerboardEnabled;
+        [Tooltip("Сила затемнения: 0 = исходный цвет, 1 = чёрный; 0.1 = затемнение на 10%")]
+        [Range(0f, 1f)] public float checkerboardDarkening = 0.1f;
+
         [Header("Pillar")]
         [Min(0)] public int pillarHeight = 3;
     }
