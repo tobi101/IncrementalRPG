@@ -40,16 +40,6 @@ namespace UI
         public bool IsOpen => Root.activeSelf;
         public bool IsGameplayPaused => _isGameplayPaused;
 
-        public void RegisterSideMenu(SideMenuFlyoutView sideMenu)
-        {
-            var count = _sideMenus.Length;
-            Array.Resize(ref _sideMenus, count + 1);
-            _sideMenus[count] = sideMenu;
-
-            if (isActiveAndEnabled)
-                SubscribeSideMenu(sideMenu);
-        }
-
         private GameObject Root => _root != null ? _root : gameObject;
 
         private bool IsSettingsOpen => _settingsMenu != null && _settingsMenu.IsVisible();

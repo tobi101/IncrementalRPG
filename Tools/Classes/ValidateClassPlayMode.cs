@@ -39,7 +39,7 @@ public static class ValidateClassPlayMode
         Check(machine.IsCurrent<ClassesMenuState>()&&view.mainRoot.activeInHierarchy&&!view.choiceRoot.activeSelf,"Shrine previews classes before introduction");
         Check(view.lockedRoot.activeInHierarchy&&!view.unlockButton.gameObject.activeSelf,"premature class purchase hidden");
         Call(view,"ReturnToHub");
-        Check(machine.IsCurrent<HubState>()&&!view.navigationRoot.gameObject.activeInHierarchy,"preview returns to hub and hides class navigation");
+        Check(machine.IsCurrent<HubState>()&&!view.sideMenu.gameObject.activeInHierarchy,"preview returns to hub and hides class menu");
         machine.Enter<GameplayState>();gameplay.StartSession();
         for(int i=0;i<catalog.introductionDungeon.LevelCount;i++)
         {

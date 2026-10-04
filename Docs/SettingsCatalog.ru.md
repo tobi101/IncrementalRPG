@@ -1344,11 +1344,7 @@ Time Scale сундука сбрасывается кодом; скорость 
 
 Где редактировать:
 
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:14830) → `MenuCanvas/HubPanel/SideMenuToggle`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:31742) → `MenuCanvas/MapView/MapSideMenuToggle`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:38923) → `MenuCanvas/InventoryView/SideMenuToggle`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:41345) → `MenuCanvas/SkillTreeView/SkillTreePanel/SideMenuToggle`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:49803) → `MenuCanvas/CraftView/SideMenuToggle`
+- [SideMenu.prefab](/Users/admin/IncrementalRPG/Assets/Prefabs/UI/SideMenu.prefab) → `SideMenu/SideMenuToggle`; используется всеми шестью окнами хаба
 
 | Поле | Тип | Инициализатор нового объекта | Вид настройки |
 | --- | --- | --- | --- |
@@ -1399,8 +1395,7 @@ Time Scale сундука сбрасывается кодом; скорость 
 | [_chestSlot](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:36) | Image | — | Ссылка на объект/компонент/ресурс |
 | [_weaponSlot](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:37) | Image | — | Ссылка на объект/компонент/ресурс |
 | [_bootsSlot](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:38) | Image | — | Не задаёт рабочий слот; декоративный силуэт настраивается на BootsPlaceholder |
-| [_menuToggleButton](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:41) | Button | — | Ссылка на объект/компонент/ресурс |
-| [_sideMenuTemplate](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:42) | SideMenuFlyoutView | — | Ссылка на объект/компонент/ресурс |
+| [_sideMenu](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:41) | SideMenuFlyoutView | — | Экземпляр общего SideMenu.prefab внутри InventoryView |
 | [_dragCanvasPrefab](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:45) | GameObject | — | Ссылка на объект/компонент/ресурс |
 | [_tooltipCanvasPrefab](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:46) | GameObject | — | Ссылка на объект/компонент/ресурс |
 | `_consumableFeedback` | TMP_Text | — | Текст локализованного результата применения |
@@ -1599,21 +1594,11 @@ Time Scale сундука сбрасывается кодом; скорость 
 
 Где редактировать:
 
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:2899) → `MenuCanvas/MapView/MapSideMenuFlyout/ButtonList/ReturnToHubButton`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:4380) → `MenuCanvas/SkillTreeView/SkillTreePanel/SkillTreeSideMenuFlyout/ButtonList/SettingsButton`
+- [SideMenu.prefab](/Users/admin/IncrementalRPG/Assets/Prefabs/UI/SideMenu.prefab) → `SideMenu/ButtonList`: ReturnToHubButton, SettingsButton, MainMenuButton, ExitButton
 - [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:6096) → `MiscPanelsCanvas/Background/PausePanel/SettingsPanelImage/Button`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:9560) → `MenuCanvas/MapView/MapSideMenuFlyout/ButtonList/MainMenuButton`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:9734) → `MenuCanvas/MapView/MapSideMenuFlyout/ButtonList/SettingsButton`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:10668) → `MenuCanvas/HubPanel/HubSideMenuFlyout/ButtonList/MainMenuButton`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:19856) → `MenuCanvas/HubPanel/HubSideMenuFlyout/ButtonList/ExitButton`
 - [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:20383) → `MiscPanelsCanvas/Background/SettingsPanel/SettingsPanelImage/Button`
 - [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:32728) → `MiscPanelsCanvas/Background/PausePanel/SettingsPanelImage/Button (2)`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:33801) → `MenuCanvas/SkillTreeView/SkillTreePanel/SkillTreeSideMenuFlyout/ButtonList/ReturnToHubButton`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:34928) → `MenuCanvas/HubPanel/HubSideMenuFlyout/ButtonList/SettingsButton`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:37803) → `MenuCanvas/SkillTreeView/SkillTreePanel/SkillTreeSideMenuFlyout/ButtonList/MainMenuButton`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:42302) → `MenuCanvas/SkillTreeView/SkillTreePanel/SkillTreeSideMenuFlyout/ButtonList/ExitButton`
 - [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:45861) → `MiscPanelsCanvas/Background/PausePanel/SettingsPanelImage/Button (1)`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:48157) → `MenuCanvas/MapView/MapSideMenuFlyout/ButtonList/ExitButton`
 
 | Поле | Тип | Инициализатор нового объекта | Вид настройки |
 | --- | --- | --- | --- |
@@ -1628,21 +1613,29 @@ Time Scale сундука сбрасывается кодом; скорость 
 
 Где редактировать:
 
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:29155) → `MenuCanvas/HubPanel/HubSideMenuFlyout`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:38046) → `MenuCanvas/MapView/MapSideMenuFlyout`
-- [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity:42081) → `MenuCanvas/SkillTreeView/SkillTreePanel/SkillTreeSideMenuFlyout`
+- [SideMenu.prefab](/Users/admin/IncrementalRPG/Assets/Prefabs/UI/SideMenu.prefab) → `SideMenu`; общее оформление, ссылки и анимация
+
+Экземпляры в [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity):
+
+- `MenuCanvas/HubPanel/SideMenu`
+- `MenuCanvas/MapView/SideMenu`
+- `MenuCanvas/SkillTreeView/SkillTreePanel/SideMenu`
+- `MenuCanvas/InventoryView/SideMenu`
+- `MenuCanvas/CraftView/SideMenu`
+- `MenuCanvas/ClassesView/SideMenu`
 
 | Поле | Тип | Инициализатор нового объекта | Вид настройки |
 | --- | --- | --- | --- |
-| [_toggleButton](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:11) | Button | — | Ссылка на объект/компонент/ресурс |
-| [_listRoot](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:12) | GameObject | — | Ссылка на объект/компонент/ресурс |
-| [_settingsButton](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:13) | Button | — | Ссылка на объект/компонент/ресурс |
-| [_mainMenuButton](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:14) | Button | — | Ссылка на объект/компонент/ресурс |
-| [_exitButton](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:15) | Button | — | Ссылка на объект/компонент/ресурс |
-| [_returnToHubButton](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:16) | Button | — | Ссылка на объект/компонент/ресурс |
-| [_animationDuration](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:17) | float | `0.16f` | Значение; Min(0f) |
-| [_itemDelay](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:18) | float | `0.04f` | Значение; Min(0f) |
-| [_closedOffset](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:19) | Vector2 | `new Vector2(0f, 18f)` | Значение |
+| [_toggleButton](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:13) | Button | — | Ссылка на объект/компонент/ресурс |
+| [_listRoot](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:14) | GameObject | — | Ссылка на объект/компонент/ресурс |
+| [_settingsButton](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:15) | Button | — | Ссылка на объект/компонент/ресурс |
+| [_mainMenuButton](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:16) | Button | — | Ссылка на объект/компонент/ресурс |
+| [_exitButton](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:17) | Button | — | Ссылка на объект/компонент/ресурс |
+| [_returnToHubButton](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:18) | Button | — | Ссылка на объект/компонент/ресурс |
+| [_showReturnToHubButton](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:19) | bool | `true` | Пункт возврата в хаб; выключен только у экземпляра в HubPanel |
+| [_animationDuration](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:20) | float | `0.16f` | Значение; Min(0f) |
+| [_itemDelay](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:21) | float | `0.04f` | Значение; Min(0f) |
+| [_closedOffset](/Users/admin/IncrementalRPG/Assets/Scripts/UI/SideMenuFlyoutView.cs:22) | Vector2 | `new Vector2(0f, 18f)` | Значение |
 
 <a id="skeletontint"></a>
 

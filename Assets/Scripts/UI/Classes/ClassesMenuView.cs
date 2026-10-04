@@ -53,8 +53,6 @@ namespace UI.Classes
         public GameObject attacksRoot;
         public Button classesTab;
         public Button attacksTab;
-        public Button menuButton;
-        public RectTransform navigationRoot;
         [FormerlySerializedAs("sideMenuTemplate")]
         public SideMenuFlyoutView sideMenu;
         public ClassChoiceCard[] choices;
@@ -152,7 +150,6 @@ namespace UI.Classes
         {
             if (_initialized) return;
             _initialized = true;
-            sideMenu.SetToggleButton(menuButton);
             sideMenu.ReturnToHubButton.onClick.AddListener(ReturnToHub);
             sideMenu.CloseImmediate();
             // Keep modal overlays above the flyout and ordinary content.
@@ -195,7 +192,11 @@ namespace UI.Classes
         private void Update()
         {
             if (!_initialized || _pause.IsOpen || Keyboard.current == null || !Keyboard.current.escapeKey.wasPressedThisFrame || _choosing) return;
-            if (confirmation.activeSelf) confirmation.SetActive(false);
+            if (confirmation.activeSelf)
+            {
+                sideMenu.SuppressEscapeThisFrame();
+                confirmation.SetActive(false);
+            }
             else if (sideMenu.IsOpen) sideMenu.Close();
             else ReturnToHub();
         }

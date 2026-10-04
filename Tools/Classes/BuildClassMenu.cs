@@ -61,15 +61,8 @@ public static class BuildClassMenu
         foreach(RectTransform chain in viewRoot)
             if(chain.name.StartsWith("Chain"))chain.anchorMin=chain.anchorMax=new Vector2(.5f,1);
         composition.SetAsLastSibling();
-        var inv=Object.FindFirstObjectByType<UI.Inventory.PlayerInventoryView>(FindObjectsInactive.Include);
-        var invFields=new SerializedObject(inv);
-        var buttonSource=(Button)invFields.FindProperty("_menuToggleButton").objectReferenceValue;
-        var menuSource=(SideMenuFlyoutView)invFields.FindProperty("_sideMenuTemplate").objectReferenceValue;
-        var navigation=Rect("ScreenNavigation",viewRoot,Vector2.zero,Vector2.zero);Stretch(navigation);view.navigationRoot=navigation;
-        var button=Object.Instantiate(buttonSource,navigation);button.name="SideMenuToggle";view.menuButton=button;
-        view.sideMenu=Object.Instantiate(menuSource,navigation);view.sideMenu.name="ClassesSideMenuFlyout";
-        var menuFields=new SerializedObject(view.sideMenu);
-        menuFields.FindProperty("_toggleButton").objectReferenceValue=button;menuFields.ApplyModifiedPropertiesWithoutUndo();
+        var menuPrefab=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/UI/SideMenu.prefab");
+        view.sideMenu=((GameObject)PrefabUtility.InstantiatePrefab(menuPrefab,viewRoot)).GetComponent<SideMenuFlyoutView>();
         if(sideMenuIndex<0){sideMenuIndex=sideMenus.arraySize;sideMenus.arraySize++;}
         sideMenus.GetArrayElementAtIndex(sideMenuIndex).objectReferenceValue=view.sideMenu;pauseFields.ApplyModifiedPropertiesWithoutUndo();
         var choices=Rect("FirstChoice",composition,Vector2.zero,new Vector2(1920,1080));view.choiceRoot=choices.gameObject;
@@ -161,8 +154,8 @@ public static class BuildClassMenu
         BuildOverlays(composition);
         choices.gameObject.SetActive(false);main.gameObject.SetActive(true);view.attacksRoot.SetActive(false);view.lockedRoot.SetActive(false);
         view.confirmation.SetActive(false);view.tooltip.gameObject.SetActive(false);view.choiceReveal.gameObject.SetActive(false);
-        navigation.SetAsLastSibling();view.confirmation.transform.SetAsLastSibling();view.choiceReveal.transform.SetAsLastSibling();
-        // Keep the window and navigation as scene objects, like the other hub windows.
+        view.sideMenu.transform.SetAsLastSibling();view.confirmation.transform.SetAsLastSibling();view.choiceReveal.transform.SetAsLastSibling();
+        // Keep the window in the scene and its menu connected to the shared prefab.
         var installer=Object.FindFirstObjectByType<Reflex.GameSceneInstaller>(FindObjectsInactive.Include);
         var fields=new SerializedObject(installer);fields.FindProperty("_classCatalog").objectReferenceValue=catalog;fields.FindProperty("_classesView").objectReferenceValue=view;fields.ApplyModifiedPropertiesWithoutUndo();
         var hub=Object.FindFirstObjectByType<HubView>(FindObjectsInactive.Include);var hubFields=new SerializedObject(hub);
