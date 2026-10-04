@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee663b5fe0cf4c758270cd0e553e76e, type: 3}
+  m_Name: Upgrade_cooldown_4
+  m_EditorClassIdentifier: Assembly-CSharp::Core.Classes.ClassNodeDefinition
+  id: earth_cooldown_4
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: classes.earth_cooldown_4.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: classes.earth_cooldown_4.description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  icon: {fileID: -8209144050242339564, guid: 63d62ea9e61e34f35b28ebb01ddc80fd, type: 3}
+  preview: {fileID: 0}
+  position: {x: 282, y: 288}
+  visualScale: 0.64
+  maxLevel: 3
+  goldCostPerLevel:
+  - mantissa: 1.5
+    exponent: 2
+  - mantissa: 3
+    exponent: 2
+  - mantissa: 6
+    exponent: 2
+  requirements:
+  - node: {fileID: 11400000, guid: 3a7284c7b7229400a8d67d7d7a713f6c, type: 2}
+    level: 1
+  reward: 1
+  attack: {fileID: 11400000, guid: cd9ec1b0aab81408082a12c37922e67e, type: 2}
+  parameterId: cooldown_4
+  valuesPerLevel:
+  - 0.1
+  - 0.1
+  - 0.1
+  runeKeyReward: 1
+  references:
+    version: 2
+    RefIds: []

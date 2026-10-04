@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee663b5fe0cf4c758270cd0e553e76e, type: 3}
+  m_Name: Unlock0
+  m_EditorClassIdentifier: Assembly-CSharp::Core.Classes.ClassNodeDefinition
+  id: ice_unlock_0
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: classes.ice_0.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: classes.ice_0.description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  icon: {fileID: -8667698180823002796, guid: 47b7f10fe8a0f40a58ef215f55de048c, type: 3}
+  preview: {fileID: -8667698180823002796, guid: 47b7f10fe8a0f40a58ef215f55de048c, type: 3}
+  position: {x: 0, y: -230}
+  visualScale: 1
+  maxLevel: 1
+  goldCostPerLevel:
+  - mantissa: 1
+    exponent: 2
+  requirements: []
+  reward: 0
+  attack: {fileID: 11400000, guid: 21510e1ce69404559a83353485297230, type: 2}
+  parameterId: 
+  valuesPerLevel: []
+  runeKeyReward: 1
+  references:
+    version: 2
+    RefIds: []

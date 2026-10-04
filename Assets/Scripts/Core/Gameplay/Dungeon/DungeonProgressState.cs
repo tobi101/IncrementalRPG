@@ -8,6 +8,19 @@ namespace Core.Gameplay.Dungeon
     {
         public List<DungeonProgressEntry> entries = new();
 
+        public bool IsCompleted(string dungeonId) => !string.IsNullOrEmpty(dungeonId) &&
+            entries != null && entries.Exists(e => e != null && e.dungeonId == dungeonId && e.completed);
+
+        public bool SetCompleted(string dungeonId)
+        {
+            if (string.IsNullOrEmpty(dungeonId) || IsCompleted(dungeonId)) return false;
+            entries ??= new List<DungeonProgressEntry>();
+            var entry = entries.Find(e => e != null && e.dungeonId == dungeonId);
+            if (entry == null) entries.Add(entry = new DungeonProgressEntry { dungeonId = dungeonId, reachedLevelIndex = -1 });
+            entry.completed = true;
+            return true;
+        }
+
         public int GetReachedLevelIndex(string dungeonId)
         {
             if (string.IsNullOrEmpty(dungeonId) || entries == null)
@@ -94,5 +107,6 @@ namespace Core.Gameplay.Dungeon
         public string dungeonId;
         public int reachedLevelIndex;
         public bool demoEndAcknowledged;
+        public bool completed;
     }
 }

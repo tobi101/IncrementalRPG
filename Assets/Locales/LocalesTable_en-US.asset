@@ -937,6 +937,507 @@ MonoBehaviour:
     m_Localized: Bastion Blade
     m_Metadata:
       m_Items: []
+  - m_Id: 49241406873526272
+    m_Localized: Choose your class
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189568
+    m_Localized: Classes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189569
+    m_Localized: Attacks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189570
+    m_Localized: Manual attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189571
+    m_Localized: Auto attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189572
+    m_Localized: Ultimate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189573
+    m_Localized: Click to choose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189574
+    m_Localized: Drop an attack here
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189575
+    m_Localized: 'Unlock attacks
+
+      in class branches'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189576
+    m_Localized: Click or drag an attack into its slot. Click an equipped attack
+      or drag it back to the list to remove it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189577
+    m_Localized: 'Unlock {0}
+
+      with a rune key'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189578
+    m_Localized: 'Rune keys: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189579
+    m_Localized: Unlock for {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189580
+    m_Localized: Reset class
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189581
+    m_Localized: 'Refund: {0} gold'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189582
+    m_Localized: Unlock another class before resetting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189583
+    m_Localized: 'Reset {0}?
+
+
+      Its upgrades and attacks will be removed, and
+      its equipped attacks cleared. You will need to unlock the class again.
+
+
+      You
+      receive {1} gold.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189584
+    m_Localized: Reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189585
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189586
+    m_Localized: Level {0} / {1}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189587
+    m_Localized: 'Requires: {0}, lv. {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189588
+    m_Localized: "Upgrade \xB7 {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189589
+    m_Localized: Maximum level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189590
+    m_Localized: Not enough gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189591
+    m_Localized: Class locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189592
+    m_Localized: Requirements not met
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189593
+    m_Localized: Upgrade unavailable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189594
+    m_Localized: Shrine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241408580608000
+    m_Localized: Rune Key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241408584802304
+    m_Localized: Unlocks a class at the shrine.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241410069585920
+    m_Localized: Basic Strike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241410069585921
+    m_Localized: A manual attack without an element.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241411105579008
+    m_Localized: Pyromancer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241411105579009
+    m_Localized: Turn the caves into a furnace. Burn your enemies, surround them
+      with flames and unleash a rain of fire.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241411977994240
+    m_Localized: Fire Strike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241411977994241
+    m_Localized: Damages and burns enemies within part of the manual attack area.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241412938489856
+    m_Localized: Fire Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241412938489857
+    m_Localized: A ring at the edge of your area periodically burns enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241413680881664
+    m_Localized: Explosion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241413680881665
+    m_Localized: An explosion damages and burns nearby enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241414356164608
+    m_Localized: Fire Rain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241414356164609
+    m_Localized: Fireballs fall across alternating tiles, damaging and burning enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241414855286784
+    m_Localized: Fire Tornado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241414855286785
+    m_Localized: Burns every enemy on the field.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241415723507712
+    m_Localized: Strike radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241415723507713
+    m_Localized: Increases the elemental strike radius within your area.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416025497600
+    m_Localized: Ring thickness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416025497601
+    m_Localized: Increases the thickness of the elemental ring.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416440733696
+    m_Localized: 'Explosion: damage'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416440733697
+    m_Localized: Increases special attack damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416679809024
+    m_Localized: 'Explosion: cooldown'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416679809025
+    m_Localized: Improves special attack cooldown.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416939855872
+    m_Localized: 'Fire Rain: damage'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416939855873
+    m_Localized: Increases special attack damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417174736896
+    m_Localized: 'Fire Rain: cooldown'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417174736897
+    m_Localized: Improves special attack cooldown.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417392840704
+    m_Localized: 'Fire Tornado: cooldown'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417392840705
+    m_Localized: Improves special attack cooldown.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417619333120
+    m_Localized: Effect duration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417619333121
+    m_Localized: Increases elemental effect duration.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417829048320
+    m_Localized: Grants a rune key to unlock another class. Available again after
+      resetting and rebuilding this class.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241418412056576
+    m_Localized: Cryomancer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241418412056577
+    m_Localized: Freeze the horde and control the battlefield. Create icy traps and
+      buy precious seconds.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241420077195264
+    m_Localized: Ice Strike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241420077195265
+    m_Localized: Damages and freezes enemies within part of the manual attack area.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241421083828224
+    m_Localized: Ice Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241421083828225
+    m_Localized: A ring at the edge of your area periodically freezes enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241421851385856
+    m_Localized: Icicle Trap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241421851385857
+    m_Localized: Icicles grow near the centre, damaging and freezing enemies on contact.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241422476337152
+    m_Localized: Ice Crust
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241422476337153
+    m_Localized: An icy surface damages and freezes enemies standing on it until
+      the level ends.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241422962876416
+    m_Localized: Blizzard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241422962876417
+    m_Localized: Freezes every enemy on the field.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241423482970112
+    m_Localized: Strike radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241423482970113
+    m_Localized: Increases the elemental strike radius within your area.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241423768182784
+    m_Localized: Ring thickness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241423768182785
+    m_Localized: Increases the thickness of the elemental ring.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241424019841024
+    m_Localized: 'Icicle Trap: damage'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241424019841025
+    m_Localized: Increases special attack damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241424346996736
+    m_Localized: 'Icicle Trap: cooldown'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241424346996737
+    m_Localized: Improves special attack cooldown.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241424611237888
+    m_Localized: 'Ice Crust: damage'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241424611237889
+    m_Localized: Increases special attack damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241425039056896
+    m_Localized: 'Ice Crust: cooldown'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241425039056897
+    m_Localized: Improves special attack cooldown.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241425617870848
+    m_Localized: 'Blizzard: cooldown'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241425638842368
+    m_Localized: Improves special attack cooldown.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241425894694912
+    m_Localized: Effect duration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241425894694913
+    m_Localized: Increases elemental effect duration.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241426431565824
+    m_Localized: Geoarch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241426431565825
+    m_Localized: Command the strength of the depths. Grounded enemies send part of
+      the damage they receive into nearby foes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241426981019648
+    m_Localized: Earth Strike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241426981019649
+    m_Localized: Damages and grounds enemies within part of the manual attack area.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241427723411456
+    m_Localized: Earth Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241427723411457
+    m_Localized: A sandy ring at the edge of your area periodically grounds enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241428511940608
+    m_Localized: Stone Statue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241428511940609
+    m_Localized: Enemies in your area turn to stone, then explode and ground nearby
+      foes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241429422104576
+    m_Localized: Boulder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241429422104577
+    m_Localized: A boulder hits the centre, damages and grounds enemies, then shatters
+      into projectiles.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241430219022336
+    m_Localized: Earthquake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241430219022337
+    m_Localized: Grounds every enemy on the field.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241431083048960
+    m_Localized: Strike radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241431083048961
+    m_Localized: Increases the elemental strike radius within your area.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241431389233152
+    m_Localized: Ring thickness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241431389233153
+    m_Localized: Increases the thickness of the elemental ring.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241431976435712
+    m_Localized: 'Stone Statue: damage'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241431976435713
+    m_Localized: Increases special attack damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241432270036992
+    m_Localized: 'Stone Statue: cooldown'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241432270036993
+    m_Localized: Improves special attack cooldown.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241432660107264
+    m_Localized: 'Boulder: damage'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241432660107265
+    m_Localized: Increases special attack damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241432899182592
+    m_Localized: 'Boulder: cooldown'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241432899182593
+    m_Localized: Improves special attack cooldown.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241433134063616
+    m_Localized: 'Earthquake: cooldown'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241433134063617
+    m_Localized: Improves special attack cooldown.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241433368944640
+    m_Localized: Effect duration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241433373138944
+    m_Localized: Increases elemental effect duration.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241433628991488
+    m_Localized: Grounding radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241433628991489
+    m_Localized: Increases the area of the grounding wave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49250798297669632
+    m_Localized: Complete every level of the first location to choose your first
+      class.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

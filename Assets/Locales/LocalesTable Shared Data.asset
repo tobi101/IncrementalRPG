@@ -915,6 +915,486 @@ MonoBehaviour:
     m_Key: forge.name.weapon3
     m_Metadata:
       m_Items: []
+  - m_Id: 49241406873526272
+    m_Key: classes.choose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189568
+    m_Key: classes.classes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189569
+    m_Key: classes.attacks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189570
+    m_Key: classes.manual
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189571
+    m_Key: classes.automatic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189572
+    m_Key: classes.special
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189573
+    m_Key: classes.choose_hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189574
+    m_Key: classes.empty_slot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189575
+    m_Key: classes.empty_list
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189576
+    m_Key: classes.attacks_hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189577
+    m_Key: classes.locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189578
+    m_Key: classes.keys
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189579
+    m_Key: classes.unlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189580
+    m_Key: classes.reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189581
+    m_Key: classes.refund
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189582
+    m_Key: classes.last_class
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189583
+    m_Key: classes.reset_confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189584
+    m_Key: classes.confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189585
+    m_Key: classes.cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189586
+    m_Key: classes.level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189587
+    m_Key: classes.requirement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189588
+    m_Key: classes.buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189589
+    m_Key: classes.max
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189590
+    m_Key: classes.not_enough_gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189591
+    m_Key: classes.class_locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189592
+    m_Key: classes.requirements_missing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189593
+    m_Key: classes.not_configured
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241406974189594
+    m_Key: classes.shrine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241408580608000
+    m_Key: classes.rune_key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241408584802304
+    m_Key: classes.rune_key.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241410069585920
+    m_Key: classes.basic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241410069585921
+    m_Key: classes.basic.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241411105579008
+    m_Key: classes.fire.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241411105579009
+    m_Key: classes.fire.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241411977994240
+    m_Key: classes.fire_0.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241411977994241
+    m_Key: classes.fire_0.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241412938489856
+    m_Key: classes.fire_1.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241412938489857
+    m_Key: classes.fire_1.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241413680881664
+    m_Key: classes.fire_2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241413680881665
+    m_Key: classes.fire_2.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241414356164608
+    m_Key: classes.fire_3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241414356164609
+    m_Key: classes.fire_3.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241414855286784
+    m_Key: classes.fire_4.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241414855286785
+    m_Key: classes.fire_4.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241415723507712
+    m_Key: classes.fire_radius.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241415723507713
+    m_Key: classes.fire_radius.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416025497600
+    m_Key: classes.fire_thickness.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416025497601
+    m_Key: classes.fire_thickness.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416440733696
+    m_Key: classes.fire_damage_2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416440733697
+    m_Key: classes.fire_damage_2.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416679809024
+    m_Key: classes.fire_cooldown_2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416679809025
+    m_Key: classes.fire_cooldown_2.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416939855872
+    m_Key: classes.fire_damage_3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241416939855873
+    m_Key: classes.fire_damage_3.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417174736896
+    m_Key: classes.fire_cooldown_3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417174736897
+    m_Key: classes.fire_cooldown_3.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417392840704
+    m_Key: classes.fire_cooldown_4.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417392840705
+    m_Key: classes.fire_cooldown_4.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417619333120
+    m_Key: classes.fire_effect_duration.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417619333121
+    m_Key: classes.fire_effect_duration.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241417829048320
+    m_Key: classes.key_node.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241418412056576
+    m_Key: classes.ice.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241418412056577
+    m_Key: classes.ice.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241420077195264
+    m_Key: classes.ice_0.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241420077195265
+    m_Key: classes.ice_0.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241421083828224
+    m_Key: classes.ice_1.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241421083828225
+    m_Key: classes.ice_1.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241421851385856
+    m_Key: classes.ice_2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241421851385857
+    m_Key: classes.ice_2.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241422476337152
+    m_Key: classes.ice_3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241422476337153
+    m_Key: classes.ice_3.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241422962876416
+    m_Key: classes.ice_4.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241422962876417
+    m_Key: classes.ice_4.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241423482970112
+    m_Key: classes.ice_radius.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241423482970113
+    m_Key: classes.ice_radius.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241423768182784
+    m_Key: classes.ice_thickness.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241423768182785
+    m_Key: classes.ice_thickness.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241424019841024
+    m_Key: classes.ice_damage_2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241424019841025
+    m_Key: classes.ice_damage_2.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241424346996736
+    m_Key: classes.ice_cooldown_2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241424346996737
+    m_Key: classes.ice_cooldown_2.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241424611237888
+    m_Key: classes.ice_damage_3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241424611237889
+    m_Key: classes.ice_damage_3.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241425039056896
+    m_Key: classes.ice_cooldown_3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241425039056897
+    m_Key: classes.ice_cooldown_3.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241425617870848
+    m_Key: classes.ice_cooldown_4.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241425638842368
+    m_Key: classes.ice_cooldown_4.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241425894694912
+    m_Key: classes.ice_effect_duration.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241425894694913
+    m_Key: classes.ice_effect_duration.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241426431565824
+    m_Key: classes.earth.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241426431565825
+    m_Key: classes.earth.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241426981019648
+    m_Key: classes.earth_0.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241426981019649
+    m_Key: classes.earth_0.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241427723411456
+    m_Key: classes.earth_1.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241427723411457
+    m_Key: classes.earth_1.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241428511940608
+    m_Key: classes.earth_2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241428511940609
+    m_Key: classes.earth_2.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241429422104576
+    m_Key: classes.earth_3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241429422104577
+    m_Key: classes.earth_3.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241430219022336
+    m_Key: classes.earth_4.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241430219022337
+    m_Key: classes.earth_4.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241431083048960
+    m_Key: classes.earth_radius.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241431083048961
+    m_Key: classes.earth_radius.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241431389233152
+    m_Key: classes.earth_thickness.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241431389233153
+    m_Key: classes.earth_thickness.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241431976435712
+    m_Key: classes.earth_damage_2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241431976435713
+    m_Key: classes.earth_damage_2.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241432270036992
+    m_Key: classes.earth_cooldown_2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241432270036993
+    m_Key: classes.earth_cooldown_2.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241432660107264
+    m_Key: classes.earth_damage_3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241432660107265
+    m_Key: classes.earth_damage_3.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241432899182592
+    m_Key: classes.earth_cooldown_3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241432899182593
+    m_Key: classes.earth_cooldown_3.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241433134063616
+    m_Key: classes.earth_cooldown_4.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241433134063617
+    m_Key: classes.earth_cooldown_4.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241433368944640
+    m_Key: classes.earth_effect_duration.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241433373138944
+    m_Key: classes.earth_effect_duration.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241433628991488
+    m_Key: classes.earth_effect_radius.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49241433628991489
+    m_Key: classes.earth_effect_radius.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49250798297669632
+    m_Key: classes.before_introduction
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

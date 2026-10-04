@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a4f2d442a0f4ede9e7bd13c99dcfcb, type: 3}
+  m_Name: Class
+  m_EditorClassIdentifier: Assembly-CSharp::Core.Classes.ClassDefinition
+  id: fire
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: classes.fire.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: classes.fire.description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  color: {r: 1, g: 0.22, b: 0.06, a: 1}
+  emblem: {fileID: 21300000, guid: f95865364c25c48ce87f9ad909d6110e, type: 2}
+  banner: {fileID: 6503300937178096280, guid: 979ac15c1bf2a4019b0a4270f28faff7, type: 3}
+  pattern: {fileID: -4740919479814631462, guid: 240b238b8cdd7404d8d5ced1e1f89b54, type: 3}
+  sigil: {fileID: -8355531240118314902, guid: b70245c4a7ae24892adf543aa2040d90, type: 3}
+  emblemAura: {fileID: -380957592447804930, guid: 947080078cb174779a5ebb40711aa9f0, type: 3}
+  emblemRunes: {fileID: 21300000, guid: 7b6a7e375edfa4b80b3da869b8bd2441, type: 2}
+  emblemHalo: {fileID: 139885270538334568, guid: cb7aec72e65924ef3819e011393f650a, type: 3}
+  unlockKeyCost: 1
+  nodes:
+  - {fileID: 11400000, guid: c580b0cefcc0a45678de7885b585f237, type: 2}
+  - {fileID: 11400000, guid: 8762a594ba1604140872f8f2c7050cee, type: 2}
+  - {fileID: 11400000, guid: 28d8c5d804e64427cb3dbb964e5f97c3, type: 2}
+  - {fileID: 11400000, guid: 6b208b91c62024df296f1ca769157890, type: 2}
+  - {fileID: 11400000, guid: bcc4e6c18043545fe961e99feeff6f9f, type: 2}
+  - {fileID: 11400000, guid: 23cf87f3d086546b69d39b4830fbc94e, type: 2}
+  - {fileID: 11400000, guid: 6fd7f6c318d704d51888acb15b5842da, type: 2}
+  - {fileID: 11400000, guid: 0ec8e5bdaac5645999b14d2df489fe0c, type: 2}
+  - {fileID: 11400000, guid: d53aeda6592e443e8ba466caca867c4f, type: 2}
+  - {fileID: 11400000, guid: 13dc61253f96146499df3c4e3c2cacbf, type: 2}
+  - {fileID: 11400000, guid: a3e3ac68d88174d87a347b23a201b80b, type: 2}
+  - {fileID: 11400000, guid: 2663008f3e9e849488802a10887f8ff1, type: 2}
+  - {fileID: 11400000, guid: 192cdd2ef220646b983fb7d2c9dd0da1, type: 2}
+  - {fileID: 11400000, guid: 68ebca4cd777d481ebb5d0d88a975cca, type: 2}
+  references:
+    version: 2
+    RefIds: []

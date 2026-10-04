@@ -14,6 +14,7 @@ namespace Core.StateMachine
         [Inject] private IEnumerable<IGameState> _statesEnumerable;
         [Inject] private IEnumerable<IGameFeature> _features;
         [Inject] private GameplayFeature _gameplayFeature;
+        [Inject] private Core.Classes.ClassProgressionService _classes;
 
         private Dictionary<Type, IGameState> _states;
         private IGameState _current;
@@ -26,11 +27,17 @@ namespace Core.StateMachine
                 feature.Initialize();
 
             var gameplayState = (GameplayState)_states[typeof(GameplayState)];
-            gameplayState.OnGoToHubRequested += () => Enter<HubState>();
+            gameplayState.OnGoToHubRequested += EnterHubOrClassChoice;
             gameplayState.OnMainMenuRequested += LoadMainMenu;
         }
 
-        public void OnStart() => Enter<HubState>();
+        public void OnStart() => EnterHubOrClassChoice();
+
+        private void EnterHubOrClassChoice()
+        {
+            if (_classes.FirstChoicePending) Enter<ClassesMenuState>();
+            else Enter<HubState>();
+        }
 
         public void Tick(float deltaTime) => _current?.Tick(deltaTime);
 

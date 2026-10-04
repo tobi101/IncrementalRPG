@@ -10,7 +10,8 @@ namespace Core.Save
     [Serializable]
     public class SaveData
     {
-        public int Version = 3;
+        public int Version = 4;
+        public Core.Classes.ClassProgressState ClassProgressState = new();
         public Core.Forge.ForgeAttempt ForgeAttempt;
 
         public PlayerInfo SavedPlayerInfo = PlayerInfo.Default;

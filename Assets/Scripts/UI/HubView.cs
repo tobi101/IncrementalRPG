@@ -5,6 +5,7 @@ using Core.Gameplay.Dungeon;
 using IncrementalRPG.Scripts.AudioManager;
 using Reflex.Attributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI
 {
@@ -14,7 +15,8 @@ namespace UI
         [SerializeField] private HubFeatureButtonView _skillTreeButton;
         [SerializeField] private HubFeatureButtonView _inventoryButton;
         [SerializeField] private HubFeatureButtonView _barracksButton;
-        [SerializeField] private HubFeatureButtonView _mineButton;
+        [FormerlySerializedAs("_mineButton")]
+        [SerializeField] private HubFeatureButtonView _shrineButton;
         [SerializeField] private HubFeatureButtonView _craftButton;
         [SerializeField] private DungeonMenuView _dungeonMenuView;
         [SerializeField] private MapMenuFadeTransition _mapMenuFadeTransition;
@@ -23,7 +25,8 @@ namespace UI
         [SerializeField] private AudioClip _mapOpenSound;
         [SerializeField] private AudioClip _skillTreeOpenSound;
         [SerializeField] private AudioClip _barracksOpenSound;
-        [SerializeField] private AudioClip _mineOpenSound;
+        [FormerlySerializedAs("_mineOpenSound")]
+        [SerializeField] private AudioClip _shrineOpenSound;
         [SerializeField] private AudioClip _craftOpenSound;
 
         [Inject] private GameStateMachine _stateMachine;
@@ -56,8 +59,8 @@ namespace UI
             if (_barracksButton != null && _barracksButton.Button != null)
                 _barracksButton.Button.onClick.AddListener(OpenBarracks);
 
-            if (_mineButton != null && _mineButton.Button != null)
-                _mineButton.Button.onClick.AddListener(OpenMine);
+            if (_shrineButton != null && _shrineButton.Button != null)
+                _shrineButton.Button.onClick.AddListener(OpenClasses);
 
             if (_craftButton != null && _craftButton.Button != null)
                 _craftButton.Button.onClick.AddListener(OpenCraft);
@@ -77,8 +80,8 @@ namespace UI
             if (_barracksButton != null && _barracksButton.Button != null)
                 _barracksButton.Button.onClick.RemoveListener(OpenBarracks);
 
-            if (_mineButton != null && _mineButton.Button != null)
-                _mineButton.Button.onClick.RemoveListener(OpenMine);
+            if (_shrineButton != null && _shrineButton.Button != null)
+                _shrineButton.Button.onClick.RemoveListener(OpenClasses);
 
             if (_craftButton != null && _craftButton.Button != null)
                 _craftButton.Button.onClick.RemoveListener(OpenCraft);
@@ -161,10 +164,10 @@ namespace UI
             _stateMachine.Enter<BarracksState>();
         }
 
-        private void OpenMine()
+        private void OpenClasses()
         {
-            PlayOpenSound(_mineOpenSound);
-            _stateMachine.Enter<MineState>();
+            PlayOpenSound(_shrineOpenSound);
+            _stateMachine.Enter<ClassesMenuState>();
         }
 
         private void OpenCraft()
@@ -186,7 +189,7 @@ namespace UI
             SetHubFeatureClickSoundEnabled(_dungeonButton, enabled);
             SetHubFeatureClickSoundEnabled(_skillTreeButton, enabled);
             SetHubFeatureClickSoundEnabled(_barracksButton, enabled);
-            SetHubFeatureClickSoundEnabled(_mineButton, enabled);
+            SetHubFeatureClickSoundEnabled(_shrineButton, enabled);
             SetHubFeatureClickSoundEnabled(_craftButton, enabled);
         }
 
