@@ -12,6 +12,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
+using UnityEngine.Localization.SmartFormat.PersistentVariables;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
@@ -24,15 +26,15 @@ namespace UI.Classes
     public sealed class ClassChoiceCard
     {
         public Button button;
-        public TMP_Text title;
-        public TMP_Text description;
+        public LocalizeStringEvent title;
+        public LocalizeStringEvent description;
     }
     [Serializable]
     public sealed class ClassTabButton
     {
         public Button button;
         public Image background;
-        public TMP_Text title;
+        public LocalizeStringEvent title;
     }
     [Serializable]
     public sealed class ClassAttackColumn
@@ -64,47 +66,47 @@ namespace UI.Classes
         public ClassMedallionView classEmblem;
         public Image classPattern;
         public Image classNameplate;
-        public TMP_Text classTitle;
-        public TMP_Text classDescription;
+        public LocalizeStringEvent classTitle;
+        public LocalizeStringEvent classDescription;
         public TMP_Text goldText;
-        public TMP_Text refundText;
+        public LocalizeStringEvent refundText;
         public Button resetButton;
-        public TMP_Text resetHint;
+        public LocalizeStringEvent resetHint;
         [Header("Skill details")]
         public ClassMedallionView detailIcon;
         public Image detailPattern;
         public Image detailPreview;
-        public TMP_Text detailTitle;
-        public TMP_Text detailDescription;
-        public TMP_Text detailLevel;
-        public TMP_Text detailRequirements;
-        public TMP_Text purchaseText;
+        public LocalizeStringEvent detailTitle;
+        public LocalizeStringEvent detailDescription;
+        public LocalizeStringEvent detailLevel;
+        public LocalizeStringEvent detailRequirements;
+        public LocalizeStringEvent purchaseText;
         public Button purchaseButton;
         [Header("Locked class")]
         public GameObject lockedRoot;
-        public TMP_Text lockedTitle;
-        public TMP_Text keyCount;
-        public TMP_Text unlockText;
+        public LocalizeStringEvent lockedTitle;
+        public LocalizeStringEvent keyCount;
+        public LocalizeStringEvent unlockText;
         public Button unlockButton;
         public ClassLockedBackdrop lockedBackdrop;
         [Header("Loadout")]
         public ClassAttackColumn[] attackColumns;
         public ClassAttackItemView attackPrefab;
         public RectTransform tooltip;
-        public TMP_Text tooltipTitle;
-        public TMP_Text tooltipDescription;
+        public LocalizeStringEvent tooltipTitle;
+        public LocalizeStringEvent tooltipDescription;
         public Image tooltipEmblem;
         public Image tooltipType;
         public Image tooltipHeader;
         public Sprite[] typeIcons;
         [Header("Confirmation")]
         public GameObject confirmation;
-        public TMP_Text confirmationText;
+        public LocalizeStringEvent confirmationText;
         public Button confirmButton;
         public Button cancelButton;
         public CanvasGroup choiceReveal;
         public ClassMedallionView revealEmblem;
-        public TMP_Text revealTitle;
+        public LocalizeStringEvent revealTitle;
 
         private ClassCatalog _catalog;
         private ClassProgressionService _service;
@@ -115,6 +117,7 @@ namespace UI.Classes
         private ClassNodeDefinition _selectedNode;
         private readonly List<ClassNodeView> _nodes = new();
         private readonly List<ClassAttackItemView> _attacks = new();
+        private RequirementText[] _requirements = Array.Empty<RequirementText>();
         private bool _initialized;
         private bool _refreshPending;
         private bool _showAttacks;
@@ -159,6 +162,9 @@ namespace UI.Classes
             for (var i = 0; i < _catalog.classes.Length; i++)
             {
                 var definition = _catalog.classes[i];
+                choices[i].title.StringReference = definition.displayName;
+                choices[i].description.StringReference = definition.description;
+                classTabs[i].title.StringReference = definition.displayName;
                 choices[i].button.onClick.AddListener(() => ChooseFirst(definition));
                 classTabs[i].button.onClick.AddListener(() => SelectClass(definition));
             }
@@ -177,13 +183,14 @@ namespace UI.Classes
 
         private void OnDestroy()
         {
+            ReleaseRequirements();
             if (!_initialized) return;
             sideMenu.ReturnToHubButton.onClick.RemoveListener(ReturnToHub);
             _service.OnChanged -= RequestRefresh;
             _player.OnGoldChanged -= RequestRefresh;
             LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
         }
-        private void OnLocaleChanged(Locale locale) { HideTooltip(); RequestRefresh(); }
+        private void OnLocaleChanged(Locale locale) => HideTooltip();
         private void RequestRefresh() => _refreshPending = true;
         private void LateUpdate()
         {
@@ -215,7 +222,7 @@ namespace UI.Classes
         {
             choiceReveal.gameObject.SetActive(true);
             revealEmblem.Bind(definition);
-            revealTitle.text = definition.displayName.GetLocalizedString();
+            revealTitle.StringReference = definition.displayName;
             for (var elapsed = 0f; elapsed < 0.7f; elapsed += Time.unscaledDeltaTime)
             {
                 choiceReveal.alpha = Mathf.Clamp01(elapsed / 0.15f);
@@ -251,7 +258,6 @@ namespace UI.Classes
         private void Refresh()
         {
             if (!_initialized) return;
-            foreach (var label in GetComponentsInChildren<ClassLocalizedLabel>(true)) label.Refresh();
             var first = _service.FirstChoicePending || _choosing;
             choiceRoot.SetActive(first);
             mainRoot.SetActive(!first);
@@ -259,9 +265,6 @@ namespace UI.Classes
             for (var i = 0; i < _catalog.classes.Length; i++)
             {
                 var definition = _catalog.classes[i];
-                choices[i].title.text = definition.displayName.GetLocalizedString();
-                choices[i].description.text = definition.description.GetLocalizedString();
-                classTabs[i].title.text = definition.displayName.GetLocalizedString();
                 classTabs[i].background.color = definition == _selectedClass ? Color.white : new Color(0.58f, 0.58f, 0.58f);
             }
             classesRoot.SetActive(!_showAttacks);
@@ -281,28 +284,30 @@ namespace UI.Classes
             classPattern.sprite = definition.pattern;
             detailPattern.sprite = definition.pattern;
             boardSigil.sprite = definition.sigil;
-            classTitle.text = definition.displayName.GetLocalizedString();
-            classDescription.text = definition.description.GetLocalizedString();
+            BindLocalizedText(classTitle, definition.displayName);
+            BindLocalizedText(classDescription, definition.description);
             var unlocked = _service.IsUnlocked(definition);
             // Shrine remains usable before the introduction; only purchasing and choosing are gated.
             lockedRoot.SetActive(!unlocked);
-            lockedTitle.text = _service.HasChosenFirstClass
-                ? ItemText.Get("classes.locked", definition.displayName.GetLocalizedString())
-                : ItemText.Get("classes.before_introduction");
-            keyCount.text = ItemText.Get("classes.keys", _service.RuneKeys);
+            var lockedText = FormattedString(_service.HasChosenFirstClass ? "classes.locked" : "classes.before_introduction");
+            if (_service.HasChosenFirstClass) lockedText["className"] = definition.displayName;
+            lockedTitle.StringReference = lockedText;
+            SetLocalizedText(keyCount, "classes.keys", _service.RuneKeys);
             keyCount.transform.parent.gameObject.SetActive(_service.HasChosenFirstClass);
             unlockButton.gameObject.SetActive(_service.HasChosenFirstClass);
-            unlockText.text = ItemText.Get("classes.unlock", Math.Max(1, definition.unlockKeyCost));
+            SetLocalizedText(unlockText, "classes.unlock", Math.Max(1, definition.unlockKeyCost));
             unlockButton.interactable = _service.HasChosenFirstClass && _service.RuneKeys >= Math.Max(1, definition.unlockKeyCost);
             resetButton.interactable = _service.CanReset(definition);
-            resetHint.text = unlocked && !resetButton.interactable ? ItemText.Get("classes.last_class") : "";
-            refundText.text = ItemText.Get("classes.refund", BigDoubleFormatter.FormatFloor(_service.Refund(definition)));
+            if (unlocked && !resetButton.interactable) SetLocalizedText(resetHint, "classes.last_class");
+            else ClearLocalizedText(resetHint);
+            SetLocalizedText(refundText, "classes.refund", BigDoubleFormatter.FormatFloor(_service.Refund(definition)));
             foreach (var view in _nodes) view.Refresh(definition, _service, view.Definition == _selectedNode);
             lockedBackdrop.SetLocked(!unlocked);
             purchaseButton.interactable = false;
+            ReleaseRequirements();
             if (_selectedNode == null)
             {
-                detailTitle.text = detailDescription.text = detailLevel.text = detailRequirements.text = purchaseText.text = "";
+                ClearLocalizedText(detailTitle, detailDescription, detailLevel, detailRequirements, purchaseText);
                 detailIcon.gameObject.SetActive(false);
                 detailPreview.enabled = false;
                 return;
@@ -310,35 +315,83 @@ namespace UI.Classes
             detailIcon.gameObject.SetActive(true);
             detailPreview.enabled = true;
             var node = _selectedNode;
-            detailTitle.text = node.displayName.GetLocalizedString();
-            detailDescription.text = node.description.GetLocalizedString();
+            BindLocalizedText(detailTitle, node.displayName);
+            BindLocalizedText(detailDescription, node.description);
             detailIcon.Bind(definition);
             detailPreview.sprite = node.preview != null ? node.preview : node.icon;
-            detailLevel.text = ItemText.Get("classes.level", _service.Level(definition, node), node.LevelLimit);
-            var missing = (node.requirements ?? Array.Empty<ClassNodeRequirement>())
+            SetLocalizedText(detailLevel, "classes.level", _service.Level(definition, node), node.LevelLimit);
+            _requirements = (node.requirements ?? Array.Empty<ClassNodeRequirement>())
                 .Where(r => r != null && r.node != null && _service.Level(definition, r.node) < r.level)
-                .Select(r => ItemText.Get("classes.requirement", r.node.displayName.GetLocalizedString(), r.level));
-            detailRequirements.text = string.Join("\n", missing);
+                .Select(r => new RequirementText(r)).ToArray();
+            if (_requirements.Length > 0) SetLocalizedText(detailRequirements, "classes.requirements", (object)_requirements);
+            else ClearLocalizedText(detailRequirements);
             var status = _service.PurchaseStatus(definition, node);
             purchaseButton.interactable = status == ClassPurchaseStatus.Available;
             node.TryGetCost(_service.Level(definition, node), out var cost);
-            purchaseText.text = status switch
+            var purchaseKey = status switch
             {
-                ClassPurchaseStatus.Complete => ItemText.Get("classes.max"),
-                ClassPurchaseStatus.NotConfigured => ItemText.Get("classes.not_configured"),
-                ClassPurchaseStatus.ClassLocked => ItemText.Get("classes.class_locked"),
-                ClassPurchaseStatus.RequirementsMissing => ItemText.Get("classes.requirements_missing"),
-                _ => ItemText.Get("classes.buy", BigDoubleFormatter.FormatFloor(cost))
+                ClassPurchaseStatus.Complete => "classes.max",
+                ClassPurchaseStatus.NotConfigured => "classes.not_configured",
+                ClassPurchaseStatus.ClassLocked => "classes.class_locked",
+                ClassPurchaseStatus.RequirementsMissing => "classes.requirements_missing",
+                _ => "classes.buy"
             };
-            if (status == ClassPurchaseStatus.NotEnoughGold) detailRequirements.text = ItemText.Get("classes.not_enough_gold");
+            SetLocalizedText(purchaseText, purchaseKey, BigDoubleFormatter.FormatFloor(cost));
+            if (status == ClassPurchaseStatus.NotEnoughGold) SetLocalizedText(detailRequirements, "classes.not_enough_gold");
+        }
+
+        private static LocalizedString FormattedString(string key, params object[] arguments) =>
+            new(ItemText.Table, key) { Arguments = arguments };
+
+        private static void SetLocalizedText(LocalizeStringEvent label, string key, params object[] arguments) =>
+            label.StringReference = FormattedString(key, arguments);
+
+        private static void BindLocalizedText(LocalizeStringEvent label, LocalizedString reference)
+        {
+            if (!ReferenceEquals(label.StringReference, reference)) label.StringReference = reference;
+        }
+
+        private static void ClearLocalizedText(params LocalizeStringEvent[] labels)
+        {
+            foreach (var label in labels)
+            {
+                label.StringReference = new LocalizedString();
+                label.OnUpdateString.Invoke(string.Empty);
+            }
+        }
+
+        private void ReleaseRequirements()
+        {
+            foreach (var requirement in _requirements) requirement.Dispose();
+            _requirements = Array.Empty<RequirementText>();
+        }
+
+        // Smart Strings resolve each prerequisite in the list using its own localized name and level.
+        private sealed class RequirementText : IVariableGroup, IDisposable
+        {
+            private readonly LocalizedString _text;
+            public RequirementText(ClassNodeRequirement requirement)
+            {
+                _text = FormattedString("classes.requirement");
+                _text["skill"] = requirement.node.displayName;
+                _text["level"] = new IntVariable { Value = requirement.level };
+            }
+            public bool TryGetValue(string key, out IVariable value)
+            {
+                value = key == "text" ? _text : null;
+                return value != null;
+            }
+            public void Dispose() => ((IDisposable)_text).Dispose();
         }
 
         private void RequestReset()
         {
             if (!_service.CanReset(_selectedClass)) return;
             _resetTarget = _selectedClass;
-            confirmationText.text = ItemText.Get("classes.reset_confirm", _selectedClass.displayName.GetLocalizedString(),
-                BigDoubleFormatter.FormatFloor(_service.Refund(_selectedClass)));
+            var text = FormattedString("classes.reset_confirm");
+            text["className"] = _selectedClass.displayName;
+            text["refund"] = new StringVariable { Value = BigDoubleFormatter.FormatFloor(_service.Refund(_selectedClass)) };
+            confirmationText.StringReference = text;
             confirmation.SetActive(true);
             HideTooltip();
         }
@@ -378,7 +431,7 @@ namespace UI.Classes
             {
                 item.transform.Find("Frame").gameObject.SetActive(false);
                 item.icon.rectTransform.sizeDelta = new Vector2(80, 80);
-                item.title.rectTransform.anchoredPosition = new Vector2(0, -85);
+                ((RectTransform)item.title.transform).anchoredPosition = new Vector2(0, -85);
             }
             _attacks.Add(item);
             var rect = (RectTransform)item.transform;
@@ -394,8 +447,8 @@ namespace UI.Classes
         {
             if (attack == null) return;
             var owner = _catalog.OwnerOf(attack);
-            tooltipTitle.text = attack.displayName.GetLocalizedString();
-            tooltipDescription.text = attack.description.GetLocalizedString();
+            tooltipTitle.StringReference = attack.displayName;
+            tooltipDescription.StringReference = attack.description;
             tooltipEmblem.sprite = owner != null ? owner.emblem : typeIcons[0];
             if (tooltipEmblem is ClassEmblemImage emblem) emblem.sampleClassBanner = owner != null;
             tooltipType.sprite = typeIcons[(int)attack.slot];

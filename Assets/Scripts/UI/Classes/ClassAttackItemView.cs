@@ -1,6 +1,6 @@
 using Core.Classes;
-using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -11,7 +11,7 @@ namespace UI.Classes
     {
         public Image icon;
         public Image tint;
-        public TMP_Text title;
+        public LocalizeStringEvent title;
         public AttackDefinition Attack { get; private set; }
         public bool IsEquipped { get; private set; }
         private ClassesMenuView _menu;
@@ -21,7 +21,7 @@ namespace UI.Classes
             _menu = menu; Attack = attack; IsEquipped = equipped;
             icon.sprite = attack.icon;
             tint.color = color;
-            title.text = attack.displayName.GetLocalizedString();
+            title.StringReference = attack.displayName;
         }
         public void OnPointerEnter(PointerEventData data) { if (!_dragging) _menu.ShowTooltip(Attack, (RectTransform)transform); }
         public void OnPointerExit(PointerEventData data) => _menu.HideTooltip();

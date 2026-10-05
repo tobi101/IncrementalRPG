@@ -1395,6 +1395,14 @@ MonoBehaviour:
     m_Key: classes.before_introduction
     m_Metadata:
       m_Items: []
+  - m_Id: 51063344428212224
+    m_Key: classes.requirements
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51064516631322624
+    m_Key: return_to_hub
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

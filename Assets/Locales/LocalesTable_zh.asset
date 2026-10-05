@@ -810,11 +810,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 49241406974189577
-    m_Localized: 'Unlock {0}
+    m_Localized: 'Unlock {className}
 
       with a rune key'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3838683570720735374
   - m_Id: 49241406974189578
     m_Localized: 'Rune keys: {0}'
     m_Metadata:
@@ -836,17 +837,18 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 49241406974189583
-    m_Localized: 'Reset {0}?
+    m_Localized: 'Reset {className}?
 
 
-      Its upgrades and attacks will be removed, and
-      its equipped attacks cleared. You will need to unlock the class again.
+      Its upgrades and attacks will be removed,
+      and its equipped attacks cleared. You will need to unlock the class again.
 
 
       You
-      receive {1} gold.'
+      receive {refund} gold.'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3838683570720735374
   - m_Id: 49241406974189584
     m_Localized: Reset
     m_Metadata:
@@ -860,9 +862,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 49241406974189587
-    m_Localized: 'Requires: {0}, lv. {1}'
+    m_Localized: 'Requires: {skill}, lv. {level}'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 3838683570720735374
   - m_Id: 49241406974189588
     m_Localized: "Upgrade \xB7 {0}"
     m_Metadata:
@@ -1267,6 +1270,17 @@ MonoBehaviour:
       class.
     m_Metadata:
       m_Items: []
+  - m_Id: 51063344428212224
+    m_Localized: '{0:list:{text}|
+
+      }'
+    m_Metadata:
+      m_Items:
+      - rid: 3838683570720735374
+  - m_Id: 51064516631322624
+    m_Localized: "\u8FD4\u56DE\u4E2D\u5FC3"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
@@ -1282,3 +1296,7 @@ MonoBehaviour:
         - id: 44966829385310210
         - id: 44966829389504516
         - id: 44966829389504519
+        - id: 49241406974189577
+        - id: 49241406974189583
+        - id: 49241406974189587
+        - id: 51063344428212224
