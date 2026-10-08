@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using IncrementalRPG.Scripts.AudioManager;
 using Spine.Unity;
@@ -26,6 +27,8 @@ namespace Core.TestSkillTree.View
         private NodePopupView         _popup;
         private NodeCircleSpriteConfig _circleSpriteConfig;
         private AudioManager          _audioManager;
+        private Action                _clicked;
+        private string                _nodeId;
         private Coroutine             _revealRoutine;
         private Vector3               _revealBaseScale;
         private bool                  _hasRevealBaseScale;
@@ -34,15 +37,30 @@ namespace Core.TestSkillTree.View
         private bool                  _lockedOpenAnimationPlaying;
         private int                   _lockedAnimationVersion;
 
-        public string NodeId => _definition != null ? _definition.id : string.Empty;
+        public string NodeId => _nodeId ?? string.Empty;
 
         public void Bind(NodeDefinition definition, SkillTreeService service, NodePopupView popup, NodeCircleSpriteConfig circleSpriteConfig, AudioManager audioManager)
         {
+            Bind(definition, service.GetState(definition.id), service.GetLevel(definition.id),
+                circleSpriteConfig, audioManager, PurchaseSkill);
             _definition        = definition;
             _service           = service;
             _popup             = popup;
+        }
+
+        // Other progression trees reuse the prefab and animations with their own purchase callback.
+        public void Bind(SkillNodeDefinition definition, NodeState state, int currentLevel,
+            NodeCircleSpriteConfig circleSpriteConfig, AudioManager audioManager, Action clicked)
+        {
+            _definition = null;
+            _service = null;
+            _popup = null;
+            _nodeId = definition.id;
+            _clicked = clicked;
             _circleSpriteConfig = circleSpriteConfig;
             _audioManager      = audioManager;
+            _hasLastVisibleState = false;
+            HideLockedVisualImmediate();
 
             if (_icon != null)
             {
@@ -52,19 +70,20 @@ namespace Core.TestSkillTree.View
 
             if (_additionalIcon != null)
             {
-                _additionalIcon.sprite = definition.additionalIcon;
-                _additionalIcon.gameObject.SetActive(definition.additionalIcon != null);
+                var additionalIcon = (definition as NodeDefinition)?.additionalIcon;
+                _additionalIcon.sprite = additionalIcon;
+                _additionalIcon.gameObject.SetActive(additionalIcon != null);
             }
 
-            _levelCounter?.Initialize(definition.maxLevel, service.GetLevel(definition.id));
+            _levelCounter?.Initialize(definition.LevelLimit, currentLevel);
 
             CacheRevealBaseScale(true);
-            Refresh();
+            Refresh(state);
         }
 
         public void Refresh()
         {
-            Refresh(_service.GetState(_definition.id));
+            Refresh(_service != null ? _service.GetState(_definition.id) : _lastVisibleState);
         }
 
         public void Refresh(NodeState state)
@@ -151,7 +170,11 @@ namespace Core.TestSkillTree.View
             var isLocked = state == NodeState.Locked;
 
             if (isLocked)
-                ShowLockedVisual();
+            {
+                // Selection, wallet and description refreshes must not restart idle/cancel.
+                if (!wasLocked)
+                    ShowLockedVisual();
+            }
             else if (wasLocked)
                 PlayLockedOpenFeedback();
             else if (!_lockedOpenAnimationPlaying)
@@ -165,17 +188,22 @@ namespace Core.TestSkillTree.View
             _levelCounter?.PlayUpgrade(newLevel);
 
         public void OnPointerEnter(PointerEventData eventData) =>
-            _popup.Show(_definition, (RectTransform)transform);
+            _popup?.Show(_definition, (RectTransform)transform);
 
         public void OnPointerExit(PointerEventData eventData) =>
-            _popup.OnNodeExit();
+            _popup?.OnNodeExit();
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            var state = _service.GetState(_definition.id);
+            var state = _service != null ? _service.GetState(_definition.id) : _lastVisibleState;
             if (state == NodeState.Locked)
                 PlayLockedClickFeedback();
 
+            _clicked?.Invoke();
+        }
+
+        private void PurchaseSkill()
+        {
             var result = _service.TryUpgrade(_definition.id);
             PlayUpgradeResultSound(result);
 

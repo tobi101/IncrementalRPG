@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Localization;
 using Utils;
 
 namespace Core.TestSkillTree
@@ -14,26 +13,10 @@ namespace Core.TestSkillTree
     }
 
     [CreateAssetMenu(fileName = "NodeDefinition", menuName = "RPG/Skill Tree/Node")]
-    public class NodeDefinition : ScriptableObject
+    public class NodeDefinition : SkillNodeDefinition
     {
-        [Tooltip("Unique identifier used in code and save data.")]
-        public string id;
-
-        public LocalizedString displayName = new();
-
-        [Tooltip("Description shown in the skill tree popup.")]
-        public LocalizedString description = new();
-
-        public Sprite icon;
-
         [Tooltip("Optional icon rendered as a small badge in the node view.")]
         public Sprite additionalIcon;
-
-        [Min(1)]
-        public int maxLevel;
-
-        [Tooltip("Gold cost to upgrade to each level. Index 0 = cost for level 0→1, index 1 = cost for 1→2, etc.")]
-        public BigDouble[] goldCostPerLevel;
 
         [Tooltip("All prerequisites must be satisfied for this node to become visible.")]
         public List<NodePrerequisite> prerequisites;
@@ -42,6 +25,16 @@ namespace Core.TestSkillTree
 
         [HideInInspector]
         public Vector2 positionInGraph;
+
+        public override IEnumerable<SkillNodeRequirement> Requirements
+        {
+            get
+            {
+                if (prerequisites == null) yield break;
+                foreach (var requirement in prerequisites)
+                    yield return new SkillNodeRequirement(requirement?.node, requirement?.requiredLevel ?? 1);
+            }
+        }
 
         private void OnValidate()
         {

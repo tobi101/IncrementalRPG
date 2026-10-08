@@ -32,7 +32,7 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   color: {r: 1, g: 0.22, b: 0.06, a: 1}
-  emblem: {fileID: 21300000, guid: f95865364c25c48ce87f9ad909d6110e, type: 2}
+  emblem: {fileID: 21300000, guid: f4187ee1e40d344b2a2951b314230b2a, type: 3}
   banner: {fileID: 6503300937178096280, guid: 979ac15c1bf2a4019b0a4270f28faff7, type: 3}
   pattern: {fileID: -4740919479814631462, guid: 240b238b8cdd7404d8d5ced1e1f89b54, type: 3}
   sigil: {fileID: -8355531240118314902, guid: b70245c4a7ae24892adf543aa2040d90, type: 3}

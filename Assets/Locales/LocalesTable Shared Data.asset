@@ -1403,6 +1403,14 @@ MonoBehaviour:
     m_Key: return_to_hub
     m_Metadata:
       m_Items: []
+  - m_Id: 51812599719780352
+    m_Key: classes.upgrade_cost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51812599774306304
+    m_Key: classes.key_count
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

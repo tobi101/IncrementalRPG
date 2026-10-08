@@ -20,6 +20,7 @@ namespace Core.TestSkillTree.View
         [SerializeField] private RectTransform      _connectionsLayer;
         [SerializeField] private NodeView           _nodeViewPrefab;
         [SerializeField] private NodeConnectionView _connectionViewPrefab;
+        [SerializeField] private bool              _showConnections = true;
         [SerializeField] private NodePopupView      _popupView;
         [SerializeField] private TextMeshProUGUI    _goldText;
         [SerializeField] private TextMeshProUGUI    _shardText;
@@ -94,7 +95,7 @@ namespace Core.TestSkillTree.View
             RefreshGold();
 
             // Hidden trees catch up in Show; avoid refreshing every node while farming.
-            if (isActiveAndEnabled)
+            if (isActiveAndEnabled && !_service.IsPurchasing)
                 RefreshAll();
         }
 
@@ -146,6 +147,7 @@ namespace Core.TestSkillTree.View
             // Connections first so they render behind nodes.
             foreach (var entry in entries)
             {
+                if (!_showConnections) break;
                 var def = entry.node;
                 if (!nodePositions.TryGetValue(def, out var to))
                     continue;

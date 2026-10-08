@@ -1281,6 +1281,16 @@ MonoBehaviour:
     m_Localized: "\u8FD4\u56DE\u4E2D\u5FC3"
     m_Metadata:
       m_Items: []
+  - m_Id: 51812599719780352
+    m_Localized: 'Cost: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 3838683570720735374
+  - m_Id: 51812599774306304
+    m_Localized: '{0}'
+    m_Metadata:
+      m_Items:
+      - rid: 3838683570720735374
   references:
     version: 2
     RefIds:
@@ -1300,3 +1310,5 @@ MonoBehaviour:
         - id: 49241406974189583
         - id: 49241406974189587
         - id: 51063344428212224
+        - id: 51812599719780352
+        - id: 51812599774306304

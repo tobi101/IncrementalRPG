@@ -19,6 +19,8 @@ namespace UI.Classes
             runes.sprite = definition.emblemRunes;
             sigil.sprite = definition.sigil;
             element.sprite = definition.emblem;
+            element.sampleClassBanner = false;
+            element.preserveAspect = true;
         }
     }
 }

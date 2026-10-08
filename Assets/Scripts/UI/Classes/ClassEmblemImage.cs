@@ -4,11 +4,10 @@ using UnityEngine.UI;
 
 namespace UI.Classes
 {
-    // The supplied class banner contains both a medallion and a horizontal nameplate.
-    // Sample only its central element icon; the outer medallion is assembled from UI art layers.
+    // Class icons use the full sprite. Legacy banner sprites can opt into centre sampling.
     public sealed class ClassEmblemImage : Image
     {
-        public bool sampleClassBanner = true;
+        public bool sampleClassBanner = false;
         protected override void OnPopulateMesh(VertexHelper vh)
         {
             if (sprite == null || !sampleClassBanner) { base.OnPopulateMesh(vh); return; }

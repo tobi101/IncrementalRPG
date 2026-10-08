@@ -1,3 +1,5 @@
+using System.Collections;
+using Core.Classes;
 using Core.StateMachine;
 using Core.StateMachine.Features;
 using Core.StateMachine.States;
@@ -21,6 +23,10 @@ namespace UI
         [SerializeField] private DungeonMenuView _dungeonMenuView;
         [SerializeField] private MapMenuFadeTransition _mapMenuFadeTransition;
 
+        [Header("Classes locked notice")]
+        [SerializeField] private CanvasGroup _classesLockedNotice;
+        [SerializeField, Min(0.1f)] private float _classesLockedNoticeDuration = 4f;
+
         [Header("Open Sounds")]
         [SerializeField] private AudioClip _mapOpenSound;
         [SerializeField] private AudioClip _skillTreeOpenSound;
@@ -34,12 +40,20 @@ namespace UI
         [Inject] private DungeonSelectionService _dungeonSelection;
         [Inject] private GameplayFeature _gameplay;
         [Inject] private AudioManager _audioManager;
+        [Inject] private ClassProgressionService _classes;
 
         private bool _isStartingDungeon;
+        private Coroutine _classesLockedNoticeRoutine;
 
         private void OnEnable()
         {
             _isStartingDungeon = false;
+            HideClassesLockedNotice();
+        }
+
+        private void OnDisable()
+        {
+            HideClassesLockedNotice();
         }
 
         private void Start()
@@ -166,8 +180,44 @@ namespace UI
 
         private void OpenClasses()
         {
+            if (!_classes.HasChosenFirstClass && !_classes.FirstChoicePending)
+            {
+                ShowClassesLockedNotice();
+                return;
+            }
+
             PlayOpenSound(_shrineOpenSound);
             _stateMachine.Enter<ClassesMenuState>();
+        }
+
+        private void ShowClassesLockedNotice()
+        {
+            HideClassesLockedNotice();
+            _classesLockedNotice.gameObject.SetActive(true);
+            _classesLockedNotice.alpha = 1f;
+            _classesLockedNoticeRoutine = StartCoroutine(HideClassesLockedNoticeAfterDelay());
+        }
+
+        private IEnumerator HideClassesLockedNoticeAfterDelay()
+        {
+            yield return new WaitForSecondsRealtime(_classesLockedNoticeDuration);
+            _classesLockedNoticeRoutine = null;
+            HideClassesLockedNotice();
+        }
+
+        private void HideClassesLockedNotice()
+        {
+            if (_classesLockedNoticeRoutine != null)
+            {
+                StopCoroutine(_classesLockedNoticeRoutine);
+                _classesLockedNoticeRoutine = null;
+            }
+
+            if (_classesLockedNotice != null)
+            {
+                _classesLockedNotice.alpha = 0f;
+                _classesLockedNotice.gameObject.SetActive(false);
+            }
         }
 
         private void OpenCraft()

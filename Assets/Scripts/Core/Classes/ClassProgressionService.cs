@@ -4,6 +4,7 @@ using System.Linq;
 using Core.Gameplay.Dungeon;
 using Core.Items;
 using Core.Save;
+using Core.TestSkillTree;
 using Model;
 using Utils;
 
@@ -19,6 +20,7 @@ namespace Core.Classes
         private readonly Player _player;
         private readonly PlayerItemStorage _items;
         private ClassProgressState _state = new();
+        private readonly Dictionary<ClassDefinition, SkillTreeProgression> _trees = new();
 
         public ClassProgressionService(ClassCatalog catalog, DungeonSelectionService dungeons, Player player, PlayerItemStorage items)
         {
@@ -37,7 +39,8 @@ namespace Core.Classes
         public bool IsUnlocked(ClassDefinition definition) => definition != null && Entry(definition)?.Unlocked == true;
         public bool CanReset(ClassDefinition definition) => IsUnlocked(definition) && UnlockedCount > 1;
         public BigDouble Refund(ClassDefinition definition) => Entry(definition)?.GoldSpent ?? BigDouble.Zero;
-        public int Level(ClassDefinition definition, ClassNodeDefinition node) => Entry(definition)?.Nodes.FirstOrDefault(n => n.NodeId == node.id)?.Level ?? 0;
+        public int Level(ClassDefinition definition, ClassNodeDefinition node) =>
+            definition != null && _trees.TryGetValue(definition, out var tree) ? tree.GetLevel(node) : 0;
 
         public bool ChooseFirst(ClassDefinition definition)
         {
@@ -82,32 +85,31 @@ namespace Core.Classes
         {
             if (!IsKnown(definition) || node == null || !definition.nodes.Contains(node)) return ClassPurchaseStatus.NotConfigured;
             if (!IsUnlocked(definition)) return ClassPurchaseStatus.ClassLocked;
-            var level = Level(definition, node);
-            if (level >= node.LevelLimit) return ClassPurchaseStatus.Complete;
-            if ((node.requirements ?? Array.Empty<ClassNodeRequirement>()).Any(r => r == null || r.node == null ||
-                    !definition.nodes.Contains(r.node) || Level(definition, r.node) < Math.Max(1, r.level)))
-                return ClassPurchaseStatus.RequirementsMissing;
-            if (!node.TryGetCost(level, out var cost) ||
-                (node.reward == ClassNodeReward.UnlockAttack && (node.attack == null || string.IsNullOrEmpty(node.attack.id))) ||
+            var status = _trees[definition].GetStatus(node);
+            if (status == SkillPurchaseStatus.Complete) return ClassPurchaseStatus.Complete;
+            if (status == SkillPurchaseStatus.RequirementsMissing) return ClassPurchaseStatus.RequirementsMissing;
+            if ((node.reward == ClassNodeReward.UnlockAttack && (node.attack == null || string.IsNullOrEmpty(node.attack.id))) ||
                 (node.reward == ClassNodeReward.RuneKey && (_catalog.runeKey == null || node.runeKeyReward < 1)))
                 return ClassPurchaseStatus.NotConfigured;
-            return _player.GoldTotal >= cost ? ClassPurchaseStatus.Available : ClassPurchaseStatus.NotEnoughGold;
+            return status switch
+            {
+                SkillPurchaseStatus.Available => ClassPurchaseStatus.Available,
+                SkillPurchaseStatus.NotEnoughGold => ClassPurchaseStatus.NotEnoughGold,
+                _ => ClassPurchaseStatus.NotConfigured
+            };
         }
 
         public bool Purchase(ClassDefinition definition, ClassNodeDefinition node)
         {
             if (PurchaseStatus(definition, node) != ClassPurchaseStatus.Available) return false;
             var entry = EnsureEntry(definition);
-            var progress = entry.Nodes.FirstOrDefault(p => p.NodeId == node.id);
-            node.TryGetCost(progress?.Level ?? 0, out var cost);
             // Prepare rewards before changing gold/progression, so invalid item configuration cannot lose a purchase.
             var keys = new List<PlayerItemInstanceState>();
             if (node.reward == ClassNodeReward.RuneKey)
                 for (var i = 0; i < node.runeKeyReward; i++) keys.Add(_items.Create(_catalog.runeKey));
-            if (progress == null) entry.Nodes.Add(progress = new ClassNodeProgress { NodeId = node.id });
-            progress.Level++;
-            entry.GoldSpent = BigDoubleMath.SanitizeNonNegativeInteger(entry.GoldSpent + cost, BigDouble.Zero);
-            _player.GoldTotal -= cost;
+            if (!_trees[definition].TryPurchase(node, cost =>
+                    entry.GoldSpent = BigDoubleMath.SanitizeNonNegativeInteger(entry.GoldSpent + cost, BigDouble.Zero)))
+                return false;
             if (keys.Count > 0) _items.Place(keys, -1, 0);
             OnChanged?.Invoke();
             return true;
@@ -162,6 +164,12 @@ namespace Core.Classes
                 entry.GoldSpent = BigDoubleMath.SanitizeNonNegativeInteger(entry.GoldSpent, BigDouble.Zero);
                 if (!entry.Unlocked) { entry.Nodes.Clear(); entry.GoldSpent = BigDouble.Zero; }
             }
+            _trees.Clear();
+            foreach (var entry in _state.Classes)
+            {
+                var definition = _catalog.FindClass(entry.ClassId);
+                _trees.Add(definition, new SkillTreeProgression(definition.nodes, entry, _player));
+            }
             if (UnlockedCount > 0) _state.FirstClassChosen = true;
             foreach (AttackSlot slot in Enum.GetValues(typeof(AttackSlot)))
             {
@@ -177,6 +185,8 @@ namespace Core.Classes
         {
             var entry = Entry(definition);
             if (entry == null) _state.Classes.Add(entry = new ClassProgressEntry { ClassId = definition.id });
+            if (!_trees.ContainsKey(definition))
+                _trees.Add(definition, new SkillTreeProgression(definition.nodes, entry, _player));
             return entry;
         }
         private void SetSlot(AttackSlot slot, string id)

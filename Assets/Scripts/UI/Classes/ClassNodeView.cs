@@ -1,41 +1,65 @@
 using System;
 using Core.Classes;
-using TMPro;
+using Core.TestSkillTree;
+using Core.TestSkillTree.View;
+using IncrementalRPG.Scripts.AudioManager;
 using UnityEngine;
-using UnityEngine.Localization.Components;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace UI.Classes
 {
-    public sealed class ClassNodeView : MonoBehaviour
+    public sealed class ClassNodeView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         public Button button;
-        public Image icon;
         public Image highlight;
-        public GameObject lockIcon;
-        public TMP_Text levelText;
-        public LocalizeStringEvent nameText;
+        public NodeView nodeView;
         public ClassNodeDefinition Definition { get; private set; }
-        public void Bind(ClassNodeDefinition node, Action<ClassNodeDefinition> select)
+        private int _level;
+        private NodeState _state;
+        private Action<ClassNodeDefinition> _hover;
+        private Action<ClassNodeDefinition> _exit;
+
+        public void Bind(ClassNodeDefinition node, ClassDefinition owner, ClassProgressionService service,
+            NodeCircleSpriteConfig circles, AudioManager audio, Action<ClassNodeDefinition> purchase,
+            Action<ClassNodeDefinition> hover, Action<ClassNodeDefinition> exit)
         {
             Definition = node;
-            icon.sprite = node.icon;
-            nameText.StringReference = node.displayName;
+            _hover = hover;
+            _exit = exit;
+            _level = service.Level(owner, node);
+            _state = VisualState(service.PurchaseStatus(owner, node));
             button.onClick.RemoveAllListeners();
-            button.onClick.AddListener(() => select(node));
-            UIButtonAudio.EnsureOn(button, true);
+            button.onClick.AddListener(() => purchase(node));
+            UIButtonAudio.EnsureOn(button, true, false);
+            nodeView.Bind(node, _state, _level, circles, audio, () => button.onClick.Invoke());
         }
+
+        public void OnPointerEnter(PointerEventData eventData) => _hover?.Invoke(Definition);
+        public void OnPointerExit(PointerEventData eventData) => _exit?.Invoke(Definition);
+        private void OnDisable() => _exit?.Invoke(Definition);
+
         public void Refresh(ClassDefinition owner, ClassProgressionService service, bool selected)
         {
             var status = service.PurchaseStatus(owner, Definition);
-            var locked = status is ClassPurchaseStatus.ClassLocked or ClassPurchaseStatus.RequirementsMissing;
-            lockIcon.SetActive(locked);
-            icon.enabled = !locked;
-            icon.color = Color.white;
+            _state = VisualState(status);
+            nodeView.Refresh(_state);
+            var level = service.Level(owner, Definition);
+            if (level != _level)
+            {
+                nodeView.PlayLevelUpgrade(level);
+                _level = level;
+            }
             highlight.color = selected ? owner.color : new Color(owner.color.r, owner.color.g, owner.color.b,
                 status == ClassPurchaseStatus.Available ? 0.3f : 0.05f);
-            levelText.text = $"{service.Level(owner, Definition)} / {Definition.LevelLimit}";
-            levelText.gameObject.SetActive(!locked && Definition.LevelLimit > 1);
         }
+
+        private static NodeState VisualState(ClassPurchaseStatus status) => status switch
+        {
+            ClassPurchaseStatus.Available => NodeState.Affordable,
+            ClassPurchaseStatus.NotEnoughGold => NodeState.Unaffordable,
+            ClassPurchaseStatus.Complete => NodeState.Complete,
+            _ => NodeState.Locked
+        };
     }
 }

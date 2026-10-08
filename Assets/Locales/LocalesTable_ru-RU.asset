@@ -1691,6 +1691,16 @@ MonoBehaviour:
     m_Localized: "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u0432 \u0445\u0430\u0431"
     m_Metadata:
       m_Items: []
+  - m_Id: 51812599719780352
+    m_Localized: "\u0426\u0435\u043D\u0430: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 3838683570720735373
+  - m_Id: 51812599774306304
+    m_Localized: '{0}'
+    m_Metadata:
+      m_Items:
+      - rid: 3838683570720735373
   references:
     version: 2
     RefIds:
@@ -1710,3 +1720,5 @@ MonoBehaviour:
         - id: 49241406974189583
         - id: 49241406974189587
         - id: 51063344428212224
+        - id: 51812599719780352
+        - id: 51812599774306304

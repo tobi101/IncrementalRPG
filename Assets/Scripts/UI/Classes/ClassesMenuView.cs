@@ -6,11 +6,12 @@ using Core.Classes;
 using Core.Items;
 using Core.StateMachine;
 using Core.StateMachine.States;
+using Core.TestSkillTree;
+using IncrementalRPG.Scripts.AudioManager;
 using Model;
 using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
 using UnityEngine.Localization.SmartFormat.PersistentVariables;
@@ -39,8 +40,6 @@ namespace UI.Classes
     [Serializable]
     public sealed class ClassAttackColumn
     {
-        public RectTransform equipped;
-        public GameObject emptySlot;
         public RectTransform content;
         public GameObject emptyList;
         public GameObject[] emptyCells;
@@ -62,6 +61,7 @@ namespace UI.Classes
         [Header("Class board")]
         public RectTransform nodesRoot;
         public ClassNodeView nodePrefab;
+        public NodeCircleSpriteConfig nodeCircles;
         public Image boardSigil;
         public ClassMedallionView classEmblem;
         public Image classPattern;
@@ -73,6 +73,7 @@ namespace UI.Classes
         public Button resetButton;
         public LocalizeStringEvent resetHint;
         [Header("Skill details")]
+        public GameObject detailRoot;
         public ClassMedallionView detailIcon;
         public Image detailPattern;
         public Image detailPreview;
@@ -80,8 +81,8 @@ namespace UI.Classes
         public LocalizeStringEvent detailDescription;
         public LocalizeStringEvent detailLevel;
         public LocalizeStringEvent detailRequirements;
-        public LocalizeStringEvent purchaseText;
-        public Button purchaseButton;
+        [FormerlySerializedAs("purchaseText")]
+        public LocalizeStringEvent detailCost;
         [Header("Locked class")]
         public GameObject lockedRoot;
         public LocalizeStringEvent lockedTitle;
@@ -113,6 +114,8 @@ namespace UI.Classes
         private Player _player;
         private GameStateMachine _machine;
         private PauseMenuController _pause;
+        private NodeCircleSpriteConfig _nodeCircles;
+        private AudioManager _audio;
         private ClassDefinition _selectedClass;
         private ClassNodeDefinition _selectedNode;
         private readonly List<ClassNodeView> _nodes = new();
@@ -122,14 +125,16 @@ namespace UI.Classes
         private bool _refreshPending;
         private bool _showAttacks;
         private bool _choosing;
-        private RectTransform _dragGhost;
+        private const float AttackCellGap = 8f;
+        private const float AttackListPadding = 8f;
         private ClassDefinition _resetTarget;
 
         [Inject]
         public void Construct(ClassCatalog catalog, ClassProgressionService service, Player player,
-            GameStateMachine machine, PauseMenuController pause)
+            GameStateMachine machine, PauseMenuController pause, NodeCircleSpriteConfig nodeCircles, AudioManager audio)
         {
             _catalog = catalog; _service = service; _player = player; _machine = machine; _pause = pause;
+            _nodeCircles = nodeCircles; _audio = audio;
         }
 
         public void Show()
@@ -144,7 +149,7 @@ namespace UI.Classes
             StopAllCoroutines(); _choosing = false;
             if (choiceReveal != null) choiceReveal.gameObject.SetActive(false);
             if (confirmation != null) confirmation.SetActive(false);
-            HideTooltip(); EndAttackDrag();
+            HideNodeDetails(); HideTooltip();
             sideMenu?.CloseImmediate();
             gameObject.SetActive(false);
         }
@@ -170,7 +175,6 @@ namespace UI.Classes
             }
             classesTab.onClick.AddListener(() => SwitchTab(false));
             attacksTab.onClick.AddListener(() => SwitchTab(true));
-            purchaseButton.onClick.AddListener(() => { if (_selectedNode != null) _service.Purchase(_selectedClass, _selectedNode); });
             unlockButton.onClick.AddListener(() => _service.Unlock(_selectedClass));
             resetButton.onClick.AddListener(RequestReset);
             cancelButton.onClick.AddListener(() => confirmation.SetActive(false));
@@ -179,6 +183,34 @@ namespace UI.Classes
             _player.OnGoldChanged += RequestRefresh;
             LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
             UIButtonAudio.InstallInChildren(this, true);
+        }
+
+        private void PurchaseNode(ClassNodeDefinition node)
+        {
+            if (node == null || confirmation.activeSelf || _choosing) return;
+            if (!_service.Purchase(_selectedClass, node))
+                _audio?.PlaySkillError();
+            else if (_service.Level(_selectedClass, node) >= node.LevelLimit)
+                _audio?.PlaySkillMax();
+            else
+                _audio?.PlaySkillUpgrade();
+        }
+
+        private void ShowNodeDetails(ClassNodeDefinition node)
+        {
+            if (_showAttacks || _choosing || confirmation.activeSelf) return;
+            _selectedNode = node;
+            RefreshBoard();
+        }
+
+        private void HideNodeDetails(ClassNodeDefinition node = null)
+        {
+            if (node != null && _selectedNode != node) return;
+            _selectedNode = null;
+            detailRoot.SetActive(false);
+            ReleaseRequirements();
+            foreach (var view in _nodes)
+                view.Refresh(_selectedClass, _service, false);
         }
 
         private void OnDestroy()
@@ -235,12 +267,12 @@ namespace UI.Classes
         }
         private void SwitchTab(bool attacks)
         {
-            _showAttacks = attacks; HideTooltip(); EndAttackDrag(); Refresh();
+            _showAttacks = attacks; HideNodeDetails(); HideTooltip(); Refresh();
         }
         private void SelectClass(ClassDefinition definition)
         {
+            HideNodeDetails();
             _selectedClass = definition;
-            _selectedNode = definition.nodes.FirstOrDefault(n => n != null);
             foreach (var node in _nodes) { node.gameObject.SetActive(false); Destroy(node.gameObject); }
             _nodes.Clear();
             foreach (var node in definition.nodes.Where(n => n != null))
@@ -249,7 +281,8 @@ namespace UI.Classes
                 view.gameObject.SetActive(true);
                 ((RectTransform)view.transform).anchoredPosition = node.position;
                 view.transform.localScale = Vector3.one * Mathf.Clamp(node.visualScale, 0.5f, 1.2f);
-                view.Bind(node, selected => { _selectedNode = selected; RefreshBoard(); });
+                view.Bind(node, definition, _service, nodeCircles != null ? nodeCircles : _nodeCircles, _audio,
+                    PurchaseNode, ShowNodeDetails, HideNodeDetails);
                 _nodes.Add(view);
             }
             if (_initialized) Refresh();
@@ -292,7 +325,7 @@ namespace UI.Classes
             var lockedText = FormattedString(_service.HasChosenFirstClass ? "classes.locked" : "classes.before_introduction");
             if (_service.HasChosenFirstClass) lockedText["className"] = definition.displayName;
             lockedTitle.StringReference = lockedText;
-            SetLocalizedText(keyCount, "classes.keys", _service.RuneKeys);
+            SetLocalizedText(keyCount, "classes.key_count", _service.RuneKeys);
             keyCount.transform.parent.gameObject.SetActive(_service.HasChosenFirstClass);
             unlockButton.gameObject.SetActive(_service.HasChosenFirstClass);
             SetLocalizedText(unlockText, "classes.unlock", Math.Max(1, definition.unlockKeyCost));
@@ -303,11 +336,11 @@ namespace UI.Classes
             SetLocalizedText(refundText, "classes.refund", BigDoubleFormatter.FormatFloor(_service.Refund(definition)));
             foreach (var view in _nodes) view.Refresh(definition, _service, view.Definition == _selectedNode);
             lockedBackdrop.SetLocked(!unlocked);
-            purchaseButton.interactable = false;
+            detailRoot.SetActive(_selectedNode != null && !_showAttacks);
             ReleaseRequirements();
             if (_selectedNode == null)
             {
-                ClearLocalizedText(detailTitle, detailDescription, detailLevel, detailRequirements, purchaseText);
+                ClearLocalizedText(detailTitle, detailDescription, detailLevel, detailRequirements, detailCost);
                 detailIcon.gameObject.SetActive(false);
                 detailPreview.enabled = false;
                 return;
@@ -326,7 +359,6 @@ namespace UI.Classes
             if (_requirements.Length > 0) SetLocalizedText(detailRequirements, "classes.requirements", (object)_requirements);
             else ClearLocalizedText(detailRequirements);
             var status = _service.PurchaseStatus(definition, node);
-            purchaseButton.interactable = status == ClassPurchaseStatus.Available;
             node.TryGetCost(_service.Level(definition, node), out var cost);
             var purchaseKey = status switch
             {
@@ -334,9 +366,9 @@ namespace UI.Classes
                 ClassPurchaseStatus.NotConfigured => "classes.not_configured",
                 ClassPurchaseStatus.ClassLocked => "classes.class_locked",
                 ClassPurchaseStatus.RequirementsMissing => "classes.requirements_missing",
-                _ => "classes.buy"
+                _ => "classes.upgrade_cost"
             };
-            SetLocalizedText(purchaseText, purchaseKey, BigDoubleFormatter.FormatFloor(cost));
+            SetLocalizedText(detailCost, purchaseKey, BigDoubleFormatter.FormatFloor(cost));
             if (status == ClassPurchaseStatus.NotEnoughGold) SetLocalizedText(detailRequirements, "classes.not_enough_gold");
         }
 
@@ -393,46 +425,60 @@ namespace UI.Classes
             text["refund"] = new StringVariable { Value = BigDoubleFormatter.FormatFloor(_service.Refund(_selectedClass)) };
             confirmationText.StringReference = text;
             confirmation.SetActive(true);
+            HideNodeDetails();
             HideTooltip();
         }
 
         private void RefreshAttacks()
         {
-            HideTooltip();
-            foreach (var item in _attacks) { item.gameObject.SetActive(false); Destroy(item.gameObject); }
-            _attacks.Clear();
             foreach (AttackSlot slot in Enum.GetValues(typeof(AttackSlot)))
             {
                 var column = attackColumns[(int)slot];
                 var equipped = _service.Equipped(slot);
-                column.emptySlot.SetActive(equipped == null);
-                if (equipped != null) AddAttack(equipped, column.equipped, true);
-                var available = _service.AvailableAttacks(slot).Where(a => a != equipped).ToArray();
+                var available = _service.AvailableAttacks(slot)
+                    .Where(attack => attack != _catalog.defaultManualAttack)
+                    .ToArray();
+                var existing = _attacks.Where(item => item.Attack.slot == slot).ToArray();
+                // Selecting an attack changes its highlight without moving cells or resetting scrolling.
+                if (!existing.Select(item => item.Attack).SequenceEqual(available))
+                {
+                    HideTooltip();
+                    foreach (var item in existing)
+                    {
+                        _attacks.Remove(item);
+                        item.gameObject.SetActive(false);
+                        Destroy(item.gameObject);
+                    }
+                    for (var i = 0; i < available.Length; i++)
+                        PositionAttackCell(AddAttack(available[i], column.content, available[i] == equipped), i);
+                }
+                else
+                    foreach (var item in existing) item.SetEquipped(item.Attack == equipped);
                 column.emptyList.SetActive(available.Length == 0);
                 for (var i = 0; i < column.emptyCells.Length; i++)
-                    column.emptyCells[i].SetActive(i >= available.Length);
-                for (var i = 0; i < available.Length; i++)
                 {
-                    var item = AddAttack(available[i], column.content, false);
-                    item.anchorMin = item.anchorMax = new Vector2(0.5f, 1);
-                    item.pivot = new Vector2(0.5f, 1);
-                    item.anchoredPosition = new Vector2(0, -i * 126 - 8);
+                    PositionAttackCell((RectTransform)column.emptyCells[i].transform, i);
+                    column.emptyCells[i].SetActive(i >= available.Length);
                 }
-                column.content.sizeDelta = new Vector2(0, Mathf.Max(5, available.Length) * 126 + 16);
+                var rows = Mathf.Max(column.emptyCells.Length, available.Length);
+                var height = ((RectTransform)attackPrefab.transform).rect.height;
+                column.content.sizeDelta = new Vector2(0,
+                    rows * height + Mathf.Max(0, rows - 1) * AttackCellGap + 2 * AttackListPadding);
             }
         }
+
+        private void PositionAttackCell(RectTransform rect, int index)
+        {
+            rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(0.5f, 1);
+            rect.sizeDelta = ((RectTransform)attackPrefab.transform).rect.size;
+            rect.anchoredPosition = new Vector2(0, -AttackListPadding - index * (rect.rect.height + AttackCellGap));
+        }
+
         private RectTransform AddAttack(AttackDefinition attack, Transform parent, bool equipped)
         {
             var item = Instantiate(attackPrefab, parent);
             item.gameObject.SetActive(true);
-            var owner = _catalog.OwnerOf(attack);
-            item.Bind(this, attack, equipped, owner != null ? owner.color : new Color(0.65f, 0.65f, 0.65f));
-            if (equipped)
-            {
-                item.transform.Find("Frame").gameObject.SetActive(false);
-                item.icon.rectTransform.sizeDelta = new Vector2(80, 80);
-                ((RectTransform)item.title.transform).anchoredPosition = new Vector2(0, -85);
-            }
+            item.Bind(this, attack, equipped);
             _attacks.Add(item);
             var rect = (RectTransform)item.transform;
             rect.anchoredPosition = Vector2.zero;
@@ -440,8 +486,9 @@ namespace UI.Classes
         }
         public void SetAttack(AttackSlot slot, AttackDefinition attack)
         {
-            _service.Equip(slot, attack);
-            IncrementalRPG.Scripts.AudioManager.AudioManager.Resolve()?.PlayUiClick();
+            if (!_service.Equip(slot, attack)) return;
+            RefreshAttacks();
+            _audio?.PlayUiClick();
         }
         public void ShowTooltip(AttackDefinition attack, RectTransform target)
         {
@@ -450,7 +497,8 @@ namespace UI.Classes
             tooltipTitle.StringReference = attack.displayName;
             tooltipDescription.StringReference = attack.description;
             tooltipEmblem.sprite = owner != null ? owner.emblem : typeIcons[0];
-            if (tooltipEmblem is ClassEmblemImage emblem) emblem.sampleClassBanner = owner != null;
+            tooltipEmblem.preserveAspect = true;
+            if (tooltipEmblem is ClassEmblemImage emblem) emblem.sampleClassBanner = false;
             tooltipType.sprite = typeIcons[(int)attack.slot];
             var headerColor = owner != null ? owner.color * 0.3f : new Color(0.18f, 0.18f, 0.18f);
             headerColor.a = 1;
@@ -463,22 +511,5 @@ namespace UI.Classes
                 Mathf.Clamp(point.y, root.rect.yMin + size.y / 2 + 20, root.rect.yMax - size.y / 2 - 20));
         }
         public void HideTooltip() { if (tooltip != null) tooltip.gameObject.SetActive(false); }
-        public void BeginAttackDrag(AttackDefinition attack, PointerEventData data)
-        {
-            HideTooltip(); EndAttackDrag();
-            var ghost = new GameObject("AttackDrag", typeof(RectTransform), typeof(CanvasGroup), typeof(Image));
-            _dragGhost = (RectTransform)ghost.transform;
-            _dragGhost.SetParent(tooltip.parent, false);
-            _dragGhost.sizeDelta = new Vector2(110, 110);
-            ghost.GetComponent<CanvasGroup>().blocksRaycasts = false;
-            var graphic = ghost.GetComponent<Image>(); graphic.sprite = attack.icon; graphic.preserveAspect = true; graphic.raycastTarget = false;
-            MoveAttackDrag(data);
-        }
-        public void MoveAttackDrag(PointerEventData data)
-        {
-            if (_dragGhost != null && RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)_dragGhost.parent, data.position,
-                    data.pressEventCamera, out var point)) _dragGhost.anchoredPosition = point;
-        }
-        public void EndAttackDrag() { if (_dragGhost != null) Destroy(_dragGhost.gameObject); _dragGhost = null; }
     }
 }
