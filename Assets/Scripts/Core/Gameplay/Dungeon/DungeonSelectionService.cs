@@ -13,6 +13,14 @@ namespace Core.Gameplay.Dungeon
 
         public DungeonConfig SelectedDungeon => _selectedDungeon;
 
+        public bool IsCompleted(DungeonConfig dungeon) => dungeon != null && _progressState.IsCompleted(GetProgressKey(dungeon));
+
+        public void MarkCompleted(DungeonConfig dungeon)
+        {
+            if (dungeon != null && _progressState.SetCompleted(GetProgressKey(dungeon)))
+                OnProgressChanged?.Invoke();
+        }
+
         public void Select(DungeonConfig dungeon)
         {
             _selectedDungeon = dungeon;

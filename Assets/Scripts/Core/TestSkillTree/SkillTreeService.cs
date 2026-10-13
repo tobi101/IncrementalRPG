@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Core.Save;
 using Model;
 using Reflex.Attributes;
@@ -15,6 +14,9 @@ namespace Core.TestSkillTree
 
         private Dictionary<string, NodeDefinition> _nodeMap;
         private SkillTreeState _state;
+        private SkillTreeProgression _progression;
+
+        public bool IsPurchasing => _progression?.IsPurchasing == true;
 
         private readonly Dictionary<StatType, float> _bonusCache      = new Dictionary<StatType, float>();
         private readonly Dictionary<StatType, float> _multiplierCache = new Dictionary<StatType, float>();
@@ -30,6 +32,7 @@ namespace Core.TestSkillTree
             _nodeMap = BuildNodeMap(_config);
             _state   = data.SkillTreeState ?? new SkillTreeState();
             _state.Init();
+            _progression = new SkillTreeProgression(_config.NodeDefinitions, _state, _player);
             RebuildCache();
         }
 
@@ -41,16 +44,15 @@ namespace Core.TestSkillTree
         public NodeState GetState(string nodeId)
         {
             var def   = GetDefinition(nodeId);
-            var level = _state.GetLevel(nodeId);
-
-            if (level >= def.maxLevel)     return NodeState.Complete;
-            if (!IsVisible(def))           return NodeState.Hidden;
-            if (!ArePrerequisitesMet(def)) return NodeState.Locked;
-
-            var cost = GetUpgradeCost(nodeId);
-            return (cost == 0 || _player.GoldTotal >= cost)
-                ? NodeState.Affordable
-                : NodeState.Unaffordable;
+            var status = _progression.GetStatus(def);
+            if (status == SkillPurchaseStatus.Complete) return NodeState.Complete;
+            if (!IsVisible(def)) return NodeState.Hidden;
+            return status switch
+            {
+                SkillPurchaseStatus.Available => NodeState.Affordable,
+                SkillPurchaseStatus.NotEnoughGold => NodeState.Unaffordable,
+                _ => NodeState.Locked
+            };
         }
 
         private bool IsVisible(NodeDefinition def)
@@ -58,7 +60,7 @@ namespace Core.TestSkillTree
             if (def.prerequisites == null || def.prerequisites.Count == 0)
                 return true;
 
-            var parent = def.prerequisites[0].node;
+            var parent = def.prerequisites[0]?.node;
             if (parent == null) return true;
 
             if (_state.GetLevel(parent.id) >= 1) return true;
@@ -66,7 +68,7 @@ namespace Core.TestSkillTree
             if (parent.prerequisites == null || parent.prerequisites.Count == 0)
                 return false;
 
-            var grandparent = parent.prerequisites[0].node;
+            var grandparent = parent.prerequisites[0]?.node;
             if (grandparent == null) return false;
 
             return _state.GetLevel(grandparent.id) >= 1;
@@ -75,16 +77,12 @@ namespace Core.TestSkillTree
         public BigDouble GetUpgradeCost(string nodeId)
         {
             var def   = GetDefinition(nodeId);
-            var level = _state.GetLevel(nodeId);
-            if (level >= def.maxLevel) return 0;
-            if (def.goldCostPerLevel == null || level >= def.goldCostPerLevel.Length) return 0;
-            return def.goldCostPerLevel[level];
+            return def.TryGetCost(_progression.GetLevel(def), out var cost) ? cost : BigDouble.Zero;
         }
 
         public bool CanUpgrade(string nodeId)
         {
-            var def = GetDefinition(nodeId);
-            return CanUpgrade(def, nodeId);
+            return _progression.GetStatus(GetDefinition(nodeId)) == SkillPurchaseStatus.Available;
         }
 
         public void Upgrade(string nodeId)
@@ -96,25 +94,19 @@ namespace Core.TestSkillTree
         public NodeUpgradeResult TryUpgrade(string nodeId)
         {
             var def = GetDefinition(nodeId);
-            if (!CanUpgrade(def, nodeId))
+            if (!_progression.TryPurchase(def, _ => RebuildCache()))
                 return NodeUpgradeResult.Failed;
-            
-            var cost = GetUpgradeCost(nodeId);
-            if (cost > 0)
-                _player.GoldTotal -= cost;
 
-            var newLevel = _state.GetLevel(nodeId) + 1;
-            _state.SetLevel(nodeId, newLevel);
-            RebuildCache();
+            var newLevel = _progression.GetLevel(def);
             OnUpgraded?.Invoke();
             OnNodeUpgraded?.Invoke(nodeId);
 
-            return newLevel >= def.maxLevel
+            return newLevel >= def.LevelLimit
                 ? NodeUpgradeResult.UpgradedToMax
                 : NodeUpgradeResult.Upgraded;
         }
         
-        public int GetLevel(string nodeId) => _state.GetLevel(nodeId);
+        public int GetLevel(string nodeId) => _progression.GetLevel(GetDefinition(nodeId));
 
         public float GetBonus(StatType stat) =>
             _bonusCache.TryGetValue(stat, out var v) ? v : 0f;
@@ -137,14 +129,15 @@ namespace Core.TestSkillTree
                 if (level == 0) 
                     continue;
 
-                foreach (var effect in def.effects)
+                foreach (var effect in def.effects ?? Array.Empty<NodeEffect>())
                 {
+                    if (effect == null) continue;
                     switch (effect.effectType)
                     {
                         case NodeEffectType.Additive:
                             _bonusCache.TryGetValue(effect.statType, out var bonus);
                             
-                            for (var i = 0; i < level && i < effect.valuesPerLevel.Length; i++)
+                            for (var i = 0; i < level && i < (effect.valuesPerLevel?.Length ?? 0); i++)
                                 bonus += effect.valuesPerLevel[i];
                             
                             _bonusCache[effect.statType] = bonus;
@@ -153,7 +146,7 @@ namespace Core.TestSkillTree
                         case NodeEffectType.Multiplicative:
                             _multiplierCache.TryGetValue(effect.statType, out var multSum);
                             
-                            for (var i = 0; i < level && i < effect.valuesPerLevel.Length; i++)
+                            for (var i = 0; i < level && i < (effect.valuesPerLevel?.Length ?? 0); i++)
                                 multSum += effect.valuesPerLevel[i];
                             
                             _multiplierCache[effect.statType] = multSum;
@@ -168,22 +161,6 @@ namespace Core.TestSkillTree
             
             foreach (var key in new List<StatType>(_multiplierCache.Keys))
                 _multiplierCache[key] = 1f + _multiplierCache[key];
-        }
-
-        private bool ArePrerequisitesMet(NodeDefinition def)
-        {
-            return def.prerequisites.All(prereq =>
-                prereq.node != null &&
-                _state.GetLevel(prereq.node.id) >= prereq.requiredLevel);
-        }
-
-        private bool CanUpgrade(NodeDefinition def, string nodeId)
-        {
-            if (!ArePrerequisitesMet(def) || _state.GetLevel(nodeId) >= def.maxLevel)
-                return false;
-
-            var cost = GetUpgradeCost(nodeId);
-            return cost == 0 || _player.GoldTotal >= cost;
         }
 
         private NodeDefinition GetDefinition(string nodeId)

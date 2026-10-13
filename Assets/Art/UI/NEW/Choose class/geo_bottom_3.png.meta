@@ -1,0 +1,1794 @@
+fileFormatVersion: 2
+guid: dce0f354280544e03ba5171232297c46
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8755858646891032562
+    second: geo_bottom_3_0
+  - first:
+      213: 1160925546485608790
+    second: geo_bottom_3_1
+  - first:
+      213: 4101595744959835932
+    second: geo_bottom_3_2
+  - first:
+      213: 6862325386790569182
+    second: geo_bottom_3_3
+  - first:
+      213: 3645211924311322407
+    second: geo_bottom_3_4
+  - first:
+      213: 3674103988932370177
+    second: geo_bottom_3_5
+  - first:
+      213: 4786935277618657755
+    second: geo_bottom_3_6
+  - first:
+      213: 7225897698891939395
+    second: geo_bottom_3_7
+  - first:
+      213: -4016963313408749866
+    second: geo_bottom_3_8
+  - first:
+      213: 2013873601764529104
+    second: geo_bottom_3_9
+  - first:
+      213: 1279545813137134732
+    second: geo_bottom_3_10
+  - first:
+      213: 8479438661167858092
+    second: geo_bottom_3_11
+  - first:
+      213: 2013448564225041724
+    second: geo_bottom_3_12
+  - first:
+      213: 1918751875351296031
+    second: geo_bottom_3_13
+  - first:
+      213: 1603460925982527784
+    second: geo_bottom_3_14
+  - first:
+      213: 6782742656358501177
+    second: geo_bottom_3_15
+  - first:
+      213: -8858011358810697489
+    second: geo_bottom_3_16
+  - first:
+      213: -4817186320079947384
+    second: geo_bottom_3_17
+  - first:
+      213: -408999064939795488
+    second: geo_bottom_3_18
+  - first:
+      213: -4612161993343336972
+    second: geo_bottom_3_19
+  - first:
+      213: 825884439278445142
+    second: geo_bottom_3_20
+  - first:
+      213: 8720332783396488136
+    second: geo_bottom_3_21
+  - first:
+      213: -3681638534736705201
+    second: geo_bottom_3_22
+  - first:
+      213: 3344886265609082774
+    second: geo_bottom_3_23
+  - first:
+      213: 81780437166085102
+    second: geo_bottom_3_24
+  - first:
+      213: 5278065927081305327
+    second: geo_bottom_3_25
+  - first:
+      213: 5821275552433670253
+    second: geo_bottom_3_26
+  - first:
+      213: 3320042190246299813
+    second: geo_bottom_3_27
+  - first:
+      213: 4452938789380689711
+    second: geo_bottom_3_28
+  - first:
+      213: -2300948595005795077
+    second: geo_bottom_3_29
+  - first:
+      213: 7094890821748895470
+    second: geo_bottom_3_30
+  - first:
+      213: -6206674990818924486
+    second: geo_bottom_3_31
+  - first:
+      213: -2393219333365729818
+    second: geo_bottom_3_32
+  - first:
+      213: 4082520191868620013
+    second: geo_bottom_3_33
+  - first:
+      213: 7836082968795741353
+    second: geo_bottom_3_34
+  - first:
+      213: -1885527737377617420
+    second: geo_bottom_3_35
+  - first:
+      213: -7887026935269156853
+    second: geo_bottom_3_36
+  - first:
+      213: -8839316252111111349
+    second: geo_bottom_3_37
+  - first:
+      213: 4067007773584467287
+    second: geo_bottom_3_38
+  - first:
+      213: 2310104608756632249
+    second: geo_bottom_3_39
+  - first:
+      213: 5867320731239985205
+    second: geo_bottom_3_40
+  - first:
+      213: -478518722150265382
+    second: geo_bottom_3_41
+  - first:
+      213: -8078961030255604750
+    second: geo_bottom_3_42
+  - first:
+      213: 6764492129689223641
+    second: geo_bottom_3_43
+  - first:
+      213: 8532736756755892620
+    second: geo_bottom_3_44
+  - first:
+      213: 6184249005921631903
+    second: geo_bottom_3_45
+  - first:
+      213: -3956432202965493288
+    second: geo_bottom_3_46
+  - first:
+      213: 393597599145706909
+    second: geo_bottom_3_47
+  - first:
+      213: 3669677233669774547
+    second: geo_bottom_3_48
+  - first:
+      213: -7165132439146322271
+    second: geo_bottom_3_49
+  - first:
+      213: -2365602637333711415
+    second: geo_bottom_3_50
+  - first:
+      213: 6752402445835509788
+    second: geo_bottom_3_51
+  - first:
+      213: -6105692512019815288
+    second: geo_bottom_3_52
+  - first:
+      213: 708652967084894843
+    second: geo_bottom_3_53
+  - first:
+      213: 1862553522563459673
+    second: geo_bottom_3_54
+  - first:
+      213: 3594505180876196329
+    second: geo_bottom_3_55
+  - first:
+      213: 953970101384673203
+    second: geo_bottom_3_56
+  - first:
+      213: 6569783333788869898
+    second: geo_bottom_3_57
+  - first:
+      213: -309041968888938074
+    second: geo_bottom_3_58
+  - first:
+      213: 1443276787896841843
+    second: geo_bottom_3_59
+  - first:
+      213: 2743371381523523541
+    second: geo_bottom_3_60
+  - first:
+      213: -1747778482168940042
+    second: geo_bottom_3_61
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: geo_bottom_3_0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 708
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ffe87f7c0f038970800000000000000
+      internalID: 8755858646891032562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_1
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 713
+        width: 37
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65173f832af6c1010800000000000000
+      internalID: 1160925546485608790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_2
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 718
+        width: 33
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1fa59e499bcbe830800000000000000
+      internalID: 4101595744959835932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_3
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 719
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed40cc4c490eb3f50800000000000000
+      internalID: 6862325386790569182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_4
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 719
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72f28979ee4669230800000000000000
+      internalID: 3645211924311322407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_5
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 717
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10fd8289c1a0df230800000000000000
+      internalID: 3674103988932370177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_6
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 710
+        width: 34
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd9fe31d54c9e6240800000000000000
+      internalID: 4786935277618657755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_7
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 700
+        width: 34
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e34c53cab874460800000000000000
+      internalID: 7225897698891939395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_8
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 680
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dece743621e048c0800000000000000
+      internalID: -4016963313408749866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_9
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 700
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d316bfee57b2fb10800000000000000
+      internalID: 2013873601764529104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 693
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8490e1432cd1c110800000000000000
+      internalID: 1279545813137134732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_11
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 642
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca1cf9d49840da570800000000000000
+      internalID: 8479438661167858092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_12
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 665
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c35672c2dc431fb10800000000000000
+      internalID: 2013448564225041724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_13
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 674
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f18bd662aa6c0aa10800000000000000
+      internalID: 1918751875351296031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_14
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 655
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82158687733a04610800000000000000
+      internalID: 1603460925982527784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_15
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 616
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b432b6284212e50800000000000000
+      internalID: 6782742656358501177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_16
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 636
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe096b5d995021580800000000000000
+      internalID: -8858011358810697489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 591
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88973ce709ae52db0800000000000000
+      internalID: -4817186320079947384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_18
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 598
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ebebc47481f25af0800000000000000
+      internalID: -408999064939795488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_19
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 571
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd76347a1f4effb0800000000000000
+      internalID: -4612161993343336972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_20
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 554
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 652e6b49581267b00800000000000000
+      internalID: 825884439278445142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_21
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 571
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c38a85d678d40970800000000000000
+      internalID: 8720332783396488136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_22
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 539
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4901a1424138ecc0800000000000000
+      internalID: -3681638534736705201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_23
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 478
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69756bb265c6b6e20800000000000000
+      internalID: 3344886265609082774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_24
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 514
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee35cd2dfda822100800000000000000
+      internalID: 81780437166085102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_25
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 506
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe426cc0ff47f3940800000000000000
+      internalID: 5278065927081305327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_26
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 433
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d688972c54359c050800000000000000
+      internalID: 5821275552433670253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_27
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 466
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a8c0fc18c8231e20800000000000000
+      internalID: 3320042190246299813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_28
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 449
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2f089b7c340ccd30800000000000000
+      internalID: 4452938789380689711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_29
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 410
+        width: 18
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf4de3c91736110e0800000000000000
+      internalID: -2300948595005795077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 410
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeea58eac9d167260800000000000000
+      internalID: 7094890821748895470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 303
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38efefeaf57dd9a0800000000000000
+      internalID: -6206674990818924486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_32
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 279
+        width: 18
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e5732532b399ced0800000000000000
+      internalID: -2393219333365729818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_33
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 257
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dec40b00c7608a830800000000000000
+      internalID: 4082520191868620013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_34
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 269
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9acfe8951fb5fbc60800000000000000
+      internalID: 7836082968795741353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_35
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 218
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f90677438245d5e0800000000000000
+      internalID: -1885527737377617420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_36
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 191
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0818552ac6ab8290800000000000000
+      internalID: -7887026935269156853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_37
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 226
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4b749f83b0745580800000000000000
+      internalID: -8839316252111111349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_38
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 187
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 755214ba50ae07830800000000000000
+      internalID: 4067007773584467287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_39
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 158
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ba8ee6f6e32f0020800000000000000
+      internalID: 2310104608756632249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_40
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 159
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53038d06e19ec6150800000000000000
+      internalID: 5867320731239985205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_41
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 140
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: add0cdbe1c5fb59f0800000000000000
+      internalID: -478518722150265382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_42
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 127
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fb04654fb3c1ef80800000000000000
+      internalID: -8078961030255604750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_43
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 110
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d14d0c80cd40ed50800000000000000
+      internalID: 6764492129689223641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_44
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 88
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c898a543fde5a6670800000000000000
+      internalID: 8532736756755892620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_45
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 104
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9e758094bdd2d550800000000000000
+      internalID: 6184249005921631903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_46
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 59
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d9535c9fdde719c0800000000000000
+      internalID: -3956432202965493288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_47
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 53
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d95c6895ee6567500800000000000000
+      internalID: 393597599145706909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_48
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 73
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dc993150005de230800000000000000
+      internalID: 3669677233669774547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_49
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 41
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a62e045206509c90800000000000000
+      internalID: -7165132439146322271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_50
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 29
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c53ff15fe0bb2fd0800000000000000
+      internalID: -2365602637333711415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_51
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 20
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c10218caf3a55bd50800000000000000
+      internalID: 6752402445835509788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_52
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 36
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 884eb497209344ba0800000000000000
+      internalID: -6105692512019815288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_53
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 16
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a2f147e14a5d900800000000000000
+      internalID: 708652967084894843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_54
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 13
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95a2c8f7f8e19d910800000000000000
+      internalID: 1862553522563459673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_55
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 4
+        width: 37
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e94d61ea6f32e130800000000000000
+      internalID: 3594505180876196329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_56
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 9
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b7706bb0ce2d3d00800000000000000
+      internalID: 953970101384673203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_57
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 3
+        width: 34
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0564c5422f8c2b50800000000000000
+      internalID: 6569783333788869898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_58
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 11
+        width: 34
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a100b777ff06bbf0800000000000000
+      internalID: -309041968888938074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_59
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 33
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 376782f779c870410800000000000000
+      internalID: 1443276787896841843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_60
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 0
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d7aeaa8cb9621620800000000000000
+      internalID: 2743371381523523541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geo_bottom_3_61
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 0
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9bf380bb4aeb7e0800000000000000
+      internalID: -1747778482168940042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      geo_bottom_3_0: 8755858646891032562
+      geo_bottom_3_1: 1160925546485608790
+      geo_bottom_3_10: 1279545813137134732
+      geo_bottom_3_11: 8479438661167858092
+      geo_bottom_3_12: 2013448564225041724
+      geo_bottom_3_13: 1918751875351296031
+      geo_bottom_3_14: 1603460925982527784
+      geo_bottom_3_15: 6782742656358501177
+      geo_bottom_3_16: -8858011358810697489
+      geo_bottom_3_17: -4817186320079947384
+      geo_bottom_3_18: -408999064939795488
+      geo_bottom_3_19: -4612161993343336972
+      geo_bottom_3_2: 4101595744959835932
+      geo_bottom_3_20: 825884439278445142
+      geo_bottom_3_21: 8720332783396488136
+      geo_bottom_3_22: -3681638534736705201
+      geo_bottom_3_23: 3344886265609082774
+      geo_bottom_3_24: 81780437166085102
+      geo_bottom_3_25: 5278065927081305327
+      geo_bottom_3_26: 5821275552433670253
+      geo_bottom_3_27: 3320042190246299813
+      geo_bottom_3_28: 4452938789380689711
+      geo_bottom_3_29: -2300948595005795077
+      geo_bottom_3_3: 6862325386790569182
+      geo_bottom_3_30: 7094890821748895470
+      geo_bottom_3_31: -6206674990818924486
+      geo_bottom_3_32: -2393219333365729818
+      geo_bottom_3_33: 4082520191868620013
+      geo_bottom_3_34: 7836082968795741353
+      geo_bottom_3_35: -1885527737377617420
+      geo_bottom_3_36: -7887026935269156853
+      geo_bottom_3_37: -8839316252111111349
+      geo_bottom_3_38: 4067007773584467287
+      geo_bottom_3_39: 2310104608756632249
+      geo_bottom_3_4: 3645211924311322407
+      geo_bottom_3_40: 5867320731239985205
+      geo_bottom_3_41: -478518722150265382
+      geo_bottom_3_42: -8078961030255604750
+      geo_bottom_3_43: 6764492129689223641
+      geo_bottom_3_44: 8532736756755892620
+      geo_bottom_3_45: 6184249005921631903
+      geo_bottom_3_46: -3956432202965493288
+      geo_bottom_3_47: 393597599145706909
+      geo_bottom_3_48: 3669677233669774547
+      geo_bottom_3_49: -7165132439146322271
+      geo_bottom_3_5: 3674103988932370177
+      geo_bottom_3_50: -2365602637333711415
+      geo_bottom_3_51: 6752402445835509788
+      geo_bottom_3_52: -6105692512019815288
+      geo_bottom_3_53: 708652967084894843
+      geo_bottom_3_54: 1862553522563459673
+      geo_bottom_3_55: 3594505180876196329
+      geo_bottom_3_56: 953970101384673203
+      geo_bottom_3_57: 6569783333788869898
+      geo_bottom_3_58: -309041968888938074
+      geo_bottom_3_59: 1443276787896841843
+      geo_bottom_3_6: 4786935277618657755
+      geo_bottom_3_60: 2743371381523523541
+      geo_bottom_3_61: -1747778482168940042
+      geo_bottom_3_7: 7225897698891939395
+      geo_bottom_3_8: -4016963313408749866
+      geo_bottom_3_9: 2013873601764529104
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -38,8 +38,7 @@ namespace UI.Inventory
         [SerializeField] private Image _bootsSlot;
 
         [Header("Menu")]
-        [SerializeField] private Button _menuToggleButton;
-        [SerializeField] private SideMenuFlyoutView _sideMenuTemplate;
+        [SerializeField] private SideMenuFlyoutView _sideMenu;
 
         [Header("Universal Drag And Drop")]
         [SerializeField] private GameObject _dragCanvasPrefab;
@@ -52,13 +51,11 @@ namespace UI.Inventory
         [Inject] private Player _player;
         [Inject] private RunConsumableService _consumables;
         [Inject] private GameStateMachine _stateMachine;
-        [Inject] private PauseMenuController _pauseMenuController;
 
         private readonly List<(InventoryGridSlot Slot, InventoryItemUseInput Input)> _itemUseInputs = new();
         private EquipmentDropArea _helmetDropArea;
         private EquipmentDropArea _chestDropArea;
         private EquipmentDropArea _weaponDropArea;
-        private SideMenuFlyoutView _sideMenu;
         private bool _started;
         private readonly HashSet<string> _usedRewardIds = new();
         private string _feedbackKey;
@@ -93,11 +90,7 @@ namespace UI.Inventory
         {
             UIButtonAudio.InstallInChildren(this);
 
-            _sideMenu = Instantiate(_sideMenuTemplate, transform);
-            _sideMenu.name = "InventorySideMenuFlyout";
-            _sideMenu.SetToggleButton(_menuToggleButton);
             _sideMenu.ReturnToHubButton.onClick.AddListener(ReturnToHub);
-            _pauseMenuController.RegisterSideMenu(_sideMenu);
 
             foreach (var itemUseInput in _itemUseInputs)
                 itemUseInput.Input.Configure(itemUseInput.Slot, _consumables, ShowConsumableFeedback, _storage);

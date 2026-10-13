@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Core.TestSkillTree
 {
     [Serializable]
-    public class SkillTreeState
+    public class SkillTreeState : ISkillTreeLevels
     {
         public List<NodeLevelEntry> nodeLevels = new List<NodeLevelEntry>();
 

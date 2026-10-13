@@ -23,11 +23,11 @@ namespace UI.Forge
 
         [SerializeField] private RectTransform _composition;
         [SerializeField] private TMP_Text _title, _levelLabel, _level, _hint, _balance, _cost, _feedback, _scrollDescription, _emptyScrolls, _qteHint;
-        [SerializeField] private Button _forgeButton, _clearScrollButton, _menuButton;
+        [SerializeField] private Button _forgeButton, _clearScrollButton;
         [SerializeField] private Image _selectedIcon;
         [SerializeField] private RectTransform _scrollContent;
         [SerializeField] private ForgeScrollRow _scrollRowTemplate;
-        [SerializeField] private SideMenuFlyoutView _sideMenuTemplate;
+        [SerializeField] private SideMenuFlyoutView _sideMenu;
         [SerializeField] private GameObject _qteRoot;
         [SerializeField] private ForgeGaugeImage _gauge;
         [SerializeField] private RectTransform _cursor;
@@ -43,7 +43,6 @@ namespace UI.Forge
         [Inject] private GameStateMachine _stateMachine;
         [Inject] private PauseMenuController _pause;
         private readonly List<ForgeScrollRow> _rows = new();
-        private SideMenuFlyoutView _sideMenu;
         private string _selectedScroll, _error;
         private AnvilPhase _anvilPhase;
         private Spine.TrackEntry _anvilEntry;
@@ -63,11 +62,7 @@ namespace UI.Forge
         private void EnsureReady()
         {
             if (_listening) return;
-            _sideMenu = Instantiate(_sideMenuTemplate, transform);
-            _sideMenu.name = "ForgeSideMenu";
-            _sideMenu.SetToggleButton(_menuButton);
-            _sideMenu.ReturnToHubButton.onClick.AddListener(() => _stateMachine.Enter<HubState>());
-            _pause.RegisterSideMenu(_sideMenu);
+            _sideMenu.ReturnToHubButton.onClick.AddListener(ReturnToHub);
             _player.OnShardsChanged += Refresh;
             _storage.OnChanged += Refresh;
             LocalizationSettings.SelectedLocaleChanged += LocaleChanged;
@@ -76,11 +71,13 @@ namespace UI.Forge
         private void OnDestroy()
         {
             if (!_listening) return;
+            _sideMenu.ReturnToHubButton.onClick.RemoveListener(ReturnToHub);
             _player.OnShardsChanged -= Refresh;
             _storage.OnChanged -= Refresh;
             LocalizationSettings.SelectedLocaleChanged -= LocaleChanged;
         }
         private void LocaleChanged(Locale _) => Refresh();
+        private void ReturnToHub() => _stateMachine.Enter<HubState>();
         private void OnDisable()
         {
             StopAnvilAudio();
@@ -159,7 +156,7 @@ namespace UI.Forge
         }
         private void FinishIdleBeforeQte()
         {
-            _menuButton.interactable = false;
+            _sideMenu.ToggleButton.interactable = false;
             _sideMenu.CloseImmediate();
             if (_anvilEntry == null || _anvilEntry.Animation.Name != "idle")
             {
@@ -181,7 +178,7 @@ namespace UI.Forge
             PlayAnvilSound(_qteStartClip);
             _qteRoot.SetActive(false);
             _gauge.SetRanges(_forge.CenterRange, _forge.Pending.Settings.allStatsRange, _forge.Pending.Settings.oneStatRange);
-            _menuButton.interactable = false;
+            _sideMenu.ToggleButton.interactable = false;
             _sideMenu.CloseImmediate();
             SetCursor();
         }
@@ -227,7 +224,7 @@ namespace UI.Forge
         {
             _anvilPhase = AnvilPhase.Idle;
             _qteRoot.SetActive(false);
-            _menuButton.interactable = true;
+            _sideMenu.ToggleButton.interactable = true;
             StartAnvilLoop();
             Refresh();
         }

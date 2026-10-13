@@ -1,0 +1,1794 @@
+fileFormatVersion: 2
+guid: 7d1b263565a954c50a07a344f37f622c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3416920870891422873
+    second: pyro_bottom_3_0
+  - first:
+      213: -5104845843227566300
+    second: pyro_bottom_3_1
+  - first:
+      213: 2707573186114466280
+    second: pyro_bottom_3_2
+  - first:
+      213: 2750239838877519279
+    second: pyro_bottom_3_3
+  - first:
+      213: 3950563960862638629
+    second: pyro_bottom_3_4
+  - first:
+      213: 2282799703876788978
+    second: pyro_bottom_3_5
+  - first:
+      213: -5694705955615999497
+    second: pyro_bottom_3_6
+  - first:
+      213: -6460291470476461675
+    second: pyro_bottom_3_7
+  - first:
+      213: 4455813594141851354
+    second: pyro_bottom_3_8
+  - first:
+      213: 5570237738847306917
+    second: pyro_bottom_3_9
+  - first:
+      213: 542336546165658721
+    second: pyro_bottom_3_10
+  - first:
+      213: 7996945023805734259
+    second: pyro_bottom_3_11
+  - first:
+      213: 5706845923319561148
+    second: pyro_bottom_3_12
+  - first:
+      213: 3042057584953704354
+    second: pyro_bottom_3_13
+  - first:
+      213: -3382215149029627689
+    second: pyro_bottom_3_14
+  - first:
+      213: -4928937088630307692
+    second: pyro_bottom_3_15
+  - first:
+      213: 1104670143977496552
+    second: pyro_bottom_3_16
+  - first:
+      213: 3583803640046460922
+    second: pyro_bottom_3_17
+  - first:
+      213: -5820748123609880341
+    second: pyro_bottom_3_18
+  - first:
+      213: 7843477334290376071
+    second: pyro_bottom_3_19
+  - first:
+      213: 7950615495848925164
+    second: pyro_bottom_3_20
+  - first:
+      213: -9133179374666881974
+    second: pyro_bottom_3_21
+  - first:
+      213: 4217198038626992900
+    second: pyro_bottom_3_22
+  - first:
+      213: 9117617462886705105
+    second: pyro_bottom_3_23
+  - first:
+      213: -8893924667052490803
+    second: pyro_bottom_3_24
+  - first:
+      213: -7911125039829306889
+    second: pyro_bottom_3_25
+  - first:
+      213: 5825930894650993485
+    second: pyro_bottom_3_26
+  - first:
+      213: 7772533181864303528
+    second: pyro_bottom_3_27
+  - first:
+      213: -3978275921434228998
+    second: pyro_bottom_3_28
+  - first:
+      213: -657187768269558216
+    second: pyro_bottom_3_29
+  - first:
+      213: 8004831227552868244
+    second: pyro_bottom_3_30
+  - first:
+      213: -5728995025400701447
+    second: pyro_bottom_3_31
+  - first:
+      213: -7646924850059187070
+    second: pyro_bottom_3_32
+  - first:
+      213: -2807554579415115381
+    second: pyro_bottom_3_33
+  - first:
+      213: -24669123390126920
+    second: pyro_bottom_3_34
+  - first:
+      213: 6324341450486385948
+    second: pyro_bottom_3_35
+  - first:
+      213: -8289047680769913870
+    second: pyro_bottom_3_36
+  - first:
+      213: 7539355295312190735
+    second: pyro_bottom_3_37
+  - first:
+      213: -483933923011841305
+    second: pyro_bottom_3_38
+  - first:
+      213: 2997893738251891331
+    second: pyro_bottom_3_39
+  - first:
+      213: -8022224719094076701
+    second: pyro_bottom_3_40
+  - first:
+      213: -3460100745248832287
+    second: pyro_bottom_3_41
+  - first:
+      213: 3051549534373628413
+    second: pyro_bottom_3_42
+  - first:
+      213: 7544418336781800425
+    second: pyro_bottom_3_43
+  - first:
+      213: -5877005644088132495
+    second: pyro_bottom_3_44
+  - first:
+      213: 4013167398281121585
+    second: pyro_bottom_3_45
+  - first:
+      213: 4260267111172060560
+    second: pyro_bottom_3_46
+  - first:
+      213: 3791022374980864261
+    second: pyro_bottom_3_47
+  - first:
+      213: 7784132292613380132
+    second: pyro_bottom_3_48
+  - first:
+      213: -4944729646527439956
+    second: pyro_bottom_3_49
+  - first:
+      213: -1714195401023018655
+    second: pyro_bottom_3_50
+  - first:
+      213: 4911434586111383102
+    second: pyro_bottom_3_51
+  - first:
+      213: -1472105356326038265
+    second: pyro_bottom_3_52
+  - first:
+      213: -1782625390555282488
+    second: pyro_bottom_3_53
+  - first:
+      213: -6082862479724366027
+    second: pyro_bottom_3_54
+  - first:
+      213: -3473970051972338786
+    second: pyro_bottom_3_55
+  - first:
+      213: 4077347963238200545
+    second: pyro_bottom_3_56
+  - first:
+      213: -1567941073458220825
+    second: pyro_bottom_3_57
+  - first:
+      213: 9114334286493851595
+    second: pyro_bottom_3_58
+  - first:
+      213: 8241535840838683953
+    second: pyro_bottom_3_59
+  - first:
+      213: -2522930209681732877
+    second: pyro_bottom_3_60
+  - first:
+      213: -7485275624330627407
+    second: pyro_bottom_3_61
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pyro_bottom_3_0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 708
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9940a1fad675b6f20800000000000000
+      internalID: 3416920870891422873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_1
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 713
+        width: 37
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42f9a4190c1f729b0800000000000000
+      internalID: -5104845843227566300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_2
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 718
+        width: 33
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1b9b9a77b339520800000000000000
+      internalID: 2707573186114466280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_3
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 719
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fad0c63ef80da2620800000000000000
+      internalID: 2750239838877519279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_4
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 719
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5228dadcdf833d630800000000000000
+      internalID: 3950563960862638629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_5
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 717
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f261f26c322eaf10800000000000000
+      internalID: 2282799703876788978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_6
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 710
+        width: 34
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f9f43fea1758f0b0800000000000000
+      internalID: -5694705955615999497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_7
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 700
+        width: 34
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 599b3ccb22f6856a0800000000000000
+      internalID: -6460291470476461675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_8
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 680
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade7e202bda36dd30800000000000000
+      internalID: 4455813594141851354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_9
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 700
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a4087a06b57d4d40800000000000000
+      internalID: 5570237738847306917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 693
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1649aee1734c68700800000000000000
+      internalID: 542336546165658721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_11
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 642
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37db448212bdafe60800000000000000
+      internalID: 7996945023805734259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_12
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 665
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb395f812ac23f40800000000000000
+      internalID: 5706845923319561148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_13
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 674
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2afb279814f873a20800000000000000
+      internalID: 3042057584953704354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_14
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 655
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8e420ed35ff01d0800000000000000
+      internalID: -3382215149029627689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_15
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 616
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49441ff15d5e89bb0800000000000000
+      internalID: -4928937088630307692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_16
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 636
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef12c5a4a3945f00800000000000000
+      internalID: 1104670143977496552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 591
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff98bd3c6a3cb130800000000000000
+      internalID: 3583803640046460922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_18
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 598
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be82635db6c883fa0800000000000000
+      internalID: -5820748123609880341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_19
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 571
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 785a43a3411a9dc60800000000000000
+      internalID: 7843477334290376071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_20
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 554
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce79ac75ba2465e60800000000000000
+      internalID: 7950615495848925164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_21
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 571
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a446e079fbd604180800000000000000
+      internalID: -9133179374666881974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_22
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 539
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40306dfb54f768a30800000000000000
+      internalID: 4217198038626992900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_23
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 478
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d7a24976c8488e70800000000000000
+      internalID: 9117617462886705105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_24
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 514
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcf704923ae629480800000000000000
+      internalID: -8893924667052490803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_25
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 506
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f1b643f0b9063290800000000000000
+      internalID: -7911125039829306889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_26
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 433
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b65a5184dd9d050800000000000000
+      internalID: 5825930894650993485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_27
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 466
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ab55fd8fb59ddb60800000000000000
+      internalID: 7772533181864303528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_28
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 449
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af64c6490235ac8c0800000000000000
+      internalID: -3978275921434228998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_29
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 410
+        width: 18
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83eaf89e43331e6f0800000000000000
+      internalID: -657187768269558216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 410
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4972e3d079fd61f60800000000000000
+      internalID: 8004831227552868244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 303
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fdd20fb0658e70b0800000000000000
+      internalID: -5728995025400701447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_32
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 279
+        width: 18
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c6d103d5aa0e590800000000000000
+      internalID: -7646924850059187070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_33
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 257
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b89d07e2cff8909d0800000000000000
+      internalID: -2807554579415115381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_34
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 269
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4496f109b58aff0800000000000000
+      internalID: -24669123390126920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_35
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 218
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1d058a9a0394c750800000000000000
+      internalID: 6324341450486385948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_36
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 191
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fb0f653d0367fc80800000000000000
+      internalID: -8289047680769913870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_37
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 226
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0d1b8422bb21a860800000000000000
+      internalID: 7539355295312190735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_38
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 187
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e23e1839a8b849f0800000000000000
+      internalID: -483933923011841305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_39
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 158
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3823fdea878aa9920800000000000000
+      internalID: 2997893738251891331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_40
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 159
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ea2a0e1f155ba090800000000000000
+      internalID: -8022224719094076701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_41
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 140
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e4016064b04bffc0800000000000000
+      internalID: -3460100745248832287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_42
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 127
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df949da3228495a20800000000000000
+      internalID: 3051549534373628413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_43
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 110
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e392d8518823b860800000000000000
+      internalID: 7544418336781800425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_44
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 88
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17c3921218ea07ea0800000000000000
+      internalID: -5877005644088132495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_45
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 104
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f89be6c72a1b730800000000000000
+      internalID: 4013167398281121585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_46
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 59
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 095b0b1ad528f1b30800000000000000
+      internalID: 4260267111172060560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_47
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 53
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509ca4ca3ca6c9430800000000000000
+      internalID: 3791022374980864261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_48
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 73
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4281ed9f31bc60c60800000000000000
+      internalID: 7784132292613380132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_49
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 41
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab9364b59ac06bb0800000000000000
+      internalID: -4944729646527439956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_50
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 29
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1692a6e6d54f538e0800000000000000
+      internalID: -1714195401023018655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_51
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 20
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e369cb2fbbbe82440800000000000000
+      internalID: 4911434586111383102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_52
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 36
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7059c3c5af7029be0800000000000000
+      internalID: -1472105356326038265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_53
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 16
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c34c5ce6a7d247e0800000000000000
+      internalID: -1782625390555282488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_54
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 13
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5373a769dc4559ba0800000000000000
+      internalID: -6082862479724366027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_55
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 4
+        width: 37
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9be7d3c4aaf9cfc0800000000000000
+      internalID: -3473970051972338786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_56
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 9
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e4b97eae56a59830800000000000000
+      internalID: 4077347963238200545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_57
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 3
+        width: 34
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e037c7a6ed8d3ae0800000000000000
+      internalID: -1567941073458220825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_58
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 11
+        width: 34
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcf11a66ebe9c7e70800000000000000
+      internalID: 9114334286493851595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_59
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 33
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d07d48e21df5270800000000000000
+      internalID: 8241535840838683953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_60
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 0
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa81d26750ccfcd0800000000000000
+      internalID: -2522930209681732877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pyro_bottom_3_61
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 0
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b6f1e57a75fe1890800000000000000
+      internalID: -7485275624330627407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pyro_bottom_3_0: 3416920870891422873
+      pyro_bottom_3_1: -5104845843227566300
+      pyro_bottom_3_10: 542336546165658721
+      pyro_bottom_3_11: 7996945023805734259
+      pyro_bottom_3_12: 5706845923319561148
+      pyro_bottom_3_13: 3042057584953704354
+      pyro_bottom_3_14: -3382215149029627689
+      pyro_bottom_3_15: -4928937088630307692
+      pyro_bottom_3_16: 1104670143977496552
+      pyro_bottom_3_17: 3583803640046460922
+      pyro_bottom_3_18: -5820748123609880341
+      pyro_bottom_3_19: 7843477334290376071
+      pyro_bottom_3_2: 2707573186114466280
+      pyro_bottom_3_20: 7950615495848925164
+      pyro_bottom_3_21: -9133179374666881974
+      pyro_bottom_3_22: 4217198038626992900
+      pyro_bottom_3_23: 9117617462886705105
+      pyro_bottom_3_24: -8893924667052490803
+      pyro_bottom_3_25: -7911125039829306889
+      pyro_bottom_3_26: 5825930894650993485
+      pyro_bottom_3_27: 7772533181864303528
+      pyro_bottom_3_28: -3978275921434228998
+      pyro_bottom_3_29: -657187768269558216
+      pyro_bottom_3_3: 2750239838877519279
+      pyro_bottom_3_30: 8004831227552868244
+      pyro_bottom_3_31: -5728995025400701447
+      pyro_bottom_3_32: -7646924850059187070
+      pyro_bottom_3_33: -2807554579415115381
+      pyro_bottom_3_34: -24669123390126920
+      pyro_bottom_3_35: 6324341450486385948
+      pyro_bottom_3_36: -8289047680769913870
+      pyro_bottom_3_37: 7539355295312190735
+      pyro_bottom_3_38: -483933923011841305
+      pyro_bottom_3_39: 2997893738251891331
+      pyro_bottom_3_4: 3950563960862638629
+      pyro_bottom_3_40: -8022224719094076701
+      pyro_bottom_3_41: -3460100745248832287
+      pyro_bottom_3_42: 3051549534373628413
+      pyro_bottom_3_43: 7544418336781800425
+      pyro_bottom_3_44: -5877005644088132495
+      pyro_bottom_3_45: 4013167398281121585
+      pyro_bottom_3_46: 4260267111172060560
+      pyro_bottom_3_47: 3791022374980864261
+      pyro_bottom_3_48: 7784132292613380132
+      pyro_bottom_3_49: -4944729646527439956
+      pyro_bottom_3_5: 2282799703876788978
+      pyro_bottom_3_50: -1714195401023018655
+      pyro_bottom_3_51: 4911434586111383102
+      pyro_bottom_3_52: -1472105356326038265
+      pyro_bottom_3_53: -1782625390555282488
+      pyro_bottom_3_54: -6082862479724366027
+      pyro_bottom_3_55: -3473970051972338786
+      pyro_bottom_3_56: 4077347963238200545
+      pyro_bottom_3_57: -1567941073458220825
+      pyro_bottom_3_58: 9114334286493851595
+      pyro_bottom_3_59: 8241535840838683953
+      pyro_bottom_3_6: -5694705955615999497
+      pyro_bottom_3_60: -2522930209681732877
+      pyro_bottom_3_61: -7485275624330627407
+      pyro_bottom_3_7: -6460291470476461675
+      pyro_bottom_3_8: 4455813594141851354
+      pyro_bottom_3_9: 5570237738847306917
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

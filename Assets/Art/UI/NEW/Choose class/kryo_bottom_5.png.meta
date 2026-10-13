@@ -1,0 +1,1534 @@
+fileFormatVersion: 2
+guid: 75f06c0cd27024f64958fb2c8e3b9a15
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4405369821995620967
+    second: kryo_bottom_5_0
+  - first:
+      213: -7952195204142960945
+    second: kryo_bottom_5_1
+  - first:
+      213: -1132497345021224992
+    second: kryo_bottom_5_2
+  - first:
+      213: -2763615017465124394
+    second: kryo_bottom_5_3
+  - first:
+      213: -7747027420546163102
+    second: kryo_bottom_5_4
+  - first:
+      213: 7310328546378377055
+    second: kryo_bottom_5_5
+  - first:
+      213: -7195245553164543555
+    second: kryo_bottom_5_6
+  - first:
+      213: -1577515967156255351
+    second: kryo_bottom_5_7
+  - first:
+      213: 5775517554994230166
+    second: kryo_bottom_5_8
+  - first:
+      213: 758353231442060142
+    second: kryo_bottom_5_9
+  - first:
+      213: -5581666770842802022
+    second: kryo_bottom_5_10
+  - first:
+      213: 5260477820646449919
+    second: kryo_bottom_5_11
+  - first:
+      213: 3198963352096455048
+    second: kryo_bottom_5_12
+  - first:
+      213: 5047799680957878499
+    second: kryo_bottom_5_13
+  - first:
+      213: 5782678338147265810
+    second: kryo_bottom_5_14
+  - first:
+      213: 4204644232098522809
+    second: kryo_bottom_5_15
+  - first:
+      213: 3182441946352706811
+    second: kryo_bottom_5_16
+  - first:
+      213: -7753049895583354358
+    second: kryo_bottom_5_17
+  - first:
+      213: 512815457768241494
+    second: kryo_bottom_5_18
+  - first:
+      213: 127673111732103138
+    second: kryo_bottom_5_19
+  - first:
+      213: -7055093612897891625
+    second: kryo_bottom_5_20
+  - first:
+      213: 2175362804358501328
+    second: kryo_bottom_5_21
+  - first:
+      213: 262746147623198534
+    second: kryo_bottom_5_22
+  - first:
+      213: -5173170316226251260
+    second: kryo_bottom_5_23
+  - first:
+      213: 707858113218066791
+    second: kryo_bottom_5_24
+  - first:
+      213: -2718760394513611688
+    second: kryo_bottom_5_25
+  - first:
+      213: -870258146345880591
+    second: kryo_bottom_5_26
+  - first:
+      213: 896945203586022073
+    second: kryo_bottom_5_27
+  - first:
+      213: -5703618892602588865
+    second: kryo_bottom_5_28
+  - first:
+      213: 2352572151420458295
+    second: kryo_bottom_5_29
+  - first:
+      213: 4829069191501130808
+    second: kryo_bottom_5_30
+  - first:
+      213: -8907158914446346622
+    second: kryo_bottom_5_31
+  - first:
+      213: -4041499045953094813
+    second: kryo_bottom_5_32
+  - first:
+      213: -3819026228250436019
+    second: kryo_bottom_5_33
+  - first:
+      213: 8750647203604741312
+    second: kryo_bottom_5_34
+  - first:
+      213: 7838106365529681321
+    second: kryo_bottom_5_35
+  - first:
+      213: 6588250550204529351
+    second: kryo_bottom_5_36
+  - first:
+      213: 8002661910078050485
+    second: kryo_bottom_5_37
+  - first:
+      213: 7789431826367439299
+    second: kryo_bottom_5_38
+  - first:
+      213: -3331299204494741396
+    second: kryo_bottom_5_39
+  - first:
+      213: -2547051599542142993
+    second: kryo_bottom_5_40
+  - first:
+      213: 5274303539072729889
+    second: kryo_bottom_5_41
+  - first:
+      213: -4332407560105709669
+    second: kryo_bottom_5_42
+  - first:
+      213: -617576823123633268
+    second: kryo_bottom_5_43
+  - first:
+      213: -4317970779879929846
+    second: kryo_bottom_5_44
+  - first:
+      213: 4528195408590157913
+    second: kryo_bottom_5_45
+  - first:
+      213: 9179339430062209597
+    second: kryo_bottom_5_46
+  - first:
+      213: 6523505461907344765
+    second: kryo_bottom_5_47
+  - first:
+      213: 6158003912272561195
+    second: kryo_bottom_5_48
+  - first:
+      213: -34014966562565
+    second: kryo_bottom_5_49
+  - first:
+      213: -7091961402680929167
+    second: kryo_bottom_5_50
+  - first:
+      213: -8120710776931922519
+    second: kryo_bottom_5_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: kryo_bottom_5_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 886
+        height: 948
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a56403384032d30800000000000000
+      internalID: 4405369821995620967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_1
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 102
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fce6e78289024a190800000000000000
+      internalID: -7952195204142960945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 95
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e7dfe83aaf8840f0800000000000000
+      internalID: -1132497345021224992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 78
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d96e0ca8caa5a9d0800000000000000
+      internalID: -2763615017465124394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_4
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 100
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26e92254b970d7490800000000000000
+      internalID: -7747027420546163102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_5
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 105
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f57e746c411837560800000000000000
+      internalID: 7310328546378377055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_6
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 107
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db91beb9a4a552c90800000000000000
+      internalID: -7195245553164543555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_7
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 91
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 985052ef5998b1ae0800000000000000
+      internalID: -1577515967156255351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_8
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 97
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 693b673cd92c62050800000000000000
+      internalID: 5775517554994230166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_9
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 83
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e63af5efe36368a00800000000000000
+      internalID: 758353231442060142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_10
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 105
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98205515afe982b0800000000000000
+      internalID: -5581666770842802022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_11
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 103
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff2e378e4b8f00940800000000000000
+      internalID: 5260477820646449919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_12
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 96
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889b33b4830056c20800000000000000
+      internalID: 3198963352096455048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_13
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 96
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e013d0c0136d0640800000000000000
+      internalID: 5047799680957878499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_14
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 99
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d2d938f43304050800000000000000
+      internalID: 5782678338147265810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_15
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 89
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6a025e6a5e95a30800000000000000
+      internalID: 4204644232098522809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_16
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 104
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf4e7a2c61e4a2c20800000000000000
+      internalID: 3182441946352706811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_17
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 97
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a02ffd78232a76490800000000000000
+      internalID: -7753049895583354358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_18
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 75
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659fa9b11f2ed1700800000000000000
+      internalID: 512815457768241494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_19
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 101
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e72928c40695c100800000000000000
+      internalID: 127673111732103138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_20
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 105
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7da08121db5471e90800000000000000
+      internalID: -7055093612897891625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_21
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 83
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d3d26be1f0703e10800000000000000
+      internalID: 2175362804358501328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_22
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 101
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64fde2baa3675a300800000000000000
+      internalID: 262746147623198534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_23
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 108
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4063dba81053538b0800000000000000
+      internalID: -5173170316226251260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_24
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 96
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 769bdbd1431d2d900800000000000000
+      internalID: 707858113218066791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_25
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 91
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8548d9763d5054ad0800000000000000
+      internalID: -2718760394513611688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_26
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 94
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f3f924a3d83ce3f0800000000000000
+      internalID: -870258146345880591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_27
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 80
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ba3cb219e6927c00800000000000000
+      internalID: 896945203586022073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_28
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 106
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f31473416dca8d0b0800000000000000
+      internalID: -5703618892602588865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_29
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 100
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73594e148e306a020800000000000000
+      internalID: 2352572151420458295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_30
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 92
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c253b18dc440340800000000000000
+      internalID: 4829069191501130808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_31
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 75
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 286b872d82a636480800000000000000
+      internalID: -8907158914446346622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_32
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 88
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36bb2edc706b9e7c0800000000000000
+      internalID: -4041499045953094813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_33
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 106
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4e9b3521e7100bc0800000000000000
+      internalID: -3819026228250436019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_34
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 84
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc30adc44b807970800000000000000
+      internalID: 8750647203604741312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_35
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 99
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9adef1d163c86cc60800000000000000
+      internalID: 7838106365529681321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_36
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 103
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca763828fa2e6b50800000000000000
+      internalID: 6588250550204529351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_37
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 93
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b050c77b9a2f0f60800000000000000
+      internalID: 8002661910078050485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_38
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 103
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c1e0c4d9fe991c60800000000000000
+      internalID: 7789431826367439299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_39
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 103
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c60bc830609d4c1d0800000000000000
+      internalID: -3331299204494741396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_40
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 98
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe733b8a01e07acd0800000000000000
+      internalID: -2547051599542142993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_41
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 106
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1230404df17123940800000000000000
+      internalID: 5274303539072729889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_42
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 82
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9faea5374230e3c0800000000000000
+      internalID: -4332407560105709669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_43
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 98
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8b9334c62ded67f0800000000000000
+      internalID: -617576823123633268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_44
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 107
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a088dba047c7314c0800000000000000
+      internalID: -4317970779879929846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_45
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 98
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95832929bb167de30800000000000000
+      internalID: 4528195408590157913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_46
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 91
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a3891d390936f70800000000000000
+      internalID: 9179339430062209597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_47
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7dce4397a5288a50800000000000000
+      internalID: 6523505461907344765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_48
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 103
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24c8748eef957550800000000000000
+      internalID: 6158003912272561195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_49
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 84
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf040064011effff0800000000000000
+      internalID: -34014966562565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_50
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 92
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1741c68ddaa449d90800000000000000
+      internalID: -7091961402680929167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kryo_bottom_5_51
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 104
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ad4941e2907d4f80800000000000000
+      internalID: -8120710776931922519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      kryo_bottom_5_0: 4405369821995620967
+      kryo_bottom_5_1: -7952195204142960945
+      kryo_bottom_5_10: -5581666770842802022
+      kryo_bottom_5_11: 5260477820646449919
+      kryo_bottom_5_12: 3198963352096455048
+      kryo_bottom_5_13: 5047799680957878499
+      kryo_bottom_5_14: 5782678338147265810
+      kryo_bottom_5_15: 4204644232098522809
+      kryo_bottom_5_16: 3182441946352706811
+      kryo_bottom_5_17: -7753049895583354358
+      kryo_bottom_5_18: 512815457768241494
+      kryo_bottom_5_19: 127673111732103138
+      kryo_bottom_5_2: -1132497345021224992
+      kryo_bottom_5_20: -7055093612897891625
+      kryo_bottom_5_21: 2175362804358501328
+      kryo_bottom_5_22: 262746147623198534
+      kryo_bottom_5_23: -5173170316226251260
+      kryo_bottom_5_24: 707858113218066791
+      kryo_bottom_5_25: -2718760394513611688
+      kryo_bottom_5_26: -870258146345880591
+      kryo_bottom_5_27: 896945203586022073
+      kryo_bottom_5_28: -5703618892602588865
+      kryo_bottom_5_29: 2352572151420458295
+      kryo_bottom_5_3: -2763615017465124394
+      kryo_bottom_5_30: 4829069191501130808
+      kryo_bottom_5_31: -8907158914446346622
+      kryo_bottom_5_32: -4041499045953094813
+      kryo_bottom_5_33: -3819026228250436019
+      kryo_bottom_5_34: 8750647203604741312
+      kryo_bottom_5_35: 7838106365529681321
+      kryo_bottom_5_36: 6588250550204529351
+      kryo_bottom_5_37: 8002661910078050485
+      kryo_bottom_5_38: 7789431826367439299
+      kryo_bottom_5_39: -3331299204494741396
+      kryo_bottom_5_4: -7747027420546163102
+      kryo_bottom_5_40: -2547051599542142993
+      kryo_bottom_5_41: 5274303539072729889
+      kryo_bottom_5_42: -4332407560105709669
+      kryo_bottom_5_43: -617576823123633268
+      kryo_bottom_5_44: -4317970779879929846
+      kryo_bottom_5_45: 4528195408590157913
+      kryo_bottom_5_46: 9179339430062209597
+      kryo_bottom_5_47: 6523505461907344765
+      kryo_bottom_5_48: 6158003912272561195
+      kryo_bottom_5_49: -34014966562565
+      kryo_bottom_5_5: 7310328546378377055
+      kryo_bottom_5_50: -7091961402680929167
+      kryo_bottom_5_51: -8120710776931922519
+      kryo_bottom_5_6: -7195245553164543555
+      kryo_bottom_5_7: -1577515967156255351
+      kryo_bottom_5_8: 5775517554994230166
+      kryo_bottom_5_9: 758353231442060142
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

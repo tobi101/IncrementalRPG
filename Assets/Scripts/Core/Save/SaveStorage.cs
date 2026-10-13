@@ -10,7 +10,12 @@ namespace Core.Save
 
 #if UNITY_EDITOR
         // Editor regression runs use a temporary directory, never the player's real save.
-        public static string EditorSaveDirectoryOverride { get; set; }
+        public static string EditorSaveDirectoryOverride
+        {
+            // SessionState survives the domain reload when entering Play Mode.
+            get => UnityEditor.SessionState.GetString("IncrementalRPG.TestSaveDirectory", string.Empty);
+            set => UnityEditor.SessionState.SetString("IncrementalRPG.TestSaveDirectory", value ?? string.Empty);
+        }
 #endif
 
         public string SavePath

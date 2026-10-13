@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee663b5fe0cf4c758270cd0e553e76e, type: 3}
+  m_Name: Upgrade_thickness
+  m_EditorClassIdentifier: Assembly-CSharp::Core.Classes.ClassNodeDefinition
+  id: earth_thickness
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: classes.earth_thickness.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: LocalesTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: classes.earth_thickness.description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  icon: {fileID: -5746569209449113994, guid: 456cd8a213a1643adb44d5b31151ad67, type: 3}
+  preview: {fileID: 0}
+  position: {x: -363, y: -20}
+  visualScale: 0.64
+  maxLevel: 3
+  goldCostPerLevel:
+  - mantissa: 1.5
+    exponent: 2
+  - mantissa: 3
+    exponent: 2
+  - mantissa: 6
+    exponent: 2
+  requirements:
+  - node: {fileID: 11400000, guid: 797b4980187904a0ea5540f3552de680, type: 2}
+    level: 1
+  reward: 1
+  attack: {fileID: 11400000, guid: d15894e17b9dc4a2b8ea90a61f86e128, type: 2}
+  parameterId: thickness
+  valuesPerLevel:
+  - 0.1
+  - 0.1
+  - 0.1
+  runeKeyReward: 1
+  references:
+    version: 2
+    RefIds: []

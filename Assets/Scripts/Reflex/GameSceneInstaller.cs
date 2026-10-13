@@ -52,6 +52,8 @@ namespace Reflex
         [SerializeField] private ItemCatalog _itemCatalog;
         [SerializeField] private ForgeConfig _forgeConfig;
         [SerializeField] private CraftView _craftView;
+        [SerializeField] private global::Core.Classes.ClassCatalog _classCatalog;
+        [SerializeField] private UI.Classes.ClassesMenuView _classesView;
 
 
         private void Awake()
@@ -63,6 +65,12 @@ namespace Reflex
         public void InstallBindings(ContainerBuilder builder)
         {
             InitializeConfigs(builder);
+            builder.RegisterValue(_classCatalog);
+            builder.RegisterValue(_classesView);
+            builder.RegisterType(typeof(global::Core.Classes.ClassProgressionService),
+                new[] { typeof(global::Core.Classes.ClassProgressionService), typeof(ISaveable) }, Lifetime.Singleton, Resolution.Lazy);
+            builder.RegisterType(typeof(ClassesMenuState), new[] { typeof(IGameState), typeof(ClassesMenuState) }, Lifetime.Singleton, Resolution.Lazy);
+            builder.RegisterType(typeof(ClassesFeature), new[] { typeof(IGameFeature), typeof(ClassesFeature) }, Lifetime.Singleton, Resolution.Lazy);
             
             builder.RegisterType(
                 typeof(GameStateMachine),

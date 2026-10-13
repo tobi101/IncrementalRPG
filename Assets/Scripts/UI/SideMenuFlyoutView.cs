@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace UI
@@ -14,6 +16,7 @@ namespace UI
         [SerializeField] private Button _mainMenuButton;
         [SerializeField] private Button _exitButton;
         [SerializeField] private Button _returnToHubButton;
+        [SerializeField] private bool _showReturnToHubButton = true;
         [SerializeField, Min(0f)] private float _animationDuration = 0.16f;
         [SerializeField, Min(0f)] private float _itemDelay = 0.04f;
         [SerializeField] private Vector2 _closedOffset = new Vector2(0f, 18f);
@@ -28,12 +31,14 @@ namespace UI
         private bool _isOpen;
         private bool _isSubscribed;
         private bool _hasOpenPosition;
+        private int _escapeSuppressedFrame = -1;
 
         public event Action<SideMenuFlyoutView> SettingsRequested;
         public event Action<SideMenuFlyoutView> MainMenuRequested;
         public event Action<SideMenuFlyoutView> ExitRequested;
 
         public bool IsOpen => _isOpen;
+        public Button ToggleButton => _toggleButton;
         public Button ReturnToHubButton => _returnToHubButton;
 
         public void SetToggleButton(Button toggleButton)
@@ -53,6 +58,7 @@ namespace UI
 
         private void Awake()
         {
+            ApplyReturnToHubVisibility();
             EnsureAnimationReferences();
             InstallButtonEffects();
             CloseImmediate();
@@ -69,6 +75,36 @@ namespace UI
         {
             UnsubscribeButtons();
             CloseImmediate();
+        }
+
+        private void LateUpdate()
+        {
+            if (_isOpen && _escapeSuppressedFrame != Time.frameCount &&
+                Keyboard.current?.escapeKey.wasPressedThisFrame == true)
+                Close();
+        }
+
+        // A window can give its modal dialog priority over the flyout for this key press.
+        public void SuppressEscapeThisFrame() => _escapeSuppressedFrame = Time.frameCount;
+
+        private void ApplyReturnToHubVisibility()
+        {
+            if (_returnToHubButton == null || _showReturnToHubButton)
+                return;
+
+            var item = (RectTransform)_returnToHubButton.transform;
+            var list = (RectTransform)_listRoot.transform;
+            var index = item.GetSiblingIndex();
+            if (index + 1 < list.childCount)
+            {
+                var next = (RectTransform)list.GetChild(index + 1);
+                var offset = item.anchoredPosition - next.anchoredPosition;
+                for (var i = index + 1; i < list.childCount; i++)
+                    ((RectTransform)list.GetChild(i)).anchoredPosition += offset;
+                list.sizeDelta -= new Vector2(0f, offset.y);
+            }
+
+            item.gameObject.SetActive(false);
         }
 
         public void Configure(
@@ -246,8 +282,16 @@ namespace UI
             if (_listTransform == null)
                 return;
 
-            var itemCount = _listTransform.childCount;
-            if (_itemTransforms.Length == itemCount)
+            var items = new List<RectTransform>();
+            foreach (Transform child in _listTransform)
+                if (child.gameObject.activeSelf && child is RectTransform item)
+                    items.Add(item);
+
+            var itemCount = items.Count;
+            var unchanged = _itemTransforms.Length == itemCount;
+            for (var index = 0; unchanged && index < itemCount; index++)
+                unchanged = _itemTransforms[index] == items[index];
+            if (unchanged)
                 return;
 
             RestoreCachedItemOpenPositions();
@@ -258,7 +302,7 @@ namespace UI
 
             for (var index = 0; index < itemCount; index++)
             {
-                var itemTransform = _listTransform.GetChild(index) as RectTransform;
+                var itemTransform = items[index];
                 _itemTransforms[index] = itemTransform;
                 if (itemTransform == null)
                     continue;
