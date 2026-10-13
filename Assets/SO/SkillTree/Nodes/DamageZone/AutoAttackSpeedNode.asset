@@ -41,9 +41,9 @@ MonoBehaviour:
     exponent: 2
   - mantissa: 5.5
     exponent: 2
-  - mantissa: 6.5
+  - mantissa: 7
     exponent: 2
-  - mantissa: 7.5
+  - mantissa: 8
     exponent: 2
   prerequisites:
   - node: {fileID: 11400000, guid: 13642fc5eae842d58e77718b42c3e6b1, type: 2}
@@ -52,11 +52,11 @@ MonoBehaviour:
   - effectType: 0
     statType: 12
     valuesPerLevel:
-    - 0.05
-    - 0.05
-    - 0.05
-    - 0.05
-    - 0.05
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
     feature: 0
   positionInGraph: {x: 0, y: 300}
   references:

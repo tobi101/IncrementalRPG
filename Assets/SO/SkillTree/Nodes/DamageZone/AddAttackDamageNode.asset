@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
-  m_Name: AddZoneDamageNode
+  m_Name: AddAttackDamageNode
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
-  id: add_zone_damage
+  id: add_attack_damage
   displayName:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
@@ -35,8 +35,8 @@ MonoBehaviour:
   additionalIcon: {fileID: 0}
   maxLevel: 1
   goldCostPerLevel:
-  - mantissa: 5
-    exponent: 1
+  - mantissa: 1
+    exponent: 2
   prerequisites: []
   effects:
   - effectType: 0

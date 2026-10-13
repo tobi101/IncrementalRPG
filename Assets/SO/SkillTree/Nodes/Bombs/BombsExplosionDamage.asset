@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
   m_Name: BombsExplosionDamage
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
-  id: bombs_explosion_damage
+  id: bombs_damage_explosion
   displayName:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
@@ -35,11 +35,11 @@ MonoBehaviour:
   additionalIcon: {fileID: 0}
   maxLevel: 3
   goldCostPerLevel:
-  - mantissa: 8
-    exponent: 2
-  - mantissa: 9
-    exponent: 2
-  - mantissa: 1
+  - mantissa: 4
+    exponent: 3
+  - mantissa: 5.5
+    exponent: 3
+  - mantissa: 7
     exponent: 3
   prerequisites:
   - node: {fileID: 11400000, guid: 656bdb3708d0b4bfc8e2851bf995bd2b, type: 2}
@@ -48,9 +48,9 @@ MonoBehaviour:
   - effectType: 0
     statType: 7
     valuesPerLevel:
-    - 1
-    - 1
-    - 1
+    - 6
+    - 5
+    - 5
     feature: 0
   positionInGraph: {x: 200, y: 300}
   references:

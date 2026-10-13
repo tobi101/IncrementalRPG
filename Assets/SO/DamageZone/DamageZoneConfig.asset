@@ -19,10 +19,10 @@ MonoBehaviour:
   baseAutoAttackDamage:
     mantissa: 1
     exponent: 0
-  baseAutoAttackInterval: 0.75
+  baseAutoAttackInterval: 1.5
   baseSpecialAttackDamage:
-    mantissa: 5
-    exponent: 0
+    mantissa: 1
+    exponent: 2
   baseSpecialAttackCooldown: 5
   baseRadius: 1
   aspectRatio: 0.55

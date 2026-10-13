@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3764de79a532f4a03833c67e25ea4f11, type: 3}
   m_Name: Color Config
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeBorderColorConfig
-  locked: {r: 0.6039216, g: 0.07450981, b: 0.1882353, a: 1}
+  locked: {r: 0.4245283, g: 0.042052332, b: 0.12421396, a: 1}
   unaffordable: {r: 0.76862746, g: 0.20392157, b: 0, a: 1}
-  affordable: {r: 0.76862746, g: 0.5882353, b: 0, a: 1}
+  affordable: {r: 1, g: 0.9312867, b: 0, a: 1}
   complete: {r: 0.3254902, g: 0.59607846, b: 0.20784314, a: 1}

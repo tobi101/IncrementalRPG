@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
+  m_Name: SlimeShardDrop 1
+  m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
+  id: shard_drop_slime_2
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
+    m_TableEntryReference:
+      m_KeyId: 1000000000046
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
+    m_TableEntryReference:
+      m_KeyId: 1000000000047
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  icon: {fileID: 21300000, guid: 7b973355f9d04471d9b13014444761b3, type: 3}
+  additionalIcon: {fileID: 21300000, guid: ccc36f40a2f6c4c12a287bbaad56a0a3, type: 3}
+  maxLevel: 5
+  goldCostPerLevel:
+  - mantissa: 2.5
+    exponent: 3
+  - mantissa: 3
+    exponent: 3
+  - mantissa: 3.5
+    exponent: 3
+  - mantissa: 4
+    exponent: 3
+  - mantissa: 4.5
+    exponent: 3
+  prerequisites:
+  - node: {fileID: 11400000, guid: 8d39d003c42fd44458df19e4e33f8ef5, type: 2}
+    requiredLevel: 5
+  effects:
+  - effectType: 1
+    statType: 13
+    valuesPerLevel:
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    feature: 0
+  positionInGraph: {x: 450, y: -450}
+  references:
+    version: 2
+    RefIds: []

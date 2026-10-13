@@ -15,8 +15,8 @@ MonoBehaviour:
   firstAvailableLocation: 2
   levels:
   - shardCost:
-      mantissa: 5
-      exponent: 0
+      mantissa: 9.9999
+      exponent: 4
     rarityWeights:
     - 60
     - 30

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entity.SpawnTable
   entries:
   - config: {fileID: 11400000, guid: ea27611c1934e48299db5b237a35e436, type: 2}
-    weight: 90
+    weight: 100
     requiredFeature: 0
   - config: {fileID: 11400000, guid: c92105f795d624f9799ec804a854414b, type: 2}
     weight: 0
@@ -23,11 +23,11 @@ MonoBehaviour:
     weight: 0
     requiredFeature: 0
   - config: {fileID: 11400000, guid: c52f6666baa494e00bdbd069deaf8776, type: 2}
-    weight: 10
+    weight: 5
     requiredFeature: 1
   - config: {fileID: 11400000, guid: 1e905119e4ae4153a3189c39ce2c9704, type: 2}
-    weight: 2.5
+    weight: 5
     requiredFeature: 4
   - config: {fileID: 11400000, guid: d32e14a8a63a49caa657c781fe5aa024, type: 2}
-    weight: 2.5
+    weight: 0
     requiredFeature: 4

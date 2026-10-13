@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
   m_Name: GoldFarm 2
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
-  id: gold_farm_3
+  id: gold_farm_2
   displayName:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
@@ -33,27 +33,21 @@ MonoBehaviour:
     m_LocalVariables: []
   icon: {fileID: 21300000, guid: 2f734bb27cfdd489c8f6cf3dae6aefa5, type: 3}
   additionalIcon: {fileID: 0}
-  maxLevel: 5
+  maxLevel: 3
   goldCostPerLevel:
-  - mantissa: 8
-    exponent: 2
-  - mantissa: 1
+  - mantissa: 3
     exponent: 3
-  - mantissa: 1.2
+  - mantissa: 4.5
     exponent: 3
-  - mantissa: 1.4
-    exponent: 3
-  - mantissa: 1.6
+  - mantissa: 6
     exponent: 3
   prerequisites:
   - node: {fileID: 11400000, guid: a90c5ed93f5404b22b1db4a89c72a911, type: 2}
-    requiredLevel: 5
+    requiredLevel: 3
   effects:
   - effectType: 1
     statType: 9
     valuesPerLevel:
-    - 0.1
-    - 0.1
     - 0.1
     - 0.1
     - 0.1

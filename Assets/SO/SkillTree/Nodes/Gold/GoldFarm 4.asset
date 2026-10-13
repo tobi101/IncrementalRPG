@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
-  m_Name: AddZoneDamageNode 2
+  m_Name: GoldFarm 4
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
-  id: add_zone_damage_2
+  id: gold_farm_4
   displayName:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 5129672458231808
+      m_KeyId: 5130495946907648
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -26,39 +26,33 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 5129785536667648
+      m_KeyId: 5130514699640832
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  icon: {fileID: 21300000, guid: 46510039e8b9f4e3d9c364833899b8da, type: 3}
+  icon: {fileID: 21300000, guid: 2f734bb27cfdd489c8f6cf3dae6aefa5, type: 3}
   additionalIcon: {fileID: 0}
-  maxLevel: 5
+  maxLevel: 3
   goldCostPerLevel:
-  - mantissa: 6
-    exponent: 2
-  - mantissa: 7.5
-    exponent: 2
-  - mantissa: 9
-    exponent: 2
-  - mantissa: 1.05
-    exponent: 3
-  - mantissa: 1.2
-    exponent: 3
+  - mantissa: 1.5
+    exponent: 4
+  - mantissa: 2.5
+    exponent: 4
+  - mantissa: 3.5
+    exponent: 4
   prerequisites:
-  - node: {fileID: 11400000, guid: fdd60171723494925a2b7d360cb6b3e6, type: 2}
-    requiredLevel: 4
+  - node: {fileID: 11400000, guid: b0cb80651a52e5e4abef0900829afa78, type: 2}
+    requiredLevel: 3
   effects:
-  - effectType: 0
-    statType: 1
+  - effectType: 1
+    statType: 9
     valuesPerLevel:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
+    - 0.15
+    - 0.15
+    - 0.15
     feature: 0
-  positionInGraph: {x: -100, y: 100}
+  positionInGraph: {x: 0, y: 0}
   references:
     version: 2
     RefIds: []

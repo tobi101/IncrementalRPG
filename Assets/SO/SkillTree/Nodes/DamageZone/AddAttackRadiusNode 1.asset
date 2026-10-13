@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db8935a6f9b4b45a989ce831e3fef778, type: 3}
-  m_Name: AddZoneDamageNode 1
+  m_Name: AddAttackRadiusNode 1
   m_EditorClassIdentifier: Assembly-CSharp::Core.TestSkillTree.NodeDefinition
-  id: add_zone_damage_1
+  id: add_attack_radius_1
   displayName:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 5129670914727936
+      m_KeyId: 5129910711476224
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -26,39 +26,41 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 5129785536667648
+      m_KeyId: 5130381018783744
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  icon: {fileID: 21300000, guid: 46510039e8b9f4e3d9c364833899b8da, type: 3}
+  icon: {fileID: 21300000, guid: 539b350790b014ae68819411d7f44536, type: 3}
   additionalIcon: {fileID: 0}
   maxLevel: 5
   goldCostPerLevel:
-  - mantissa: 3
-    exponent: 2
-  - mantissa: 4
-    exponent: 2
   - mantissa: 5
-    exponent: 2
+    exponent: 3
+  - mantissa: 5.5
+    exponent: 3
   - mantissa: 6
-    exponent: 2
+    exponent: 3
+  - mantissa: 6.5
+    exponent: 3
   - mantissa: 7
-    exponent: 2
+    exponent: 3
   prerequisites:
-  - node: {fileID: 11400000, guid: 52ec292eab03749e5ae85e8931e24366, type: 2}
-    requiredLevel: 3
+  - node: {fileID: 11400000, guid: 13e9c910a41ef5a449c0f49e2ae48ac7, type: 2}
+    requiredLevel: 5
+  - node: {fileID: 11400000, guid: ec9c4247792ba684f983a7ac49640f65, type: 2}
+    requiredLevel: 5
   effects:
   - effectType: 0
-    statType: 1
+    statType: 0
     valuesPerLevel:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
     feature: 0
-  positionInGraph: {x: -100, y: 100}
+  positionInGraph: {x: 200, y: 100}
   references:
     version: 2
     RefIds: []
