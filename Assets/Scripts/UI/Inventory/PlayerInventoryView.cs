@@ -8,10 +8,12 @@ using Model;
 using Reflex.Attributes;
 using Spine.Unity;
 using TMPro;
+using UDND;
 using UDND.Core;
 using UDND.DataBinding;
 using UDND.Interaction;
 using UDND.Inventories;
+using UDND.Rules;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Localization;
@@ -23,7 +25,7 @@ namespace UI.Inventory
     [DisallowMultipleComponent]
     public sealed class PlayerInventoryView :
         PlacementInventoryDataBinding<PlayerItemInstanceState, GameItemAdapter>,
-        IPlayerInventoryGateway, Core.Forge.IForgeInventoryGateway
+        IPlayerInventoryGateway, Core.Forge.IForgeInventoryGateway, ITransferDomainHandler
     {
         [Header("Grid")]
         [SerializeField] private UniversalInventory _runtimeInventory;
@@ -68,6 +70,7 @@ namespace UI.Inventory
         private readonly HashSet<string> _usedRewardIds = new();
         private string _feedbackKey;
         private bool _applicationPaused;
+        private bool _inventoryRefreshPending;
 
         protected override void Awake()
         {
@@ -98,11 +101,12 @@ namespace UI.Inventory
         private void Start()
         {
             UIButtonAudio.InstallInChildren(this);
+            _storage.ConfigureInventoryLayout(_runtimeInventory.Topology);
 
             _sideMenu.ReturnToHubButton.onClick.AddListener(ReturnToHub);
 
             foreach (var itemUseInput in _itemUseInputs)
-                itemUseInput.Input.Configure(itemUseInput.Slot, _consumables, ShowConsumableFeedback, _storage);
+                itemUseInput.Input.Configure(itemUseInput.Slot, _consumables, ShowConsumableFeedback, _storage, ShowInventoryFullFeedback);
 
             var recycleArea = _recycleDropPanel.gameObject.AddComponent<InventoryRecycleDropArea>();
             recycleArea.Configure(_player, _recycleDropPanel, _recycleGraphic, PlayRecycleAudio);
@@ -119,7 +123,7 @@ namespace UI.Inventory
             }
 
             _storage.OnChanged += RefreshEquipment;
-            _storage.OnInventoryRefreshRequested += ReloadUI;
+            _storage.OnInventoryRefreshRequested += RequestInventoryRefresh;
             _player.OnGoldChanged += RefreshGold;
             _player.OnShardsChanged += RefreshShards;
             LocalizationSettings.SelectedLocaleChanged += HandleLocaleChanged;
@@ -187,7 +191,7 @@ namespace UI.Inventory
                 return;
 
             _storage.OnChanged -= RefreshEquipment;
-            _storage.OnInventoryRefreshRequested -= ReloadUI;
+            _storage.OnInventoryRefreshRequested -= RequestInventoryRefresh;
             _player.OnGoldChanged -= RefreshGold;
             _player.OnShardsChanged -= RefreshShards;
             LocalizationSettings.SelectedLocaleChanged -= HandleLocaleChanged;
@@ -197,6 +201,50 @@ namespace UI.Inventory
         public void Show() => gameObject.SetActive(true);
 
         public void Hide() => gameObject.SetActive(false);
+
+        private static bool IsDragging => DragAndDropManager.IsInstanceExist && DragAndDropManager.AutoCreateInstance.IsDragging;
+
+        private void RequestInventoryRefresh()
+        {
+            // Rebuild after the drag manager releases its source placements/adapters.
+            if (IsDragging) _inventoryRefreshPending = true;
+            else ReloadUI();
+        }
+
+        private void LateUpdate()
+        {
+            if (_inventoryRefreshPending && !IsDragging) ReloadUI();
+        }
+
+        public RuleResult CanStartTransfer(DragContext context, IInventory targetInventory)
+        {
+            if (!context.Entries.Any(e => e.SourceInventory is EquipmentDragInventory)) return RuleResult.Success();
+            if (context.Entries.Count != 1 || context.Entries[0].SourceInventory is not EquipmentDragInventory source ||
+                !ReferenceEquals(targetInventory, _runtimeInventory) || context.TargetBaseSlot == null ||
+                context.Entries[0].Stack.PrimaryAdapter is not GameItemAdapter adapter || !source.IsCurrentItem(adapter) ||
+                !_storage.CanUnequipTo(source.EquipmentSlot, adapter.State.InstanceId, context.TargetBaseSlot.Index))
+                return RuleResult.Failure("Equipped item needs a free inventory placement.");
+            return RuleResult.Success();
+        }
+
+        public RuleResult CanCommitTransfer(TransferDomainContext context)
+        {
+            if (context.SourceInventory is not EquipmentDragInventory source) return RuleResult.Success();
+            var hovered = DragAndDropManager.IsInstanceExist ? DragAndDropManager.AutoCreateInstance.CurrentContext?.TargetBaseSlot : null;
+            if (!ReferenceEquals(context.TargetInventory, _runtimeInventory) || context.Kind != TransferKind.Move ||
+                context.PlannedTargetBaseSlot == null || (hovered != null && !ReferenceEquals(hovered, context.PlannedTargetBaseSlot)) ||
+                context.SourceItemAdapter is not GameItemAdapter adapter || !source.IsCurrentItem(adapter) ||
+                !_storage.CanUnequipTo(source.EquipmentSlot, adapter.State.InstanceId, context.PlannedTargetBaseSlot.Index))
+                return RuleResult.Failure("Equipped item no longer fits the chosen inventory cells.");
+            return RuleResult.Success();
+        }
+
+        public void OnTransferSucceeded(TransferDomainContext context)
+        {
+            if (context.SourceInventory is EquipmentDragInventory source && context.SourceItemAdapter is GameItemAdapter adapter &&
+                !_storage.UnequipTo(source.EquipmentSlot, adapter.State.InstanceId, context.TargetBaseSlot.Index))
+                throw new InvalidOperationException("Validated equipment placement could not be committed.");
+        }
 
         private void RefreshGold()
         {
@@ -296,6 +344,7 @@ namespace UI.Inventory
 
         public string GetRewardUseUnavailableKey(LootReward reward)
         {
+            _storage.ConfigureInventoryLayout(_runtimeInventory.Topology);
             if (reward.Definition != null && reward.Definition.category is ItemCategory.Currency or ItemCategory.Scroll)
                 return string.Empty;
             if (reward.Definition == null || _usedRewardIds.Contains(reward.InstanceId) ||
@@ -306,7 +355,7 @@ namespace UI.Inventory
             if (reward.Definition.category == ItemCategory.Consumable)
                 return ItemText.UseResultKey(_consumables.CanUse(reward.InstanceId));
             return _storage.CanEquip(reward.Definition.equipmentSlot, reward.InstanceId)
-                ? string.Empty : "potion.use.unsupported";
+                ? string.Empty : "equipment.no_space";
         }
 
         public bool TryUseReward(LootReward reward)
@@ -327,7 +376,14 @@ namespace UI.Inventory
 
         private void ShowConsumableFeedback(ConsumableUseResult result)
         {
-            _feedbackKey = result == ConsumableUseResult.Success ? "potion.use.prepared" : ItemText.UseResultKey(result);
+            ShowFeedback(result == ConsumableUseResult.Success ? "potion.use.prepared" : ItemText.UseResultKey(result));
+        }
+
+        private void ShowInventoryFullFeedback() => ShowFeedback("equipment.no_space");
+
+        private void ShowFeedback(string key)
+        {
+            _feedbackKey = key;
             RefreshConsumableFeedback();
             _consumableFeedbackRoot?.SetActive(true);
             CancelInvoke(nameof(ClearConsumableFeedback));
@@ -358,7 +414,7 @@ namespace UI.Inventory
         {
             var visited = new HashSet<string>();
             // Restore occupied cells first, then try saved overflow in the remaining space.
-            foreach (var item in _storage.Items.OrderBy(item => item.AnchorIndex < 0))
+            foreach (var item in _storage.InventoryItems.OrderBy(item => item.AnchorIndex < 0))
             {
                 if (!visited.Add(item.InstanceId))
                     continue;
@@ -422,6 +478,7 @@ namespace UI.Inventory
 
         protected override void OnReloadUI()
         {
+            _inventoryRefreshPending = false;
             base.OnReloadUI();
 
             var placements = new List<(PlayerItemInstanceState Item, int Anchor, int Orientation)>();
@@ -440,14 +497,15 @@ namespace UI.Inventory
         protected override void OnDropCompletedFrom(DragContext context)
         {
             base.OnDropCompletedFrom(context);
-            if (_storage.Items.Any(item => item.AnchorIndex < 0))
-                ReloadUI();
+            if (_inventoryRefreshPending || _storage.InventoryItems.Any(item => item.AnchorIndex < 0))
+                RequestInventoryRefresh();
         }
 
         private EquipmentDropArea CreateEquipmentDropArea(Image image, EquipmentSlot slot)
         {
             var dropArea = image.gameObject.AddComponent<EquipmentDropArea>();
-            dropArea.Configure(_storage, slot, image);
+            dropArea.Configure(_storage, slot, image, ShowInventoryFullFeedback);
+            dropArea.EnableDragging(_itemCatalog, this);
             return dropArea;
         }
 

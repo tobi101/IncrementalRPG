@@ -15,68 +15,67 @@ MonoBehaviour:
   firstAvailableLocation: 2
   levels:
   - shardCost:
-      mantissa: 9.9999
-      exponent: 4
+      mantissa: 5
+      exponent: 1
+    rarityWeights:
+    - 80
+    - 19
+    - 0
+    - 1
+    statBudgets: 320000006400000088000000c8000000
+    cursorPeriod: 2.4
+    rarityRange: 0.02
+    allStatsRange: 0.5
+    oneStatRange: 0.7
+    allStatsBonus: 0.1
+    oneStatBonus: 0.15
+  - shardCost:
+      mantissa: 1
+      exponent: 2
     rarityWeights:
     - 60
-    - 30
-    - 9
+    - 29
+    - 10
     - 1
-    cursorPeriod: 2.4
-    rarityRange: 0.06
-    allStatsRange: 0.24
-    oneStatRange: 0.6
-    allStatsBonus: 0.1
-    oneStatBonus: 0.15
-  - shardCost:
-      mantissa: 8
-      exponent: 0
-    rarityWeights:
-    - 50
-    - 34
-    - 14
-    - 2
+    statBudgets: 320000006400000088000000c8000000
     cursorPeriod: 2.2
-    rarityRange: 0.07
-    allStatsRange: 0.26
-    oneStatRange: 0.62
+    rarityRange: 0.04
+    allStatsRange: 0.55
+    oneStatRange: 0.75
     allStatsBonus: 0.1
     oneStatBonus: 0.15
   - shardCost:
-      mantissa: 1.2
-      exponent: 1
+      mantissa: 1.5
+      exponent: 2
     rarityWeights:
-    - 40
-    - 37
-    - 19
-    - 4
+    - 25
+    - 45
+    - 25
+    - 5
+    statBudgets: 320000006400000088000000c8000000
     cursorPeriod: 2
-    rarityRange: 0.08
-    allStatsRange: 0.28
-    oneStatRange: 0.64
+    rarityRange: 0.06
+    allStatsRange: 0.6
+    oneStatRange: 0.8
     allStatsBonus: 0.1
     oneStatBonus: 0.15
   - shardCost:
-      mantissa: 1.8
-      exponent: 1
+      mantissa: 2
+      exponent: 2
     rarityWeights:
-    - 30
+    - 0
     - 40
-    - 24
-    - 6
+    - 50
+    - 10
+    statBudgets: 320000006400000088000000c8000000
     cursorPeriod: 1.8
-    rarityRange: 0.09
-    allStatsRange: 0.3
-    oneStatRange: 0.66
+    rarityRange: 0.08
+    allStatsRange: 0.65
+    oneStatRange: 0.85
     allStatsBonus: 0.1
     oneStatBonus: 0.15
   equipment:
   - {fileID: 11400000, guid: 2bee9d82022954222bec582c57479199, type: 2}
   - {fileID: 11400000, guid: a50ff8a4028d844048cef77d2b9d7da3, type: 2}
   - {fileID: 11400000, guid: 3ea1f7a0481254d7db5a68633083acb0, type: 2}
-  statRanges:
-  - {x: 0.03, y: 0.07}
-  - {x: 0.06, y: 0.12}
-  - {x: 0.1, y: 0.18}
-  - {x: 0.15, y: 0.25}
-  goldPerBonusPercent: 2
+  goldPerBonusPercent: 30

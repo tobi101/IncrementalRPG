@@ -2107,8 +2107,9 @@ Prefab: [InventoryItemTooltip](/Users/admin/IncrementalRPG/Assets/Prefabs/Invent
 
 | Объект | Параметры |
 |---|---|
-| [ForgeConfig](/Users/admin/IncrementalRPG/Assets/SO/Forge/ForgeConfig.asset) | `firstAvailableLocation`, `levels[].shardCost`, `rarityWeights`, `cursorPeriod`, `rarityRange`, `allStatsRange`, `oneStatRange`, `allStatsBonus`, `oneStatBonus`, `statRanges`, `goldPerBonusPercent`, `equipment` |
-| [Forgedhelmet](/Users/admin/IncrementalRPG/Assets/SO/Forge/Forgedhelmet.asset), [Forgedchest](/Users/admin/IncrementalRPG/Assets/SO/Forge/Forgedchest.asset), [Forgedweapon](/Users/admin/IncrementalRPG/Assets/SO/Forge/Forgedweapon.asset) | Определение типа, `forgeNameKeys`, `forgeIcons`, базовые имя и иконка |
+| [ForgeConfig](/Users/admin/IncrementalRPG/Assets/SO/Forge/ForgeConfig.asset) | `firstAvailableLocation`, `levels[].shardCost`, `rarityWeights`, `cursorPeriod`, `rarityRange`, `allStatsRange`, `oneStatRange`, `allStatsBonus`, `oneStatBonus`, `levels[].statBudgets`, `goldPerBonusPercent`, `equipment` |
+| [Forgedhelmet](/Users/admin/IncrementalRPG/Assets/SO/Forge/Forgedhelmet.asset), [Forgedchest](/Users/admin/IncrementalRPG/Assets/SO/Forge/Forgedchest.asset), [Forgedweapon](/Users/admin/IncrementalRPG/Assets/SO/Forge/Forgedweapon.asset) | Определение типа, `appearanceCatalog`; базовая `icon` — обычный образ нового каталога. Старые экземпляры однократно мигрируют при загрузке |
+| [EquipmentAppearances](/Users/admin/IncrementalRPG/Assets/SO/Forge/EquipmentAppearances.asset) | `appearances[].id`, `slot`, `rarity`, `icon`, `nameKeys` — 36 образов и 180 вариантов имени |
 | [CraftView](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Forge/CraftView.cs) в GameScene | Ссылки на тексты, кнопки, список свитков, шкалу, анимации и окно результата |
 | [ForgeScrollRow](/Users/admin/IncrementalRPG/Assets/Prefabs/Forge/ForgeScrollRow.prefab) | Рамки обычного/выбранного состояния, значок и количество |
 

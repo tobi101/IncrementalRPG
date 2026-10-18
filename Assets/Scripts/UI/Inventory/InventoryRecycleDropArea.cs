@@ -40,7 +40,7 @@ namespace UI.Inventory
 
         protected override bool CanAcceptEntry(DragEntry entry)
         {
-            return entry.Stack?.PrimaryAdapter is GameItemAdapter;
+            return entry.SourceInventory is not EquipmentDragInventory && entry.Stack?.PrimaryAdapter is GameItemAdapter;
         }
 
         protected override void OnProcessedEntry(ItemStack stack, DragEntry entry)

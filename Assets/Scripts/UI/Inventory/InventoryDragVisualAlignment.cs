@@ -1,3 +1,4 @@
+using System.Linq;
 using UDND;
 using UDND.Core;
 using UDND.Interaction;
@@ -17,6 +18,7 @@ namespace UI.Inventory
 
         private Canvas _presentationCanvas;
         private RectTransform _activeVisual;
+        private SourceSizedBaseDragVisual _equipmentVisual;
 
         private void Awake()
         {
@@ -45,15 +47,35 @@ namespace UI.Inventory
 
         private void HandleDragStarted(DragContext context)
         {
-            var dragVisual = GetComponentInChildren<SourceSizedBaseDragVisual>(true);
+            var entry = context.Entries[0];
+            SourceSizedBaseDragVisual dragVisual;
+            if (entry.SourceInventory is EquipmentDragInventory source)
+            {
+                // UDND's per-inventory visual binder belongs to the bag component.
+                // Equipment uses a transient source, so reuse the bag's visual prefab here.
+                if (_equipmentVisual == null)
+                {
+                    var prefab = DragVisualPresenter.AutoCreateInstance.ResolveVisualPrefab(source.DataBinding.Inventory) as SourceSizedBaseDragVisual;
+                    if (prefab == null) return;
+                    _equipmentVisual = Instantiate(prefab, transform);
+                }
+                _equipmentVisual.Show(entry);
+                dragVisual = _equipmentVisual;
+            }
+            else
+            {
+                dragVisual = GetComponentsInChildren<SourceSizedBaseDragVisual>(true)
+                    .FirstOrDefault(v => v != _equipmentVisual && v.IsVisible);
+            }
+            if (dragVisual == null) return;
             _activeVisual = dragVisual.transform as RectTransform;
 
             var image = dragVisual.GetComponent<Image>();
             image.type = Image.Type.Simple;
             image.preserveAspect = true;
 
-            var entry = context.Entries[0];
-            var sourceRect = entry.SourceBaseSlot.transform as RectTransform;
+            var sourceRect = entry.SourceBaseSlot is EquipmentDragSlot equipment
+                ? equipment.InventoryCell : entry.SourceBaseSlot.transform as RectTransform;
             sourceRect.GetWorldCorners(_worldCorners);
 
             var sourceCanvas = sourceRect.GetComponentInParent<Canvas>().rootCanvas;
@@ -80,6 +102,7 @@ namespace UI.Inventory
         private void HandleDragFinished(DragContext _)
         {
             _activeVisual = null;
+            if (_equipmentVisual != null) _equipmentVisual.Hide();
         }
 
         private static Vector2 ResolveScreenPosition()

@@ -11,13 +11,15 @@ namespace UI.Inventory
         private RunConsumableService _consumables;
         private PlayerItemStorage _storage;
         private Action<ConsumableUseResult> _feedback;
+        private Action _onInventoryFull;
 
-        public void Configure(InventoryGridSlot slot, RunConsumableService consumables, Action<ConsumableUseResult> feedback, PlayerItemStorage storage)
+        public void Configure(InventoryGridSlot slot, RunConsumableService consumables, Action<ConsumableUseResult> feedback, PlayerItemStorage storage, Action onInventoryFull = null)
         {
             _slot = slot;
             _consumables = consumables;
             _feedback = feedback;
             _storage = storage;
+            _onInventoryFull = onInventoryFull;
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -35,7 +37,7 @@ namespace UI.Inventory
                      equipment.Definition.category == ItemCategory.Armor)
             {
                 var slot = equipment.Definition.equipmentSlot;
-                _storage.Equip(slot, _storage.GetEquipped(slot) == equipment.State.InstanceId ? null : equipment.State.InstanceId);
+                if (!_storage.Equip(slot, equipment.State.InstanceId)) _onInventoryFull?.Invoke();
             }
         }
     }

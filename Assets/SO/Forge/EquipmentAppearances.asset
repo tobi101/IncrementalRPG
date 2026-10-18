@@ -1,0 +1,375 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81213bf950f214318920f3a3e8a0e10f, type: 3}
+  m_Name: EquipmentAppearances
+  m_EditorClassIdentifier: Assembly-CSharp::Core.Items.EquipmentAppearanceCatalog
+  appearances:
+  - id: helmet.hat
+    slot: 1
+    rarity: 0
+    icon: {fileID: 3063841963128474276, guid: fcd6a5da2add64c55ab45f15c3e98982, type: 3}
+    nameKeys:
+    - equipment.name.1
+    - equipment.name.2
+    - equipment.name.3
+    - equipment.name.4
+    - equipment.name.5
+  - id: helmet.mask
+    slot: 1
+    rarity: 0
+    icon: {fileID: -1500434286138515679, guid: e8e9af4cb70f34116bf334901db86eda, type: 3}
+    nameKeys:
+    - equipment.name.6
+    - equipment.name.7
+    - equipment.name.8
+    - equipment.name.9
+    - equipment.name.10
+  - id: helmet.ushanka
+    slot: 1
+    rarity: 0
+    icon: {fileID: -3306094867879314704, guid: ea77a11eb52cf4acf90cf3d35b1d9738, type: 3}
+    nameKeys:
+    - equipment.name.11
+    - equipment.name.12
+    - equipment.name.13
+    - equipment.name.14
+    - equipment.name.15
+  - id: helmet.helmet
+    slot: 1
+    rarity: 1
+    icon: {fileID: -4548992743620234918, guid: 1f08d2b8c609d4f8d8220c65e0ba42f3, type: 3}
+    nameKeys:
+    - equipment.name.16
+    - equipment.name.17
+    - equipment.name.18
+    - equipment.name.19
+    - equipment.name.20
+  - id: helmet.kapushon
+    slot: 1
+    rarity: 1
+    icon: {fileID: -801058295482612986, guid: 167922550a3ae4eee97515c7c80a62f9, type: 3}
+    nameKeys:
+    - equipment.name.21
+    - equipment.name.22
+    - equipment.name.23
+    - equipment.name.24
+    - equipment.name.25
+  - id: helmet.kolpak
+    slot: 1
+    rarity: 1
+    icon: {fileID: 6888410731610576972, guid: 476311f4ca5c942ca9dc67e6f960643e, type: 3}
+    nameKeys:
+    - equipment.name.26
+    - equipment.name.27
+    - equipment.name.28
+    - equipment.name.29
+    - equipment.name.30
+  - id: helmet.korona
+    slot: 1
+    rarity: 2
+    icon: {fileID: 2889441024906765429, guid: b1ff7cd15147a429ea11a000257e3653, type: 3}
+    nameKeys:
+    - equipment.name.31
+    - equipment.name.32
+    - equipment.name.33
+    - equipment.name.34
+    - equipment.name.35
+  - id: helmet.nemes
+    slot: 1
+    rarity: 2
+    icon: {fileID: 8825383991016259462, guid: 24e27e2e74b5b4eea9223166fea1bfce, type: 3}
+    nameKeys:
+    - equipment.name.36
+    - equipment.name.37
+    - equipment.name.38
+    - equipment.name.39
+    - equipment.name.40
+  - id: helmet.lichina
+    slot: 1
+    rarity: 2
+    icon: {fileID: 7193835389740353883, guid: 0cfcb6dc86f3645b5b36a2083b7edab2, type: 3}
+    nameKeys:
+    - equipment.name.41
+    - equipment.name.42
+    - equipment.name.43
+    - equipment.name.44
+    - equipment.name.45
+  - id: helmet.triador
+    slot: 1
+    rarity: 3
+    icon: {fileID: -440024450419666228, guid: 3838cfc4b4c2a4d73b6554c34d2e4e17, type: 3}
+    nameKeys:
+    - equipment.name.46
+    - equipment.name.47
+    - equipment.name.48
+    - equipment.name.49
+    - equipment.name.50
+  - id: helmet.egid
+    slot: 1
+    rarity: 3
+    icon: {fileID: -2313219933370083100, guid: 0f63d3c09c94a4964ae08b155587f0d5, type: 3}
+    nameKeys:
+    - equipment.name.51
+    - equipment.name.52
+    - equipment.name.53
+    - equipment.name.54
+    - equipment.name.55
+  - id: helmet.nimb
+    slot: 1
+    rarity: 3
+    icon: {fileID: 4899648336984081772, guid: f266738da83b749f89e763db3e4c3872, type: 3}
+    nameKeys:
+    - equipment.name.56
+    - equipment.name.57
+    - equipment.name.58
+    - equipment.name.59
+    - equipment.name.60
+  - id: chest.tryapka
+    slot: 2
+    rarity: 0
+    icon: {fileID: -5238581274386663337, guid: 2a5a0df69a7cf4b79beaa540f5727897, type: 3}
+    nameKeys:
+    - equipment.name.61
+    - equipment.name.62
+    - equipment.name.63
+    - equipment.name.64
+    - equipment.name.65
+  - id: chest.nakidka
+    slot: 2
+    rarity: 0
+    icon: {fileID: -3992122090250787226, guid: aed0712d83bc24e07a248c47218ed7f3, type: 3}
+    nameKeys:
+    - equipment.name.66
+    - equipment.name.67
+    - equipment.name.68
+    - equipment.name.69
+    - equipment.name.70
+  - id: chest.jilet
+    slot: 2
+    rarity: 0
+    icon: {fileID: -1274579951231099470, guid: 55eb5676c72b04f939dbb0dd23fde899, type: 3}
+    nameKeys:
+    - equipment.name.71
+    - equipment.name.72
+    - equipment.name.73
+    - equipment.name.74
+    - equipment.name.75
+  - id: chest.kirasa
+    slot: 2
+    rarity: 1
+    icon: {fileID: -8302279393622788204, guid: da03833b5cdbf4dd6b26736acc205d96, type: 3}
+    nameKeys:
+    - equipment.name.76
+    - equipment.name.77
+    - equipment.name.78
+    - equipment.name.79
+    - equipment.name.80
+  - id: chest.koljuga
+    slot: 2
+    rarity: 1
+    icon: {fileID: 8496812276924527433, guid: faf97370262c54313889676e64dc0c57, type: 3}
+    nameKeys:
+    - equipment.name.81
+    - equipment.name.82
+    - equipment.name.83
+    - equipment.name.84
+    - equipment.name.85
+  - id: chest.pansir
+    slot: 2
+    rarity: 1
+    icon: {fileID: -459623641277308962, guid: bb6617616d8774fdbbf8a56fa7ee52d7, type: 3}
+    nameKeys:
+    - equipment.name.86
+    - equipment.name.87
+    - equipment.name.88
+    - equipment.name.89
+    - equipment.name.90
+  - id: chest.domaru
+    slot: 2
+    rarity: 2
+    icon: {fileID: -2181699567980395890, guid: 2b130d86ee5f74b8eb6b7cb91a46efeb, type: 3}
+    nameKeys:
+    - equipment.name.91
+    - equipment.name.92
+    - equipment.name.93
+    - equipment.name.94
+    - equipment.name.95
+  - id: chest.klibanion
+    slot: 2
+    rarity: 2
+    icon: {fileID: 1622355069308155286, guid: 9c1cf9a9bf28c479dbcf8243431c6d05, type: 3}
+    nameKeys:
+    - equipment.name.96
+    - equipment.name.97
+    - equipment.name.98
+    - equipment.name.99
+    - equipment.name.100
+  - id: chest.mantia
+    slot: 2
+    rarity: 2
+    icon: {fileID: 7016839719302472854, guid: a078b1186b3524438a23fe604cc2ca98, type: 3}
+    nameKeys:
+    - equipment.name.101
+    - equipment.name.102
+    - equipment.name.103
+    - equipment.name.104
+    - equipment.name.105
+  - id: chest.bastion
+    slot: 2
+    rarity: 3
+    icon: {fileID: 6914072176872757163, guid: 119edb3f030cf4d2f8c1e6f86ccb3519, type: 3}
+    nameKeys:
+    - equipment.name.106
+    - equipment.name.107
+    - equipment.name.108
+    - equipment.name.109
+    - equipment.name.110
+  - id: chest.ekgis
+    slot: 2
+    rarity: 3
+    icon: {fileID: 2042675976319128756, guid: b398fd505d2864c7892994b5ab77ec70, type: 3}
+    nameKeys:
+    - equipment.name.111
+    - equipment.name.112
+    - equipment.name.113
+    - equipment.name.114
+    - equipment.name.115
+  - id: chest.lorikat
+    slot: 2
+    rarity: 3
+    icon: {fileID: 9048016652604902769, guid: 74014631f828449bd92c623211a34fee, type: 3}
+    nameKeys:
+    - equipment.name.116
+    - equipment.name.117
+    - equipment.name.118
+    - equipment.name.119
+    - equipment.name.120
+  - id: weapon.palka
+    slot: 3
+    rarity: 0
+    icon: {fileID: -6234504357221995971, guid: ae53c2b9a8d6a449bafef1c733e68394, type: 3}
+    nameKeys:
+    - equipment.name.121
+    - equipment.name.122
+    - equipment.name.123
+    - equipment.name.124
+    - equipment.name.125
+  - id: weapon.rjavchina
+    slot: 3
+    rarity: 0
+    icon: {fileID: 8267044583585394293, guid: e898740441b8b47e8834c91bda78c78c, type: 3}
+    nameKeys:
+    - equipment.name.126
+    - equipment.name.127
+    - equipment.name.128
+    - equipment.name.129
+    - equipment.name.130
+  - id: weapon.dubina
+    slot: 3
+    rarity: 0
+    icon: {fileID: 6449061595459454852, guid: 23af611d9b868403889474355814c97d, type: 3}
+    nameKeys:
+    - equipment.name.131
+    - equipment.name.132
+    - equipment.name.133
+    - equipment.name.134
+    - equipment.name.135
+  - id: weapon.kinjal
+    slot: 3
+    rarity: 1
+    icon: {fileID: -3062001776292570866, guid: 7def3d2e5de184794a11d1a46287f772, type: 3}
+    nameKeys:
+    - equipment.name.136
+    - equipment.name.137
+    - equipment.name.138
+    - equipment.name.139
+    - equipment.name.140
+  - id: weapon.sekira
+    slot: 3
+    rarity: 1
+    icon: {fileID: -4044736646333900281, guid: dbcb8fa835edd4c9aaafe3d2cc2bc64c, type: 3}
+    nameKeys:
+    - equipment.name.141
+    - equipment.name.142
+    - equipment.name.143
+    - equipment.name.144
+    - equipment.name.145
+  - id: weapon.posoh
+    slot: 3
+    rarity: 1
+    icon: {fileID: -6924159418327074145, guid: 7c23b05460fa84534b7a09c0668a56a1, type: 3}
+    nameKeys:
+    - equipment.name.146
+    - equipment.name.147
+    - equipment.name.148
+    - equipment.name.149
+    - equipment.name.150
+  - id: weapon.kosa
+    slot: 3
+    rarity: 2
+    icon: {fileID: -5433696908334439150, guid: 39880dd8f99c24671a23610e3b314695, type: 3}
+    nameKeys:
+    - equipment.name.151
+    - equipment.name.152
+    - equipment.name.153
+    - equipment.name.154
+    - equipment.name.155
+  - id: weapon.rapira
+    slot: 3
+    rarity: 2
+    icon: {fileID: -2977853055859848949, guid: a090a314e9f504178a34a44a616f0e79, type: 3}
+    nameKeys:
+    - equipment.name.156
+    - equipment.name.157
+    - equipment.name.158
+    - equipment.name.159
+    - equipment.name.160
+  - id: weapon.molot
+    slot: 3
+    rarity: 2
+    icon: {fileID: -3166069693784571890, guid: 76f3de01e42cd42e3b1118b90ec45187, type: 3}
+    nameKeys:
+    - equipment.name.161
+    - equipment.name.162
+    - equipment.name.163
+    - equipment.name.164
+    - equipment.name.165
+  - id: weapon.rok
+    slot: 3
+    rarity: 3
+    icon: {fileID: 9102290533795072294, guid: a4258e10e179743d7b789613fdca8fa2, type: 3}
+    nameKeys:
+    - equipment.name.166
+    - equipment.name.167
+    - equipment.name.168
+    - equipment.name.169
+    - equipment.name.170
+  - id: weapon.karatel
+    slot: 3
+    rarity: 3
+    icon: {fileID: 7274189582924120510, guid: 3e0789dbee13b44a993c2748854f4467, type: 3}
+    nameKeys:
+    - equipment.name.171
+    - equipment.name.172
+    - equipment.name.173
+    - equipment.name.174
+    - equipment.name.175
+  - id: weapon.annigilation
+    slot: 3
+    rarity: 3
+    icon: {fileID: 3721288991074506354, guid: 045e92f4dceb54f1c93afeeae0ef4ac5, type: 3}
+    nameKeys:
+    - equipment.name.176
+    - equipment.name.177
+    - equipment.name.178
+    - equipment.name.179
+    - equipment.name.180

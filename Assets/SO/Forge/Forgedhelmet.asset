@@ -33,7 +33,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  icon: {fileID: 21300000, guid: 2d88f7804f9404978bee029e17cd73cf, type: 3}
+  icon: {fileID: 3063841963128474276, guid: fcd6a5da2add64c55ab45f15c3e98982, type: 3}
   category: 1
   stackable: 0
   maxStackSize: 1
@@ -45,12 +45,7 @@ MonoBehaviour:
   rarity: 0
   equipmentSlot: 1
   defaultStats: []
-  forgeNameKeys:
-  - forge.name.helmet1
-  - forge.name.helmet2
-  - forge.name.helmet3
-  forgeIcons:
-  - {fileID: 21300000, guid: 2d88f7804f9404978bee029e17cd73cf, type: 3}
+  appearanceCatalog: {fileID: 11400000, guid: a7dad37df726f412cb73c5e94cacbada, type: 2}
   effectId: 
   effectValue: 0
   forgeModifierId: 

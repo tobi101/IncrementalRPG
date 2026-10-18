@@ -383,12 +383,12 @@ MonoBehaviour:
     m_Key: skill_damage_4
     m_Metadata:
       m_Items: []
-  - m_Id: 5129854142898176
-    m_Key: skill_bomb_add
-    m_Metadata:
-      m_Items: []
   - m_Id: 5129785536667648
     m_Key: skill_damage_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5129854142898176
+    m_Key: skill_bomb_add
     m_Metadata:
       m_Items: []
   - m_Id: 5129857812914176
@@ -1423,26 +1423,728 @@ MonoBehaviour:
     m_Key: skill.preview.unlocked
     m_Metadata:
       m_Items: []
-  - m_Id: 56039480735678464
-    m_Key: 'xp_collected
-
-'
+  - m_Id: 56035013022441472
+    m_Key: equipment.name.1
     m_Metadata:
       m_Items: []
-  - m_Id: 56040309244936192
-    m_Key: time_score_title
+  - m_Id: 56035013047607296
+    m_Key: equipment.name.2
     m_Metadata:
       m_Items: []
-  - m_Id: 56043403018092544
-    m_Key: demo_unlocking_class
+  - m_Id: 56035013047607297
+    m_Key: equipment.name.3
     m_Metadata:
       m_Items: []
-  - m_Id: 56043476628127744
-    m_Key: demo_unlocking_barracks
+  - m_Id: 56035013051801600
+    m_Key: equipment.name.4
     m_Metadata:
       m_Items: []
-  - m_Id: 56043527203045376
-    m_Key: demo_unlocking_craft
+  - m_Id: 56035013051801601
+    m_Key: equipment.name.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801602
+    m_Key: equipment.name.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801603
+    m_Key: equipment.name.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801604
+    m_Key: equipment.name.8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801605
+    m_Key: equipment.name.9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801606
+    m_Key: equipment.name.10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801607
+    m_Key: equipment.name.11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801608
+    m_Key: equipment.name.12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801609
+    m_Key: equipment.name.13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801610
+    m_Key: equipment.name.14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801611
+    m_Key: equipment.name.15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801612
+    m_Key: equipment.name.16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801613
+    m_Key: equipment.name.17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801614
+    m_Key: equipment.name.18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801615
+    m_Key: equipment.name.19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801616
+    m_Key: equipment.name.20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801617
+    m_Key: equipment.name.21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801618
+    m_Key: equipment.name.22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801619
+    m_Key: equipment.name.23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801620
+    m_Key: equipment.name.24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801621
+    m_Key: equipment.name.25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801622
+    m_Key: equipment.name.26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801623
+    m_Key: equipment.name.27
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801624
+    m_Key: equipment.name.28
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801625
+    m_Key: equipment.name.29
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801626
+    m_Key: equipment.name.30
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801627
+    m_Key: equipment.name.31
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801628
+    m_Key: equipment.name.32
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801629
+    m_Key: equipment.name.33
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801630
+    m_Key: equipment.name.34
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801631
+    m_Key: equipment.name.35
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801632
+    m_Key: equipment.name.36
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801633
+    m_Key: equipment.name.37
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801634
+    m_Key: equipment.name.38
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801635
+    m_Key: equipment.name.39
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801636
+    m_Key: equipment.name.40
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801637
+    m_Key: equipment.name.41
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801638
+    m_Key: equipment.name.42
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801639
+    m_Key: equipment.name.43
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801640
+    m_Key: equipment.name.44
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801641
+    m_Key: equipment.name.45
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801642
+    m_Key: equipment.name.46
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801643
+    m_Key: equipment.name.47
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801644
+    m_Key: equipment.name.48
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801645
+    m_Key: equipment.name.49
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801646
+    m_Key: equipment.name.50
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801647
+    m_Key: equipment.name.51
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801648
+    m_Key: equipment.name.52
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801649
+    m_Key: equipment.name.53
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801650
+    m_Key: equipment.name.54
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801651
+    m_Key: equipment.name.55
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801652
+    m_Key: equipment.name.56
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801653
+    m_Key: equipment.name.57
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801654
+    m_Key: equipment.name.58
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801655
+    m_Key: equipment.name.59
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801656
+    m_Key: equipment.name.60
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801657
+    m_Key: equipment.name.61
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801658
+    m_Key: equipment.name.62
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801659
+    m_Key: equipment.name.63
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801660
+    m_Key: equipment.name.64
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801661
+    m_Key: equipment.name.65
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801662
+    m_Key: equipment.name.66
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801663
+    m_Key: equipment.name.67
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801664
+    m_Key: equipment.name.68
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801665
+    m_Key: equipment.name.69
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801666
+    m_Key: equipment.name.70
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801667
+    m_Key: equipment.name.71
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801668
+    m_Key: equipment.name.72
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801669
+    m_Key: equipment.name.73
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801670
+    m_Key: equipment.name.74
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801671
+    m_Key: equipment.name.75
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801672
+    m_Key: equipment.name.76
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801673
+    m_Key: equipment.name.77
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801674
+    m_Key: equipment.name.78
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801675
+    m_Key: equipment.name.79
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801676
+    m_Key: equipment.name.80
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801677
+    m_Key: equipment.name.81
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801678
+    m_Key: equipment.name.82
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801679
+    m_Key: equipment.name.83
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801680
+    m_Key: equipment.name.84
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801681
+    m_Key: equipment.name.85
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801682
+    m_Key: equipment.name.86
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801683
+    m_Key: equipment.name.87
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801684
+    m_Key: equipment.name.88
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801685
+    m_Key: equipment.name.89
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801686
+    m_Key: equipment.name.90
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801687
+    m_Key: equipment.name.91
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801688
+    m_Key: equipment.name.92
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801689
+    m_Key: equipment.name.93
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801690
+    m_Key: equipment.name.94
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801691
+    m_Key: equipment.name.95
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801692
+    m_Key: equipment.name.96
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801693
+    m_Key: equipment.name.97
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801694
+    m_Key: equipment.name.98
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801695
+    m_Key: equipment.name.99
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801696
+    m_Key: equipment.name.100
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801697
+    m_Key: equipment.name.101
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801698
+    m_Key: equipment.name.102
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801699
+    m_Key: equipment.name.103
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801700
+    m_Key: equipment.name.104
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801701
+    m_Key: equipment.name.105
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801702
+    m_Key: equipment.name.106
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801703
+    m_Key: equipment.name.107
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801704
+    m_Key: equipment.name.108
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801705
+    m_Key: equipment.name.109
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801706
+    m_Key: equipment.name.110
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801707
+    m_Key: equipment.name.111
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801708
+    m_Key: equipment.name.112
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801709
+    m_Key: equipment.name.113
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801710
+    m_Key: equipment.name.114
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801711
+    m_Key: equipment.name.115
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801712
+    m_Key: equipment.name.116
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801713
+    m_Key: equipment.name.117
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801714
+    m_Key: equipment.name.118
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801715
+    m_Key: equipment.name.119
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801716
+    m_Key: equipment.name.120
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801717
+    m_Key: equipment.name.121
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801718
+    m_Key: equipment.name.122
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801719
+    m_Key: equipment.name.123
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801720
+    m_Key: equipment.name.124
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801721
+    m_Key: equipment.name.125
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801722
+    m_Key: equipment.name.126
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801723
+    m_Key: equipment.name.127
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801724
+    m_Key: equipment.name.128
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801725
+    m_Key: equipment.name.129
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801726
+    m_Key: equipment.name.130
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801727
+    m_Key: equipment.name.131
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801728
+    m_Key: equipment.name.132
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801729
+    m_Key: equipment.name.133
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801730
+    m_Key: equipment.name.134
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801731
+    m_Key: equipment.name.135
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801732
+    m_Key: equipment.name.136
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801733
+    m_Key: equipment.name.137
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801734
+    m_Key: equipment.name.138
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801735
+    m_Key: equipment.name.139
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801736
+    m_Key: equipment.name.140
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801737
+    m_Key: equipment.name.141
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801738
+    m_Key: equipment.name.142
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801739
+    m_Key: equipment.name.143
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801740
+    m_Key: equipment.name.144
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801741
+    m_Key: equipment.name.145
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801742
+    m_Key: equipment.name.146
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801743
+    m_Key: equipment.name.147
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801744
+    m_Key: equipment.name.148
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801745
+    m_Key: equipment.name.149
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801746
+    m_Key: equipment.name.150
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801747
+    m_Key: equipment.name.151
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801748
+    m_Key: equipment.name.152
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801749
+    m_Key: equipment.name.153
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801750
+    m_Key: equipment.name.154
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801751
+    m_Key: equipment.name.155
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801752
+    m_Key: equipment.name.156
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801753
+    m_Key: equipment.name.157
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801754
+    m_Key: equipment.name.158
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801755
+    m_Key: equipment.name.159
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801756
+    m_Key: equipment.name.160
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801757
+    m_Key: equipment.name.161
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801758
+    m_Key: equipment.name.162
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801759
+    m_Key: equipment.name.163
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801760
+    m_Key: equipment.name.164
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801761
+    m_Key: equipment.name.165
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801762
+    m_Key: equipment.name.166
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801763
+    m_Key: equipment.name.167
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801764
+    m_Key: equipment.name.168
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801765
+    m_Key: equipment.name.169
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801766
+    m_Key: equipment.name.170
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801767
+    m_Key: equipment.name.171
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801768
+    m_Key: equipment.name.172
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801769
+    m_Key: equipment.name.173
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801770
+    m_Key: equipment.name.174
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801771
+    m_Key: equipment.name.175
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801772
+    m_Key: equipment.name.176
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801773
+    m_Key: equipment.name.177
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801774
+    m_Key: equipment.name.178
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801775
+    m_Key: equipment.name.179
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56035013051801776
+    m_Key: equipment.name.180
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56044435299885056
+    m_Key: equipment.no_space
     m_Metadata:
       m_Items: []
   m_Metadata:

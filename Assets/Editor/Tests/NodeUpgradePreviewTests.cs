@@ -45,7 +45,7 @@ namespace IncrementalRPG.Tests
             Set(_skills, "_config", _config);
             Set(_skills, "_player", _player);
             var catalog = Asset<ItemCatalog>();
-            var items = new PlayerItemStorage(catalog);
+            var items = new PlayerItemStorage(catalog, Asset<Core.Forge.ForgeConfig>());
             items.Load(_save);
             var consumables = new RunConsumableService(items, catalog);
             var damage = Asset<DamageZoneConfig>();

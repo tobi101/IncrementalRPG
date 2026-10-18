@@ -99,7 +99,7 @@ namespace IncrementalRPG.Tests
                 grid.Place(outside);
                 _view.Bind(source);
                 var skills = new SkillTreeService();
-                var service = new BombExplosionService(grid, null, config, skills, new PlayerItemStorage(null));
+                var service = new BombExplosionService(grid, null, config, skills, new PlayerItemStorage(null, null));
                 typeof(BombExplosionService).GetMethod("HandleFeatureSpawned", PrivateInstance)
                     .Invoke(service, new object[] { source, _view, Vector2Int.zero, entity });
 

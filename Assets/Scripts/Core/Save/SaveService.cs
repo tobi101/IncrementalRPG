@@ -43,6 +43,10 @@ namespace Core.Save
             forge.OnChanged += Save;
             classes.OnChanged += Save;
 
+            // Load events happen before subscriptions. Persist a completed migration now,
+            // even if the player quits without moving an item or starting a forge attempt.
+            if (itemStorage.MigratedOnLoad || forge.MigratedOnLoad) Save();
+
             Debug.Log($"[SaveService] Loaded. Version: {_data.Version}, Path: {_storage.SavePath}");
         }
 
