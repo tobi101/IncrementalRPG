@@ -652,7 +652,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 44966829385310210
-    m_Localized: "\u953B\u9020 \xB7 {0}"
+    m_Localized: "\u953B\u9020 <sprite name=\"shard\"> {0}"
     m_Metadata:
       m_Items:
       - rid: 3838683570720735374
