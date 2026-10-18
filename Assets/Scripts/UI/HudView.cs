@@ -317,9 +317,9 @@ namespace UI
             if (_experienceText == null)
                 return;
 
-            _experienceText.text = BigDoubleFormatter.FormatFloor(_experienceDisplayed)
+            _experienceText.text = BigDoubleFormatter.Format(_experienceDisplayed, 0, 2)
                                    + " / "
-                                   + BigDoubleFormatter.FormatFloor(_experienceGoal);
+                                   + BigDoubleFormatter.Format(_experienceGoal, 0, 2);
         }
 
         private void HandleDungeonLevelChanged(DungeonConfig dungeon, DungeonLevelConfig level, int levelIndex)

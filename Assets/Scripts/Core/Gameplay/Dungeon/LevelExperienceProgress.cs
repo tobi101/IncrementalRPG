@@ -11,16 +11,16 @@ namespace Core.Gameplay.Dungeon
         public void Reset(BigDouble goal)
         {
             Current = BigDouble.Zero;
-            Goal = BigDouble.Max(BigDouble.Zero, goal.NormalizedOr(BigDouble.Zero));
+            Goal = BigDoubleMath.SanitizeNonNegativeInteger(goal, BigDouble.Zero);
         }
 
         public void Add(BigDouble amount)
         {
-            amount = amount.NormalizedOr(BigDouble.Zero);
+            amount = BigDoubleMath.SanitizeNonNegativeInteger(amount, BigDouble.Zero);
             if (amount <= BigDouble.Zero)
                 return;
 
-            Current += amount;
+            Current = BigDoubleMath.RoundToInteger(Current + amount);
         }
     }
 }
