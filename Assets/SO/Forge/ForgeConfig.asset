@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3753bb1c5ea24926973bd18e4843dad, type: 3}
   m_Name: ForgeConfig
   m_EditorClassIdentifier: Assembly-CSharp::Core.Forge.ForgeConfig
-  firstAvailableLocation: 2
+  firstAvailableLocation: 4
   levels:
   - shardCost:
-      mantissa: 5
-      exponent: 1
+      mantissa: 1
+      exponent: 2
     rarityWeights:
     - 80
-    - 19
+    - 20
     - 0
-    - 1
-    statBudgets: 320000006400000088000000c8000000
+    - 0
+    statBudgets: 320000006400000087000000c8000000
     cursorPeriod: 2.4
     rarityRange: 0.02
     allStatsRange: 0.5
@@ -33,20 +33,20 @@ MonoBehaviour:
       mantissa: 1
       exponent: 2
     rarityWeights:
-    - 60
-    - 29
-    - 10
-    - 1
-    statBudgets: 320000006400000088000000c8000000
+    - 50
+    - 50
+    - 0
+    - 0
+    statBudgets: 320000006400000087000000c8000000
     cursorPeriod: 2.2
     rarityRange: 0.04
     allStatsRange: 0.55
     oneStatRange: 0.75
-    allStatsBonus: 0.1
+    allStatsBonus: 0.05
     oneStatBonus: 0.15
   - shardCost:
-      mantissa: 1.5
-      exponent: 2
+      mantissa: 9.99999999999
+      exponent: 11
     rarityWeights:
     - 25
     - 45
@@ -60,8 +60,8 @@ MonoBehaviour:
     allStatsBonus: 0.1
     oneStatBonus: 0.15
   - shardCost:
-      mantissa: 2
-      exponent: 2
+      mantissa: 9.999999999999
+      exponent: 12
     rarityWeights:
     - 0
     - 40

@@ -57,10 +57,6 @@ MonoBehaviour:
     gridPosition: {x: 3, y: 1}
   - node: {fileID: 11400000, guid: 14bee2f1f0fac084286f63911f3632e2, type: 2}
     gridPosition: {x: 4, y: 2}
-  - node: {fileID: 11400000, guid: 9ae3dedb00f784a268592bfaeced1753, type: 2}
-    gridPosition: {x: 3, y: 3}
-  - node: {fileID: 11400000, guid: a0e10b7018754074ea680ab4699457d5, type: 2}
-    gridPosition: {x: 4, y: 3}
   - node: {fileID: 11400000, guid: b0cb80651a52e5e4abef0900829afa78, type: 2}
     gridPosition: {x: 0, y: -3}
   - node: {fileID: 11400000, guid: 22691ad0ed1649d5aa0681a820e6bf5d, type: 2}

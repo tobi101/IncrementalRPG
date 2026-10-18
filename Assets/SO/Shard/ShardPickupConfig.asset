@@ -16,9 +16,9 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 7b973355f9d04471d9b13014444761b3, type: 3}
   basePickupValue:
     mantissa: 1
-    exponent: 1
+    exponent: 0
   maxPickupCount: 32
-  lifetime: 15
+  lifetime: 6
   hitRadius: 0.12
   scatterDuration: 0.4
   minScatterDistance: 0.35
