@@ -44,6 +44,10 @@ namespace UI.Inventory
         [Header("Menu")]
         [SerializeField] private SideMenuFlyoutView _sideMenu;
 
+        [Header("Currency")]
+        [SerializeField] private TMP_Text _goldText;
+        [SerializeField] private TMP_Text _shardText;
+
         [Header("Universal Drag And Drop")]
         [SerializeField] private GameObject _dragCanvasPrefab;
         [SerializeField] private GameObject _tooltipCanvasPrefab;
@@ -116,17 +120,25 @@ namespace UI.Inventory
 
             _storage.OnChanged += RefreshEquipment;
             _storage.OnInventoryRefreshRequested += ReloadUI;
+            _player.OnGoldChanged += RefreshGold;
+            _player.OnShardsChanged += RefreshShards;
             LocalizationSettings.SelectedLocaleChanged += HandleLocaleChanged;
 
             _started = true;
             base.OnEnable();
             RefreshEquipment();
+            RefreshGold();
+            RefreshShards();
         }
 
         protected override void OnEnable()
         {
             if (_started)
+            {
                 base.OnEnable();
+                RefreshGold();
+                RefreshShards();
+            }
 
             _fireLoopSource?.Play();
             RefreshStoveAudioPause();
@@ -176,6 +188,8 @@ namespace UI.Inventory
 
             _storage.OnChanged -= RefreshEquipment;
             _storage.OnInventoryRefreshRequested -= ReloadUI;
+            _player.OnGoldChanged -= RefreshGold;
+            _player.OnShardsChanged -= RefreshShards;
             LocalizationSettings.SelectedLocaleChanged -= HandleLocaleChanged;
             _sideMenu.ReturnToHubButton.onClick.RemoveListener(ReturnToHub);
         }
@@ -183,6 +197,18 @@ namespace UI.Inventory
         public void Show() => gameObject.SetActive(true);
 
         public void Hide() => gameObject.SetActive(false);
+
+        private void RefreshGold()
+        {
+            if (_goldText != null)
+                _goldText.text = BigDoubleFormatter.FormatFloor(_player.GoldTotal);
+        }
+
+        private void RefreshShards()
+        {
+            if (_shardText != null)
+                _shardText.text = BigDoubleFormatter.FormatFloor(_player.ShardTotal);
+        }
 
         public LootBatch Grant(IReadOnlyList<LootDrop> drops)
         {

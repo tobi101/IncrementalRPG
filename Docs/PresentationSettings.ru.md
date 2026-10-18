@@ -226,6 +226,8 @@
 - `NodeLevelCounterView`: `_lampPrefab`, `_container`, `_layoutGroup` и три имени состояний (`idle_off`, `on`, `idle_on`). Расстояния ламп задаются `HorizontalLayoutGroup`. В отличие от ламп перехода, отдельного принудительного сброса Time Scale в этом компоненте нет.
 - `NodePopupView`: ссылки на тексты, `_positionRoot`, `_framePriceImage`, `_backGlowImage` и два конфига спрайтов. Отступ popup от ноды рассчитывается с константами `PopupGap = 30` и `NodeGapScale = 0.25`; отдельного поля для этих коэффициентов нет.
 
+Нижний блок подсказки (`NodePopupView._valuesText`) показывает текущее значение и значение после следующей покупки через стрелку; на максимальном уровне остаётся итоговое значение. Урон, радиусы и интервалы атак используют игровые расчёты с экипировкой и активными эффектами. Интервалы указаны в секундах, награды с переменной базой — множителем дерева, прибавка осколков кристалла — со знаком `+`. Размер карты и интервалы появления берутся для достигнутой локации выбранного подземелья (до выбора — первого доступного). Состояния разблокировки и единицы времени локализованы. Значения обновляются после прокачки и смены языка; предпросмотр не меняет прогресс. Текст центрирован, без переноса внутри строки, автоматически подбирает размер 12–36 pt в существующей области.
+
 Конфиги в [ViewConfigs](/Users/admin/IncrementalRPG/Assets/SO/SkillTree/ViewConfigs): `Color Config` — цвета границ, `Circle Sprite Config` — спрайты окружности, `Frame Price Sprite Config` — рамка цены, `Back Glow Sprite Config` — фон свечения. У каждого состояния поля `locked`, `unaffordable`, `affordable`, `complete`.
 
 `MenuCanvas/SkillTreeView/SkillTreePanel → SkillTreePanZoomController`:
@@ -445,6 +447,8 @@
 Имя брони и локализованная метка редкости окрашены общей палитрой по редкости экземпляра; бонусы и цена используют цвет TMP-текста. Величина эффекта зелья берётся из его параметров. Canvas подсказки масштабируется относительно 1920×1080 (`Match = 0.5`), имеет `sortingOrder = 2900`; канвас переноса — 3000.
 
 Ключи `LocalesTable` для en-US, ru-RU и zh: `equipment.stat.<statId>`, `equipment.statistics`, `equipment.section.attacks`, `.zone`, `.barrels`, `equipment.panel_hint`, `equipment.inventory_hint`, `equipment.locked`, `equipment.per_second`, `equipment.slot.<slot>` и `item.rarity.<rarity>`. Подробные формулы и настройка `defaultStats` — [игровое руководство](/Users/admin/IncrementalRPG/Docs/GameplaySettings.ru.md#equipment-stats).
+
+Счётчики валюты в инвентаре привязаны к `PlayerInventoryView._goldText` и `_shardText`: показывают `Player.GoldTotal` и `ShardTotal`, обновляются при открытии окна и изменении баланса. Формат чисел — `BigDoubleFormatter.FormatFloor`, как в дереве прокачки.
 
 ## Окно кузницы
 

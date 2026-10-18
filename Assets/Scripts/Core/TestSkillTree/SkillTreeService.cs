@@ -108,11 +108,28 @@ namespace Core.TestSkillTree
         
         public int GetLevel(string nodeId) => _progression.GetLevel(GetDefinition(nodeId));
 
-        public float GetBonus(StatType stat) =>
-            _bonusCache.TryGetValue(stat, out var v) ? v : 0f;
+        public float GetBonus(StatType stat, NodeDefinition previewUpgrade = null) =>
+            (_bonusCache.TryGetValue(stat, out var v) ? v : 0f)
+            + GetPreviewIncrement(previewUpgrade, stat, NodeEffectType.Additive);
         
-        public float GetMultiplier(StatType stat) =>
-            _multiplierCache.TryGetValue(stat, out var v) ? v : 1f;
+        public float GetMultiplier(StatType stat, NodeDefinition previewUpgrade = null) =>
+            (_multiplierCache.TryGetValue(stat, out var v) ? v : 1f)
+            + GetPreviewIncrement(previewUpgrade, stat, NodeEffectType.Multiplicative);
+
+        // Read-only preview: include every matching effect at the next rank, without purchasing it.
+        private float GetPreviewIncrement(NodeDefinition node, StatType stat, NodeEffectType type)
+        {
+            if (node == null) return 0f;
+            var level = GetLevel(node.id);
+            if (level >= node.LevelLimit) return 0f;
+
+            var increment = 0f;
+            foreach (var effect in node.effects ?? Array.Empty<NodeEffect>())
+                if (effect != null && effect.effectType == type && effect.statType == stat &&
+                    level < (effect.valuesPerLevel?.Length ?? 0))
+                    increment += effect.valuesPerLevel[level];
+            return increment;
+        }
 
         public bool IsUnlocked(GameFeature feature) =>
             _unlockedFeatures.Contains(feature);

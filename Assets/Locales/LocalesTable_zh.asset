@@ -1291,6 +1291,18 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 3838683570720735374
+  - m_Id: 51820000000000001
+    m_Localized: 秒
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51820000000000002
+    m_Localized: 未解锁
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51820000000000003
+    m_Localized: 已解锁
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

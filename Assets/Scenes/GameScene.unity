@@ -9854,6 +9854,7 @@ MonoBehaviour:
   _nameText: {fileID: 1257155880}
   _descriptionText: {fileID: 2064595346}
   _costText: {fileID: 1905430478}
+  _valuesText: {fileID: 1103229793}
   _framePriceImage: {fileID: 0}
   _backGlowImage: {fileID: 0}
   _framePriceSpriteConfig: {fileID: 11400000, guid: 1a499938d6dc6483f884e23716738a5f, type: 2}
@@ -24816,7 +24817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0.5 - 2
+  m_text:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d7d7c299be0b428f838e2afcc3b07b8, type: 2}
   m_sharedMaterial: {fileID: 6106801979517271665, guid: 4d7d7c299be0b428f838e2afcc3b07b8, type: 2}
@@ -38585,7 +38586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100,239 K
+  m_text:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d7d7c299be0b428f838e2afcc3b07b8, type: 2}
   m_sharedMaterial: {fileID: 6106801979517271665, guid: 4d7d7c299be0b428f838e2afcc3b07b8, type: 2}
@@ -56158,7 +56159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100,239 K
+  m_text:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d7d7c299be0b428f838e2afcc3b07b8, type: 2}
   m_sharedMaterial: {fileID: 6106801979517271665, guid: 4d7d7c299be0b428f838e2afcc3b07b8, type: 2}
@@ -56393,6 +56394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5170b1f40a27e96d315f674c0852aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.Inventory.PlayerInventoryView
+  _goldText: {fileID: 1748468929}
+  _shardText: {fileID: 900000000000001383}
   _inventory: {fileID: 900000000000002010}
   _runtimeInventory: {fileID: 900000000000002010}
   _slotContainer: {fileID: 750348504}

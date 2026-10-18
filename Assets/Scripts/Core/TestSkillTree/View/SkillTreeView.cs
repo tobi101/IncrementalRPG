@@ -54,7 +54,8 @@ namespace Core.TestSkillTree.View
         private Coroutine _revealRoutine;
 
         [Inject]
-        public void Construct(SkillTreeConfig config, SkillTreeService service, Player player, AudioManager audioManager)
+        public void Construct(SkillTreeConfig config, SkillTreeService service, Player player, AudioManager audioManager,
+            NodeUpgradePreviewText preview)
         {
             _config       = config;
             _service      = service;
@@ -63,7 +64,7 @@ namespace Core.TestSkillTree.View
             _panZoomController = GetComponentInChildren<SkillTreePanZoomController>(true);
 
             UI.UIButtonAudio.InstallInChildren(this);
-            _popupView.Bind(service, _borderColorConfig, audioManager);
+            _popupView.Bind(service, _borderColorConfig, audioManager, preview);
             _closeButton.onClick.AddListener(() => _stateMachine.Enter<HubState>());
             Build();
 

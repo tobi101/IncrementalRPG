@@ -3,6 +3,8 @@ using IncrementalRPG.Scripts.AudioManager;
 using UI.Localization;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 using Utils;
 
 namespace Core.TestSkillTree.View
@@ -13,6 +15,7 @@ namespace Core.TestSkillTree.View
         [SerializeField] private TextMeshProUGUI _nameText;
         [SerializeField] private TextMeshProUGUI _descriptionText;
         [SerializeField] private TextMeshProUGUI _costText;
+        [SerializeField] private TextMeshProUGUI _valuesText;
         
         [SerializeField] private Image _framePriceImage;
         [SerializeField] private Image _backGlowImage;
@@ -27,6 +30,7 @@ namespace Core.TestSkillTree.View
         private const float NodeGapScale = 0.25f;
 
         private SkillTreeService _service;
+        private NodeUpgradePreviewText _preview;
         private AudioManager     _audioManager;
         private NodeDefinition   _current;
         private RectTransform    _rt;
@@ -35,15 +39,29 @@ namespace Core.TestSkillTree.View
 
         private bool _blocked;
 
-        public void Bind(SkillTreeService service, NodeBorderColorConfig borderColorConfig, AudioManager audioManager)
+        public void Bind(SkillTreeService service, NodeBorderColorConfig borderColorConfig, AudioManager audioManager,
+            NodeUpgradePreviewText preview)
         {
             _service           = service;
+            _preview           = preview;
             _borderColorConfig = borderColorConfig;
             _audioManager      = audioManager;
             _rt                = (RectTransform)transform;
             _positionRoot      = _positionRoot != null ? _positionRoot : _rt.parent as RectTransform;
             _nameBinding        = new LocalizedStringBinding(_nameText);
             _descriptionBinding = new LocalizedStringBinding(_descriptionText);
+            LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+
+            if (_valuesText != null)
+            {
+                _valuesText.enableAutoSizing = true;
+                _valuesText.fontSizeMin = 12f;
+                _valuesText.fontSizeMax = 36f;
+                _valuesText.textWrappingMode = TextWrappingModes.NoWrap;
+                _valuesText.overflowMode = TextOverflowModes.Truncate;
+                _valuesText.alignment = TextAlignmentOptions.Center;
+                _valuesText.raycastTarget = false;
+            }
 
             gameObject.SetActive(false);
         }
@@ -105,12 +123,17 @@ namespace Core.TestSkillTree.View
             _descriptionBinding.Bind(_current.description);
             ApplyVisualState(_service.GetState(_current.id));
 
+            if (_valuesText != null)
+                _valuesText.text = _preview.GetText(_current);
+
             if (_costText != null)
             {
                 var cost = _service.GetUpgradeCost(_current.id);
                 _costText.text = cost > 0 ? BigDoubleFormatter.FormatFloor(cost) : "";
             }
         }
+
+        private void OnLocaleChanged(Locale locale) => RefreshCurrent();
 
         private void PositionNear(RectTransform nodeTransform)
         {
@@ -269,6 +292,7 @@ namespace Core.TestSkillTree.View
 
         private void OnDestroy()
         {
+            LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
             _nameBinding?.Dispose();
             _descriptionBinding?.Dispose();
         }

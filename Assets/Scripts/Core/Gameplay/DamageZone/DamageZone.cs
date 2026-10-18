@@ -38,8 +38,12 @@ namespace Core.Gameplay
         private float _specialAttackCooldownRemaining;
 
         public Vector3 WorldPosition => _worldPosition;
-        public float RadiusX => _config.baseRadius * _skillTree.GetMultiplier(StatType.ZoneRadius)
-                                * _equipment.GetEquipmentMultiplier(EquipmentStats.ZoneRadius);
+        public float RadiusX => GetRadius();
+
+        public float GetRadius(NodeDefinition previewUpgrade = null) =>
+            (_config.baseRadius * _skillTree.GetMultiplier(StatType.ZoneRadius, previewUpgrade)
+             + _skillTree.GetBonus(StatType.ZoneRadius, previewUpgrade))
+            * _equipment.GetEquipmentMultiplier(EquipmentStats.ZoneRadius);
         public float RadiusY => RadiusX * _config.aspectRatio;
         public bool IsSpecialAttackUnlocked => _skillTree.IsUnlocked(GameFeature.SpecialAttack);
         public bool IsSpecialAttackReady => IsSpecialAttackUnlocked && _specialAttackCooldownRemaining <= 0f;
@@ -217,14 +221,14 @@ namespace Core.Gameplay
             return Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame;
         }
 
-        public float GetManualAttackCooldown()
+        public float GetManualAttackCooldown(NodeDefinition previewUpgrade = null)
         {
-            return GetAttackInterval(_config.baseManualAttackCooldown, StatType.ManualAttackSpeed, EquipmentStats.ManualSpeed);
+            return GetAttackInterval(_config.baseManualAttackCooldown, StatType.ManualAttackSpeed, EquipmentStats.ManualSpeed, previewUpgrade);
         }
 
-        public float GetAutoAttackInterval()
+        public float GetAutoAttackInterval(NodeDefinition previewUpgrade = null)
         {
-            return GetAttackInterval(_config.baseAutoAttackInterval, StatType.AutoAttackSpeed, EquipmentStats.AutoSpeed);
+            return GetAttackInterval(_config.baseAutoAttackInterval, StatType.AutoAttackSpeed, EquipmentStats.AutoSpeed, previewUpgrade);
         }
 
         private float GetSpecialAttackCooldown()
@@ -232,17 +236,17 @@ namespace Core.Gameplay
             return Mathf.Max(0f, _config.baseSpecialAttackCooldown) * _consumables.SpecialCooldownMultiplier;
         }
 
-        private float GetAttackInterval(float baseInterval, StatType speedStat, string equipmentStat)
+        private float GetAttackInterval(float baseInterval, StatType speedStat, string equipmentStat, NodeDefinition previewUpgrade)
         {
-            var attackSpeed = GetAttackSpeedMultiplier(speedStat);
+            var attackSpeed = GetAttackSpeedMultiplier(speedStat, previewUpgrade);
             return Mathf.Max(MinAttackInterval, Mathf.Max(MinAttackInterval, baseInterval) /
                 attackSpeed / _equipment.GetEquipmentMultiplier(equipmentStat));
         }
 
-        private float GetAttackSpeedMultiplier(StatType speedStat)
+        private float GetAttackSpeedMultiplier(StatType speedStat, NodeDefinition previewUpgrade)
         {
-            var additiveSpeed = 1f + _skillTree.GetBonus(speedStat);
-            var multiplicativeSpeed = _skillTree.GetMultiplier(speedStat);
+            var additiveSpeed = 1f + _skillTree.GetBonus(speedStat, previewUpgrade);
+            var multiplicativeSpeed = _skillTree.GetMultiplier(speedStat, previewUpgrade);
             return Mathf.Max(MinAttackSpeedMultiplier, additiveSpeed * multiplicativeSpeed);
         }
 
@@ -262,7 +266,7 @@ namespace Core.Gameplay
             OnZoneTick?.Invoke(source);
         }
 
-        public BigDouble GetDamage(AttackSource source)
+        public BigDouble GetDamage(AttackSource source, NodeDefinition previewUpgrade = null)
         {
             var (baseDamage, damageStat) = source switch
             {
@@ -273,8 +277,8 @@ namespace Core.Gameplay
             };
 
             var damage = BigDouble.Max(BigDouble.Zero,
-                baseDamage + _skillTree.GetBonus(damageStat));
-            var multiplier = Mathf.Max(0f, _skillTree.GetMultiplier(damageStat));
+                baseDamage + _skillTree.GetBonus(damageStat, previewUpgrade));
+            var multiplier = Mathf.Max(0f, _skillTree.GetMultiplier(damageStat, previewUpgrade));
             var equipmentMultiplier = source switch
             {
                 AttackSource.Manual => _equipment.GetEquipmentMultiplier(EquipmentStats.ManualDamage),

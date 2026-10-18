@@ -36,19 +36,20 @@ namespace Core.Gameplay.Bomb
         {
             if (config.featureType != Entity.FeatureType.Bomb) return;
 
-            ScaleExplosionVisual(view);
+            ScaleExplosionVisual(view, GetRadius(), creature.WorldPosition);
             creature.OnDied += () =>
             {
-                ScaleExplosionVisual(view);
-                Explode(creature);
+                var radius = GetRadius();
+                ScaleExplosionVisual(view, radius, creature.WorldPosition);
+                Explode(creature, radius);
             };
         }
 
-        private void Explode(Creature source)
+        private void Explode(Creature source, float radius)
         {
             var epicenter = source.WorldPosition;
 
-            var a = GetRadius();
+            var a = radius;
             var b = a * _config.aspectRatio;
             var damage = GetDamage();
 
@@ -68,26 +69,26 @@ namespace Core.Gameplay.Bomb
             }
         }
 
-        public BigDouble GetDamage()
+        public BigDouble GetDamage(NodeDefinition previewUpgrade = null)
         {
-            var trained = BigDouble.Max(BigDouble.Zero, _config.baseDamage + _skillTree.GetBonus(StatType.BombExplosionDamage));
+            var trained = BigDouble.Max(BigDouble.Zero, _config.baseDamage + _skillTree.GetBonus(StatType.BombExplosionDamage, previewUpgrade));
             return BigDoubleMath.MultiplyAndRound(trained,
-                (double)Mathf.Max(0f, _skillTree.GetMultiplier(StatType.BombExplosionDamage)) *
+                (double)Mathf.Max(0f, _skillTree.GetMultiplier(StatType.BombExplosionDamage, previewUpgrade)) *
                 _equipment.GetEquipmentMultiplier(EquipmentStats.BombDamage));
         }
 
-        public float GetRadius() => (_config.baseRadius * _skillTree.GetMultiplier(StatType.BombExplosionRadius)
-                   + _skillTree.GetBonus(StatType.BombExplosionRadius)) *
+        public float GetRadius(NodeDefinition previewUpgrade = null) => (_config.baseRadius * _skillTree.GetMultiplier(StatType.BombExplosionRadius, previewUpgrade)
+                   + _skillTree.GetBonus(StatType.BombExplosionRadius, previewUpgrade)) *
                    _equipment.GetEquipmentMultiplier(EquipmentStats.BombRadius);
 
-        private void ScaleExplosionVisual(CreatureView view)
+        private void ScaleExplosionVisual(CreatureView view, float radius, Vector3 epicenter)
         {
             if (view == null) return;
 
             var visualScaler = view.GetComponentInChildren<BombExplosionVisualScaler>(true);
             if (visualScaler == null) return;
 
-            visualScaler.ScaleToRadius(GetRadius(), _config.baseRadius);
+            visualScaler.ScaleToRadius(radius, _config.aspectRatio, epicenter);
         }
     }
 }

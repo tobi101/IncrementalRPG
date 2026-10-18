@@ -1411,6 +1411,18 @@ MonoBehaviour:
     m_Key: classes.key_count
     m_Metadata:
       m_Items: []
+  - m_Id: 51820000000000001
+    m_Key: skill.preview.seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51820000000000002
+    m_Key: skill.preview.locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51820000000000003
+    m_Key: skill.preview.unlocked
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

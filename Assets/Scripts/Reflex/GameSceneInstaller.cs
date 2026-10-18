@@ -65,6 +65,7 @@ namespace Reflex
         public void InstallBindings(ContainerBuilder builder)
         {
             InitializeConfigs(builder);
+            builder.RegisterType(typeof(NodeUpgradePreviewText), new[] { typeof(NodeUpgradePreviewText) }, Lifetime.Singleton, Resolution.Lazy);
             builder.RegisterValue(_classCatalog);
             builder.RegisterValue(_classesView);
             builder.RegisterType(typeof(global::Core.Classes.ClassProgressionService),

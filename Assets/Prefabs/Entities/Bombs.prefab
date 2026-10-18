@@ -281,6 +281,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.Bomb.BombExplosionVisualScaler
   _explosionVisual: {fileID: 31911287952581183}
+  _visualBounds:
+    serializedVersion: 2
+    x: -16.30608
+    y: -8.89950
+    width: 32.69271
+    height: 34.26756
 --- !u!1001 &2305418560483457910
 PrefabInstance:
   m_ObjectHideFlags: 0
