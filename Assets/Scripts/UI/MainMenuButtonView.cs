@@ -11,7 +11,8 @@ namespace UI
         Continue,
         Settings,
         Authors,
-        Exit
+        Exit,
+        SteamWishlist
     }
 
     public class MainMenuButtonView : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler

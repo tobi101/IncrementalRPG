@@ -2027,6 +2027,50 @@ MonoBehaviour:
     m_Localized: "\u80CC\u5305\u7A7A\u95F4\u4E0D\u8DB3\uFF0C\u65E0\u6CD5\u5378\u4E0B\u6B64\u88C5\u5907\u3002\u8BF7\u5148\u817E\u51FA\u7A7A\u95F4\u3002"
     m_Metadata:
       m_Items: []
+  - m_Id: 56116900533362688
+    m_Localized: "\u6E38\u620F\u8BBE\u8BA1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528512
+    m_Localized: Daniil Prasolov
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528513
+    m_Localized: "\u7A0B\u5E8F\u5F00\u53D1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528514
+    m_Localized: Sergey Reshetnikov
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528515
+    m_Localized: "\u7F8E\u672F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528516
+    m_Localized: Ksenia Bagan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528517
+    m_Localized: "\u52A8\u753B"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528518
+    m_Localized: Semyon Popov
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528519
+    m_Localized: "\u97F3\u6548"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528520
+    m_Localized: "\u5E02\u573A\u63A8\u5E7F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528521
+    m_Localized: Daniel Stone
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

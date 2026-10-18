@@ -45,7 +45,7 @@ namespace UI
             _elapsed = 0f;
             _isPlaying = true;
 
-            _text.text = BigDoubleFormatter.Format(amount, 0, 2);
+            _text.text = BigDoubleFormatter.Format(amount);
             transform.position = _startPosition;
             SetAlpha(1f);
             gameObject.SetActive(true);
