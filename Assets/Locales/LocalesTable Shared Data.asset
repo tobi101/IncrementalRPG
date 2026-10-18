@@ -2147,6 +2147,87 @@ MonoBehaviour:
     m_Key: equipment.no_space
     m_Metadata:
       m_Items: []
+  - m_Id: 56060784730431488
+    m_Key: xp_collected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56060789579046912
+    m_Key: time_score_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56060790837338112
+    m_Key: demo_unlocking_classes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56060792045297664
+    m_Key: demo_unlocking_barracks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56060793358114816
+    m_Key: demo_unlocking_craft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56069803884929024
+    m_Key: skill_auto_attack_unlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56069806137270272
+    m_Key: skill_auto_attack_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56069807206817792
+    m_Key: skill_auto_attack_speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56070156072247296
+    m_Key: skill_shards_unlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56070157779329024
+    m_Key: skill_shards_collect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56070641030258688
+    m_Key: skill_special_attack_unlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56070683354980352
+    m_Key: skill_enemy_spawn_speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56070812224970752
+    m_Key: skill_shards_drop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56074343686332416
+    m_Key: 'skill_auto_attack_damage_2
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56074394718429184
+    m_Key: 'skill_auto_attack_speed_2
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56076412698746880
+    m_Key: 'skill_enemy_spawn_speed_2
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56081846545408000
+    m_Key: 'skill_speed_3
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56084374330793984
+    m_Key: skill_auto_damage_description
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

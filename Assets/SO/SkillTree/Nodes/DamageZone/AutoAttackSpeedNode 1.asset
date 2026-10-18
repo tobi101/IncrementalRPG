@@ -17,7 +17,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 1000000000040
+      m_KeyId: 56074394718429184
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -32,19 +32,19 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 21300000, guid: b7ecfdde38fcd41d89713933c0cf7da3, type: 3}
-  additionalIcon: {fileID: 21300000, guid: e407312f5f1e64037b4789fc4eb5e1f1, type: 3}
   maxLevel: 5
   goldCostPerLevel:
   - mantissa: 1
-    exponent: 3
-  - mantissa: 1.5
-    exponent: 3
-  - mantissa: 2
-    exponent: 3
-  - mantissa: 2.5
-    exponent: 3
-  - mantissa: 3
-    exponent: 3
+    exponent: 0
+  - mantissa: 1
+    exponent: 0
+  - mantissa: 1
+    exponent: 0
+  - mantissa: 1
+    exponent: 0
+  - mantissa: 1
+    exponent: 0
+  additionalIcon: {fileID: 21300000, guid: e407312f5f1e64037b4789fc4eb5e1f1, type: 3}
   prerequisites:
   - node: {fileID: 11400000, guid: c20ec67ce705f1744a33c9d561c40da2, type: 2}
     requiredLevel: 5

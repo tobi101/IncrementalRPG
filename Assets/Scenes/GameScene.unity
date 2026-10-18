@@ -4357,7 +4357,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 56039480735678464
+      m_KeyId: 56060784730431488
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -32348,7 +32348,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 56040309244936192
+      m_KeyId: 56060789579046912
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -34600,7 +34600,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 34.25
   m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -64399,7 +64399,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.824512
+  m_fontSize: 71.56989
   m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 1

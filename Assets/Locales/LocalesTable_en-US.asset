@@ -419,11 +419,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5134560734994432
-    m_Localized: Manual Speed I
+    m_Localized: "\u0420\u0435\u0444\u043B\u0435\u043A\u0441 I"
     m_Metadata:
       m_Items: []
   - m_Id: 5134593794498560
-    m_Localized: Manual Speed II
+    m_Localized: "\u0420\u0435\u0444\u043B\u0435\u043A\u0441 II"
     m_Metadata:
       m_Items: []
   - m_Id: 5134631723589632
@@ -2196,6 +2196,78 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 56044435299885056
     m_Localized: Not enough room to unequip this item. Free up inventory space.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56060784730431488
+    m_Localized: XP Collected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56060789579046912
+    m_Localized: 'Time Spent:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56060790837338112
+    m_Localized: Classes will be available in the full version of the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56060792045297664
+    m_Localized: Barracks will be available in the full version of the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56060793358114816
+    m_Localized: Keep playing to unlock armor crafting!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56069803884929024
+    m_Localized: Autonomy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56069806137270272
+    m_Localized: Impact I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56074343686332416
+    m_Localized: Impact II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56069807206817792
+    m_Localized: Cadence I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56070156072247296
+    m_Localized: Precious
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56074394718429184
+    m_Localized: Cadence II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56070812224970752
+    m_Localized: Abundance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56070641030258688
+    m_Localized: Awakening
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56070157779329024
+    m_Localized: Attraction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56070683354980352
+    m_Localized: Swarm I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56076412698746880
+    m_Localized: Swarm II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56081846545408000
+    m_Localized: Reflex III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56084374330793984
+    m_Localized: Increases the damage from automatic attack
     m_Metadata:
       m_Items: []
   references:

@@ -17,7 +17,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:65c04d1b687a94fe6b2d028edf0ee3a1
     m_TableEntryReference:
-      m_KeyId: 5129911386759168
+      m_KeyId: 5129910711476224
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -35,16 +35,16 @@ MonoBehaviour:
   maxLevel: 5
   goldCostPerLevel:
   - mantissa: 1
-    exponent: 3
-  - mantissa: 1.25
-    exponent: 3
-  - mantissa: 1.5
-    exponent: 3
-  - mantissa: 1.75
-    exponent: 3
-  - mantissa: 2
-    exponent: 3
-  additionalIcon: {fileID: 0}
+    exponent: 0
+  - mantissa: 1
+    exponent: 0
+  - mantissa: 1
+    exponent: 0
+  - mantissa: 1
+    exponent: 0
+  - mantissa: 1
+    exponent: 0
+  additionalIcon: {fileID: 21300000, guid: e407312f5f1e64037b4789fc4eb5e1f1, type: 3}
   prerequisites:
   - node: {fileID: 11400000, guid: 26f0d831364486d4babdfb18c3b4fd09, type: 2}
     requiredLevel: 4

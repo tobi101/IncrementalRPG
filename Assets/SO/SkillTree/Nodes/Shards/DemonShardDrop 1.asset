@@ -32,19 +32,19 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 21300000, guid: 7b973355f9d04471d9b13014444761b3, type: 3}
-  additionalIcon: {fileID: 21300000, guid: a5f0a83b01a7a42f2b12fc3214a5909b, type: 3}
   maxLevel: 5
   goldCostPerLevel:
   - mantissa: 1
-    exponent: 4
-  - mantissa: 1.2
-    exponent: 4
-  - mantissa: 1.4
-    exponent: 4
-  - mantissa: 1.6
-    exponent: 4
-  - mantissa: 1.8
-    exponent: 4
+    exponent: 0
+  - mantissa: 1
+    exponent: 0
+  - mantissa: 1
+    exponent: 0
+  - mantissa: 1
+    exponent: 0
+  - mantissa: 1
+    exponent: 0
+  additionalIcon: {fileID: 21300000, guid: a5f0a83b01a7a42f2b12fc3214a5909b, type: 3}
   prerequisites:
   - node: {fileID: 11400000, guid: 438ec2b253c2110488a649b82ff6e4da, type: 2}
     requiredLevel: 5
