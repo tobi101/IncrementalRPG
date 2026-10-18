@@ -1,3 +1,4 @@
+using Core;
 using Core.Gameplay;
 using Core.Forge;
 using UI.Forge;
@@ -65,6 +66,8 @@ namespace Reflex
         public void InstallBindings(ContainerBuilder builder)
         {
             InitializeConfigs(builder);
+            builder.RegisterType(typeof(HubVisitProgress), new[] { typeof(HubVisitProgress), typeof(ISaveable) },
+                Lifetime.Singleton, Resolution.Lazy);
             builder.RegisterType(typeof(NodeUpgradePreviewText), new[] { typeof(NodeUpgradePreviewText) }, Lifetime.Singleton, Resolution.Lazy);
             builder.RegisterValue(_classCatalog);
             builder.RegisterValue(_classesView);
