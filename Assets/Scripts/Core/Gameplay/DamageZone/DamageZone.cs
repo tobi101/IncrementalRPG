@@ -285,8 +285,10 @@ namespace Core.Gameplay
                 AttackSource.Auto => _equipment.GetEquipmentMultiplier(EquipmentStats.AutoDamage),
                 _ => 1f
             };
-            return BigDoubleMath.MultiplyAndRound(damage,
-                (double)multiplier * equipmentMultiplier * _consumables.AttackDamageMultiplier);
+            var totalMultiplier = (double)multiplier * equipmentMultiplier * _consumables.AttackDamageMultiplier;
+            return source == AttackSource.Auto
+                ? damage * totalMultiplier
+                : BigDoubleMath.MultiplyAndRound(damage, totalMultiplier);
         }
 
         public void ResetAttackTimers() => StopDamageRegistration();

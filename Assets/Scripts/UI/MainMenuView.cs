@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace UI
@@ -11,6 +13,8 @@ namespace UI
         [SerializeField] private SettingsMenuController _settingsMenu;
         [SerializeField] private GameObject _settingsPanel;
         [SerializeField] private GameObject _authorsPanel;
+        [SerializeField] private Button _authorsCloseButton;
+        [SerializeField] private Button _authorsBackdropButton;
         [SerializeField] private GameObject _miscPanelsRoot;
         [SerializeField] private GameObject _attentionPanel;
         [SerializeField] private Button _newGameConfirmButton;
@@ -51,7 +55,35 @@ namespace UI
             EnsureMiscPanelsRoot();
             UIButtonAudio.InstallInChildren(this);
             InstallMainMenuButtonHoverAudio();
+            if (_authorsCloseButton != null)
+            {
+                _authorsCloseButton.onClick.AddListener(HidePanels);
+                UIButtonAudio.EnsureOn(_authorsCloseButton, playHoverSound: true);
+                UIButtonPressScaler.EnsureOn(_authorsCloseButton);
+            }
+
+            if (_authorsBackdropButton != null)
+                _authorsBackdropButton.onClick.AddListener(HidePanels);
+
             HidePanels();
+        }
+
+        private void Update()
+        {
+            if (_authorsPanel != null && _authorsPanel.activeInHierarchy
+                && Keyboard.current?.escapeKey.wasPressedThisFrame == true)
+            {
+                HidePanels();
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (_authorsCloseButton != null)
+                _authorsCloseButton.onClick.RemoveListener(HidePanels);
+
+            if (_authorsBackdropButton != null)
+                _authorsBackdropButton.onClick.RemoveListener(HidePanels);
         }
 
         public MainMenuButtonView GetButton(MainMenuAction action)
@@ -60,11 +92,19 @@ namespace UI
             return _buttons.FirstOrDefault(button => button != null && button.Action == action);
         }
 
-        public void SetContinueVisible(bool visible)
+        public void SetContinueAvailable(bool available)
         {
             var continueButton = GetButton(MainMenuAction.Continue);
-            if (continueButton != null)
-                continueButton.gameObject.SetActive(visible);
+            if (continueButton == null)
+                return;
+
+            continueButton.gameObject.SetActive(true);
+            if (continueButton.Button != null)
+                continueButton.Button.interactable = available;
+
+            var canvasGroup = continueButton.GetComponent<CanvasGroup>();
+            if (canvasGroup != null)
+                canvasGroup.alpha = available ? 1f : 0.5f;
         }
 
         public void SetButtonsInteractable(bool interactable)
@@ -96,7 +136,13 @@ namespace UI
             ShowPanel(_settingsPanel, "Settings");
         }
 
-        public void ShowAuthors() => ShowPanel(_authorsPanel, "Authors");
+        public void ShowAuthors()
+        {
+            ShowPanel(_authorsPanel, "Authors");
+
+            if (_authorsCloseButton != null && EventSystem.current != null)
+                EventSystem.current.SetSelectedGameObject(_authorsCloseButton.gameObject);
+        }
 
         public void ShowAttention()
         {
@@ -125,6 +171,7 @@ namespace UI
 
         public void HidePanels()
         {
+            bool authorsWereVisible = IsPanelVisible(_authorsPanel);
             EnsureSettingsPanel();
             EnsureAttentionPanel();
             EnsureMiscPanelsRoot();
@@ -142,6 +189,13 @@ namespace UI
                 _attentionPanel.SetActive(false);
 
             SetMiscPanelsVisible(false);
+
+            if (authorsWereVisible && EventSystem.current != null)
+            {
+                var authorsButton = GetButton(MainMenuAction.Authors);
+                if (authorsButton != null)
+                    EventSystem.current.SetSelectedGameObject(authorsButton.gameObject);
+            }
         }
 
         private void EnsureButtons()
@@ -247,6 +301,7 @@ namespace UI
             }
 
             HidePanels();
+            SetMiscPanelsVisible(true);
             panel.SetActive(true);
         }
     }

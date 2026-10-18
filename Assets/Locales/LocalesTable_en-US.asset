@@ -2270,6 +2270,50 @@ MonoBehaviour:
     m_Localized: Increases the damage from automatic attack
     m_Metadata:
       m_Items: []
+  - m_Id: 56116900533362688
+    m_Localized: Game Design
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528512
+    m_Localized: Daniil Prasolov
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528513
+    m_Localized: Programming
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528514
+    m_Localized: Sergey Reshetnikov
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528515
+    m_Localized: Art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528516
+    m_Localized: Ksenia Bagan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528517
+    m_Localized: Animation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528518
+    m_Localized: Semyon Popov
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528519
+    m_Localized: Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528520
+    m_Localized: Marketing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528521
+    m_Localized: Daniel Stone
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

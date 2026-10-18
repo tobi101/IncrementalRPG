@@ -30,7 +30,7 @@ namespace Entity
         {
             if (!IsAlive) return;
 
-            amount = BigDoubleMath.SanitizeNonNegativeInteger(amount, BigDouble.Zero);
+            amount = amount.NormalizedOr(BigDouble.Zero);
             if (amount <= BigDouble.Zero) return;
 
             var previousHealth = CurrentHP;

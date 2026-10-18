@@ -2228,6 +2228,50 @@ MonoBehaviour:
     m_Key: skill_auto_damage_description
     m_Metadata:
       m_Items: []
+  - m_Id: 56116900533362688
+    m_Key: authors.role.game_design
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528512
+    m_Key: authors.name.daniil_prasolov
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528513
+    m_Key: authors.role.programming
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528514
+    m_Key: authors.name.sergey_reshetnikov
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528515
+    m_Key: authors.role.art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528516
+    m_Key: authors.name.ksenia_bagan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528517
+    m_Key: authors.role.animation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528518
+    m_Key: authors.name.semyon_popov
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528519
+    m_Key: authors.role.sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528520
+    m_Key: authors.role.marketing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56116900558528521
+    m_Key: authors.name.daniel_stone
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -13,6 +13,7 @@ namespace UI
         [SerializeField] private AudioManager _audioManager;
         [SerializeField] private bool _playMusicOnStart = true;
         [SerializeField] private IntroPanelPlayer _introPlayer;
+        [SerializeField] private string _steamWishlistUrl = "https://store.steampowered.com/app/5305930/Rufus_Incremental_rpg/";
 
         private readonly SaveStorage _saveStorage = new SaveStorage();
         private bool _isLoadingGame;
@@ -57,6 +58,7 @@ namespace UI
             Bind(MainMenuAction.Settings, ShowSettings);
             Bind(MainMenuAction.Authors, ShowAuthors);
             Bind(MainMenuAction.Exit, ExitGame);
+            Bind(MainMenuAction.SteamWishlist, OpenSteamWishlist);
             Bind(_view.NewGameConfirmButton, ConfirmNewGame);
             Bind(_view.NewGameCancelButton, CancelNewGame);
         }
@@ -71,6 +73,7 @@ namespace UI
             Unbind(MainMenuAction.Settings, ShowSettings);
             Unbind(MainMenuAction.Authors, ShowAuthors);
             Unbind(MainMenuAction.Exit, ExitGame);
+            Unbind(MainMenuAction.SteamWishlist, OpenSteamWishlist);
             Unbind(_view.NewGameConfirmButton, ConfirmNewGame);
             Unbind(_view.NewGameCancelButton, CancelNewGame);
         }
@@ -116,7 +119,7 @@ namespace UI
 
         private void RefreshContinueButton()
         {
-            _view.SetContinueVisible(_saveStorage.HasSave());
+            _view.SetContinueAvailable(_saveStorage.HasSave());
         }
 
         private void RequestNewGame()
@@ -193,6 +196,12 @@ namespace UI
         private void ShowSettings() => _view.ShowSettings();
 
         private void ShowAuthors() => _view.ShowAuthors();
+
+        private void OpenSteamWishlist()
+        {
+            if (!string.IsNullOrWhiteSpace(_steamWishlistUrl))
+                Application.OpenURL(_steamWishlistUrl);
+        }
 
         private void ExitGame()
         {
