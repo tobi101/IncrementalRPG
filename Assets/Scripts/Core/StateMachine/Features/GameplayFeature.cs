@@ -31,7 +31,6 @@ namespace Core.StateMachine.Features
         [Inject] private SkillTreeService _skillTree;
         [Inject] private AudioManager _audioManager;
         [Inject] private RunConsumableService _consumables;
-        [Inject] private Core.Classes.ClassProgressionService _classes;
 
         public event Action OnSessionExpired;
         public event Action<BigDouble, BigDouble> OnSessionGoldEarned;
@@ -265,16 +264,11 @@ namespace Core.StateMachine.Features
 
         private void ReachDemoLimit()
         {
-            // The introduction requires the XP goal of the actual last level, not merely reaching it.
+            // Complete the dungeon only after reaching the final level's XP goal.
             if (_currentLevelIndex == _currentDungeon.LevelCount - 1 && _levelExperience.IsGoalReached)
             {
                 ApplySessionResults();
                 _dungeonSelection.MarkCompleted(_currentDungeon);
-                if (_classes.RequiresIntroduction(_currentDungeon))
-                {
-                    ExpireSession(); // Results first; their close action routes to the mandatory class choice.
-                    return;
-                }
             }
             _consumables.EndRun();
             _runState = RunState.DemoLimitReached;
@@ -438,8 +432,7 @@ namespace Core.StateMachine.Features
                 return;
             }
 
-            if (!_dungeonSelection.HasDemoEndAcknowledged(_currentDungeon) ||
-                (_currentLevelIndex == _currentDungeon.LevelCount - 1 && _classes.RequiresIntroduction(_currentDungeon)))
+            if (!_dungeonSelection.HasDemoEndAcknowledged(_currentDungeon))
                 _pendingDemoLimit = true;
             else if (_currentLevelIndex == _currentDungeon.LevelCount - 1)
                 _dungeonSelection.MarkCompleted(_currentDungeon);
