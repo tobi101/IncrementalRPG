@@ -11,6 +11,7 @@ namespace UI
         [SerializeField] private Button _button;
         [SerializeField] private Image _glowImage;
         [SerializeField] private TMP_Text _text;
+        [SerializeField] private GameObject _firstVisitMarker;
         [SerializeField] private SkeletonGraphic _hoverSkeleton;
         [SerializeField] private string _idleAnimationName = "idle";
         [SerializeField] private string _hoverAnimationName = "hover";
@@ -18,6 +19,12 @@ namespace UI
         [SerializeField] private bool _hoverAnimationLoop = true;
 
         public Button Button => _button;
+
+        public void SetFirstVisitMarkerVisible(bool visible)
+        {
+            if (_firstVisitMarker != null)
+                _firstVisitMarker.SetActive(visible);
+        }
 
         private void Reset()
         {

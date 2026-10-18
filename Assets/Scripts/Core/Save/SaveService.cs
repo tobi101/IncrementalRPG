@@ -24,7 +24,7 @@ namespace Core.Save
         public SaveService(IEnumerable<ISaveable> saveables, GameplayFeature gameplayFeature,
             SkillTreeService skillTreeService, DungeonSelectionService dungeonSelectionService,
             Player player, PlayerItemStorage itemStorage, RunConsumableService consumables, Core.Forge.ForgeService forge,
-            Core.Classes.ClassProgressionService classes)
+            Core.Classes.ClassProgressionService classes, HubVisitProgress hubVisits)
         {
             _saveables = new List<ISaveable>(saveables);
             _data = _storage.LoadOrDefault();
@@ -42,6 +42,7 @@ namespace Core.Save
             consumables.OnEffectsChanged += Save;
             forge.OnChanged += Save;
             classes.OnChanged += Save;
+            hubVisits.OnChanged += Save;
 
             // Load events happen before subscriptions. Persist a completed migration now,
             // even if the player quits without moving an item or starting a forge attempt.

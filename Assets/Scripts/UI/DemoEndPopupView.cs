@@ -15,6 +15,9 @@ namespace UI
         [SerializeField, Range(0f, 100f)] private float _blurIntensity = 12f;
         [SerializeField] private bool _useLowResBlur;
 
+        [Header("Show Transition")]
+        [SerializeField, Min(0f)] private float _showDuration = 0.6f;
+
         [Header("Buttons")]
         [SerializeField] private Button _continueButton;
         [SerializeField] private Button _wishlistButton;
@@ -26,6 +29,7 @@ namespace UI
         private RenderTexture _capturedTexture;
         private Material _runtimeBlurMaterial;
         private Coroutine _showRoutine;
+        private CanvasGroup _canvasGroup;
         private bool _isInitialized;
 
         private void Awake()
@@ -57,6 +61,8 @@ namespace UI
 
             gameObject.SetActive(true);
             SetPopupVisualsVisible(false);
+            _canvasGroup.alpha = 0f;
+            _canvasGroup.interactable = false;
 
             if (_showRoutine != null)
                 StopCoroutine(_showRoutine);
@@ -73,6 +79,11 @@ namespace UI
             }
 
             ReleaseCapturedTexture();
+            if (_canvasGroup != null)
+            {
+                _canvasGroup.alpha = 0f;
+                _canvasGroup.interactable = false;
+            }
             gameObject.SetActive(false);
             _onContinueClicked = null;
             _onMainMenuClicked = null;
@@ -84,6 +95,20 @@ namespace UI
 
             CaptureBackground();
             SetPopupVisualsVisible(true);
+
+            var elapsed = 0f;
+            while (elapsed < _showDuration)
+            {
+                var progress = Mathf.SmoothStep(0f, 1f, elapsed / _showDuration);
+                _canvasGroup.alpha = progress;
+                SetBlurIntensity(_blurIntensity * progress);
+                elapsed += Time.unscaledDeltaTime;
+                yield return null;
+            }
+
+            _canvasGroup.alpha = 1f;
+            _canvasGroup.interactable = true;
+            SetBlurIntensity(_blurIntensity);
             _showRoutine = null;
         }
 
@@ -95,18 +120,40 @@ namespace UI
             ReleaseCapturedTexture();
 
             var downscale = Mathf.Max(1, _captureDownscale);
-            var width = Mathf.Max(1, Screen.width / downscale);
-            var height = Mathf.Max(1, Screen.height / downscale);
+            var screenWidth = Mathf.Max(1, Screen.width);
+            var screenHeight = Mathf.Max(1, Screen.height);
+            var width = Mathf.Max(1, screenWidth / downscale);
+            var height = Mathf.Max(1, screenHeight / downscale);
 
             _capturedTexture = new RenderTexture(width, height, 0, RenderTextureFormat.Default)
             {
-                name = "DemoEndBlurBackground"
+                name = "DemoEndBlurBackground",
+                filterMode = FilterMode.Bilinear,
+                wrapMode = TextureWrapMode.Clamp
             };
             _capturedTexture.Create();
 
-            ScreenCapture.CaptureScreenshotIntoRenderTexture(_capturedTexture);
+            // Capture the entire backbuffer before resizing; a smaller capture target can crop the frame.
+            var fullResolutionCapture = RenderTexture.GetTemporary(screenWidth, screenHeight, 0, RenderTextureFormat.Default);
+            var previousActive = RenderTexture.active;
+            try
+            {
+                ScreenCapture.CaptureScreenshotIntoRenderTexture(fullResolutionCapture);
+                Graphics.Blit(fullResolutionCapture, _capturedTexture);
+            }
+            finally
+            {
+                RenderTexture.active = previousActive;
+                RenderTexture.ReleaseTemporary(fullResolutionCapture);
+            }
+
+            // Screen captures use the graphics API's vertical origin; UI UVs start at the bottom.
+            _blurBackground.uvRect = SystemInfo.graphicsUVStartsAtTop
+                ? new Rect(0f, 1f, 1f, -1f)
+                : new Rect(0f, 0f, 1f, 1f);
             _blurBackground.texture = _capturedTexture;
             _blurBackground.material = GetBlurMaterial();
+            SetBlurIntensity(0f);
         }
 
         private Material GetBlurMaterial()
@@ -132,15 +179,24 @@ namespace UI
 
             _runtimeBlurMaterial.EnableKeyword("BLUR_ON");
             SetKeyword(_runtimeBlurMaterial, "BLURISHD_ON", _useLowResBlur);
-            _runtimeBlurMaterial.SetFloat("_BlurIntensity", _blurIntensity);
             _runtimeBlurMaterial.SetFloat("_BlurHD", _useLowResBlur ? 1f : 0f);
             return _runtimeBlurMaterial;
+        }
+
+        private void SetBlurIntensity(float intensity)
+        {
+            if (_runtimeBlurMaterial != null)
+                _runtimeBlurMaterial.SetFloat("_BlurIntensity", intensity);
         }
 
         private void EnsureInitialized()
         {
             if (_isInitialized)
                 return;
+
+            _canvasGroup = GetComponent<CanvasGroup>();
+            if (_canvasGroup == null)
+                _canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
             AddListener(_continueButton, OnContinueButtonClicked);
             AddListener(_wishlistButton, OnWishlistButtonClicked);
