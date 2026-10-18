@@ -121,7 +121,7 @@ namespace Core.TestSkillTree.View
                 ? level : null;
         }
 
-        private static string Number(float value) => value.ToString("0.##", EquipmentStats.Culture);
+        private static string Number(float value) => BigDoubleFormatter.Format(value);
         private static string Signed(float value) => (value >= 0f ? "+" : "") + Number(value);
         private static string Seconds(float value) => Number(value) + " " + ItemText.Get("skill.preview.seconds");
     }

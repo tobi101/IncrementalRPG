@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using Utils;
 
 namespace Core.Items
 {
@@ -36,7 +37,7 @@ namespace Core.Items
 
         public static CultureInfo Culture => LocalizationSettings.SelectedLocale?.Identifier.CultureInfo ?? CultureInfo.InvariantCulture;
 
-        public static string FormatPercent(float value) => "+" + (value * 100f).ToString("0.##", Culture) + "%";
+        public static string FormatPercent(float value) => "+" + BigDoubleFormatter.Format(value * 100f) + "%";
 
         public static string RarityName(ItemRarity rarity) => ItemText.Get("item.rarity." + rarity.ToString().ToLowerInvariant());
 

@@ -39,7 +39,7 @@ namespace UI
             StopAllCoroutines();
             _onHubClicked = onHubClicked;
             _goldText.text = gold.ToString();
-            _killsText.text = kills.ToString();
+            _killsText.text = BigDoubleFormatter.Format(kills, 0);
             gameObject.SetActive(true);
             SetRecordText(_goldRecordText, isNewGoldRecord, _goldRecordBaseScale);
             SetRecordText(_killsRecordText, isNewKillsRecord, _killsRecordBaseScale);

@@ -116,7 +116,7 @@ namespace UI.Inventory
             _values[index].gameObject.SetActive(visible);
         }
 
-        private static string Number(float value) => value.ToString("0.##", EquipmentStats.Culture);
+        private static string Number(float value) => BigDoubleFormatter.Format(value);
         private static string Frequency(float interval) => ItemText.Get("equipment.per_second", Number(1f / interval));
     }
 }

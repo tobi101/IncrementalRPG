@@ -188,7 +188,7 @@ namespace UI
                 _killsDisplayed += (_killsTarget - _killsDisplayed) * Time.deltaTime * LerpSpeed;
                 if (_killsTarget - _killsDisplayed < 0.5f) _killsDisplayed = _killsTarget;
                 if (_killsText != null)
-                    _killsText.text = ((int)_killsDisplayed).ToString();
+                    _killsText.text = BigDoubleFormatter.Format((int)_killsDisplayed, 0);
             }
 
             if (_experienceDisplayed < _experienceTarget)
