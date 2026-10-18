@@ -33,7 +33,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  icon: {fileID: 21300000, guid: 46510039e8b9f4e3d9c364833899b8da, type: 3}
+  icon: {fileID: -6234504357221995971, guid: ae53c2b9a8d6a449bafef1c733e68394, type: 3}
   category: 1
   stackable: 0
   maxStackSize: 1
@@ -45,12 +45,7 @@ MonoBehaviour:
   rarity: 0
   equipmentSlot: 3
   defaultStats: []
-  forgeNameKeys:
-  - forge.name.weapon1
-  - forge.name.weapon2
-  - forge.name.weapon3
-  forgeIcons:
-  - {fileID: 21300000, guid: 46510039e8b9f4e3d9c364833899b8da, type: 3}
+  appearanceCatalog: {fileID: 11400000, guid: a7dad37df726f412cb73c5e94cacbada, type: 2}
   effectId: 
   effectValue: 0
   forgeModifierId: 

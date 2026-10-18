@@ -171,7 +171,7 @@ namespace IncrementalRPG.Tests
             catalog.classes = new[] { fire, ice };
             var dungeons = new DungeonSelectionService();
             dungeons.MarkCompleted(catalog.introductionDungeon);
-            var items = new PlayerItemStorage(Asset<ItemCatalog>());
+            var items = new PlayerItemStorage(Asset<ItemCatalog>(), Asset<Core.Forge.ForgeConfig>());
             var service = new ClassProgressionService(catalog, dungeons, _player, items);
 
             Assert.That(service.ChooseFirst(fire), Is.True);

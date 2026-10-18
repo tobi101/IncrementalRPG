@@ -8,13 +8,15 @@ namespace Core.Forge
     [Serializable]
     public sealed class ForgeLevelSettings
     {
-        public BigDouble shardCost = 5;
-        public float[] rarityWeights = { 60, 30, 9, 1 };
+        public BigDouble shardCost = 50;
+        public float[] rarityWeights = { 80, 19, 0, 1 };
+        [Tooltip("Total base bonus percentages for Common, Rare, Unique, Legendary. Each bonus is a positive multiple of 2%.")]
+        public int[] statBudgets = { 50, 100, 136, 200 };
         [Min(.2f)] public float cursorPeriod = 2.2f;
         [Tooltip("Full width of each centered success range, as a fraction of the gauge.")]
-        [Range(0, 1)] public float rarityRange = .06f;
-        [Range(0, 1)] public float allStatsRange = .24f;
-        [Range(0, 1)] public float oneStatRange = .60f;
+        [Range(0, 1)] public float rarityRange = .02f;
+        [Range(0, 1)] public float allStatsRange = .50f;
+        [Range(0, 1)] public float oneStatRange = .70f;
         [Min(0)] public float allStatsBonus = .10f;
         [Min(0)] public float oneStatBonus = .15f;
     }
@@ -27,22 +29,19 @@ namespace Core.Forge
         public ForgeLevelSettings[] levels = { new(), new(), new(), new() };
         [Tooltip("Helmet, chest and weapon definitions. One definition per type; all types have equal chances.")]
         public ItemDefinition[] equipment;
-        [Tooltip("Minimum and maximum fractional bonuses for Common, Rare, Unique, Legendary.")]
-        public Vector2[] statRanges = { new(.03f, .07f), new(.06f, .12f), new(.10f, .18f), new(.15f, .25f) };
-        [Min(0)] public float goldPerBonusPercent = 2f;
+        [Min(0)] public float goldPerBonusPercent = 30f;
 
         public ForgeLevelSettings GetLevel(int level) => levels[Mathf.Clamp(level - 1, 0, levels.Length - 1)];
 
         public bool IsValid()
         {
             if (levels == null || levels.Length == 0 || equipment == null || equipment.Length != 3 ||
-                statRanges == null || statRanges.Length != 4 || !Finite(goldPerBonusPercent) || goldPerBonusPercent < 0) return false;
+                !Finite(goldPerBonusPercent) || goldPerBonusPercent < 0) return false;
             var slots = new System.Collections.Generic.HashSet<EquipmentSlot>();
             foreach (var item in equipment)
                 if (item == null || item.category != ItemCategory.Armor || !EquipmentStats.IsSupportedSlot(item.equipmentSlot) ||
-                    !slots.Add(item.equipmentSlot) || item.icon == null) return false;
-            foreach (var range in statRanges)
-                if (!Finite(range.x) || !Finite(range.y) || range.x < 0 || range.y < range.x) return false;
+                    !slots.Add(item.equipmentSlot) || item.icon == null || item.appearanceCatalog == null ||
+                    !item.appearanceCatalog.IsValid()) return false;
             foreach (var level in levels)
             {
                 if (level == null || level.shardCost <= 0 ||
@@ -54,6 +53,11 @@ namespace Core.Forge
                 double total = 0;
                 foreach (var weight in level.rarityWeights) { if (!Finite(weight) || weight < 0) return false; total += weight; }
                 if (total <= 0) return false;
+                if (level.statBudgets == null || level.statBudgets.Length != 4) return false;
+                for (var i = 0; i < 4; i++)
+                    if (level.statBudgets[i] < (i + 2) * ForgeStatRoller.StepPercent ||
+                        level.statBudgets[i] % ForgeStatRoller.StepPercent != 0 ||
+                        (i > 0 && level.statBudgets[i] - level.statBudgets[i - 1] < ForgeStatRoller.StepPercent)) return false;
             }
             return true;
         }

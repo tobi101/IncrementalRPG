@@ -65,9 +65,8 @@ namespace Core.Items
         public EquipmentSlot equipmentSlot;
         public ItemStatDefinition[] defaultStats = Array.Empty<ItemStatDefinition>();
 
-        [Header("Forge appearance (chosen independently)")]
-        public string[] forgeNameKeys = Array.Empty<string>();
-        public Sprite[] forgeIcons = Array.Empty<Sprite>();
+        [Header("Forge appearances")]
+        public EquipmentAppearanceCatalog appearanceCatalog;
 
         [Header("Consumable")]
         public string effectId;
@@ -104,9 +103,12 @@ namespace Core.Items
         public string GetDisplayName(PlayerItemInstanceState item) => string.IsNullOrEmpty(item?.RolledNameKey)
             ? GetDisplayName() : ItemText.Get(item.RolledNameKey);
 
-        public Sprite GetIcon(PlayerItemInstanceState item) => item != null && item.RolledIconIndex >= 0 &&
-            item.RolledIconIndex < forgeIcons.Length && forgeIcons[item.RolledIconIndex] != null
-                ? forgeIcons[item.RolledIconIndex] : icon;
+        public Sprite GetIcon(PlayerItemInstanceState item)
+        {
+            if (appearanceCatalog != null && appearanceCatalog.TryGet(item?.AppearanceId, out var appearance) &&
+                appearance.slot == equipmentSlot) return appearance.icon;
+            return icon;
+        }
 
         public string GetDescription(float? value = null) => localizedDescription == null || localizedDescription.IsEmpty
             ? description : localizedDescription.GetLocalizedString(value ??

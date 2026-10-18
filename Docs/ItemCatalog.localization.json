@@ -1,0 +1,1084 @@
+{
+  "entries": [
+    {
+      "key": "equipment.name.1",
+      "ru": "Банальная шапка",
+      "en": "Banal Cap",
+      "zh": "平庸的布帽"
+    },
+    {
+      "key": "equipment.name.2",
+      "ru": "Примитивная шапка",
+      "en": "Primitive Cap",
+      "zh": "粗陋的布帽"
+    },
+    {
+      "key": "equipment.name.3",
+      "ru": "Дырявая шапка",
+      "en": "Holey Cap",
+      "zh": "破洞的布帽"
+    },
+    {
+      "key": "equipment.name.4",
+      "ru": "Простая шапка",
+      "en": "Plain Cap",
+      "zh": "简朴的布帽"
+    },
+    {
+      "key": "equipment.name.5",
+      "ru": "Обыкновенная шапка",
+      "en": "Ordinary Cap",
+      "zh": "普通的布帽"
+    },
+    {
+      "key": "equipment.name.6",
+      "ru": "Банальная маска",
+      "en": "Banal Mask",
+      "zh": "平庸的面具"
+    },
+    {
+      "key": "equipment.name.7",
+      "ru": "Примитивная маска",
+      "en": "Primitive Mask",
+      "zh": "粗陋的面具"
+    },
+    {
+      "key": "equipment.name.8",
+      "ru": "Дырявая маска",
+      "en": "Holey Mask",
+      "zh": "破洞的面具"
+    },
+    {
+      "key": "equipment.name.9",
+      "ru": "Простая маска",
+      "en": "Plain Mask",
+      "zh": "简朴的面具"
+    },
+    {
+      "key": "equipment.name.10",
+      "ru": "Обыкновенная маска",
+      "en": "Ordinary Mask",
+      "zh": "普通的面具"
+    },
+    {
+      "key": "equipment.name.11",
+      "ru": "Банальная ушанка",
+      "en": "Banal Ushanka",
+      "zh": "平庸的护耳帽"
+    },
+    {
+      "key": "equipment.name.12",
+      "ru": "Примитивная ушанка",
+      "en": "Primitive Ushanka",
+      "zh": "粗陋的护耳帽"
+    },
+    {
+      "key": "equipment.name.13",
+      "ru": "Дырявая ушанка",
+      "en": "Holey Ushanka",
+      "zh": "破洞的护耳帽"
+    },
+    {
+      "key": "equipment.name.14",
+      "ru": "Простая ушанка",
+      "en": "Plain Ushanka",
+      "zh": "简朴的护耳帽"
+    },
+    {
+      "key": "equipment.name.15",
+      "ru": "Обыкновенная ушанка",
+      "en": "Ordinary Ushanka",
+      "zh": "普通的护耳帽"
+    },
+    {
+      "key": "equipment.name.16",
+      "ru": "Укреплённый шлем",
+      "en": "Reinforced Helm",
+      "zh": "加固的头盔"
+    },
+    {
+      "key": "equipment.name.17",
+      "ru": "Закалённый шлем",
+      "en": "Hardened Helm",
+      "zh": "淬炼的头盔"
+    },
+    {
+      "key": "equipment.name.18",
+      "ru": "Надёжный шлем",
+      "en": "Reliable Helm",
+      "zh": "可靠的头盔"
+    },
+    {
+      "key": "equipment.name.19",
+      "ru": "Искусный шлем",
+      "en": "Masterwork Helm",
+      "zh": "精工的头盔"
+    },
+    {
+      "key": "equipment.name.20",
+      "ru": "Добротный шлем",
+      "en": "Well-made Helm",
+      "zh": "优制的头盔"
+    },
+    {
+      "key": "equipment.name.21",
+      "ru": "Укреплённый капюшон",
+      "en": "Reinforced Hood",
+      "zh": "加固的兜帽"
+    },
+    {
+      "key": "equipment.name.22",
+      "ru": "Закалённый капюшон",
+      "en": "Hardened Hood",
+      "zh": "淬炼的兜帽"
+    },
+    {
+      "key": "equipment.name.23",
+      "ru": "Надёжный капюшон",
+      "en": "Reliable Hood",
+      "zh": "可靠的兜帽"
+    },
+    {
+      "key": "equipment.name.24",
+      "ru": "Искусный капюшон",
+      "en": "Masterwork Hood",
+      "zh": "精工的兜帽"
+    },
+    {
+      "key": "equipment.name.25",
+      "ru": "Добротный капюшон",
+      "en": "Well-made Hood",
+      "zh": "优制的兜帽"
+    },
+    {
+      "key": "equipment.name.26",
+      "ru": "Укреплённый колпак",
+      "en": "Reinforced Conical Hat",
+      "zh": "加固的尖顶帽"
+    },
+    {
+      "key": "equipment.name.27",
+      "ru": "Закалённый колпак",
+      "en": "Hardened Conical Hat",
+      "zh": "淬炼的尖顶帽"
+    },
+    {
+      "key": "equipment.name.28",
+      "ru": "Надёжный колпак",
+      "en": "Reliable Conical Hat",
+      "zh": "可靠的尖顶帽"
+    },
+    {
+      "key": "equipment.name.29",
+      "ru": "Искусный колпак",
+      "en": "Masterwork Conical Hat",
+      "zh": "精工的尖顶帽"
+    },
+    {
+      "key": "equipment.name.30",
+      "ru": "Добротный колпак",
+      "en": "Well-made Conical Hat",
+      "zh": "优制的尖顶帽"
+    },
+    {
+      "key": "equipment.name.31",
+      "ru": "Древняя корона",
+      "en": "Ancient Crown",
+      "zh": "古老的王冠"
+    },
+    {
+      "key": "equipment.name.32",
+      "ru": "Астральная корона",
+      "en": "Astral Crown",
+      "zh": "星界的王冠"
+    },
+    {
+      "key": "equipment.name.33",
+      "ru": "Призрачная корона",
+      "en": "Ghostly Crown",
+      "zh": "幽灵的王冠"
+    },
+    {
+      "key": "equipment.name.34",
+      "ru": "Зачарованная корона",
+      "en": "Enchanted Crown",
+      "zh": "附魔的王冠"
+    },
+    {
+      "key": "equipment.name.35",
+      "ru": "Избранная корона",
+      "en": "Chosen Crown",
+      "zh": "天选的王冠"
+    },
+    {
+      "key": "equipment.name.36",
+      "ru": "Древний немес",
+      "en": "Ancient Nemes",
+      "zh": "古老的奈姆斯头巾"
+    },
+    {
+      "key": "equipment.name.37",
+      "ru": "Астральный немес",
+      "en": "Astral Nemes",
+      "zh": "星界的奈姆斯头巾"
+    },
+    {
+      "key": "equipment.name.38",
+      "ru": "Призрачный немес",
+      "en": "Ghostly Nemes",
+      "zh": "幽灵的奈姆斯头巾"
+    },
+    {
+      "key": "equipment.name.39",
+      "ru": "Зачарованный немес",
+      "en": "Enchanted Nemes",
+      "zh": "附魔的奈姆斯头巾"
+    },
+    {
+      "key": "equipment.name.40",
+      "ru": "Избранный немес",
+      "en": "Chosen Nemes",
+      "zh": "天选的奈姆斯头巾"
+    },
+    {
+      "key": "equipment.name.41",
+      "ru": "Древняя личина",
+      "en": "Ancient Visor",
+      "zh": "古老的面甲"
+    },
+    {
+      "key": "equipment.name.42",
+      "ru": "Астральная личина",
+      "en": "Astral Visor",
+      "zh": "星界的面甲"
+    },
+    {
+      "key": "equipment.name.43",
+      "ru": "Призрачная личина",
+      "en": "Ghostly Visor",
+      "zh": "幽灵的面甲"
+    },
+    {
+      "key": "equipment.name.44",
+      "ru": "Зачарованная личина",
+      "en": "Enchanted Visor",
+      "zh": "附魔的面甲"
+    },
+    {
+      "key": "equipment.name.45",
+      "ru": "Избранная личина",
+      "en": "Chosen Visor",
+      "zh": "天选的面甲"
+    },
+    {
+      "key": "equipment.name.46",
+      "ru": "Бессмертный тиарадор",
+      "en": "Immortal Tiarador",
+      "zh": "不朽的蒂亚拉多"
+    },
+    {
+      "key": "equipment.name.47",
+      "ru": "Титанический тиарадор",
+      "en": "Titanic Tiarador",
+      "zh": "泰坦的蒂亚拉多"
+    },
+    {
+      "key": "equipment.name.48",
+      "ru": "Сокрушительный тиарадор",
+      "en": "Crushing Tiarador",
+      "zh": "摧毁的蒂亚拉多"
+    },
+    {
+      "key": "equipment.name.49",
+      "ru": "Абсолютный тиарадор",
+      "en": "Absolute Tiarador",
+      "zh": "绝对的蒂亚拉多"
+    },
+    {
+      "key": "equipment.name.50",
+      "ru": "Легендарный тиарадор",
+      "en": "Legendary Tiarador",
+      "zh": "传说的蒂亚拉多"
+    },
+    {
+      "key": "equipment.name.51",
+      "ru": "Бессмертный эгид",
+      "en": "Immortal Aegid",
+      "zh": "不朽的埃吉德"
+    },
+    {
+      "key": "equipment.name.52",
+      "ru": "Титанический эгид",
+      "en": "Titanic Aegid",
+      "zh": "泰坦的埃吉德"
+    },
+    {
+      "key": "equipment.name.53",
+      "ru": "Сокрушительный эгид",
+      "en": "Crushing Aegid",
+      "zh": "摧毁的埃吉德"
+    },
+    {
+      "key": "equipment.name.54",
+      "ru": "Абсолютный эгид",
+      "en": "Absolute Aegid",
+      "zh": "绝对的埃吉德"
+    },
+    {
+      "key": "equipment.name.55",
+      "ru": "Легендарный эгид",
+      "en": "Legendary Aegid",
+      "zh": "传说的埃吉德"
+    },
+    {
+      "key": "equipment.name.56",
+      "ru": "Бессмертный нимб",
+      "en": "Immortal Halo",
+      "zh": "不朽的光环"
+    },
+    {
+      "key": "equipment.name.57",
+      "ru": "Титанический нимб",
+      "en": "Titanic Halo",
+      "zh": "泰坦的光环"
+    },
+    {
+      "key": "equipment.name.58",
+      "ru": "Сокрушительный нимб",
+      "en": "Crushing Halo",
+      "zh": "摧毁的光环"
+    },
+    {
+      "key": "equipment.name.59",
+      "ru": "Абсолютный нимб",
+      "en": "Absolute Halo",
+      "zh": "绝对的光环"
+    },
+    {
+      "key": "equipment.name.60",
+      "ru": "Легендарный нимб",
+      "en": "Legendary Halo",
+      "zh": "传说的光环"
+    },
+    {
+      "key": "equipment.name.61",
+      "ru": "Дырявая тряпка",
+      "en": "Holey Rag",
+      "zh": "破洞的破布"
+    },
+    {
+      "key": "equipment.name.62",
+      "ru": "Поношенная тряпка",
+      "en": "Worn Rag",
+      "zh": "破旧的破布"
+    },
+    {
+      "key": "equipment.name.63",
+      "ru": "Грязная тряпка",
+      "en": "Dirty Rag",
+      "zh": "肮脏的破布"
+    },
+    {
+      "key": "equipment.name.64",
+      "ru": "Заплатанная тряпка",
+      "en": "Patched Rag",
+      "zh": "缝补的破布"
+    },
+    {
+      "key": "equipment.name.65",
+      "ru": "Простая тряпка",
+      "en": "Plain Rag",
+      "zh": "简朴的破布"
+    },
+    {
+      "key": "equipment.name.66",
+      "ru": "Дырявая накидка",
+      "en": "Holey Cape",
+      "zh": "破洞的披风"
+    },
+    {
+      "key": "equipment.name.67",
+      "ru": "Поношенная накидка",
+      "en": "Worn Cape",
+      "zh": "破旧的披风"
+    },
+    {
+      "key": "equipment.name.68",
+      "ru": "Грязная накидка",
+      "en": "Dirty Cape",
+      "zh": "肮脏的披风"
+    },
+    {
+      "key": "equipment.name.69",
+      "ru": "Заплатанная накидка",
+      "en": "Patched Cape",
+      "zh": "缝补的披风"
+    },
+    {
+      "key": "equipment.name.70",
+      "ru": "Простая накидка",
+      "en": "Plain Cape",
+      "zh": "简朴的披风"
+    },
+    {
+      "key": "equipment.name.71",
+      "ru": "Дырявый жилет",
+      "en": "Holey Vest",
+      "zh": "破洞的背心"
+    },
+    {
+      "key": "equipment.name.72",
+      "ru": "Поношенный жилет",
+      "en": "Worn Vest",
+      "zh": "破旧的背心"
+    },
+    {
+      "key": "equipment.name.73",
+      "ru": "Грязный жилет",
+      "en": "Dirty Vest",
+      "zh": "肮脏的背心"
+    },
+    {
+      "key": "equipment.name.74",
+      "ru": "Заплатанный жилет",
+      "en": "Patched Vest",
+      "zh": "缝补的背心"
+    },
+    {
+      "key": "equipment.name.75",
+      "ru": "Простой жилет",
+      "en": "Plain Vest",
+      "zh": "简朴的背心"
+    },
+    {
+      "key": "equipment.name.76",
+      "ru": "Укреплённая кираса",
+      "en": "Reinforced Cuirass",
+      "zh": "加固的胸甲"
+    },
+    {
+      "key": "equipment.name.77",
+      "ru": "Закалённая кираса",
+      "en": "Hardened Cuirass",
+      "zh": "淬炼的胸甲"
+    },
+    {
+      "key": "equipment.name.78",
+      "ru": "Надёжная кираса",
+      "en": "Reliable Cuirass",
+      "zh": "可靠的胸甲"
+    },
+    {
+      "key": "equipment.name.79",
+      "ru": "Добротная кираса",
+      "en": "Well-made Cuirass",
+      "zh": "优制的胸甲"
+    },
+    {
+      "key": "equipment.name.80",
+      "ru": "Кованая кираса",
+      "en": "Forged Cuirass",
+      "zh": "锻造的胸甲"
+    },
+    {
+      "key": "equipment.name.81",
+      "ru": "Укреплённая кольчуга",
+      "en": "Reinforced Chainmail",
+      "zh": "加固的锁子甲"
+    },
+    {
+      "key": "equipment.name.82",
+      "ru": "Закалённая кольчуга",
+      "en": "Hardened Chainmail",
+      "zh": "淬炼的锁子甲"
+    },
+    {
+      "key": "equipment.name.83",
+      "ru": "Надёжная кольчуга",
+      "en": "Reliable Chainmail",
+      "zh": "可靠的锁子甲"
+    },
+    {
+      "key": "equipment.name.84",
+      "ru": "Добротная кольчуга",
+      "en": "Well-made Chainmail",
+      "zh": "优制的锁子甲"
+    },
+    {
+      "key": "equipment.name.85",
+      "ru": "Кованая кольчуга",
+      "en": "Forged Chainmail",
+      "zh": "锻造的锁子甲"
+    },
+    {
+      "key": "equipment.name.86",
+      "ru": "Укреплённый панцирь",
+      "en": "Reinforced Carapace",
+      "zh": "加固的甲壳"
+    },
+    {
+      "key": "equipment.name.87",
+      "ru": "Закаленный панцирь",
+      "en": "Hardened Carapace",
+      "zh": "淬炼的甲壳"
+    },
+    {
+      "key": "equipment.name.88",
+      "ru": "Надежный панцирь",
+      "en": "Reliable Carapace",
+      "zh": "可靠的甲壳"
+    },
+    {
+      "key": "equipment.name.89",
+      "ru": "Добротный панцирь",
+      "en": "Well-made Carapace",
+      "zh": "优制的甲壳"
+    },
+    {
+      "key": "equipment.name.90",
+      "ru": "Кованый панцирь",
+      "en": "Forged Carapace",
+      "zh": "锻造的甲壳"
+    },
+    {
+      "key": "equipment.name.91",
+      "ru": "Древний домару",
+      "en": "Ancient Do-maru",
+      "zh": "古老的胴丸"
+    },
+    {
+      "key": "equipment.name.92",
+      "ru": "Астральный домару",
+      "en": "Astral Do-maru",
+      "zh": "星界的胴丸"
+    },
+    {
+      "key": "equipment.name.93",
+      "ru": "Призрачный домару",
+      "en": "Ghostly Do-maru",
+      "zh": "幽灵的胴丸"
+    },
+    {
+      "key": "equipment.name.94",
+      "ru": "Зачарованный домару",
+      "en": "Enchanted Do-maru",
+      "zh": "附魔的胴丸"
+    },
+    {
+      "key": "equipment.name.95",
+      "ru": "Избранный домару",
+      "en": "Chosen Do-maru",
+      "zh": "天选的胴丸"
+    },
+    {
+      "key": "equipment.name.96",
+      "ru": "Древний клибанион",
+      "en": "Ancient Klibanion",
+      "zh": "古老的克利巴尼翁"
+    },
+    {
+      "key": "equipment.name.97",
+      "ru": "Астральный клибанион",
+      "en": "Astral Klibanion",
+      "zh": "星界的克利巴尼翁"
+    },
+    {
+      "key": "equipment.name.98",
+      "ru": "Призрачный клибанион",
+      "en": "Ghostly Klibanion",
+      "zh": "幽灵的克利巴尼翁"
+    },
+    {
+      "key": "equipment.name.99",
+      "ru": "Зачарованный клибанион",
+      "en": "Enchanted Klibanion",
+      "zh": "附魔的克利巴尼翁"
+    },
+    {
+      "key": "equipment.name.100",
+      "ru": "Избранный клибанион",
+      "en": "Chosen Klibanion",
+      "zh": "天选的克利巴尼翁"
+    },
+    {
+      "key": "equipment.name.101",
+      "ru": "Древняя мантия",
+      "en": "Ancient Robe",
+      "zh": "古老的长袍"
+    },
+    {
+      "key": "equipment.name.102",
+      "ru": "Астральная мантия",
+      "en": "Astral Robe",
+      "zh": "星界的长袍"
+    },
+    {
+      "key": "equipment.name.103",
+      "ru": "Призрачная мантия",
+      "en": "Ghostly Robe",
+      "zh": "幽灵的长袍"
+    },
+    {
+      "key": "equipment.name.104",
+      "ru": "Зачарованная мантия",
+      "en": "Enchanted Robe",
+      "zh": "附魔的长袍"
+    },
+    {
+      "key": "equipment.name.105",
+      "ru": "Избранная мантия",
+      "en": "Chosen Robe",
+      "zh": "天选的长袍"
+    },
+    {
+      "key": "equipment.name.106",
+      "ru": "Бессмертный бастион",
+      "en": "Immortal Bastion",
+      "zh": "不朽的堡垒"
+    },
+    {
+      "key": "equipment.name.107",
+      "ru": "Титанический бастион",
+      "en": "Titanic Bastion",
+      "zh": "泰坦的堡垒"
+    },
+    {
+      "key": "equipment.name.108",
+      "ru": "Сокрушительный бастион",
+      "en": "Crushing Bastion",
+      "zh": "摧毁的堡垒"
+    },
+    {
+      "key": "equipment.name.109",
+      "ru": "Абсолютный бастион",
+      "en": "Absolute Bastion",
+      "zh": "绝对的堡垒"
+    },
+    {
+      "key": "equipment.name.110",
+      "ru": "Легендарный бастион",
+      "en": "Legendary Bastion",
+      "zh": "传说的堡垒"
+    },
+    {
+      "key": "equipment.name.111",
+      "ru": "Бессмертный экгис",
+      "en": "Immortal Ekgis",
+      "zh": "不朽的埃克吉斯"
+    },
+    {
+      "key": "equipment.name.112",
+      "ru": "Титанический экгис",
+      "en": "Titanic Ekgis",
+      "zh": "泰坦的埃克吉斯"
+    },
+    {
+      "key": "equipment.name.113",
+      "ru": "Сокрушительный экгис",
+      "en": "Crushing Ekgis",
+      "zh": "摧毁的埃克吉斯"
+    },
+    {
+      "key": "equipment.name.114",
+      "ru": "Абсолютный экгис",
+      "en": "Absolute Ekgis",
+      "zh": "绝对的埃克吉斯"
+    },
+    {
+      "key": "equipment.name.115",
+      "ru": "Легендарный экгис",
+      "en": "Legendary Ekgis",
+      "zh": "传说的埃克吉斯"
+    },
+    {
+      "key": "equipment.name.116",
+      "ru": "Бессмертный лорикат",
+      "en": "Immortal Lorikat",
+      "zh": "不朽的洛里卡特"
+    },
+    {
+      "key": "equipment.name.117",
+      "ru": "Титанический лорикат",
+      "en": "Titanic Lorikat",
+      "zh": "泰坦的洛里卡特"
+    },
+    {
+      "key": "equipment.name.118",
+      "ru": "Сокрушительный лорикат",
+      "en": "Crushing Lorikat",
+      "zh": "摧毁的洛里卡特"
+    },
+    {
+      "key": "equipment.name.119",
+      "ru": "Абсолютный лорикат",
+      "en": "Absolute Lorikat",
+      "zh": "绝对的洛里卡特"
+    },
+    {
+      "key": "equipment.name.120",
+      "ru": "Легендарный лорикат",
+      "en": "Legendary Lorikat",
+      "zh": "传说的洛里卡特"
+    },
+    {
+      "key": "equipment.name.121",
+      "ru": "Тупая палка",
+      "en": "Blunt Stick",
+      "zh": "钝化的木棍"
+    },
+    {
+      "key": "equipment.name.122",
+      "ru": "Погнутая палка",
+      "en": "Bent Stick",
+      "zh": "弯曲的木棍"
+    },
+    {
+      "key": "equipment.name.123",
+      "ru": "Сломанная палка",
+      "en": "Broken Stick",
+      "zh": "损坏的木棍"
+    },
+    {
+      "key": "equipment.name.124",
+      "ru": "Треснувшая палка",
+      "en": "Cracked Stick",
+      "zh": "开裂的木棍"
+    },
+    {
+      "key": "equipment.name.125",
+      "ru": "Обыкновенная палка",
+      "en": "Ordinary Stick",
+      "zh": "普通的木棍"
+    },
+    {
+      "key": "equipment.name.126",
+      "ru": "Тупая ржавчина",
+      "en": "Blunt Rust",
+      "zh": "钝化的锈蚀"
+    },
+    {
+      "key": "equipment.name.127",
+      "ru": "Погнутая ржавчина",
+      "en": "Bent Rust",
+      "zh": "弯曲的锈蚀"
+    },
+    {
+      "key": "equipment.name.128",
+      "ru": "Сломанная ржавчина",
+      "en": "Broken Rust",
+      "zh": "损坏的锈蚀"
+    },
+    {
+      "key": "equipment.name.129",
+      "ru": "Треснувшая ржавчина",
+      "en": "Cracked Rust",
+      "zh": "开裂的锈蚀"
+    },
+    {
+      "key": "equipment.name.130",
+      "ru": "Обыкновенная ржавчина",
+      "en": "Ordinary Rust",
+      "zh": "普通的锈蚀"
+    },
+    {
+      "key": "equipment.name.131",
+      "ru": "Тупая дубина",
+      "en": "Blunt Club",
+      "zh": "钝化的棍棒"
+    },
+    {
+      "key": "equipment.name.132",
+      "ru": "Погнутая дубина",
+      "en": "Bent Club",
+      "zh": "弯曲的棍棒"
+    },
+    {
+      "key": "equipment.name.133",
+      "ru": "Сломанная дубина",
+      "en": "Broken Club",
+      "zh": "损坏的棍棒"
+    },
+    {
+      "key": "equipment.name.134",
+      "ru": "Треснувшая дубина",
+      "en": "Cracked Club",
+      "zh": "开裂的棍棒"
+    },
+    {
+      "key": "equipment.name.135",
+      "ru": "Обыкновенная дубина",
+      "en": "Ordinary Club",
+      "zh": "普通的棍棒"
+    },
+    {
+      "key": "equipment.name.136",
+      "ru": "Закалённый клинок",
+      "en": "Hardened Blade",
+      "zh": "淬炼的利刃"
+    },
+    {
+      "key": "equipment.name.137",
+      "ru": "Острый клинок",
+      "en": "Sharp Blade",
+      "zh": "锋利的利刃"
+    },
+    {
+      "key": "equipment.name.138",
+      "ru": "Сбалансированный клинок",
+      "en": "Balanced Blade",
+      "zh": "均衡的利刃"
+    },
+    {
+      "key": "equipment.name.139",
+      "ru": "Искусный клинок",
+      "en": "Masterwork Blade",
+      "zh": "精工的利刃"
+    },
+    {
+      "key": "equipment.name.140",
+      "ru": "Утяжеленный клинок",
+      "en": "Weighted Blade",
+      "zh": "加重的利刃"
+    },
+    {
+      "key": "equipment.name.141",
+      "ru": "Закалённая секира",
+      "en": "Hardened Battleaxe",
+      "zh": "淬炼的战斧"
+    },
+    {
+      "key": "equipment.name.142",
+      "ru": "Острая секира",
+      "en": "Sharp Battleaxe",
+      "zh": "锋利的战斧"
+    },
+    {
+      "key": "equipment.name.143",
+      "ru": "Сбалансированная секира",
+      "en": "Balanced Battleaxe",
+      "zh": "均衡的战斧"
+    },
+    {
+      "key": "equipment.name.144",
+      "ru": "Искусная секира",
+      "en": "Masterwork Battleaxe",
+      "zh": "精工的战斧"
+    },
+    {
+      "key": "equipment.name.145",
+      "ru": "Утяжелённая секира",
+      "en": "Weighted Battleaxe",
+      "zh": "加重的战斧"
+    },
+    {
+      "key": "equipment.name.146",
+      "ru": "Закалённый посох",
+      "en": "Hardened Staff",
+      "zh": "淬炼的法杖"
+    },
+    {
+      "key": "equipment.name.147",
+      "ru": "Острый посох",
+      "en": "Sharp Staff",
+      "zh": "锋利的法杖"
+    },
+    {
+      "key": "equipment.name.148",
+      "ru": "Сбалансированный посох",
+      "en": "Balanced Staff",
+      "zh": "均衡的法杖"
+    },
+    {
+      "key": "equipment.name.149",
+      "ru": "Искусный посох",
+      "en": "Masterwork Staff",
+      "zh": "精工的法杖"
+    },
+    {
+      "key": "equipment.name.150",
+      "ru": "Утяжеленный посох",
+      "en": "Weighted Staff",
+      "zh": "加重的法杖"
+    },
+    {
+      "key": "equipment.name.151",
+      "ru": "Древний жнец",
+      "en": "Ancient Reaper",
+      "zh": "古老的收割者"
+    },
+    {
+      "key": "equipment.name.152",
+      "ru": "Астральный жнец",
+      "en": "Astral Reaper",
+      "zh": "星界的收割者"
+    },
+    {
+      "key": "equipment.name.153",
+      "ru": "Призрачный жнец",
+      "en": "Ghostly Reaper",
+      "zh": "幽灵的收割者"
+    },
+    {
+      "key": "equipment.name.154",
+      "ru": "Зачарованный жнец",
+      "en": "Enchanted Reaper",
+      "zh": "附魔的收割者"
+    },
+    {
+      "key": "equipment.name.155",
+      "ru": "Пламенный жнец",
+      "en": "Flaming Reaper",
+      "zh": "烈焰的收割者"
+    },
+    {
+      "key": "equipment.name.156",
+      "ru": "Древний рассекатель",
+      "en": "Ancient Cleaver",
+      "zh": "古老的劈斩者"
+    },
+    {
+      "key": "equipment.name.157",
+      "ru": "Астральный рассекатель",
+      "en": "Astral Cleaver",
+      "zh": "星界的劈斩者"
+    },
+    {
+      "key": "equipment.name.158",
+      "ru": "Призрачный рассекатель",
+      "en": "Ghostly Cleaver",
+      "zh": "幽灵的劈斩者"
+    },
+    {
+      "key": "equipment.name.159",
+      "ru": "Зачарованный рассекатель",
+      "en": "Enchanted Cleaver",
+      "zh": "附魔的劈斩者"
+    },
+    {
+      "key": "equipment.name.160",
+      "ru": "Пламенный рассекатель",
+      "en": "Flaming Cleaver",
+      "zh": "烈焰的劈斩者"
+    },
+    {
+      "key": "equipment.name.161",
+      "ru": "Древний молот",
+      "en": "Ancient Hammer",
+      "zh": "古老的战锤"
+    },
+    {
+      "key": "equipment.name.162",
+      "ru": "Астральный молот",
+      "en": "Astral Hammer",
+      "zh": "星界的战锤"
+    },
+    {
+      "key": "equipment.name.163",
+      "ru": "Призрачный молот",
+      "en": "Ghostly Hammer",
+      "zh": "幽灵的战锤"
+    },
+    {
+      "key": "equipment.name.164",
+      "ru": "Зачарованный молот",
+      "en": "Enchanted Hammer",
+      "zh": "附魔的战锤"
+    },
+    {
+      "key": "equipment.name.165",
+      "ru": "Пламенный молот",
+      "en": "Flaming Hammer",
+      "zh": "烈焰的战锤"
+    },
+    {
+      "key": "equipment.name.166",
+      "ru": "Бессмертный рок",
+      "en": "Immortal Doom",
+      "zh": "不朽的末日"
+    },
+    {
+      "key": "equipment.name.167",
+      "ru": "Титанический рок",
+      "en": "Titanic Doom",
+      "zh": "泰坦的末日"
+    },
+    {
+      "key": "equipment.name.168",
+      "ru": "Сокрушительный рок",
+      "en": "Crushing Doom",
+      "zh": "摧毁的末日"
+    },
+    {
+      "key": "equipment.name.169",
+      "ru": "Абсолютный рок",
+      "en": "Absolute Doom",
+      "zh": "绝对的末日"
+    },
+    {
+      "key": "equipment.name.170",
+      "ru": "Всепожирающий рок",
+      "en": "All-devouring Doom",
+      "zh": "吞噬一切的末日"
+    },
+    {
+      "key": "equipment.name.171",
+      "ru": "Бессмертный каратель",
+      "en": "Immortal Punisher",
+      "zh": "不朽的惩戒者"
+    },
+    {
+      "key": "equipment.name.172",
+      "ru": "Титанический каратель",
+      "en": "Titanic Punisher",
+      "zh": "泰坦的惩戒者"
+    },
+    {
+      "key": "equipment.name.173",
+      "ru": "Сокрушительный каратель",
+      "en": "Crushing Punisher",
+      "zh": "摧毁的惩戒者"
+    },
+    {
+      "key": "equipment.name.174",
+      "ru": "Абсолютный каратель",
+      "en": "Absolute Punisher",
+      "zh": "绝对的惩戒者"
+    },
+    {
+      "key": "equipment.name.175",
+      "ru": "Всепожирающий каратель",
+      "en": "All-devouring Punisher",
+      "zh": "吞噬一切的惩戒者"
+    },
+    {
+      "key": "equipment.name.176",
+      "ru": "Бессмертный аннигилятор",
+      "en": "Immortal Annihilator",
+      "zh": "不朽的湮灭者"
+    },
+    {
+      "key": "equipment.name.177",
+      "ru": "Титанический аннигилятор",
+      "en": "Titanic Annihilator",
+      "zh": "泰坦的湮灭者"
+    },
+    {
+      "key": "equipment.name.178",
+      "ru": "Сокрушительный аннигилятор",
+      "en": "Crushing Annihilator",
+      "zh": "摧毁的湮灭者"
+    },
+    {
+      "key": "equipment.name.179",
+      "ru": "Абсолютный аннигилятор",
+      "en": "Absolute Annihilator",
+      "zh": "绝对的湮灭者"
+    },
+    {
+      "key": "equipment.name.180",
+      "ru": "Всепожирающий аннигилятор",
+      "en": "All-devouring Annihilator",
+      "zh": "吞噬一切的湮灭者"
+    }
+  ]
+}

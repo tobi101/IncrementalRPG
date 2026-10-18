@@ -29,6 +29,9 @@ namespace Core.Forge
         public float ExtraStatMin;
         public float ExtraStatMax;
         public float GoldPerBonusPercent;
+        // Zero is the original ruleset, including paid attempts in old saves.
+        public int RulesVersion;
+        public int ExtraStatPercent;
     }
 
     public interface IForgeInventoryGateway
@@ -48,6 +51,7 @@ namespace Core.Forge
         private readonly IForgeInventoryGateway _inventory;
         public event Action OnChanged;
         public ForgeAttempt Pending { get; private set; }
+        public bool MigratedOnLoad { get; private set; }
         public ForgeConfig Config => _config;
         public float CursorPosition => Pending == null ? 0 : Mathf.PingPong(Pending.CursorTravel, 1f);
 
@@ -102,16 +106,11 @@ namespace Core.Forge
             };
             var definition = slot == EquipmentSlot.None ? candidates[Random.Range(0, candidates.Length)] : candidates.Single(d => d.equipmentSlot == slot);
             var rarity = scroll?.forgeModifierId == "guaranteed_rare" ? ItemRarity.Rare : RollRarity(settings);
-            var stats = new List<ItemStatState>();
-            var available = EquipmentStats.Ids.ToList();
-            var range = _config.statRanges[(int)rarity];
-            for (var i = 0; i < (int)rarity + 2; i++) AddStat(stats, available, range);
+            var stats = ForgeStatRoller.Roll(settings.statBudgets[(int)rarity], (int)rarity + 2);
             var empowerment = scroll?.forgeModifierId == "stat_strength" ? scroll.forgeModifierValue : 0f;
-            foreach (var stat in stats) stat.Value *= 1f + empowerment;
-            var item = _storage.Create(definition, rarity, stats, Price(stats, _config.goldPerBonusPercent));
-            if (definition.forgeNameKeys.Length > 0) item.RolledNameKey = definition.forgeNameKeys[Random.Range(0, definition.forgeNameKeys.Length)];
-            if (definition.forgeIcons.Length > 0) item.RolledIconIndex = Random.Range(0, definition.forgeIcons.Length);
-            var extraRange = _config.statRanges[Mathf.Min(3, (int)rarity + 1)];
+            if (empowerment > 0)
+                foreach (var stat in stats) stat.Value = ForgeStatRoller.Boost(stat.Value, empowerment);
+            var item = _storage.Create(definition, rarity, stats, Price(stats, _config.goldPerBonusPercent, true));
             // All validation and random generation finish before either resource is spent.
             if (!_player.TrySpendShards(settings.shardCost)) { error = "forge.no_shards"; return false; }
             if (scrollItem != null) _storage.Consume(scrollItem.InstanceId);
@@ -119,7 +118,9 @@ namespace Core.Forge
             {
                 Item = item, Level = level, ScrollDefinitionId = scroll?.itemId, Precision = scroll?.forgeModifierId == "qte_precision" ? scroll.forgeModifierValue : 0f,
                 Empowerment = empowerment, Settings = JsonUtility.FromJson<ForgeLevelSettings>(JsonUtility.ToJson(settings)),
-                ExtraStatMin = extraRange.x, ExtraStatMax = extraRange.y, GoldPerBonusPercent = _config.goldPerBonusPercent
+                RulesVersion = 1,
+                ExtraStatPercent = settings.statBudgets[Mathf.Min(3, (int)rarity + 1)] - settings.statBudgets[(int)rarity],
+                GoldPerBonusPercent = _config.goldPerBonusPercent
             };
             OnChanged?.Invoke();
             return true;
@@ -147,18 +148,35 @@ namespace Core.Forge
                 case ForgeOutcome.Rarity when attempt.Item.Rarity < ItemRarity.Legendary:
                     attempt.Item.Rarity++;
                     var available = EquipmentStats.Ids.Where(id => stats.All(s => s.StatId != id)).ToList();
-                    AddStat(stats, available, new Vector2(attempt.ExtraStatMin, attempt.ExtraStatMax));
-                    stats[stats.Count - 1].Value *= 1f + attempt.Empowerment;
+                    if (attempt.RulesVersion > 0)
+                    {
+                        var index = Random.Range(0, available.Count);
+                        stats.Add(new ItemStatState { StatId = available[index],
+                            Value = ForgeStatRoller.Boost(attempt.ExtraStatPercent / 100f, attempt.Empowerment) });
+                    }
+                    else
+                    {
+                        AddLegacyStat(stats, available, new Vector2(attempt.ExtraStatMin, attempt.ExtraStatMax));
+                        stats[stats.Count - 1].Value *= 1f + attempt.Empowerment;
+                    }
                     break;
                 case ForgeOutcome.Rarity: // Legendary is the cap; the perfect hit still improves the item.
                 case ForgeOutcome.AllStats:
-                    foreach (var stat in stats) stat.Value *= 1f + attempt.Settings.allStatsBonus;
+                    foreach (var stat in stats) stat.Value = Boost(attempt, stat.Value, attempt.Settings.allStatsBonus);
                     break;
                 case ForgeOutcome.OneStat:
-                    stats[Random.Range(0, stats.Count)].Value *= 1f + attempt.Settings.oneStatBonus;
+                    var chosen = stats[Random.Range(0, stats.Count)];
+                    chosen.Value = Boost(attempt, chosen.Value, attempt.Settings.oneStatBonus);
                     break;
             }
-            attempt.Item.SellPrice = Price(stats, attempt.GoldPerBonusPercent);
+            if (attempt.RulesVersion > 0)
+            {
+                var definition = _catalog.Get(attempt.Item.ItemDefinitionId);
+                var appearance = definition.appearanceCatalog.Roll(definition.equipmentSlot, attempt.Item.Rarity);
+                attempt.Item.AppearanceId = appearance.id;
+                attempt.Item.RolledNameKey = appearance.nameKeys[Random.Range(0, appearance.nameKeys.Length)];
+            }
+            attempt.Item.SellPrice = Price(stats, attempt.GoldPerBonusPercent, attempt.RulesVersion > 0);
             attempt.Resolved = true;
             OnChanged?.Invoke();
             return true;
@@ -185,9 +203,25 @@ namespace Core.Forge
         public void Persist() => OnChanged?.Invoke();
         public void Load(SaveData data)
         {
+            MigratedOnLoad = false;
             // Unity serializes an absent inline class as an empty object. It is not a paid attempt.
             var attempt = data.ForgeAttempt;
             Pending = string.IsNullOrEmpty(attempt?.Item?.InstanceId) ? null : attempt;
+            if (Pending == null || Pending.RulesVersion > 0) return;
+            if (!_catalog.TryGet(Pending.Item.ItemDefinitionId, out var definition) ||
+                !EquipmentItemMigration.Migrate(Pending.Item, definition, _config, Pending.Resolved)) return;
+            // The paid QTE keeps its timing/zones and cursor. Only the obsolete item balance
+            // is replaced; an unresolved item still receives its appearance after QTE.
+            var budgets = _config.GetLevel(1).statBudgets;
+            Pending.Settings ??= JsonUtility.FromJson<ForgeLevelSettings>(JsonUtility.ToJson(_config.GetLevel(Pending.Level)));
+            Pending.Settings.statBudgets = (int[])budgets.Clone();
+            Pending.RulesVersion = 1;
+            Pending.ExtraStatPercent = budgets[Mathf.Min(3, (int)Pending.Item.Rarity + 1)] - budgets[(int)Pending.Item.Rarity];
+            Pending.GoldPerBonusPercent = _config.goldPerBonusPercent;
+            if (!Pending.Resolved && Pending.Empowerment > 0)
+                foreach (var stat in Pending.Item.Stats) stat.Value = ForgeStatRoller.Boost(stat.Value, Pending.Empowerment);
+            Pending.Item.SellPrice = Price(Pending.Item.Stats, Pending.GoldPerBonusPercent, true);
+            MigratedOnLoad = true;
         }
         public void Contribute(SaveData data) => data.ForgeAttempt = Pending;
 
@@ -210,13 +244,22 @@ namespace Core.Forge
             return ItemRarity.Common;
         }
 
-        private static void AddStat(List<ItemStatState> stats, List<string> available, Vector2 range)
+        private static float Boost(ForgeAttempt attempt, float value, float bonus) =>
+            attempt.RulesVersion > 0 ? ForgeStatRoller.Boost(value, bonus) : value * (1f + bonus);
+
+        private static void AddLegacyStat(List<ItemStatState> stats, List<string> available, Vector2 range)
         {
             var index = Random.Range(0, available.Count);
             stats.Add(new ItemStatState { StatId = available[index], Value = Mathf.Round(Random.Range(range.x, range.y) * 10000f) / 10000f });
             available.RemoveAt(index);
         }
 
-        private static BigDouble Price(IEnumerable<ItemStatState> stats, float rate) => Math.Floor(stats.Sum(s => (double)s.Value) * 100d * rate + .00001d);
+        private static BigDouble Price(IEnumerable<ItemStatState> stats, float rate, bool quantized)
+        {
+            var percent = stats.Sum(s => (double)s.Value) * 100d;
+            // New bonuses are stored as floats but represent exact 2% units.
+            if (quantized) percent = Math.Round(percent / 2d) * 2d;
+            return Math.Floor(percent * rate + .00001d);
+        }
     }
 }

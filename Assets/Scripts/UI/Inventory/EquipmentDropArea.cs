@@ -1,4 +1,5 @@
 using Core.Items;
+using System;
 using UDND.Core;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,19 +13,29 @@ namespace UI.Inventory
         private EquipmentSlot _slot;
         private Image _image;
         private Sprite _placeholder;
+        private Color _placeholderColor;
         private Color _normalColor;
         private Vector2 _iconSize;
+        private Action _onInventoryFull;
+        private GameObject _pointer;
 
-        public void Configure(PlayerItemStorage storage, EquipmentSlot slot, Image image)
+        public void Configure(PlayerItemStorage storage, EquipmentSlot slot, Image image, Action onInventoryFull = null)
         {
             _storage = storage;
+            _onInventoryFull = onInventoryFull;
             _slot = slot;
             _image = image;
             _placeholder = image.sprite;
-            _normalColor = image.color;
+            _placeholderColor = image.color;
+            _placeholderColor.a *= 128f / 255f;
             _iconSize = image.rectTransform.sizeDelta;
+            // DropAreaBase toggles interactable between drags. Its default disabled
+            // ColorTint must not dim equipped art; this view owns both visual states.
+            transition = Transition.None;
+            SetEquippedIcon(null);
             // DropAreaBase disables its own raycast between drags; keep a child target for unequipping.
             var pointer = new GameObject("EquipmentPointer", typeof(RectTransform), typeof(Image));
+            _pointer = pointer;
             pointer.transform.SetParent(transform, false);
             var rect = (RectTransform)pointer.transform;
             rect.anchorMin = Vector2.zero;
@@ -32,6 +43,9 @@ namespace UI.Inventory
             rect.offsetMin = rect.offsetMax = Vector2.zero;
             pointer.GetComponent<Image>().color = Color.clear;
         }
+
+        public void EnableDragging(ItemCatalog catalog, PlayerInventoryView view) =>
+            _pointer.AddComponent<EquipmentDragSlot>().Configure(_storage, catalog, _slot, view);
 
         public override bool CanAcceptDrop(DragContext context)
         {
@@ -57,12 +71,16 @@ namespace UI.Inventory
         public void OnPointerClick(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Right)
-                _storage?.Equip(_slot, null);
+                if (_storage != null && !_storage.Equip(_slot, null)) _onInventoryFull?.Invoke();
         }
 
         public void SetEquippedIcon(Sprite icon)
         {
             _image.sprite = icon != null ? icon : _placeholder;
+            _normalColor = icon != null ? Color.white : _placeholderColor;
+            _image.color = _normalColor;
+            // Cancel any Selectable tint started before Configure disabled transitions.
+            _image.CrossFadeColor(Color.white, 0f, true, true);
             _image.preserveAspect = true;
             _image.rectTransform.sizeDelta = _iconSize * (icon != null ? 1f : .92f);
         }

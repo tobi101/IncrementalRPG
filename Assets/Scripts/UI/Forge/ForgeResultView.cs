@@ -58,6 +58,7 @@ namespace UI.Forge
             var definition = _catalog.Get(item.ItemDefinitionId);
             _title.text = definition.GetDisplayName(item).ToUpperInvariant();
             _icon.sprite = definition.GetIcon(item);
+            _icon.preserveAspect = true;
             _rarity.text = EquipmentStats.RarityName(item.Rarity).ToUpperInvariant();
             _rarity.color = EquipmentStats.RarityColor(item.Rarity);
             _effect.SetAccent(_rarity.color);

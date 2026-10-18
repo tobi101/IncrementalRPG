@@ -1,0 +1,1507 @@
+{
+  "schemaVersion": 1,
+  "scope": "equipment_appearance_mapping_without_classes",
+  "source": {
+    "spreadsheetId": "1205sJh8Ym98Yew5qXs7VF4WXyQweSgmjAecod0GUvB4",
+    "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1205sJh8Ym98Yew5qXs7VF4WXyQweSgmjAecod0GUvB4/edit?ouid=114200350506545707865",
+    "sheetTitle": "Названия брони ",
+    "sheetId": 1690353837,
+    "readDate": "2026-10-18"
+  },
+  "mappingStatusLegend": {
+    "matched": "Соответствие установлено по имени файла и изображению.",
+    "confirmed": "Соответствие подтверждено пользователем 18 октября 2026 года."
+  },
+  "items": [
+    {
+      "balanceAppearanceId": 1,
+      "baseNameRu": "Шапка",
+      "sourceTypeRu": "Шлем",
+      "rarityRu": "Обычная",
+      "nameVariants": [
+        {
+          "balanceRow": 2,
+          "balanceNameId": 1,
+          "prefixRu": "Банальная"
+        },
+        {
+          "balanceRow": 3,
+          "balanceNameId": 2,
+          "prefixRu": "Примитивная"
+        },
+        {
+          "balanceRow": 4,
+          "balanceNameId": 3,
+          "prefixRu": "Дырявая"
+        },
+        {
+          "balanceRow": 5,
+          "balanceNameId": 4,
+          "prefixRu": "Простая"
+        },
+        {
+          "balanceRow": 6,
+          "balanceNameId": 5,
+          "prefixRu": "Обыкновенная"
+        }
+      ],
+      "equipmentSlot": "Helmet",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/шапки/hat.png",
+      "imageFile": "шапки/hat.png",
+      "textureGuid": "fcd6a5da2add64c55ab45f15c3e98982",
+      "spriteFileId": "3063841963128474276",
+      "mappingStatus": "matched",
+      "sourceRange": "A2:G6",
+      "appearanceId": "helmet.hat"
+    },
+    {
+      "balanceAppearanceId": 2,
+      "baseNameRu": "Маска",
+      "sourceTypeRu": "Шлем",
+      "rarityRu": "Обычная",
+      "nameVariants": [
+        {
+          "balanceRow": 7,
+          "balanceNameId": 6,
+          "prefixRu": "Банальная"
+        },
+        {
+          "balanceRow": 8,
+          "balanceNameId": 7,
+          "prefixRu": "Примитивная"
+        },
+        {
+          "balanceRow": 9,
+          "balanceNameId": 8,
+          "prefixRu": "Дырявая"
+        },
+        {
+          "balanceRow": 10,
+          "balanceNameId": 9,
+          "prefixRu": "Простая"
+        },
+        {
+          "balanceRow": 11,
+          "balanceNameId": 10,
+          "prefixRu": "Обыкновенная"
+        }
+      ],
+      "equipmentSlot": "Helmet",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/шапки/mask.png",
+      "imageFile": "шапки/mask.png",
+      "textureGuid": "e8e9af4cb70f34116bf334901db86eda",
+      "spriteFileId": "-1500434286138515679",
+      "mappingStatus": "matched",
+      "sourceRange": "A7:G11",
+      "appearanceId": "helmet.mask"
+    },
+    {
+      "balanceAppearanceId": 3,
+      "baseNameRu": "Ушанка",
+      "sourceTypeRu": "Шлем",
+      "rarityRu": "Обычная",
+      "nameVariants": [
+        {
+          "balanceRow": 12,
+          "balanceNameId": 11,
+          "prefixRu": "Банальная"
+        },
+        {
+          "balanceRow": 13,
+          "balanceNameId": 12,
+          "prefixRu": "Примитивная"
+        },
+        {
+          "balanceRow": 14,
+          "balanceNameId": 13,
+          "prefixRu": "Дырявая"
+        },
+        {
+          "balanceRow": 15,
+          "balanceNameId": 14,
+          "prefixRu": "Простая"
+        },
+        {
+          "balanceRow": 16,
+          "balanceNameId": 15,
+          "prefixRu": "Обыкновенная"
+        }
+      ],
+      "equipmentSlot": "Helmet",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/шапки/ushanka.png",
+      "imageFile": "шапки/ushanka.png",
+      "textureGuid": "ea77a11eb52cf4acf90cf3d35b1d9738",
+      "spriteFileId": "-3306094867879314704",
+      "mappingStatus": "matched",
+      "sourceRange": "A12:G16",
+      "appearanceId": "helmet.ushanka"
+    },
+    {
+      "balanceAppearanceId": 4,
+      "baseNameRu": "Шлем",
+      "sourceTypeRu": "Шлем",
+      "rarityRu": "Редкая",
+      "nameVariants": [
+        {
+          "balanceRow": 17,
+          "balanceNameId": 16,
+          "prefixRu": "Укреплённый"
+        },
+        {
+          "balanceRow": 18,
+          "balanceNameId": 17,
+          "prefixRu": "Закалённый"
+        },
+        {
+          "balanceRow": 19,
+          "balanceNameId": 18,
+          "prefixRu": "Надёжный"
+        },
+        {
+          "balanceRow": 20,
+          "balanceNameId": 19,
+          "prefixRu": "Искусный"
+        },
+        {
+          "balanceRow": 21,
+          "balanceNameId": 20,
+          "prefixRu": "Добротный"
+        }
+      ],
+      "equipmentSlot": "Helmet",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/шапки/helmet.png",
+      "imageFile": "шапки/helmet.png",
+      "textureGuid": "1f08d2b8c609d4f8d8220c65e0ba42f3",
+      "spriteFileId": "-4548992743620234918",
+      "mappingStatus": "matched",
+      "sourceRange": "A17:G21",
+      "appearanceId": "helmet.helmet"
+    },
+    {
+      "balanceAppearanceId": 5,
+      "baseNameRu": "Капюшон",
+      "sourceTypeRu": "Шлем",
+      "rarityRu": "Редкая",
+      "nameVariants": [
+        {
+          "balanceRow": 22,
+          "balanceNameId": 21,
+          "prefixRu": "Укреплённый"
+        },
+        {
+          "balanceRow": 23,
+          "balanceNameId": 22,
+          "prefixRu": "Закалённый"
+        },
+        {
+          "balanceRow": 24,
+          "balanceNameId": 23,
+          "prefixRu": "Надёжный"
+        },
+        {
+          "balanceRow": 25,
+          "balanceNameId": 24,
+          "prefixRu": "Искусный"
+        },
+        {
+          "balanceRow": 26,
+          "balanceNameId": 25,
+          "prefixRu": "Добротный"
+        }
+      ],
+      "equipmentSlot": "Helmet",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/шапки/kapushon.png",
+      "imageFile": "шапки/kapushon.png",
+      "textureGuid": "167922550a3ae4eee97515c7c80a62f9",
+      "spriteFileId": "-801058295482612986",
+      "mappingStatus": "matched",
+      "sourceRange": "A22:G26",
+      "appearanceId": "helmet.kapushon"
+    },
+    {
+      "balanceAppearanceId": 6,
+      "baseNameRu": "Колпак",
+      "sourceTypeRu": "Шлем",
+      "rarityRu": "Редкая",
+      "nameVariants": [
+        {
+          "balanceRow": 27,
+          "balanceNameId": 26,
+          "prefixRu": "Укреплённый"
+        },
+        {
+          "balanceRow": 28,
+          "balanceNameId": 27,
+          "prefixRu": "Закалённый"
+        },
+        {
+          "balanceRow": 29,
+          "balanceNameId": 28,
+          "prefixRu": "Надёжный"
+        },
+        {
+          "balanceRow": 30,
+          "balanceNameId": 29,
+          "prefixRu": "Искусный"
+        },
+        {
+          "balanceRow": 31,
+          "balanceNameId": 30,
+          "prefixRu": "Добротный"
+        }
+      ],
+      "equipmentSlot": "Helmet",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/шапки/kolpak.png",
+      "imageFile": "шапки/kolpak.png",
+      "textureGuid": "476311f4ca5c942ca9dc67e6f960643e",
+      "spriteFileId": "6888410731610576972",
+      "mappingStatus": "matched",
+      "sourceRange": "A27:G31",
+      "appearanceId": "helmet.kolpak"
+    },
+    {
+      "balanceAppearanceId": 7,
+      "baseNameRu": "Корона",
+      "sourceTypeRu": "Шлем",
+      "rarityRu": "Уникальная",
+      "nameVariants": [
+        {
+          "balanceRow": 32,
+          "balanceNameId": 31,
+          "prefixRu": "Древняя"
+        },
+        {
+          "balanceRow": 33,
+          "balanceNameId": 32,
+          "prefixRu": "Астральная"
+        },
+        {
+          "balanceRow": 34,
+          "balanceNameId": 33,
+          "prefixRu": "Призрачная"
+        },
+        {
+          "balanceRow": 35,
+          "balanceNameId": 34,
+          "prefixRu": "Зачарованная"
+        },
+        {
+          "balanceRow": 36,
+          "balanceNameId": 35,
+          "prefixRu": "Избранная"
+        }
+      ],
+      "equipmentSlot": "Helmet",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/шапки/korona.png",
+      "imageFile": "шапки/korona.png",
+      "textureGuid": "b1ff7cd15147a429ea11a000257e3653",
+      "spriteFileId": "2889441024906765429",
+      "mappingStatus": "matched",
+      "sourceRange": "A32:G36",
+      "appearanceId": "helmet.korona"
+    },
+    {
+      "balanceAppearanceId": 8,
+      "baseNameRu": "Немес",
+      "sourceTypeRu": "Шлем",
+      "rarityRu": "Уникальная",
+      "nameVariants": [
+        {
+          "balanceRow": 37,
+          "balanceNameId": 36,
+          "prefixRu": "Древний"
+        },
+        {
+          "balanceRow": 38,
+          "balanceNameId": 37,
+          "prefixRu": "Астральный"
+        },
+        {
+          "balanceRow": 39,
+          "balanceNameId": 38,
+          "prefixRu": "Призрачный"
+        },
+        {
+          "balanceRow": 40,
+          "balanceNameId": 39,
+          "prefixRu": "Зачарованный"
+        },
+        {
+          "balanceRow": 41,
+          "balanceNameId": 40,
+          "prefixRu": "Избранный"
+        }
+      ],
+      "equipmentSlot": "Helmet",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/шапки/nemes.png",
+      "imageFile": "шапки/nemes.png",
+      "textureGuid": "24e27e2e74b5b4eea9223166fea1bfce",
+      "spriteFileId": "8825383991016259462",
+      "mappingStatus": "matched",
+      "sourceRange": "A37:G41",
+      "appearanceId": "helmet.nemes"
+    },
+    {
+      "balanceAppearanceId": 9,
+      "baseNameRu": "Личина",
+      "sourceTypeRu": "Шлем",
+      "rarityRu": "Уникальная",
+      "nameVariants": [
+        {
+          "balanceRow": 42,
+          "balanceNameId": 41,
+          "prefixRu": "Древняя"
+        },
+        {
+          "balanceRow": 43,
+          "balanceNameId": 42,
+          "prefixRu": "Астральная"
+        },
+        {
+          "balanceRow": 44,
+          "balanceNameId": 43,
+          "prefixRu": "Призрачная"
+        },
+        {
+          "balanceRow": 45,
+          "balanceNameId": 44,
+          "prefixRu": "Зачарованная"
+        },
+        {
+          "balanceRow": 46,
+          "balanceNameId": 45,
+          "prefixRu": "Избранная"
+        }
+      ],
+      "equipmentSlot": "Helmet",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/шапки/lichina.png",
+      "imageFile": "шапки/lichina.png",
+      "textureGuid": "0cfcb6dc86f3645b5b36a2083b7edab2",
+      "spriteFileId": "7193835389740353883",
+      "mappingStatus": "matched",
+      "sourceRange": "A42:G46",
+      "appearanceId": "helmet.lichina"
+    },
+    {
+      "balanceAppearanceId": 10,
+      "baseNameRu": "Тиарадор",
+      "sourceTypeRu": "Шлем",
+      "rarityRu": "Легендарная",
+      "nameVariants": [
+        {
+          "balanceRow": 47,
+          "balanceNameId": 46,
+          "prefixRu": "Бессмертный"
+        },
+        {
+          "balanceRow": 48,
+          "balanceNameId": 47,
+          "prefixRu": "Титанический"
+        },
+        {
+          "balanceRow": 49,
+          "balanceNameId": 48,
+          "prefixRu": "Сокрушительный"
+        },
+        {
+          "balanceRow": 50,
+          "balanceNameId": 49,
+          "prefixRu": "Абсолютный"
+        },
+        {
+          "balanceRow": 51,
+          "balanceNameId": 50,
+          "prefixRu": "Легендарный"
+        }
+      ],
+      "equipmentSlot": "Helmet",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/шапки/triador.png",
+      "imageFile": "шапки/triador.png",
+      "textureGuid": "3838cfc4b4c2a4d73b6554c34d2e4e17",
+      "spriteFileId": "-440024450419666228",
+      "mappingStatus": "matched",
+      "sourceRange": "A47:G51",
+      "appearanceId": "helmet.triador"
+    },
+    {
+      "balanceAppearanceId": 11,
+      "baseNameRu": "Эгид",
+      "sourceTypeRu": "Шлем",
+      "rarityRu": "Легендарная",
+      "nameVariants": [
+        {
+          "balanceRow": 52,
+          "balanceNameId": 51,
+          "prefixRu": "Бессмертный"
+        },
+        {
+          "balanceRow": 53,
+          "balanceNameId": 52,
+          "prefixRu": "Титанический"
+        },
+        {
+          "balanceRow": 54,
+          "balanceNameId": 53,
+          "prefixRu": "Сокрушительный"
+        },
+        {
+          "balanceRow": 55,
+          "balanceNameId": 54,
+          "prefixRu": "Абсолютный"
+        },
+        {
+          "balanceRow": 56,
+          "balanceNameId": 55,
+          "prefixRu": "Легендарный"
+        }
+      ],
+      "equipmentSlot": "Helmet",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/шапки/egid.png",
+      "imageFile": "шапки/egid.png",
+      "textureGuid": "0f63d3c09c94a4964ae08b155587f0d5",
+      "spriteFileId": "-2313219933370083100",
+      "mappingStatus": "matched",
+      "sourceRange": "A52:G56",
+      "appearanceId": "helmet.egid"
+    },
+    {
+      "balanceAppearanceId": 12,
+      "baseNameRu": "Нимб",
+      "sourceTypeRu": "Шлем",
+      "rarityRu": "Легендарная",
+      "nameVariants": [
+        {
+          "balanceRow": 57,
+          "balanceNameId": 56,
+          "prefixRu": "Бессмертный"
+        },
+        {
+          "balanceRow": 58,
+          "balanceNameId": 57,
+          "prefixRu": "Титанический"
+        },
+        {
+          "balanceRow": 59,
+          "balanceNameId": 58,
+          "prefixRu": "Сокрушительный"
+        },
+        {
+          "balanceRow": 60,
+          "balanceNameId": 59,
+          "prefixRu": "Абсолютный"
+        },
+        {
+          "balanceRow": 61,
+          "balanceNameId": 60,
+          "prefixRu": "Легендарный"
+        }
+      ],
+      "equipmentSlot": "Helmet",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/шапки/nimb.png",
+      "imageFile": "шапки/nimb.png",
+      "textureGuid": "f266738da83b749f89e763db3e4c3872",
+      "spriteFileId": "4899648336984081772",
+      "mappingStatus": "confirmed",
+      "sourceRange": "A57:G61",
+      "mappingConfirmation": {
+        "date": "2026-10-18",
+        "source": "user"
+      },
+      "appearanceId": "helmet.nimb"
+    },
+    {
+      "balanceAppearanceId": 13,
+      "baseNameRu": "Тряпка",
+      "sourceTypeRu": "Нагрудник",
+      "rarityRu": "Обычная",
+      "nameVariants": [
+        {
+          "balanceRow": 62,
+          "balanceNameId": 61,
+          "prefixRu": "Дырявая"
+        },
+        {
+          "balanceRow": 63,
+          "balanceNameId": 62,
+          "prefixRu": "Поношенная"
+        },
+        {
+          "balanceRow": 64,
+          "balanceNameId": 63,
+          "prefixRu": "Грязная"
+        },
+        {
+          "balanceRow": 65,
+          "balanceNameId": 64,
+          "prefixRu": "Заплатанная"
+        },
+        {
+          "balanceRow": 66,
+          "balanceNameId": 65,
+          "prefixRu": "Простая"
+        }
+      ],
+      "equipmentSlot": "Chest",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/броня/tryapka.png",
+      "imageFile": "броня/tryapka.png",
+      "textureGuid": "2a5a0df69a7cf4b79beaa540f5727897",
+      "spriteFileId": "-5238581274386663337",
+      "mappingStatus": "matched",
+      "sourceRange": "A62:G66",
+      "appearanceId": "chest.tryapka"
+    },
+    {
+      "balanceAppearanceId": 14,
+      "baseNameRu": "Накидка",
+      "sourceTypeRu": "Нагрудник",
+      "rarityRu": "Обычная",
+      "nameVariants": [
+        {
+          "balanceRow": 67,
+          "balanceNameId": 66,
+          "prefixRu": "Дырявая"
+        },
+        {
+          "balanceRow": 68,
+          "balanceNameId": 67,
+          "prefixRu": "Поношенная"
+        },
+        {
+          "balanceRow": 69,
+          "balanceNameId": 68,
+          "prefixRu": "Грязная"
+        },
+        {
+          "balanceRow": 70,
+          "balanceNameId": 69,
+          "prefixRu": "Заплатанная"
+        },
+        {
+          "balanceRow": 71,
+          "balanceNameId": 70,
+          "prefixRu": "Простая"
+        }
+      ],
+      "equipmentSlot": "Chest",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/броня/nakidka.png",
+      "imageFile": "броня/nakidka.png",
+      "textureGuid": "aed0712d83bc24e07a248c47218ed7f3",
+      "spriteFileId": "-3992122090250787226",
+      "mappingStatus": "matched",
+      "sourceRange": "A67:G71",
+      "appearanceId": "chest.nakidka"
+    },
+    {
+      "balanceAppearanceId": 15,
+      "baseNameRu": "Жилет",
+      "sourceTypeRu": "Нагрудник",
+      "rarityRu": "Обычная",
+      "nameVariants": [
+        {
+          "balanceRow": 72,
+          "balanceNameId": 71,
+          "prefixRu": "Дырявый"
+        },
+        {
+          "balanceRow": 73,
+          "balanceNameId": 72,
+          "prefixRu": "Поношенный"
+        },
+        {
+          "balanceRow": 74,
+          "balanceNameId": 73,
+          "prefixRu": "Грязный"
+        },
+        {
+          "balanceRow": 75,
+          "balanceNameId": 74,
+          "prefixRu": "Заплатанный"
+        },
+        {
+          "balanceRow": 76,
+          "balanceNameId": 75,
+          "prefixRu": "Простой"
+        }
+      ],
+      "equipmentSlot": "Chest",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/броня/jilet.png",
+      "imageFile": "броня/jilet.png",
+      "textureGuid": "55eb5676c72b04f939dbb0dd23fde899",
+      "spriteFileId": "-1274579951231099470",
+      "mappingStatus": "matched",
+      "sourceRange": "A72:G76",
+      "appearanceId": "chest.jilet"
+    },
+    {
+      "balanceAppearanceId": 16,
+      "baseNameRu": "Кираса",
+      "sourceTypeRu": "Нагрудник",
+      "rarityRu": "Редкая",
+      "nameVariants": [
+        {
+          "balanceRow": 77,
+          "balanceNameId": 76,
+          "prefixRu": "Укреплённая"
+        },
+        {
+          "balanceRow": 78,
+          "balanceNameId": 77,
+          "prefixRu": "Закалённая"
+        },
+        {
+          "balanceRow": 79,
+          "balanceNameId": 78,
+          "prefixRu": "Надёжная"
+        },
+        {
+          "balanceRow": 80,
+          "balanceNameId": 79,
+          "prefixRu": "Добротная"
+        },
+        {
+          "balanceRow": 81,
+          "balanceNameId": 80,
+          "prefixRu": "Кованая"
+        }
+      ],
+      "equipmentSlot": "Chest",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/броня/kirasa.png",
+      "imageFile": "броня/kirasa.png",
+      "textureGuid": "da03833b5cdbf4dd6b26736acc205d96",
+      "spriteFileId": "-8302279393622788204",
+      "mappingStatus": "matched",
+      "sourceRange": "A77:G81",
+      "appearanceId": "chest.kirasa"
+    },
+    {
+      "balanceAppearanceId": 17,
+      "baseNameRu": "Кольчуга",
+      "sourceTypeRu": "Нагрудник",
+      "rarityRu": "Редкая",
+      "nameVariants": [
+        {
+          "balanceRow": 82,
+          "balanceNameId": 81,
+          "prefixRu": "Укреплённая"
+        },
+        {
+          "balanceRow": 83,
+          "balanceNameId": 82,
+          "prefixRu": "Закалённая"
+        },
+        {
+          "balanceRow": 84,
+          "balanceNameId": 83,
+          "prefixRu": "Надёжная"
+        },
+        {
+          "balanceRow": 85,
+          "balanceNameId": 84,
+          "prefixRu": "Добротная"
+        },
+        {
+          "balanceRow": 86,
+          "balanceNameId": 85,
+          "prefixRu": "Кованая"
+        }
+      ],
+      "equipmentSlot": "Chest",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/броня/koljuga.png",
+      "imageFile": "броня/koljuga.png",
+      "textureGuid": "faf97370262c54313889676e64dc0c57",
+      "spriteFileId": "8496812276924527433",
+      "mappingStatus": "matched",
+      "sourceRange": "A82:G86",
+      "appearanceId": "chest.koljuga"
+    },
+    {
+      "balanceAppearanceId": 18,
+      "baseNameRu": "Панцирь",
+      "sourceTypeRu": "Нагрудник",
+      "rarityRu": "Редкая",
+      "nameVariants": [
+        {
+          "balanceRow": 87,
+          "balanceNameId": 86,
+          "prefixRu": "Укреплённый"
+        },
+        {
+          "balanceRow": 88,
+          "balanceNameId": 87,
+          "prefixRu": "Закаленный"
+        },
+        {
+          "balanceRow": 89,
+          "balanceNameId": 88,
+          "prefixRu": "Надежный"
+        },
+        {
+          "balanceRow": 90,
+          "balanceNameId": 89,
+          "prefixRu": "Добротный"
+        },
+        {
+          "balanceRow": 91,
+          "balanceNameId": 90,
+          "prefixRu": "Кованый"
+        }
+      ],
+      "equipmentSlot": "Chest",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/броня/pansir.png",
+      "imageFile": "броня/pansir.png",
+      "textureGuid": "bb6617616d8774fdbbf8a56fa7ee52d7",
+      "spriteFileId": "-459623641277308962",
+      "mappingStatus": "matched",
+      "sourceRange": "A87:G91",
+      "appearanceId": "chest.pansir"
+    },
+    {
+      "balanceAppearanceId": 19,
+      "baseNameRu": "Домару",
+      "sourceTypeRu": "Нагрудник",
+      "rarityRu": "Уникальная",
+      "nameVariants": [
+        {
+          "balanceRow": 92,
+          "balanceNameId": 91,
+          "prefixRu": "Древний"
+        },
+        {
+          "balanceRow": 93,
+          "balanceNameId": 92,
+          "prefixRu": "Астральный"
+        },
+        {
+          "balanceRow": 94,
+          "balanceNameId": 93,
+          "prefixRu": "Призрачный"
+        },
+        {
+          "balanceRow": 95,
+          "balanceNameId": 94,
+          "prefixRu": "Зачарованный"
+        },
+        {
+          "balanceRow": 96,
+          "balanceNameId": 95,
+          "prefixRu": "Избранный"
+        }
+      ],
+      "equipmentSlot": "Chest",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/броня/domaru.png",
+      "imageFile": "броня/domaru.png",
+      "textureGuid": "2b130d86ee5f74b8eb6b7cb91a46efeb",
+      "spriteFileId": "-2181699567980395890",
+      "mappingStatus": "matched",
+      "sourceRange": "A92:G96",
+      "appearanceId": "chest.domaru"
+    },
+    {
+      "balanceAppearanceId": 20,
+      "baseNameRu": "Клибанион",
+      "sourceTypeRu": "Нагрудник",
+      "rarityRu": "Уникальная",
+      "nameVariants": [
+        {
+          "balanceRow": 97,
+          "balanceNameId": 96,
+          "prefixRu": "Древний"
+        },
+        {
+          "balanceRow": 98,
+          "balanceNameId": 97,
+          "prefixRu": "Астральный"
+        },
+        {
+          "balanceRow": 99,
+          "balanceNameId": 98,
+          "prefixRu": "Призрачный"
+        },
+        {
+          "balanceRow": 100,
+          "balanceNameId": 99,
+          "prefixRu": "Зачарованный"
+        },
+        {
+          "balanceRow": 101,
+          "balanceNameId": 100,
+          "prefixRu": "Избранный"
+        }
+      ],
+      "equipmentSlot": "Chest",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/броня/klibanion.png",
+      "imageFile": "броня/klibanion.png",
+      "textureGuid": "9c1cf9a9bf28c479dbcf8243431c6d05",
+      "spriteFileId": "1622355069308155286",
+      "mappingStatus": "matched",
+      "sourceRange": "A97:G101",
+      "appearanceId": "chest.klibanion"
+    },
+    {
+      "balanceAppearanceId": 21,
+      "baseNameRu": "Мантия",
+      "sourceTypeRu": "Нагрудник",
+      "rarityRu": "Уникальная",
+      "nameVariants": [
+        {
+          "balanceRow": 102,
+          "balanceNameId": 101,
+          "prefixRu": "Древняя"
+        },
+        {
+          "balanceRow": 103,
+          "balanceNameId": 102,
+          "prefixRu": "Астральная"
+        },
+        {
+          "balanceRow": 104,
+          "balanceNameId": 103,
+          "prefixRu": "Призрачная"
+        },
+        {
+          "balanceRow": 105,
+          "balanceNameId": 104,
+          "prefixRu": "Зачарованная"
+        },
+        {
+          "balanceRow": 106,
+          "balanceNameId": 105,
+          "prefixRu": "Избранная"
+        }
+      ],
+      "equipmentSlot": "Chest",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/броня/mantia.png",
+      "imageFile": "броня/mantia.png",
+      "textureGuid": "a078b1186b3524438a23fe604cc2ca98",
+      "spriteFileId": "7016839719302472854",
+      "mappingStatus": "matched",
+      "sourceRange": "A102:G106",
+      "appearanceId": "chest.mantia"
+    },
+    {
+      "balanceAppearanceId": 22,
+      "baseNameRu": "Бастион",
+      "sourceTypeRu": "Нагрудник",
+      "rarityRu": "Легендарная",
+      "nameVariants": [
+        {
+          "balanceRow": 107,
+          "balanceNameId": 106,
+          "prefixRu": "Бессмертный"
+        },
+        {
+          "balanceRow": 108,
+          "balanceNameId": 107,
+          "prefixRu": "Титанический"
+        },
+        {
+          "balanceRow": 109,
+          "balanceNameId": 108,
+          "prefixRu": "Сокрушительный"
+        },
+        {
+          "balanceRow": 110,
+          "balanceNameId": 109,
+          "prefixRu": "Абсолютный"
+        },
+        {
+          "balanceRow": 111,
+          "balanceNameId": 110,
+          "prefixRu": "Легендарный"
+        }
+      ],
+      "equipmentSlot": "Chest",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/броня/bastion.png",
+      "imageFile": "броня/bastion.png",
+      "textureGuid": "119edb3f030cf4d2f8c1e6f86ccb3519",
+      "spriteFileId": "6914072176872757163",
+      "mappingStatus": "matched",
+      "sourceRange": "A107:G111",
+      "appearanceId": "chest.bastion"
+    },
+    {
+      "balanceAppearanceId": 23,
+      "baseNameRu": "Экгис",
+      "sourceTypeRu": "Нагрудник",
+      "rarityRu": "Легендарная",
+      "nameVariants": [
+        {
+          "balanceRow": 112,
+          "balanceNameId": 111,
+          "prefixRu": "Бессмертный"
+        },
+        {
+          "balanceRow": 113,
+          "balanceNameId": 112,
+          "prefixRu": "Титанический"
+        },
+        {
+          "balanceRow": 114,
+          "balanceNameId": 113,
+          "prefixRu": "Сокрушительный"
+        },
+        {
+          "balanceRow": 115,
+          "balanceNameId": 114,
+          "prefixRu": "Абсолютный"
+        },
+        {
+          "balanceRow": 116,
+          "balanceNameId": 115,
+          "prefixRu": "Легендарный"
+        }
+      ],
+      "equipmentSlot": "Chest",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/броня/ekgis.png",
+      "imageFile": "броня/ekgis.png",
+      "textureGuid": "b398fd505d2864c7892994b5ab77ec70",
+      "spriteFileId": "2042675976319128756",
+      "mappingStatus": "matched",
+      "sourceRange": "A112:G116",
+      "appearanceId": "chest.ekgis"
+    },
+    {
+      "balanceAppearanceId": 24,
+      "baseNameRu": "Лорикат",
+      "sourceTypeRu": "Нагрудник",
+      "rarityRu": "Легендарная",
+      "nameVariants": [
+        {
+          "balanceRow": 117,
+          "balanceNameId": 116,
+          "prefixRu": "Бессмертный"
+        },
+        {
+          "balanceRow": 118,
+          "balanceNameId": 117,
+          "prefixRu": "Титанический"
+        },
+        {
+          "balanceRow": 119,
+          "balanceNameId": 118,
+          "prefixRu": "Сокрушительный"
+        },
+        {
+          "balanceRow": 120,
+          "balanceNameId": 119,
+          "prefixRu": "Абсолютный"
+        },
+        {
+          "balanceRow": 121,
+          "balanceNameId": 120,
+          "prefixRu": "Легендарный"
+        }
+      ],
+      "equipmentSlot": "Chest",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/броня/lorikat.png",
+      "imageFile": "броня/lorikat.png",
+      "textureGuid": "74014631f828449bd92c623211a34fee",
+      "spriteFileId": "9048016652604902769",
+      "mappingStatus": "matched",
+      "sourceRange": "A117:G121",
+      "appearanceId": "chest.lorikat"
+    },
+    {
+      "balanceAppearanceId": 25,
+      "baseNameRu": "Палка",
+      "sourceTypeRu": "Меч",
+      "rarityRu": "Обычная",
+      "nameVariants": [
+        {
+          "balanceRow": 122,
+          "balanceNameId": 121,
+          "prefixRu": "Тупая"
+        },
+        {
+          "balanceRow": 123,
+          "balanceNameId": 122,
+          "prefixRu": "Погнутая"
+        },
+        {
+          "balanceRow": 124,
+          "balanceNameId": 123,
+          "prefixRu": "Сломанная"
+        },
+        {
+          "balanceRow": 125,
+          "balanceNameId": 124,
+          "prefixRu": "Треснувшая"
+        },
+        {
+          "balanceRow": 126,
+          "balanceNameId": 125,
+          "prefixRu": "Обыкновенная"
+        }
+      ],
+      "equipmentSlot": "Weapon",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/оружие/palka.png",
+      "imageFile": "оружие/palka.png",
+      "textureGuid": "ae53c2b9a8d6a449bafef1c733e68394",
+      "spriteFileId": "-6234504357221995971",
+      "mappingStatus": "matched",
+      "sourceRange": "A122:G126",
+      "appearanceId": "weapon.palka"
+    },
+    {
+      "balanceAppearanceId": 26,
+      "baseNameRu": "Ржавчина",
+      "sourceTypeRu": "Меч",
+      "rarityRu": "Обычная",
+      "nameVariants": [
+        {
+          "balanceRow": 127,
+          "balanceNameId": 126,
+          "prefixRu": "Тупая"
+        },
+        {
+          "balanceRow": 128,
+          "balanceNameId": 127,
+          "prefixRu": "Погнутая"
+        },
+        {
+          "balanceRow": 129,
+          "balanceNameId": 128,
+          "prefixRu": "Сломанная"
+        },
+        {
+          "balanceRow": 130,
+          "balanceNameId": 129,
+          "prefixRu": "Треснувшая"
+        },
+        {
+          "balanceRow": 131,
+          "balanceNameId": 130,
+          "prefixRu": "Обыкновенная"
+        }
+      ],
+      "equipmentSlot": "Weapon",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/оружие/rjavchina.png",
+      "imageFile": "оружие/rjavchina.png",
+      "textureGuid": "e898740441b8b47e8834c91bda78c78c",
+      "spriteFileId": "8267044583585394293",
+      "mappingStatus": "matched",
+      "sourceRange": "A127:G131",
+      "appearanceId": "weapon.rjavchina"
+    },
+    {
+      "balanceAppearanceId": 27,
+      "baseNameRu": "Дубина",
+      "sourceTypeRu": "Меч",
+      "rarityRu": "Обычная",
+      "nameVariants": [
+        {
+          "balanceRow": 132,
+          "balanceNameId": 131,
+          "prefixRu": "Тупая"
+        },
+        {
+          "balanceRow": 133,
+          "balanceNameId": 132,
+          "prefixRu": "Погнутая"
+        },
+        {
+          "balanceRow": 134,
+          "balanceNameId": 133,
+          "prefixRu": "Сломанная"
+        },
+        {
+          "balanceRow": 135,
+          "balanceNameId": 134,
+          "prefixRu": "Треснувшая"
+        },
+        {
+          "balanceRow": 136,
+          "balanceNameId": 135,
+          "prefixRu": "Обыкновенная"
+        }
+      ],
+      "equipmentSlot": "Weapon",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/оружие/dubina.png",
+      "imageFile": "оружие/dubina.png",
+      "textureGuid": "23af611d9b868403889474355814c97d",
+      "spriteFileId": "6449061595459454852",
+      "mappingStatus": "matched",
+      "sourceRange": "A132:G136",
+      "appearanceId": "weapon.dubina"
+    },
+    {
+      "balanceAppearanceId": 28,
+      "baseNameRu": "Клинок",
+      "sourceTypeRu": "Меч",
+      "rarityRu": "Редкая",
+      "nameVariants": [
+        {
+          "balanceRow": 137,
+          "balanceNameId": 136,
+          "prefixRu": "Закалённый"
+        },
+        {
+          "balanceRow": 138,
+          "balanceNameId": 137,
+          "prefixRu": "Острый"
+        },
+        {
+          "balanceRow": 139,
+          "balanceNameId": 138,
+          "prefixRu": "Сбалансированный"
+        },
+        {
+          "balanceRow": 140,
+          "balanceNameId": 139,
+          "prefixRu": "Искусный"
+        },
+        {
+          "balanceRow": 141,
+          "balanceNameId": 140,
+          "prefixRu": "Утяжеленный"
+        }
+      ],
+      "equipmentSlot": "Weapon",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/оружие/kinjal.png",
+      "imageFile": "оружие/kinjal.png",
+      "textureGuid": "7def3d2e5de184794a11d1a46287f772",
+      "spriteFileId": "-3062001776292570866",
+      "mappingStatus": "confirmed",
+      "sourceRange": "A137:G141",
+      "mappingConfirmation": {
+        "date": "2026-10-18",
+        "source": "user"
+      },
+      "appearanceId": "weapon.kinjal"
+    },
+    {
+      "balanceAppearanceId": 29,
+      "baseNameRu": "Секира",
+      "sourceTypeRu": "Меч",
+      "rarityRu": "Редкая",
+      "nameVariants": [
+        {
+          "balanceRow": 142,
+          "balanceNameId": 141,
+          "prefixRu": "Закалённая"
+        },
+        {
+          "balanceRow": 143,
+          "balanceNameId": 142,
+          "prefixRu": "Острая"
+        },
+        {
+          "balanceRow": 144,
+          "balanceNameId": 143,
+          "prefixRu": "Сбалансированная"
+        },
+        {
+          "balanceRow": 145,
+          "balanceNameId": 144,
+          "prefixRu": "Искусная"
+        },
+        {
+          "balanceRow": 146,
+          "balanceNameId": 145,
+          "prefixRu": "Утяжелённая"
+        }
+      ],
+      "equipmentSlot": "Weapon",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/оружие/sekira.png",
+      "imageFile": "оружие/sekira.png",
+      "textureGuid": "dbcb8fa835edd4c9aaafe3d2cc2bc64c",
+      "spriteFileId": "-4044736646333900281",
+      "mappingStatus": "matched",
+      "sourceRange": "A142:G146",
+      "appearanceId": "weapon.sekira"
+    },
+    {
+      "balanceAppearanceId": 30,
+      "baseNameRu": "Посох",
+      "sourceTypeRu": "Меч",
+      "rarityRu": "Редкая",
+      "nameVariants": [
+        {
+          "balanceRow": 147,
+          "balanceNameId": 146,
+          "prefixRu": "Закалённый"
+        },
+        {
+          "balanceRow": 148,
+          "balanceNameId": 147,
+          "prefixRu": "Острый"
+        },
+        {
+          "balanceRow": 149,
+          "balanceNameId": 148,
+          "prefixRu": "Сбалансированный"
+        },
+        {
+          "balanceRow": 150,
+          "balanceNameId": 149,
+          "prefixRu": "Искусный"
+        },
+        {
+          "balanceRow": 151,
+          "balanceNameId": 150,
+          "prefixRu": "Утяжеленный"
+        }
+      ],
+      "equipmentSlot": "Weapon",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/оружие/posoh.png",
+      "imageFile": "оружие/posoh.png",
+      "textureGuid": "7c23b05460fa84534b7a09c0668a56a1",
+      "spriteFileId": "-6924159418327074145",
+      "mappingStatus": "matched",
+      "sourceRange": "A147:G151",
+      "appearanceId": "weapon.posoh"
+    },
+    {
+      "balanceAppearanceId": 31,
+      "baseNameRu": "Жнец",
+      "sourceTypeRu": "Меч",
+      "rarityRu": "Уникальная",
+      "nameVariants": [
+        {
+          "balanceRow": 152,
+          "balanceNameId": 151,
+          "prefixRu": "Древний"
+        },
+        {
+          "balanceRow": 153,
+          "balanceNameId": 152,
+          "prefixRu": "Астральный"
+        },
+        {
+          "balanceRow": 154,
+          "balanceNameId": 153,
+          "prefixRu": "Призрачный"
+        },
+        {
+          "balanceRow": 155,
+          "balanceNameId": 154,
+          "prefixRu": "Зачарованный"
+        },
+        {
+          "balanceRow": 156,
+          "balanceNameId": 155,
+          "prefixRu": "Пламенный"
+        }
+      ],
+      "equipmentSlot": "Weapon",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/оружие/kosa.png",
+      "imageFile": "оружие/kosa.png",
+      "textureGuid": "39880dd8f99c24671a23610e3b314695",
+      "spriteFileId": "-5433696908334439150",
+      "mappingStatus": "matched",
+      "sourceRange": "A152:G156",
+      "appearanceId": "weapon.kosa"
+    },
+    {
+      "balanceAppearanceId": 32,
+      "baseNameRu": "Рассекатель",
+      "sourceTypeRu": "Меч",
+      "rarityRu": "Уникальная",
+      "nameVariants": [
+        {
+          "balanceRow": 157,
+          "balanceNameId": 156,
+          "prefixRu": "Древний"
+        },
+        {
+          "balanceRow": 158,
+          "balanceNameId": 157,
+          "prefixRu": "Астральный"
+        },
+        {
+          "balanceRow": 159,
+          "balanceNameId": 158,
+          "prefixRu": "Призрачный"
+        },
+        {
+          "balanceRow": 160,
+          "balanceNameId": 159,
+          "prefixRu": "Зачарованный"
+        },
+        {
+          "balanceRow": 161,
+          "balanceNameId": 160,
+          "prefixRu": "Пламенный"
+        }
+      ],
+      "equipmentSlot": "Weapon",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/оружие/rapira.png",
+      "imageFile": "оружие/rapira.png",
+      "textureGuid": "a090a314e9f504178a34a44a616f0e79",
+      "spriteFileId": "-2977853055859848949",
+      "mappingStatus": "confirmed",
+      "sourceRange": "A157:G161",
+      "mappingConfirmation": {
+        "date": "2026-10-18",
+        "source": "user"
+      },
+      "appearanceId": "weapon.rapira"
+    },
+    {
+      "balanceAppearanceId": 33,
+      "baseNameRu": "Молот",
+      "sourceTypeRu": "Меч",
+      "rarityRu": "Уникальная",
+      "nameVariants": [
+        {
+          "balanceRow": 162,
+          "balanceNameId": 161,
+          "prefixRu": "Древний"
+        },
+        {
+          "balanceRow": 163,
+          "balanceNameId": 162,
+          "prefixRu": "Астральный"
+        },
+        {
+          "balanceRow": 164,
+          "balanceNameId": 163,
+          "prefixRu": "Призрачный"
+        },
+        {
+          "balanceRow": 165,
+          "balanceNameId": 164,
+          "prefixRu": "Зачарованный"
+        },
+        {
+          "balanceRow": 166,
+          "balanceNameId": 165,
+          "prefixRu": "Пламенный"
+        }
+      ],
+      "equipmentSlot": "Weapon",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/оружие/molot.png",
+      "imageFile": "оружие/molot.png",
+      "textureGuid": "76f3de01e42cd42e3b1118b90ec45187",
+      "spriteFileId": "-3166069693784571890",
+      "mappingStatus": "matched",
+      "sourceRange": "A162:G166",
+      "appearanceId": "weapon.molot"
+    },
+    {
+      "balanceAppearanceId": 34,
+      "baseNameRu": "Рок",
+      "sourceTypeRu": "Меч",
+      "rarityRu": "Легендарная",
+      "nameVariants": [
+        {
+          "balanceRow": 167,
+          "balanceNameId": 166,
+          "prefixRu": "Бессмертный"
+        },
+        {
+          "balanceRow": 168,
+          "balanceNameId": 167,
+          "prefixRu": "Титанический"
+        },
+        {
+          "balanceRow": 169,
+          "balanceNameId": 168,
+          "prefixRu": "Сокрушительный"
+        },
+        {
+          "balanceRow": 170,
+          "balanceNameId": 169,
+          "prefixRu": "Абсолютный"
+        },
+        {
+          "balanceRow": 171,
+          "balanceNameId": 170,
+          "prefixRu": "Всепожирающий"
+        }
+      ],
+      "equipmentSlot": "Weapon",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/оружие/rok.png",
+      "imageFile": "оружие/rok.png",
+      "textureGuid": "a4258e10e179743d7b789613fdca8fa2",
+      "spriteFileId": "9102290533795072294",
+      "mappingStatus": "matched",
+      "sourceRange": "A167:G171",
+      "appearanceId": "weapon.rok"
+    },
+    {
+      "balanceAppearanceId": 35,
+      "baseNameRu": "Каратель",
+      "sourceTypeRu": "Меч",
+      "rarityRu": "Легендарная",
+      "nameVariants": [
+        {
+          "balanceRow": 172,
+          "balanceNameId": 171,
+          "prefixRu": "Бессмертный"
+        },
+        {
+          "balanceRow": 173,
+          "balanceNameId": 172,
+          "prefixRu": "Титанический"
+        },
+        {
+          "balanceRow": 174,
+          "balanceNameId": 173,
+          "prefixRu": "Сокрушительный"
+        },
+        {
+          "balanceRow": 175,
+          "balanceNameId": 174,
+          "prefixRu": "Абсолютный"
+        },
+        {
+          "balanceRow": 176,
+          "balanceNameId": 175,
+          "prefixRu": "Всепожирающий"
+        }
+      ],
+      "equipmentSlot": "Weapon",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/оружие/karatel.png",
+      "imageFile": "оружие/karatel.png",
+      "textureGuid": "3e0789dbee13b44a993c2748854f4467",
+      "spriteFileId": "7274189582924120510",
+      "mappingStatus": "matched",
+      "sourceRange": "A172:G176",
+      "appearanceId": "weapon.karatel"
+    },
+    {
+      "balanceAppearanceId": 36,
+      "baseNameRu": "Аннигилятор",
+      "sourceTypeRu": "Меч",
+      "rarityRu": "Легендарная",
+      "nameVariants": [
+        {
+          "balanceRow": 177,
+          "balanceNameId": 176,
+          "prefixRu": "Бессмертный"
+        },
+        {
+          "balanceRow": 178,
+          "balanceNameId": 177,
+          "prefixRu": "Титанический"
+        },
+        {
+          "balanceRow": 179,
+          "balanceNameId": 178,
+          "prefixRu": "Сокрушительный"
+        },
+        {
+          "balanceRow": 180,
+          "balanceNameId": 179,
+          "prefixRu": "Абсолютный"
+        },
+        {
+          "balanceRow": 181,
+          "balanceNameId": 180,
+          "prefixRu": "Всепожирающий"
+        }
+      ],
+      "equipmentSlot": "Weapon",
+      "imagePath": "Assets/Art/UI/NEW/10_2026/предметы инвентаря/оружие/annigilation.png",
+      "imageFile": "оружие/annigilation.png",
+      "textureGuid": "045e92f4dceb54f1c93afeeae0ef4ac5",
+      "spriteFileId": "3721288991074506354",
+      "mappingStatus": "matched",
+      "sourceRange": "A177:G181",
+      "appearanceId": "weapon.annigilation"
+    }
+  ],
+  "runtimeCatalog": "Assets/SO/Forge/EquipmentAppearances.asset",
+  "localizationSource": "Docs/ItemCatalog.localization.json"
+}
