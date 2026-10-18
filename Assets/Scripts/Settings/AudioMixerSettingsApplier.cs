@@ -1,3 +1,4 @@
+using System.Collections;
 using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -15,6 +16,22 @@ namespace Core.Settings
         [Inject] private GameSettingsService _settingsService;
 
         private bool _warnedAboutMissingMixer;
+        private bool _hasStarted;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void InitializeRuntime()
+        {
+            var prefab = Resources.Load<AudioMixerSettingsApplier>("AudioSettings");
+            if (prefab == null)
+            {
+                Debug.LogError("[AudioMixerSettingsApplier] Resources/AudioSettings prefab is missing.");
+                return;
+            }
+
+            var instance = Instantiate(prefab);
+            instance.name = prefab.name;
+            DontDestroyOnLoad(instance.gameObject);
+        }
 
         private void Awake()
         {
@@ -27,6 +44,25 @@ namespace Core.Settings
             _settingsService.OnMusicVolumeChanged += ApplyMusicVolume;
             _settingsService.OnSfxVolumeChanged += ApplySfxVolume;
 
+            if (_hasStarted)
+                StartCoroutine(ApplyAfterEnable());
+        }
+
+        private void Start()
+        {
+            // AudioMixer.SetFloat in Awake/OnEnable can be overwritten by mixer initialization.
+            _hasStarted = true;
+            ApplyVolumes();
+        }
+
+        private IEnumerator ApplyAfterEnable()
+        {
+            yield return null;
+            ApplyVolumes();
+        }
+
+        private void ApplyVolumes()
+        {
             ApplyMasterVolume(_settingsService.MasterVolume);
             ApplyMusicVolume(_settingsService.MusicVolume);
             ApplySfxVolume(_settingsService.SfxVolume);
@@ -34,6 +70,8 @@ namespace Core.Settings
 
         private void OnDisable()
         {
+            StopAllCoroutines();
+
             if (_settingsService == null)
                 return;
 
@@ -44,17 +82,26 @@ namespace Core.Settings
 
         private void ApplyMasterVolume(float value)
         {
+            if (!_hasStarted)
+                return;
+
             if (!TrySetVolume(_masterVolumeParameter, value) && _useAudioListenerAsMasterFallback)
                 AudioListener.volume = Mathf.Clamp01(value);
         }
 
         private void ApplyMusicVolume(float value)
         {
+            if (!_hasStarted)
+                return;
+
             TrySetVolume(_musicVolumeParameter, value);
         }
 
         private void ApplySfxVolume(float value)
         {
+            if (!_hasStarted)
+                return;
+
             TrySetVolume(_sfxVolumeParameter, value);
         }
 

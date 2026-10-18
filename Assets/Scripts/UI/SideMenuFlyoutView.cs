@@ -87,6 +87,20 @@ namespace UI
         // A window can give its modal dialog priority over the flyout for this key press.
         public void SuppressEscapeThisFrame() => _escapeSuppressedFrame = Time.frameCount;
 
+        public bool TryCloseWindow()
+        {
+            if (!isActiveAndEnabled || _isOpen || !_showReturnToHubButton ||
+                _returnToHubButton == null || !_returnToHubButton.enabled ||
+                !_returnToHubButton.gameObject.activeSelf || !_returnToHubButton.interactable ||
+                _toggleButton == null || !_toggleButton.IsInteractable())
+                return false;
+
+            // The return button lives in the hidden flyout. Its own interactable flag and
+            // the visible toggle preserve window restrictions without requiring the flyout to open.
+            _returnToHubButton.onClick.Invoke();
+            return true;
+        }
+
         private void ApplyReturnToHubVisibility()
         {
             if (_returnToHubButton == null || _showReturnToHubButton)

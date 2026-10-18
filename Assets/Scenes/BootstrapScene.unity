@@ -310,7 +310,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1603826650}
   - component: {fileID: 1603826651}
-  - component: {fileID: 1603826652}
   - component: {fileID: 1603826653}
   - component: {fileID: 1603826654}
   - component: {fileID: 1603826655}
@@ -389,23 +388,6 @@ MonoBehaviour:
   _roundCompleteMusicClip: {fileID: 8300000, guid: a70794803e4774980bf28a85663762af, type: 3}
   _musicSourceVolume: 0.1
   _musicFadeDuration: 0.5
---- !u!114 &1603826652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603826649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6bbe0d6709e540cd8983c1efc60cf15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Core.Settings.AudioMixerSettingsApplier
-  _audioMixer: {fileID: 24100000, guid: b5d848b57d72843f58ccf89528754c48, type: 2}
-  _masterVolumeParameter: MasterVolume
-  _musicVolumeParameter: MusicVolume
-  _sfxVolumeParameter: SfxVolume
-  _useAudioListenerAsMasterFallback: 1
 --- !u!82 &1603826653
 AudioSource:
   m_ObjectHideFlags: 0

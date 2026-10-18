@@ -76,6 +76,31 @@ namespace UI
             _pauseAction?.Dispose();
         }
 
+        private void Update()
+        {
+            if (_isPauseShortcutEnabled || _isExitingToMainMenu || IsOpen ||
+                Keyboard.current?.escapeKey.wasPressedThisFrame != true ||
+                _stateMachine == null || _sideMenus == null)
+                return;
+
+            // Classes handle their confirmation dialog and mandatory first choice themselves.
+            if (_stateMachine.IsCurrent<ClassesMenuState>())
+                return;
+
+            foreach (var sideMenu in _sideMenus)
+            {
+                // The flyout closes in LateUpdate; keep this key press from closing its window too.
+                if (sideMenu != null && sideMenu.isActiveAndEnabled && sideMenu.IsOpen)
+                    return;
+            }
+
+            foreach (var sideMenu in _sideMenus)
+            {
+                if (sideMenu != null && sideMenu.TryCloseWindow())
+                    return;
+            }
+        }
+
         public void EnableForGameplay()
         {
             _isGameplayInputBlockingAllowed = true;

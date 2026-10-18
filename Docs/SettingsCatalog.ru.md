@@ -220,7 +220,7 @@
 
 Где редактировать:
 
-- [BootstrapScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/BootstrapScene.unity:391) → `AudioManager`
+- [AudioSettings.prefab](/Users/admin/IncrementalRPG/Assets/Resources/AudioSettings.prefab) → `AudioSettings` (создаётся автоматически при запуске из любой сцены)
 
 | Поле | Тип | Инициализатор нового объекта | Вид настройки |
 | --- | --- | --- | --- |
