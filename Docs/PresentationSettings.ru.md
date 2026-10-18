@@ -264,6 +264,8 @@
 
 [HubLabel.prefab](/Users/admin/IncrementalRPG/Assets/Prefabs/Hub/HubLabel.prefab), `HubLabelView._padding` — запас размеров подложки вокруг текста; `_text` и `_backdrop` — ссылки. Шрифт, материал и цвет настраиваются в TMP/Image самого префаба.
 
+У Dungeon, Training, Drill (инвентарь) и Craft есть отметка первого посещения `FirstVisitMarker`, связанная с `HubFeatureButtonView._firstVisitMarker`. Она использует [HubFirstVisitMarker.png](/Users/admin/IncrementalRPG/Assets/Art/UI/HubFirstVisitMarker.png), имеет размер 48×48 и расположена на 60 UI-единиц выше центра подписи. Отметка видна без наведения; её `Image` не перехватывает нажатия. Размер и положение меняются в `RectTransform` дочернего объекта каждой области. У Shrine и Barracks отметок нет. После первого открытия соответствующего окна отметка исчезает; `HubVisitProgress` сразу сохраняет посещение в `SaveData.VisitedHubAreas`. При новой игре отметки появляются снова, а в старых сохранениях без этого поля все четыре области считаются непосещёнными.
+
 ### Боковые меню, нажатия и подсветка
 
 | Компонент | Поля и эффект |
@@ -321,7 +323,7 @@
 
 В текущей сцене `_raysTransform` не назначен: изменение скорости вращения само по себе не создаёт лучи.
 
-`HUD/DemoEndPopup → DemoEndPopupView`: `_captureDownscale` — уменьшение разрешения снимка фона; `_blurIntensity` — сила размытия; `_useLowResBlur` — режим размытия; `_blurMaterialTemplate` — материал; `_steamWishlistUrl` — адрес кнопки wishlist. `_blurBackground`, `_contentRoot` и три кнопки связывают оформление и действия.
+`HUD/DemoEndPopup → DemoEndPopupView`: `_showDuration` — время плавного появления окна и нарастания размытия, с (по умолчанию 0,6; 0 — мгновенно); `_captureDownscale` — уменьшение разрешения снимка фона после захвата полного кадра, без изменения масштаба изображения; `_blurIntensity` — сила размытия; `_useLowResBlur` — режим размытия; `_blurMaterialTemplate` — материал; `_steamWishlistUrl` — адрес кнопки wishlist. `_blurBackground`, `_contentRoot` и три кнопки связывают оформление и действия.
 
 `MainMenuScene → FrontCanvas/IntroPanel → IntroPanelPlayer`: `_videoPlayer`, `_videoDisplay`, `_audioSource`, `_audioClip` — видео и звук; `_aspectRatioFitter` — пропорции; `_hidePanelOnAwake`, `_hidePanelOnComplete` — начальная/финальная видимость; `_allowInputSkip`, `_skipButton` — пропуск; `_prepareTimeout` — предел ожидания подготовки видео. Сам ролик задаётся в `VideoPlayer`; отдельного множителя скорости ролика в `IntroPanelPlayer` нет.
 

@@ -1,4 +1,5 @@
 using System.Collections;
+using Core;
 using Core.Classes;
 using Core.StateMachine;
 using Core.StateMachine.Features;
@@ -41,6 +42,7 @@ namespace UI
         [Inject] private GameplayFeature _gameplay;
         [Inject] private AudioManager _audioManager;
         [Inject] private ClassProgressionService _classes;
+        [Inject] private HubVisitProgress _hubVisits;
 
         private bool _isStartingDungeon;
         private Coroutine _classesLockedNoticeRoutine;
@@ -49,6 +51,7 @@ namespace UI
         {
             _isStartingDungeon = false;
             HideClassesLockedNotice();
+            RefreshFirstVisitMarkers();
         }
 
         private void OnDisable()
@@ -60,6 +63,7 @@ namespace UI
         {
             UIButtonAudio.InstallInChildren(this);
             SetHubFeatureClickSoundsEnabled(false);
+            RefreshFirstVisitMarkers();
 
             if (_dungeonButton != null && _dungeonButton.Button != null)
                 _dungeonButton.Button.onClick.AddListener(OpenDungeon);
@@ -109,6 +113,7 @@ namespace UI
                     PlayOpenSound(_mapOpenSound);
 
                 _dungeonMenuView.Show(_dungeonList, _dungeonSelection, StartDungeon);
+                MarkAreaVisited(HubArea.Dungeon);
                 return;
             }
 
@@ -151,6 +156,7 @@ namespace UI
 
             _dungeonSelection.Select(dungeon);
             _stateMachine.Enter<GameplayState>();
+            MarkAreaVisited(HubArea.Dungeon);
         }
 
         private void HandleDungeonTransitionFinished()
@@ -165,11 +171,13 @@ namespace UI
         {
             PlayOpenSound(_skillTreeOpenSound);
             _stateMachine.Enter<SkillTreeMenuState>();
+            MarkAreaVisited(HubArea.SkillTree);
         }
 
         private void OpenInventory()
         {
             _stateMachine.Enter<InventoryMenuState>();
+            MarkAreaVisited(HubArea.Inventory);
         }
 
         private void OpenBarracks()
@@ -224,6 +232,27 @@ namespace UI
         {
             PlayOpenSound(_craftOpenSound);
             _stateMachine.Enter<CraftState>();
+            MarkAreaVisited(HubArea.Craft);
+        }
+
+        private void MarkAreaVisited(HubArea area)
+        {
+            _hubVisits.MarkVisited(area);
+            RefreshFirstVisitMarkers();
+        }
+
+        private void RefreshFirstVisitMarkers()
+        {
+            // OnEnable can run before scene injection; Start refreshes again after loading the save.
+            if (_hubVisits == null)
+                return;
+
+            _dungeonButton?.SetFirstVisitMarkerVisible(!_hubVisits.HasVisited(HubArea.Dungeon));
+            _skillTreeButton?.SetFirstVisitMarkerVisible(!_hubVisits.HasVisited(HubArea.SkillTree));
+            _inventoryButton?.SetFirstVisitMarkerVisible(!_hubVisits.HasVisited(HubArea.Inventory));
+            _craftButton?.SetFirstVisitMarkerVisible(!_hubVisits.HasVisited(HubArea.Craft));
+            _shrineButton?.SetFirstVisitMarkerVisible(false);
+            _barracksButton?.SetFirstVisitMarkerVisible(false);
         }
 
         private void PlayOpenSound(AudioClip clip)
