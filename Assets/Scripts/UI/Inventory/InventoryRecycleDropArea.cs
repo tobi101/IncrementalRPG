@@ -1,3 +1,4 @@
+using System;
 using Core.Items;
 using Model;
 using Spine.Unity;
@@ -14,20 +15,25 @@ namespace UI.Inventory
         private Graphic _graphic;
         private SkeletonGraphic _recycleGraphic;
         private Color _normalColor;
+        private Action _onRecycled;
 
-        public void Configure(Player player, Graphic graphic, SkeletonGraphic recycleGraphic)
+        public void Configure(Player player, Graphic graphic, SkeletonGraphic recycleGraphic, Action onRecycled = null)
         {
             _player = player;
             _graphic = graphic;
             _recycleGraphic = recycleGraphic;
             _normalColor = graphic.color;
+            _onRecycled = onRecycled;
         }
 
         public override DropResult ProcessDrop(DragContext context)
         {
             var result = base.ProcessDrop(context);
             if (result.Success)
+            {
                 PlayRecycleAnimation();
+                _onRecycled?.Invoke();
+            }
 
             return result;
         }

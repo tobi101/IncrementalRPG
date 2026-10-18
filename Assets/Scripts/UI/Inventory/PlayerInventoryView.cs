@@ -37,6 +37,10 @@ namespace UI.Inventory
         [SerializeField] private Image _weaponSlot;
         [SerializeField] private Image _bootsSlot;
 
+        [Header("Stove Audio")]
+        [SerializeField] private AudioSource _fireLoopSource;
+        [SerializeField] private AudioSource _stoveOnSource;
+
         [Header("Menu")]
         [SerializeField] private SideMenuFlyoutView _sideMenu;
 
@@ -59,6 +63,7 @@ namespace UI.Inventory
         private bool _started;
         private readonly HashSet<string> _usedRewardIds = new();
         private string _feedbackKey;
+        private bool _applicationPaused;
 
         protected override void Awake()
         {
@@ -96,7 +101,7 @@ namespace UI.Inventory
                 itemUseInput.Input.Configure(itemUseInput.Slot, _consumables, ShowConsumableFeedback, _storage);
 
             var recycleArea = _recycleDropPanel.gameObject.AddComponent<InventoryRecycleDropArea>();
-            recycleArea.Configure(_player, _recycleDropPanel, _recycleGraphic);
+            recycleArea.Configure(_player, _recycleDropPanel, _recycleGraphic, PlayRecycleAudio);
 
             _helmetDropArea = CreateEquipmentDropArea(_helmetSlot, EquipmentSlot.Helmet);
             _chestDropArea = CreateEquipmentDropArea(_chestSlot, EquipmentSlot.Chest);
@@ -122,13 +127,46 @@ namespace UI.Inventory
         {
             if (_started)
                 base.OnEnable();
+
+            _fireLoopSource?.Play();
+            RefreshStoveAudioPause();
         }
 
         protected override void OnDisable()
         {
+            _fireLoopSource?.Stop();
+            _stoveOnSource?.Stop();
             ClearConsumableFeedback();
             if (_started)
                 base.OnDisable();
+        }
+
+        private void PlayRecycleAudio()
+        {
+            _stoveOnSource?.Play();
+            RefreshStoveAudioPause();
+        }
+
+        private void OnApplicationFocus(bool focused) => RefreshStoveAudioPause();
+
+        private void OnApplicationPause(bool paused)
+        {
+            _applicationPaused = paused;
+            RefreshStoveAudioPause();
+        }
+
+        private void RefreshStoveAudioPause()
+        {
+            if (_applicationPaused || !Application.isFocused)
+            {
+                _fireLoopSource?.Pause();
+                _stoveOnSource?.Pause();
+            }
+            else
+            {
+                _fireLoopSource?.UnPause();
+                _stoveOnSource?.UnPause();
+            }
         }
 
         private void OnDestroy()

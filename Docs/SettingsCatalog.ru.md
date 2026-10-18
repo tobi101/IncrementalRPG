@@ -969,18 +969,21 @@ Time Scale сундука сбрасывается кодом; скорость 
 | [_closedIdleAnimationName](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:20) | string | `"idle_close"` | Значение |
 | [_openAnimationName](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:21) | string | `"open"` | Значение |
 | [_openIdleAnimationName](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:22) | string | `"idle_open"` | Значение |
-| [_itemViewport](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:25) | RectTransform | — | Ссылка на объект/компонент/ресурс |
-| [_ambientIcons](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:26) | Sprite[] | — | Резервный список иконок. В переходе лента использует иконки допустимых наград текущего пула |
-| [_itemSize](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:27) | Vector2 | `new(150f, 150f)` | Значение |
-| [_itemSpacing](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:28) | float | `190f` | Значение; Min(1f) |
-| [_spinSpeed](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:29) | float | `2200f` | Значение; Min(1f) |
-| [_spinStartDelay](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:31) | float | `0.6f` | Значение; Min(0f) |
-| [_constantSpinDuration](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:32) | float | `1.8f` | Значение; Min(0f) |
-| [_settleDuration](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:33) | float | `1.2f` | Значение; Min(0.01f) |
-| [_winnerEntryPadding](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:34) | float | `40f` | Значение; Min(0f) |
-| [_resultPopupPrefab](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:37) | LootRewardPopupView | — | Ссылка на объект/компонент/ресурс |
-| [_resultPopupParent](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:38) | RectTransform | — | Ссылка на объект/компонент/ресурс |
-| [_transitionLabels](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:39) | GameObject[] | — | Список; элементы раскрываются в Inspector |
+| [_chestFadeOutDuration](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:23) | float | `0.4f` | Длительность fade out сундука; Min(0f) |
+| [_itemViewport](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:26) | RectTransform | — | Ссылка на объект/компонент/ресурс |
+| [_ambientIcons](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:27) | Sprite[] | — | Резервный список иконок. В переходе лента использует иконки допустимых наград текущего пула |
+| [_itemSize](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:28) | Vector2 | `new(150f, 150f)` | Значение |
+| [_itemSpacing](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:29) | float | `190f` | Значение; Min(1f) |
+| [_spinSpeed](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:30) | float | `2200f` | Значение; Min(1f) |
+| [_spinStartDelay](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:32) | float | `0.5f` | От начала открытия до ленты и fade out; Min(0f) |
+| [_constantSpinDuration](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:33) | float | `1.8f` | Значение; Min(0f) |
+| [_spinAudioSource](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:34) | AudioSource | — | Петля прокрутки `SpinAudio`, клип `LevelTransition/spin.ogg` |
+| [_rewardAudioSource](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:35) | AudioSource | — | Однократный звук награды `RewardAudio`, клип `LevelTransition/reward.ogg` |
+| [_settleDuration](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:36) | float | `1.2f` | Значение; Min(0.01f) |
+| [_winnerEntryPadding](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:37) | float | `40f` | Значение; Min(0f) |
+| [_resultPopupPrefab](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:40) | LootRewardPopupView | — | Ссылка на объект/компонент/ресурс |
+| [_resultPopupParent](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:41) | RectTransform | — | Ссылка на объект/компонент/ресурс |
+| [_transitionLabels](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:42) | GameObject[] | — | Список; элементы раскрываются в Inspector |
 
 <a id="mainmenubuttonlayoutscaler"></a>
 
@@ -1395,9 +1398,11 @@ Time Scale сундука сбрасывается кодом; скорость 
 | [_chestSlot](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:36) | Image | — | Ссылка на объект/компонент/ресурс |
 | [_weaponSlot](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:37) | Image | — | Ссылка на объект/компонент/ресурс |
 | [_bootsSlot](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:38) | Image | — | Не задаёт рабочий слот; декоративный силуэт настраивается на BootsPlaceholder |
-| [_sideMenu](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:41) | SideMenuFlyoutView | — | Экземпляр общего SideMenu.prefab внутри InventoryView |
-| [_dragCanvasPrefab](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:45) | GameObject | — | Ссылка на объект/компонент/ресурс |
-| [_tooltipCanvasPrefab](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:46) | GameObject | — | Ссылка на объект/компонент/ресурс |
+| [_fireLoopSource](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:41) | AudioSource | — | Петля печи `InventoryFireLoop`, пока открыт инвентарь |
+| [_stoveOnSource](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:42) | AudioSource | — | Однократный звук `InventoryStoveOn` при успешном сжигании |
+| [_sideMenu](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:45) | SideMenuFlyoutView | — | Экземпляр общего SideMenu.prefab внутри InventoryView |
+| [_dragCanvasPrefab](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:48) | GameObject | — | Ссылка на объект/компонент/ресурс |
+| [_tooltipCanvasPrefab](/Users/admin/IncrementalRPG/Assets/Scripts/UI/Inventory/PlayerInventoryView.cs:49) | GameObject | — | Ссылка на объект/компонент/ресурс |
 | `_consumableFeedback` | TMP_Text | — | Текст локализованного результата применения |
 | `_consumableFeedbackRoot` | GameObject | — | Панель сообщения; скрывается через 5 секунд и при выходе из инвентаря. Длительность задана в коде PlayerInventoryView |
 
@@ -1967,7 +1972,7 @@ Time Scale сундука сбрасывается кодом; скорость 
 | [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity) → MenuCanvas/HubPanel/Plateau/CraftButton/CraftImage/SkeletonGraphic (craft_fire) | 1 | [craft_fire_SkeletonData.asset](/Users/admin/IncrementalRPG/Assets/Art/Animations/Hub/Craft/craft_fire_SkeletonData.asset) | [craft_fire.json](/Users/admin/IncrementalRPG/Assets/Art/Animations/Hub/Craft/craft_fire.json) | loop |
 | [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity) → MenuCanvas/HubPanel/Plateau/BarracksButton/BarracksImage/SkeletonGraphic (torch) (1) | 1 | [torch_SkeletonData.asset](/Users/admin/IncrementalRPG/Assets/Art/Animations/Hub/Torch/torch_SkeletonData.asset) | [torch.json](/Users/admin/IncrementalRPG/Assets/Art/Animations/Hub/Torch/torch.json) | loop |
 | [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity) → HUD/HUD_Panel/EnemyScoreView/SkeletonGraphic (ui_skull) | 1 | [ui_skull_SkeletonData.asset](/Users/admin/IncrementalRPG/Assets/Art/Animations/HUD/Skull/ui_skull_SkeletonData.asset) | [ui_skull.json](/Users/admin/IncrementalRPG/Assets/Art/Animations/HUD/Skull/ui_skull.json) | idle |
-| [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity) → HUD/LevelTransitionCurtainView/RevealGroup/LootboxGroup/SkeletonGraphic (chest) | 1 | [chest_SkeletonData.asset](/Users/admin/IncrementalRPG/Assets/Art/Animations/NEW_06_2026/Chest/chest_SkeletonData.asset) | [chest.json](/Users/admin/IncrementalRPG/Assets/Art/Animations/NEW_06_2026/Chest/chest.json) | idle_close, idle_open, open |
+| [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity) → HUD/LevelTransitionCurtainView/RevealGroup/LootboxGroup/SkeletonGraphic (chest) | 1 | [chest_SkeletonData.asset](/Users/admin/IncrementalRPG/Assets/Art/Animations/10_2026/Chest/chest_SkeletonData.asset) | [chest.json](/Users/admin/IncrementalRPG/Assets/Art/Animations/10_2026/Chest/chest.json) | idle_close, idle_open, open |
 | [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity) → MenuCanvas/HubPanel/SkeletonGraphic (fireflies) | 0.5 | [fireflies_SkeletonData.asset](/Users/admin/IncrementalRPG/Assets/Art/Animations/Hub/Firefly/fireflies_SkeletonData.asset) | [fireflies.json](/Users/admin/IncrementalRPG/Assets/Art/Animations/Hub/Firefly/fireflies.json) | loop1, loop2, loop3 |
 | [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity) → MenuCanvas/HubPanel/Plateau/BarracksButton/BarracksImage/SkeletonGraphic (torch) (2) | 1 | [torch_SkeletonData.asset](/Users/admin/IncrementalRPG/Assets/Art/Animations/Hub/Torch/torch_SkeletonData.asset) | [torch.json](/Users/admin/IncrementalRPG/Assets/Art/Animations/Hub/Torch/torch.json) | loop |
 | [GameScene.unity](/Users/admin/IncrementalRPG/Assets/Scenes/GameScene.unity) → MenuCanvas/HubPanel/SkeletonGraphic (fireflies) (3) | 0.5 | [fireflies_SkeletonData.asset](/Users/admin/IncrementalRPG/Assets/Art/Animations/Hub/Firefly/fireflies_SkeletonData.asset) | [fireflies.json](/Users/admin/IncrementalRPG/Assets/Art/Animations/Hub/Firefly/fireflies.json) | loop1, loop2, loop3 |

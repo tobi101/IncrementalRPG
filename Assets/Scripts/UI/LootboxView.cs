@@ -20,6 +20,7 @@ namespace UI
         [SerializeField] private string _closedIdleAnimationName = "idle_close";
         [SerializeField] private string _openAnimationName = "open";
         [SerializeField] private string _openIdleAnimationName = "idle_open";
+        [SerializeField, Min(0f)] private float _chestFadeOutDuration = 0.4f;
 
         [Header("Roll")]
         [SerializeField] private RectTransform _itemViewport;
@@ -27,10 +28,11 @@ namespace UI
         [SerializeField] private Vector2 _itemSize = new(150f, 150f);
         [SerializeField, Min(1f)] private float _itemSpacing = 190f;
         [SerializeField, Min(1f)] private float _spinSpeed = 2200f;
-        [SerializeField, Min(0f), Tooltip("Minimum opening time. The reel also waits for the Spine animation to finish.")]
-        private float _spinStartDelay = 0.6f;
+        [SerializeField, Min(0f), Tooltip("Time from the start of open to the reel and chest fade. Match the lid reveal key (0.5 s in the current export).")]
+        private float _spinStartDelay = 0.5f;
         [SerializeField, Min(0f)] private float _constantSpinDuration = 1.8f;
         [SerializeField] private AudioSource _spinAudioSource;
+        [SerializeField] private AudioSource _rewardAudioSource;
         [SerializeField, Min(0.01f)] private float _settleDuration = 1.2f;
         [SerializeField, Min(0f)] private float _winnerEntryPadding = 40f;
 
@@ -48,10 +50,10 @@ namespace UI
         private bool _spinStarted;
         private bool _spinFinished;
         private Coroutine _spinRoutine;
+        private Coroutine _chestFadeRoutine;
         private int _rollingItemCount;
         private bool _isPaused;
         private Spine.TrackEntry _openingEntry;
-        private bool _openingCompleted;
         private bool _applicationPaused;
         private bool IsPresentationPaused => _isPaused || _applicationPaused || !Application.isFocused;
 
@@ -68,7 +70,9 @@ namespace UI
         private void OnDisable()
         {
             _spinAudioSource?.Stop();
+            _rewardAudioSource?.Stop();
             CancelOpening();
+            CancelChestFade();
             if (_spinRoutine != null)
                 StopCoroutine(_spinRoutine);
 
@@ -137,14 +141,24 @@ namespace UI
         private void RefreshPresentationPause()
         {
             _chest.timeScale = IsPresentationPaused ? 0f : 1f;
-            if (IsPresentationPaused) _spinAudioSource?.Pause();
-            else _spinAudioSource?.UnPause();
+            if (IsPresentationPaused)
+            {
+                _spinAudioSource?.Pause();
+                _rewardAudioSource?.Pause();
+            }
+            else
+            {
+                _spinAudioSource?.UnPause();
+                _rewardAudioSource?.UnPause();
+            }
         }
 
         public void ResetView()
         {
             _spinAudioSource?.Stop();
+            _rewardAudioSource?.Stop();
             CancelOpening();
+            CancelChestFade();
             if (_spinRoutine != null)
                 StopCoroutine(_spinRoutine);
 
@@ -153,6 +167,7 @@ namespace UI
             _spinStarted = false;
             _spinFinished = false;
             _resultPopup?.Hide();
+            SetChestAlpha(1f);
             _chest.gameObject.SetActive(true);
             foreach (var label in _transitionLabels)
                 label.SetActive(true);
@@ -163,6 +178,8 @@ namespace UI
             PrepareChest();
             var idleEntry = _chest.AnimationState.SetAnimation(0, _closedIdleAnimationName, true);
             idleEntry.MixDuration = 0f;
+            _chest.Update(0f);
+            _chest.UpdateMesh();
         }
 
         private void HandleOpeningCompleted(Spine.TrackEntry entry)
@@ -172,7 +189,6 @@ namespace UI
 
             _openingEntry.Complete -= HandleOpeningCompleted;
             _openingEntry = null;
-            _openingCompleted = true;
             var idleEntry = _chest.AnimationState.SetAnimation(0, _openIdleAnimationName, true);
             idleEntry.MixDuration = 0f;
         }
@@ -182,32 +198,57 @@ namespace UI
             if (_openingEntry != null)
                 _openingEntry.Complete -= HandleOpeningCompleted;
             _openingEntry = null;
-            _openingCompleted = false;
+        }
+
+        private void CancelChestFade()
+        {
+            if (_chestFadeRoutine != null)
+                StopCoroutine(_chestFadeRoutine);
+            _chestFadeRoutine = null;
         }
 
         private IEnumerator OpenAndSpinRoutine()
         {
             PrepareChest();
-            _openingCompleted = false;
             _openingEntry = _chest.AnimationState.SetAnimation(0, _openAnimationName, false);
             _openingEntry.MixDuration = 0f;
             _openingEntry.Complete += HandleOpeningCompleted;
+            _chest.Update(0f);
+            _chest.UpdateMesh();
 
             var elapsed = 0f;
-            while (!_openingCompleted || IsPresentationPaused || elapsed < _spinStartDelay)
+            while (IsPresentationPaused || elapsed < _spinStartDelay)
             {
                 elapsed += GetGameplayDeltaTime();
                 yield return null;
             }
 
-            // Give the fully opened pose a rendered frame before replacing the chest.
-            yield return null;
-            while (IsPresentationPaused)
-                yield return null;
-
-            _chest.gameObject.SetActive(false);
             EnsureItemPool();
+            _chestFadeRoutine = StartCoroutine(FadeOutChestRoutine());
             yield return SpinRoutine();
+        }
+
+        private IEnumerator FadeOutChestRoutine()
+        {
+            var elapsed = 0f;
+            while (elapsed < _chestFadeOutDuration)
+            {
+                elapsed += GetGameplayDeltaTime();
+                SetChestAlpha(1f - Mathf.SmoothStep(0f, 1f, elapsed / _chestFadeOutDuration));
+                yield return null;
+            }
+
+            SetChestAlpha(0f);
+            CancelOpening();
+            _chest.gameObject.SetActive(false);
+            _chestFadeRoutine = null;
+        }
+
+        private void SetChestAlpha(float alpha)
+        {
+            var color = _chest.color;
+            color.a = alpha;
+            _chest.color = color;
         }
 
         private IEnumerator SpinRoutine()
@@ -262,6 +303,8 @@ namespace UI
             PositionFinalItems(0f);
             _spinFinished = true;
             _spinAudioSource?.Stop();
+            _rewardAudioSource?.Play();
+            RefreshPresentationPause();
 
             _spinRoutine = null;
             SpinCompleted?.Invoke();
