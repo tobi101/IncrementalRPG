@@ -1279,7 +1279,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f032a22ee2c44f9a99d7f232dd915e3e, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.MainMenuButtonView
 --- !u!224 &687521129 stripped
 RectTransform:
@@ -4203,6 +4203,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1876041323}
     m_Modifications:
+    - target: {fileID: 202495968474410926, guid: 4680eec031e1f4ef5a1967795ee705a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 879337172142099278, guid: 4680eec031e1f4ef5a1967795ee705a1, type: 3}
       propertyPath: m_Name
       value: SettingsPanel
@@ -4287,10 +4291,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3135880296030947138, guid: 4680eec031e1f4ef5a1967795ee705a1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135880296030947138, guid: 4680eec031e1f4ef5a1967795ee705a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381752948666628963, guid: 4680eec031e1f4ef5a1967795ee705a1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381752948666628963, guid: 4680eec031e1f4ef5a1967795ee705a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209213816648954776, guid: 4680eec031e1f4ef5a1967795ee705a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8309886138722359381, guid: 4680eec031e1f4ef5a1967795ee705a1, type: 3}
       propertyPath: _root
       value: 
       objectReference: {fileID: 101777770}
+    - target: {fileID: 8516737909021395257, guid: 4680eec031e1f4ef5a1967795ee705a1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516737909021395257, guid: 4680eec031e1f4ef5a1967795ee705a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165338047523986421, guid: 4680eec031e1f4ef5a1967795ee705a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4535,7 +4571,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!114 &8675766195068292658 stripped
 MonoBehaviour:
@@ -4546,7 +4582,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &8675766195068292659 stripped
 GameObject:

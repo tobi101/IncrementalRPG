@@ -2071,6 +2071,14 @@ MonoBehaviour:
     m_Localized: Daniel Stone
     m_Metadata:
       m_Items: []
+  - m_Id: 56060790837338112
+    m_Localized: "职业将在游戏完整版中开放"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56060792045297664
+    m_Localized: "兵营将在游戏完整版中开放"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

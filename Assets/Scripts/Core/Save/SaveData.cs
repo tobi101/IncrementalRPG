@@ -14,6 +14,7 @@ namespace Core.Save
         public Core.Classes.ClassProgressState ClassProgressState = new();
         public Core.Forge.ForgeAttempt ForgeAttempt;
         public HubArea VisitedHubAreas;
+        public bool HasFinishedFirstRun;
 
         public PlayerInfo SavedPlayerInfo = PlayerInfo.Default;
         public SkillTreeState SkillTreeState = new SkillTreeState();

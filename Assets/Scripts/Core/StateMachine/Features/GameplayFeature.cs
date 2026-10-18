@@ -31,6 +31,7 @@ namespace Core.StateMachine.Features
         [Inject] private SkillTreeService _skillTree;
         [Inject] private AudioManager _audioManager;
         [Inject] private RunConsumableService _consumables;
+        [Inject] private HubVisitProgress _hubVisits;
 
         public event Action OnSessionExpired;
         public event Action<BigDouble, BigDouble> OnSessionGoldEarned;
@@ -160,6 +161,9 @@ namespace Core.StateMachine.Features
 
         public void Disable()
         {
+            if (_runState != RunState.Inactive && _runState != RunState.Ready)
+                _hubVisits.MarkFirstRunFinished();
+
             _consumables.EndRun();
             _damageZone.ResetAttackTimers();
             SetPaused(false);
@@ -291,6 +295,7 @@ namespace Core.StateMachine.Features
             _player.GoldTotal += _sessionGold;
             _sessionRecordResult = _player.UpdateSessionRecords(_sessionGold, _sessionKills);
             _sessionResultsApplied = true;
+            _hubVisits.MarkFirstRunFinished();
         }
 
         private void RestartSessionFromCurrentLevel()

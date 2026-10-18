@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Core.Save;
 
 namespace Core
@@ -19,7 +20,20 @@ namespace Core
 
         public event Action OnChanged;
 
+        public bool HasFinishedFirstRun { get; private set; }
+
         public bool HasVisited(HubArea area) => (_visitedAreas & area) == area;
+
+        public void MarkFirstRunFinished()
+        {
+            if (HasFinishedFirstRun)
+                return;
+
+            HasFinishedFirstRun = true;
+            // Opening training before the first run must not consume its later notification.
+            _visitedAreas &= ~HubArea.SkillTree;
+            OnChanged?.Invoke();
+        }
 
         public void MarkVisited(HubArea area)
         {
@@ -30,8 +44,19 @@ namespace Core
             OnChanged?.Invoke();
         }
 
-        public void Contribute(SaveData data) => data.VisitedHubAreas = _visitedAreas;
+        public void Contribute(SaveData data)
+        {
+            data.VisitedHubAreas = _visitedAreas;
+            data.HasFinishedFirstRun = HasFinishedFirstRun;
+        }
 
-        public void Load(SaveData data) => _visitedAreas = data.VisitedHubAreas;
+        public void Load(SaveData data)
+        {
+            _visitedAreas = data.VisitedHubAreas;
+            HasFinishedFirstRun = data.HasFinishedFirstRun || data.SavedPlayerInfo.BestSessionKills > 0 ||
+                data.SavedPlayerInfo.BestSessionGold > 0 ||
+                (data.DungeonProgressState?.entries?.Any(entry => entry != null &&
+                    (entry.reachedLevelIndex > 0 || entry.completed)) ?? false);
+        }
     }
 }

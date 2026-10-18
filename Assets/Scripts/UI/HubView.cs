@@ -1,6 +1,7 @@
 using System.Collections;
 using Core;
-using Core.Classes;
+using Core.Forge;
+using Core.Items;
 using Core.StateMachine;
 using Core.StateMachine.Features;
 using Core.StateMachine.States;
@@ -8,6 +9,8 @@ using Core.Gameplay.Dungeon;
 using IncrementalRPG.Scripts.AudioManager;
 using Reflex.Attributes;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 using UnityEngine.Serialization;
 
 namespace UI
@@ -24,9 +27,12 @@ namespace UI
         [SerializeField] private DungeonMenuView _dungeonMenuView;
         [SerializeField] private MapMenuFadeTransition _mapMenuFadeTransition;
 
-        [Header("Classes locked notice")]
-        [SerializeField] private CanvasGroup _classesLockedNotice;
-        [SerializeField, Min(0.1f)] private float _classesLockedNoticeDuration = 4f;
+        [Header("Feature locked notice")]
+        [FormerlySerializedAs("_classesLockedNotice")]
+        [SerializeField] private CanvasGroup _featureLockedNotice;
+        [SerializeField] private LocalizeStringEvent _featureLockedNoticeText;
+        [FormerlySerializedAs("_classesLockedNoticeDuration")]
+        [SerializeField, Min(0.1f)] private float _featureLockedNoticeDuration = 4f;
 
         [Header("Open Sounds")]
         [SerializeField] private AudioClip _mapOpenSound;
@@ -41,29 +47,33 @@ namespace UI
         [Inject] private DungeonSelectionService _dungeonSelection;
         [Inject] private GameplayFeature _gameplay;
         [Inject] private AudioManager _audioManager;
-        [Inject] private ClassProgressionService _classes;
+        [Inject] private ForgeService _forge;
         [Inject] private HubVisitProgress _hubVisits;
+        [Inject] private PlayerItemStorage _itemStorage;
 
         private bool _isStartingDungeon;
-        private Coroutine _classesLockedNoticeRoutine;
+        private Coroutine _featureLockedNoticeRoutine;
 
         private void OnEnable()
         {
             _isStartingDungeon = false;
-            HideClassesLockedNotice();
-            RefreshFirstVisitMarkers();
+            HideFeatureLockedNotice();
+            RefreshNotifications();
         }
 
         private void OnDisable()
         {
-            HideClassesLockedNotice();
+            HideFeatureLockedNotice();
         }
 
         private void Start()
         {
             UIButtonAudio.InstallInChildren(this);
             SetHubFeatureClickSoundsEnabled(false);
-            RefreshFirstVisitMarkers();
+            _hubVisits.OnChanged += RefreshNotifications;
+            _itemStorage.OnChanged += RefreshNotifications;
+            _dungeonSelection.OnProgressChanged += RefreshNotifications;
+            RefreshNotifications();
 
             if (_dungeonButton != null && _dungeonButton.Button != null)
                 _dungeonButton.Button.onClick.AddListener(OpenDungeon);
@@ -86,6 +96,13 @@ namespace UI
 
         private void OnDestroy()
         {
+            if (_hubVisits != null)
+                _hubVisits.OnChanged -= RefreshNotifications;
+            if (_itemStorage != null)
+                _itemStorage.OnChanged -= RefreshNotifications;
+            if (_dungeonSelection != null)
+                _dungeonSelection.OnProgressChanged -= RefreshNotifications;
+
             if (_dungeonButton != null && _dungeonButton.Button != null)
                 _dungeonButton.Button.onClick.RemoveListener(OpenDungeon);
 
@@ -177,59 +194,63 @@ namespace UI
         private void OpenInventory()
         {
             _stateMachine.Enter<InventoryMenuState>();
+            _itemStorage.MarkItemsSeen();
             MarkAreaVisited(HubArea.Inventory);
         }
 
         private void OpenBarracks()
         {
-            PlayOpenSound(_barracksOpenSound);
-            _stateMachine.Enter<BarracksState>();
+            ShowFeatureLockedNotice("demo_unlocking_barracks");
         }
 
         private void OpenClasses()
         {
-            if (!_classes.HasChosenFirstClass && !_classes.FirstChoicePending)
+            // The shrine remains unavailable throughout the demo, regardless of saved class progress.
+            ShowFeatureLockedNotice("demo_unlocking_classes");
+        }
+
+        private void ShowFeatureLockedNotice(string key, params object[] arguments)
+        {
+            HideFeatureLockedNotice();
+            _featureLockedNoticeText.StringReference = new LocalizedString(ItemText.Table, key)
             {
-                ShowClassesLockedNotice();
-                return;
+                Arguments = arguments
+            };
+            _featureLockedNotice.gameObject.SetActive(true);
+            _featureLockedNotice.alpha = 1f;
+            _featureLockedNoticeRoutine = StartCoroutine(HideFeatureLockedNoticeAfterDelay());
+        }
+
+        private IEnumerator HideFeatureLockedNoticeAfterDelay()
+        {
+            yield return new WaitForSecondsRealtime(_featureLockedNoticeDuration);
+            _featureLockedNoticeRoutine = null;
+            HideFeatureLockedNotice();
+        }
+
+        private void HideFeatureLockedNotice()
+        {
+            if (_featureLockedNoticeRoutine != null)
+            {
+                StopCoroutine(_featureLockedNoticeRoutine);
+                _featureLockedNoticeRoutine = null;
             }
 
-            PlayOpenSound(_shrineOpenSound);
-            _stateMachine.Enter<ClassesMenuState>();
-        }
-
-        private void ShowClassesLockedNotice()
-        {
-            HideClassesLockedNotice();
-            _classesLockedNotice.gameObject.SetActive(true);
-            _classesLockedNotice.alpha = 1f;
-            _classesLockedNoticeRoutine = StartCoroutine(HideClassesLockedNoticeAfterDelay());
-        }
-
-        private IEnumerator HideClassesLockedNoticeAfterDelay()
-        {
-            yield return new WaitForSecondsRealtime(_classesLockedNoticeDuration);
-            _classesLockedNoticeRoutine = null;
-            HideClassesLockedNotice();
-        }
-
-        private void HideClassesLockedNotice()
-        {
-            if (_classesLockedNoticeRoutine != null)
+            if (_featureLockedNotice != null)
             {
-                StopCoroutine(_classesLockedNoticeRoutine);
-                _classesLockedNoticeRoutine = null;
-            }
-
-            if (_classesLockedNotice != null)
-            {
-                _classesLockedNotice.alpha = 0f;
-                _classesLockedNotice.gameObject.SetActive(false);
+                _featureLockedNotice.alpha = 0f;
+                _featureLockedNotice.gameObject.SetActive(false);
             }
         }
 
         private void OpenCraft()
         {
+            if (_forge.Level == 0)
+            {
+                ShowFeatureLockedNotice("forge.locked", _forge.Config.firstAvailableLocation);
+                return;
+            }
+
             PlayOpenSound(_craftOpenSound);
             _stateMachine.Enter<CraftState>();
             MarkAreaVisited(HubArea.Craft);
@@ -238,19 +259,19 @@ namespace UI
         private void MarkAreaVisited(HubArea area)
         {
             _hubVisits.MarkVisited(area);
-            RefreshFirstVisitMarkers();
+            RefreshNotifications();
         }
 
-        private void RefreshFirstVisitMarkers()
+        private void RefreshNotifications()
         {
             // OnEnable can run before scene injection; Start refreshes again after loading the save.
-            if (_hubVisits == null)
+            if (_hubVisits == null || _itemStorage == null || _forge == null)
                 return;
 
             _dungeonButton?.SetFirstVisitMarkerVisible(!_hubVisits.HasVisited(HubArea.Dungeon));
-            _skillTreeButton?.SetFirstVisitMarkerVisible(!_hubVisits.HasVisited(HubArea.SkillTree));
-            _inventoryButton?.SetFirstVisitMarkerVisible(!_hubVisits.HasVisited(HubArea.Inventory));
-            _craftButton?.SetFirstVisitMarkerVisible(!_hubVisits.HasVisited(HubArea.Craft));
+            _skillTreeButton?.SetFirstVisitMarkerVisible(_hubVisits.HasFinishedFirstRun && !_hubVisits.HasVisited(HubArea.SkillTree));
+            _inventoryButton?.SetFirstVisitMarkerVisible(_itemStorage.HasUnseenItems);
+            _craftButton?.SetFirstVisitMarkerVisible(_forge.Level > 0 && !_hubVisits.HasVisited(HubArea.Craft));
             _shrineButton?.SetFirstVisitMarkerVisible(false);
             _barracksButton?.SetFirstVisitMarkerVisible(false);
         }

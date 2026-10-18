@@ -914,7 +914,7 @@ GameObject:
   - component: {fileID: 33274488}
   - component: {fileID: 33274489}
   m_Layer: 5
-  m_Name: ClassesLockedNotice
+  m_Name: FeatureLockedNotice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12797,7 +12797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 191.936}
+  m_AnchoredPosition: {x: 0, y: 21.936}
   m_SizeDelta: {x: 48, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &550756261
@@ -17812,7 +17812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 167.28}
+  m_AnchoredPosition: {x: 0, y: -2.72}
   m_SizeDelta: {x: 48, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &799085895
@@ -25790,7 +25790,7 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: classes.before_introduction
+      m_Key: demo_unlocking_classes
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -25833,7 +25833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Complete every level of the first location to choose your first class.
+  m_text: Classes will be available in the full version of the game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d7d7c299be0b428f838e2afcc3b07b8, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 5bb09b7889e794b3e8d9b31b323e82fd, type: 2}
@@ -37319,7 +37319,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 235}
+  m_AnchoredPosition: {x: 0, y: 65}
   m_SizeDelta: {x: 48, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690229284
@@ -41905,7 +41905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 215.62961}
+  m_AnchoredPosition: {x: 0, y: 105.62961}
   m_SizeDelta: {x: 48, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1919674770
@@ -46196,8 +46196,9 @@ MonoBehaviour:
   _craftButton: {fileID: 413410365}
   _dungeonMenuView: {fileID: 748334532}
   _mapMenuFadeTransition: {fileID: 1969758493}
-  _classesLockedNotice: {fileID: 33274489}
-  _classesLockedNoticeDuration: 4
+  _featureLockedNotice: {fileID: 33274489}
+  _featureLockedNoticeText: {fileID: 1122578780}
+  _featureLockedNoticeDuration: 4
   _mapOpenSound: {fileID: 8300000, guid: 0f1feb84f318b44398c3aa9af6409ce4, type: 3}
   _skillTreeOpenSound: {fileID: 8300000, guid: 16af45c93446b499f97e1ec0b1980cde, type: 3}
   _barracksOpenSound: {fileID: 0}

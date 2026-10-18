@@ -24,7 +24,7 @@ namespace Core.Forge
     [CreateAssetMenu(fileName = "ForgeConfig", menuName = "RPG/Forge/Config")]
     public sealed class ForgeConfig : ScriptableObject
     {
-        [Tooltip("The window always opens from the hub. Crafting becomes available at this reached location (1-based).")]
+        [Tooltip("The forge window and crafting become available at this reached location (1-based).")]
         [Min(1)] public int firstAvailableLocation = 2;
         public ForgeLevelSettings[] levels = { new(), new(), new(), new() };
         [Tooltip("Helmet, chest and weapon definitions. One definition per type; all types have equal chances.")]

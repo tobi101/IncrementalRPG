@@ -20,6 +20,7 @@ namespace Core.Items
         public int AnchorIndex = -1;
         public int Orientation;
         public bool HasRolledData;
+        public bool IsNew;
         public ItemRarity Rarity;
         public BigDouble SellPrice;
         public List<ItemStatState> Stats = new();
@@ -99,6 +100,18 @@ namespace Core.Items
 
         public IReadOnlyList<PlayerItemInstanceState> Items => _state.Items;
         public IEnumerable<PlayerItemInstanceState> InventoryItems => _state.Items.Where(item => !IsEquipped(item.InstanceId));
+        public bool HasUnseenItems => _state.Items.Any(item => item.IsNew);
+
+        public void MarkItemsSeen()
+        {
+            if (!HasUnseenItems)
+                return;
+
+            foreach (var item in _state.Items)
+                item.IsNew = false;
+
+            OnChanged?.Invoke();
+        }
 
         public void ConfigureInventoryLayout(IInventoryTopology topology) => _inventoryTopology = topology;
 
@@ -166,7 +179,10 @@ namespace Core.Items
             foreach (var item in items)
             {
                 if (!_state.Items.Contains(item))
+                {
                     _state.Items.Add(item);
+                    item.IsNew = true;
+                }
 
                 item.AnchorIndex = IsEquipped(item.InstanceId) ? -1 : anchorIndex;
                 item.Orientation = IsEquipped(item.InstanceId) ? 0 : orientation;
