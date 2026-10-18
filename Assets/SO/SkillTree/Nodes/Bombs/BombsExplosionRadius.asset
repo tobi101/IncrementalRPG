@@ -35,11 +35,11 @@ MonoBehaviour:
   maxLevel: 3
   goldCostPerLevel:
   - mantissa: 1
-    exponent: 0
-  - mantissa: 1
-    exponent: 0
-  - mantissa: 1
-    exponent: 0
+    exponent: 3
+  - mantissa: 1.3
+    exponent: 3
+  - mantissa: 1.6
+    exponent: 3
   additionalIcon: {fileID: 21300000, guid: a5839163429d1423bb90ec3946c1c316, type: 3}
   prerequisites:
   - node: {fileID: 11400000, guid: d4a7bc70acca045b983d7a86ef37f217, type: 2}
