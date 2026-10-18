@@ -59,7 +59,7 @@ MonoBehaviour:
     - item: {fileID: 11400000, guid: 7f8e76709ece4ee28e34c2aa00bbe432, type: 2}
       weight: 50
       currencyAmount:
-        mantissa: 2
+        mantissa: 1
         exponent: 3
     - item: {fileID: 11400000, guid: edd92f3542bb463f9d53b08d9e989238, type: 2}
       weight: 20

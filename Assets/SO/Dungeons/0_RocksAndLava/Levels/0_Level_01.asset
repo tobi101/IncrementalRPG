@@ -57,10 +57,10 @@ MonoBehaviour:
   lootPool:
     entries:
     - item: {fileID: 11400000, guid: 7f8e76709ece4ee28e34c2aa00bbe432, type: 2}
-      weight: 50
+      weight: 65
       currencyAmount:
-        mantissa: 2
-        exponent: 3
+        mantissa: 5
+        exponent: 2
     - item: {fileID: 11400000, guid: edd92f3542bb463f9d53b08d9e989238, type: 2}
       weight: 20
       currencyAmount:
