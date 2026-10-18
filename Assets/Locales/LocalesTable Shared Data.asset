@@ -383,12 +383,12 @@ MonoBehaviour:
     m_Key: skill_damage_4
     m_Metadata:
       m_Items: []
-  - m_Id: 5129785536667648
-    m_Key: skill_damage_d
-    m_Metadata:
-      m_Items: []
   - m_Id: 5129854142898176
     m_Key: skill_bomb_add
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5129785536667648
+    m_Key: skill_damage_d
     m_Metadata:
       m_Items: []
   - m_Id: 5129857812914176
@@ -1421,6 +1421,28 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 51820000000000003
     m_Key: skill.preview.unlocked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56039480735678464
+    m_Key: 'xp_collected
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56040309244936192
+    m_Key: time_score_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56043403018092544
+    m_Key: demo_unlocking_class
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56043476628127744
+    m_Key: demo_unlocking_barracks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56043527203045376
+    m_Key: demo_unlocking_craft
     m_Metadata:
       m_Items: []
   m_Metadata:

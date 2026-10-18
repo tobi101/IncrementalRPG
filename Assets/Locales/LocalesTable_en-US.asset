@@ -1474,6 +1474,26 @@ MonoBehaviour:
     m_Localized: Unlocked
     m_Metadata:
       m_Items: []
+  - m_Id: 56039480735678464
+    m_Localized: XP Collected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56040309244936192
+    m_Localized: 'Time Spent:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56043403018092544
+    m_Localized: Classes will be available in full version of the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56043476628127744
+    m_Localized: Barracks will be available in full version of the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56043527203045376
+    m_Localized: Keep playing to unlock armor crafting!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
