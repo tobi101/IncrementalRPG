@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 3953592695543780856}
-  _defaultDragVisualPrefab: {fileID: 6982264044130136322, guid: f5e3548879788e14eb2a101626053976, type: 3}
+  _defaultDragVisualPrefab: {fileID: 8497474976851964285, guid: 48017868cbc74c24bbcf8686b0a0ae7b, type: 3}
   _visualContainer: {fileID: 0}
   _batchVisualRadius: 36
   _batchVisualMinScale: 0.65

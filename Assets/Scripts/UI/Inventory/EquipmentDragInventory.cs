@@ -11,7 +11,7 @@ using UnityEngine;
 namespace UI.Inventory
 {
     // A transactional view of a worn item for UDND. Splitting/removal only changes this
-    // temporary stack; PlayerItemStorage changes after the bag transfer commits.
+    // temporary stack; PlayerItemStorage changes when a bag transfer or recycling commits.
     public sealed class EquipmentDragInventory : IInventory, IInventorySnapshotProvider
     {
         private readonly PlayerItemStorage _storage;
@@ -39,6 +39,16 @@ namespace UI.Inventory
 
         public bool IsCurrentItem(GameItemAdapter adapter) => adapter != null &&
             _storage.GetEquipped(EquipmentSlot) == adapter.State.InstanceId;
+
+        public bool TryRecycle(GameItemAdapter adapter)
+        {
+            if (!IsCurrentItem(adapter) || _stack.Count != 1 ||
+                !ReferenceEquals(_stack.PrimaryAdapter, adapter) || !_storage.Consume(adapter.State.InstanceId))
+                return false;
+
+            _stack = ItemStack.Empty();
+            return true;
+        }
 
         public BaseSlot GetSlot(int index) => index == 0 ? _slot : null;
         public int GetDragAmount(BaseSlot slot, DragAmount? overrideAmount = null, int? overrideCustom = null) =>

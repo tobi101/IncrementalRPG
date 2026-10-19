@@ -844,7 +844,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 44966829389504516
-    m_Localized: "BREAK \xB7 {0} GOLD"
+    m_Localized: "BREAK <sprite name=\"gold\"> {0} GOLD"
     m_Metadata:
       m_Items:
       - rid: 3838683570720735372

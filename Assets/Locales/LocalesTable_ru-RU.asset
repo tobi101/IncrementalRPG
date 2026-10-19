@@ -947,7 +947,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 44966829389504516
-    m_Localized: "\u0420\u0410\u0417\u0411\u0418\u0422\u042C \xB7 {0} \u0417\u041E\u041B\u041E\u0422\u0410"
+    m_Localized: "\u0420\u0410\u0417\u0411\u0418\u0422\u042C <sprite name=\"gold\"> {0} \u0417\u041E\u041B\u041E\u0422\u0410"
     m_Metadata:
       m_Items:
       - rid: 3838683570720735373

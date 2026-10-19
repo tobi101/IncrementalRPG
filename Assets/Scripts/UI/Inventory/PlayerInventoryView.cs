@@ -34,6 +34,7 @@ namespace UI.Inventory
         [Header("Drop Areas")]
         [SerializeField] private Graphic _recycleDropPanel;
         [SerializeField] private SkeletonGraphic _recycleGraphic;
+        [SerializeField] private TMP_Text _recycleSalePreview;
         [SerializeField] private Image _helmetSlot;
         [SerializeField] private Image _chestSlot;
         [SerializeField] private Image _weaponSlot;
@@ -109,7 +110,7 @@ namespace UI.Inventory
                 itemUseInput.Input.Configure(itemUseInput.Slot, _consumables, ShowConsumableFeedback, _storage, ShowInventoryFullFeedback);
 
             var recycleArea = _recycleDropPanel.gameObject.AddComponent<InventoryRecycleDropArea>();
-            recycleArea.Configure(_player, _recycleDropPanel, _recycleGraphic, PlayRecycleAudio);
+            recycleArea.Configure(_player, _recycleDropPanel, _recycleGraphic, _recycleSalePreview, PlayRecycleAudio);
 
             _helmetDropArea = CreateEquipmentDropArea(_helmetSlot, EquipmentSlot.Helmet);
             _chestDropArea = CreateEquipmentDropArea(_chestSlot, EquipmentSlot.Chest);

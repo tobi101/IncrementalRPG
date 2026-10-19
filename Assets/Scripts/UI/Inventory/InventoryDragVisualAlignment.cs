@@ -1,5 +1,4 @@
 using System.Linq;
-using UDND;
 using UDND.Core;
 using UDND.Interaction;
 using UDND.UI;
@@ -18,7 +17,6 @@ namespace UI.Inventory
 
         private Canvas _presentationCanvas;
         private RectTransform _activeVisual;
-        private SourceSizedBaseDragVisual _equipmentVisual;
 
         private void Awake()
         {
@@ -48,25 +46,8 @@ namespace UI.Inventory
         private void HandleDragStarted(DragContext context)
         {
             var entry = context.Entries[0];
-            SourceSizedBaseDragVisual dragVisual;
-            if (entry.SourceInventory is EquipmentDragInventory source)
-            {
-                // UDND's per-inventory visual binder belongs to the bag component.
-                // Equipment uses a transient source, so reuse the bag's visual prefab here.
-                if (_equipmentVisual == null)
-                {
-                    var prefab = DragVisualPresenter.AutoCreateInstance.ResolveVisualPrefab(source.DataBinding.Inventory) as SourceSizedBaseDragVisual;
-                    if (prefab == null) return;
-                    _equipmentVisual = Instantiate(prefab, transform);
-                }
-                _equipmentVisual.Show(entry);
-                dragVisual = _equipmentVisual;
-            }
-            else
-            {
-                dragVisual = GetComponentsInChildren<SourceSizedBaseDragVisual>(true)
-                    .FirstOrDefault(v => v != _equipmentVisual && v.IsVisible);
-            }
+            var dragVisual = GetComponentsInChildren<SourceSizedBaseDragVisual>(true)
+                .FirstOrDefault(v => v.IsVisible);
             if (dragVisual == null) return;
             _activeVisual = dragVisual.transform as RectTransform;
 
@@ -102,7 +83,6 @@ namespace UI.Inventory
         private void HandleDragFinished(DragContext _)
         {
             _activeVisual = null;
-            if (_equipmentVisual != null) _equipmentVisual.Hide();
         }
 
         private static Vector2 ResolveScreenPosition()
