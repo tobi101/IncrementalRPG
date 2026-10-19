@@ -947,7 +947,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 44966829389504516
-    m_Localized: "\u0420\u0410\u0417\u0411\u0418\u0422\u042C <sprite name=\"gold\"> {0} \u0417\u041E\u041B\u041E\u0422\u0410"
+    m_Localized: "\u0420\u0410\u0417\u0411\u0418\u0422\u042C <sprite name=\"gold\">
+      {0} \u0417\u041E\u041B\u041E\u0422\u0410"
     m_Metadata:
       m_Items:
       - rid: 3838683570720735373
@@ -2629,6 +2630,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 56116900558528521
     m_Localized: "\u0414\u0430\u043D\u0438\u043B\u0430 \u041A\u0430\u043C\u0435\u043D\u0435\u0432"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56195419753267200
+    m_Localized: "\u0421\u0436\u0438\u0433\u0430\u0442\u0435\u043B\u044C"
     m_Metadata:
       m_Items: []
   references:

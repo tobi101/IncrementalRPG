@@ -18,9 +18,9 @@ MonoBehaviour:
     mantissa: 1
     exponent: 0
   maxPickupCount: 32
-  lifetime: 6
+  lifetime: 5
   hitRadius: 0.12
-  scatterDuration: 0.4
-  minScatterDistance: 0.35
-  maxScatterDistance: 0.8
+  scatterDuration: 0.5
+  minScatterDistance: 0.4
+  maxScatterDistance: 1.3
   baseCollectionDuration: 1

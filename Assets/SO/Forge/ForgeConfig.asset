@@ -22,7 +22,7 @@ MonoBehaviour:
     - 20
     - 0
     - 0
-    statBudgets: 320000006400000088000000c8000000
+    statBudgets: 1e0000003c0000004c00000078000000
     cursorPeriod: 2.4
     rarityRange: 0.02
     allStatsRange: 0.5
@@ -37,7 +37,7 @@ MonoBehaviour:
     - 50
     - 0
     - 0
-    statBudgets: 320000006400000088000000c8000000
+    statBudgets: 1e0000003c0000004c00000078000000
     cursorPeriod: 2.2
     rarityRange: 0.04
     allStatsRange: 0.55

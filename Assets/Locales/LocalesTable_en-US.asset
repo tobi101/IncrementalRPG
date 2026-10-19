@@ -820,7 +820,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 44966829385310210
-    m_Localized: "FORGE <sprite name=\"shard\"> {0}"
+    m_Localized: FORGE <sprite name="shard"> {0}
     m_Metadata:
       m_Items:
       - rid: 3838683570720735372
@@ -844,7 +844,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 44966829389504516
-    m_Localized: "BREAK <sprite name=\"gold\"> {0} GOLD"
+    m_Localized: BREAK <sprite name="gold"> {0} GOLD
     m_Metadata:
       m_Items:
       - rid: 3838683570720735372
@@ -2312,6 +2312,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 56116900558528521
     m_Localized: Daniel Stone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56195419753267200
+    m_Localized: Incinerator
     m_Metadata:
       m_Items: []
   references:

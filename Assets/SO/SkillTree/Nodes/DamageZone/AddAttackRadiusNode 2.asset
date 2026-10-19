@@ -52,11 +52,11 @@ MonoBehaviour:
   - effectType: 0
     statType: 0
     valuesPerLevel:
-    - 0.15
-    - 0.15
-    - 0.15
-    - 0.15
-    - 0.15
+    - 0.05
+    - 0.05
+    - 0.05
+    - 0.05
+    - 0.05
     feature: 0
   positionInGraph: {x: 200, y: 100}
   references:

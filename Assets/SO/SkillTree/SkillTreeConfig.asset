@@ -20,7 +20,7 @@ MonoBehaviour:
   - node: {fileID: 11400000, guid: 13642fc5eae842d58e77718b42c3e6b1, type: 2}
     gridPosition: {x: 0, y: 1}
   - node: {fileID: 11400000, guid: 12c78051627b42eea619764a0d11d157, type: 2}
-    gridPosition: {x: 0, y: 4}
+    gridPosition: {x: 0, y: 3}
   - node: {fileID: 11400000, guid: c9aa8fa52b844b1a8d4231620039eac5, type: 2}
     gridPosition: {x: 1, y: 2}
   - node: {fileID: 11400000, guid: d4a7bc70acca045b983d7a86ef37f217, type: 2}
@@ -68,9 +68,9 @@ MonoBehaviour:
   - node: {fileID: 11400000, guid: c20ec67ce705f1744a33c9d561c40da2, type: 2}
     gridPosition: {x: -1, y: 2}
   - node: {fileID: 11400000, guid: a60dec1763f1f2e45b3769eabfad73b0, type: 2}
-    gridPosition: {x: -1, y: 3}
+    gridPosition: {x: -1, y: 4}
   - node: {fileID: 11400000, guid: 7ddd514149c2d5747ac2fb7c8c262b02, type: 2}
-    gridPosition: {x: 1, y: 3}
+    gridPosition: {x: 1, y: 4}
   - node: {fileID: 11400000, guid: 8f42df8fa7e0aa34b9dce2cdd1e3dd96, type: 2}
     gridPosition: {x: 3, y: 2}
   nodes: []
