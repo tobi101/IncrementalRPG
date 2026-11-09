@@ -41,6 +41,7 @@ namespace Core.StateMachine.Features
         public event Action<DungeonLevelConfig, int, float, float, float> OnLevelTransitionStarted;
         public event Action<DungeonLevelConfig, int> OnLevelTransitionFinished;
         public event Action<DungeonConfig, DungeonLevelConfig, int> OnDemoLimitReached;
+        public event Action<Vector3> OnBossDefeated;
         public event Action<bool> OnPauseChanged;
         public event Action OnDisabled;
 
@@ -48,6 +49,7 @@ namespace Core.StateMachine.Features
         public int SessionKills => _sessionKills;
         public BigDouble LevelExperience => _levelExperience.Current;
         public BigDouble CurrentLevelExperienceGoal => _levelExperience.Goal;
+        public float TotemRestoreTimeLeft => _bossEncounter?.RestoreTimeLeft ?? 0f;
         public int CurrentLevelIndex => _currentLevelIndex;
         public DungeonConfig CurrentDungeon => _currentDungeon;
         public DungeonLevelConfig CurrentLevel => _currentLevel;
@@ -61,6 +63,8 @@ namespace Core.StateMachine.Features
             Playing,
             LootGrace,
             Transitioning,
+            AwaitingBossChest,
+            OpeningBossReward,
             DemoLimitReached,
             Expired
         }
@@ -68,6 +72,7 @@ namespace Core.StateMachine.Features
         private List<IService> _services;
         private DungeonConfig _currentDungeon;
         private DungeonLevelConfig _currentLevel;
+        private BossEncounter _bossEncounter;
         private int _currentLevelIndex;
         private readonly LevelExperienceProgress _levelExperience = new();
         private int _pendingLevelTransitionIndex = -1;
@@ -173,6 +178,7 @@ namespace Core.StateMachine.Features
             _lootGraceEndsAtDemoLimit = false;
             _lootGraceTimer = 0f;
             _transitionTargetLevelIndex = -1;
+            EndBossEncounter();
             _spawnService.DespawnAll();
             _shardDropService.DespawnAll();
             OnDisabled?.Invoke();
@@ -205,9 +211,11 @@ namespace Core.StateMachine.Features
 
         private void RefreshViewPauseState()
         {
-            var isLevelTransition = _runState == RunState.LootGrace || _runState == RunState.Transitioning;
+            var allowDeathAnimations = _runState is RunState.LootGrace or RunState.Transitioning
+                                       or RunState.AwaitingBossChest or RunState.OpeningBossReward
+                                       || (_runState == RunState.DemoLimitReached && _currentLevel.bossEncounter != null);
             _spawnService.SetViewsPaused(_isPaused || _runState != RunState.Playing,
-                pauseDeathAnimations: _isPaused || !isLevelTransition);
+                pauseDeathAnimations: _isPaused || !allowDeathAnimations);
         }
 
         private void TickPlaying(float deltaTime)
@@ -225,13 +233,17 @@ namespace Core.StateMachine.Features
                 return;
             }
 
+            _bossEncounter?.Tick(deltaTime);
+
             foreach (var service in _services)
                 service.Update(deltaTime);
 
             if (_runState != RunState.Playing)
                 return;
 
-            if (_pendingLevelTransitionIndex >= 0)
+            if (_bossEncounter != null && !_bossEncounter.Boss.IsAlive)
+                FinishBossFight();
+            else if (_pendingLevelTransitionIndex >= 0)
                 BeginLootGrace(_pendingLevelTransitionIndex, false);
             else if (_pendingDemoLimit)
                 BeginLootGrace(-1, true);
@@ -260,22 +272,53 @@ namespace Core.StateMachine.Features
             _consumables.EndRun();
             _damageZone.ResetAttackTimers();
             _runState = RunState.Expired;
+            EndBossEncounter();
             RefreshViewPauseState();
             _shardDropService.DespawnAll();
             ApplySessionResults();
             OnSessionExpired?.Invoke();
         }
 
+        private void FinishBossFight()
+        {
+            var cells = _generator.TargetTilemap.cellBounds;
+            var centerCell = new Vector2Int(cells.xMin + cells.size.x / 2, cells.yMin + cells.size.y / 2);
+            var chestPosition = _tileGrid.GetWorldPosition(centerCell);
+            _runState = RunState.AwaitingBossChest;
+            _damageZone.ResetAttackTimers();
+            _audioManager?.StopLavaLoop();
+            _consumables.EndRun();
+            EndBossEncounter();
+            RefreshViewPauseState();
+            OnBossDefeated?.Invoke(chestPosition);
+        }
+
+        internal bool TryOpenBossReward()
+        {
+            if (_runState != RunState.AwaitingBossChest || _isPaused)
+                return false;
+
+            _runState = RunState.OpeningBossReward;
+            return true;
+        }
+
+        internal void FinishBossReward()
+        {
+            if (_runState == RunState.OpeningBossReward)
+                ReachDemoLimit();
+        }
+
         private void ReachDemoLimit()
         {
-            // Complete the dungeon only after reaching the final level's XP goal.
-            if (_currentLevelIndex == _currentDungeon.LevelCount - 1 && _levelExperience.IsGoalReached)
+            if (_currentLevelIndex == _currentDungeon.LevelCount - 1 &&
+                (_runState == RunState.OpeningBossReward || _levelExperience.IsGoalReached))
             {
                 ApplySessionResults();
                 _dungeonSelection.MarkCompleted(_currentDungeon);
             }
             _consumables.EndRun();
             _runState = RunState.DemoLimitReached;
+            EndBossEncounter();
             _pendingLevelTransitionIndex = -1;
             _pendingDemoLimit = false;
             _lootGraceEndsAtDemoLimit = false;
@@ -300,6 +343,7 @@ namespace Core.StateMachine.Features
 
         private void RestartSessionFromCurrentLevel()
         {
+            EndBossEncounter();
             _spawnService.DespawnAll();
             _shardDropService.DespawnAll();
             ResetSessionStats();
@@ -378,6 +422,7 @@ namespace Core.StateMachine.Features
 
             var targetIndex = _transitionTargetLevelIndex;
 
+            EndBossEncounter();
             _spawnService.DespawnAll();
             _shardDropService.DespawnAll();
 
@@ -423,6 +468,8 @@ namespace Core.StateMachine.Features
             _sessionKills++;
             OnSessionKillsChanged?.Invoke(_sessionKills);
 
+            if (_bossEncounter != null) return;
+
             var xpReward = context.Config != null ? context.Config.xpReward : BigDouble.Zero;
             _levelExperience.Add(xpReward);
             OnLevelExperienceChanged?.Invoke(_levelExperience.Current, _levelExperience.Goal);
@@ -445,6 +492,8 @@ namespace Core.StateMachine.Features
 
         private void SpawnInitialEntities()
         {
+            if (_bossEncounter != null) return;
+
             var totalTiles = _tileGrid.TotalTileCount;
             var enemyDensity = Mathf.Max(0f, _currentLevel.initialEnemySpawnDensity
                                              + _skillTree.GetBonus(StatType.InitialEnemySpawnDensity));
@@ -462,6 +511,7 @@ namespace Core.StateMachine.Features
         {
             _consumables.BeginLevel();
             _damageZone.ResetAttackTimers();
+            _bossEncounter?.ShowEffects();
         }
 
         private bool ApplyLevel(int levelIndex)
@@ -474,7 +524,7 @@ namespace Core.StateMachine.Features
 
             if (!level.IsPlayable)
             {
-                Debug.LogError($"[GameplayFeature] Dungeon level '{level.name}' is not playable. Assign spawn table and tilemap generation config.");
+                Debug.LogError($"[GameplayFeature] Dungeon level '{level.name}' requires a tilemap and a valid spawn table or boss encounter.");
                 return false;
             }
 
@@ -484,13 +534,31 @@ namespace Core.StateMachine.Features
 
             ConfigureSpawn(level);
             GenerateLevelMap(level);
+            var cameraFitter = _generator.CameraAutoFitter;
+            if (level.bossEncounter != null)
+            {
+                if (!cameraFitter.TryGetWorldBounds(out var arenaBounds))
+                {
+                    Debug.LogError($"[GameplayFeature] Cannot place boss encounter for '{level.name}' on an empty tilemap.");
+                    return false;
+                }
+
+                _bossEncounter = new BossEncounter(level.bossEncounter, _spawnService, arenaBounds, out var cameraBounds);
+                cameraFitter.FitToTilemap(cameraBounds);
+            }
             ResetLevelTimer(level);
-            _generator.CameraAutoFitter.PrepareLavaAnimation();
+            cameraFitter.PrepareLavaAnimation();
 
             OnDungeonLevelChanged?.Invoke(_currentDungeon, _currentLevel, _currentLevelIndex);
             OnLevelExperienceChanged?.Invoke(_levelExperience.Current, _levelExperience.Goal);
 
             return true;
+        }
+
+        private void EndBossEncounter()
+        {
+            _bossEncounter?.Dispose();
+            _bossEncounter = null;
         }
 
         private void ConfigureSpawn(DungeonLevelConfig level)

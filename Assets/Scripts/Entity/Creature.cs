@@ -10,9 +10,11 @@ namespace Entity
         public bool IsAlive => CurrentHP > 0;
         public Vector3 WorldPosition { get; internal set; }
         public bool IsMoving { get; internal set; }
+        internal bool IsDamageBlocked { get; set; }
 
         public event Action<BigDouble, BigDouble> OnHealthChanged; // current, max
         public event Action<BigDouble> OnDamageTaken;
+        public event Action OnDamageBlocked;
         public event Action OnDied;
 
         public Creature(EntityConfig config, Vector2Int tileCoord) : base(config, tileCoord)
@@ -32,6 +34,11 @@ namespace Entity
 
             amount = amount.NormalizedOr(BigDouble.Zero);
             if (amount <= BigDouble.Zero) return;
+            if (IsDamageBlocked)
+            {
+                OnDamageBlocked?.Invoke();
+                return;
+            }
 
             var previousHealth = CurrentHP;
             CurrentHP = BigDouble.Max(BigDouble.Zero, CurrentHP - amount);

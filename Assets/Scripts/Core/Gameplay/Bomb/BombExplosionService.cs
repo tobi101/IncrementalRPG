@@ -10,15 +10,13 @@ namespace Core.Gameplay.Bomb
 {
     public class BombExplosionService : IService
     {
-        private readonly TileGrid _tileGrid;
         private readonly SpawnService _spawnService;
         private readonly BombExplosionConfig _config;
         private readonly SkillTreeService _skillTree;
         private readonly PlayerItemStorage _equipment;
 
-        public BombExplosionService(TileGrid tileGrid, SpawnService spawnService, BombExplosionConfig config, SkillTreeService skillTree, PlayerItemStorage equipment)
+        public BombExplosionService(SpawnService spawnService, BombExplosionConfig config, SkillTreeService skillTree, PlayerItemStorage equipment)
         {
-            _tileGrid = tileGrid;
             _spawnService = spawnService;
             _config = config;
             _skillTree = skillTree;
@@ -56,11 +54,9 @@ namespace Core.Gameplay.Bomb
             // var debugGo = new GameObject("BombExplosionDebug");
             // debugGo.AddComponent<BombExplosionDebugView>().Show(epicenter, a, b, 0.5f);
 
-            var targets = new List<Creature>(_tileGrid.GetAll());
+            var targets = new List<Creature>(_spawnService.GetLivingCreatures());
             foreach (var creature in targets)
             {
-                if (creature == source) continue;
-
                 var pos = creature.WorldPosition;
                 var dx = (pos.x - epicenter.x) / a;
                 var dy = (pos.y - epicenter.y) / b;

@@ -95,6 +95,12 @@ namespace UI
 
         public void Prepare(int levelCount, int newlyCompletedLevelIndex)
         {
+            PrepareLootPresentation();
+            _lampCounter.Prepare(levelCount, newlyCompletedLevelIndex);
+        }
+
+        public void PrepareLootPresentation()
+        {
             gameObject.SetActive(true);
 
             if (_routine != null)
@@ -104,7 +110,6 @@ namespace UI
             _isTransitionActive = true;
             CacheReferencePositions();
             PrepareCurtainGeometry();
-            _lampCounter.Prepare(levelCount, newlyCompletedLevelIndex);
             SetRootVisible(true);
             SetRevealAlpha(0f);
             SetInteractionEnabled(false);
@@ -116,9 +121,9 @@ namespace UI
             StartPhase(CloseRoutine(Mathf.Max(0f, duration), completed));
         }
 
-        public void PlayReveal()
+        public void PlayReveal(Action onRevealed = null)
         {
-            StartPhase(RevealRoutine());
+            StartPhase(RevealRoutine(onRevealed));
         }
 
         public void PlayOpen(float duration, Action completed)
@@ -185,9 +190,16 @@ namespace UI
             completed?.Invoke();
         }
 
-        private IEnumerator RevealRoutine()
+        private IEnumerator RevealRoutine(Action onRevealed)
         {
             yield return FadeReveal(0f, 1f, _revealFadeInDuration);
+
+            if (onRevealed != null)
+            {
+                _routine = null;
+                onRevealed();
+                yield break;
+            }
 
             var elapsed = 0f;
             while (elapsed < _lampAnimationDelay)

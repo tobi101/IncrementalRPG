@@ -28,6 +28,7 @@ namespace UI
         private bool _isOpen;
         private bool _isPaused;
         private bool _canUse;
+        private bool _showUseNow;
         private bool _submitted;
         private LootReward _reward;
         private string _unavailableKey;
@@ -61,16 +62,17 @@ namespace UI
             _composition.localScale = Vector3.one * scale;
         }
 
-        public void Show(LootReward reward, bool canUse, string status)
+        public void Show(LootReward reward, bool canUse, string status, bool showUseNow = true)
         {
             if (_isOpen)
                 return;
 
             _reward = reward;
             _unavailableKey = status;
+            _showUseNow = showUseNow;
             _icon.sprite = reward.Definition.icon;
             RefreshTexts();
-            _canUse = canUse;
+            _canUse = showUseNow && canUse;
             _submitted = false;
             _isOpen = true;
             gameObject.SetActive(true);
@@ -117,7 +119,7 @@ namespace UI
             _title.text = (definition.category == ItemCategory.Currency
                 ? ItemText.Get("loot.currency_amount", name, BigDoubleFormatter.Format(_reward.CurrencyAmount))
                 : name).ToUpperInvariant();
-            var showUse = definition.category is ItemCategory.Consumable or ItemCategory.Armor;
+            var showUse = _showUseNow && (definition.category is ItemCategory.Consumable or ItemCategory.Armor);
             _useNowGroup.gameObject.SetActive(showUse);
             var continueRect = (RectTransform)_continueButton.transform;
             _continueButtonPosition ??= continueRect.anchoredPosition;

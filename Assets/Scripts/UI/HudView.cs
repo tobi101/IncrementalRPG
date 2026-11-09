@@ -25,6 +25,7 @@ namespace UI
         [SerializeField] private GameObject _shardCounterRoot;
         [SerializeField] private TMP_Text _killsText;
         [SerializeField] private TMP_Text _experienceText;
+        [SerializeField] private TMP_Text _totemRestoreText;
         [SerializeField] private TMP_Text _dungeonLevelText;
         [SerializeField] private GoldPopupView _popupPrefab;
         [SerializeField] private RectTransform _popupContainer;
@@ -60,6 +61,10 @@ namespace UI
         private Coroutine _transitionCoroutine;
         private LocalizedStringBinding _dungeonLevelBinding;
         private LocalizedStringBinding _levelTransitionBinding;
+        private LocalizedStringBinding _totemRestoreBinding;
+        private readonly LocalizedString _totemRestoreFormat = new("LocalesTable", "hud.totem_restore_timer");
+        private readonly object[] _totemRestoreArguments = { 0f };
+        private int _displayedRestoreTenths;
         private LocalizedString _boundDungeonName;
         private LocalizedString _boundLevelName;
         private LocalizedString.ChangeHandler _dungeonNameChanged;
@@ -74,6 +79,8 @@ namespace UI
         {
             _dungeonLevelBinding = new LocalizedStringBinding(_dungeonLevelText);
             _levelTransitionBinding = new LocalizedStringBinding(_levelTransitionText);
+            _totemRestoreBinding = new LocalizedStringBinding(_totemRestoreText);
+            _totemRestoreFormat.Arguments = _totemRestoreArguments;
             _dungeonNameChanged = HandleDungeonNameChanged;
             _levelNameChanged = HandleLevelNameChanged;
 
@@ -145,6 +152,7 @@ namespace UI
         private void OnDisable()
         {
             HideLevelTransition();
+            RefreshTotemRestoreTimer(0f);
             foreach (var flight in _shardFlights)
                 Destroy(flight.icon.gameObject);
             _shardFlights.Clear();
@@ -167,6 +175,7 @@ namespace UI
             var isGameplayPaused = IsGameplayPaused();
             _levelTransitionCurtain?.SetPaused(isGameplayPaused);
             _lootboxView?.SetPaused(isGameplayPaused);
+            RefreshTotemRestoreTimer(_gameplay?.TotemRestoreTimeLeft ?? 0f);
 
             if (isGameplayPaused)
                 return;
@@ -322,8 +331,30 @@ namespace UI
                                    + BigDoubleFormatter.Format(_experienceGoal, 0, 2);
         }
 
+        private void RefreshTotemRestoreTimer(float seconds)
+        {
+            if (_totemRestoreText == null) return;
+
+            var tenths = Mathf.CeilToInt(seconds * 10f);
+            if (tenths == _displayedRestoreTenths) return;
+            _displayedRestoreTenths = tenths;
+
+            _totemRestoreText.gameObject.SetActive(tenths > 0);
+            if (tenths == 0)
+            {
+                _totemRestoreBinding.Clear();
+                return;
+            }
+
+            _totemRestoreArguments[0] = tenths * 0.1f;
+            _totemRestoreBinding.Bind(_totemRestoreFormat);
+        }
+
         private void HandleDungeonLevelChanged(DungeonConfig dungeon, DungeonLevelConfig level, int levelIndex)
         {
+            if (_experienceText != null)
+                _experienceText.gameObject.SetActive(level == null || level.bossEncounter == null);
+
             if (_dungeonLevelText == null) return;
             BindDungeonName(dungeon != null ? dungeon.displayName : null);
             BindLevelName(level != null ? level.displayName : null);
@@ -564,6 +595,7 @@ namespace UI
             ClearDungeonLevelNameBindings();
             _dungeonLevelBinding?.Dispose();
             _levelTransitionBinding?.Dispose();
+            _totemRestoreBinding?.Dispose();
         }
 
     }

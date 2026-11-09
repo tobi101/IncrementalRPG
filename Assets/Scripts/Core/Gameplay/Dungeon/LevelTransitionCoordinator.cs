@@ -4,6 +4,8 @@ using IncrementalRPG.Scripts.Reflex;
 using Reflex.Attributes;
 using UI;
 using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Core.Gameplay.Dungeon
 {
@@ -11,15 +13,19 @@ namespace Core.Gameplay.Dungeon
     {
         private const int RewardCount = 1;
 
+        private enum Presentation { None, LevelTransition, BossReward }
+
         [Inject] private GameplayFeature _gameplay;
+        [Inject] private DungeonLevelTransitionConfig _config;
         [Inject] private DungeonSelectionService _dungeonSelection;
         [Inject] private IPlayerInventoryGateway _inventory;
         [Inject] private HudView _hud;
 
         private LevelTransitionCurtainView _curtain;
         private LootboxView _lootbox;
+        private Button _bossChest;
         private float _openDuration;
-        private bool _transitionInProgress;
+        private Presentation _presentation;
         private bool _awaitingRewardChoice;
         private bool _spinCompleted;
         private LootReward _reward;
@@ -30,6 +36,7 @@ namespace Core.Gameplay.Dungeon
             _lootbox = _hud.Lootbox;
 
             _gameplay.OnLevelTransitionStarted += HandleTransitionStarted;
+            _gameplay.OnBossDefeated += HandleBossDefeated;
             _gameplay.OnPauseChanged += HandlePauseChanged;
             _gameplay.OnDisabled += HandleGameplayDisabled;
             _curtain.LampAnimationCompleted += HandleLampAnimationCompleted;
@@ -41,27 +48,49 @@ namespace Core.Gameplay.Dungeon
         private void HandleTransitionStarted(DungeonLevelConfig nextLevel, int nextLevelIndex,
             float closeDuration, float holdDuration, float openDuration)
         {
-            if (_transitionInProgress)
+            if (_presentation != Presentation.None)
                 return;
 
-            _transitionInProgress = true;
+            PrepareReward(Presentation.LevelTransition, openDuration);
+            _dungeonSelection.MarkLevelReached(_gameplay.CurrentDungeon, nextLevelIndex);
+            _hud.PrepareLevelTransitionMessage();
+            _curtain.Prepare(_gameplay.CurrentDungeon.LevelCount, nextLevelIndex - 1);
+            _curtain.PlayClose(closeDuration, HandleCurtainsClosed);
+        }
+
+        private void HandleBossDefeated(Vector3 chestPosition)
+        {
+            var viewportPosition = Camera.main.WorldToViewportPoint(chestPosition);
+            _bossChest = _lootbox.CreateArenaChest((RectTransform)_hud.transform, viewportPosition);
+            _bossChest.onClick.AddListener(HandleBossChestClicked);
+        }
+
+        private void HandleBossChestClicked()
+        {
+            if (_presentation != Presentation.None || !_gameplay.TryOpenBossReward())
+                return;
+
+            HideBossChest();
+            PrepareReward(Presentation.BossReward, _config.OpenDuration);
+            _curtain.PrepareLootPresentation();
+            _curtain.PlayClose(_config.CloseDuration, () => _curtain.PlayReveal(_lootbox.PlayOpen));
+        }
+
+        private void PrepareReward(Presentation presentation, float openDuration)
+        {
+            _presentation = presentation;
             _awaitingRewardChoice = false;
             _spinCompleted = false;
             _openDuration = openDuration;
 
-            var rolledItems = _gameplay.CurrentLevel.lootPool.Roll(RewardCount);
-            var batch = _inventory.Grant(rolledItems);
-            _reward = batch.Rewards[0];
-
-            _dungeonSelection.MarkLevelReached(_gameplay.CurrentDungeon, nextLevelIndex);
-            _hud.PrepareLevelTransitionMessage();
-            _lootbox.Prepare(_reward, _gameplay.CurrentLevel.lootPool.entries
+            var pool = _gameplay.CurrentLevel.lootPool;
+            _reward = _inventory.Grant(pool.Roll(RewardCount)).Rewards[0];
+            _lootbox.Prepare(_reward, pool.entries
                 .Where(entry => entry != null && entry.IsValid && entry.item.icon != null)
-                .Select(entry => entry.item.icon).Distinct().ToArray());
+                .Select(entry => entry.item.icon).Distinct().ToArray(),
+                showTransitionLabels: presentation == Presentation.LevelTransition);
             _lootbox.SetPaused(_gameplay.IsPaused);
             _curtain.SetPaused(_gameplay.IsPaused);
-            _curtain.Prepare(_gameplay.CurrentDungeon.LevelCount, nextLevelIndex - 1);
-            _curtain.PlayClose(closeDuration, HandleCurtainsClosed);
         }
 
         private void HandleCurtainsClosed()
@@ -74,25 +103,26 @@ namespace Core.Gameplay.Dungeon
 
         private void HandleLampAnimationCompleted()
         {
-            if (_transitionInProgress)
+            if (_presentation == Presentation.LevelTransition)
                 _lootbox.PlayOpen();
         }
 
         private void HandleSpinCompleted()
         {
-            if (!_transitionInProgress || _spinCompleted)
+            if (_presentation == Presentation.None || _spinCompleted)
                 return;
 
             _spinCompleted = true;
             _awaitingRewardChoice = true;
-            var canUse = _inventory.CanUseReward(_reward);
-            _lootbox.ShowResult(canUse, _inventory.GetRewardUseUnavailableKey(_reward));
+            var showUseNow = _presentation == Presentation.LevelTransition;
+            var canUse = showUseNow && _inventory.CanUseReward(_reward);
+            _lootbox.ShowResult(canUse, showUseNow ? _inventory.GetRewardUseUnavailableKey(_reward) : null, showUseNow);
             _curtain.SetInteractionEnabled(true);
         }
 
         private void HandleContinueClicked()
         {
-            if (!_transitionInProgress || !_awaitingRewardChoice || _gameplay.IsPaused)
+            if (_presentation == Presentation.None || !_awaitingRewardChoice || _gameplay.IsPaused)
                 return;
 
             _awaitingRewardChoice = false;
@@ -103,7 +133,7 @@ namespace Core.Gameplay.Dungeon
 
         private void HandleUseNowClicked()
         {
-            if (!_transitionInProgress || !_awaitingRewardChoice || _gameplay.IsPaused)
+            if (_presentation != Presentation.LevelTransition || !_awaitingRewardChoice || _gameplay.IsPaused)
                 return;
 
             _awaitingRewardChoice = false;
@@ -121,25 +151,42 @@ namespace Core.Gameplay.Dungeon
 
         private void HandleCurtainsOpened()
         {
-            _transitionInProgress = false;
+            var presentation = _presentation;
+            _presentation = Presentation.None;
             _awaitingRewardChoice = false;
-            _gameplay.FinishPendingLevelTransition();
+            if (presentation == Presentation.BossReward)
+                _gameplay.FinishBossReward();
+            else if (presentation == Presentation.LevelTransition)
+                _gameplay.FinishPendingLevelTransition();
         }
 
         private void HandlePauseChanged(bool isPaused)
         {
             _curtain.SetPaused(isPaused);
             _lootbox.SetPaused(isPaused);
+            if (_bossChest != null)
+                _bossChest.interactable = !isPaused;
         }
 
         private void HandleGameplayDisabled()
         {
-            _transitionInProgress = false;
+            _presentation = Presentation.None;
             _awaitingRewardChoice = false;
             _spinCompleted = false;
             _openDuration = 0f;
+            HideBossChest();
             _curtain.HideImmediately();
             _lootbox.ResetView();
+        }
+
+        private void HideBossChest()
+        {
+            if (_bossChest == null)
+                return;
+
+            _bossChest.gameObject.SetActive(false);
+            Object.Destroy(_bossChest.gameObject);
+            _bossChest = null;
         }
     }
 }

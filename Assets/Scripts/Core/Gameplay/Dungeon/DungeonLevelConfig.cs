@@ -30,12 +30,14 @@ namespace Core.Gameplay.Dungeon
         [Min(0.0000001f)] public float minSpawnInterval = 0.5f;
         [Min(0.1f)] public float bombSpawnInterval = 10f;
         [Min(0.0000001f)] public float minBombSpawnInterval = 0.5f;
+        public BossEncounterConfig bossEncounter;
 
         [Header("Rewards")]
         [Min(0f)] public float goldDropMultiplier = 1f;
         public LevelLootPool lootPool = new();
 
-        public bool IsPlayable => spawnTable != null && tilemapGenerationConfig != null;
+        public bool IsPlayable => tilemapGenerationConfig != null &&
+                                  (bossEncounter != null ? bossEncounter.IsPlayable : spawnTable != null);
 
         private void OnValidate()
         {

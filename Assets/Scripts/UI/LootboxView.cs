@@ -21,6 +21,8 @@ namespace UI
         [SerializeField] private string _openAnimationName = "open";
         [SerializeField] private string _openIdleAnimationName = "idle_open";
         [SerializeField, Min(0f)] private float _chestFadeOutDuration = 0.4f;
+        [SerializeField, Range(0f, 1f), Tooltip("Ground pivot of the arena chest, measured from the bottom of the artwork.")]
+        private float _arenaChestGroundPivotY;
 
         [Header("Roll")]
         [SerializeField] private RectTransform _itemViewport;
@@ -91,12 +93,44 @@ namespace UI
             Destroy(_resultPopup.gameObject);
         }
 
-        public void Prepare(LootReward reward, Sprite[] rewardIcons = null)
+        public void Prepare(LootReward reward, Sprite[] rewardIcons = null, bool showTransitionLabels = true)
         {
             ResetView();
+            if (!showTransitionLabels)
+                foreach (var label in _transitionLabels)
+                    label.SetActive(false);
             _reward = reward;
             _rewardIcons = rewardIcons != null && rewardIcons.Length > 0 ? rewardIcons : _ambientIcons;
             _prepared = true;
+        }
+
+        internal Button CreateArenaChest(RectTransform parent, Vector2 viewportPosition)
+        {
+            var chest = Instantiate(_chest, parent, false);
+            chest.name = "BossRewardChest";
+            chest.gameObject.layer = parent.gameObject.layer;
+            chest.color = Color.white;
+            chest.raycastTarget = true;
+            var rect = chest.rectTransform;
+            rect.anchorMin = rect.anchorMax = viewportPosition;
+            rect.anchoredPosition = Vector2.zero;
+            rect.localScale = Vector3.one * 0.48f;
+            chest.gameObject.SetActive(true);
+            chest.Initialize(false);
+            chest.timeScale = 1f;
+            chest.AnimationState.SetAnimation(0, _closedIdleAnimationName, true);
+            chest.Update(0f);
+            if (chest.MatchRectTransformWithBounds())
+            {
+                var bounds = rect.rect;
+                var groundPivot = new Vector2(bounds.center.x, Mathf.Lerp(bounds.yMin, bounds.yMax, _arenaChestGroundPivotY));
+                rect.anchoredPosition = -Vector2.Scale(groundPivot, (Vector2)rect.localScale);
+            }
+
+            var button = chest.gameObject.AddComponent<Button>();
+            button.targetGraphic = chest;
+            UIButtonAudio.EnsureOn(button, playHoverSound: true);
+            return button;
         }
 
         public void PlayOpen()
@@ -108,14 +142,14 @@ namespace UI
             _spinRoutine = StartCoroutine(OpenAndSpinRoutine());
         }
 
-        public void ShowResult(bool canUse, string status)
+        public void ShowResult(bool canUse, string status, bool showUseNow = true)
         {
             if (!_spinFinished)
                 return;
 
             foreach (var label in _transitionLabels)
                 label.SetActive(false);
-            _resultPopup.Show(_reward, canUse, status);
+            _resultPopup.Show(_reward, canUse, status, showUseNow);
             _resultPopup.SetPaused(_isPaused);
         }
 

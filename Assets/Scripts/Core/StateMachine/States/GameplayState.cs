@@ -120,6 +120,12 @@ namespace Core.StateMachine.States
         private void HandleDemoContinueClicked()
         {
             _demoEndPopup?.Hide();
+            if (_gameplay.CurrentLevel.bossEncounter != null)
+            {
+                OnGoToHubRequested?.Invoke();
+                return;
+            }
+
             _gameplay.ContinueAfterDemoLimitReached();
             _pauseMenu?.EnableForGameplay();
         }

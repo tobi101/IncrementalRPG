@@ -42,6 +42,11 @@ namespace Core.Gameplay
         [ContextMenu("Fit Camera To Tilemap")]
         public void FitToTilemap()
         {
+            FitToTilemap(null);
+        }
+
+        internal void FitToTilemap(Bounds? additionalBounds)
+        {
             if (targetTilemap == null)
             {
                 Debug.LogError("[TilemapCameraAutoFitter] Target Tilemap is not assigned.");
@@ -66,6 +71,9 @@ namespace Core.Gameplay
                 Debug.LogWarning("[TilemapCameraAutoFitter] Tilemap bounds are empty. Nothing to fit.");
                 return;
             }
+
+            if (additionalBounds.HasValue)
+                worldBounds.Encapsulate(additionalBounds.Value);
 
             var safeAspect = Mathf.Max(0.0001f, cameraToFit.aspect);
             var baseSizeByHeight = worldBounds.extents.y;
@@ -122,7 +130,7 @@ namespace Core.Gameplay
             lavaRoot.position = new Vector3(lavaRoot.position.x, y, lavaRoot.position.z);
         }
 
-        private bool TryGetWorldBounds(out Bounds bounds)
+        internal bool TryGetWorldBounds(out Bounds bounds)
         {
             var tilemapRenderer = targetTilemap.GetComponent<TilemapRenderer>();
             if (tilemapRenderer != null)

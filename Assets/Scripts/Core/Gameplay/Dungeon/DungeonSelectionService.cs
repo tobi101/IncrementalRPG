@@ -41,6 +41,16 @@ namespace Core.Gameplay.Dungeon
 
         public int GetStartLevelIndex(DungeonConfig dungeon)
         {
+            var reachedIndex = GetReachedLevelIndex(dungeon);
+            if (reachedIndex > 0 && dungeon.GetLevel(reachedIndex).bossEncounter != null &&
+                dungeon.TryGetLevel(reachedIndex - 1, out var previousLevel) && previousLevel.IsPlayable)
+                return reachedIndex - 1;
+
+            return reachedIndex;
+        }
+
+        public int GetReachedLevelIndex(DungeonConfig dungeon)
+        {
             if (dungeon == null || !dungeon.HasPlayableLevels)
                 return -1;
 

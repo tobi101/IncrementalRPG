@@ -20,7 +20,7 @@ namespace Core.Gameplay
         private const float MinAttackInterval = 0.05f;
         private const float MinAttackSpeedMultiplier = 0.01f;
 
-        private readonly TileGrid _tileGrid;
+        private readonly SpawnService _spawnService;
         private readonly DamageZoneConfig _config;
         private readonly DamageZoneView _view;
         private readonly AudioManager _audioManager;
@@ -67,10 +67,10 @@ namespace Core.Gameplay
         public event Action<State> OnStateChanged;
         public event Action<AttackSource> OnZoneTick;
 
-        public DamageZone(TileGrid tileGrid, DamageZoneConfig config, DamageZoneView view, AudioManager audioManager, Player player,
+        public DamageZone(SpawnService spawnService, DamageZoneConfig config, DamageZoneView view, AudioManager audioManager, Player player,
             SkillTreeService skillTree, GameplayInputBlocker inputBlocker, RunConsumableService consumables, PlayerItemStorage equipment)
         {
-            _tileGrid = tileGrid;
+            _spawnService = spawnService;
             _config = config;
             _view = view;
             _audioManager = audioManager;
@@ -135,10 +135,8 @@ namespace Core.Gameplay
         {
             _creaturesInZone.Clear();
 
-            foreach (var creature in _tileGrid.GetAll())
+            foreach (var creature in _spawnService.GetLivingCreatures())
             {
-                if (!creature.IsAlive) continue;
-
                 if (IntersectsCreatureHitArea(creature))
                     _creaturesInZone.Add(creature);
             }

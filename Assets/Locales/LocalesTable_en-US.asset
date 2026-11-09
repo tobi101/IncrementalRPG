@@ -2318,6 +2318,10 @@ MonoBehaviour:
     m_Localized: Incinerator
     m_Metadata:
       m_Items: []
+  - m_Id: 1000000000891
+    m_Localized: "<size=65%>TOTEMS RESTORE IN</size>\n{0:0.0}s"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

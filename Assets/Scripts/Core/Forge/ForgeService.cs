@@ -66,7 +66,7 @@ namespace Core.Forge
                 var reached = 1;
                 foreach (var dungeon in _dungeons.dungeons ?? Array.Empty<DungeonConfig>())
                     if (dungeon != null && dungeon.HasPlayableLevels)
-                        reached = Mathf.Max(reached, _progress.GetStartLevelIndex(dungeon) + 1);
+                        reached = Mathf.Max(reached, _progress.GetReachedLevelIndex(dungeon) + 1);
                 return Mathf.Clamp(reached - _config.firstAvailableLocation + 1, 0, _config.levels.Length);
             }
         }

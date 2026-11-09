@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6867751309791510765
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4410620522826001164, guid: fc78efcae8da34268b1702183abf3ac3, type: 3}
+      propertyPath: m_Name
+      value: BossPrototype
+      objectReference: {fileID: 0}
+    - target: {fileID: 196782831067680982, guid: fc78efcae8da34268b1702183abf3ac3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 196782831067680982, guid: fc78efcae8da34268b1702183abf3ac3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc78efcae8da34268b1702183abf3ac3, type: 3}
+--- !u!1 &5160913166415777474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4410620522826001164, guid: fc78efcae8da34268b1702183abf3ac3, type: 3}
+  m_PrefabInstance: {fileID: 6867751309791510765}
+  m_PrefabAsset: {fileID: 0}

@@ -54,6 +54,7 @@ namespace Core.Gameplay
             public Creature Creature;
             public CreatureView View;
             public EntityConfig Config;
+            public bool OccupiesTile;
             public Action OnDied;
             public Action<BigDouble> OnDamageTaken;
         }
@@ -71,7 +72,7 @@ namespace Core.Gameplay
 
         public void SetLevel(DungeonLevelConfig level)
         {
-            _spawnTable = level.spawnTable;
+            _spawnTable = level.bossEncounter == null ? level.spawnTable : null;
             _spawnInterval = level.spawnInterval;
             _bombSpawnInterval = level.bombSpawnInterval;
             _timer = 0f;
@@ -98,7 +99,7 @@ namespace Core.Gameplay
 
         public void Update(float deltaTime)
         {
-            if (_isPaused) return;
+            if (_isPaused || _spawnTable == null) return;
             _movementService.Update(deltaTime);
             _timer += deltaTime;
             if (_timer >= _spawnInterval)
@@ -115,6 +116,13 @@ namespace Core.Gameplay
                 _bombTimer = 0f;
                 TrySpawnOfType(FeatureType.Bomb);
             }
+        }
+
+        public IEnumerable<Creature> GetLivingCreatures()
+        {
+            foreach (var entry in _active)
+                if (entry.Creature.IsAlive)
+                    yield return entry.Creature;
         }
 
         public void SetPaused(bool isPaused)
@@ -172,8 +180,7 @@ namespace Core.Gameplay
             {
                 entry.Creature.OnDied -= entry.OnDied;
                 entry.Creature.OnDamageTaken -= entry.OnDamageTaken;
-                _movementService.Unregister(entry.Creature);
-                _tileGrid.Free(entry.Creature);
+                RemoveFromGrid(entry.Creature, entry.OccupiesTile);
                 _poolManager.Return(entry.View, entry.Config);
             }
         }
@@ -181,11 +188,24 @@ namespace Core.Gameplay
         private void Spawn(EntityConfig config, Vector2Int coord)
         {
             var creature = new Creature(config, coord);
-            var view = _poolManager.Get(config);
             _tileGrid.Place(creature);
+            _movementService.Register(creature);
+            BindSpawnedCreature(creature, occupiesTile: true);
+        }
+
+        internal Creature SpawnAt(EntityConfig config, Vector3 worldPosition)
+        {
+            var creature = new Creature(config, default) { WorldPosition = worldPosition };
+            BindSpawnedCreature(creature, occupiesTile: false);
+            return creature;
+        }
+
+        private void BindSpawnedCreature(Creature creature, bool occupiesTile)
+        {
+            var config = creature.Config;
+            var view = _poolManager.Get(config);
             view.Bind(creature);
             view.SetPaused(_areViewsPaused);
-            _movementService.Register(creature);
 
             Action<BigDouble> onDamageTaken = damage =>
             {
@@ -198,8 +218,7 @@ namespace Core.Gameplay
             {
                 creature.OnDied -= onDied;
                 creature.OnDamageTaken -= onDamageTaken;
-                _movementService.Unregister(creature);
-                _tileGrid.Free(creature);
+                RemoveFromGrid(creature, occupiesTile);
 
                 var destroyedContext = new EntityDestroyedContext(
                     creature,
@@ -229,12 +248,20 @@ namespace Core.Gameplay
                 Creature = creature,
                 View = view,
                 Config = config,
+                OccupiesTile = occupiesTile,
                 OnDied = onDied,
                 OnDamageTaken = onDamageTaken
             });
 
             if (config.featureType != FeatureType.None)
-                OnFeatureSpawned?.Invoke(creature, view, coord, config);
+                OnFeatureSpawned?.Invoke(creature, view, creature.TileCoord, config);
+        }
+
+        private void RemoveFromGrid(Creature creature, bool occupiesTile)
+        {
+            if (!occupiesTile) return;
+            _movementService.Unregister(creature);
+            _tileGrid.Free(creature);
         }
 
         private void CompleteDeathOrDefer(Action completeDeath)
