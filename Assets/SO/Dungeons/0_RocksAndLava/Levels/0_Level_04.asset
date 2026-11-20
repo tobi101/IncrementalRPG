@@ -41,7 +41,7 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   xpGoal:
-    mantissa: 2
+    mantissa: 2.5
     exponent: 2
   tilemapGenerationConfig: {fileID: 11400000, guid: b82edfeef95c1421b9b0f559dd96f756, type: 2}
   minPlayZoneSize: 7
@@ -53,6 +53,7 @@ MonoBehaviour:
   minSpawnInterval: 0.6
   bombSpawnInterval: 10
   minBombSpawnInterval: 0.5
+  bossEncounter: {fileID: 0}
   goldDropMultiplier: 1
   lootPool:
     entries:

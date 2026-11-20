@@ -17,23 +17,23 @@ MonoBehaviour:
       m_TableCollectionName: LocalesTable
     m_TableEntryReference:
       m_KeyId: 1000000000045
-      m_Key:
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   description:
     m_TableReference:
-      m_TableCollectionName:
+      m_TableCollectionName: 
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key:
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   icon: {fileID: 21300000, guid: 7b973355f9d04471d9b13014444761b3, type: 3}
   maxHP:
-    mantissa: 8
-    exponent: 0
+    mantissa: 2.5
+    exponent: 1
   entityKind: 0
   shardDrop:
     mantissa: 0
@@ -48,10 +48,17 @@ MonoBehaviour:
   featureType: 0
   viewPrefab: {fileID: 3154142987783796786, guid: 067da201772f94babb5fcb48a2269d32, type: 3}
   canMove: 0
+  moveChance: 0.05
+  moveCheckInterval: 3
+  moveSpeed: 1
   damageZoneHitRadius: 0.35
   drawDamageZoneHitAreaGizmo: 0
+  damageZoneHitAreaGizmoColor: {r: 1, g: 0.85, b: 0, a: 0.8}
   damageSound: {fileID: 0}
   deathSounds:
   - {fileID: 8300000, guid: a2bde1a96dd754249a99eb6c9aca95fc, type: 3}
   - {fileID: 8300000, guid: 18b23faa457ae492f97ef090f582da73, type: 3}
   - {fileID: 8300000, guid: 5f02a0116777b456597b46fba37e0960, type: 3}
+  references:
+    version: 2
+    RefIds: []
