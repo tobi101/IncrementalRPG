@@ -2322,6 +2322,10 @@ MonoBehaviour:
     m_Localized: "<size=65%>TOTEMS RESTORE IN</size>\n{0:0.0}s"
     m_Metadata:
       m_Items: []
+  - m_Id: 1000000000892
+    m_Localized: Retry
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -75,10 +75,18 @@ namespace Core.StateMachine.States
             var recordResult = _gameplay.SessionRecordResult;
             _audioManager?.PlaySessionEnd();
             _sessionEndPopup.Show(_gameplay.SessionGold, _gameplay.SessionKills,
-                recordResult.IsNewGoldRecord, recordResult.IsNewKillsRecord, () =>
-            {
-                OnGoToHubRequested?.Invoke();
-            });
+                recordResult.IsNewGoldRecord, recordResult.IsNewKillsRecord,
+                () => OnGoToHubRequested?.Invoke(), HandleRetryClicked);
+        }
+
+        private void HandleRetryClicked()
+        {
+            if (!_gameplay.TryRestartExpiredSession())
+                return;
+
+            _sessionEndPopup.Hide();
+            _pauseMenu?.EnableForGameplay();
+            _audioManager?.PlayLavaLoop();
         }
 
         private void HandleLevelTransitionStarted(DungeonLevelConfig nextLevel, int nextLevelIndex,

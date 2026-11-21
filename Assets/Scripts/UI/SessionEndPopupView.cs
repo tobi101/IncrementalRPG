@@ -15,6 +15,7 @@ namespace UI
         [SerializeField] private TMP_Text _killsRecordText;
         [SerializeField] private Transform _raysTransform;
         [SerializeField] private Button _hubButton;
+        [SerializeField] private Button _retryButton;
         [SerializeField] private float _recordScaleMultiplier = 1.15f;
         [SerializeField] private float _recordScaleUpDuration = 0.14f;
         [SerializeField] private float _recordScaleDownDuration = 0.18f;
@@ -22,6 +23,7 @@ namespace UI
         [SerializeField] private float _raysRotationDegreesPerSecond = 20f;
 
         private Action _onHubClicked;
+        private Action _onRetryClicked;
         private Vector3 _goldRecordBaseScale = Vector3.one;
         private Vector3 _killsRecordBaseScale = Vector3.one;
 
@@ -31,13 +33,16 @@ namespace UI
             InitializeRecordText(_goldRecordText, ref _goldRecordBaseScale);
             InitializeRecordText(_killsRecordText, ref _killsRecordBaseScale);
             _hubButton.onClick.AddListener(OnHubButtonClicked);
+            _retryButton.onClick.AddListener(OnRetryButtonClicked);
             gameObject.SetActive(false);
         }
 
-        public void Show(BigDouble gold, int kills, bool isNewGoldRecord, bool isNewKillsRecord, Action onHubClicked)
+        public void Show(BigDouble gold, int kills, bool isNewGoldRecord, bool isNewKillsRecord,
+            Action onHubClicked, Action onRetryClicked)
         {
             StopAllCoroutines();
             _onHubClicked = onHubClicked;
+            _onRetryClicked = onRetryClicked;
             _goldText.text = gold.ToString();
             _killsText.text = BigDoubleFormatter.Format(kills, 0);
             gameObject.SetActive(true);
@@ -53,11 +58,17 @@ namespace UI
             SetRecordText(_killsRecordText, false, _killsRecordBaseScale);
             gameObject.SetActive(false);
             _onHubClicked = null;
+            _onRetryClicked = null;
         }
 
         private void OnHubButtonClicked()
         {
             _onHubClicked?.Invoke();
+        }
+
+        private void OnRetryButtonClicked()
+        {
+            _onRetryClicked?.Invoke();
         }
 
         private void StartRaysRotation()

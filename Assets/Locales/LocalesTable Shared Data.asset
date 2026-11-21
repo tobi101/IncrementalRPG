@@ -2282,6 +2282,10 @@ MonoBehaviour:
     m_Key: hud.totem_restore_timer
     m_Metadata:
       m_Items: []
+  - m_Id: 1000000000892
+    m_Key: run.retry
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

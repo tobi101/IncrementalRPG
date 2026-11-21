@@ -2083,6 +2083,10 @@ MonoBehaviour:
     m_Localized: "<size=65%>\u56fe\u817e\u6062\u590d\u5012\u8ba1\u65f6</size>\n{0:0.0} \u79d2"
     m_Metadata:
       m_Items: []
+  - m_Id: 1000000000892
+    m_Localized: "重试"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

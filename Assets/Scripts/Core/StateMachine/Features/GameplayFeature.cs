@@ -141,6 +141,11 @@ namespace Core.StateMachine.Features
             }
         }
 
+        internal bool TryRestartExpiredSession()
+        {
+            return _runState == RunState.Expired && RestartSessionFromCurrentLevel();
+        }
+
         public void ContinueAfterDemoLimitReached()
         {
             if (_runState != RunState.DemoLimitReached)
@@ -341,7 +346,7 @@ namespace Core.StateMachine.Features
             _hubVisits.MarkFirstRunFinished();
         }
 
-        private void RestartSessionFromCurrentLevel()
+        private bool RestartSessionFromCurrentLevel()
         {
             EndBossEncounter();
             _spawnService.DespawnAll();
@@ -351,12 +356,13 @@ namespace Core.StateMachine.Features
             if (!ApplyLevel(_currentLevelIndex))
             {
                 _runState = RunState.Inactive;
-                return;
+                return false;
             }
 
             SpawnInitialEntities();
             BeginLevelEffects();
             _runState = RunState.Playing;
+            return true;
         }
 
         private void ResetSessionStats()
