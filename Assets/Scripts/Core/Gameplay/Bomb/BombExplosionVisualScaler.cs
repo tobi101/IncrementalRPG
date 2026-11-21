@@ -1,9 +1,14 @@
+using System;
+using Spine;
+using Spine.Unity;
 using UnityEngine;
 
 namespace Core.Gameplay.Bomb
 {
     public class BombExplosionVisualScaler : MonoBehaviour
     {
+        private const string ImpactEventName = "bomb_impact";
+
         [SerializeField] private Transform _explosionVisual;
         [Tooltip("Local-space bounds of the explosion at its widest frame, before Transform scaling.")]
         [SerializeField] private Rect _visualBounds = new Rect(-0.5f, -0.5f, 1f, 1f);
@@ -38,6 +43,26 @@ namespace Core.Gameplay.Bomb
             // The artwork's origin is offset from the burst's center.
             var centerOffset = _explosionVisual.TransformVector(_visualBounds.center);
             _explosionVisual.position = epicenter - centerOffset;
+        }
+
+        public void WhenFullRadius(Action onImpact)
+        {
+            var animation = GetComponent<SkeletonAnimation>();
+            var track = animation?.AnimationState?.GetCurrent(0);
+            if (track == null)
+            {
+                Debug.LogError($"[BombExplosionVisualScaler] No explosion animation is playing on '{name}'.", this);
+                return;
+            }
+
+            track.Event += HandleImpact;
+
+            void HandleImpact(TrackEntry entry, Spine.Event animationEvent)
+            {
+                if (animationEvent.Data.Name != ImpactEventName) return;
+                entry.Event -= HandleImpact;
+                onImpact();
+            }
         }
 
         private void CaptureBaseScale()
