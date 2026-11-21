@@ -16,11 +16,11 @@ namespace Core.Gameplay.Dungeon
         public Creature Boss { get; }
         public float RestoreTimeLeft => _restoreTimeLeft;
 
-        public BossEncounter(BossEncounterConfig config, SpawnService spawnService, Bounds arena, out Bounds cameraBounds)
+        public BossEncounter(BossEncounterConfig config, SpawnService spawnService, TileGrid grid, Bounds arena, out Bounds cameraBounds)
         {
             _config = config;
             _spawnService = spawnService;
-            _totemPositions = new Vector3[config.totemPositions.Length];
+            _totemPositions = grid.GetCornerWorldPositions();
             _totems = new Creature[_totemPositions.Length];
             cameraBounds = arena;
 
@@ -30,10 +30,7 @@ namespace Core.Gameplay.Dungeon
             Boss = spawnService.SpawnAt(config.boss, center);
             for (var i = 0; i < _totems.Length; i++)
             {
-                var offset = config.totemPositions[i];
-                var position = center + new Vector3(offset.x * arena.extents.x, offset.y * arena.extents.y);
-                _totemPositions[i] = position;
-                cameraBounds.Encapsulate(new Bounds(position, Vector3.one));
+                cameraBounds.Encapsulate(new Bounds(_totemPositions[i], Vector3.one));
                 SpawnTotem(i);
             }
 

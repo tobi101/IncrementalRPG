@@ -28,6 +28,20 @@ namespace Core.Gameplay
             return pos;
         }
 
+        public Vector3[] GetCornerWorldPositions()
+        {
+            var bounds = _tilemap.cellBounds;
+            var lastX = bounds.xMax - 1;
+            var lastY = bounds.yMax - 1;
+            return new[]
+            {
+                GetWorldPosition(_origin),
+                GetWorldPosition(new Vector2Int(lastX, _origin.y)),
+                GetWorldPosition(new Vector2Int(lastX, lastY)),
+                GetWorldPosition(new Vector2Int(_origin.x, lastY))
+            };
+        }
+
         public Vector2Int WorldToTile(Vector3 worldPos)
         {
             var cell = _tilemap.WorldToCell(worldPos);

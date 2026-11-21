@@ -14,14 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.Dungeon.BossEncounterConfig
   boss: {fileID: 11400000, guid: 777922312a7e4ebabaedfb56c0af13fb, type: 2}
   totem: {fileID: 11400000, guid: 81ff887cba7d4ad6bf7c196ad73af8b0, type: 2}
-  totemPositions:
-  - {x: -1.17, y: 0.62}
-  - {x: -1.17, y: -0.52}
-  - {x: 1.17, y: 0.62}
-  - {x: 1.17, y: -0.52}
   restoreDelay: 6
   shieldMaterial: {fileID: 2100000, guid: f384b5d1cd12463cb3016fabcadcb931, type: 2}
   linkMaterial: {fileID: 2100000, guid: d0b123afa5344dfcb2126cec9b402365, type: 2}
   shieldCenterOffset: {x: 0, y: 1.26}
   shieldRadii: {x: 1.57, y: 1.94}
-  totemLinkOffset: {x: 0.1, y: 0.64}
+  totemLinkOffset: {x: 0.08, y: 0.46}

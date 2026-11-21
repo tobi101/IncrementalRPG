@@ -46,7 +46,7 @@ MonoBehaviour:
     exponent: 0
   countsAsEnemyKill: 0
   featureType: 0
-  viewPrefab: {fileID: 3154142987783796786, guid: 067da201772f94babb5fcb48a2269d32, type: 3}
+  viewPrefab: {fileID: 6375495156964556191, guid: 250021d45edee41b794bebaa0db78503, type: 3}
   canMove: 0
   moveChance: 0.05
   moveCheckInterval: 3

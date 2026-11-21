@@ -35,6 +35,6 @@ Material:
     m_Floats:
     - _TotemLink: 1
     m_Colors:
-    - _Tint: {r: 1, g: 0.51, b: 0.17, a: 1}
-    - _Core: {r: 1, g: 0.91, b: 0.68, a: 1}
+    - _Tint: {r: 0.52, g: 0.12, b: 1, a: 1}
+    - _Core: {r: 0.93, g: 0.78, b: 1, a: 1}
   m_BuildTextureStacks: []

@@ -561,7 +561,7 @@ namespace Core.StateMachine.Features
                     return false;
                 }
 
-                _bossEncounter = new BossEncounter(level.bossEncounter, _spawnService, arenaBounds, out var cameraBounds);
+                _bossEncounter = new BossEncounter(level.bossEncounter, _spawnService, _tileGrid, arenaBounds, out var cameraBounds);
                 cameraFitter.FitToTilemap(cameraBounds);
             }
             ResetLevelTimer(level);

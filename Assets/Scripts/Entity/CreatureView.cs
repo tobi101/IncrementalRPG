@@ -36,6 +36,7 @@ namespace Entity
         [SerializeField] private SkeletonAnimation _animationBody;
         [SerializeField] private SkeletonAnimation[] _additionalAnimationBodies = Array.Empty<SkeletonAnimation>();
         [SerializeField] private DeathAnimationBody[] _deathAnimationBodies = Array.Empty<DeathAnimationBody>();
+        [SerializeField] private SpawnBurnReveal _spawnReveal;
 
         [Header("Facing")]
         [Tooltip("The direction the authored prefab faces before horizontal mirroring.")]
@@ -88,6 +89,7 @@ namespace Entity
             PlayIdleAnimation(_animationBody);
             PlayAdditionalIdleAnimations();
             PlayVisibleDeathIdleAnimations();
+            _spawnReveal?.Begin();
         }
 
         public void Unbind()
@@ -95,6 +97,7 @@ namespace Entity
             if (_bound == null) return;
             _bound.OnHealthChanged -= HandleHealthChanged;
             _bound = null;
+            _spawnReveal?.Finish();
         }
 
         public void ResetForPool()
@@ -125,6 +128,7 @@ namespace Entity
             SyncPosition();
             if (_isPaused || !_bound.IsAlive) return;
 
+            _spawnReveal?.Tick(Time.deltaTime);
             RefreshLocomotionAnimation(_animationBody);
             if (_additionalAnimationBodies == null) return;
             foreach (var body in _additionalAnimationBodies)
@@ -329,6 +333,7 @@ namespace Entity
             foreach (var deathAnimationBody in _deathAnimationBodies)
             {
                 if (deathAnimationBody == null || !deathAnimationBody.VisibleWhileAlive) continue;
+                if (deathAnimationBody.AnimationBody == _animationBody) continue;
 
                 PlayIdleAnimation(deathAnimationBody.AnimationBody);
             }
