@@ -454,16 +454,28 @@ namespace Core.StateMachine.Features
             OnLevelTransitionFinished?.Invoke(_currentLevel, _currentLevelIndex);
         }
 
+        public (BigDouble gold, BigDouble xp) GetEnemyRewardPreview(EntityConfig enemy, DungeonLevelConfig level)
+        {
+            if (!enemy.countsAsEnemyKill)
+                return (BigDouble.Zero, BigDouble.Zero);
+
+            return (CalculateEnemyGold(enemy, level, _consumables.NextLevelCreatureGoldMultiplier),
+                level.bossEncounter == null ? enemy.xpReward : BigDouble.Zero);
+        }
+
+        private BigDouble CalculateEnemyGold(EntityConfig enemy, DungeonLevelConfig level, float potionMultiplier)
+        {
+            var levelMultiplier = level != null ? level.goldDropMultiplier : 1f;
+            var multiplier = Mathf.Max(0f, levelMultiplier * _skillTree.GetMultiplier(StatType.GoldDrop));
+            return BigDoubleMath.MultiplyAndRound(enemy != null ? enemy.goldDrop : BigDouble.Zero, multiplier * potionMultiplier);
+        }
+
         private void HandleEnemyKilled(SpawnService.EntityDestroyedContext context)
         {
             if (_runState == RunState.Inactive || _runState == RunState.Expired || _runState == RunState.DemoLimitReached)
                 return;
 
-            var levelGoldMultiplier = _currentLevel != null ? _currentLevel.goldDropMultiplier : 1f;
-            var goldDrop = context.Config != null ? context.Config.goldDrop : BigDouble.Zero;
-            var finalAmount = BigDoubleMath.MultiplyAndRound(goldDrop,
-                Mathf.Max(0f, levelGoldMultiplier * _skillTree.GetMultiplier(StatType.GoldDrop)) *
-                _consumables.CreatureGoldMultiplier);
+            var finalAmount = CalculateEnemyGold(context.Config, _currentLevel, _consumables.CreatureGoldMultiplier);
 
             if (finalAmount > 0)
             {

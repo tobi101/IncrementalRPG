@@ -47,6 +47,7 @@ namespace Core.Items
         public event Action OnEffectsChanged;
         public IReadOnlyList<ActiveConsumableEffect> Effects => _readOnlyEffects;
         public float CreatureGoldMultiplier => 1f + GetEffectTotal(Wealth);
+        public float NextLevelCreatureGoldMultiplier => 1f + GetEffectTotal(Wealth, active: false);
         public float AttackDamageMultiplier => 1f + GetEffectTotal(Rage);
         public float SpecialCooldownMultiplier => 1f - GetEffectTotal(Concentration);
 
@@ -114,10 +115,10 @@ namespace Core.Items
             OnEffectsChanged?.Invoke();
         }
 
-        public float GetEffectTotal(string effectId)
+        public float GetEffectTotal(string effectId, bool active = true)
         {
             foreach (var effect in _effects)
-                if (effect.IsActive && effect.EffectId == effectId)
+                if (effect.IsActive == active && effect.EffectId == effectId)
                     return effect.Value;
             return 0f;
         }

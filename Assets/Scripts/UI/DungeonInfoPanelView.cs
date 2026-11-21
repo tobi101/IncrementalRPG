@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Core.Gameplay.Dungeon;
+using Core.StateMachine.Features;
 using Entity;
+using Reflex.Attributes;
 using TMPro;
 using UI.Localization;
 using UnityEngine;
@@ -17,9 +19,11 @@ namespace UI
         [SerializeField] private GameObject[] _unavailableContent;
         [SerializeField] private Transform _enemyIconsContainer;
         [SerializeField] private Image _enemyIconPrefab;
-        [SerializeField] private TooltipView _enemyTooltipView;
+        [SerializeField] private EnemyRewardTooltipView _enemyTooltipView;
         [SerializeField, Min(1)] private int _maxEnemyIcons = 6;
         [SerializeField] private Button _startButton;
+
+        [Inject] private GameplayFeature _gameplay;
 
         private readonly List<Image> _spawnedEnemyIcons = new();
         private Action _onStartClicked;
@@ -157,7 +161,8 @@ namespace UI
                 if (tooltipTrigger == null)
                     tooltipTrigger = icon.gameObject.AddComponent<EnemyIconTooltipTrigger>();
 
-                tooltipTrigger.Bind(config, _enemyTooltipView);
+                var reward = _gameplay.GetEnemyRewardPreview(config, level);
+                tooltipTrigger.Bind(config, reward.gold, reward.xp, _enemyTooltipView);
                 _spawnedEnemyIcons.Add(icon);
             }
 
