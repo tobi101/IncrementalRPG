@@ -638,7 +638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ksenia Bagan
+  m_text: "MAIT | bakamaitchan"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 00ee4d61e320642638621d27a30fc25b, type: 2}
   m_sharedMaterial: {fileID: 7042698100644226177, guid: 00ee4d61e320642638621d27a30fc25b, type: 2}
