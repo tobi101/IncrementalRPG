@@ -41,6 +41,7 @@ namespace Core.StateMachine.Features
         public event Action<DungeonLevelConfig, int, float, float, float> OnLevelTransitionStarted;
         public event Action<DungeonLevelConfig, int> OnLevelTransitionFinished;
         public event Action<DungeonConfig, DungeonLevelConfig, int> OnDemoLimitReached;
+        public event Action<Creature> OnBossChanged;
         public event Action<Vector3> OnBossDefeated;
         public event Action<bool> OnPauseChanged;
         public event Action OnDisabled;
@@ -49,6 +50,7 @@ namespace Core.StateMachine.Features
         public int SessionKills => _sessionKills;
         public BigDouble LevelExperience => _levelExperience.Current;
         public BigDouble CurrentLevelExperienceGoal => _levelExperience.Goal;
+        public Creature CurrentBoss => _bossEncounter?.Boss;
         public float TotemRestoreTimeLeft => _bossEncounter?.RestoreTimeLeft ?? 0f;
         public int CurrentLevelIndex => _currentLevelIndex;
         public DungeonConfig CurrentDungeon => _currentDungeon;
@@ -563,6 +565,7 @@ namespace Core.StateMachine.Features
 
                 _bossEncounter = new BossEncounter(level.bossEncounter, _spawnService, _tileGrid, arenaBounds, out var cameraBounds);
                 cameraFitter.FitToTilemap(cameraBounds);
+                OnBossChanged?.Invoke(_bossEncounter.Boss);
             }
             ResetLevelTimer(level);
             cameraFitter.PrepareLavaAnimation();
@@ -575,8 +578,11 @@ namespace Core.StateMachine.Features
 
         private void EndBossEncounter()
         {
-            _bossEncounter?.Dispose();
+            if (_bossEncounter == null) return;
+
+            _bossEncounter.Dispose();
             _bossEncounter = null;
+            OnBossChanged?.Invoke(null);
         }
 
         private void ConfigureSpawn(DungeonLevelConfig level)
