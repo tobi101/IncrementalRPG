@@ -24,6 +24,7 @@ namespace UI
         private CanvasGroup _revealGroup;
 
         [SerializeField] private LevelTransitionLampCounterView _lampCounter;
+        [SerializeField] private AudioSource _closeAudioSource;
         [SerializeField] private AnimationCurve _movementCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
         [SerializeField, Min(0f)] private float _revealFadeInDuration = 0.2f;
         [SerializeField, Min(0f)] private float _lampAnimationDelay = 0.2f;
@@ -148,8 +149,15 @@ namespace UI
 
         public void SetPaused(bool isPaused)
         {
+            if (_isPaused == isPaused)
+                return;
+
             _isPaused = isPaused;
             _lampCounter?.SetPaused(isPaused);
+            if (isPaused)
+                _closeAudioSource?.Pause();
+            else
+                _closeAudioSource?.UnPause();
         }
 
         public void HideImmediately()
@@ -157,6 +165,7 @@ namespace UI
             _isPaused = false;
             _isTransitionActive = false;
             _lampCounter?.SetPaused(false);
+            _closeAudioSource?.Stop();
 
             if (_routine != null)
             {
@@ -185,6 +194,10 @@ namespace UI
 
         private IEnumerator CloseRoutine(float duration, Action completed)
         {
+            while (_isPaused)
+                yield return null;
+
+            _closeAudioSource?.Play();
             yield return AnimateCurtains(0f, 1f, duration);
             _routine = null;
             completed?.Invoke();

@@ -68,7 +68,7 @@
 
 ### Бочка
 
-В [Bombs.prefab](/Users/admin/IncrementalRPG/Assets/Prefabs/Entities/Bombs.prefab) отдельны `barrel` и `barrel_exposion`. У взрыва есть `BombExplosionVisualScaler._explosionVisual`: визуальный Transform масштабируется относительно своего исходного масштаба по отношению текущего радиуса к базовому радиусу взрыва. Сначала откалибруйте исходную картинку под `BombExplosionConfig.baseRadius`; бонусы радиуса затем масштабируют её. Урон и радиус меняются в конфиге взрыва, HP — в конфиге самой бочки.
+В [Bombs.prefab](/Users/admin/IncrementalRPG/Assets/Prefabs/Entities/Bombs.prefab) отдельны `barrel` и `barrel_exposion`. Компонент `BombExplosionVisualScaler` центрирует вспышку на бочке и подгоняет её яркое ядро под ширину и высоту области урона с учётом бонусов радиуса. Если рисунок взрыва меняется, задайте в `_visualBounds` общие локальные границы слоёв `cloud_red1`, `cloud_red2` и `cloud_yellow2` на кадре `bomb_impact` (0,10 с). Длинные лучи выходят за границу области урона. Урон и радиус задаются в `BombExplosionConfig`, здоровье бочки — в её `EntityConfig`.
 
 ### Кристаллы
 
@@ -118,7 +118,7 @@
 |---|---|---|
 | `closeDuration` | Время закрытия шторки, с | 0,7 |
 | `openDuration` | Время открытия шторки, с | 1,16 |
-| `lootGraceDuration` | Окно добора осколков после цели, с | 1,5 |
+| `lootGraceDuration` | Дополнительное время добора осколков после окончания вздоха, с | 1 |
 | `holdDuration` | Поле существует и передаётся событием, но текущий `LevelTransitionCoordinator` его **не использует** как паузу | 3,3 |
 
 Чтобы ускорить шторку, уменьшайте `closeDuration`/`openDuration`. Общая длительность показа награды не определяется `holdDuration`: она зависит от лампы, сундука, прокрутки и ожидания выбора игрока.
@@ -354,7 +354,7 @@
 | `_uiHoverAudioClip`, `_uiClickAudioClip` | Наведение/нажатие UI |
 | `_skillUpgradeAudioClip`, `_skillMaxAudioClip`, `_skillErrorAudioClip` | Покупка уровня, полная прокачка, неудачная покупка |
 | `_sessionEndAudioClip` | Окончание захода |
-| `_curtainCloseAudioClip`, `_curtainOpenAudioClip` | Закрытие и открытие шторки |
+| `_curtainOpenAudioClip` | Открытие шторки |
 | `_levelCounterOnAudioClip` | Включение лампы уровня |
 | `_fightStartFadeAudioClip`, `_fightStartBurnAudioClip` | Фазы входа в бой |
 | `_lavaLoopClip` | Петля лавы |
@@ -373,9 +373,9 @@
 
 Музыка `Assets/Audio/Music/theme_round_complete.ogg` сменяет боевую тему при начале закрытия шторки и зацикленно играет во время сундука, прокрутки, выбора награды и открытия шторки. Боевая музыка возвращается после полного открытия шторки. Громкость регулируется группой `Music`, смена темы использует `_musicFadeDuration`.
 
-Новые эффекты шторки находятся в `Assets/Audio/Sounds/LevelTransition`: `round_end.ogg` — закрытие, `round_continue.ogg` — открытие на следующем уровне. Старый `Assets/Audio/Sounds/round_end.ogg` остаётся отдельным эффектом окончания всего захода в `_sessionEndAudioClip`.
+При заполнении счётчика опыта источник `levelCompleteAudio` на объекте `GameScene/--Reflex--/SceneScope` воспроизводит `Assets/Audio/Sounds/LevelTransition/round_end.ogg` через группу `Sfx`. Через секунду после его окончания шторки начинают закрываться. В момент начала закрытия звучит `Assets/Audio/Sounds/demo_end/curtain_1.ogg`. Тот же звук воспроизводится при закрытии шторок после нажатия на сундук босса. При открытии на следующем уровне звучит `round_continue.ogg`. Старый `Assets/Audio/Sounds/round_end.ogg` остаётся отдельным эффектом окончания всего захода в `_sessionEndAudioClip`.
 
-`LootboxView._spinAudioSource` ссылается на дочерний `SpinAudio` с клипом `LevelTransition/spin.ogg`. Источник запускается вместе с движением ленты и исчезновением сундука, повторяется при необходимости и останавливается перед показом награды. `LootboxView._rewardAudioSource` ссылается на `RewardAudio` с клипом `LevelTransition/reward.ogg`: он играет один раз при остановке ленты и появлении награды. Пауза и потеря фокуса приостанавливают оба звука; сброс и отключение окна останавливают их. Оба источника подключены к группе `Sfx`; их `Volume` позволяет отдельно настроить громкость прокрутки и награды.
+`LootboxView._spinAudioSource` ссылается на дочерний `SpinAudio` с клипом `LevelTransition/spin.ogg`. Клип запускается один раз в начале движения ленты и доигрывает до конца. `LootboxView._rewardAudioSource` ссылается на `RewardAudio` с клипом `LevelTransition/reward.ogg`: он играет один раз при остановке ленты и появлении награды. Пауза и потеря фокуса приостанавливают оба звука; сброс и отключение окна останавливают их. Оба источника подключены к группе `Sfx`; их `Volume` позволяет отдельно настроить громкость прокрутки и награды.
 
 Микшер: [GameAudioMixer](/Users/admin/IncrementalRPG/Assets/Audio/GameAudioMixer.mixer). Общий [AudioSettings](/Users/admin/IncrementalRPG/Assets/Resources/AudioSettings.prefab) автоматически создаётся при запуске из любой сцены и сохраняется между сценами. Его `AudioMixerSettingsApplier` применяет сохранённую громкость в `Start`, когда микшер уже инициализирован, и затем реагирует на изменения настроек. `_audioMixer` — микшер, `_masterVolumeParameter`, `_musicVolumeParameter`, `_sfxVolumeParameter` — имена опубликованных параметров; `_useAudioListenerAsMasterFallback` — технический режим при отсутствии маршрута общей громкости.
 

@@ -317,6 +317,8 @@ namespace UI
 
             if (_experienceDisplayed > _experienceTarget)
                 _experienceDisplayed = _experienceTarget;
+            else if (_experienceDisplayed < _experienceGoal && _experienceTarget >= _experienceGoal)
+                _experienceDisplayed = _experienceGoal;
 
             RefreshExperienceText();
         }

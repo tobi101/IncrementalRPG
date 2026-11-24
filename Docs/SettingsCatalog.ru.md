@@ -196,7 +196,6 @@
 | [_skillMaxAudioClip](/Users/admin/IncrementalRPG/Assets/Scripts/AudioManager/AudioManager.cs:48) | AudioClip | — | Ссылка на объект/компонент/ресурс |
 | [_skillErrorAudioClip](/Users/admin/IncrementalRPG/Assets/Scripts/AudioManager/AudioManager.cs:49) | AudioClip | — | Ссылка на объект/компонент/ресурс |
 | [_sessionEndAudioClip](/Users/admin/IncrementalRPG/Assets/Scripts/AudioManager/AudioManager.cs:50) | AudioClip | — | Ссылка на объект/компонент/ресурс |
-| [_curtainCloseAudioClip](/Users/admin/IncrementalRPG/Assets/Scripts/AudioManager/AudioManager.cs:51) | AudioClip | — | Ссылка на объект/компонент/ресурс |
 | [_curtainOpenAudioClip](/Users/admin/IncrementalRPG/Assets/Scripts/AudioManager/AudioManager.cs:52) | AudioClip | — | Ссылка на объект/компонент/ресурс |
 | [_levelCounterOnAudioClip](/Users/admin/IncrementalRPG/Assets/Scripts/AudioManager/AudioManager.cs:53) | AudioClip | — | Ссылка на объект/компонент/ресурс |
 | [_fightStartFadeAudioClip](/Users/admin/IncrementalRPG/Assets/Scripts/AudioManager/AudioManager.cs:54) | AudioClip | — | Ссылка на объект/компонент/ресурс |
@@ -480,7 +479,8 @@
 | [closeDuration](/Users/admin/IncrementalRPG/Assets/Scripts/Core/Gameplay/Dungeon/DungeonLevelTransitionConfig.cs:9) | float | `0.75f` | Значение; Min(0f) |
 | [holdDuration](/Users/admin/IncrementalRPG/Assets/Scripts/Core/Gameplay/Dungeon/DungeonLevelTransitionConfig.cs:10) | float | — | Значение; Min(0f) |
 | [openDuration](/Users/admin/IncrementalRPG/Assets/Scripts/Core/Gameplay/Dungeon/DungeonLevelTransitionConfig.cs:11) | float | `0.75f` | Значение; Min(0f) |
-| [lootGraceDuration](/Users/admin/IncrementalRPG/Assets/Scripts/Core/Gameplay/Dungeon/DungeonLevelTransitionConfig.cs:12) | float | `1.5f` | Значение; Min(0f) |
+| `levelCompleteAudio` | AudioSource | — | Источник вздоха в игровой сцене |
+| [lootGraceDuration](/Users/admin/IncrementalRPG/Assets/Scripts/Core/Gameplay/Dungeon/DungeonLevelTransitionConfig.cs:14) | float | `1f` | Пауза после вздоха, с |
 
 <a id="dungeonlist"></a>
 
@@ -977,7 +977,7 @@ Time Scale сундука сбрасывается кодом; скорость 
 | [_spinSpeed](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:30) | float | `2200f` | Значение; Min(1f) |
 | [_spinStartDelay](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:32) | float | `0.5f` | От начала открытия до ленты и fade out; Min(0f) |
 | [_constantSpinDuration](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:33) | float | `1.8f` | Значение; Min(0f) |
-| [_spinAudioSource](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:34) | AudioSource | — | Петля прокрутки `SpinAudio`, клип `LevelTransition/spin.ogg` |
+| [_spinAudioSource](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:34) | AudioSource | — | Однократный звук прокрутки `SpinAudio`, клип `LevelTransition/spin.ogg` |
 | [_rewardAudioSource](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:35) | AudioSource | — | Однократный звук награды `RewardAudio`, клип `LevelTransition/reward.ogg` |
 | [_settleDuration](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:36) | float | `1.2f` | Значение; Min(0.01f) |
 | [_winnerEntryPadding](/Users/admin/IncrementalRPG/Assets/Scripts/UI/LootboxView.cs:37) | float | `40f` | Значение; Min(0f) |

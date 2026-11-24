@@ -372,7 +372,6 @@ MonoBehaviour:
   _skillMaxAudioClip: {fileID: 8300000, guid: ddf8774f8db9d4e6a961223abb97e156, type: 3}
   _skillErrorAudioClip: {fileID: 8300000, guid: 8c0ec71c2f08149c0a0a3853ae32f172, type: 3}
   _sessionEndAudioClip: {fileID: 8300000, guid: a4a87035539fc46f19b5a738976adc56, type: 3}
-  _curtainCloseAudioClip: {fileID: 8300000, guid: f0c7a0a91428142ebbcc6cba204a4cc6, type: 3}
   _curtainOpenAudioClip: {fileID: 8300000, guid: 1d73a10cc1a3647789200b9ac8b2d8bc, type: 3}
   _levelCounterOnAudioClip: {fileID: 8300000, guid: 8120ab87539aa4300b68b29e70d06512, type: 3}
   _fightStartFadeAudioClip: {fileID: 8300000, guid: e5938351a08b646b6a9907f7025e6182, type: 3}

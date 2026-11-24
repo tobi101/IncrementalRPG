@@ -92,7 +92,6 @@ namespace Core.StateMachine.States
         private void HandleLevelTransitionStarted(DungeonLevelConfig nextLevel, int nextLevelIndex,
             float closeDuration, float holdDuration, float openDuration)
         {
-            _audioManager?.PlayCurtainClose();
             _audioManager?.PlayMusic(MusicTrack.RoundComplete);
         }
 

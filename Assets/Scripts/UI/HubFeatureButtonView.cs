@@ -8,6 +8,9 @@ namespace UI
 {
     public class HubFeatureButtonView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
+        private const float MarkerPulsePeriod = 1.8f;
+        private const float MarkerMinimumAlpha = 0.7f;
+
         [SerializeField] private Button _button;
         [SerializeField] private Image _glowImage;
         [SerializeField] private TMP_Text _text;
@@ -17,6 +20,8 @@ namespace UI
         [SerializeField] private string _hoverAnimationName = "hover";
         [SerializeField] private bool _idleAnimationLoop = true;
         [SerializeField] private bool _hoverAnimationLoop = true;
+
+        private CanvasRenderer _markerRenderer;
 
         public Button Button => _button;
 
@@ -36,6 +41,9 @@ namespace UI
             if (_button == null)
                 _button = GetComponent<Button>();
 
+            if (_firstVisitMarker != null)
+                _markerRenderer = _firstVisitMarker.GetComponent<CanvasRenderer>();
+
             SetGlowVisible(false);
             PlaySkeletonAnimation(_idleAnimationName, _idleAnimationLoop);
         }
@@ -48,8 +56,21 @@ namespace UI
 
         private void OnDisable()
         {
+            if (_markerRenderer != null)
+                _markerRenderer.SetAlpha(1f);
+
             SetGlowVisible(false);
             PlaySkeletonAnimation(_idleAnimationName, _idleAnimationLoop);
+        }
+
+        private void Update()
+        {
+            if (_markerRenderer == null || !_firstVisitMarker.activeInHierarchy)
+                return;
+
+            var phase = (float)(Time.unscaledTimeAsDouble % MarkerPulsePeriod) / MarkerPulsePeriod;
+            var pulse = 0.5f + 0.5f * Mathf.Cos(phase * 2f * Mathf.PI);
+            _markerRenderer.SetAlpha(Mathf.Lerp(MarkerMinimumAlpha, 1f, pulse));
         }
 
         public void OnPointerEnter(PointerEventData eventData)

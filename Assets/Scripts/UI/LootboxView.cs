@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core.Items;
+using Entity;
 using Spine.Unity;
 using UnityEngine;
 using UnityEngine.UI;
@@ -104,7 +105,7 @@ namespace UI
             _prepared = true;
         }
 
-        internal Button CreateArenaChest(RectTransform parent, Vector2 viewportPosition)
+        internal Button CreateArenaChest(RectTransform parent, Vector2 viewportPosition, SpawnBurnReveal totemReveal)
         {
             var chest = Instantiate(_chest, parent, false);
             chest.name = "BossRewardChest";
@@ -130,6 +131,8 @@ namespace UI
             var button = chest.gameObject.AddComponent<Button>();
             button.targetGraphic = chest;
             UIButtonAudio.EnsureOn(button, playHoverSound: true);
+            if (totemReveal != null)
+                chest.gameObject.AddComponent<ArenaChestReveal>().Begin(chest, button, totemReveal);
             return button;
         }
 
@@ -336,7 +339,6 @@ namespace UI
 
             PositionFinalItems(0f);
             _spinFinished = true;
-            _spinAudioSource?.Stop();
             _rewardAudioSource?.Play();
             RefreshPresentationPause();
 

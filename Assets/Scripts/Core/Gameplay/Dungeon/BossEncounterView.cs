@@ -38,7 +38,8 @@ namespace Core.Gameplay.Dungeon
                 var start = (Vector2)(totemPositions[i] - bossPosition) + config.totemLinkOffset;
                 var fromCenter = start - config.shieldCenterOffset;
                 var inShieldSpace = new Vector2(fromCenter.x / config.shieldRadii.x, fromCenter.y / config.shieldRadii.y);
-                var end = config.shieldCenterOffset + fromCenter / Mathf.Max(1f, inShieldSpace.magnitude);
+                var rimDirection = inShieldSpace == Vector2.zero ? Vector2.up : inShieldSpace.normalized;
+                var end = config.shieldCenterOffset + Vector2.Scale(rimDirection, config.shieldRadii);
                 var direction = end - start;
 
                 var link = CreateSurface($"Totem link {i + 1}", config.linkMaterial);

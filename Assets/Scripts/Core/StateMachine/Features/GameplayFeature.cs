@@ -18,9 +18,11 @@ namespace Core.StateMachine.Features
 {
     public class GameplayFeature : IGameFeature
     {
+        private const float BossChestRevealProgress = 0.85f;
+
         [Inject] private IEnumerable<IService> _servicesEnumerable;
         [Inject] private DungeonList _dungeonList;
-        [Inject] private DungeonLevelTransitionConfig _levelTransitionConfig;
+        [Inject] private DungeonLevelTransitionConfig _levelTransitionConfig = new();
         [Inject] private DungeonSelectionService _dungeonSelection;
         [Inject] private IsometricGradientTilemapGenerator _generator;
         [Inject] private SpawnService _spawnService;
@@ -42,7 +44,7 @@ namespace Core.StateMachine.Features
         public event Action<DungeonLevelConfig, int> OnLevelTransitionFinished;
         public event Action<DungeonConfig, DungeonLevelConfig, int> OnDemoLimitReached;
         public event Action<Creature> OnBossChanged;
-        public event Action<Vector3> OnBossDefeated;
+        public event Action<Vector3> OnBossChestReady;
         public event Action<bool> OnPauseChanged;
         public event Action OnDisabled;
 
@@ -65,6 +67,7 @@ namespace Core.StateMachine.Features
             Playing,
             LootGrace,
             Transitioning,
+            BossDying,
             AwaitingBossChest,
             OpeningBossReward,
             DemoLimitReached,
@@ -75,6 +78,7 @@ namespace Core.StateMachine.Features
         private DungeonConfig _currentDungeon;
         private DungeonLevelConfig _currentLevel;
         private BossEncounter _bossEncounter;
+        private CreatureView _dyingBossView;
         private int _currentLevelIndex;
         private readonly LevelExperienceProgress _levelExperience = new();
         private int _pendingLevelTransitionIndex = -1;
@@ -145,7 +149,11 @@ namespace Core.StateMachine.Features
 
         internal bool TryRestartExpiredSession()
         {
-            return _runState == RunState.Expired && RestartSessionFromCurrentLevel();
+            if (_runState != RunState.Expired)
+                return false;
+
+            var startLevelIndex = DungeonSelectionService.GetStartLevelIndex(_currentDungeon, _currentLevelIndex);
+            return RestartSessionAtLevel(startLevelIndex);
         }
 
         public void ContinueAfterDemoLimitReached()
@@ -154,7 +162,7 @@ namespace Core.StateMachine.Features
                 return;
 
             _dungeonSelection.MarkDemoEndAcknowledged(_currentDungeon);
-            RestartSessionFromCurrentLevel();
+            RestartSessionAtLevel(_currentLevelIndex);
         }
 
         public void SetPaused(bool isPaused)
@@ -167,6 +175,10 @@ namespace Core.StateMachine.Features
 
             _isPaused = isPaused;
             _spawnService.SetPaused(_isPaused);
+            if (_isPaused)
+                _levelTransitionConfig.levelCompleteAudio?.Pause();
+            else
+                _levelTransitionConfig.levelCompleteAudio?.UnPause();
             RefreshViewPauseState();
             OnPauseChanged?.Invoke(_isPaused);
         }
@@ -178,8 +190,10 @@ namespace Core.StateMachine.Features
 
             _consumables.EndRun();
             _damageZone.ResetAttackTimers();
+            _levelTransitionConfig.levelCompleteAudio?.Stop();
             SetPaused(false);
             _runState = RunState.Inactive;
+            _dyingBossView = null;
             _pendingLevelTransitionIndex = -1;
             _pendingDemoLimit = false;
             _lootGraceEndsAtDemoLimit = false;
@@ -208,6 +222,9 @@ namespace Core.StateMachine.Features
                 case RunState.LootGrace:
                     TickLootGrace(deltaTime);
                     break;
+                case RunState.BossDying:
+                    TryRevealBossChest();
+                    break;
             }
         }
 
@@ -219,7 +236,7 @@ namespace Core.StateMachine.Features
         private void RefreshViewPauseState()
         {
             var allowDeathAnimations = _runState is RunState.LootGrace or RunState.Transitioning
-                                       or RunState.AwaitingBossChest or RunState.OpeningBossReward
+                                       or RunState.BossDying or RunState.AwaitingBossChest or RunState.OpeningBossReward
                                        || (_runState == RunState.DemoLimitReached && _currentLevel.bossEncounter != null);
             _spawnService.SetViewsPaused(_isPaused || _runState != RunState.Playing,
                 pauseDeathAnimations: _isPaused || !allowDeathAnimations);
@@ -260,8 +277,12 @@ namespace Core.StateMachine.Features
         {
             _damageZone.UpdateAim();
             _shardDropService.Update(deltaTime);
-            _lootGraceTimer -= deltaTime;
 
+            var sound = _levelTransitionConfig.levelCompleteAudio;
+            if (sound != null && sound.isPlaying)
+                return;
+
+            _lootGraceTimer -= deltaTime;
             if (_lootGraceTimer > 0f)
                 return;
 
@@ -288,16 +309,25 @@ namespace Core.StateMachine.Features
 
         private void FinishBossFight()
         {
-            var cells = _generator.TargetTilemap.cellBounds;
-            var centerCell = new Vector2Int(cells.xMin + cells.size.x / 2, cells.yMin + cells.size.y / 2);
-            var chestPosition = _tileGrid.GetWorldPosition(centerCell);
-            _runState = RunState.AwaitingBossChest;
+            _dyingBossView = _spawnService.FindView(_bossEncounter.Boss);
+            _runState = RunState.BossDying;
             _damageZone.ResetAttackTimers();
             _audioManager?.StopLavaLoop();
             _consumables.EndRun();
             EndBossEncounter();
             RefreshViewPauseState();
-            OnBossDefeated?.Invoke(chestPosition);
+        }
+
+        private void TryRevealBossChest()
+        {
+            if (_dyingBossView != null && !_dyingBossView.HasReachedDeathAnimationProgress(BossChestRevealProgress))
+                return;
+
+            _dyingBossView = null;
+            _runState = RunState.AwaitingBossChest;
+            var cells = _generator.TargetTilemap.cellBounds;
+            var centerCell = new Vector2Int(cells.xMin + cells.size.x / 2, cells.yMin + cells.size.y / 2);
+            OnBossChestReady?.Invoke(_tileGrid.GetWorldPosition(centerCell));
         }
 
         internal bool TryOpenBossReward()
@@ -348,14 +378,14 @@ namespace Core.StateMachine.Features
             _hubVisits.MarkFirstRunFinished();
         }
 
-        private bool RestartSessionFromCurrentLevel()
+        private bool RestartSessionAtLevel(int levelIndex)
         {
             EndBossEncounter();
             _spawnService.DespawnAll();
             _shardDropService.DespawnAll();
             ResetSessionStats();
 
-            if (!ApplyLevel(_currentLevelIndex))
+            if (!ApplyLevel(levelIndex))
             {
                 _runState = RunState.Inactive;
                 return false;
@@ -397,10 +427,8 @@ namespace Core.StateMachine.Features
             _lootGraceEndsAtDemoLimit = false;
             _lootGraceTimer = 0f;
             _transitionTargetLevelIndex = nextLevelIndex;
-            var transitionConfig = _levelTransitionConfig ?? new DungeonLevelTransitionConfig();
-
             OnLevelTransitionStarted?.Invoke(nextLevel, nextLevelIndex,
-                transitionConfig.CloseDuration, transitionConfig.HoldDuration, transitionConfig.OpenDuration);
+                _levelTransitionConfig.CloseDuration, _levelTransitionConfig.HoldDuration, _levelTransitionConfig.OpenDuration);
         }
 
         private void BeginLootGrace(int nextLevelIndex, bool endsAtDemoLimit)
@@ -412,15 +440,7 @@ namespace Core.StateMachine.Features
             _pendingLevelTransitionIndex = nextLevelIndex;
             _pendingDemoLimit = false;
             _lootGraceEndsAtDemoLimit = endsAtDemoLimit;
-            _lootGraceTimer = (_levelTransitionConfig ?? new DungeonLevelTransitionConfig()).LootGraceDuration;
-
-            if (_lootGraceTimer <= 0f)
-            {
-                if (_lootGraceEndsAtDemoLimit)
-                    ReachDemoLimit();
-                else
-                    BeginLevelTransition(_pendingLevelTransitionIndex);
-            }
+            _lootGraceTimer = _levelTransitionConfig.LootGraceDuration;
         }
 
         public bool ApplyPendingLevelBehindCurtain()
@@ -491,13 +511,14 @@ namespace Core.StateMachine.Features
             if (_bossEncounter != null) return;
 
             var xpReward = context.Config != null ? context.Config.xpReward : BigDouble.Zero;
+            var wasGoalReached = _levelExperience.IsGoalReached;
             _levelExperience.Add(xpReward);
             OnLevelExperienceChanged?.Invoke(_levelExperience.Current, _levelExperience.Goal);
 
-            if (_runState != RunState.Playing) return;
-            if (_pendingLevelTransitionIndex >= 0) return;
-            if (!_levelExperience.IsGoalReached) return;
+            if (_runState != RunState.Playing || wasGoalReached || !_levelExperience.IsGoalReached)
+                return;
 
+            _levelTransitionConfig.levelCompleteAudio?.Play();
             if (TryGetNextPlayableLevel(out var nextLevelIndex))
             {
                 _pendingLevelTransitionIndex = nextLevelIndex;

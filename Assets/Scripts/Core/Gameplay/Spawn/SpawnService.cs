@@ -38,6 +38,7 @@ namespace Core.Gameplay
         private readonly DamagePopupService _damagePopupService;
         private readonly EnemyMovementService _movementService;
         private SpawnTable _spawnTable;
+        private EntityConfig _levelBoss;
 
         private float _spawnInterval = 2f;
         private float _timer;
@@ -72,6 +73,7 @@ namespace Core.Gameplay
 
         public void SetLevel(DungeonLevelConfig level)
         {
+            _levelBoss = level.bossEncounter?.boss;
             _spawnTable = level.bossEncounter == null ? level.spawnTable : null;
             _spawnInterval = level.spawnInterval;
             _bombSpawnInterval = level.bombSpawnInterval;
@@ -123,6 +125,15 @@ namespace Core.Gameplay
             foreach (var entry in _active)
                 if (entry.Creature.IsAlive)
                     yield return entry.Creature;
+        }
+
+        internal CreatureView FindView(Creature creature)
+        {
+            foreach (var entry in _active)
+                if (entry.Creature == creature)
+                    return entry.View;
+
+            return null;
         }
 
         public void SetPaused(bool isPaused)
@@ -230,7 +241,11 @@ namespace Core.Gameplay
                 if (config.countsAsEnemyKill)
                     OnEnemyKilled?.Invoke(destroyedContext);
 
-                _audioManager?.PlayRandomDeathSfx(config.deathSounds);
+                // All four totems can use the frame's death sound budget before the boss dies.
+                if (config == _levelBoss)
+                    _audioManager?.PlayRandomSfx(config.deathSounds);
+                else
+                    _audioManager?.PlayRandomDeathSfx(config.deathSounds);
                 Action completeDeath = () =>
                 {
                     _active.RemoveAll(e => e.Creature == creature);

@@ -10,7 +10,7 @@ namespace Core.Gameplay.Bomb
         private const string ImpactEventName = "bomb_impact";
 
         [SerializeField] private Transform _explosionVisual;
-        [Tooltip("Local-space bounds of the explosion at its widest frame, before Transform scaling.")]
+        [Tooltip("Local-space bounds of the bright central burst at bomb_impact, excluding flare rays and glow.")]
         [SerializeField] private Rect _visualBounds = new Rect(-0.5f, -0.5f, 1f, 1f);
 
         private Vector3 _baseScale;

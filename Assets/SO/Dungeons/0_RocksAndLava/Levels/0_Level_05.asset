@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e48747da33544868b587276d746db02, type: 3}
   m_Name: 0_Level_05
   m_EditorClassIdentifier: Assembly-CSharp::Core.Gameplay.Dungeon.DungeonLevelConfig
-  levelId: rocks_and_lava_level_01
+  levelId: rocks_and_lava_level_05
   displayName:
     m_TableReference:
       m_TableCollectionName: LocalesTable
@@ -41,19 +41,19 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   xpGoal:
-    mantissa: 0
-    exponent: 0
+    mantissa: 4
+    exponent: 2
   tilemapGenerationConfig: {fileID: 11400000, guid: b82edfeef95c1421b9b0f559dd96f756, type: 2}
   minPlayZoneSize: 7
-  heatIndex: 2.5
-  spawnTable: {fileID: 0}
-  initialEnemySpawnDensity: 0
-  initialBombSpawnDensity: 0
+  heatIndex: 5
+  spawnTable: {fileID: 11400000, guid: a7793713fe74a7345b74b2c5b3034f2d, type: 2}
+  initialEnemySpawnDensity: 0.33
+  initialBombSpawnDensity: 0.06
   spawnInterval: 0.5
   minSpawnInterval: 0.5
   bombSpawnInterval: 10
   minBombSpawnInterval: 0.5
-  bossEncounter: {fileID: 11400000, guid: 92d894805af3443aa3e924be82579c5e, type: 2}
+  bossEncounter: {fileID: 0}
   goldDropMultiplier: 1
   lootPool:
     entries:

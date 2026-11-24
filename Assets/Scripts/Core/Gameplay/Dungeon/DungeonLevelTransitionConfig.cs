@@ -9,7 +9,9 @@ namespace Core.Gameplay.Dungeon
         [Min(0f)] public float closeDuration = 0.75f;
         [Min(0f)] public float holdDuration;
         [Min(0f)] public float openDuration = 0.75f;
-        [Min(0f)] public float lootGraceDuration = 1.5f;
+        public AudioSource levelCompleteAudio;
+        [Tooltip("Additional time to collect shards after the level-complete sound finishes.")]
+        [Min(0f)] public float lootGraceDuration = 1f;
 
         public float CloseDuration => Mathf.Max(0f, closeDuration);
 

@@ -67,6 +67,13 @@ sysinfo.txt
 mono_crash.*
 
 # Builds
+/IncrementalRPG.exe
+/IncrementalRPG_Data/
+/IncrementalRPG_BurstDebugInformation_DoNotShip/
+/UnityPlayer.dll
+/UnityCrashHandler64.exe
+/MonoBleedingEdge/
+/D3D12/
 *.apk
 *.aab
 *.unitypackage

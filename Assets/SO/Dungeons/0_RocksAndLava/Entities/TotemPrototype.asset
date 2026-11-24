@@ -56,9 +56,7 @@ MonoBehaviour:
   damageZoneHitAreaGizmoColor: {r: 1, g: 0.85, b: 0, a: 0.8}
   damageSound: {fileID: 0}
   deathSounds:
-  - {fileID: 8300000, guid: a2bde1a96dd754249a99eb6c9aca95fc, type: 3}
-  - {fileID: 8300000, guid: 18b23faa457ae492f97ef090f582da73, type: 3}
-  - {fileID: 8300000, guid: 5f02a0116777b456597b46fba37e0960, type: 3}
+  - {fileID: 8300000, guid: e134d3bb9c63456a961b1094c31ff7b4, type: 3}
   references:
     version: 2
     RefIds: []

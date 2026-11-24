@@ -39,6 +39,23 @@ namespace Core.Gameplay.Dungeon
 
         public DungeonLevelConfig GetLevel(int index) => levels[index];
 
+        public (int completed, int total) GetRegularLevelProgress(int completedThroughIndex)
+        {
+            var completed = 0;
+            var total = 0;
+            for (var i = 0; i < LevelCount; i++)
+            {
+                var level = levels[i];
+                if (level == null || level.bossEncounter != null || !level.IsPlayable)
+                    continue;
+
+                total++;
+                if (i <= completedThroughIndex)
+                    completed++;
+            }
+            return (completed, total);
+        }
+
         public bool TryGetLevel(int index, out DungeonLevelConfig level)
         {
             if (levels == null || index < 0 || index >= levels.Length)

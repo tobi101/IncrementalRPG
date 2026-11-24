@@ -36,7 +36,7 @@ namespace Core.Gameplay.Dungeon
             _lootbox = _hud.Lootbox;
 
             _gameplay.OnLevelTransitionStarted += HandleTransitionStarted;
-            _gameplay.OnBossDefeated += HandleBossDefeated;
+            _gameplay.OnBossChestReady += HandleBossChestReady;
             _gameplay.OnPauseChanged += HandlePauseChanged;
             _gameplay.OnDisabled += HandleGameplayDisabled;
             _curtain.LampAnimationCompleted += HandleLampAnimationCompleted;
@@ -54,14 +54,17 @@ namespace Core.Gameplay.Dungeon
             PrepareReward(Presentation.LevelTransition, openDuration);
             _dungeonSelection.MarkLevelReached(_gameplay.CurrentDungeon, nextLevelIndex);
             _hud.PrepareLevelTransitionMessage();
-            _curtain.Prepare(_gameplay.CurrentDungeon.LevelCount, nextLevelIndex - 1);
+            var progress = _gameplay.CurrentDungeon.GetRegularLevelProgress(_gameplay.CurrentLevelIndex);
+            _curtain.Prepare(progress.total, progress.completed - 1);
             _curtain.PlayClose(closeDuration, HandleCurtainsClosed);
         }
 
-        private void HandleBossDefeated(Vector3 chestPosition)
+        private void HandleBossChestReady(Vector3 chestPosition)
         {
             var viewportPosition = Camera.main.WorldToViewportPoint(chestPosition);
-            _bossChest = _lootbox.CreateArenaChest((RectTransform)_hud.transform, viewportPosition);
+            var totem = _gameplay.CurrentLevel.bossEncounter.totem.viewPrefab;
+            var reveal = totem.GetComponentInChildren<Entity.SpawnBurnReveal>(true);
+            _bossChest = _lootbox.CreateArenaChest((RectTransform)_hud.transform, viewportPosition, reveal);
             _bossChest.onClick.AddListener(HandleBossChestClicked);
         }
 

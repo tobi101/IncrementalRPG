@@ -39,6 +39,7 @@ namespace Entity
         [SerializeField] private SpawnBurnReveal _spawnReveal;
 
         [Header("Facing")]
+        [SerializeField] private bool _randomizeFacingOnSpawn = true;
         [Tooltip("The direction the authored prefab faces before horizontal mirroring.")]
         [SerializeField] private bool _facesRightByDefault;
 
@@ -81,7 +82,7 @@ namespace Entity
 
             ResetAnimationBodies();
             ResetFacing();
-            if (creature.Config.countsAsEnemyKill && creature.Config.featureType == FeatureType.None)
+            if (_randomizeFacingOnSpawn && creature.Config.countsAsEnemyKill && creature.Config.featureType == FeatureType.None)
                 SetFacing(UnityEngine.Random.Range(0, 2) == 1);
             _lastWorldPosition = creature.WorldPosition;
             SyncPosition();
@@ -120,6 +121,17 @@ namespace Entity
 
             if (_pendingDeathAnimations == 0)
                 CompleteDeath();
+        }
+
+        internal bool HasReachedDeathAnimationProgress(float progress)
+        {
+            foreach (var track in _deathTrackEntries)
+            {
+                if (track.AnimationTime < Mathf.Lerp(track.AnimationStart, track.AnimationEnd, progress))
+                    return false;
+            }
+
+            return true;
         }
 
         private void LateUpdate()
